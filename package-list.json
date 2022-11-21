@@ -1,0 +1,13 @@
+{
+ "package-id" : "cms.fhir.mct",
+ "title" : "Your User Friendly Name for MyContentIG Here",
+ "canonical" : "http://cms.gov/fhir/mct",
+ "introduction" : "This implementation guide documents and supports the use of a prototype Measure Calculation Tool for reporting and calculating FHIR-based digital quality measures (dQMs). ",
+ "list" : [{
+  "version" : "current",
+  "desc" : "Continuous Integration Build (latest in version control)",
+  "path" : "http://build.fhir.org/ig/cqframework/mct-ig",
+  "status" : "ci-build",
+  "current" : true
+ }]
+}

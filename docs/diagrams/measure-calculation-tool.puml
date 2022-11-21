@@ -1,0 +1,61 @@
+@startuml MeasureCalculationTool
+title Measure Calculation Tool
+participant "EHR FHIR Endpoint" as FHIR
+participant "MCT" as MCT
+participant "Knowledge Repository" as KR
+participant "Terminology Service" as TS
+participant "Receiving System" as Receiver
+
+== 1. Setup ==
+loop per measure
+    MCT -> KR: $data-requirements
+    KR -> KR: Process data requirements
+    note right: 1. Include date-based filtering\n2. Map filters to search parameters\n3. Prune data elements based on measure usage (incl attr)\n4. Eliminate duplicates
+    KR -> MCT: Library.dataRequirement (0..*)
+end
+note right: Measure selection
+MCT -> MCT: Analyze requirements
+note right: 1. Collect value sets across data requirements
+MCT -> TS: GET ValueSet(s)
+note right: Use CapabilityStatement\nDetermine applicable expansions
+TS -> MCT: ValueSet(s)
+
+== 2. Attribution/Selection ==
+loop per measure
+    MCT -> MCT: Determine attribution
+    note right: DaVinci Attribution use case
+    loop per patient
+        loop per selective data element
+            MCT -> FHIR: GET data element
+            note right: Use fhirQueryPattern
+            FHIR -> MCT: Bundle
+        end
+        MCT -> MCT: Determine applicable population
+        note right: If all bundles have data, patient is potentially a member of the IP
+    end
+    note right: Subset attributed patients by\ninitial population applicability
+end
+note right: Measure selection\nConsider bulk data
+
+== 3. Submission ==
+loop per patient
+    loop per measure
+        loop per data element not marked selective
+            MCT -> FHIR: GET data element
+            note right: Use fhirQueryPattern
+            FHIR -> MCT: Bundle
+        end
+        MCT -> Receiver: $submit-data
+        note right: Submitter constructs a bundle with all\n data retrieved from the repository\nReturn errors encountered
+        Receiver -> MCT: OperationOutcome
+    end
+end
+note right: Consider submission period\nConsider bulk data
+
+== 4. Evaluation (individual/group) ==
+loop per measure
+    MCT -> Receiver: $evaluate-measure
+    Receiver -> MCT: MeasureReport
+end
+
+@enduml
