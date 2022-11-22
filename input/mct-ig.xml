@@ -58,7 +58,17 @@
         <generation value="html"/>
       </page>
       <page>
-        <nameUrl value="spec.html"/>
+        <nameUrl value="technical-requirements.html"/>
+        <title value="Technical Requirements"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="user-guide.html"/>
+        <title value="User Guide"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="specification.html"/>
         <title value="Detailed Specification"/>
         <generation value="markdown"/>
       </page>

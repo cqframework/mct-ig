@@ -10,7 +10,8 @@
   <img src="MeasureCalculationTool.png" alt="Measure Calculation Tool Sequence Diagram"/>
 	<p>
   </p>
-  <a name="walkthrough"> </a>
+  <a name="contents"> </a>
+  <h3>Contents</h3>
   <p>
     The main sections of this IG are:
   </p>
@@ -20,10 +21,25 @@
       familiar with before reading the remainder of the IG.
     </li>
     <li>
-      <a href="spec.html">Detailed Specification</a>
+      <a href="specification.html">Detailed Specification</a>
+    </li>
+    <li>
+      <a href="license.html">License</a>
+    </li>
+    <li>
+      <a href="changes.html">Changes</a>
     </li>
     <li>
       <a href="downloads.html">Downloads</a> - Allows downloading a copy of this implementation guide and other useful information
     </li>
   </ul>
+
+  <a name="glossary"> </a>
+  <h3>Glossary</h3>
+
+  <a name="acknowledgements"> </a>
+  <h3>Acknowledgements</h3>
+
+  <a name="references"> </a>
+  <h3>References</h3>
 </div>

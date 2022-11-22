@@ -8,6 +8,7 @@ This implementation guide documents and supports the use of a prototype Measure 
     2. Contents
     3. Glossary
     4. Acknowledgements
+    5. References
 2. Background
     1. Platform Environment
     2. Platform Functionality

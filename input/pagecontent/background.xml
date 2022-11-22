@@ -1,8 +1,21 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
-  <a name="1"><h3>Background</h3></a>
+  <a name="background"> </a>
+  <h3>Background</h3>
   <p>
     This topic provides background information for the measure calculation platform and tool prototype.
   </p>
+
+  <a name="platform-environment"> </a>
+  <h3>Platform Environment</h3>
+
+  <a name="patform-functionality"> </a>
+  <h3>Platform Functionality</h3>
+
+  <a name="assumptions-and-considerations"> </a>
+  <h3>Assumptions and Consideration</h3>
+
+  <a name="question1"> </a>
+  <h4>Question 1</h4>
 
   <p>
 Question about policy in place for providers to publish FHIR endpoint?
@@ -12,6 +25,9 @@ Question about policy in place for providers to publish FHIR endpoint?
 ONC Standards-based Application programming Certification program requires, in “§ 170.315(g)(10) to implement the 21st Century Cures Act’s requirement that developers of certified health IT publish APIs that can be used “without special effort.” This new certification criterion requires standardized API access for single patient and population services and is limited to API-enabled “read” services using the HL7® Fast Healthcare Interoperability Resources (FHIR®) standard. The FHIR standard, in addition to a set of adopted implementation specifications, provides known and consistent technical requirements for software developers.”
 The MCT will leverage this policy, see attatched for more information
 	</p>
+
+  <a name="question2"> </a>
+  <h4>Question 2</h4>
 
   <p>
 Question about how to distinguish between hospitals?
@@ -28,6 +44,9 @@ I am not sure about the walking of an NPI ID to a CNN
 As of 2019 Experian announced every person in US had been assign a universal patient identifier UPI. And the US senate removed the ban that kept us from instituting it, October 22, 2021. See attachment for more information
 	</p>
 
+  <a name="question3"> </a>
+  <h4>Question 3</h4>
+
   <p>
 Question about security concerns?
 	</p>
@@ -36,6 +55,14 @@ Question about security concerns?
 I would like to know if smart on fhir suffices for the 21st Century Cures act security requirement or will we need further consideration?
 Current  issue with previous prototype architecture
 	</p>
+
+  <a name="prototype-capabilities"> </a>
+  <h3>Prototype Capabilities</h3>
+
+
+  <p>
+What use cases are covered by this prototype?
+  </p>
 
   <p>
   <ol>
@@ -65,4 +92,5 @@ the Clinical Data Repository Provider FHIR api to calculate the Measure Score, p
   </li>
   </ol>
   </p>
+
 </div>
