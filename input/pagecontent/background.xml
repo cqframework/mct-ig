@@ -59,7 +59,6 @@ Current  issue with previous prototype architecture
   <a name="prototype-capabilities"> </a>
   <h3>Prototype Capabilities</h3>
 
-
   <p>
 What use cases are covered by this prototype?
   </p>
@@ -91,6 +90,66 @@ the Clinical Data Repository Provider FHIR api to calculate the Measure Score, p
 7. Response - The Measure Calculation Tool returns the MeasureReport bundle to the Reporting Client, which then displays the resulting measure score and relevant data to the user. 
   </li>
   </ol>
+  </p>
+
+  <a name="prototype-scope"> </a>
+  <h4>Prototype Scope</h4>
+
+  <p>
+  <ul>
+
+<li>
+<p>
+Decision: For the prototype, the MCT will have bundles with the measure specifications
+ and run the data requirements analysis itself, rather than rely upon a knowledge repository. While the knowledge repository is important to be discussed and will be noted in the architecture, it is out of scope for the prototype. 
+<ul>
+<li>
+Rationale: This addresses questions CMS has over who would potentially stand up/own the knowledge
+ repository and addresses scope and budget concerns CMS raised over the knowledge repository in this option period. The specifications also don’t have to be in a knowledge repository to function. 
+</li>
+</ul>
+</p>
+</li>
+<li>
+<p>
+Decision: For the prototype, we will have bundles that will include the value sets, rather
+ than having a separate, terminology service. 
+<ul>
+<li>
+Rationale: There is significant effort in managing a terminology service, and a terminology
+ service is not crucial for this prototype of the MCT to demonstrate the scoped functionalities we described. 
+</li>
+</ul>
+</p>
+</li>
+<li>
+<p>
+Decision: For the prototype, we assume we can get a group resource that tells us all the
+ patients we would run the measure on, rather than actually attributing/selecting the patients that would be in that group. 
+<ul>
+<li>
+Rationale: Attribution/Selection steps described in the figure above are out of scope.
+ While the actual gather and calculation would occur differently, for the Connectathon, it would be sufficient to display the desired MCT functionalities using these group resources. 
+</li>
+</ul>
+</p>
+</li>
+<li>
+<p>
+Decision: The MCT will do the measure evaluation. 
+Instead of calling the receiving system directly, the reporting client would call the MCT to do evaluate-measure, and it would ask the receiving system for data and return
+ the result. The gather step is pulling all the data and getting it into the receiving system for final calculation, then the MCT does the calculation by asking for the data from the receiving system. 
+<ul>
+<li>
+Rationale: This is within the scope of work to demonstrate desired functionalities without
+ doing extra steps that are not absolutely necessary for a prototype. 
+</li>
+</ul>
+</p>
+</li>
+<li>
+<p>
+  </ul>
   </p>
 
 </div>
