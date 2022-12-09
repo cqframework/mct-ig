@@ -179,8 +179,9 @@ Template:
         2. As a provider quality improvement user, when initiating the process of submitting reporting data, I need to be able to select the facilities that will be reported.
         3. As a provider quality improvement user, when initiating the process of submitting reporting data, I need to be able to select the measures that will be reported.
         4. As a provider quality improvement user, when initiating the process of submitting reporting data, I need to be able to select the period for data that will be reported.
-        5. As a provider quality improvement user, I need to view the results of the reporting submission so that I can confirm the data and score prior to submission.
-        6. As a provider quality improvement user, I need to be able to submit completed reporting data and scores to the receiving system.
+        5. As a provider quality improvement user, I need to review the list of errors/issues with the results of the reporting submission so that I can troubleshoot and resubmit the measure report.
+        6. As a provider quality improvement user, I need to view the results of the reporting submission so that I can confirm the data and score prior to submission.
+        7. As a provider quality improvement user, I need to be able to submit completed reporting data and scores to the receiving system.
 
 #### Implementation
 
