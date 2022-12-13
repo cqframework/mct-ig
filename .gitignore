@@ -9,6 +9,7 @@ output
 /input-cache/org.hl7.fhir.publisher.jar
 /input-cache/publisher.jar
 /input-cache/*
+/bundles
 
 # Ignore test bundles, etc. generated via _refresh #
 /input/tests/*Example/example/*-bundle.json

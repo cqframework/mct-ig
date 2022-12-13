@@ -1653,15 +1653,15 @@
     "relatedArtifact": [ {
       "type": "depends-on",
       "display": "Library Profiles",
-      "resource": "Library/QiCoreProfilePatterns|1.0.0"
+      "resource": "http://cms.gov/fhir/mct/Library/QiCoreProfilePatterns|1.0.0"
     }, {
       "type": "depends-on",
       "display": "Library FHIRHelpers",
-      "resource": "http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"
+      "resource": "http://cms.gov/fhir/mct/Library/FHIRHelpers|4.0.1"
     }, {
       "type": "depends-on",
       "display": "Library QICoreCommon",
-      "resource": "Library/QICoreCommon|1.0.0"
+      "resource": "http://cms.gov/fhir/mct/Library/QICoreCommon|1.0.0"
     } ],
     "parameter": [ {
       "name": "SDE Coverage",
@@ -2163,7 +2163,7 @@
       "display": "Health Quality Measure Document"
     } ]
   } ],
-  "library": [ "http://hl7.org/fhir/us/cqfmeasures/Library/QiCoreProfileValidation" ],
+  "library": [ "http://cms.gov/fhir/mct/Library/QiCoreProfileValidation" ],
   "scoring": {
     "coding": [ {
       "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
