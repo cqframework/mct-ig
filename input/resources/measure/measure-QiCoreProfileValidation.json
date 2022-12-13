@@ -1,0 +1,2797 @@
+{
+  "resourceType": "Measure",
+  "id": "QiCoreProfileValidation",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cohort-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
+  },
+  "contained": [ {
+    "resourceType": "Library",
+    "id": "effective-data-requirements",
+    "extension": [ {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Coverage"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreCoverage\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage\ndefine Coverage:\n  [Coverage]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 0
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Coverage"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Coverage\":\n    Profiles.Coverage"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 1
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Procedure"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreProcedure\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure\ndefine Procedure:\n  [Procedure] P\n    where P.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 2
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Procedure"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Procedure\":\n    Profiles.Procedure"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 3
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Encounter"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreEncounter\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter\ndefine Encounter:\n  [Encounter]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 4
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "EncounterPerformed"
+      }, {
+        "url": "statement",
+        "valueString": "define EncounterPerformed:\n  Encounter E\n    where E.status = 'finished'"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 5
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE EncounterPerformed"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE EncounterPerformed\":\n    Profiles.EncounterPerformed"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 6
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Practitioner"
+      }, {
+        "url": "statement",
+        "valueString": "// QICorePractitioner\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner\ndefine Practitioner:\n  [Practitioner]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 7
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Practitioner"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Practitioner\":\n    Profiles.Practitioner"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 8
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "ProcedureNotDone"
+      }, {
+        "url": "statement",
+        "valueString": "/*\ndefine \"Flexible Sigmoidoscopy Performed\":\n [Procedure: \"Flexible Sigmoidoscopy\"] FlexibleSigmoidoscopy\n\t where FlexibleSigmoidoscopy.status = 'completed'\n\t\t and Global.\"Normalize Interval\"(FlexibleSigmoidoscopy.performed) ends 5 years or less on or before end of \"Measurement Period\"\n\ndefine \"Flexible Sigmoidoscopy Performed\":\n  QICore.ProcedurePerformed FlexibleSigmoidoscopy\n    where FlexibleSigmoidoscopy.code in \"Flexible Sigmoidoscopy\"\n      and FlexibleSigmoidoscopy.performed.toInterval() ends 5 years or less on or before end of \"Measurement Period\"\n*/\n\n// QICoreProcedureNotDone\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurenotdonedefine ProcedureNotDone:\n  [Procedure] P\n    where P.status = 'not-done'"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 9
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE ProcedureNotDone"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE ProcedureNotDone\":\n    Profiles.ProcedureNotDone"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 10
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "ImagingStudy"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreImagingStudy\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-imagingstudy\ndefine ImagingStudy:\n  [ImagingStudy]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 11
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE ImagingStudy"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE ImagingStudy\":\n    Profiles.ImagingStudy"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 12
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Organization"
+      }, {
+        "url": "statement",
+        "valueString": "// FHIR Vital Signs\n\n// USCore Smoking Status\n\n// USCore Laboratory Result\n\n// USCore Pediatric BMI for Age\n\n// USCore Pediatric Weight for Height\n\n// USCore Pulse Oximetry\n\n// QICoreOrganization\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization\ndefine Organization:\n  [Organization]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 13
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Organization"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Organization\":\n    Profiles.Organization"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 14
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "AllergyIntolerance"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreAllergyIntolerance\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-allergyintolerance\ndefine AllergyIntolerance:\n  [AllergyIntolerance]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 15
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE AllergyIntolerance"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE AllergyIntolerance\":\n    Profiles.AllergyIntolerance"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 16
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Immunization"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreImmunization\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunization\ndefine Immunization:\n  [Immunization] I\n    where I.status = 'completed'"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 17
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Immunization"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Immunization\":\n    Profiles.Immunization"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 18
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Patient"
+      }, {
+        "url": "statement",
+        "valueString": "// QICorePatient\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient\ndefine Patient:\n  [Patient]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 19
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Patient"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Patient\":\n    Profiles.Patient"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 20
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "ServiceNotRequested"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreServiceNotRequested\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicenotrequested\ndefine ServiceNotRequested:\n  [ServiceRequest] SR\n    where SR.status = 'completed'\n      and SR.doNotPerform is true"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 21
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE ServiceNotRequested"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE ServiceNotRequested\":\n    Profiles.ServiceNotRequested"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 22
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "TaskRejected"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreTaskRejected\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-taskrejected\n// TODO: What about cancelled and failed?\ndefine TaskRejected:\n  [Task] T\n    where T.status = 'rejected'"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 23
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE TaskRejected"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE TaskRejected\":\n    Profiles.TaskRejected"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 24
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Claim"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreClaim\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-claim\ndefine Claim:\n  [Claim]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 25
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Claim"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Claim\":\n    Profiles.Claim"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 26
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "CommunicationRequest"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreCommunicationRequest\n// @profile: \thttp://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationrequest\ndefine CommunicationRequest:\n  [CommunicationRequest]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 27
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE CommunicationRequest"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE CommunicationRequest\":\n    Profiles.CommunicationRequest"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 28
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "DiagnosticReportNote"
+      }, {
+        "url": "statement",
+        "valueString": "//where D.category ~ \"http://terminology.hl7.org/CodeSystem/v2-0074#LAB\"\n\n// QICoreDiagnosticReportNote\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-diagnosticreport-note\ndefine DiagnosticReportNote:\n  [DiagnosticReport] D"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 29
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE DiagnosticReportNote"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE DiagnosticReportNote\":\n    Profiles.DiagnosticReportNote"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 30
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "CarePlan"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreCarePlan\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-careplan\ndefine CarePlan:\n  [CarePlan]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 31
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE CarePlan"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE CarePlan\":\n    Profiles.CarePlan"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 32
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "MedicationAdministrationNotDone"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreMedicationAdministrationNotDone\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-mednotadministered\ndefine MedicationAdministrationNotDone:\n  [MedicationAdministration] M\n    where M.status = 'not-done'"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 33
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE MedicationAdministrationNotDone"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE MedicationAdministrationNotDone\":\n    Profiles.MedicationAdministrationNotDone"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 34
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "PractitionerRole"
+      }, {
+        "url": "statement",
+        "valueString": "// QICorePractitionerRole\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitionerrole\ndefine PractitionerRole:\n  [PractitionerRole]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 35
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE PractitionerRole"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE PractitionerRole\":\n    Profiles.PractitionerRole"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 36
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "CareTeam"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreCareTeam\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-careteam\ndefine CareTeam:\n  [CareTeam]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 37
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE CareTeam"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE CareTeam\":\n    Profiles.CareTeam"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 38
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "RelatedPerson"
+      }, {
+        "url": "statement",
+        "valueString": "/*\ndefine \"No VTE Prophylaxis Device Applied\":\n  [\"Procedure\": \"Device Application\"] DeviceApplied\n    let DeviceNotDoneTiming: Global.GetExtension(DeviceApplied, 'qicore-recorded').value\n    where (DeviceApplied.usedCode in \"Intermittent pneumatic compression devices (IPC)\"\n      or DeviceApplied.usedCode in \"Venous foot pumps (VFP)\"\n      or DeviceApplied.usedCode in \"Graduated compression stockings (GCS)\"\n    )\n      and  DeviceApplied.status = 'not-done'\n    return {id: DeviceApplied.id, requestStatusReason: DeviceApplied.statusReason, authoredOn: DeviceNotDoneTiming}\n\ndefine \"No VTE Prophylaxis Device Applied\":\n  QICore.ProcedureNotDone DeviceApplied\n    where DeviceApplied.code in \"Device Application\"\n      and (DeviceApplied.usedCode in \"Intermittent pneumatic compression devices (IPC)\"\n        or DeviceApplied.usedCode in \"Venous foot pumps (VFP)\"\n        or DeviceApplied.usedCode in \"Graduated compression stockings (GCS)\")\n    return {\n      id: DeviceApplied.id,\n      requestStatusReason: DeviceApplied.statusReason,\n      authoredOn: DeviceApplied.recorded()\n    }\n\n*/\n\n// QICoreRelatedPerson\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-relatedpersondefine RelatedPerson:\n  [RelatedPerson]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 39
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE RelatedPerson"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE RelatedPerson\":\n    Profiles.RelatedPerson"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 40
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "MedicationRequest"
+      }, {
+        "url": "statement",
+        "valueString": "/*\ndefine \"Antithrombotic Not Given at Discharge\":\n  [\"MedicationRequest\": medication in \"Antithrombotic Therapy\"] NoAntithromboticDischarge\n    where NoAntithromboticDischarge.doNotPerform is true\n\t\t\tand (NoAntithromboticDischarge.reasonCode in \"Medical Reason\"\n\t\t\t\tor NoAntithromboticDischarge.reasonCode in \"Patient Refusal\")\n      and exists (NoAntithromboticDischarge.category C where FHIRHelpers.ToConcept(C) ~ FC.\"Community\" or FHIRHelpers.ToConcept(C) ~ FC.\"Discharge\")\n      and NoAntithromboticDischarge.status = 'completed'\n      and NoAntithromboticDischarge.intent = 'order'\n\ndefine \"Antithrombotic Not Given at Discharge\":\n  QICore.MedicationNotRequested NoAntithromboticDischarge\n    where NoAntithromboticDischarge.medication in \"Antithrombotic Therapy\"\n      and (NoAntithromboticDischarge.reasonCode in \"Medical Reason\"\n        or NoAntithromboticDischarge.reasonCode in \"Patient Refusal\")\n      and (NoAntithromboticDischarge.isCommunity() or NoAntithromboticDischarge.isDischarge())\n      and NoAntithromboticDischarge.intent = 'order'\n\ndefine \"Antithrombotic Not Given at Discharge\":\n  [\"MedicationNotRequested\": medication in \"Antithrombotic Therapy\"] NoAntithromboticDischarge\n    where (NoAntithromboticDischarge.reasonCode in \"Medical Reason\"\n        or NoAntithromboticDischarge.reasonCode in \"Patient Refusal\")\n      and (NoAntithromboticDischarge.isCommunity() or NoAntithromboticDischarge.isDischarge())\n      and NoAntithromboticDischarge.intent = 'order'\n*/\n\n// QICoreMedicationRequest\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequestdefine MedicationRequest:\n  [MedicationRequest] R\n    where R.status in { 'active', 'on-hold', 'completed', 'draft' }\n      and R.doNotPerform is not true"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 41
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE MedicationRequest"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE MedicationRequest\":\n    Profiles.MedicationRequest"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 42
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "DiagnosticReportLab"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreDiagnosticReportLab\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-diagnosticreport-lab\ndefine DiagnosticReportLab:\n  [DiagnosticReport] D"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 43
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE DiagnosticReportLab"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE DiagnosticReportLab\":\n    Profiles.DiagnosticReportLab"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 44
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Communication"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreCommunication\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communication\ndefine Communication:\n  [Communication] C\n    where C.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 45
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Communication"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Communication\":\n    Profiles.Communication"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 46
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "MedicationDispenseDeclined"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreMedicationDispenseDeclined\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationdispensedeclined\ndefine MedicationDispenseDeclined:\n  [MedicationDispense] D\n    where D.status in { 'cancelled', 'declined' }"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 47
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE MedicationDispenseDeclined"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE MedicationDispenseDeclined\":\n    Profiles.MedicationDispenseDeclined"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 48
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "ImmunizationRecommendation"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreImmunizationRecommendation\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationrec\ndefine ImmunizationRecommendation:\n  [ImmunizationRecommendation]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 49
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE ImmunizationRecommendation"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE ImmunizationRecommendation\":\n    Profiles.ImmunizationRecommendation"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 50
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "ImplantableDevice"
+      }, {
+        "url": "statement",
+        "valueString": "// USCoreImplantableDevice\n// @profile: http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device\ndefine ImplantableDevice:\n  [Device]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 51
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE ImplantableDevice"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE ImplantableDevice\":\n    Profiles.ImplantableDevice"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 52
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "MedicationStatement"
+      }, {
+        "url": "statement",
+        "valueString": "/*\ndefine \"Antithrombotic Therapy at Discharge\":\n  [\"MedicationRequest\": medication in \"Antithrombotic Therapy\"] Antithrombotic\n    where exists (Antithrombotic.category C where FHIRHelpers.ToConcept(C) in { Global.\"Community\", Global.\"Discharge\" })\n      and Antithrombotic.status in { 'active', 'completed' }\n      and Antithrombotic.intent.value = 'order'\n\ndefine \"Antithrombotic Therapy at Discharge\":\n  QICore.MedicationRequest Antithrombotic\n    where Antithrombotic.medication in \"Antithrombotic Therapy\"\n      and (Antithrombotic.isCommunity() or Antithrombotic.isDischarge())\n      and Antithrombotic.status in { 'active', 'completed' }\n      and Antithrombotic.intent = 'order'\n\ndefine \"Antithrombotic Therapy at Discharge\":\n  [MedicationRequest: medication in \"Antithrombotic Therapy\"] Antithrombotic\n    where (Antithrombotic.isCommunity() or Antithrombotic.isDischarge())\n      and Antithrombotic.status in { 'active', 'completed' }\n      and Antithrombotic.intent = 'order'\n*/\n\n// QICoreMedicationStatement\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationstatementdefine MedicationStatement:\n  [MedicationStatement]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 53
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE MedicationStatement"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE MedicationStatement\":\n    Profiles.MedicationStatement"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 54
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Location"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreLocation\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location\ndefine Location:\n  [Location]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 55
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Location"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Location\":\n    Profiles.Location"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 56
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "MedicationNotRequested"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreMedicationNotRequested\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-mednotrequested\ndefine MedicationNotRequested:\n  [MedicationRequest] R\n    where R.status = 'completed'\n      and R.doNotPerform is true"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 57
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE MedicationNotRequested"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE MedicationNotRequested\":\n    Profiles.MedicationNotRequested"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 58
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "DeviceNotRequested"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreDeviceNotRequested\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-devicenotrequested\ndefine DeviceNotRequested:\n  [DeviceRequest] D\n    where D.status = 'completed'\n      and D.doNotPerform() is true"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 59
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE DeviceNotRequested"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE DeviceNotRequested\":\n    Profiles.DeviceNotRequested"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 60
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Encounter"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Encounter\":\n    Profiles.Encounter"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 61
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "CommunicationNotDone"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreCommunicationNotDone\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationnotdone\ndefine CommunicationNotDone:\n  [Communication] C\n    where C.status = 'not-done'"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 62
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE CommunicationNotDone"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE CommunicationNotDone\":\n    Profiles.CommunicationNotDone"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 63
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Substance"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreSubstance\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-substance\ndefine Substance:\n  [Substance]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 64
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Substance"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Substance\":\n    Profiles.Substance"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 65
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "MedicationAdministration"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreMedicationAdministration\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministration\ndefine MedicationAdministration:\n  [MedicationAdministration] M\n    where M.status in { 'in-progress', 'on-hold', 'completed' }"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 66
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE MedicationAdministration"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE MedicationAdministration\":\n    Profiles.MedicationAdministration"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 67
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Observation"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreObservation\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation\ndefine Observation:\n  [Observation] O\n    where O.status in { 'registered', 'preliminary', 'final', 'amended', 'corrected' }"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 68
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Observation"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Observation\":\n    Profiles.Observation"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 69
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Device"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreDevice\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-device\ndefine Device:\n  [Device]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 70
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Device"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Device\":\n    Profiles.Device"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 71
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "NutritionOrder"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreNutritionOrder\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-nutritionorder\ndefine NutritionOrder:\n  [NutritionOrder]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 72
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE NutritionOrder"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE NutritionOrder\":\n    Profiles.NutritionOrder"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 73
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "ObservationCancelled"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreObservationCancelled\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observationcancelled\ndefine ObservationCancelled:\n  [Observation] O\n    where O.status = 'cancelled'"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 74
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE ObservationCancelled"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE ObservationCancelled\":\n    Profiles.ObservationCancelled"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 75
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Flag"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreFlag\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-flag\ndefine Flag:\n  [Flag]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 76
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Flag"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Flag\":\n    Profiles.Flag"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 77
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "ProcedurePerformed"
+      }, {
+        "url": "statement",
+        "valueString": "define ProcedurePerformed:\n  Procedure P\n    where P.status = 'completed'"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 78
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE ProcedurePerformed"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE ProcedurePerformed\":\n    Profiles.ProcedurePerformed"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 79
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "Initial Population"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Initial Population\": true"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 80
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "DeviceRequest"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreDeviceRequest\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-devicerequest\ndefine DeviceRequest:\n  [DeviceRequest] D\n    where D.status in { 'draft', 'active', 'on-hold', 'revoked', 'completed' }\n      and D.doNotPerform() is not true"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 81
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE DeviceRequest"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE DeviceRequest\":\n    Profiles.DeviceRequest"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 82
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "BodyStructure"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreBodyStructure\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-bodystructure\ndefine BodyStructure:\n  [BodyStructure]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 83
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE BodyStructure"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE BodyStructure\":\n    Profiles.BodyStructure"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 84
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "FamilyMemberHistory"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreFamilyMemberHistory\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-familymemberhistory\ndefine FamilyMemberHistory:\n  [FamilyMemberHistory]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 85
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE FamilyMemberHistory"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE FamilyMemberHistory\":\n    Profiles.FamilyMemberHistory"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 86
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Medication"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreMedication\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medication\ndefine Medication:\n  [Medication]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 87
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Medication"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Medication\":\n    Profiles.Medication"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 88
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Specimen"
+      }, {
+        "url": "statement",
+        "valueString": "/*\ndefine \"Intervention Comfort Measures\":\n  ([\"ServiceRequest\": \"Comfort Measures\"] P\n    where P.intent = 'order'\n  )\n    union ([\"Procedure\": \"Comfort Measures\"] InterventionPerformed\n      where InterventionPerformed.status in {'completed', 'in-progress'}\n    )\n\ndefine \"Intervention Comfort Measures\":\n  (QICore.ServiceRequest SR\n    where SR.code in \"Comfort Measures\"\n      and SR.intent = 'order'\n  )\n    union (\n      QICore.Procedure InterventionPerformed\n        where InterventionPerformed.code in \"Comfort Measures\"\n          and InterventionPerformed.status in { 'completed', 'in-progress' }\n    )\n*/\n\n// QICoreSpecimen\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-specimendefine Specimen:\n  [Specimen]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 89
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Specimen"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Specimen\":\n    Profiles.Specimen"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 90
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "AdverseEvent"
+      }, {
+        "url": "statement",
+        "valueString": "// Profiles\n\n// QICoreAdverseEvent\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-adverseevent\ndefine AdverseEvent:\n  [AdverseEvent]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 91
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE AdverseEvent"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE AdverseEvent\":\n    Profiles.AdverseEvent"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 92
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Task"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreTask\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-task\ndefine Task:\n  [Task] T\n    where T.status in { 'draft', 'requested', 'received', 'accepted', 'ready', 'in-progress', 'on-hold', 'completed' }"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 93
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Task"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Task\":\n    Profiles.Task"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 94
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "ImmunizationNotDone"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreImmunizationNotDone\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationnotdone\ndefine ImmunizationNotDone:\n  [Immunization] I\n    where I.status = 'not-done'"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 95
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE ImmunizationNotDone"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE ImmunizationNotDone\":\n    Profiles.ImmunizationNotDone"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 96
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "MedicationDispense"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreMedicationDispense\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationdispense\ndefine MedicationDispense:\n  [MedicationDispense] D\n    where D.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 97
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE MedicationDispense"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE MedicationDispense\":\n    Profiles.MedicationDispense"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 98
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "ImmunizationEvaluation"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreImmunizationEvaluation\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationevaluation\ndefine ImmunizationEvaluation:\n  [ImmunizationEvaluation]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 99
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE ImmunizationEvaluation"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE ImmunizationEvaluation\":\n    Profiles.ImmunizationEvaluation"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 100
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "DeviceUseStatement"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreDeviceUseStatement\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-deviceusestatement\ndefine DeviceUseStatement:\n  [DeviceUseStatement]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 101
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE DeviceUseStatement"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE DeviceUseStatement\":\n    Profiles.DeviceUseStatement"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 102
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Goal"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreGoal\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-goal\ndefine Goal:\n  [Goal]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 103
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Goal"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Goal\":\n    Profiles.Goal"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 104
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "Condition"
+      }, {
+        "url": "statement",
+        "valueString": "// QICoreCondition\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition\ndefine Condition:\n  [Condition]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 105
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE Condition"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Condition\":\n    Profiles.Condition"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 106
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfilePatterns"
+      }, {
+        "url": "name",
+        "valueString": "ServiceRequest"
+      }, {
+        "url": "statement",
+        "valueString": "/*\ndefine \"No VTE Prophylaxis Device Order\":\n  ([\"ServiceRequest\": \"Venous foot pumps (VFP)\"]\n    union [\"ServiceRequest\": \"Intermittent pneumatic compression devices (IPC)\"]\n    union [\"ServiceRequest\": \"Graduated compression stockings (GCS)\"]\n  ) DeviceOrder\n    where DeviceOrder.status = 'completed'\n      and DeviceOrder.doNotPerform is true\n\ndefine \"No VTE Prophylaxis Device Order\":\n  QICore.ServiceNotRequested DeviceOrder\n    where DeviceOrder.code in \"Venous foot pumps (VFP)\"\n      or DeviceOrder.code in \"Intermittent pneumatic compression devices (IPC)\"\n      or DeviceOrder.code in \"Graduated compression stockings (GCS)\"\n*/\n\n// QICoreServiceRequest\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicerequestdefine ServiceRequest:\n  [ServiceRequest] SR\n    where SR.status in { 'draft', 'active', 'on-hold', 'completed' }\n      and SR.doNotPerform is not true"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 107
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QiCoreProfileValidation"
+      }, {
+        "url": "name",
+        "valueString": "SDE ServiceRequest"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE ServiceRequest\":\n    Profiles.ServiceRequest"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 108
+      } ]
+    } ],
+    "status": "active",
+    "type": {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/library-type",
+        "code": "module-definition"
+      } ]
+    },
+    "relatedArtifact": [ {
+      "type": "depends-on",
+      "display": "Library Profiles",
+      "resource": "Library/QiCoreProfilePatterns|1.0.0"
+    }, {
+      "type": "depends-on",
+      "display": "Library FHIRHelpers",
+      "resource": "http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"
+    }, {
+      "type": "depends-on",
+      "display": "Library QICoreCommon",
+      "resource": "Library/QICoreCommon|1.0.0"
+    } ],
+    "parameter": [ {
+      "name": "SDE Coverage",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Coverage"
+    }, {
+      "name": "SDE Procedure",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Procedure"
+    }, {
+      "name": "SDE EncounterPerformed",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Encounter"
+    }, {
+      "name": "SDE Practitioner",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Practitioner"
+    }, {
+      "name": "SDE ProcedureNotDone",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Procedure"
+    }, {
+      "name": "SDE ImagingStudy",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "ImagingStudy"
+    }, {
+      "name": "SDE Organization",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Organization"
+    }, {
+      "name": "SDE AllergyIntolerance",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "AllergyIntolerance"
+    }, {
+      "name": "SDE Immunization",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Immunization"
+    }, {
+      "name": "SDE Patient",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Patient"
+    }, {
+      "name": "SDE ServiceNotRequested",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "ServiceRequest"
+    }, {
+      "name": "SDE TaskRejected",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Task"
+    }, {
+      "name": "SDE Claim",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Claim"
+    }, {
+      "name": "SDE CommunicationRequest",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "CommunicationRequest"
+    }, {
+      "name": "SDE DiagnosticReportNote",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "DiagnosticReport"
+    }, {
+      "name": "SDE CarePlan",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "CarePlan"
+    }, {
+      "name": "SDE MedicationAdministrationNotDone",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "MedicationAdministration"
+    }, {
+      "name": "SDE PractitionerRole",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "PractitionerRole"
+    }, {
+      "name": "SDE CareTeam",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "CareTeam"
+    }, {
+      "name": "SDE RelatedPerson",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "RelatedPerson"
+    }, {
+      "name": "SDE MedicationRequest",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "MedicationRequest"
+    }, {
+      "name": "SDE DiagnosticReportLab",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "DiagnosticReport"
+    }, {
+      "name": "SDE Communication",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Communication"
+    }, {
+      "name": "SDE MedicationDispenseDeclined",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "MedicationDispense"
+    }, {
+      "name": "SDE ImmunizationRecommendation",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "ImmunizationRecommendation"
+    }, {
+      "name": "SDE ImplantableDevice",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Device"
+    }, {
+      "name": "SDE MedicationStatement",
+      "use": "out",
+      "min": 0,
+      "max": "*"
+    }, {
+      "name": "SDE Location",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Location"
+    }, {
+      "name": "SDE MedicationNotRequested",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "MedicationRequest"
+    }, {
+      "name": "SDE DeviceNotRequested",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "DeviceRequest"
+    }, {
+      "name": "SDE Encounter",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Encounter"
+    }, {
+      "name": "SDE CommunicationNotDone",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Communication"
+    }, {
+      "name": "SDE Substance",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Substance"
+    }, {
+      "name": "SDE MedicationAdministration",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "MedicationAdministration"
+    }, {
+      "name": "SDE Observation",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Observation"
+    }, {
+      "name": "SDE Device",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Device"
+    }, {
+      "name": "SDE NutritionOrder",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "NutritionOrder"
+    }, {
+      "name": "SDE ObservationCancelled",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Observation"
+    }, {
+      "name": "SDE Flag",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Flag"
+    }, {
+      "name": "SDE ProcedurePerformed",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Procedure"
+    }, {
+      "name": "Initial Population",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "boolean"
+    }, {
+      "name": "SDE DeviceRequest",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "DeviceRequest"
+    }, {
+      "name": "SDE BodyStructure",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "BodyStructure"
+    }, {
+      "name": "SDE FamilyMemberHistory",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "FamilyMemberHistory"
+    }, {
+      "name": "SDE Medication",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Medication"
+    }, {
+      "name": "SDE Specimen",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Specimen"
+    }, {
+      "name": "SDE AdverseEvent",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "AdverseEvent"
+    }, {
+      "name": "SDE Task",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Task"
+    }, {
+      "name": "SDE ImmunizationNotDone",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Immunization"
+    }, {
+      "name": "SDE MedicationDispense",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "MedicationDispense"
+    }, {
+      "name": "SDE ImmunizationEvaluation",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "ImmunizationEvaluation"
+    }, {
+      "name": "SDE DeviceUseStatement",
+      "use": "out",
+      "min": 0,
+      "max": "*"
+    }, {
+      "name": "SDE Goal",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Goal"
+    }, {
+      "name": "SDE Condition",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Condition"
+    }, {
+      "name": "SDE ServiceRequest",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "ServiceRequest"
+    } ],
+    "dataRequirement": [ {
+      "type": "Coverage",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ]
+    }, {
+      "type": "Procedure",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+      "mustSupport": [ "status" ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "status" ]
+    }, {
+      "type": "Practitioner",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Practitioner" ]
+    }, {
+      "type": "ImagingStudy",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/ImagingStudy" ]
+    }, {
+      "type": "Organization",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Organization" ]
+    }, {
+      "type": "AllergyIntolerance",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/AllergyIntolerance" ]
+    }, {
+      "type": "Immunization",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+      "mustSupport": [ "status" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+    }, {
+      "type": "ServiceRequest",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+      "mustSupport": [ "status", "doNotPerform" ]
+    }, {
+      "type": "Task",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Task" ],
+      "mustSupport": [ "status" ]
+    }, {
+      "type": "Claim",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Claim" ]
+    }, {
+      "type": "CommunicationRequest",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/CommunicationRequest" ]
+    }, {
+      "type": "DiagnosticReport",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/DiagnosticReport" ]
+    }, {
+      "type": "CarePlan",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/CarePlan" ]
+    }, {
+      "type": "MedicationAdministration",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationAdministration" ],
+      "mustSupport": [ "status" ]
+    }, {
+      "type": "PractitionerRole",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/PractitionerRole" ]
+    }, {
+      "type": "CareTeam",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/CareTeam" ]
+    }, {
+      "type": "RelatedPerson",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/RelatedPerson" ]
+    }, {
+      "type": "MedicationRequest",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+      "mustSupport": [ "status", "doNotPerform" ]
+    }, {
+      "type": "Communication",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
+      "mustSupport": [ "status" ]
+    }, {
+      "type": "MedicationDispense",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationDispense" ],
+      "mustSupport": [ "status" ]
+    }, {
+      "type": "ImmunizationRecommendation",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation" ]
+    }, {
+      "type": "Device",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Device" ]
+    }, {
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationStatement" ]
+    }, {
+      "type": "Location",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Location" ]
+    }, {
+      "type": "DeviceRequest",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/DeviceRequest" ],
+      "mustSupport": [ "status" ]
+    }, {
+      "type": "Substance",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Substance" ]
+    }, {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+      "mustSupport": [ "status" ]
+    }, {
+      "type": "NutritionOrder",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/NutritionOrder" ]
+    }, {
+      "type": "Flag",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Flag" ]
+    }, {
+      "type": "BodyStructure",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/BodyStructure" ]
+    }, {
+      "type": "FamilyMemberHistory",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/FamilyMemberHistory" ]
+    }, {
+      "type": "Medication",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Medication" ]
+    }, {
+      "type": "Specimen",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Specimen" ]
+    }, {
+      "type": "AdverseEvent",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/AdverseEvent" ]
+    }, {
+      "type": "ImmunizationEvaluation",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/ImmunizationEvaluation" ]
+    }, {
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/DeviceUseStatement" ]
+    }, {
+      "type": "Goal",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Goal" ]
+    }, {
+      "type": "Condition",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ]
+    } ]
+  } ],
+  "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+    "valueReference": {
+      "reference": "Device/cqf-tooling"
+    }
+  }, {
+    "id": "effective-data-requirements",
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
+    "valueReference": {
+      "reference": "#effective-data-requirements"
+    }
+  } ],
+  "url": "http://cms.gov/fhir/mct/Measure/QiCoreProfileValidation",
+  "version": "1.0.0",
+  "name": "QiCoreProfileValidation",
+  "title": "QiCoreProfileValidation FHIR",
+  "status": "active",
+  "experimental": true,
+  "date": "2022-12-12",
+  "publisher": "CMS",
+  "contact": [ {
+    "telecom": [ {
+      "system": "url",
+      "value": "https://www.cms.gov"
+    } ]
+  } ],
+  "description": "A cohort measure with supplemental data elements for all profiles in QICore",
+  "approvalDate": "2022-12-12",
+  "lastReviewDate": "2022-12-12",
+  "effectivePeriod": {
+    "start": "2021-01-01",
+    "end": "2021-12-31"
+  },
+  "topic": [ {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "57024-2",
+      "display": "Health Quality Measure Document"
+    } ]
+  } ],
+  "library": [ "http://hl7.org/fhir/us/cqfmeasures/Library/QiCoreProfileValidation" ],
+  "scoring": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+      "code": "cohort",
+      "display": "Cohort"
+    } ]
+  },
+  "type": [ {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-type",
+      "code": "process"
+    } ]
+  } ],
+  "improvementNotation": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+      "code": "decrease",
+      "display": "Decreased score indicates improvement"
+    } ]
+  },
+  "group": [ {
+    "population": [ {
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "initial-population",
+          "display": "Initial Population"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql-identifier",
+        "expression": "Initial Population"
+      }
+    } ]
+  } ],
+  "supplementalData": [ {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE AdverseEvent"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE AllergyIntolerance"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE BodyStructure"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE CarePlan"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE CareTeam"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Claim"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Communication"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE CommunicationNotDone"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE CommunicationRequest"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Condition"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Coverage"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Device"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE DeviceNotRequested"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE DeviceRequest"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE DeviceUseStatement"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE DiagnosticReportLab"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE DiagnosticReportNote"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Encounter"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE EncounterPerformed"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE FamilyMemberHistory"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Flag"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Goal"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE ImagingStudy"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Immunization"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE ImmunizationEvaluation"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE ImmunizationNotDone"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE ImmunizationRecommendation"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE ImplantableDevice"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Location"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Medication"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE MedicationAdministration"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE MedicationAdministrationNotDone"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE MedicationDispense"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE MedicationDispenseDeclined"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE MedicationNotRequested"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE MedicationRequest"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE MedicationStatement"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE NutritionOrder"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Observation"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE ObservationCancelled"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Organization"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Patient"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Practitioner"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE PractitionerRole"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Procedure"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE ProcedurePerformed"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE ProcedureNotDone"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE RelatedPerson"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE ServiceNotRequested"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE ServiceRequest"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Specimen"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Substance"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Task"
+    }
+  }, {
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE TaskRejected"
+    }
+  } ]
+}
