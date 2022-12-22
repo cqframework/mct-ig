@@ -1,0 +1,40 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113762.1.4.1029.205",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.205",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113762.1.4.1029.205"
+  } ],
+  "version": "20210220",
+  "name": "NeonatalIntensiveCareUnit(NICU)",
+  "title": "Neonatal Intensive Care Unit (NICU)",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "identifier": "20220505",
+    "timestamp": "2022-08-16T11:47:47-06:00",
+    "contains": [ {
+      "system": "https://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html",
+      "version": "2020",
+      "code": "1039-7",
+      "display": "Neonatal Critical Care (Level II/III)"
+    }, {
+      "system": "https://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html",
+      "version": "2020",
+      "code": "1040-5",
+      "display": "Neonatal Critical Care (Level III)"
+    }, {
+      "system": "https://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html",
+      "version": "2020",
+      "code": "1269-0",
+      "display": "Neonatal Critical Care (Level IV)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2021-09",
+      "code": "405269005",
+      "display": "Neonatal intensive care unit (environment)"
+    } ]
+  }
+}
