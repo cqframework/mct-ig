@@ -198,59 +198,12 @@ define MedicationNotRequested:
     where R.status = 'completed'
       and R.doNotPerform is true
 
-/*
-define "Antithrombotic Not Given at Discharge":
-  ["MedicationRequest": medication in "Antithrombotic Therapy"] NoAntithromboticDischarge
-    where NoAntithromboticDischarge.doNotPerform is true
-			and (NoAntithromboticDischarge.reasonCode in "Medical Reason"
-				or NoAntithromboticDischarge.reasonCode in "Patient Refusal")
-      and exists (NoAntithromboticDischarge.category C where FHIRHelpers.ToConcept(C) ~ FC."Community" or FHIRHelpers.ToConcept(C) ~ FC."Discharge")
-      and NoAntithromboticDischarge.status = 'completed'
-      and NoAntithromboticDischarge.intent = 'order'
-
-define "Antithrombotic Not Given at Discharge":
-  QICore.MedicationNotRequested NoAntithromboticDischarge
-    where NoAntithromboticDischarge.medication in "Antithrombotic Therapy"
-      and (NoAntithromboticDischarge.reasonCode in "Medical Reason"
-        or NoAntithromboticDischarge.reasonCode in "Patient Refusal")
-      and (NoAntithromboticDischarge.isCommunity() or NoAntithromboticDischarge.isDischarge())
-      and NoAntithromboticDischarge.intent = 'order'
-
-define "Antithrombotic Not Given at Discharge":
-  ["MedicationNotRequested": medication in "Antithrombotic Therapy"] NoAntithromboticDischarge
-    where (NoAntithromboticDischarge.reasonCode in "Medical Reason"
-        or NoAntithromboticDischarge.reasonCode in "Patient Refusal")
-      and (NoAntithromboticDischarge.isCommunity() or NoAntithromboticDischarge.isDischarge())
-      and NoAntithromboticDischarge.intent = 'order'
-*/
-
 // QICoreMedicationRequest
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest
 define MedicationRequest:
   [MedicationRequest] R
     where R.status in { 'active', 'on-hold', 'completed', 'draft' }
       and R.doNotPerform is not true
-
-/*
-define "Antithrombotic Therapy at Discharge":
-  ["MedicationRequest": medication in "Antithrombotic Therapy"] Antithrombotic
-    where exists (Antithrombotic.category C where FHIRHelpers.ToConcept(C) in { Global."Community", Global."Discharge" })
-      and Antithrombotic.status in { 'active', 'completed' }
-      and Antithrombotic.intent.value = 'order'
-
-define "Antithrombotic Therapy at Discharge":
-  QICore.MedicationRequest Antithrombotic
-    where Antithrombotic.medication in "Antithrombotic Therapy"
-      and (Antithrombotic.isCommunity() or Antithrombotic.isDischarge())
-      and Antithrombotic.status in { 'active', 'completed' }
-      and Antithrombotic.intent = 'order'
-
-define "Antithrombotic Therapy at Discharge":
-  [MedicationRequest: medication in "Antithrombotic Therapy"] Antithrombotic
-    where (Antithrombotic.isCommunity() or Antithrombotic.isDischarge())
-      and Antithrombotic.status in { 'active', 'completed' }
-      and Antithrombotic.intent = 'order'
-*/
 
 // QICoreMedicationStatement
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationstatement
@@ -276,15 +229,77 @@ define ObservationCancelled:
 
 // FHIR Vital Signs
 
+// Respiratory rate - 9279-1
+// @profile: http://hl7.org/fhir/StructureDefinition/resprate
+define RespiratoryRate:
+  [Observation: QICoreCommon."Respiratory rate"] O
+
+// Heart rate - 8867-4
+// @profile: http://hl7.org/fhir/StructureDefinition/heartrate
+define HeartRate:
+  [Observation: QICoreCommon."Heart rate"] O
+
+// Oxygen saturation - 2708-6
+// @profile: http://hl7.org/fhir/StructureDefinition/oxygensat
+define OxygenSaturation:
+  [Observation: QICoreCommon."Oxygen saturation"] O
+
+// Body temperature - 8310-5
+// @profile: http://hl7.org/fhir/StructureDefinition/bodytemp
+define BodyTemperature:
+  [Observation: QICoreCommon."Body temperature"] O
+
+// Body height - 8302-2
+// @profile: http://hl7.org/fhir/StructureDefinition/bodyheight
+define BodyHeight:
+  [Observation: QICoreCommon."Body height"] O
+
+// Head circumference - 9843-4
+// @profile: http://hl7.org/fhir/StructureDefinition/headcircum
+define HeadCircumference:
+  [Observation: QICoreCommon."Head circumference"] O
+
+// Body weight - 29463-7
+// @profile: http://hl7.org/fhir/StructureDefinition/bodyweight
+define BodyWeight:
+  [Observation: QICoreCommon."Body weight"] O
+
+// Body mass index - 39156-5
+// @profile: http://hl7.org/fhir/StructureDefinition/bmi
+define BodyMassIndex:
+  [Observation: QICoreCommon."Body mass index"] O
+
+// Blood pressure systolic and diastolic - 85354-9
+// Systolic blood pressure - 8480-6
+// Diastolic blood pressure - 8462-4
+// @profile: http://hl7.org/fhir/StructureDefinition/bp
+define BloodPressure:
+  [Observation: QICoreCommon."Blood pressure"] O
+
 // USCore Smoking Status
+// @profile: http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus
+define SmokingStatus:
+  [Observation: QICoreCommon."Smoking status"] O
 
 // USCore Laboratory Result
+// @profile: http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
+define LaboratoryResult:
+  [Observation: category ~ QICoreCommon."Laboratory"] O
 
-// USCore Pediatric BMI for Age
+// USCore Pediatric BMI for Age - 59576-9
+// @profile: http://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age
+define PediatricBMIForAge:
+  [Observation: QICoreCommon."Pediatric BMI for age"]
 
-// USCore Pediatric Weight for Height
+// USCore Pediatric Weight for Height - 77606-2
+// @profile: http://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height
+define PediatricWeightForHeight:
+  [Observation: QICoreCommon."Pediatric weight for height"]
 
-// USCore Pulse Oximetry
+// USCore Pulse Oximetry - 59408-5
+// @profile: http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry
+define PulseOximetry:
+  [Observation: QICoreCommon."Pulse oximetry"]
 
 // QICoreOrganization
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization
@@ -316,48 +331,11 @@ define ProcedurePerformed:
   Procedure P
     where P.status = 'completed'
 
-/*
-define "Flexible Sigmoidoscopy Performed":
- [Procedure: "Flexible Sigmoidoscopy"] FlexibleSigmoidoscopy
-	 where FlexibleSigmoidoscopy.status = 'completed'
-		 and Global."Normalize Interval"(FlexibleSigmoidoscopy.performed) ends 5 years or less on or before end of "Measurement Period"
-
-define "Flexible Sigmoidoscopy Performed":
-  QICore.ProcedurePerformed FlexibleSigmoidoscopy
-    where FlexibleSigmoidoscopy.code in "Flexible Sigmoidoscopy"
-      and FlexibleSigmoidoscopy.performed.toInterval() ends 5 years or less on or before end of "Measurement Period"
-*/
-
 // QICoreProcedureNotDone
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurenotdone
 define ProcedureNotDone:
   [Procedure] P
     where P.status = 'not-done'
-
-/*
-define "No VTE Prophylaxis Device Applied":
-  ["Procedure": "Device Application"] DeviceApplied
-    let DeviceNotDoneTiming: Global.GetExtension(DeviceApplied, 'qicore-recorded').value
-    where (DeviceApplied.usedCode in "Intermittent pneumatic compression devices (IPC)"
-      or DeviceApplied.usedCode in "Venous foot pumps (VFP)"
-      or DeviceApplied.usedCode in "Graduated compression stockings (GCS)"
-    )
-      and  DeviceApplied.status = 'not-done'
-    return {id: DeviceApplied.id, requestStatusReason: DeviceApplied.statusReason, authoredOn: DeviceNotDoneTiming}
-
-define "No VTE Prophylaxis Device Applied":
-  QICore.ProcedureNotDone DeviceApplied
-    where DeviceApplied.code in "Device Application"
-      and (DeviceApplied.usedCode in "Intermittent pneumatic compression devices (IPC)"
-        or DeviceApplied.usedCode in "Venous foot pumps (VFP)"
-        or DeviceApplied.usedCode in "Graduated compression stockings (GCS)")
-    return {
-      id: DeviceApplied.id,
-      requestStatusReason: DeviceApplied.statusReason,
-      authoredOn: DeviceApplied.recorded()
-    }
-
-*/
 
 // QICoreRelatedPerson
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-relatedperson
@@ -371,49 +349,12 @@ define ServiceNotRequested:
     where SR.status = 'completed'
       and SR.doNotPerform is true
 
-/*
-define "No VTE Prophylaxis Device Order":
-  (["ServiceRequest": "Venous foot pumps (VFP)"]
-    union ["ServiceRequest": "Intermittent pneumatic compression devices (IPC)"]
-    union ["ServiceRequest": "Graduated compression stockings (GCS)"]
-  ) DeviceOrder
-    where DeviceOrder.status = 'completed'
-      and DeviceOrder.doNotPerform is true
-
-define "No VTE Prophylaxis Device Order":
-  QICore.ServiceNotRequested DeviceOrder
-    where DeviceOrder.code in "Venous foot pumps (VFP)"
-      or DeviceOrder.code in "Intermittent pneumatic compression devices (IPC)"
-      or DeviceOrder.code in "Graduated compression stockings (GCS)"
-*/
-
 // QICoreServiceRequest
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicerequest
 define ServiceRequest:
   [ServiceRequest] SR
     where SR.status in { 'draft', 'active', 'on-hold', 'completed' }
       and SR.doNotPerform is not true
-
-/*
-define "Intervention Comfort Measures":
-  (["ServiceRequest": "Comfort Measures"] P
-    where P.intent = 'order'
-  )
-    union (["Procedure": "Comfort Measures"] InterventionPerformed
-      where InterventionPerformed.status in {'completed', 'in-progress'}
-    )
-
-define "Intervention Comfort Measures":
-  (QICore.ServiceRequest SR
-    where SR.code in "Comfort Measures"
-      and SR.intent = 'order'
-  )
-    union (
-      QICore.Procedure InterventionPerformed
-        where InterventionPerformed.code in "Comfort Measures"
-          and InterventionPerformed.status in { 'completed', 'in-progress' }
-    )
-*/
 
 // QICoreSpecimen
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-specimen

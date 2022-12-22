@@ -20,6 +20,7 @@ codesystem "ConditionClinicalStatusCodes": 'http://terminology.hl7.org/CodeSyste
 codesystem "ConditionVerificationStatusCodes": 'http://terminology.hl7.org/CodeSystem/condition-ver-status'
 codesystem "AllergyIntoleranceClinicalStatusCodes": 'http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical'
 codesystem "AllergyIntoleranceVerificationStatusCodes": 'http://terminology.hl7.org/CodeSystem/allergyintolerance-verification'
+codesystem "ObservationCategoryCodes": 'http://terminology.hl7.org/CodeSystem/observation-category'
 
 code "Birthdate": '21112-8' from "LOINC" display 'Birth date'
 code "Dead": '419099009' from "SNOMEDCT" display 'Dead'
@@ -64,6 +65,31 @@ code "CM": 'CM' from "Diagnosis Role" display 'Comorbidity diagnosis'
 code "pre-op": 'pre-op' from "Diagnosis Role" display 'pre-op diagnosis'
 code "post-op": 'post-op' from "Diagnosis Role" display 'post-op diagnosis'
 code "billing": 'billing' from "Diagnosis Role" display 'billing diagnosis'
+
+// Observation category codes
+code "Social History": 'social-history' from ObservationCategoryCodes
+code "Vital Signs": 'vital-signs' from ObservationCategoryCodes
+code "Imaging": 'imaging' from ObservationCategoryCodes
+code "Laboratory": 'laboratory' from ObservationCategoryCodes
+code "Procedure": 'procedure' from ObservationCategoryCodes
+code "Survey": 'survey' from ObservationCategoryCodes
+code "Exam": 'exam' from ObservationCategoryCodes
+code "Therapy": 'therapy' from ObservationCategoryCodes
+code "Activity": 'activity' from ObservationCategoryCodes
+
+code "Respiratory rate": '9279-1' from LOINC
+code "Heart rate": '8867-4' from LOINC
+code "Oxygen saturation": '2708-6' from LOINC
+code "Body temperature": '8310-5' from LOINC
+code "Body height": '8302-2' from LOINC
+code "Head circumference": '9843-4' from LOINC
+code "Body weight": '29463-7' from LOINC
+code "Body mass index": '39156-5' from LOINC
+code "Blood pressure": '85354-9' from LOINC
+code "Smoking status": '72166-2' from LOINC
+code "Pediatric BMI for age": '59576-9' from LOINC
+code "Pediatric weight for height": '77606-2' from LOINC
+code "Pulse oximetry": '59408-5' from LOINC
 
 context Patient
 
