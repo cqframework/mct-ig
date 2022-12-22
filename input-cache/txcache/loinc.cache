@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "57024-2",
+  "display" : "Health Quality Measure Document"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
+v: {
+  "display" : "Health Quality Measure document",
+  "code" : "57024-2",
+  "system" : "http://loinc.org"
+}
+-------------------------------------------------------------------------------------
