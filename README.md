@@ -146,6 +146,8 @@ The `input/tests/<artifact-resource-type-name>/<artifact-resource-name>` folders
 
 The `input/tests/<artifact-resource-type-name>/<artifact-resource-name>/<patient-id>` folders contain each individual test case, per patient, and the resource files are expected to contain a Patient with the given id.
 
+For more information on generating test data for the example Measures contained in this project, please refer to the Test Data Generation section of the [specification page](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/specification.md#test-data-generation).
+
 The `input/vocabulary/codesystem` folder contains code systems defined in this IG.
 
 The `input/vocabulary/codesystem/external` folder contains code systems required by the content but defined in other sources.
