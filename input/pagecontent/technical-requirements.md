@@ -8,13 +8,65 @@ This Technical Requirements Document (TRD) documents both the high-level system 
 
 ##### Background
 
+_Situation_
+
+The Promoting Interoperability Program Eligible incentivizes eligible hospitals and providers to demonstrate meaningful use of certified health information technology (HIT) to improve quality, safety, efficiency, and equity of the American health care system. Hospitals participating in the inpatient hospital quality reporting program (IHQR) are encouraged to voluntarily submit 4, electronic clinical quality measures (eCQM) for 3 of 4 quarters.  
+
+_Problem_
+
+However, the process of electronically sharing population-level data is labor-intensive and cumbersome, hampered by a lack of standardization of data models and fields. In order to calculate eCQMs today, providers must map their EHR propriety data models to the Quality Data Model and upload their results as a Quality Reporting Document Architecture Category I formatted file onto the Hospital Quality Reporting portal, as well as participate in post submission audits. 
+
+In order to reduce the burden of data collection and improve interoperability, CMS aims to transition away from traditional electronic clinical quality measurement (eCQM) to Fast Healthcare Interoperability Resources (FHIR)– specified measures, that leverage certified health information technology or digital quality measurement (dQMs)  
+
+As per the 21st Century Cures Act Final Rule, developers of certified health information technology (HIT) must ensure their technology supports a variety of use cases, including the calculation of quality measure. **Technology certified by the Office of National Coordinator ONC must support “standardized API for patient and population services.”** Certified HIT will  
+
+1. support Fast Healthcare Interoperability Resources (FHIR) Release 4.0.2, 
+2. responds to request for data elements mandated in the USCD v1 
+3. enables access to patient-level data across a patient population.  
+
+DQMs will allow eligible providers and hospitals to seamlessly exchange patient and population level data for the calculation and reporting of quality measure scores, using a measure calculation tool (MCT). 
+
+An MCT is an open-source, end-to-end software platform, designed to interface with eligible hospital and clinicians FHIR API, gather data requirements for measure calculation from a knowledge repository, request and validate data from a provider API, calculate measure score(s) using clinical query language, and produce electronic report(s). CMS has contracted Yale-CORE to orchestrate the development of an early MCT prototype and demonstrate its ability to calculate a measure score for single-FHIR specified measures.  
+
+_Objective_
+
+To develop a prototype of the MCT engine that will be able to demonstrate key features of the enterprise level MCT platform. These features will be defined and enumerated as user stories, all features not selected for development and testing for prototype will remain in the backlog.  
+
+_Stakeholders_
+
+The following comprises the internal and external stakeholders whose requirements are represented by this document: 
+
+1. Bridget Calvert 
+2. Joel Andress 
+3. ISG – Tom Lantz and Anne Weinstein 
+4. HQR – Michellene Roberts- adhoc 
+5. Bill Lanken 
+
 ##### General Overivew
 
 ##### Assumptions/Constraints/Risks
 
 ###### Assumptions
 
+1. Calculate a single hospital-level-process measure 
+2. Have a User interface similar to Hospital Quality Reporting webpage 
+3. MCT Host is agnostic 
+4. It will connect to US core Compliant FHIR Server for mock reporting system 
+5. It will connect to server with DEQM receiver capabilities as a mock receiving system 
+6. It will use smart on FHIR  or O Auth for authorization 
+7. The prototype will use synthetic data 
+8. It will contain internal bundles of  knowledge repository (measure specification support) 
+9. It will contain internal bundles terminology service 
+10. TBD: use bulk FHIR 
+11. Hospitals with multiple locations operating under a single CCN will submit reports for all locations 
+12. Hospitals user can select measures for reporting (see 1st assumption) 
+13. TBD: connect to Compliant FHIR server that has aggregated patient data 
+14. TBD: measure calculation occurs on data in transit 
+15. Debatable? MCT does not store data it exchanges data 
+
 ###### Constraints
+
+1. The Measure Calculation Tool solution must be open source
 
 ###### Risks
 
