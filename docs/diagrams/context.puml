@@ -1,0 +1,29 @@
+@startuml "context"
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Context.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Context.puml
+
+skinparam backgroundColor #FFFFFF
+
+title DRAFT: MCT Context Diagram
+
+Person(ru, "Reporting User")
+
+System(rc, "Reporting Client", "User application for gathering, reviewing, and submitting data and calculation results")
+System(mct, "Measure Calculation Tool", "Measure calculation tool providing data gather, validation, and calculation capabilities")
+System(kr, "Knowledge Repository", "Measure knowledge repository providing access to eCQM specifications")
+System(ts, "Terminology Service", "Measure terminology service providing access to terminologies used by eCQM specifications")
+System(oauth, "OAuth", "Backend OAuth endpoint providing authentication and authorization services")
+System(provider, "Provider Site", "Provider clinical system exposing a FHIR endpoint")
+System(rs, "Receiving System", "Receiving system that data and calculation results are submitted to")
+
+Rel_D(mct, kr, "Gets measure specs from")
+Rel_D(mct, ts, "Gets vocabulary from")
+Rel_D(mct, provider, "Gathers data from")
+Rel_D(mct, oauth, "Authenticates and authorizes with")
+Rel_D(mct, rs, "Submits data and results to")
+
+Rel(ru, rc, "Uses")
+Rel(rc, mct, "Interfaces with")
+
+@enduml

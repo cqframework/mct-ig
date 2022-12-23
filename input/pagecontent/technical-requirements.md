@@ -2,6 +2,8 @@
 
 #### Introduction
 
+This Technical Requirements Document (TRD) documents both the high-level system design and the low-level detailed design specifications. In addition, this TRD describes design goals and considerations, specifications, and an overview of the system architecture. It also describes the information architecture and data structures associated with the system, in addition to human-machine interface and operational scenarios. The high-level system design is further decomposed into low-level detailed design specifications for each system component. Design documents are incrementally and iteratively produced during the system development life cycle, based on the circumstances of the information technology (IT) project and the system development methodology used for developing the system. This document is intended for technical stakeholders involved in the implementation of this system including developers, project managers, users, testers, and documentation writers. Some portions of this document, such as the user interface (UI), may be useful to share with the client/user and other stakeholders whose input/approval into the UI is needed.
+
 #### General Overview and Design Guidelines
 
 ##### Background
@@ -24,17 +26,46 @@
 
 ##### Development Methods and Contingencies
 
+Scrum is an Agile methodology that allows the project team to focus on delivering the highest business value in the shortest time. It allows the project team to rapidly and repeatedly inspect actual working software (every 2 weeks). The business sets the priorities, and teams self-organize to determine the best way to deliver the highest priority features. Every 2 weeks any stakeholder can see real working software and decide to release it as is or continue to enhance it for another sprint. This rapid and iterative approach has been quickly gaining acceptance within the informatics community (Kannan et al., 2019).
+
+This project also used a “Continuous Delivery” pipeline to support project development as has been commonly employed by industry leaders like Amazon, Netflix, eBay, Comcast, and Uber for over 10 years. This approach consistently reduces:
+
+Environment dependency risks through the use of lightweight virtual machines (Containers)
+Environment hosting risks by using automated and immutable servers
+Testing risks by using automated testing with Continuous Quality Improvement
+Deployment risks by using incremental rollout and instantaneous rollback
+Versioning risks by using microservices and volatility decomposition
+Overall project-related risks by implementing both a high-level overview (e.g., Waterfall) executed in Agile development cycles
+
 ##### User Interface Approach
 
 ##### Architectural Strategies
 
+This project uses the C4 modeling (Brown, n.d.) as an approach to define and document the system architecture: Context, Container, Component, Code (C4). More information on C4 modeling and its use is publicly available (https://c4model.com/)
+
+This project will also use industry standard, open source, and widely available development tools and technologies, including:
+
+* [JavaScript](https://en.wikipedia.org/wiki/ECMAScript)
+* [React](https://reactjs.org/)
+* [Java 11 (Adopt Open JDK and OpenJ9)](https://adoptopenjdk.net/?variant=openjdk11&jvmVariant=openj9)
+* [Github](http://github.com)
+
 ###### Standards Compliance
+
+As described in the design Constraints section (above), this project’s approach is to choose standards-based approaches, whenever possible, between the Measure Calculation Tool and the clinical systems with which it interacts. However, when building functionality for the project, there are two considerations that the project must address:
+
+1. **Standards Gaps** - When an existing specification does not support the functionality required
+2. **Adoption Gaps** - When a standard specification exists, but is not widely implemented
 
 ##### Performance Engineering
 
 #### System Architecture and Architecture Design
 
 ##### Logical View
+
+The following diagram provides the context of the proposed measure calculation tool in the environment in which it is intended to function. The reporting user is shown interacting with the system through the Reporting Client, which interacts with the Measure Calcuation Tool to gather data, perform validation and measure calculation, and submit the resulting data and scores to the receiving system.
+
+![MCT Context Diagram](images/context.png)]
 
 ##### Software Architecture
 

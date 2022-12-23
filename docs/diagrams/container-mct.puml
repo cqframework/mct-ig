@@ -1,0 +1,31 @@
+@startuml "container-mct"
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Context.puml
+
+skinparam backgroundColor #FFFFFF
+
+title DRAFT: MCT Container Diagram
+
+System(rc, "Reporting Client", "User application for gathering, reviewing, and submitting data and calculation results")
+System(kr, "Knowledge Repository", "Measure knowledge repository providing access to eCQM specifications")
+System(ts, "Terminology Service", "Measure terminology service providing access to terminologies used by eCQM specifications")
+System(provider, "Provider Site", "Provider clinical system exposing a FHIR endpoint")
+System(rs, "Receiving System", "Receiving system that data and calculation results are submitted to")
+
+System_Boundary(mct, "MCT") {
+    Container(coord, "Coordinator", "Coordinates required interactions")
+    Container(evaluator, "Evaluator", "Evaluates measure specifications")
+    Container(translator, "Translator", "Translates CQL to executable ELM")
+    Container(engine, "Engine", "Executes translated ELM")
+    Rel(rc, coord, "Invokes calculation requests on")
+    Rel(coord, kr, "Retrieves measure specifications and data requirements from")
+    Rel(coord, ts, "Retrieves terminology from")
+    Rel(coord, provider, "Gathers data from")
+    Rel(coord, evaluator, "Requests calculation from")
+    Rel(coord, rs, "Submits results to")
+    Rel(evaluator, translator, "Requests translation from")
+    Rel(evaluator, engine, "Requests execution from")
+}
+
+@enduml
