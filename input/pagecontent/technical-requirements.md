@@ -119,6 +119,12 @@ The following diagram provides the context of the proposed measure calculation t
 
 ![MCT Context Diagram](images/context.png)]
 
+###### MCT Container
+
+The following diagram illustrates the container level of the measure calculation tool, depicting the interactions it has with external systems, as well as internal containers:
+
+![MCT Container Diagram](images/container-mct.png)
+
 ##### Software Architecture
 
 ##### Application Architecture
