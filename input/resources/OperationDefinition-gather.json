@@ -50,7 +50,7 @@
             "name": "return",
             "use": "out",
             "min": 0,
-            "max": "1",
+            "max": "*",
             "documentation": "This operation returns a single [Parameters](https://www.hl7.org/fhir/parameters.html) resource with either [MeasureReport](https://www.hl7.org/fhir/measurereport.html) resources or an [OperationOutcome](https://www.hl7.org/fhir/operationoutcome.html) if a runtime error is encountered. The MeasureReport for each facility is returned in a `Parameters.parameter` element where the Location id is the `Parameters.parameter.name`.",
             "type": "MeasureReport"
         }
