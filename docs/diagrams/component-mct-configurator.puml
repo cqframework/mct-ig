@@ -1,0 +1,17 @@
+@startuml "component-mct-configurator"
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Context.puml
+
+skinparam backgroundColor #FFFFFF
+
+title DRAFT: MCT Configurator Component Diagram
+
+System(rc, "Reporting Client", "User application for gathering, reviewing, and submitting data and calculation results")
+
+Container_Boundary(mct, "MCT") {
+    Component(config, "Configurator", "Maintains configuration")
+    Rel(rc, config, "Retrieves configuration information from")
+}
+
+@enduml

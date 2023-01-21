@@ -1,0 +1,43 @@
+@startuml "component-mct-coordinator"
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Context.puml
+
+skinparam backgroundColor #FFFFFF
+
+title DRAFT: MCT Coordinator Component Diagram
+
+System(rc, "Reporting Client", "User application for gathering, reviewing, and submitting data and calculation results")
+System(kr, "Knowledge Repository", "Measure knowledge repository providing access to eCQM specifications")
+System(ts, "Terminology Service", "Measure terminology service providing access to terminologies used by eCQM specifications")
+System(provider, "Provider Site", "Provider clinical system exposing a FHIR endpoint")
+System(rs, "Receiving System", "Receiving system that data and calculation results are submitted to")
+
+Container_Boundary(mct, "MCT") {
+    Component(coord, "Coordinator", "Coordinates required interactions")
+    Component(evaluator, "Evaluator", "Evaluates measure specifications")
+    Component(translator, "Translator", "Translates CQL to executable ELM")
+    Component(engine, "Engine", "Executes translated ELM")
+    Component(krinterface, "Knowledge Repository Interface")
+    Component(drp, "Data Requirements Processor")
+    Component(tsinterface, "Terminology Service Interface")
+    Component(providerinterface, "Provider Interface")
+    Component(rsinterface, "Receiver Interface")
+    Rel(rc, coord, "Invokes calculation requests on")
+    Rel(coord, krinterface, "Retrieves measure specifications and data requirements from")
+    Rel(krinterface, drp, "Performs data requirements processing")
+    Rel(krinterface, translator, "Requests translation from")
+    Rel(drp, engine, "Requests execution from")
+    Rel(coord, tsinterface, "Retrieves terminology from")
+    Rel(coord, providerinterface, "Gathers data from")
+    Rel(coord, evaluator, "Requests calculation from")
+    Rel(coord, rsinterface, "Submits results to")
+    Rel(evaluator, translator, "Requests translation from")
+    Rel(evaluator, engine, "Requests execution from")
+    Rel(krinterface, kr, "Retrieves measure specifications and data requirements from")
+    Rel(tsinterface, ts, "Retrieves terminology from")
+    Rel(providerinterface, provider, "Gathers data from")
+    Rel(rsinterface, rs, "Submits results to")
+}
+
+@enduml
