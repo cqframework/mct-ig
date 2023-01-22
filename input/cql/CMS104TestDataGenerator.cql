@@ -62,6 +62,12 @@ define function BuildCoding(system String, code String):
         code: FHIR.code { value: code }
     }
 
+define function BuildExtension(url String, value Choice<FHIR.base64Binary,FHIR.boolean,FHIR.canonical,FHIR.code,FHIR.date,FHIR.dateTime,FHIR.decimal,FHIR.id,FHIR.instant,FHIR.integer,FHIR.markdown,FHIR.oid,FHIR.positiveInt,FHIR.string,FHIR.time,FHIR.unsignedInt,FHIR.uri,FHIR.url,FHIR.uuid,FHIR.Address,FHIR.Age,FHIR.Annotation,FHIR.Attachment,FHIR.CodeableConcept,FHIR.Coding,FHIR.ContactPoint,FHIR.Count,FHIR.Distance,FHIR.Duration,FHIR.HumanName,FHIR.Identifier,FHIR.Money,FHIR.Period,FHIR.Quantity,FHIR.Range,FHIR.Ratio,FHIR.Reference,FHIR.SampledData,FHIR.Signature,FHIR.Timing,FHIR.ContactDetail,FHIR.Contributor,FHIR.DataRequirement,FHIR.Expression,FHIR.ParameterDefinition,FHIR.RelatedArtifact,FHIR.TriggerDefinition,FHIR.UsageContext,FHIR.Dosage,FHIR.Meta>):
+    FHIR.Extension {
+        url: FHIR.uri { value: url },
+        value: value
+    }
+
 define function BuildPatient(id String, firstName String, lastName String, gender String, birthDate Date):
     FHIR.Patient {
         id: FHIR.id { value: id },
@@ -119,4 +125,49 @@ define function BuildeEncounter(id String, status String, type String, subject S
                 dischargeDisposition: BuildCodeableConcept(dischargeSystem, dischargeCode)
             }
             else null
+    }
+
+define function BuildServiceRequest(id String, status String, intent String, subject String, authoredOn DateTime):
+    FHIR.ServiceRequest {
+        id: FHIR.id { value: id },
+        meta: BuildMeta('http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicerequest'),
+        status: FHIR.ServiceRequestStatus { value: status },
+        intent: FHIR.ServiceRequestIntent { value: intent },
+        subject: FHIR.Reference { reference: FHIR.string { value: subject } },
+        authoredOn: FHIR.dateTime { value: authoredOn }
+    }
+
+define function BuildProcedure(id String, recorded DateTime, status String, codeSystem String, codeCode String, subject String, performed Choice<DateTime, Interval<DateTime>>):
+    FHIR.Procedure {
+        id: FHIR.id { value: id },
+        meta: BuildMeta('http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure'),
+        extension: List<FHIR.Extension> {
+            BuildExtension('http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-recorded', FHIR.dateTime{ value: recorded })
+        },
+        status: FHIR.ProcedureStatus { value: status },
+        code: BuildCodeableConcept(codeSystem, codeCode),
+        subject: FHIR.Reference { reference: FHIR.string { value: subject } },
+        performed: 
+            if performed is DateTime then FHIR.dateTime { value: performed } 
+            else FHIR.Period { start: FHIR.dateTime { value: start of performed }, end: FHIR.dateTime { value: end of performed } }
+    }
+
+define function BuildMedicationRequest(id String, status String, intent String, isCommunity Boolean, isDischarge Boolean, doNotPerform Boolean, medication Choice<String, FHIR.CodeableConcept>, subject String, authoredOn DateTime, requester String, reasonCodeSystem String, reasonCodeCode String):
+    FHIR.MedicationRequest {
+        id: FHIR.id { value: id },
+        meta: BuildMeta('http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest'),
+        status: FHIR.MedicationRequestStatus { value: status },
+        intent: FHIR.MedicationRequestIntent { value: intent },
+        category: List<FHIR.CodeableConcept> {
+            BuildCodeableConcept('http://hl7.org/fhir/ValueSet/medicationrequest-category', 
+                if isCommunity then 'community' else if isDischarge then 'discharge' else 'inpatient')
+        },
+        doNotPerform: FHIR.boolean { value: doNotPerform },
+        medication: if medication is String then FHIR.Reference { reference: FHIR.string { value: medication } } else medication,
+        subject: FHIR.Reference { reference: FHIR.string { value: subject } },
+        authoredOn: FHIR.dateTime { value: authoredOn },
+        requester: FHIR.Reference { reference: FHIR.string { value: requester } },
+        reasonCode: List<FHIR.CodeableConcept> {
+            BuildCodeableConcept(reasonCodeSystem, reasonCodeCode)
+        }
     }

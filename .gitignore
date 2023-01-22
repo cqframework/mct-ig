@@ -11,8 +11,9 @@ output
 /input-cache/tooling*
 
 # Ignore test bundles, etc. generated via _refresh #
-/input/tests/*Example/example/*-bundle.json
+/input/tests/*
 /input/resources/device/*
+/bundles/*
 
 # Windows generated files #
 ###########################
