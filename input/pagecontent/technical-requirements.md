@@ -24,9 +24,9 @@ As per the 21st Century Cures Act Final Rule, developers of certified health inf
 2. responds to request for data elements mandated in the USCD v1 
 3. enables access to patient-level data across a patient population.  
 
-DQMs will allow eligible providers and hospitals to seamlessly exchange patient and population level data for the calculation and reporting of quality measure scores, using a measure calculation tool (MCT). 
+DQMs will allow eligible providers and hospitals to seamlessly exchange patient and population level data for the calculation and reporting of quality measure scores, using a Measure Calculation Tool (MCT). 
 
-An MCT is an open-source, end-to-end software platform, designed to interface with eligible hospital and clinicians FHIR API, gather data requirements for measure calculation from a knowledge repository, request and validate data from a provider API, calculate measure score(s) using clinical query language, and produce electronic report(s). CMS has contracted Yale-CORE to orchestrate the development of an early MCT prototype and demonstrate its ability to calculate a measure score for single-FHIR specified measures.  
+An MCT is an open-source, end-to-end software platform, designed to interface with eligible hospital and clinicians FHIR API, gather data requirements for measure calculation from a knowledge repository, request and validate data from a provider API, calculate measure score(s) using Clinical Quality Language, and produce electronic report(s). CMS has contracted Yale-CORE to orchestrate the development of an early MCT prototype and demonstrate its ability to calculate a measure score for single FHIR-specified measure.
 
 _Objective_
 
@@ -40,7 +40,7 @@ The following comprises the internal and external stakeholders whose requirement
 2. Joel Andress 
 3. ISG – Tom Lantz and Anne Weinstein 
 4. HQR – Michellene Roberts- adhoc 
-5. Bill Lanken 
+5. Bill Lakenen 
 
 ##### General Overivew
 
@@ -51,13 +51,13 @@ The following comprises the internal and external stakeholders whose requirement
 1. Calculate a single hospital-level-process measure 
 2. Have a User interface similar to Hospital Quality Reporting webpage 
 3. MCT Host is agnostic 
-4. It will connect to US core Compliant FHIR Server for mock reporting system 
+4. It will connect to US Core Compliant FHIR Server for mock reporting system 
 5. It will connect to server with DEQM receiver capabilities as a mock receiving system 
-6. It will use smart on FHIR  or O Auth for authorization 
+6. It will use smart on FHIR or OAuth for authentication and authorization 
 7. The prototype will use synthetic data 
 8. It will contain internal bundles of  knowledge repository (measure specification support) 
 9. It will contain internal bundles terminology service 
-10. TBD: use bulk FHIR 
+10. TBD: Use bulk FHIR
 11. Hospitals with multiple locations operating under a single CCN will submit reports for all locations 
 12. Hospitals user can select measures for reporting (see 1st assumption) 
 13. TBD: connect to Compliant FHIR server that has aggregated patient data 
@@ -71,6 +71,13 @@ The following comprises the internal and external stakeholders whose requirement
 ###### Risks
 
 ##### Alignment with Enterprise Architecture
+
+The Measure Calculation Tool is a standards-based implementation and uses industry standard software technologies and development approaches to ensure it can be used effectively by healthcare IT staff at hospitals and clinics throughout the United States. This includes:
+
+1. The software is developed using industry standard source control, namely Git via Github, following stable trunk methodology. All changes to the source code for all repositories are made through pull requests.
+2. The software is developed using industry standard software technologies, namely Java for backend systems and JavaScript for frontend applications.
+3. The software makes use of container technology to aid adoption, implementation, and integration.
+4. The software repositories are configured with continuous integration build and deployment.
 
 #### Design Considerations
 
@@ -109,7 +116,19 @@ As described in the design Constraints section (above), this project’s approac
 1. **Standards Gaps** - When an existing specification does not support the functionality required
 2. **Adoption Gaps** - When a standard specification exists, but is not widely implemented
 
+The standards involved in the specification, distribution, and implementation of FHIR-based quality measures include:
+
+1. Fast Healthcare Interoperability Resources (FHIR) version 4.0.1 (https://hl7.org/fhir/R4/)
+2. Clinical Quality Language (CQL) version 1.5.2 (https://cql.hl7.org/N1/)
+3. SMART-on-FHIR Backend Services version 2.0.0 (https://hl7.org/fhir/smart-app-launch/STU2/backend-services.html)
+4. US Core version 3.1.1 (https://hl7.org/fhir/us/core/STU3.1.1/)
+5. QI Core version 4.1.1 (https://hl7.org/fhir/us/qicore/STU4.1.1/)
+6. Quality Measure Implementation Guide version 3.0.0 (https://hl7.org/fhir/us/cqfmeasures/STU3/)
+7. Data Exchange for Quality Measures Implementation Guide version 3.1.0 (https://hl7.org/fhir/us/davinci-deqm/STU3.1/)
+
 ##### Performance Engineering
+
+Performance requirements, such as the defined scalability or responsiveness expectations for specific workloads, are a contributing factor to system design. Preliminary considerations of system performance include total time to complete data gather for a single patient and for a facility, total time to calculate a measure for a single patient and for a population, and total time to submit data and calculated scores to a receiving system. During the development process, the team will continue to surface specific response time goals.
 
 #### System Architecture and Design
 
@@ -202,6 +221,8 @@ Because measure calculation is being performed directly on patient-level data re
 ##### Performance
 
 #### System Design
+
+This section documents the system design from a use case and user story perspective.
 
 ##### Use Cases
 

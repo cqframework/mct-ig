@@ -20,7 +20,16 @@
       familiar with before reading the remainder of the IG.
     </li>
     <li>
-      <a href="specification.html">Detailed Specification</a>
+      <a href="technical-requirements.html">Technical Requirements</a> - documents the Measure Calculation Tool (MCT) system architecture and design and provides technical requirements, use cases, and supported user stories.
+    </li>
+    <li>
+      <a href="specification.html">Detailed Specification</a> - Provides detailed conformance requirements for the implementation of the Measure Calculation Tool
+    </li>
+    <li>
+      <a href="implementation-guide.html">Implementation Guide</a> - Provides documentation of the use of the Measure Calculation Tool from a healthcare IT staff perspective
+    </li>
+    <li>
+      <a href="user-guide.html">User Guide</a> - Provides documentation of the use of the Reporting Client from the reporting user perspective
     </li>
     <li>
       <a href="license.html">License</a>
