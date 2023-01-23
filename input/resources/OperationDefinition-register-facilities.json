@@ -1,0 +1,40 @@
+{
+    "resourceType": "OperationDefinition",
+    "id": "register-facilities",
+    "url": "http://cms.gov/fhir/mct/OperationDefinition/register-facilities",
+    "name": "MCT_Register_Facilities",
+    "title": "MCT $register-facilities operation",
+    "status": "draft",
+    "kind": "operation",
+    "description": "This operation is used to register facilities as a FHIR Location or Organization resource with contained FHIR Endpoint resources. If the facility already exists, it will be updated.",
+    "code": "register-facilities",
+    "system": true,
+    "type": false,
+    "instance": false,
+    "parameter": [
+        {
+            "name": "locations",
+            "use": "in",
+            "min": 0,
+            "max": "*",
+            "documentation": "The [Location](https://www.hl7.org/fhir/location.html) resources to be registered with the service.",
+            "type": "Location"
+        },
+        {
+            "name": "organization",
+            "use": "in",
+            "min": 0,
+            "max": "1",
+            "documentation": "The [Organization](https://www.hl7.org/fhir/organization.html) resource to be registered with the service.",
+            "type": "Organization"
+        },
+        {
+            "name": "return",
+            "use": "out",
+            "min": 0,
+            "max": "1",
+            "documentation": "This operation returns an [OperationOutcome](https://www.hl7.org/fhir/operationoutcome.html) resource detailing either the success or error(s) in the `issue.diagnostic` element.",
+            "type": "OperationOutcome"
+        }
+    ]
+}

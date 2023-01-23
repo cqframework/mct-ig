@@ -1,0 +1,33 @@
+{
+    "resourceType": "OperationDefinition",
+    "id": "unregister-facility",
+    "url": "http://cms.gov/fhir/mct/OperationDefinition/unregister-facility",
+    "name": "MCT_Unregister_Facility",
+    "title": "MCT $unregister-facility operation",
+    "status": "draft",
+    "kind": "operation",
+    "description": "This operation is used to unregister a facility defined as a FHIR Location or Organization resource. If the facility does not exist this operation will result in an error.",
+    "code": "unregister-facility",
+    "system": true,
+    "type": false,
+    "instance": false,
+    "parameter": [
+        {
+            "name": "facilityId",
+            "use": "in",
+            "min": 0,
+            "max": "1",
+            "documentation": "The reference to the [Location](https://www.hl7.org/fhir/location.html) or [Organization](https://www.hl7.org/fhir/organization.html) resource to be unregistered.",
+            "type": "string",
+            "searchType": "reference"
+        },
+        {
+            "name": "return",
+            "use": "out",
+            "min": 0,
+            "max": "1",
+            "documentation": "This operation returns an [OperationOutcome](https://www.hl7.org/fhir/operationoutcome.html) resource detailing either the success or error(s) in the `issue.diagnostic` element.",
+            "type": "OperationOutcome"
+        }
+    ]
+}
