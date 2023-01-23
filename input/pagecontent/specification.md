@@ -1,12 +1,71 @@
 ## Introduction
 
+This document provides detailed specifications for the Measure Calculation Tool.
+
 ### Use Case
 
 ### Prototype Sequence Diagram
 
+Reporting steps:
+1. Configure organization
+2. Configure facilities
+3. Configure measure(s)
+4. Configure terminology
+5. Run gather/evaluate
+6. Submit report
+
+#### Configure Organization
+
+Configuring the Organization involves providing a FHIR Organization resource that conforms to the [QICore Organization](https://hl7.org/fhir/us/qicore/StructureDefinition-qicore-organization.html) profile. For the purposes of the Measure Calculation Tool, the key information provided by the Organization resource is the CCN identifier for the provider organization.
+
+```json
+    "identifier": [{
+        "system": "urn:oid:2.16.840.1.113883.4.336",
+        "use": "secondary",
+        "value": "ACME-CCN"
+    }]
+```
+
+See the [ACME Organization Example](Organization-acme.html) for a complete example Organization resource.
+
+#### Configure Location
+
+Configuring the Location(s) involves providing a FHIR Location resource that conforms to the [QICore Location](https://hl7.org/fhir/us/qicore/StructureDefinition-qicore-location.html) profile. For the purposes of the Measure Calculation Tool, the key information provided by the Location resource is the FHIR endpoint for the provider location (facility). This information is provided using a contained Endpoint resource in the Location:
+
+```json
+    "contained": [{
+        "id": "acme-north-endpoint",
+        "resourceType": "Endpoint",
+        "status": "active",
+        "connectionType": {
+            "system": "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+            "code": "hl7-fhir-rest"
+        },
+        "payloadType": [{
+            "coding": [{
+                "system": "http://terminology.hl7.org/CodeSystem/endpoint-payload-type",
+                "code": "any"
+            }] 
+        }],
+        "payloadMimeType": [ "application/fhir+json" ],
+        "address": "http://acme.org/north/fhir"
+    }]
+```
+
+See the [ACME North Location Example](Location-acme-north.html) for a complete example Location resource including the contained Endpoint resource.
+
 ### Prototype Interaction Specifications
 
 ### Validation Sequence Diagram
+
+Validation steps:
+1. Configure organization
+2. Configure facilities
+3. Configure validation measure
+4. Configure validation terminology
+5. Load test data
+6. Run test calculation
+7. Validate test results
 
 ### Validation Interaction Specifications
 

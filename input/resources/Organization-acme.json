@@ -1,0 +1,35 @@
+{
+    "id": "acme",
+    "resourceType": "Organization",
+    "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/Organization/qicore-organization" ]
+    },
+    "identifier": [{
+        "system": "urn:oid:2.16.840.1.113883.4.336",
+        "use": "secondary",
+        "value": "ACME-CCN"
+    }, {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "use": "secondary",
+        "value": "ACME-NPI"
+    }, {
+        "system": "urn:oid:2.16.840.1.113883.4.4",
+        "use": "secondary",
+        "value": "ACME-EIN"
+    }],
+    "active": true,
+    "name": "ACME Provider Organization",
+    "telecom": [{
+        "system": "url",
+        "value": "https://acme.org",
+        "use": "work"
+    }],
+    "address": [{
+        "use": "work",
+        "type": "both",
+        "line": [ "123 Erewhon" ],
+        "city": "Dayton",
+        "state": "OH",
+        "postalCode": "45410"
+    }]
+}
