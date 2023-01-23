@@ -2,7 +2,7 @@
     "id": "acme",
     "resourceType": "Organization",
     "meta": {
-        "profile": [ "http://hl7.org/fhir/us/qicore/Organization/qicore-organization" ]
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization" ]
     },
     "identifier": [{
         "system": "urn:oid:2.16.840.1.113883.4.336",

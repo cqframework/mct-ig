@@ -136,7 +136,7 @@ Performance requirements, such as the defined scalability or responsiveness expe
 
 The following diagram provides the context of the proposed measure calculation tool in the environment in which it is intended to function. The reporting user is shown interacting with the system through the Reporting Client, which interacts with the Measure Calcuation Tool to gather data, perform validation and measure calculation, and submit the resulting data and scores to the receiving system.
 
-![MCT Context Diagram](images/context.png)]
+![MCT Context Diagram](context.png)]
 
 As shown in the digram, a Reporting User uses the Reporting Client to interface with the Measure Calculation Tool to select reporting facilities, the measure to be calculated, and the measurement period to be reported. The user interface displays the results of the validation step, including whether the data meets the data requirements for the measure to be reported, as well as any validation information returned by the measure calculation tool and the calculated measure score. The user is given the opportunity to review validation results to determine whether additional corrective action needs to be taken by the provider sites, or if the data meet expectations and the measure calculation score is accepted, the user is able to transmit the results to the Receiving System.
 
@@ -156,7 +156,7 @@ And finally, the Measure Calculation Tool interfaces with the Receiving System a
 
 The following diagram illustrates the container level of the measure calculation tool, depicting the interactions it has with external systems:
 
-![MCT Container Diagram](images/container-mct.png)
+![MCT Container Diagram](container-mct.png)
 
 As shown in the diagram, the Measure Calculation Container provides the implementation of the measure calculation tool, as well as support for configuration information required to support the calculation, including reporting provider information, available measures for calculation, as well as facility and receiving system endpoints.
 
@@ -168,7 +168,7 @@ Externally, the Measure Calculation Tool container must interface with the Knowl
 
 The following diagram illustrates the coordinator component of the measure calculation tool:
 
-![MCT Coordinator Component Diagram](images/component-mct-coordinator.png)
+![MCT Coordinator Component Diagram](component-mct-coordinator.png)
 
 As shown in the diagram, the Reporting Client interfaces with the coordinator component to provide measure calculation and reporting services to the end user.
 
@@ -190,7 +190,7 @@ The Receiver Interface component provides an implementation of the capabilities 
 
 The following diagram illustrates the configurator component of the measure calculation tool:
 
-![MCT Configurator Component Diagram](images/component-mct-configurator.png)
+![MCT Configurator Component Diagram](component-mct-configurator.png)
 
 As shown in the diagram, the Configurator component is used by the Reporting Client to support user selection of the measure to be calculated, the organization and facilities to be reported, and required reporting provider information.
 

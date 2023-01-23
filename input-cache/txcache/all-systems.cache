@@ -54,3 +54,12 @@ v: {
   "system" : "urn:ietf:bcp:13"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "OH"
+}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state", "version": "3.1.1", "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
+v: {
+  "display" : "Ohio",
+  "code" : "OH",
+  "system" : "https://www.usps.com/"
+}
+-------------------------------------------------------------------------------------

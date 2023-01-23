@@ -2,7 +2,7 @@
     "id": "acme-north",
     "resourceType": "Location",
     "meta": {
-        "profile": [ "http://hl7.org/fhir/us/qicore/Location/qicore-location" ]
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location" ]
     },
     "contained": [{
         "id": "acme-north-endpoint",
@@ -31,5 +31,8 @@
     "mode": "instance",
     "managingOrganization": {
         "reference": "Organization/acme"
-    }
+    },
+    "endpoint": [{
+        "reference": "#acme-north-endpoint"
+    }]
 }
