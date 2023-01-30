@@ -83,6 +83,10 @@ The Measure Calculation Tool is a standards-based implementation and uses indust
 
 ##### Goals and Guidelines
 
+#### 3.1.1 Safety Requirements
+
+The measure calculation tool must conform to the safety and privacy requirements of any site in which it is implemented. The system requires site-based implementation for operation and is designed in such a way that implementation will be executed fully within a site firewall. For any safety or privacy concerns related to clinical quality measure logic, please refer to the details of the specific measures being evaluated.
+
 ##### Development Methods and Contingencies
 
 Scrum is an Agile methodology that allows the project team to focus on delivering the highest business value in the shortest time. It allows the project team to rapidly and repeatedly inspect actual working software (every 2 weeks). The business sets the priorities, and teams self-organize to determine the best way to deliver the highest priority features. Every 2 weeks any stakeholder can see real working software and decide to release it as is or continue to enhance it for another sprint. This rapid and iterative approach has been quickly gaining acceptance within the informatics community (Kannan et al., 2019).
@@ -97,6 +101,12 @@ Versioning risks by using microservices and volatility decomposition
 Overall project-related risks by implementing both a high-level overview (e.g., Waterfall) executed in Agile development cycles
 
 ##### User Interface Approach
+
+The Reporting Client should provide a simple interface for quality improvement staff at provider organizations to gather the required data for a measure from any or all of the facilities for the organization, display any relevant validation or missing information messages along with the calculated measure score, and submit the data and score to a receiving system.
+
+The User Interface for this prototype will be a minimalist React-JS application that mimics the experience of submitting reporting data in the current hospital reporting system.
+
+TODO: Wireframes
 
 ##### Architectural Strategies
 
@@ -204,7 +214,11 @@ In a production implementation, this component would be responsible for persisti
 
 ##### Software Architecture
 
+TODO: Java architecture for the MCT
+
 ##### Application Architecture
+
+TODO: ReactJS architecture for the Reporting Client
 
 ##### Information Architecture
 
@@ -219,6 +233,8 @@ Information in the second level is represented using resources defined in the FH
 Because measure calculation is being performed directly on patient-level data retrieved from a FHIR server, security is a primary concern. The Measure Calculation Tool makes use of the OAuth security model described by the SMART Backend Services security implementation guide. For the purposes of this prototype, reference implementations of these services are used to demonstrate capability.
 
 ##### Performance
+
+TODO: Document performance requirements and expectations
 
 #### System Design
 
