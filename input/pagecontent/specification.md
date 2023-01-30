@@ -54,6 +54,11 @@ Configuring the Location(s) involves providing a FHIR Location resource that con
 
 See the [ACME North Location Example](Location-acme-north.html) for a complete example Location resource including the contained Endpoint resource.
 
+### Tags
+
+* Location Tag: System: http://cms.gov/fhir/mct/tags/Location (code is the id of the Location, display is the name of the Location)
+* Expression Tag: System: http://cms.gov/fhir/mct/tags/Expression (display is the identifier of the Expression)
+
 ### Prototype Interaction Specifications
 
 ### Validation Sequence Diagram
