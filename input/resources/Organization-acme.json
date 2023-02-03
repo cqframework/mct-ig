@@ -4,6 +4,12 @@
     "meta": {
         "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization" ]
     },
+    "extension": [{
+        "url": "http://cms.gov/fhir/mct/StructureDefinition/mct-receivingSystemEndpoint",
+        "reference": {
+          "reference": "Endpoint/example"
+        }
+    }],
     "identifier": [{
         "system": "urn:oid:2.16.840.1.113883.4.336",
         "use": "secondary",

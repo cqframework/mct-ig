@@ -11,8 +11,9 @@ Reporting steps:
 2. Configure facilities
 3. Configure measure(s)
 4. Configure terminology
-5. Run gather/evaluate
-6. Submit report
+5. Configure receiving system endpoint
+6. Run gather/evaluate
+7. Submit report
 
 #### Configure Organization
 
@@ -58,6 +59,19 @@ See the [ACME North Location Example](Location-acme-north.html) for a complete e
 
 * Location Tag: System: http://cms.gov/fhir/mct/tags/Location (code is the id of the Location, display is the name of the Location)
 * Expression Tag: System: http://cms.gov/fhir/mct/tags/Expression (display is the identifier of the Expression)
+
+### Configure Receiving System Endpoint
+
+The receiving system endpoint is configured as a reference to en Endpoint resource specified using an extension on the Organization resource:
+
+```json
+   "extension": [{
+      "url": "http://cms.gov/fhir/mct/StructureDefinition/mct-receivingSystemEndpoint",
+      "reference": {
+        "reference": "Endpoint/example"
+      }
+   }]
+```
 
 ### Prototype Interaction Specifications
 
