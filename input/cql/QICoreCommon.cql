@@ -6,7 +6,6 @@ used in writing CQL with FHIR and QICore profiles.
 */
 library QICoreCommon version '1.0.0'
 
-//sing FHIR version '4.0.1'
 using QICore version '4.1.1'
 include FHIRHelpers version '4.0.1'
 
