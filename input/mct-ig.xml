@@ -115,6 +115,11 @@
         <generation value="markdown"/>
       </page>
       <page>
+        <nameUrl value="test-plan.html"/>
+        <title value="Test Plan"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
         <nameUrl value="specification.html"/>
         <title value="Detailed Specification"/>
         <generation value="markdown"/>

@@ -31,6 +31,9 @@
       <li>
         <a href="specification.html">Detailed Specification</a>
       </li>
+      <li>
+        <a href="test-plan.html">Test Plan</a>
+      </li>
     </ul>
   </li>
   <li><a href="artifacts.html">Artifact Index</a></li>
