@@ -1,8 +1,8 @@
 library QiCoreProfileValidation version '1.0.0'
 
-using FHIR version '4.0.1'
+using QICore version '4.1.1'
 
-include FHIRHelpers version '4.0.1'
+include FHIRHelpers version '4.1.000'
 include QiCoreProfilePatterns version '1.0.0' called Profiles
 
 context Patient
@@ -120,8 +120,9 @@ define "SDE MedicationRequest":
 define "SDE MedicationStatement":
     Profiles.MedicationStatement
 
-define "SDE NutritionOrder":
-    Profiles.NutritionOrder
+// TODO: not included in 4.1.1 modelinfo
+// define "SDE NutritionOrder":
+//     Profiles.NutritionOrder
 
 define "SDE Observation":
     Profiles.Observation

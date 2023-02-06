@@ -1,9 +1,9 @@
 library QiCoreProfilePatterns version '1.0.0'
 
-using FHIR version '4.0.1'
+using QICore version '4.1.1'
 
-include FHIRHelpers version '4.0.1'
-include QICoreCommon version '1.0.0'
+include FHIRHelpers version '4.1.000'
+include QICoreCommon version '1.2.000'
 
 context Patient
 
@@ -48,8 +48,7 @@ define Communication:
 // QICoreCommunicationNotDone
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationnotdone
 define CommunicationNotDone:
-  [Communication] C
-    where C.status = 'not-done'
+  [CommunicationNotDone] 
 
 // QICoreCommunicationRequest
 // @profile: 	http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationrequest
@@ -74,16 +73,12 @@ define Device:
 // QICoreDeviceNotRequested
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-devicenotrequested
 define DeviceNotRequested:
-  [DeviceRequest] D
-    where D.status = 'completed'
-      and D.doNotPerform() is true
+  [DeviceNotRequested]
 
 // QICoreDeviceRequest
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-devicerequest
 define DeviceRequest:
-  [DeviceRequest] D
-    where D.status in { 'draft', 'active', 'on-hold', 'revoked', 'completed' }
-      and D.doNotPerform() is not true
+  [DeviceRequest]
 
 // QICoreDeviceUseStatement
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-deviceusestatement
@@ -93,13 +88,13 @@ define DeviceUseStatement:
 // QICoreDiagnosticReportLab
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-diagnosticreport-lab
 define DiagnosticReportLab:
-  [DiagnosticReport] D
+  [DiagnosticReportLab] 
     //where D.category ~ "http://terminology.hl7.org/CodeSystem/v2-0074#LAB"
 
 // QICoreDiagnosticReportNote
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-diagnosticreport-note
 define DiagnosticReportNote:
-  [DiagnosticReport] D
+  [DiagnosticReportNote]
 
 // QICoreEncounter
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter
@@ -144,8 +139,7 @@ define ImmunizationEvaluation:
 // QICoreImmunizationNotDone
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationnotdone
 define ImmunizationNotDone:
-  [Immunization] I
-    where I.status = 'not-done'
+  [ImmunizationNotDone]
 
 // QICoreImmunizationRecommendation
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationrec
@@ -176,8 +170,7 @@ define MedicationAdministration:
 // QICoreMedicationAdministrationNotDone
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-mednotadministered
 define MedicationAdministrationNotDone:
-  [MedicationAdministration] M
-    where M.status = 'not-done'
+  [MedicationAdministrationNotDone] 
 
 // QICoreMedicationDispense
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationdispense
@@ -186,17 +179,14 @@ define MedicationDispense:
     where D.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }
 
 // QICoreMedicationDispenseDeclined
-// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationdispensedeclined
-define MedicationDispenseDeclined:
-  [MedicationDispense] D
-    where D.status in { 'cancelled', 'declined' }
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-mednotdispensed
+define MedicationDispenseNotDone:
+  [MedicationDispenseNotDone] 
 
 // QICoreMedicationNotRequested
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-mednotrequested
 define MedicationNotRequested:
-  [MedicationRequest] R
-    where R.status = 'completed'
-      and R.doNotPerform is true
+  [MedicationNotRequested] 
 
 // QICoreMedicationRequest
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest
@@ -212,8 +202,9 @@ define MedicationStatement:
 
 // QICoreNutritionOrder
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-nutritionorder
-define NutritionOrder:
-  [NutritionOrder]
+// TODO: not included in 4.1.1 modelinfo
+// define NutritionOrder:
+//   [NutritionOrder]
 
 // QICoreObservation
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation
@@ -222,9 +213,9 @@ define Observation:
     where O.status in { 'registered', 'preliminary', 'final', 'amended', 'corrected' }
 
 // QICoreObservationCancelled
-// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observationcancelled
-define ObservationCancelled:
-  [Observation] O
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observationnotdone
+define ObservationNotDone:
+  [ObservationNotDone] O
     where O.status = 'cancelled'
 
 // FHIR Vital Signs
@@ -334,8 +325,7 @@ define ProcedurePerformed:
 // QICoreProcedureNotDone
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurenotdone
 define ProcedureNotDone:
-  [Procedure] P
-    where P.status = 'not-done'
+  [Procedure]
 
 // QICoreRelatedPerson
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-relatedperson
@@ -345,9 +335,7 @@ define RelatedPerson:
 // QICoreServiceNotRequested
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicenotrequested
 define ServiceNotRequested:
-  [ServiceRequest] SR
-    where SR.status = 'completed'
-      and SR.doNotPerform is true
+  [ServiceNotRequested]
 
 // QICoreServiceRequest
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicerequest
@@ -375,6 +363,5 @@ define Task:
 // QICoreTaskRejected
 // @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-taskrejected
 // TODO: What about cancelled and failed?
-define TaskRejected:
-  [Task] T
-    where T.status = 'rejected'
+define TaskNotDone:
+  [TaskNotDone]
