@@ -18,6 +18,15 @@
     <li><b>Provider Site System:</b> Clinical systems with patient data exposed via a US Core/QI Core compliant FHIR server</li>
     <li><b>Receiving System:</b> Receiving system that receives the calculation and patient data submission</li>
   </ul>
+  <p>Overall, this use case consists of the following steps:</p>
+  <ul>
+    <li><b>Initiate:</b> For the selected organization, measure, population, and reporting period, determine and retrieve specific data and terminology requirements</li>
+    <li><b>Gather:</b> For each facility and the population, gather the relevant data from the provider site systems</li>
+    <li><b>Validate: For each gathered data element, validate the data is present and conforms to expected profiles</b></li>
+    <li><b>Calculate:</b> For each individual, as well as the population, calculate the relevant measure score and determine evaluated resources</li>
+    <li><b>Submit:</b> After reviewing any validation issues, submit the calculated score and relevant supporting data to the receiving system</li>
+  </ul>
+  <p>For more detailed discussion of the use case and implementation, see the Technical Requirements topic.</p>
   <a name="contents"> </a>
   <h3>Contents</h3>
   <p>
@@ -39,6 +48,9 @@
     </li>
     <li>
       <a href="user-guide.html">User Guide</a> - Provides documentation of the use of the Reporting Client from the reporting user perspective
+    </li>
+    <li>
+      <a href="test-plan.html">Test Plan</a> - Describes the overall testing plan for both the development and verification of the prototype itself, as well as validation of the use of the prototype at a provider site
     </li>
     <li>
       <a href="license.html">License</a>
