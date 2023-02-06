@@ -4,11 +4,20 @@
 	<p>
     This implementation guide documents and supports the use of a prototype Measure Calculation Tool for reporting and calculating FHIR-based digital quality measures (dQMs).
   </p>
-	<a name="technical"> </a>
-	<h3>Technical Overview</h3>
-  <img src="MeasureCalculationTool.png" alt="Measure Calculation Tool Sequence Diagram"/>
-	<p>
+	<a name="use-case-overview"> </a>
+	<h3>Use Case Overview</h3>
+  <p>The following diagram illustrates the primary use case for the measure calculation tool: Reporting Submission
   </p>
+  <img src="MeasureCalculationTool.png" alt="Measure Calculation Tool Use Case Overview"/>
+	<p>The participants in this use case are:</p>
+  <ul>
+    <li><b>Reporting Client:</b> A prototype user-interface that demonstrates the reporting submission workflow</li>
+    <li><b>Measure Calculation Tool:</b> The measure calculation tool prototype as a RESTful web service</li>
+    <li><b>Knowledge Repository:</b> A measure repository providing measure specifications and data requirements features</li>
+    <li><b>Terminology Service:</b> A measure terminology service supporting terminology used by measures</li>
+    <li><b>Provider Site System:</b> Clinical systems with patient data exposed via a US Core/QI Core compliant FHIR server</li>
+    <li><b>Receiving System:</b> Receiving system that receives the calculation and patient data submission</li>
+  </ul>
   <a name="contents"> </a>
   <h3>Contents</h3>
   <p>

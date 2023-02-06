@@ -224,7 +224,7 @@ TODO: ReactJS architecture for the Reporting Client
 
 There are two levels of information specification and exchange at play in the measure calculation tool. First, the measure specification, which represents the measures to be calculated, including metadata, terminology, dependencies, and population criteria in the form of Clinical Quality Language expressions. And second, the information specification, which represents patient-level clinical and administrative information about the patient population.
 
-Information in the first level is represented using resources defined in the FHIR Clinical Reasoning Module, and further specified using profiles and guidance found in the FHIR Quality Measure implementation guide. The Measure Calculation Tool is capable of using any measure specification that conforms to the requirements defined by this implementation guide, allowing a single software tool to be used to calculate an array of quality measures. Published measure specifications are made available through the Knowledge Repository via the Measure Repository Service API specified as part of the Quality Measure implementation guide. Note that for the purposes of this prototype, the functionality of the repository is modeled as a component of the Measure Calculation Tool, since the focus of the prototype is on supporting measure calculation. The intent of this architecture is to demonstrate the capability while illustrating a path forward that can be used once measure repository services are available in the ecosystem.
+Information in the first level is represented using resources defined in the FHIR Clinical Reasoning Module, and further specified using profiles and guidance found in the FHIR Quality Measure implementation guide. The Measure Calculation Tool is capable of using any measure specification that conforms to the requirements defined by this implementation guide, allowing a single software tool to be used to calculate any number of quality measures. Published measure specifications are made available through the Knowledge Repository via the Measure Repository Service API specified as part of the Quality Measure implementation guide. Note that for the purposes of this prototype, the functionality of the repository is modeled as a component of the Measure Calculation Tool, since the focus of the prototype is on supporting measure calculation. The intent of this architecture is to demonstrate the capability while illustrating a path forward that can be used once measure repository services are available in the ecosystem.
 
 Information in the second level is represented using resources defined in the FHIR Administrative and Clinical modules, and further specified using profiles and guidance found in the QI Core FHIR implementation guide. Data retrieved from provider sites is expected to conform to the profiles defined in the QICore implementation guide. Note that because QI Core derives from and is a minimal extension to US Core, much of the data retrieved from US Core-compliant FHIR servers should be conformant with the QI Core profiles. For the purposes of this prototype, the validation step will test this conformance, and mark resources that are compliant with QI Core profiles with the appropriate profile markers to ensure correct evaluation in the CQL evaluator.
 
@@ -330,7 +330,7 @@ Template:
 |Assumptions:| |
 |Notes and Issues:| |
 
-<img src="MeasureCalculationTool.png" alt="Measure Calculation Tool Sequence Diagram"/>
+<img src="MeasureCalculationTool.png" alt="Measure Calculation Tool Use Case Overview"/>
 
 ##### Actors
 
@@ -377,14 +377,60 @@ Template:
 
 #### Implementation
 
+This section describes implementation considerations for the Measure Calculation Tool, both for the prototype implementation, as well as enterprise considerations that must be addressed before the MCT could be fully supported for production use cases.
+
+The following sequence diagram implements the reporting submission use case described above:
+
+<img src="sd-reporting-submission-use-case.png" alt="Reorting Submission Use Case"/>
+
 ##### Prototype
+
+The prototype implementation of the Measure Calculation Tool focuses on making use of existing open source FHIR and CQL-based measure calculation capabilities to support a streamlined, out-of-the-box experience for provider implementers reporting FHIR and CQL-based quality measures.
 
 ###### CQL Components
 
+The measure calculation tool makes use of the following open source FHIR and CQL components:
+
+1. [CQL-to-ELM Translator](https://github.com/cqframework/clinical_quality_language): This component supports validation of CQL libraries as well as translation of CQL libraries to the equivalent Expression Logical Model (ELM) representation focused on machine implementation. The prototype will make use of at least the 2.6.0 release of the translator to ensure support for QICore versions 4.1.1 and above.
+
+2. [CQL Engine](https://github.com/cqframework/clinical_quality_language/tree/master/Src/java/engine): This component supports evaluation of compiled ELM produced by the CQL-to-ELM translator. The prototype will make use of at least the 2.6.0 release of the engine to ensure support for QICore versions 4.1.1 and above.
+
+3. [CQL Evaluator](https://github.com/cqframework/clinical-reasoning): This component brings together the translator and engine to provide complete CQL translation and evaluation support with a FHIR-based data model, either the base FHIR specification directly, or FHIR implementation guides such as USCore and QICore. The prototype will make use of at least the 2.6.0 release of the evaluator to ensure support for QICore versions 4.1.1 and above.
+
+4. [HAPI-FHIR Server](https://hapifhir.io/): This component provides an out-of-the-box reference implementation of a FHIR server. The prototype will use this server to play the role of the provider FHIR servers in the development, sandbox, and integration testing scenarios. The prototype will make use of at least the 6.0.1 release of HAPI FHIR.
+
 ###### Measure Calculation Tool
+
+The Measure Calculation Tool prototype is built as a [Spring Boot Application](https://spring.io/) that brings together all the required components and exposes a simple REST-based API to support use of the calculation features from any web client.
 
 ###### Reporting Client
 
+The Reporting Client is a simple React-JS application that illustrates a typical expected workflow that a quality improvement manager at a provider organization would use to facilitate quality reporting.
+
 ##### Enterprise Considerations
+
+This prototype is focused on establishing core functionality for the Measure Calculation Tool with an architecture that could scale to support enterprise-level loads. For the reporting submission use case, there are two broad approaches to performing the population calculation:
+
+1. Patient-at-a-time calculation
+2. Population-level calculation
+
+The per-patient approach has several advantages in terms of scalability. First, it limits the size of data required for any given calculation to the data for a single patient. Although this can still be large for patients with significant histories, it is generally bounded to manageable data sizes. Second, it allows for a natural and easy to implement partition for measure calculation. This partitioning lends itself naturally to data pipelining approaches such as Apache Spark.
+
+The popuation-level approach can potentially support improved calculation performance, especially when making use of warehouse-style implementations that can then be queried at the population level, rather than patient-at-a-time. However, this approach requires that the measure specification (and in particular the population logic) be transformed to population level queries by modifying the expressions to account for patient-level relationships. Although this is possible to do by including these patient-level relationships in the data model, it is an area that has had limited implementation experience to this point.
+
+For these reasons, FHIR-based measure calculation is typically performed patient-at-a-time, even in all known commercial implementations. This approach has extensive testing and implementation experience, both in connectathon and pilot settings, as well as vendor systems. Performance of patient-at-a-time scenarios, even with relatively large single patient data, is manageable and effectively scales linearly, so long as the data is available to the calculation engine.
+
+Given the reporting submission use case, this results in two primary bottlenecks in the process, both related to transferring data between systems:
+
+1. Data transfer from the source system to the Measure Calculation Tool
+2. Data transfer from the Measure Calculation Tool to the Receiving System
+
+First, data transfer from the source system to the MCT can be accomplished by directly retrieving data from the provider site's FHIR API. However, typical FHIR RESTful APIs are almost exclusively patient-specific, which then requires that this data gather be performed per patient. In addition, although the FHIR specification allows for batch processing (i.e. batching multiple REST queries into a single request), not all FHIR servers implement this functionality, which further means that each data requirement results in a separate request/response to the FHIR API. Taken together, this means that a complete data gather has a large number of individual requests, making connection latency and response data size significant performance considerations.
+
+Second, data transfer from the MCT to the receiving system can be accomplished using standard capabilities of a FHIR API. However, the patient-specific nature of these APIs again results in a large number of individual request/responses. This could be mitigated by requiring batch-level processing, but even that would potentially be overrun by large populations.
+
+Both these data transfer points within the architecture could benefit from bulk data approaches. For the first case, data transfer from the provider site system, the $export capability provides a natural fit that enables large data transfers at the group level. And for the second case, data transfer to the receiving system, the $import capability provides a solution. The MCT prototype is architected such that these solutions could be plugged in at the appropriate points.
+
+As an aside, the Measure Calculation Tool could be seen as a data gathering tool, rather than a calculation tool per se. In this approach, the MCT would act as an incremental data conduit from the provider site systems to an aggregate receiving system store. Measure calculation could then be performed on the aggregate receiving system store, rather than requiring the single "extract and calculate" approach taken here by the MCT prototype. This approach would require that the receiving system be a persistent store for data from provider sites. End of aside.
 
 #### References
