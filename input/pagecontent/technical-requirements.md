@@ -36,11 +36,16 @@ _Stakeholders_
 
 The following comprises the internal and external stakeholders whose requirements are represented by this document: 
 
-1. Bridget Calvert 
-2. Joel Andress 
-3. ISG – Tom Lantz and Anne Weinstein 
-4. HQR – Michellene Roberts- adhoc 
-5. Bill Lakenen 
+•	Anne Weinstein  
+•	Tom Lantz Senior Program Technical Advisor  
+•	Bridget Calvert Senior dQM Implementation Lead 
+•	Joel Andress Senior dQM Program Lead  
+•	Bill Lakenan ADO 
+•	Reid Kiser  DQM Division Director R 
+•	Mark Canfield Division Deputy Director  
+•	Michellene Roberts HQR Program Lead  
+•	Mindy Riley  Division Director  
+
 
 ##### General Overivew
 
