@@ -506,7 +506,7 @@
     } ]
   } ],
   "description": "Ischemic stroke patients prescribed or continuing to take antithrombotic therapy at hospital discharge",
-  "purpose": "Unknown",
+  "purpose": "The effectiveness of antithrombotic agents in reducing stroke mortality, stroke-related morbidity and recurrence rates has been studied in several large clinical trials. While the use of these agents for patients with acute ischemic stroke and transient ischemic attacks continues to be the subject of study, substantial evidence is available from completed studies. Data at this time suggest that antithrombotic therapy should be prescribed at discharge following acute ischemic stroke to reduce stroke mortality and morbidity as long as no contraindications exist.\nFor patients with a stroke due to a cardioembolic source (e.g. atrial fibrillation, mechanical heart valve), warfarin is recommended unless contraindicated. In recent years, novel oral anticoagulant agents (NOACs) have been developed and approved by the U.S. Food and Drug Administration (FDA) for stroke prevention, and may be considered as an alternative to warfarin for select patients. Anticoagulation therapy is not generally recommended for secondary stroke prevention in patients presumed to have a non-cardioembolic stroke.\nAnticoagulants at doses to prevent venous thromboembolism are insufficient antithrombotic therapy to prevent recurrent ischemic stroke or TIA.",
   "copyright": "Measure specifications are in the Public Domain\n\nLOINC(R) copyright 2004-2020 Regenstrief Institute, Inc. \nThis material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2020 International Health Terminology Standards Development Organisation. All Rights Reserved.",
   "effectivePeriod": {
     "start": "2022-01-01",
@@ -537,6 +537,7 @@
   },
   "guidance": "The \"Non-elective Inpatient Encounter\" value set intends to capture all non-scheduled hospitalizations. This value set is a subset of the \"Inpatient encounter\" value set, excluding concepts that specifically refer to elective hospital admissions. Non-elective admissions include emergency, urgent and unplanned admissions.\n\nThe \"Medication, Discharge\" datatype refers to the discharge medication list and is intended to express medications ordered for post-discharge use.\n\nThis eCQM is an episode-based measure. An episode is defined as each inpatient hospitalization or encounter that ends during the measurement period.\n\nThis FHIR-based measure has been derived from the QDM-based measure: CMS104v10",
   "group": [ {
+    "description": "Ischemic stroke patients prescribed or continuing to take antithrombotic therapy at hospital discharge",
     "population": [ {
       "id": "3461E500-1396-4E0C-B6C7-5B5C7B024765",
       "code": {
@@ -546,8 +547,9 @@
           "display": "Initial Population"
         } ]
       },
+      "description": "Inpatient hospitalizations for patients age 18 and older, discharged from inpatient care (non-elective admissions) with a principal diagnosis of ischemic or hemorrhagic stroke and a length of stay less than or equal to 120 days that ends during the measurement period",
       "criteria": {
-        "language": "text/cql.identifier",
+        "language": "text/cql-identifier",
         "expression": "Initial Population"
       }
     }, {
@@ -559,8 +561,9 @@
           "display": "Denominator"
         } ]
       },
+      "description": "Inpatient hospitalizations for patients with a principal diagnosis of Ischemic stroke",
       "criteria": {
-        "language": "text/cql.identifier",
+        "language": "text/cql-identifier",
         "expression": "Denominator"
       }
     }, {
@@ -572,8 +575,9 @@
           "display": "Denominator Exclusion"
         } ]
       },
+      "description": "Inpatient hospitalizations for patients admitted for elective carotid intervention. This exclusion is implicitly modeled by only including non-elective hospitalizations.\nInpatient hospitalizations for patients discharged to another hospital\nInpatient hospitalizations for patients who left against medical advice\nInpatient hospitalizations for patients who expired\nInpatient hospitalizations for patients discharged to home for hospice care\nInpatient hospitalizations for patients discharged to a health care facility for hospice care\nInpatient hospitalizations for patients with comfort measures documented",
       "criteria": {
-        "language": "text/cql.identifier",
+        "language": "text/cql-identifier",
         "expression": "Denominator Exclusions"
       }
     }, {
@@ -585,8 +589,9 @@
           "display": "Denominator Exception"
         } ]
       },
+      "description": "Inpatient hospitalizations for patients with a documented reason for not prescribing antithrombotic therapy at discharge.\nInpatient hospitalizations for patients who receive Ticagrelor or Prasugrel as an antithrombotic therapy at discharge.",
       "criteria": {
-        "language": "text/cql.identifier",
+        "language": "text/cql-identifier",
         "expression": "Denominator Exceptions"
       }
     }, {
@@ -598,10 +603,69 @@
           "display": "Numerator"
         } ]
       },
+      "description": "Inpatient hospitalizations for patients prescribed or continuing to take antithrombotic therapy at hospital discharge",
       "criteria": {
-        "language": "text/cql.identifier",
+        "language": "text/cql-identifier",
         "expression": "Numerator"
       }
     } ]
+  } ],
+  "supplementalData": [ {
+    "code": {
+      "coding": [ {
+        "code": "gender",
+        "system": "http://terminology.hl7.org/CodeSystem/measure-supplemental-data-example",
+        "display": "Gender"
+       } ]
+    },
+    "usage": [ {
+      "coding": [ { 
+        "code": "supplemental-data",
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "display": "Supplemental Data"
+      } ] 
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Sex"
+    }
+  }, {
+    "code": {
+      "coding": [ {
+        "code": "ethnicity",
+        "system": "http://terminology.hl7.org/CodeSystem/measure-supplemental-data-example",
+        "display": "Ethnicity"
+       } ]
+    },
+    "usage": [ {
+      "coding": [ { 
+        "code": "supplemental-data",
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "display": "Supplemental Data"
+      } ] 
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Ethnicity"
+    }
+  }, {
+    "code": {
+      "coding": [ {
+        "code": "payer",
+        "system": "http://terminology.hl7.org/CodeSystem/measure-supplemental-data-example",
+        "display": "Payer"
+       } ]
+    },
+    "usage": [ {
+      "coding": [ { 
+        "code": "supplemental-data",
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "display": "Supplemental Data"
+      } ] 
+    } ],
+    "criteria": {
+      "language": "text/cql-identifier",
+      "expression": "SDE Payer"
+    }
   } ]
 }

@@ -3,7 +3,8 @@
   "id": "no-ip-EXM104-2",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter",
+      "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
     ]
   },
   "status": "finished",
@@ -27,8 +28,8 @@
     "reference": "Patient/no-ip-EXM104"
   },
   "period": {
-    "start": "2019-08-21T00:00:00-06:00",
-    "end": "2019-12-19T08:15:00-07:00"
+    "start": "2022-08-21T00:00:00-06:00",
+    "end": "2022-12-19T08:15:00-07:00"
   },
   "diagnosis": [
     {

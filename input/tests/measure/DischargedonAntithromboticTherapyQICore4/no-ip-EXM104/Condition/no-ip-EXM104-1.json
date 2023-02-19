@@ -3,7 +3,8 @@
   "id": "no-ip-EXM104-1",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition",
+      "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition"
     ]
   },
   "verificationStatus": {

@@ -52,8 +52,8 @@ define "Encounter with Principal Diagnosis and Age":
 //TJCOverall
 define "Non Elective Inpatient Encounter":
   ["Encounter": "Non-Elective Inpatient Encounter"] NonElectiveEncounter
-		where Global."LengthInDays"(NonElectiveEncounter.period) <= 120
-			and NonElectiveEncounter.period ends during day of "Measurement Period"
+		//where Global."LengthInDays"(NonElectiveEncounter.period) <= 120
+		//	and NonElectiveEncounter.period ends during day of "Measurement Period"
 
 //TJCOverall
 define "All Stroke Encounter":
@@ -219,7 +219,6 @@ define "Pharmacological Contraindications for Antithrombotic Therapy at Discharg
         and Pharmacological.status in { 'active', 'completed' }
         and Pharmacological.intent = 'order'
 
-/*Temporarily comment out so less clutter in the output
 define "SDE Ethnicity":
   SDE."SDE Ethnicity"
 
@@ -231,4 +230,3 @@ define "SDE Race":
 
 define "SDE Sex":
   SDE."SDE Sex"
-*/  

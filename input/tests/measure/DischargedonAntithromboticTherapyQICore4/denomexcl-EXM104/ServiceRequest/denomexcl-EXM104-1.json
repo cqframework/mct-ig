@@ -1,6 +1,11 @@
 {
   "resourceType": "ServiceRequest",
   "id": "denomexcl-EXM104-1",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicerequest"
+    ]
+  },
   "status": "active",
   "intent": "order",
   "code": {
@@ -18,5 +23,5 @@
   "encounter": {
     "reference": "Encounter/denomexcl-EXM104-2"
   },
-  "authoredOn": "2019-08-21T00:00:00-06:00"
+  "authoredOn": "2022-08-21T00:00:00-06:00"
 }

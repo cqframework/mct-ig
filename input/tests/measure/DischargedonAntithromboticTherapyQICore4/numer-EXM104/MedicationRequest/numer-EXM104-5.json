@@ -1,6 +1,11 @@
 {
     "resourceType": "MedicationRequest",
     "id": "numer-EXM104-5",
+    "meta": {
+      "profile": [
+        "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest"
+      ]
+    },
     "status": "completed",
     "intent": "order",
     "category": [
@@ -26,5 +31,5 @@
     "subject": {
       "reference": "Patient/numer-EXM104"
     },
-    "authoredOn": "2019-12-17T08:00:00"
+    "authoredOn": "2022-12-17T08:00:00"
   }
