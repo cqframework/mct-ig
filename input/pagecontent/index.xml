@@ -8,7 +8,7 @@
 	<h3>Use Case Overview</h3>
   <p>The following diagram illustrates the primary use case for the measure calculation tool: Reporting Submission
   </p>
-  <img src="MeasureCalculationTool.png" alt="Measure Calculation Tool Use Case Overview"/>
+  <img src="MeasureCalculationTool.png" alt="Measure Calculation Tool Use Case Overview" height="469" width="600"/>
 	<p>The participants in this use case are:</p>
   <ul>
     <li><b>Reporting Client:</b> A prototype user-interface that demonstrates the reporting submission workflow</li>

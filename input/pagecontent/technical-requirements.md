@@ -6,6 +6,8 @@ This Technical Requirements Document (TRD) documents both the high-level system 
 
 #### General Overview and Design Guidelines
 
+TODO:
+
 ##### Background
 
 _Situation_
@@ -46,10 +48,13 @@ The following comprises the internal and external stakeholders whose requirement
 •	Michellene Roberts HQR Program Lead  
 •	Mindy Riley  Division Director  
 
-
 ##### General Overivew
 
+TODO:
+
 ##### Assumptions/Constraints/Risks
+
+TODO:
 
 ###### Assumptions
 
@@ -73,7 +78,96 @@ The following comprises the internal and external stakeholders whose requirement
 
 1. The Measure Calculation Tool solution must be open source
 
+TODO:
+
 ###### Risks
+
+Any software project carries risks associated with development such as defects, performance issues, version management, and dependency tracking. To mitigate these standard risks, the project uses industry-standard development methodologies, tools, and technologies including agile development, github source control and change management, Java, Maven, ReactJS, Yarn, and continuous integration.
+
+In addition, the Measure Calculation Tool project overall carries risks associated with standards support and adoption, performance concerns associated with population-level data access, as well as policy and governance concerns associated with accessing patient data:
+
+1. Insufficient data available through FHIR APIs
+2. Inconsistent implementation of data available through FHIR APIs
+3. Insufficient data selectivity available through FHIR APIs
+4. Lack of terminology support for data access through FHIR APIs
+5. Insufficient performance of data available through FHIR APIs
+6. Insufficient performance of validation of FHIR data
+
+_Insufficient data available through FHIR APIs_
+
+Although industry adoption of FHIR in the United States is widespread, the adoption is based on the foundational information established by USCDI and specified as FHIR profiles in the US Core Implementation Guide. Effective quality measurement often requires additional information not yet characterized in US Core, but available with QI Core, the FHIR Quality Improvement profiles. The QI Core profiles are derived from and consistent with US Core. However, there are specific data elements defined in QI Core that are not explicitly profiled in US Core, meaning that implementing systems will likely not support these additional data elements. Although gap analysis of US Core and QI Core has been done and continues to inform recommendations from QI Core to USCDI and USCDI+, we provide a specific gap analysis of the profiles used for the CMS104 prototype quality measure as part of this risk assessment:
+
+[QICoreEncounter](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-encounter.html) vs [USCoreEncounter](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-encounter.html)
+
+The QICoreEncounter profile introduces support for several aspects of encounter representation that are not specified in USCore. In particular:
+
+* Description of the primary vs secondary procedure performed as part of an encounter (via the qicore-encounter-procedure extension)
+* Indication of whether a particular encounter diagnosis was present on admission (via the qicore-encounter-diagnosisPresentOnAdmission extension)
+* Timings associated with location information
+
+[Condition](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-condition.html) vs [USCoreCondition](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-condition.html)
+
+* Onset and abatement information used to determine prevalence period for the condition (NOTE: This only applied to "problems" and "health concerns". "encounter diagnoses" are typically understood to apply at the time of the encounter, but other information about timing is not typically available
+
+[ServiceRequest](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-servicerequest.html) vs [USCoreServiceRequest](https://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-servicerequest.html)
+
+NOTE: The ServiceRequest profile was not available in USCore 3.1.1, so this analysis is performed on the latest published version, 5.0.1.
+
+* Indication of whether a given procedure order is elective (using the modifier extension qicore-isElective)
+
+[ServiceNotRequested](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-servicenotrequested.html) vs [USCoreServiceRequest](https://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-servicerequest.html)
+
+NOTE: The ServiceRequest profile was not available in USCore 3.1.1, so this analysis is performed on the latest published version, 5.0.1.
+
+* Indication that a given procedure order should not be performed (using the ServiceRequest.doNotPerform element)
+* Rationale for the order not to perform (using the extension qicore-doNotPerformReason)
+* Specification of what should not be ordered in terms of a value set, rather than a specific code (using the extension qicore-notDoneValueSet)
+
+[Procedure](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-procedure.html) vs [USCoreProcedure](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-procedure.html)
+
+* Reason for a given procedure (using the Procedure.reasonCode element)
+* Coded indication of items used during a procedure (using the Procedure.usedCode element, important for characterizing device procedures)
+
+[ProcedureNotDone](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-procedure.html) vs [USCoreProcedure](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-procedurenotdone.html)
+
+* Rationale for a procedure not being performed (using the Procedure.statusReason element)
+* Specification of what was not performed in terms of a value set, rather than a specific code (using the extension qicore-notDoneValueSet)
+
+[MedicationRequest](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-medicationrequest.html) vs [USCoreMedicationRequest](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-medicationrequest.html)
+
+* Computable dosage and timing information (using the MedicationRequest.timing element and sub-elements, important for calculating cumulative medication duration and medication utilization)
+* Dispensing request information (using the MedicationRequest.dispenseRequest element and sub-elements, important for calculating cumulative medication duration and medication utilization)
+
+[MedicationNotRequested](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-mednotrequested.html) vs [USCoreMedicationRequest](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-medicationrequest.html)
+
+* Indication that a given medication should not be ordered (using the MedicationRequest.doNotPerform element)
+* Rationale for not ordering a given medication (using the MedicationRequest.reasonCode element)
+* Specification of what should not be ordered in terms of a value set, rather than a specific code (using the extension qicore-notDoneValueSet)
+
+_Inconsistent implementation of data available through FHIR APIs_
+
+Although USCore profiles provide conformance requirements for data made available through FHIR APIs, there is still implementer flexibility that can lead to issues with achieving semantic interoperability in general, and quality reporting in particular. Specifically related to CMS104:
+
+* First, USCore defines search parameters for both `class` and `type` of an encounter, they are both specified as recommendations, rather than conformance requirements. The result is that not all implementations will make these search parameters available, making selection of appropriate encounters difficult.
+* Second, although USCore specifies that `class` is required and provides an appropriate value set of codes ([ActEncounterCode](https://terminology.hl7.org/1.0.0//ValueSet-v3-ActEncounterCode.html)), the binding is _extensible_, meaning that implementations may choose alternative codes if there is no suitable code in the value set. The practical implication of this is that implementers may opt for local codes, rather than going through the effort of mapping those local codes to suitable codes in the value set. The impact is that the `class` element may not be reliable as a filtering mechanism for encounters such as 'Inpatient Encounters'
+
+_Insufficient data selectivity available through FHIR APIs_
+
+Another consequence of missing search parameters is that more data than is strictly necessary may need to be retrieved because the filtering criteria may not match available search parameters. For example, if a system implements the Encounter.class search parameter, but not the Encounter.type search parameter, measure calculation would need to retrieve all encounters for a class and subsequently filter on type.
+
+_Lack of terminology support for data access through FHIR APIs_
+
+At the time of this writing, vendor FHIR APIs do not typically provide support for value set-based filtering. Meaning that instead of being able to say, for example, "retrieve all encounters with a type in the value set 'Inpatient Encounter Codes'", systems retrieving data may need to expand the value set and request encounters for any code, as in "retrieve all encounters with a type code in the list ('123', '234', '345', '456')". There are numerous challenges associated with this, including the need to segment queries for large value sets.
+
+_Insufficient performance of data available through FHIR APIs_
+
+In some cases, performance of retrieval through FHIR APIs may be an issue. For example, a specific case likely to impact CMS104 calculation is the retrieval of past medication orders. In some FHIR APIs, this query can take a significant amount of time (i.e. on the order of 30 seconds to several minutes), resulting in reduced measure calculation performance overall.
+
+_Insufficient performance of validation of FHIR data_
+
+For the prototype, the Measure Calculation Tool makes use of the open source Java reference implementation validator used by FHIR publishing tooling as well as several open source reference implementations. For complex validations, especially involving terminology, this component can take a significant amount of time. In particular, we see cases that take multiple seconds to validate the data for a single patient. The majority of this time appears to be due to direct terminology server usage by the validation component.
+
+This risk could be mitigated by adding caching to the terminology capability of the validation component.
 
 ##### Alignment with Enterprise Architecture
 
@@ -86,7 +180,11 @@ The Measure Calculation Tool is a standards-based implementation and uses indust
 
 #### Design Considerations
 
+TODO:
+
 ##### Goals and Guidelines
+
+TODO:
 
 #### 3.1.1 Safety Requirements
 
@@ -98,12 +196,12 @@ Scrum is an Agile methodology that allows the project team to focus on deliverin
 
 This project also used a "Continuous Delivery" pipeline to support project development as has been commonly employed by industry leaders like Amazon, Netflix, eBay, Comcast, and Uber for over 10 years. This approach consistently reduces:
 
-Environment dependency risks through the use of lightweight virtual machines (Containers)
-Environment hosting risks by using automated and immutable servers
-Testing risks by using automated testing with Continuous Quality Improvement
-Deployment risks by using incremental rollout and instantaneous rollback
-Versioning risks by using microservices and volatility decomposition
-Overall project-related risks by implementing both a high-level overview (e.g., Waterfall) executed in Agile development cycles
+* Environment dependency risks through the use of lightweight virtual machines (Containers)
+* Environment hosting risks by using automated and immutable servers
+* Testing risks by using automated testing with Continuous Quality Improvement
+* Deployment risks by using incremental rollout and instantaneous rollback
+* Versioning risks by using microservices and volatility decomposition
+* Overall project-related risks by implementing both a high-level overview (e.g., Waterfall) executed in Agile development cycles
 
 ##### User Interface Approach
 
@@ -147,11 +245,13 @@ Performance requirements, such as the defined scalability or responsiveness expe
 
 #### System Architecture and Design
 
+TODO:
+
 ##### Logical View
 
 The following diagram provides the context of the proposed measure calculation tool in the environment in which it is intended to function. The reporting user is shown interacting with the system through the Reporting Client, which interacts with the Measure Calcuation Tool to gather data, perform validation and measure calculation, and submit the resulting data and scores to the receiving system.
 
-![MCT Context Diagram](context.png)]
+![MCT Context Diagram](context.png)
 
 As shown in the digram, a Reporting User uses the Reporting Client to interface with the Measure Calculation Tool to select reporting facilities, the measure to be calculated, and the measurement period to be reported. The user interface displays the results of the validation step, including whether the data meets the data requirements for the measure to be reported, as well as any validation information returned by the measure calculation tool and the calculated measure score. The user is given the opportunity to review validation results to determine whether additional corrective action needs to be taken by the provider sites, or if the data meet expectations and the measure calculation score is accepted, the user is able to transmit the results to the Receiving System.
 
@@ -171,9 +271,9 @@ And finally, the Measure Calculation Tool interfaces with the Receiving System a
 
 The following diagram illustrates the container level of the measure calculation tool, depicting the interactions it has with external systems:
 
-![MCT Container Diagram](container-mct.png)
+<img src="container-mct.png" alt="MCT Container Diagram" height="650" width="923"/>
 
-As shown in the diagram, the Measure Calculation Container provides the implementation of the measure calculation tool, as well as support for configuration information required to support the calculation, including reporting provider information, available measures for calculation, as well as facility and receiving system endpoints.
+As shown in the diagram, the Measure Calculation Container provides the implementation of the measure calculation tool, as well as support for configuration information required to perform the calculation, including reporting provider information, available measures for calculation, as well as facility and receiving system endpoints.
 
 The Reporting Client makes use of these services to allow users to perform end-to-end measure calculation and reporting, and to facilitate data and calculated score validation.
 
@@ -183,7 +283,7 @@ Externally, the Measure Calculation Tool container must interface with the Knowl
 
 The following diagram illustrates the coordinator component of the measure calculation tool:
 
-![MCT Coordinator Component Diagram](component-mct-coordinator.png)
+<img src="component-mct-coordinator.png" alt="MCT Coordinator Component Diagram" height="331" width="672"/>
 
 As shown in the diagram, the Reporting Client interfaces with the coordinator component to provide measure calculation and reporting services to the end user.
 
@@ -219,11 +319,23 @@ In a production implementation, this component would be responsible for persisti
 
 ##### Software Architecture
 
-TODO: Java architecture for the MCT
+The Measure Calculation Tool is implemented as a Sprint Boot Java application hosting a HAPI FHIR service with custom implementations of the operations required to support gathering quality measure data, validating data, calculating the measure, and submitting the resulting report and relevant data.
+
+The appication will use Maven as the build technology, including dependencies from the Sonatype repository. Most of the functionality required for the implementation is provided by the CQFramework component stack, detailed in the Components section below. The remainder of the service-side functionality is implemented as custom operations and exposed as a web service via FHIR operation syntax, as detailed in the Specification topic of this implementation guide.
+
+The service is packaged as a Docker container which can then be used in continuous integration pipelines as part of testing, packaging, and delivery.
+
+Note that many of the operations defined in the Specification topic are implementation details of the prototype, and not required or intended for production implementation.
 
 ##### Application Architecture
 
-TODO: ReactJS architecture for the Reporting Client
+The Reporting Client is implemented as a ReactJS frontend application, launched via a standard browser, which then communicates with the Measure Calculation Tool as a web service. All communication from the Reporting Client is with the Measure Calculation Tool prototype, which then coordinates communication with other systems including the facility FHIR endpoints and the reporting submission endpoint.
+
+The application uses Yarn as the build technology.
+
+The application is packaged as a Docker container which can then be used in continuous integration pipelines as part of testing, packaging, and delivery.
+
+Note that many of the configuration functions of the Measure Calculation Tool are not exposed as user-interfaces in the Reporting Client, since the focus of the prototype is on implementing reporting submission.
 
 ##### Information Architecture
 
@@ -239,7 +351,18 @@ Because measure calculation is being performed directly on patient-level data re
 
 ##### Performance
 
-TODO: Document performance requirements and expectations
+Quality measure calculation for patient populations typically involves a significant amount of data. A typical quality measure requires dozens, or even hundreds of data elements for each patient in the population. Current quality reporting using eCQMs is often performed using purpose-built warehouses that are shaped specifically to support the Quality Data Model used to model patient information in eCQMs. This architecture lends itself to high performance reporting, but poses significant challenges for quality measure development because it requires vendor effort for every new type of data element required. By contrast, the architecture of the Measure Calculation Tool proposes to take advantage of industry adoption of FHIR to facilitate quality reporting. From a performance standpoint, there are two primary approaches to leveraging FHIR:
+
+1. API-based approach
+2. Bulk-FHIR approach
+
+The API-based approach makes direct use of FHIR API's, retrieving data required for measure calculation by transforming the data requirements for a FHIR-based measure into FHIR queries. The Bulk-FHIR approach requires similar transformation of data requirements, but provides better support for population-level query.
+
+Note that the Measure Calculation Tool architecture can make use of both approaches by isolating data access to an interface that gathers all data access requirements for the measure (or measures). The implementation of this interface can then use either the API-based approach, turning retrievals into FHIR API queries, usually patient-at-a-time, or the Bulk-FHIR approach. The current implementation of the prototype uses the API-based approach.
+
+Given the potential volume of data involved in quality measurement use cases, exploration is required to determine how much volume could reasonably be supported using this approach, and it is likely the case that at least batching of queries to reduce latency impact on throughput would be required.
+
+Note that another potential mitigation for the volume of data required to be transported would be to use an incremental approach. Rather than retrieving all the data at once (as the current Measure Calculation Tool prototype does), an incremental approach would function on a periodic basis (e.g. weekly, nightly, or even on-demand based on notifications) to transfer only the data that was new or had been updated since the last transfer. This approach would require that the Measure Calculation Tool maintain a database of submitted data, but would spread the load of data transfer across the reporting period, rather than all at once.
 
 #### System Design
 
@@ -247,6 +370,9 @@ This section documents the system design from a use case and user story perspect
 
 ##### Use Cases
 
+Use cases for the measure calculation tool fall into four broad categories, System Administration, Site Registration and Maintenance, Validation and Certification, and Reporting Submission.
+
+/*
 Template:
 
 | | |
@@ -274,10 +400,15 @@ Template:
 |Special Requirements:| |
 |Assumptions:| |
 |Notes and Issues:| |
+*/
 
 ###### System Administration
 
+System Administration use cases involve integration, implementation, and maintenance of the Measure Calcuation Tool. The use cases were not fully developed as part of the initial prototype.
+
 ###### Site Registration/Maintenance
+
+Site Registration and Maintenance use cases involve configuration of the Measure Calculation Tool for use with a particular provider and its facilities. THe use cases were not fully developed as part of the initial prototype. 
 
 ###### Validation/Certification
 
@@ -335,13 +466,13 @@ Template:
 |Assumptions:| |
 |Notes and Issues:| |
 
-<img src="MeasureCalculationTool.png" alt="Measure Calculation Tool Use Case Overview"/>
+<img src="MeasureCalculationTool.png" alt="Measure Calculation Tool Use Case Overview" width="600" height="469"/>
 
 ##### Actors
 
-1. Provider implementer
-2. Provider quality improvement administrator
-3. Provider quality improvement user
+1. **Provider implementer**: Members of the IT implementation staff at the provider organization, responsible for the technical installation and integration of the Measure Calculation Tool in the provider system.
+2. **Provider quality improvement administrator**: An administrative user responsible for the configuration of the Measure Calculation Tool.
+3. **Provider quality improvement user**: A quality improvement specialist responsible for quality reporting submissions for the provider.
 
 ##### User Interfaces/Wireframes
 
@@ -352,7 +483,19 @@ Template:
 
 ##### Components
 
+TODO:
+
 ##### Technical Requirements
+
+TODO: 
+
+###### Functional Requirements
+
+TODO:
+
+###### Non-functional Requirements
+
+TODO:
 
 ###### User Stories
 
@@ -403,6 +546,8 @@ The measure calculation tool makes use of the following open source FHIR and CQL
 3. [CQL Evaluator](https://github.com/cqframework/clinical-reasoning): This component brings together the translator and engine to provide complete CQL translation and evaluation support with a FHIR-based data model, either the base FHIR specification directly, or FHIR implementation guides such as USCore and QICore. The prototype will make use of at least the 2.6.0 release of the evaluator to ensure support for QICore versions 4.1.1 and above.
 
 4. [HAPI-FHIR Server](https://hapifhir.io/): This component provides an out-of-the-box reference implementation of a FHIR server. The prototype will use this server to play the role of the provider FHIR servers in the development, sandbox, and integration testing scenarios. The prototype will make use of at least the 6.0.1 release of HAPI FHIR.
+
+5. [FHIR Validator](https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator): This component provides validation of FHIR resources using profile information published as part of FHIR Implementation Guides.
 
 ###### Measure Calculation Tool
 
