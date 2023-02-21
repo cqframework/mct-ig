@@ -1,0 +1,128 @@
+The Measure Calculation Tool facilitates quality reporting and submission by provider organizations using standards-based open source software. This guide is targeted at Provider Quality Improvement users responsible for reviewing, approving, and submitting quality reporting information.
+
+For an overview of what the Measure Calculation Tool is and how it facilitates quality reporting submission, see the [Use Case Overview](index.html#use-case-overview).
+
+For information on how to use the Reporting Client to submit quality reporting data, refer to the [User Guide](user-guide.html).
+
+This topic describes how to install, configure, and start the Measure Calculation Prototype in a provider implementation environment.
+
+### Starting the Measure Calculation Tool Prototype
+
+1. git clone the mct repository
+2. in the root, issue `docker-compose up`
+3. switch to the `frontend` folder
+4. issue `yarn install & yarn start`
+
+### Organization Configuration
+
+Configuration of the MCT prototype can be performed by posting FHIR Organization, Endpoint, and Location resources to the running MCT prototype as described below:
+
+#### Configure Organization
+
+Configuring the Organization involves providing a FHIR Organization resource that conforms to the [QICore Organization](https://hl7.org/fhir/us/qicore/StructureDefinition-qicore-organization.html) profile. For the purposes of the Measure Calculation Tool, the key information provided by the Organization resource is the CCN identifier for the provider organization.
+
+```json
+    "identifier": [{
+        "system": "urn:oid:2.16.840.1.113883.4.336",
+        "use": "secondary",
+        "value": "ACME-CCN"
+    }]
+```
+
+See the [ACME Organization Example](Organization-acme.html) for a complete example Organization resource.
+
+#### Configure Location
+
+Configuring the Location(s) involves providing a FHIR Location resource that conforms to the [QICore Location](https://hl7.org/fhir/us/qicore/StructureDefinition-qicore-location.html) profile. For the purposes of the Measure Calculation Tool, the key information provided by the Location resource is the FHIR endpoint for the provider location (facility). This information is provided using a contained Endpoint resource in the Location:
+
+```json
+    "contained": [{
+        "id": "acme-north-endpoint",
+        "resourceType": "Endpoint",
+        "status": "active",
+        "connectionType": {
+            "system": "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+            "code": "hl7-fhir-rest"
+        },
+        "payloadType": [{
+            "coding": [{
+                "system": "http://terminology.hl7.org/CodeSystem/endpoint-payload-type",
+                "code": "any"
+            }] 
+        }],
+        "payloadMimeType": [ "application/fhir+json" ],
+        "address": "http://acme.org/north/fhir"
+    }]
+```
+
+See the [ACME North Location Example](Location-acme-north.html) for a complete example Location resource including the contained Endpoint resource.
+
+### Tags
+
+* Location Tag: System: http://cms.gov/fhir/mct/tags/Location (code is the id of the Location, display is the name of the Location)
+* Expression Tag: System: http://cms.gov/fhir/mct/tags/Expression (display is the identifier of the Expression)
+
+### Configure Receiving System Endpoint
+
+The receiving system endpoint is configured as a reference to en Endpoint resource specified using an extension on the Organization resource:
+
+```json
+   "extension": [{
+      "url": "http://cms.gov/fhir/mct/StructureDefinition/mct-receivingSystemEndpoint",
+      "reference": {
+        "reference": "Endpoint/example"
+      }
+   }]
+```
+
+### Measure Specifications
+
+Measure specifications available for calculation in the MCT prototype can be configured by posting a Quality Measure IG compliant Measure Specification as a FHIR Bundle to the running MCT prototype. Note that the bundle must include the Measure, any associated Libraries, and any required terminology as ValueSet resources.
+
+Measure specifications published with this prototype implementation guide:
+
+* [Validation Measure](Measure-QiCoreProfileValidation.html)
+* [CMS104 Example](Measure-DischargedonAntithromboticTherapyQICore4.html)
+
+The following list summarizes the required data elements for the CMS104 example measure:
+
+1. [Encounter](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-encounter.html): [Non-Elective Inpatient Encounter](http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.424)
+2. [Condition](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-condition.html): Diagnosis per Encounter
+3. [ServiceRequest](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-servicerequest.html): [Comfort Measures](http://cts.nlm.nih.gov/fhir/ValueSet/1.3.6.1.4.1.33895.1.3.0.45)
+4. [Procedure](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-procedure.html): [Comfort Measures](http://cts.nlm.nih.gov/fhir/ValueSet/1.3.6.1.4.1.33895.1.3.0.45)
+5. [MedicationRequest](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-medicationrequest.html): [Antithrombotic Therapy](http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.62)
+5. [MedicationRequest](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-medicationrequest.html): [Pharmacological Contraindications For Antithrombotic Therapy](http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.52)
+6. [MedicationNotRequested](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-mednotrequested.html): [Antithrombotic Therapy](http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.62)
+
+### Test Cases
+
+Test data for the MCT prototype is available as bundles in the github repository. These bundles can be posted to the mock EHR (in this case a HAPI FHIR Server).
+
+In addition, the prototype includes a simple test data generator that can be used to create additional test cases, as described in the following sections.
+
+#### Test Data Generation
+
+The test data generation for CMS104 is achieved by running the _generateTestData script found at the root of this project. 
+This script evaluates the CMS104TestDataGenerator CQL library to generate the necessary QiCore profiles, populates those 
+resources into a transaction Bundle, and writes the Bundle resource to the input/tests directory.
+
+##### Adding a New Test Case
+
+To add a new test case simply add an expression to the CMS104TestDataGenerator.cql library using the specified builder functions 
+to generate the necessary resources. There are two simple examples currently in that library to get you started. Note that the 
+name of the expression will be used as the name for the sub-directory and filename for the output.
+
+##### Running the Test Data Generation Script
+
+The _generateTestData script is executed from the command line with the command `sh _generateTestData.sh`. Currently only a 
+shell script has been authored. Including a Batch (.bat) script is on the road map to better support Windows users. In order 
+to run the shell script, your environment must support `sh` (UNIX command language interpreter), `curl` (command that enables 
+data exchange to or from a server), and `jq` (command line JSON processor) commands. These can be easily installed on Mac using 
+[Homebrew](https://brew.sh) from the command line (e.g. `brew install curl` or `brew install jq`).
+
+##### Output
+
+After successfully running the _generateTestData script, the test data will be written to the input/tests directory of this 
+project. Each named expression in the CMS104TestDataGenerator library will generate a sub-directory within the input/tests 
+directory containing a JSON file with a [transaction](http://hl7.org/fhir/http.html#transaction) bundle containing the test 
+data. The name of the CQL named expression will be used for both the sub-directory and JSON filename.

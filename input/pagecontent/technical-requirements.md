@@ -6,7 +6,7 @@ This Technical Requirements Document (TRD) documents both the high-level system 
 
 #### General Overview and Design Guidelines
 
-TODO:
+This section covers background for the Measure Calculation Tool, provides a brief overview of the technical solution, and identifies risks, constraints, and design guidelines for the solution.
 
 ##### Background
 
@@ -38,23 +38,29 @@ _Stakeholders_
 
 The following comprises the internal and external stakeholders whose requirements are represented by this document: 
 
-•	Anne Weinstein  
-•	Tom Lantz Senior Program Technical Advisor  
-•	Bridget Calvert Senior dQM Implementation Lead 
-•	Joel Andress Senior dQM Program Lead  
-•	Bill Lakenan ADO 
-•	Reid Kiser  DQM Division Director R 
-•	Mark Canfield Division Deputy Director  
-•	Michellene Roberts HQR Program Lead  
-•	Mindy Riley  Division Director  
+* Anne Weinstein  
+* Tom Lantz Senior Program Technical Advisor  
+* Bridget Calvert Senior dQM Implementation Lead 
+* Joel Andress Senior dQM Program Lead  
+* Bill Lakenan ADO 
+* Reid Kiser  DQM Division Director R 
+* Mark Canfield Division Deputy Director  
+* Michellene Roberts HQR Program Lead  
+* Mindy Riley  Division Director  
 
 ##### General Overivew
 
-TODO:
+<div>
+<img src="MeasureCalculationTool.png" alt="Measure Calculation Tool Use Case Overview" width="600" height="469"/>
+</div>
+
+As depicted in the above diagram, the Measure Calculation Tool is a software system that facilitates gathering quality reporting data, performing measure validation and calculation, and submitting reporting data for a provider. This process makes use of FHIR standard APIs implemented by vendor systems at provider sites, reducing the overall burden of quality reporting by eliminating the currently required transformation from proprietary data models to the conceptual model used for specifying eCQMs (Quality Data Model). By using FHIR as a standard data model for the expression of quality measures, quality reporting data exchange, measure calculation, and reporting submission can be implemented in a single standard way, rather than requiring each vendor system to interpret and apply measure specifications.
+
+This document describes the architecture and technical requirements for the Measure Calculation Tool, as well as documenting the implementation of the current Measure Calculation Tool prototype using open source and freely available non-commercial reference implementation software. This process will demonstrate the technical feasibility of the approach while highlighting risks for and next steps to facilitating fully scalable production-level implementation.
 
 ##### Assumptions/Constraints/Risks
 
-TODO:
+This section documents the assumptions, constraints, and risks associated with the Measure Calculation Tool.
 
 ###### Assumptions
 
@@ -67,18 +73,23 @@ TODO:
 7. The prototype will use synthetic data 
 8. It will contain internal bundles of  knowledge repository (measure specification support) 
 9. It will contain internal bundles terminology service 
-10. TBD: Use bulk FHIR
+10. It will consider strategies for supporting bulk FHIR, but the prototype will use an API-based approach
 11. Hospitals with multiple locations operating under a single CCN will submit reports for all locations 
-12. Hospitals user can select measures for reporting (see 1st assumption) 
-13. TBD: connect to Compliant FHIR server that has aggregated patient data 
-14. TBD: measure calculation occurs on data in transit 
-15. Debatable? MCT does not store data it exchanges data 
+12. Hospital users can select measures for reporting (see 1st assumption) 
+13. It will consider strategies for supporting aggregated patient data, but the prototype will use a snapshot approach 
+14. It will perform measure calculation directly on gathered data 
+15. It will consider strategies for storage versus exchange of data 
 
 ###### Constraints
 
-1. The Measure Calculation Tool solution must be open source
+The following architectural and system constraints are identified for the Measure Calculation Tool:
 
-TODO:
+1. The solution must be open source, making use of only non-commercial, freely available software and technologies
+2. The solution must use FHIR-based standards for all data exchange and measure specifications
+3. The solution must use industry standard methodologies for change management
+4. The solution must use industry standard technologies and approaches for continuous integration
+5. The solution must be deployable using container-based approaches
+6. The solution must support security and privacy of patient data
 
 ###### Risks
 
@@ -178,13 +189,15 @@ The Measure Calculation Tool is a standards-based implementation and uses indust
 3. The software makes use of container technology to aid adoption, implementation, and integration.
 4. The software repositories are configured with continuous integration build and deployment.
 
-#### Design Considerations
+#### Design Guidelines
 
-TODO:
+The following design guidelines inform the Measure Calculation Tool and prototype design and implementation:
 
-##### Goals and Guidelines
-
-TODO:
+* Use of standards: The solution will be designed to use HL7 FHIR-based standards wherever possible, specifically including US Core STU 3.1.1 and QI Core STU 4.1.1 to characterize all data exchange, and the Quality Measure IG STU 4.0.0 and Data Exchange for Quality Measures STU 4.0.0 to characterize all measure specification and terminology exchange.
+* Identify gaps: The solution will identify any gaps in capabilities or adoption that limit or potentially limit the complete implementation of FHIR-based quality reporting.
+* Propose alternatives: For identified gaps, the solution will propose alternative strategies as well as provide feedback to the standards development process to close the gaps.
+* Design for flexibility: The solution will have a modular design that enables functionality to be provided as isolated components that are focused on particular capabilities.
+* Design for performance: The solution must focus on performance of the overall solution to ensure the feasibility of the approach. Where potential bottlenecks are identified, the solution will propose alternative strategies or approaches. The primary metric used to characterize system performance is the patient-measure, the time it takes to gather, validate, and evaluate a quality measure for a single patient. 
 
 #### 3.1.1 Safety Requirements
 
@@ -209,7 +222,17 @@ The Reporting Client should provide a simple interface for quality improvement s
 
 The User Interface for this prototype will be a minimalist React-JS application that mimics the experience of submitting reporting data in the current hospital reporting system.
 
-TODO: Wireframes
+The specific capabilities of the user interface are documented as part of the user stories in the technical requirements section of this document, but broadly the functionality must include:
+
+1. System administration capabilities to support configuration of organizations, facilities, data access endpoints, CCN information, and reporting submission endpoints. NOTE: The user interface for this aspect is out of scope for the initial prototype.
+2. Reporting submission capabilities allowing an end user to select:
+    1. Reporting organization
+    2. Measure to be reported
+    3. Population to be reported
+    4. Reporting period
+3. Data validation capabilities allowing an end user to review any validation messages for the data being reported
+4. Population score review capabilities allowing an end user to review final score
+5. Submission capabilities allowing an end user to submit data and scores
 
 ##### Architectural Strategies
 
@@ -243,9 +266,9 @@ The standards involved in the specification, distribution, and implementation of
 
 Performance requirements, such as the defined scalability or responsiveness expectations for specific workloads, are a contributing factor to system design. Preliminary considerations of system performance include total time to complete data gather for a single patient and for a facility, total time to calculate a measure for a single patient and for a population, and total time to submit data and calculated scores to a receiving system. During the development process, the team will continue to surface specific response time goals.
 
-#### System Architecture and Design
+#### System Architecture
 
-TODO:
+This section documents the logical view of the system architecture, and the high-level organization and technological approach to the software, application, and information architecture of the Measure Calculation Tool.
 
 ##### Logical View
 
@@ -271,7 +294,9 @@ And finally, the Measure Calculation Tool interfaces with the Receiving System a
 
 The following diagram illustrates the container level of the measure calculation tool, depicting the interactions it has with external systems:
 
+<div>
 <img src="container-mct.png" alt="MCT Container Diagram" height="650" width="923"/>
+</div>
 
 As shown in the diagram, the Measure Calculation Container provides the implementation of the measure calculation tool, as well as support for configuration information required to perform the calculation, including reporting provider information, available measures for calculation, as well as facility and receiving system endpoints.
 
@@ -283,7 +308,9 @@ Externally, the Measure Calculation Tool container must interface with the Knowl
 
 The following diagram illustrates the coordinator component of the measure calculation tool:
 
+<div>
 <img src="component-mct-coordinator.png" alt="MCT Coordinator Component Diagram" height="331" width="672"/>
+</div>
 
 As shown in the diagram, the Reporting Client interfaces with the coordinator component to provide measure calculation and reporting services to the end user.
 
@@ -305,7 +332,9 @@ The Receiver Interface component provides an implementation of the capabilities 
 
 The following diagram illustrates the configurator component of the measure calculation tool:
 
+<div>
 ![MCT Configurator Component Diagram](component-mct-configurator.png)
+</div>
 
 As shown in the diagram, the Configurator component is used by the Reporting Client to support user selection of the measure to be calculated, the organization and facilities to be reported, and required reporting provider information.
 
@@ -457,7 +486,7 @@ Site Registration and Maintenance use cases involve configuration of the Measure
 |Postconditions:|The relevant patient data from all sites is stored in the Reciving System<br/>The MeasureReport calculation procduces the expected results from the input data<br/>The MeasureReport is submitted to the Receiving System|
 |Normal Course:|A user initiates the process via the Reporting Client, selecting the facilities, measure, and reporting period.<br/>For each measure, the measure calculation tool gathers data requirements and terminology to determine FHIR queries to be executed<br/>For each facility, the measure calculation tool uses the facilities FHIR endpoint to evaluate the FHIR queries and gather all relevant data<br/>For all relevant data, the measure calculation tool validates the data conforms to expected profiles<br/>For all relevant data, the measure calculation tool submits that data to the Receving System<br/>The Measure Calculation Tool evaluates the measure using the Receiving System as the data source<br/>The Reporting Client displays the result of the Measure Calculation to the user<br/>The user confirms the results and agrees to submit<br/>The Measure Calculation Tool posts the resulting MeasureReport to the Receving System|
 |Alternative Courses:|N\A|
-|Exceptions:|If the data doesn't meet reporting requirements, the measure cannot be submitted<br/>If the data doesn't conform to apprepriate profiles, steps need to be taken to address, report violations as part of the reponse and require a resubmit|
+|Exceptions:|If the data doesn't meet reporting requirements, the measure cannot be submitted<br/>If the data doesn't conform to appropriate profiles, steps need to be taken to address, report violations as part of the reponse and require a resubmit|
 |Includes:|N/A|
 |Priority:|High|
 |Frequency of Use:|Measure will be calculated quarterly|
@@ -465,8 +494,6 @@ Site Registration and Maintenance use cases involve configuration of the Measure
 |Special Requirements:| |
 |Assumptions:| |
 |Notes and Issues:| |
-
-<img src="MeasureCalculationTool.png" alt="Measure Calculation Tool Use Case Overview" width="600" height="469"/>
 
 ##### Actors
 
@@ -476,26 +503,16 @@ Site Registration and Maintenance use cases involve configuration of the Measure
 
 ##### User Interfaces/Wireframes
 
+TODO:
+
 1. System Configuration
 2. Site Management
 3. Validation
 4. Reporting Submission
 
-##### Components
-
-TODO:
-
 ##### Technical Requirements
 
-TODO: 
-
-###### Functional Requirements
-
-TODO:
-
-###### Non-functional Requirements
-
-TODO:
+This section documents the technical requirements for the Measure Calculation Tool as specific user stories from the perspective of each
 
 ###### User Stories
 
@@ -529,7 +546,9 @@ This section describes implementation considerations for the Measure Calculation
 
 The following sequence diagram implements the reporting submission use case described above:
 
+<div>
 <img src="sd-reporting-submission-use-case.png" alt="Reorting Submission Use Case"/>
+</div>
 
 ##### Prototype
 
@@ -583,4 +602,49 @@ Both these data transfer points within the architecture could benefit from bulk 
 
 As an aside, the Measure Calculation Tool could be seen as a data gathering tool, rather than a calculation tool per se. In this approach, the MCT would act as an incremental data conduit from the provider site systems to an aggregate receiving system store. Measure calculation could then be performed on the aggregate receiving system store, rather than requiring the single "extract and calculate" approach taken here by the MCT prototype. This approach would require that the receiving system be a persistent store for data from provider sites. End of aside.
 
-#### References
+#### Future Considerations
+
+The intent of the Measure Calculation Tool prototype is to demonstrate initial feasibility of the use of freely available, standards-based open source software to facilitate provider quality reporting. The following sections detail possible future enhancements for the prototype.
+
+##### Bulk-FHIR Exchange
+
+The Measure Calculation Tool prototype is currently implemented using an API-based approach, meaning that the implementation of the data access interface the Measure Calculation Tool uses to gather data from facility FHIR endpoints queries data directly using the FHIR API. As noted in the Enterprise Considerations section above, this approach will likely be untenable for large data volumes. A potential next step for the prototype would be to adapt the data access interface implementation to be able to make use of Bulk-FHIR to support gathering data from facilities.
+
+##### Incremental Exchange
+
+The Measure Calculation Tool prototype is currently implemented as a one-step gather, meaning that all the data needed for calculation are requested at once. Again, as noted in the Enterprise Considerations section above, a potential mitigation for the issue of large data volumes would be support incremental exchange. In other words, rather than requesting all the data at once, data could be gathered incrementally on a periodic basis, or even in response to notifications from the source systems. This approach would require adding a storage component to the Measure Calculation Tool, a capability that would be reasonably straightforward to add, given the use of the HAPI FHIR server as a base component for the MCT.
+
+##### Knowledge Repository Integration
+
+The Measure Calculation Tool prototype currently uses an interface for knowledge repository capabilities. This interface is implemented using simple FHIR-bundle configuration in the repository, given the lack of available Knowledge Repository services. A potential next step for the prototype would be to adapt this interface to use a Knowledge Repository directly. This could be done relatively easily using a mock Knowledge Repository built with a reference implementation such as the CQF Ruler, or it could take advantage of current efforts underway to build a reference implementation of the Measure Repository service described in the Quality Measure IG. 
+
+##### Terminology Service Integration
+
+The Measure Calculation Tool prototype currently uses an interface for terminology service capabilities. This interface is implemented using simple FHIR-bundle configuration in the repository, given the lack of available Terminology Services. A potential next step for the porototype would be to adapt this interface to use a Terminology Service directy. This could be done relatively easily using a mock Terminology Service built with a reference implementation such as the CQF Ruler, or it could take advantage of current efforts underway to enhance the Value Set Authority Center FHIR API based on the Measure Terminology Service described in the Quality Measure IG. 
+
+##### Asynchronous Processing
+
+The Measure Calculation Tool prototype currently uses synchronous processing for all operations, meaning the APIs for operations such as $gather and $submit are implemented as immediate request/response operations: when a client makes a request, it blocks until the operation completes, at which point it receives a response. By contrast, an asynchronous approach would support more responsive user interfaces, in that when the client makes a request, it receives an immediate response with a "job identifier" indicating the process has started. The client continues to request status using that "job identifier" until the process completes, at which time the completed response is provided.
+
+This capability would be accomplished by adding the asynchronous processing protocol described in the base FHIR specification to the $gather operation defined in the Measure Calculation Tool.
+
+##### Platform Deployment
+
+The Measure Calculation Tool prototype is currently supported for deployment and configuration at each provider site. This architectural approach has the following tradeoffs for consideration:
+
+|Consideration|Pro|Con|
+|----|----|----|
+|Deployment infrastructure: The Measure Calculation Tool and Reporting Client are deployed using container technology|The provider implementer approach requires that sites have container infrastructure capability in order to deploy and integrate the Measure Calculation Tool.|The platform deployment approach would require supporting container infrastructure sufficient to support the anticipated load for all reporting providers|
+|Facility configuration: The Measure Calculation Tool requires organization and facility configuration information|The provider implementer approach requires sites to provide facility information as FHIR Organization, Location, and Endpoint resources, but allows for a stateless MCT|The platform approach would require persistent storage as well as authorization controls for organization and facility configuration information|
+|Security integration: The Measure Calculation Tool requires secure access to provider site data|The provider implementer approach uses simple OAuth integration built directly into the implementation|The platform deployment approach would require building out OAuth integration configuration capabilities that could be configured and managed by provider-level administrators|
+|Data isolation: The Measure Calculation Tool uses patient-specific site data|The provider implementer approach allows provider organizations to control all data that flows through the Measure Calculation Tool|The platform deployment approach means that patient-specific data would be flowing through platform services, either transiently for snapshot/synchronous approaches, or persistently if incremental and/or asynchronous exchange methods are used|
+
+##### Standards Feedback
+
+A potential gap in the reporting specifications provided by the Quality Measure IG and the Data Exchange for Quality Measures IG is the $gather operation defined in this IG and implemented by the Measure Calculation Tool. Although the capabilities described by this operation are not new, they represent a combination of existing capabilities to facilitate the prototype. Specifically, the $gather consists of:
+
+* Gathering data for a population of patients from a given list of facilities
+* Validating gathered data using profiles defined in the data requirements for the measure
+* Calculating both population-level and individual-level measure reports for the population
+
+The Data Exchange for Quality Measures IG could usefully be enchanced by adding this specification together with implementation experience from this prototype.

@@ -134,11 +134,6 @@
         <generation value="markdown"/>
       </page>
       <page>
-        <nameUrl value="specification.html"/>
-        <title value="Detailed Specification"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
         <nameUrl value="downloads.html"/>
         <title value="Useful Downloads"/>
         <generation value="html"/>

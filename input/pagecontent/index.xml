@@ -35,13 +35,10 @@
   <ul>
     <li>
       <a href="background.html">Background</a> - provides business context for the implementation guide and information that implementers should be
-      familiar with before reading the remainder of the IG.
+      familiar with before reading the remainder of the IG
     </li>
     <li>
       <a href="technical-requirements.html">Technical Requirements</a> - documents the Measure Calculation Tool (MCT) system architecture and design and provides technical requirements, use cases, and supported user stories.
-    </li>
-    <li>
-      <a href="specification.html">Detailed Specification</a> - Provides detailed conformance requirements for the implementation of the Measure Calculation Tool
     </li>
     <li>
       <a href="implementation-guide.html">Implementation Guide</a> - Provides documentation of the use of the Measure Calculation Tool from a healthcare IT staff perspective
@@ -51,6 +48,9 @@
     </li>
     <li>
       <a href="test-plan.html">Test Plan</a> - Describes the overall testing plan for both the development and verification of the prototype itself, as well as validation of the use of the prototype at a provider site
+    </li>
+    <li>
+      <a href="artifacts.html">Artifacts Index</a> - An index of the technical artifacts made available as part of this implementation guide.
     </li>
     <li>
       <a href="license.html">License</a>
