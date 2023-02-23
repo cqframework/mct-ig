@@ -2,59 +2,15 @@
   <a name="background"> </a>
   <h3>Background</h3>
   <p>
-    This topic provides background information for the measure calculation platform and tool prototype.
+    This topic provides background information for the Measure Calculation Tool prototype. 
+    The Measure Calculation Tool (MCT) is an open-source, end-to-end software system, designed 
+    to connect with eligible hospital and clinicians FHIR APIs, gather data across provider EMRs, 
+    validate the data received from a provider API, calculate measure score(s) and submit quality 
+    measure reports.   
   </p>
-
-  <a name="platform-environment"> </a>
-  <h3>Platform Environment</h3>
 
   <a name="patform-functionality"> </a>
   <h3>Platform Functionality</h3>
-
-  <a name="assumptions-and-considerations"> </a>
-  <h3>Assumptions and Consideration</h3>
-
-  <a name="question1"> </a>
-  <h4>Question 1</h4>
-
-  <p>
-Question about policy in place for providers to publish FHIR endpoint?
-	</p>
-
-  <p>
-ONC Standards-based Application programming Certification program requires, in "§ 170.315(g)(10) to implement the 21st Century Cures Act's requirement that developers of certified health IT publish APIs that can be used "without special effort.” This new certification criterion requires standardized API access for single patient and population services and is limited to API-enabled "read” services using the HL7® Fast Healthcare Interoperability Resources (FHIR®) standard. The FHIR standard, in addition to a set of adopted implementation specifications, provides known and consistent technical requirements for software developers."
-The MCT will leverage this policy, see attatched for more information
-	</p>
-
-  <a name="question2"> </a>
-  <h4>Question 2</h4>
-
-  <p>
-Question about how to distinguish between hospitals?
-	</p>
-
-  <p>
-We will use CCN or Certification number. This number does not change just because an institution has been sold, or has changed ownership or its form of business organization.  If 2 or more pre-existing provider enterprises have merged, but continue to operate as separate facilities, each will have a separate provider agreement and will keep its original number.  This is true even though the merged-but-separate facilities may adopt a common name. However, if the merged facilities operate as a single institution, it must submit a single cost report, which necessitates a single provider agreement/CCN. 
-However, I do not see the CCN in the USCDI V3, Just encounter location. I do know that there was an issue with MITRE lantern project which assess the publicly available fhir endpoints, because vendors where not filing out the organization name or NPI ID . https://lantern.healthit.gov/?tab=organizations_tab. There are about 5299 entities they identified. Considering these include ACS and other institutions, its safe to say that's serious undercount.
-I am not sure about the walking of an NPI ID to a CNN
- Identifying patients
-	</p>
-
-  <p>
-As of 2019 Experian announced every person in US had been assign a universal patient identifier UPI. And the US senate removed the ban that kept us from instituting it, October 22, 2021. See attachment for more information
-	</p>
-
-  <a name="question3"> </a>
-  <h4>Question 3</h4>
-
-  <p>
-Question about security concerns?
-	</p>
-
-  <p>
-I would like to know if smart on fhir suffices for the 21st Century Cures act security requirement or will we need further consideration?
-Current  issue with previous prototype architecture
-	</p>
 
   <a name="prototype-capabilities"> </a>
   <h3>Prototype Capabilities</h3>
@@ -65,28 +21,28 @@ What use cases are covered by this prototype?
 
   <ol>
     <li>
-1. Request Calculation - A user uses the Reporting Client to Request a Calculation. In the simplest case this involves selecting a measure to be run and a patient to be evaluated. 
+Request Calculation - A user uses the Reporting Client to Request a Calculation. In the simplest case this involves selecting a measure to be run and a patient to be evaluated. 
     </li>
     <li>
-2. Request Measure Artifacts - The Measure Calculation Tool requests the Measure Artifacts from the Knowledge Repository and uses them to determine the effective data requirements for the measure. 
+Request Measure Artifacts - The Measure Calculation Tool requests the Measure Artifacts from the Knowledge Repository and uses them to determine the effective data requirements for the measure. 
     </li>
     <li>
-3. Terminology - The Measure Calculation Tool uses the effective data requirements for the measure to determine the appropriate value sets and associated versions and code system versions, and
+Terminology - The Measure Calculation Tool uses the effective data requirements for the measure to determine the appropriate value sets and associated versions and code system versions, and
  uses those to retrieve the appropriate value set expansions from the Measure Terminology Service. 
     </li>
     <li>
-4. Gather - The Measure Calculation Tool uses the effective data requirements and appropriate value set expansions to retrieve the relevant data for the measure from
-the Clinical Data Repository. Provider FHIR api 
+Gather - The Measure Calculation Tool uses the effective data requirements and appropriate value set expansions to retrieve the relevant data for the measure from
+the Provider Site System Provider FHIR api 
     </li>
     <li>
-5. Evaluate - The Measure Calculation Tool uses the relevant data retrieved from
-the Clinical Data Repository Provider FHIR api to calculate the Measure Score, producing a MeasureReport with the result and references to the relevant data used to calculate the measure. 
+Evaluate - The Measure Calculation Tool uses the relevant data retrieved from
+the Provider Site System Provider FHIR api to calculate the Measure Score, producing a MeasureReport with the result and references to the relevant data used to calculate the measure. 
     </li>
     <li>
-6. Submit - The Measure Calculation Tool constructs a Bundle containing the MeasureReport and all the referenced relevant data and submits it to the Receiving System. 
+Submit - The Measure Calculation Tool constructs a Bundle containing the MeasureReport and all the referenced relevant data and submits it to the Receiving System. 
     </li>
     <li>
-7. Response - The Measure Calculation Tool returns the MeasureReport bundle to the Reporting Client, which then displays the resulting measure score and relevant data to the user. 
+Response - The Measure Calculation Tool returns the MeasureReport bundle to the Reporting Client, which then displays the resulting measure score and relevant data to the user. 
     </li>
   </ol>
 
@@ -114,13 +70,59 @@ Decision: For the prototype, we assume we can get a group resource that tells us
  patients we would run the measure on, rather than actually attributing/selecting the patients that would be in that group. 
     </li>
     <li>
+  Rationale: There is significant variation in how patient attribution is determined across programs and quality reporting use cases. This use case along with other provider-related use cases for determining attribution has been documented in the DaVinci Attribution IG. The Data Exchange for Quality Measures IG makes use of the DaVinci attribution IG to support this use case, and so the Measure Calculation Tool prototype is designed to accept a Group resource to specify populations for quality measure reporting.
+    <li>
 Decision: The MCT will do the measure evaluation. 
-Instead of calling the receiving system directly, the reporting client would call the MCT to do evaluate-measure, and it would ask the receiving system for data and return
- the result. The gather step is pulling all the data and getting it into the receiving system for final calculation, then the MCT does the calculation by asking for the data from the receiving system. 
+Instead of using the receiving system to perform measure evaluation, the reporting client would call a $gather operation defined on the MCT to gather data, validate it, and perform measure calculation. This gather step is pulling all the data and getting it into the MCT for final calculation. 
     </li>
     <li>
 Rationale: This is within the scope of work to demonstrate desired functionalities without
  doing extra steps that are not absolutely necessary for a prototype. 
     </li>
   </ul>
+
+  <a name="assumptions-and-considerations"> </a>
+  <h3>Assumptions and Considerations</h3>
+
+  <a name="question1"> </a>
+  <h4>Question 1</h4>
+
+  <p>
+Question about policy in place for providers to publish FHIR endpoint?
+	</p>
+
+  <p>
+ONC Standards-based Application programming Certification program requires, in "§ 170.315(g)(10) to implement the 21st Century Cures Act's requirement that developers of certified health IT publish APIs that can be used "without special effort.” This new certification criterion requires standardized API access for single patient and population services and is limited to API-enabled "read” services using the HL7® Fast Healthcare Interoperability Resources (FHIR®) standard. The FHIR standard, in addition to a set of adopted implementation specifications, provides known and consistent technical requirements for software developers."
+The MCT will leverage this policy
+	</p>
+
+  <a name="question2"> </a>
+  <h4>Question 2</h4>
+
+  <p>
+Question about how to distinguish between hospitals?
+	</p>
+
+  <p>
+We will use CCN or Certification number. This number does not change just because an institution has been sold, or has changed ownership or its form of business organization.  If 2 or more pre-existing provider enterprises have merged, but continue to operate as separate facilities, each will have a separate provider agreement and will keep its original number.  This is true even though the merged-but-separate facilities may adopt a common name. However, if the merged facilities operate as a single institution, it must submit a single cost report, which necessitates a single provider agreement/CCN. 
+However, I do not see the CCN in the USCDI V3, Just encounter location. I do know that there was an issue with MITRE lantern project which assess the publicly available fhir endpoints, because vendors where not filing out the organization name or NPI ID . https://lantern.healthit.gov/?tab=organizations_tab. There are about 5299 entities they identified. Considering these include ACS and other institutions, its safe to say that's serious undercount.
+I am not sure about the walking of an NPI ID to a CCN
+ Identifying patients
+	</p>
+
+  <p>
+As of 2019 Experian announced every person in US had been assign a universal patient identifier UPI. And the US senate removed the ban that kept us from instituting it, October 22, 2021. See attachment for more information
+	</p>
+
+  <a name="question3"> </a>
+  <h4>Question 3</h4>
+
+  <p>
+Question about security concerns?
+	</p>
+
+  <p>
+  Further research is required to determine if SMART-on-FHIR Backend suffices for the 21st Century Cures act security requirement or will we need further consideration?
+	</p>
+
 </div>

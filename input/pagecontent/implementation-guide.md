@@ -13,6 +13,19 @@ This topic describes how to install, configure, and start the Measure Calculatio
 3. switch to the `frontend` folder
 4. issue `yarn install & yarn start`
 
+The Measure Calculation Tool github repository also contains a kubernetes file that is used to establish a sandbox/demonstration environment, and to help facilitate a kubernetes deployment.
+
+### Tags
+
+The Measure Calculation Tool uses FHIR [Tags](https://hl7.org/fhir/R4/resource-definitions.html#Meta.tag) to support identifying the source location and relevant expression for submitted data.
+
+* Location Tag: System: http://cms.gov/fhir/mct/tags/Location (code is the id of the Location, display is the name of the Location)
+* Expression Tag: System: http://cms.gov/fhir/mct/tags/Expression (display is the identifier of the Expression)
+
+The Location Tag is used to identify the source Location for the resource. This tag is applied by the Measure Calculation Tool when gathering data from each facility, and then used subsequently to support display of the source facility for a resource.
+
+The Expression Tag is used to identify the relevant expression during which the resource was referenced as part of measure calculation (i.e. an `evaluatedResource`).
+
 ### Organization Configuration
 
 Configuration of the MCT prototype can be performed by posting FHIR Organization, Endpoint, and Location resources to the running MCT prototype as described below:
@@ -56,11 +69,6 @@ Configuring the Location(s) involves providing a FHIR Location resource that con
 ```
 
 See the [ACME North Location Example](Location-acme-north.html) for a complete example Location resource including the contained Endpoint resource.
-
-### Tags
-
-* Location Tag: System: http://cms.gov/fhir/mct/tags/Location (code is the id of the Location, display is the name of the Location)
-* Expression Tag: System: http://cms.gov/fhir/mct/tags/Expression (display is the identifier of the Expression)
 
 ### Configure Receiving System Endpoint
 

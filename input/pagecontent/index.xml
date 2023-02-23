@@ -4,6 +4,15 @@
 	<p>
     This implementation guide documents and supports the use of a prototype Measure Calculation Tool for reporting and calculating FHIR-based digital quality measures (dQMs).
   </p>
+  <p>
+    The Measure Calculation Tool is a software system that facilitates gathering quality reporting data, performing 
+    measure validation and calculation, and submitting reporting data for a provider. This process makes use of FHIR 
+    standard APIs implemented by vendor systems at provider sites, reducing the overall burden of quality reporting 
+    by eliminating the currently required transformation from proprietary data models to the conceptual model used 
+    for specifying eCQMs (Quality Data Model). By using FHIR as a standard data model for the expression of quality 
+    measures, quality reporting data exchange, measure calculation, and reporting submission can be implemented in a 
+    single standard way, rather than requiring each vendor system to interpret and apply measure specifications.
+  </p>
 	<a name="use-case-overview"> </a>
 	<h3>Use Case Overview</h3>
   <p>The following diagram illustrates the primary use case for the measure calculation tool: Reporting Submission
@@ -13,20 +22,33 @@
   <ul>
     <li><b>Reporting Client:</b> A prototype user-interface that demonstrates the reporting submission workflow</li>
     <li><b>Measure Calculation Tool:</b> The measure calculation tool prototype as a RESTful web service</li>
-    <li><b>Knowledge Repository:</b> A measure repository providing measure specifications and data requirements features</li>
-    <li><b>Terminology Service:</b> A measure terminology service supporting terminology used by measures</li>
+    <li><b>Knowledge Repository:</b> A measure repository providing measure specifications and data requirements features as described by the Measure Repository Service capability statement in the Quality Measure IG</li>
+    <li><b>Terminology Service:</b> A measure terminology service supporting terminology used by measures as described by the Measure Terminology Service capability statement in the Quality Measure IG</li>
     <li><b>Provider Site System:</b> Clinical systems with patient data exposed via a US Core/QI Core compliant FHIR server</li>
-    <li><b>Receiving System:</b> Receiving system that receives the calculation and patient data submission</li>
+    <li><b>Receiving System:</b> Receiving system that receives the calculation and patient data submission as described by the Receiving System capability statement in the Data Exchange for Quality Measures IG</li>
   </ul>
   <p>Overall, this use case consists of the following steps:</p>
   <ul>
     <li><b>Initiate:</b> For the selected organization, measure, population, and reporting period, determine and retrieve specific data and terminology requirements</li>
     <li><b>Gather:</b> For each facility and the population, gather the relevant data from the provider site systems</li>
-    <li><b>Validate: For each gathered data element, validate the data is present and conforms to expected profiles</b></li>
+    <li><b>Validate:</b> For each gathered data element, validate the data is present and conforms to expected profiles</li>
     <li><b>Calculate:</b> For each individual, as well as the population, calculate the relevant measure score and determine evaluated resources</li>
     <li><b>Submit:</b> After reviewing any validation issues, submit the calculated score and relevant supporting data to the receiving system</li>
   </ul>
-  <p>For more detailed discussion of the use case and implementation, see the Technical Requirements topic.</p>
+  <p>For more detailed discussion of the use case and implementation, see the <a href="technical-requirements.html#implementation">Technical Requirements</a> topic.</p>
+
+  <a name="audience"> </a>
+  <h3>Target Audience</h3>
+  <p>
+    The target audiences for this implementation guide are:
+  </p>
+
+  <ul>
+    <li>Provider Implementer/IT Staff: Technical staff at provider organizations doing quality reporting. For this audience, this IG provides detailed technical documentation for the Measure Calculation Tool in the Technical Requirements Document, as well as step-by-step instructions for deploying and configuring the MCT for use at provider organizations.</li>
+    <li>Provider Quality Administrator: Quality improvement specialists and officers at provider organizations doing quality reporting. For this audience, this IG providers overview and background information on the Measure Calculation Tool and how it can be used to facilitate quality reporting.</li>
+    <li>Provider Reporting User: Quality improvement specialists at provider organizations doing quality reporting. For this audience, this IG provides overview and background information, as well as user-level documentation for how to use the Measure Calculation Tool to perform quality reporting tasks.</li>
+  </ul>
+
   <a name="contents"> </a>
   <h3>Contents</h3>
   <p>
@@ -66,9 +88,48 @@
   <a name="glossary"> </a>
   <h3>Glossary</h3>
 
+  <ul>
+    <li><b>API:</b> Application Programming Interface, a generic term describing a set of operations that expose the capabilities of a software system. In the context of this implementation guide and the Measure Calculation Tool, this term typically refers to the interface exposed by RESTful web services to support data access and other system functionality.</li>
+    <li><b>REST:</b> REpresentational State Transfer is an architectural style for distributed hypermedia systems, and is the industry standard architecture for web-based services and systems.</li>
+    <li><b>Data Element:</b> A generic term describing some relevant data point for a particular purpose. In the context of quality measurement, this term refers specifically to the data points referenced by a quality measure such as a "Qualified Encounter"</li> 
+  </ul>
+
   <a name="acknowledgements"> </a>
   <h3>Acknowledgements</h3>
 
+  <p>This implementation guide and the prototype Measure Calculation Tool were made possible by the thoughtful contributions of many individuals, including:</p>
+
+  <ul>
+    <li>Chris Schuler, Developer, Smile Digital Health</li>
+    <li>Dewar Tan, Developer, Vermonster</li>
+    <li>Josh Reynolds, Knowledge Engineer, Smile Digital Health</li>
+    <li>Emily Bancroft, Project Coordinator, Smile Digital Health</li>
+    <li>Bryn Rhodes, Editor, Smile Digital Health</li>
+    <li>Iman Simmonds, Project Manager, Yale New Haven Health</li>
+    <li>Kate Wright, Project Manager, Yale New Haven Health</li>
+    <li>Anne Weinstein TODO</li>
+    <li>Tom Lantz Senior Program Technical Advisor</li>
+    <li>Bridget Calvert Senior dQM Implementation Lead</li>
+    <li>Joel Andress Senior dQM Program Lead</li>
+    <li>Bill Lakenan ADO</li>
+    <li>Reid Kiser  DQM Division Director R</li>
+    <li>Mark Canfield Division Deputy Director</li>
+    <li>Michellene Roberts HQR Program Lead</li>
+    <li>Mindy Riley  Division Director</li>
+    <li>Andrew Fulks  TODO</li>
+    <li>Edera Team TODO</li>
+  </ul>
+
   <a name="references"> </a>
   <h3>References</h3>
+
+  <ul>
+    <li><a href="https://www.cms.gov/medicare/hospice-quality-reporting-program/quality-measure-development">Quality Measure Development</a></li>
+    <li><a href="https://hl7.org/fhir/R4">Health Level 7 Fast Healthcare Interoperability Resources (FHIR) R4</a></li>
+    <li><a href="https://hl7.org/fhir/us/core/STU3.1.1">US Core Profiles (STU 3.1.1)</a></li>
+    <li><a href="https://hl7.org/fhir/us/qicore/STU4.1.1">QI Core Profiles (STU 4.1.1)</a></li>
+    <li><a href="https://cql.hl7.org/N1">Clinical Quality Language N1</a></li>
+    <li><a href="https://hl7.org/fhir/us/cqfmeasures/STU3">Quality Measure Implementation Guide STU 3</a></li>
+    <li><a href="https://hl7.org/fhir/us/davinci-deqm/STU3">Data Exchange for Quality Measures Implementation Guide STU3</a></li>
+  </ul>
 </div>

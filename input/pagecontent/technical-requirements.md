@@ -28,7 +28,7 @@ As per the 21st Century Cures Act Final Rule, developers of certified health inf
 
 DQMs will allow eligible providers and hospitals to seamlessly exchange patient and population level data for the calculation and reporting of quality measure scores, using a Measure Calculation Tool (MCT). 
 
-An MCT is an open-source, end-to-end software platform, designed to interface with eligible hospital and clinicians FHIR API, gather data requirements for measure calculation from a knowledge repository, request and validate data from a provider API, calculate measure score(s) using Clinical Quality Language, and produce electronic report(s). CMS has contracted Yale-CORE to orchestrate the development of an early MCT prototype and demonstrate its ability to calculate a measure score for single FHIR-specified measure.
+An MCT is an open-source, end-to-end software system, designed to interface with eligible hospital and clinicians FHIR API, gather data requirements for measure calculation from a knowledge repository, request and validate data from a provider API, calculate measure score(s) using Clinical Quality Language, and produce electronic report(s). CMS has contracted Yale-CORE to orchestrate the development of an early MCT prototype and demonstrate its ability to calculate a measure score for single FHIR-specified measure.
 
 _Objective_
 
@@ -66,10 +66,10 @@ This section documents the assumptions, constraints, and risks associated with t
 
 1. Calculate a single hospital-level-process measure 
 2. Have a User interface similar to Hospital Quality Reporting webpage 
-3. MCT Host is agnostic 
-4. It will connect to US Core Compliant FHIR Server for mock reporting system 
+3. MCT Host is platform agnostic 
+4. It will connect to QI Core Compliant FHIR Server for mock reporting system 
 5. It will connect to server with DEQM receiver capabilities as a mock receiving system 
-6. It will use smart on FHIR or OAuth for authentication and authorization 
+6. It will use smart on FHIR or OAuth for authentication and authorization (NOTE: This is not implemented in the current prototype)
 7. The prototype will use synthetic data 
 8. It will contain internal bundles of  knowledge repository (measure specification support) 
 9. It will contain internal bundles terminology service 
@@ -374,9 +374,11 @@ Information in the first level is represented using resources defined in the FHI
 
 Information in the second level is represented using resources defined in the FHIR Administrative and Clinical modules, and further specified using profiles and guidance found in the QI Core FHIR implementation guide. Data retrieved from provider sites is expected to conform to the profiles defined in the QICore implementation guide. Note that because QI Core derives from and is a minimal extension to US Core, much of the data retrieved from US Core-compliant FHIR servers should be conformant with the QI Core profiles. For the purposes of this prototype, the validation step will test this conformance, and mark resources that are compliant with QI Core profiles with the appropriate profile markers to ensure correct evaluation in the CQL evaluator.
 
+Provider organization and facility modeling in the Measure Calculation Tool uses the FHIR Organization and Location resources. Provider organizations are modeled as a single Organization per CMS Certification Number (CCN), and each provider organization may have any number of associated facilities, each modeled with a single Location resource. For simplicity, all the clinical data recorded for a facility is assumed to be available through a single FHIR API, modeled with a FHIR Endpoint resource referenced from the Location.
+
 ##### Security Architecture
 
-Because measure calculation is being performed directly on patient-level data retrieved from a FHIR server, security is a primary concern. The Measure Calculation Tool makes use of the OAuth security model described by the SMART Backend Services security implementation guide. For the purposes of this prototype, reference implementations of these services are used to demonstrate capability.
+Because measure calculation is being performed directly on patient-level data retrieved from a FHIR server, security is a primary concern. The Measure Calculation Tool makes use of the OAuth security model described by the SMART Backend Services security implementation guide. For the purposes of this prototype, reference implementations of these services are used to demonstrate capability. Note that this is not currently implemented in the prototype Measure Calculation Tool.
 
 ##### Performance
 
@@ -400,36 +402,6 @@ This section documents the system design from a use case and user story perspect
 ##### Use Cases
 
 Use cases for the measure calculation tool fall into four broad categories, System Administration, Site Registration and Maintenance, Validation and Certification, and Reporting Submission.
-
-/*
-Template:
-
-| | |
-|---|---|
-|Use Case ID:|UC-00X|
-|Use Case Name:| |
-|Created By:| |
-|Date Created:| |
-|Last Updated By:| |
-|Date Last Updated:| |
-
-| | |
-|---|---|
-|Actors:| |
-|Description:| |
-|Preconditions:| |
-|Postconditions:| |
-|Normal Course:| |
-|Alternative Courses:| |
-|Exceptions:| |
-|Includes:| |
-|Priority:| |
-|Frequency of Use:| |
-|Business Rules:| |
-|Special Requirements:| |
-|Assumptions:| |
-|Notes and Issues:| |
-*/
 
 ###### System Administration
 
@@ -503,12 +475,37 @@ Site Registration and Maintenance use cases involve configuration of the Measure
 
 ##### User Interfaces/Wireframes
 
-TODO:
+###### System Configuration
 
-1. System Configuration
-2. Site Management
-3. Validation
-4. Reporting Submission
+The system configuration user interface supports configuring the provider organization, CCN, and receiving system endpoint, and the facilities configured for an organization:
+
+<div>
+<img src="wireframe-system-configuration.png" alt="System Configuration"/>
+</div>
+
+###### Site Management
+
+The site management user interface supports specifying the facility name and FHIR endpoint:
+
+<div>
+<img src="wireframe-site-management.png" alt="Site Management"/>
+</div>
+
+###### Validation
+
+The validation user interface supports displaying the results of the measure gather for the complete population, as well as any information, warning, and error messages produced as part of the data validation and calculation:
+
+<div>
+<img src="wireframe-validation.png" alt="Validation"/>
+</div>
+
+###### Reporting Submission
+
+The reporting submission user interface supports displaying the results of the population level calculation, as well submitting the results to the receiving system:
+
+<div>
+<img src="wireframe-reporting-submission.png" alt="Reporting Submission"/>
+</div>
 
 ##### Technical Requirements
 
@@ -638,6 +635,18 @@ The Measure Calculation Tool prototype is currently supported for deployment and
 |Facility configuration: The Measure Calculation Tool requires organization and facility configuration information|The provider implementer approach requires sites to provide facility information as FHIR Organization, Location, and Endpoint resources, but allows for a stateless MCT|The platform approach would require persistent storage as well as authorization controls for organization and facility configuration information|
 |Security integration: The Measure Calculation Tool requires secure access to provider site data|The provider implementer approach uses simple OAuth integration built directly into the implementation|The platform deployment approach would require building out OAuth integration configuration capabilities that could be configured and managed by provider-level administrators|
 |Data isolation: The Measure Calculation Tool uses patient-specific site data|The provider implementer approach allows provider organizations to control all data that flows through the Measure Calculation Tool|The platform deployment approach means that patient-specific data would be flowing through platform services, either transiently for snapshot/synchronous approaches, or persistently if incremental and/or asynchronous exchange methods are used|
+
+##### Clinical Data Source Tracking
+
+Tracking the source of clinical data, as well as the submission batch are important aspects of quality reporting. The Data Exchange for Quality Measures Implementation Guide specifies that the [Meta.source](https://hl7.org/fhir/resource-definitions.html#Meta.source) element be used to track the source, and the [`X-Provenance`](https://hl7.org/fhir/us/davinci-deqm/datax.html#provenance) header be used to track submission. This capability should be added to the prototype and guidance for tracking submission batch should be developed and implemented.
+
+##### Additional Organization and Facility Modeling
+
+The prototype implementation currently takes a simplified approach to organization and facility modeling, assuming that a given Organization will have 1..N facilities, and that the relationship between a facility and the provider site system is 1:1. Additional considerations for future work include:
+
+* How would we model submission vendors in HQR, registries in QPP and LDOs in EQRS? These use cases would be good stress tests of modeling the CMS measure entities as FHIR resources.
+* How will we model the matrices, temporal and measure contextual relationships that exist in HRQ. For example, hospital A in large healthcare organization X may rely on submission vendor #1 for one measure but sumission vendor #2 for a different measure.
+* Which system contains the master sources of truth for organization and facility reference? At CMS, HQR uses PRS for this purpose.
 
 ##### Standards Feedback
 
