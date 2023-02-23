@@ -71,6 +71,7 @@ Decision: For the prototype, we assume we can get a group resource that tells us
     </li>
     <li>
   Rationale: There is significant variation in how patient attribution is determined across programs and quality reporting use cases. This use case along with other provider-related use cases for determining attribution has been documented in the DaVinci Attribution IG. The Data Exchange for Quality Measures IG makes use of the DaVinci attribution IG to support this use case, and so the Measure Calculation Tool prototype is designed to accept a Group resource to specify populations for quality measure reporting.
+    </li>
     <li>
 Decision: The MCT will do the measure evaluation. 
 Instead of using the receiving system to perform measure evaluation, the reporting client would call a $gather operation defined on the MCT to gather data, validate it, and perform measure calculation. This gather step is pulling all the data and getting it into the MCT for final calculation. 

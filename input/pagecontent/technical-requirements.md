@@ -333,7 +333,7 @@ The Receiver Interface component provides an implementation of the capabilities 
 The following diagram illustrates the configurator component of the measure calculation tool:
 
 <div>
-![MCT Configurator Component Diagram](component-mct-configurator.png)
+<img src="component-mct-configurator.png" alt="MCT Configurator Component Diagram"/>
 </div>
 
 As shown in the diagram, the Configurator component is used by the Reporting Client to support user selection of the measure to be calculated, the organization and facilities to be reported, and required reporting provider information.
