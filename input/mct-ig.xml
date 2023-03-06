@@ -76,6 +76,20 @@
     </resource>
     <!--resource>
       <reference>
+        <reference value="Library/DischargedonAntithromboticTherapyQICore4" />
+      </reference>
+      <name value="Discharged on Antithrombotic Therapy QICore library example" />
+      <description value="Discharged on Antithrombotic Therapy QICore Library" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Measure/DischargedonAntithromboticTherapyQICore4" />
+      </reference>
+      <name value="Discharged on Antithrombotic Therapy QICore" />
+      <description value="Ischemic stroke patients prescribed or continuing to take antithrombotic therapy at hospital discharge" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="Device/cqf-tooling" />
         <display value="CQF Tooling Device" />
       </reference>
@@ -115,8 +129,8 @@
         <generation value="markdown"/>
       </page>
       <page>
-        <nameUrl value="specification.html"/>
-        <title value="Detailed Specification"/>
+        <nameUrl value="test-plan.html"/>
+        <title value="Test Plan"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -170,11 +184,11 @@
     </parameter>
     <parameter>
       <code value="path-resource" />
-      <value value="resources\library" />
+      <value value="input/resources/library" />
     </parameter>
     <parameter>
       <code value="path-resource" />
-      <value value="resources\measure" />
+      <value value="input/resources/measure" />
     </parameter>
 <!-- Uncomment one or more of these if you want to limit which syntaxes are supported or want to disable the display of mappings
     <parameter>

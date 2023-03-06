@@ -1,0 +1,236 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Immunization-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Immunization",
+      "id": "example",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunization" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource &quot;example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-qicore-immunization.html\">QICoreImmunization</a></p></div><p><b>identifier</b>: id: urn:oid:1.3.6.1.4.1.21367.2005.3.7.1234</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: Fluvax (Influenza) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (unknown#FLUVAX)</span></p><p><b>patient</b>: <a href=\"Patient-example.html\">Patient/example</a> &quot; CHALMERS&quot;</p><p><b>encounter</b>: <a href=\"Encounter-example.html\">Encounter/example</a></p><p><b>occurrence</b>: 2013-01-01</p><p><b>recorded</b>: 2013-01-10</p><p><b>primarySource</b>: true</p><p><b>location</b>: <a href=\"Location-example.html\">Location/example</a> &quot;South Wing, second floor&quot;</p><p><b>manufacturer</b>: <a href=\"Organization-example.html\">Organization/example</a> &quot;Health Level Seven International&quot;</p><p><b>lotNumber</b>: AAJN11K</p><p><b>expirationDate</b>: 2015-02-15</p><p><b>site</b>: left arm <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActSite.html\">ActSite</a>#LA)</span></p><p><b>route</b>: Injection, intramuscular <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-RouteOfAdministration.html\">RouteOfAdministration</a>#IM)</span></p><p><b>doseQuantity</b>: 5 mg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code mg = 'mg')</span></p><blockquote><p><b>performer</b></p><p><b>function</b>: Ordering Provider <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v2-0443.html\">providerRole</a>#OP)</span></p><p><b>actor</b>: <a href=\"Practitioner-example.html\">Practitioner/example</a> &quot; CAREFUL&quot;</p></blockquote><blockquote><p><b>performer</b></p><p><b>function</b>: Administering Provider <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v2-0443.html\">providerRole</a>#AP)</span></p><p><b>actor</b>: <a href=\"Practitioner-example.html\">Practitioner/example</a> &quot; CAREFUL&quot;</p></blockquote><p><b>note</b>: Notes on adminstration of vaccine</p><p><b>reasonCode</b>: Procedure to meet occupational requirement <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#429060002)</span></p><h3>Reactions</h3><table class=\"grid\"><tr><td>-</td><td><b>Date</b></td><td><b>Detail</b></td><td><b>Reported</b></td></tr><tr><td>*</td><td>2013-01-10</td><td><a href=\"Observation-example.html\">Observation/example</a></td><td>true</td></tr></table><h3>ProtocolApplieds</h3><table class=\"grid\"><tr><td>-</td><td><b>Series</b></td><td><b>Authority</b></td><td><b>TargetDisease</b></td><td><b>DoseNumber[x]</b></td><td><b>SeriesDoses[x]</b></td></tr><tr><td>*</td><td>Vaccination Series 1</td><td><a href=\"Organization-example.html\">Organization/example</a> &quot;Health Level Seven International&quot;</td><td>Gestational rubella syndrome <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#1857005)</span></td><td>1</td><td>2</td></tr></table></div>"
+      },
+      "identifier": [ {
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:oid:1.3.6.1.4.1.21367.2005.3.7.1234"
+      } ],
+      "status": "completed",
+      "vaccineCode": {
+        "coding": [ {
+          "system": "urn:oid:1.2.36.1.2001.1005.17",
+          "code": "FLUVAX"
+        } ],
+        "text": "Fluvax (Influenza)"
+      },
+      "patient": {
+        "reference": "Patient/example"
+      },
+      "encounter": {
+        "reference": "Encounter/example"
+      },
+      "occurrenceDateTime": "2013-01-01",
+      "recorded": "2013-01-10",
+      "primarySource": true,
+      "location": {
+        "reference": "Location/example"
+      },
+      "manufacturer": {
+        "reference": "Organization/example"
+      },
+      "lotNumber": "AAJN11K",
+      "expirationDate": "2015-02-15",
+      "site": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActSite",
+          "code": "LA",
+          "display": "left arm"
+        } ]
+      },
+      "route": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration",
+          "code": "IM",
+          "display": "Injection, intramuscular"
+        } ]
+      },
+      "doseQuantity": {
+        "value": 5,
+        "system": "http://unitsofmeasure.org",
+        "code": "mg"
+      },
+      "performer": [ {
+        "function": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0443",
+            "code": "OP"
+          } ]
+        },
+        "actor": {
+          "reference": "Practitioner/example"
+        }
+      }, {
+        "function": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0443",
+            "code": "AP"
+          } ]
+        },
+        "actor": {
+          "reference": "Practitioner/example"
+        }
+      } ],
+      "note": [ {
+        "text": "Notes on adminstration of vaccine"
+      } ],
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "429060002"
+        } ]
+      } ],
+      "reaction": [ {
+        "date": "2013-01-10",
+        "detail": {
+          "reference": "Observation/example"
+        },
+        "reported": true
+      } ],
+      "protocolApplied": [ {
+        "series": "Vaccination Series 1",
+        "authority": {
+          "reference": "Organization/example"
+        },
+        "targetDisease": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "1857005"
+          } ]
+        } ],
+        "doseNumberPositiveInt": 1,
+        "seriesDosesPositiveInt": 2
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Immunization/example"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Immunization",
+      "id": "imm-1",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: imm-1</p><p><b>meta</b>: </p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: influenza, injectable, quadrivalent, contains preservative <span style=\"background: LightGoldenRodYellow\">(Details : {http://hl7.org/fhir/sid/cvx code '158' = 'influenza, injectable, quadrivalent', given as 'influenza, injectable, quadrivalent, contains preservative'}; {http://hl7.org/fhir/sid/ndc code '49281-0621-15' = '49281-0621-15', given as 'FLUZONE QUADRIVALENT'})</span></p><p><b>patient</b>: <a href=\"Patient-example.html\">Amy Shaw. Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: 2007-02-20</a></p><p><b>occurrence</b>: 08/01/2016 12:00:00 AM</p><p><b>primarySource</b>: false</p></div>"
+      },
+      "status": "completed",
+      "vaccineCode": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/sid/cvx",
+          "code": "158",
+          "display": "influenza, injectable, quadrivalent, contains preservative"
+        }, {
+          "system": "http://hl7.org/fhir/sid/ndc",
+          "code": "49281-0621-15",
+          "display": "FLUZONE QUADRIVALENT"
+        } ]
+      },
+      "patient": {
+        "reference": "Patient/example",
+        "display": "Amy Shaw"
+      },
+      "occurrenceDateTime": "2016-01-08",
+      "primarySource": false
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Immunization/imm-1"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Immunization",
+      "id": "negation-example-code",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationnotdone" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource &quot;negation-example-code&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-qicore-immunizationnotdone.html\">QICoreImmunizationNotDone</a></p></div><p><b>status</b>: not-done</p><p><b>statusReason</b>: Procedure refused for religious reason (situation) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#183945002)</span></p><p><b>vaccineCode</b>: Influenza Vaccine A <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-CVX.html\">PH_VaccinesAdministeredCVX_CDC_NIP</a>#160 &quot;Influenza A monovalent (H5N1), ADJUVANTED-2013&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-example.html\">Patient/example</a> &quot; CHALMERS&quot;</p><p><b>encounter</b>: <a href=\"Encounter-example.html\">Encounter/example</a></p><p><b>occurrence</b>: 2013-01-10</p><p><b>recorded</b>: 2013-01-10</p><p><b>primarySource</b>: true</p></div>"
+      },
+      "status": "not-done",
+      "statusReason": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "183945002",
+          "display": "Procedure refused for religious reason (situation)"
+        } ]
+      },
+      "vaccineCode": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/sid/cvx",
+          "code": "160",
+          "display": "Influenza A monovalent (H5N1), ADJUVANTED-2013"
+        } ],
+        "text": "Influenza Vaccine A"
+      },
+      "patient": {
+        "reference": "Patient/example"
+      },
+      "encounter": {
+        "reference": "Encounter/example"
+      },
+      "occurrenceDateTime": "2013-01-10",
+      "recorded": "2013-01-10",
+      "primarySource": true
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Immunization/negation-example-code"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Immunization",
+      "id": "negation-example",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationnotdone" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource &quot;negation-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-qicore-immunizationnotdone.html\">QICoreImmunizationNotDone</a></p></div><p><b>status</b>: not-done</p><p><b>statusReason</b>: Procedure refused for religious reason (situation) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#183945002)</span></p><p><b>vaccineCode</b>: Not Done Value Set: Influenza vaccine <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (Not done value set: <a href=\"http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1254\">http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1254</a>)</span></p><p><b>patient</b>: <a href=\"Patient-example.html\">Patient/example</a> &quot; CHALMERS&quot;</p><p><b>encounter</b>: <a href=\"Encounter-example.html\">Encounter/example</a></p><p><b>occurrence</b>: 2013-01-10</p><p><b>recorded</b>: 2013-01-10</p><p><b>primarySource</b>: true</p></div>"
+      },
+      "status": "not-done",
+      "statusReason": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "183945002",
+          "display": "Procedure refused for religious reason (situation)"
+        } ]
+      },
+      "vaccineCode": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-notDoneValueSet",
+          "valueCanonical": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1254"
+        } ],
+        "text": "Not Done Value Set: Influenza vaccine"
+      },
+      "patient": {
+        "reference": "Patient/example"
+      },
+      "encounter": {
+        "reference": "Encounter/example"
+      },
+      "occurrenceDateTime": "2013-01-10",
+      "recorded": "2013-01-10",
+      "primarySource": true
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Immunization/negation-example"
+    }
+  } ]
+}

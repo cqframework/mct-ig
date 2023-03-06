@@ -1,0 +1,79 @@
+@startuml ReportingSubmissionUseCase
+title Reporting Submission Use Case
+
+participant "Reporting Client" as RC
+participant "Measure Calculation Tool" as MCT
+participant "Knowledge Repository" as KR
+participant "Terminology Service" as TS
+participant "Provider Site" as PS
+participant "Receiving System" as RS
+
+== 1. Initiate ==
+RC -> MCT: Request calculation
+note right: Input data:\n1. Reporting organization\n2. Population Group\n3. Selected measure\n4. Reporting period
+MCT -> KR: $data-requirements
+KR -> KR: Process data requirements
+note right: 1. Include date-based filtering\n2. Map filters to search parameters\n3. Prune data elements based on measure usage (incl attr)\n4. Eliminate duplicates
+KR -> MCT: Library.dataRequirement (0..*)
+MCT -> MCT: Analyze requirements
+note right: 1. Collect value sets across data requirements
+MCT -> TS: GET ValueSet(s)
+note right: Determine applicable expansions
+TS -> MCT: ValueSet(s)
+
+== 2. Gather ==
+loop per facility
+    alt Bulk Data
+        MCT -> PS: Bulk data $export
+        note right: Use bulk data extract with:\n1. Group to specify patients\n2. Data requirements to specify queries
+        PS -> MCT: ndjson files
+    else Collect Data
+        loop per patient
+            loop per selective data element
+                MCT -> PS: GET data element
+                note right: Use fhirQueryPattern
+                PS -> MCT: Bundle
+            end
+            MCT -> MCT: Determine applicable population
+            note right: If all bundles have data, patient is potentially a member of the IP
+        end
+        note right: Subset eligible patients by\ninitial population membership
+    else Everything
+        loop per patient
+            MCT -> PS: $everything
+            note right: Simplified approach to request everything for each patient
+            PS -> MCT: Bundle
+        end
+    end
+
+== 3. Validate ==
+loop per patient
+    loop per data requirement
+        MCT -> MCT: Validate data elements
+        note right: Validate using data requirement profile\nIf no data, indicate missing data requirement
+        MCT -> MCT: OperationOutcome
+    end
+end
+
+== 4. Calculate ==
+loop per patient
+    MCT -> MCT: Calculate individual measure
+    MCT -> MCT: Individual MeasureReport
+    note right: Result is an individual MeasureReport with:\n1. Evaluated resource references\n2. Operation outcome messages
+end
+MCT -> MCT: Calculate population measure
+MCT -> MCT: Summary MeasureReport
+
+== 5. Submission ==
+MCT -> RC: Calculation response
+note right: Response bundle with\n1. Summary Measure Report\n2. 0..* Bundles of Individual MeasureReport with evaluated resources
+RC -> RC: Display validation and calculation response
+alt Confirm
+    RC -> MCT: Submit
+    MCT -> RS: Submit calculation response
+    note right: Consider bulk data $import
+    RS -> MCT: Submission confirmation
+else Reject
+    note right: Take corrective action and resubmit
+end
+@enduml

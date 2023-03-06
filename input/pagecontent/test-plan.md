@@ -1,5 +1,10 @@
 ## Test Plan
 
+This page documents the test plan for the Measure Calculation Tool (MCT) prototype. The test plan is intended to demonstrate:
+
+1. Functionality of the Measure Calculation Tool and validation, certification, and testing content
+2. Correctness of a provider implementation of the Measure Calculation Tool
+
 ### Content Tests
 
 These tests are performed as part of prototype development and testing to ensure that the measure content for the Validation Measure and for CMS104 is correctly evaluating given known input data.
@@ -32,6 +37,21 @@ These tests are performed as part of prototype development and testing to ensure
         5. Numerator
         6. Numerator Exclusion
         7. Numerator Exception
+
+> NOTE: The content unit tests are all patient-specific, rather than population level. Population level testing is performed as part of integration tests.
+
+#### Content Data Elements
+
+The Validation/Certification measure contains expressions to support validation of all QICore profiles. However, this prototype is focusing on the data elements involved in the CMS104 Measure:
+
+1. [Encounter](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-encounter.html): [Non-Elective Inpatient Encounter](http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.424)
+2. [Condition](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-condition.html): Diagnosis per Encounter
+3. [ServiceRequest](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-servicerequest.html): [Comfort Measures](http://cts.nlm.nih.gov/fhir/ValueSet/1.3.6.1.4.1.33895.1.3.0.45)
+4. [Procedure](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-procedure.html): [Comfort Measures](http://cts.nlm.nih.gov/fhir/ValueSet/1.3.6.1.4.1.33895.1.3.0.45)
+5. [MedicationRequest](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-medicationrequest.html): [Antithrombotic Therapy](http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.62)
+5. [MedicationRequest](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-medicationrequest.html): [Pharmacological Contraindications For Antithrombotic Therapy](http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.52)
+6. [MedicationNotRequested](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-mednotrequested.html): [Antithrombotic Therapy](http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.62)
+
 
 ### Integration Tests
 
@@ -67,7 +87,7 @@ These tests are performed at an implementing site to ensure that the prototype i
     1. MeasureReport has expected population count and score for each population test (1..7)
     2. MeasureReport has expected supplemental data
 3. Test Validation Measure Submission
-    1. Validate submitted MeasureReport has correct
+    1. Validate submitted MeasureReport has correct:
         1. CCN
         2. Organization
         3. Reported location(s)

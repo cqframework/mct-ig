@@ -6,6 +6,7 @@ include FHIRHelpers version '4.1.000'
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "SNOMEDCT": 'http://snomed.info/sct'
+codesystem "ICD10CM": 'http://hl7.org/fhir/sid/icd-10-cm'
 codesystem "RoleCode": 'http://terminology.hl7.org/CodeSystem/v3-RoleCode'
 codesystem "Diagnosis Role": 'http://terminology.hl7.org/CodeSystem/diagnosis-role'
 codesystem "RequestIntent": 'http://terminology.hl7.org/CodeSystem/request-intent'
@@ -14,7 +15,11 @@ codesystem "ConditionClinicalStatusCodes": 'http://terminology.hl7.org/CodeSyste
 codesystem "ConditionVerificationStatusCodes": 'http://terminology.hl7.org/CodeSystem/condition-ver-status'
 codesystem "AllergyIntoleranceClinicalStatusCodes": 'http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical'
 codesystem "AllergyIntoleranceVerificationStatusCodes": 'http://terminology.hl7.org/CodeSystem/allergyintolerance-verification'
+codesystem "ConditionCategoryCodes": 'http://terminology.hl7.org/CodeSystem/condition-category'
 codesystem "ObservationCategoryCodes": 'http://terminology.hl7.org/CodeSystem/observation-category'
+
+valueset "Active Condition": 'http://fhir.org/guides/cqf/common/ValueSet/active-condition'
+valueset "Inactive Condition": 'http://fhir.org/guides/cqf/common/ValueSet/inactive-condition'
 
 code "Birthdate": '21112-8' from "LOINC" display 'Birth date'
 code "Dead": '419099009' from "SNOMEDCT" display 'Dead'
@@ -60,30 +65,20 @@ code "pre-op": 'pre-op' from "Diagnosis Role" display 'pre-op diagnosis'
 code "post-op": 'post-op' from "Diagnosis Role" display 'post-op diagnosis'
 code "billing": 'billing' from "Diagnosis Role" display 'billing diagnosis'
 
-// Observation category codes
-code "Social History": 'social-history' from ObservationCategoryCodes
-code "Vital Signs": 'vital-signs' from ObservationCategoryCodes
-code "Imaging": 'imaging' from ObservationCategoryCodes
-code "Laboratory": 'laboratory' from ObservationCategoryCodes
-code "Procedure": 'procedure' from ObservationCategoryCodes
-code "Survey": 'survey' from ObservationCategoryCodes
-code "Exam": 'exam' from ObservationCategoryCodes
-code "Therapy": 'therapy' from ObservationCategoryCodes
-code "Activity": 'activity' from ObservationCategoryCodes
+// Observation Category Codes
+code "social-history": 'social-history' from "ObservationCategoryCodes" display 'Social History'
+code "vital-signs": 'vital-signs' from "ObservationCategoryCodes" display 'Vital Signs'
+code "imaging": 'imaging' from "ObservationCategoryCodes" display 'Imaging'
+code "laboratory": 'laboratory' from "ObservationCategoryCodes" display 'Laboratory'
+code "procedure": 'procedure' from "ObservationCategoryCodes" display 'Procedure'
+code "survey": 'survey' from "ObservationCategoryCodes" display 'Survey'
+code "exam": 'exam' from "ObservationCategoryCodes" display 'Exam'
+code "therapy": 'therapy' from "ObservationCategoryCodes" display 'Therapy'
+code "activity": 'activity' from "ObservationCategoryCodes" display 'Activity'
 
-code "Respiratory rate": '9279-1' from LOINC
-code "Heart rate": '8867-4' from LOINC
-code "Oxygen saturation": '2708-6' from LOINC
-code "Body temperature": '8310-5' from LOINC
-code "Body height": '8302-2' from LOINC
-code "Head circumference": '9843-4' from LOINC
-code "Body weight": '29463-7' from LOINC
-code "Body mass index": '39156-5' from LOINC
-code "Blood pressure": '85354-9' from LOINC
-code "Smoking status": '72166-2' from LOINC
-code "Pediatric BMI for age": '59576-9' from LOINC
-code "Pediatric weight for height": '77606-2' from LOINC
-code "Pulse oximetry": '59408-5' from LOINC
+// Condition Category Codes
+code "problem-list-item": 'problem-list-item' from "ConditionCategoryCodes" display 'Problem List Item'
+code "encounter-diagnosis": 'encounter-diagnosis' from "ConditionCategoryCodes" display 'Encounter Diagnosis'
 
 context Patient
 
