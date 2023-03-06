@@ -8,12 +8,42 @@ This topic describes how to install, configure, and start the Measure Calculatio
 
 ### Starting the Measure Calculation Tool Prototype
 
-1. git clone the mct repository
-2. in the root, issue `docker-compose up`
-3. switch to the `frontend` folder
-4. issue `yarn install & yarn start`
+#### Prerequisites
 
-The Measure Calculation Tool github repository also contains a kubernetes file that is used to establish a sandbox/demonstration environment, and to help facilitate a kubernetes deployment.
+- NodeJs version 18 is required
+- Docker is required
+  
+1. git clone the mct repository
+2. Run script `./setup_app_files` to prep data files
+3. Standup services with `docker-compose up` and wait 1 minute before proceeding to next step
+4. Load data with `./load-local-data.sh`
+5. go to `frontend` directory and run `yarn install && yarn start`
+6. Wait until `http://localhost:8088` loads with `Whitelabel Error` message
+7. Navigate to app at `http://localhost:3000`
+
+### Cloud Deployment
+
+The Measure Calculation Tool github repository also contains a kubernetes file that is used to establish a sandbox/demonstration environment, and to help facilitate a kubernetes deployment. **NOTE** These instructions for setup are meant to be run from the perspective of a new AWS region without other pre-exisiting services. 
+
+#### Prerequisities
+
+- Terraform
+- Kubernetes
+- [Helm 3](https://v3-1-0.helm.sh/docs/intro/install/)
+- AWS account with aws-cli setup locally
+
+#### AWS EKS Setup
+1. Go to directory `./infrastructure/terraform`
+2. Run command `terraform init` to install dependencies
+3. After installtion run `terraform plan -out tfplan.out` and inspect new resources that will be created with terraform
+4. `terraform apply tfplan.out` will execute the plan and spin up all the necessary infrastructure for AWS Elastic Kuberentes Service
+5. After installation add your eks context to your local docker by context with `aws eks update-kubeconfig --region <region-code> --name <my-cluster>`
+
+#### Application Setup on EKS
+1. Switch to your kubernetes cluster context
+2. Go to directory `./infrastructure/kubernetes`
+3. Run command `helm install <give installation name> --namespace=mct --set tag=latest .` **note** tag can be set to whatever you like
+4. View applications running in `mct` namespace. e.g. `kube get svc -n mct`
 
 ### Tags
 
