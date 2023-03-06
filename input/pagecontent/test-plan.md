@@ -16,14 +16,13 @@ These tests are performed as part of prototype development and testing to ensure
         1. Ineligible - data is missing and the validation result indicates it is
         2. Invalid - data is present but invalid for each data element and the validation result provides validation messages
         3. Valid - data is present for each data element
-    2. Test measure score is successful for
+    2. Test measure score is successful for 
         1. Ineligible
         2. Initial population
         3. Denominator
-        4. Denominator Exclusion
-        5. Numerator
-        6. Numerator Exclusion
-        7. Numerator Exception
+        4. Denominator Exception
+        5. Denominator Exclusion
+        6. Numerator
 2. Test CMS104
     1. Test data is present for each data element
         1. Ineligible - data is missing and the validation result indicates it is
@@ -33,10 +32,9 @@ These tests are performed as part of prototype development and testing to ensure
         1. Ineligible
         2. Initial population
         3. Denominator
-        4. Denominator Exclusion
-        5. Numerator
-        6. Numerator Exclusion
-        7. Numerator Exception
+        4. Denominator Exception
+        5. Denominator Exclusion
+        6. Numerator
 
 > NOTE: The content unit tests are all patient-specific, rather than population level. Population level testing is performed as part of integration tests.
 
