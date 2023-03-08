@@ -48,7 +48,7 @@ The following comprises the internal and external stakeholders whose requirement
 * Michellene Roberts HQR Program Lead  
 * Mindy Riley  Division Director  
 
-##### General Overivew
+##### General Overview
 
 <div>
 <img src="MeasureCalculationTool.png" alt="Measure Calculation Tool Use Case Overview" width="600" height="469"/>
