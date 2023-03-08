@@ -43,10 +43,10 @@ The following comprises the internal and external stakeholders whose requirement
 * Bridget Calvert Senior dQM Implementation Lead 
 * Joel Andress Senior dQM Program Lead  
 * Bill Lakenan ADO 
-* Reid Kiser  DQM Division Director R 
+* Reid Kiser DQM Division Director  
 * Mark Canfield Division Deputy Director  
 * Michellene Roberts HQR Program Lead  
-* Mindy Riley  Division Director  
+* Mindy Riley Division Director  
 
 ##### General Overview
 
@@ -65,13 +65,13 @@ This section documents the assumptions, constraints, and risks associated with t
 ###### Assumptions
 
 1. Calculate a single hospital-level-process measure 
-2. Have a User interface similar to Hospital Quality Reporting webpage 
+2. Have a User Interface similar to Hospital Quality Reporting webpage 
 3. MCT Host is platform agnostic 
 4. It will connect to QI Core Compliant FHIR Server for mock reporting system 
 5. It will connect to server with DEQM receiver capabilities as a mock receiving system 
 6. It will use smart on FHIR or OAuth for authentication and authorization (NOTE: This is not implemented in the current prototype)
 7. The prototype will use synthetic data 
-8. It will contain internal bundles of  knowledge repository (measure specification support) 
+8. It will contain internal bundles of knowledge repository (measure specification support) 
 9. It will contain internal bundles terminology service 
 10. It will consider strategies for supporting bulk FHIR, but the prototype will use an API-based approach
 11. Hospitals with multiple locations operating under a single CCN will submit reports for all locations 
@@ -93,7 +93,7 @@ The following architectural and system constraints are identified for the Measur
 
 ###### Risks
 
-Any software project carries risks associated with development such as defects, performance issues, version management, and dependency tracking. To mitigate these standard risks, the project uses industry-standard development methodologies, tools, and technologies including agile development, github source control and change management, Java, Maven, ReactJS, Yarn, and continuous integration.
+Any software project carries risks associated with development such as defects, performance issues, version management, and dependency tracking. To mitigate these standard risks, the project uses industry-standard development methodologies, tools, and technologies including agile development, GitHub source control and change management, Java, Maven, ReactJS, Yarn, and continuous integration.
 
 In addition, the Measure Calculation Tool project overall carries risks associated with standards support and adoption, performance concerns associated with population-level data access, as well as policy and governance concerns associated with accessing patient data:
 
@@ -106,7 +106,7 @@ In addition, the Measure Calculation Tool project overall carries risks associat
 
 _Insufficient data available through FHIR APIs_
 
-Although industry adoption of FHIR in the United States is widespread, the adoption is based on the foundational information established by USCDI and specified as FHIR profiles in the US Core Implementation Guide. Effective quality measurement often requires additional information not yet characterized in US Core, but available with QI Core, the FHIR Quality Improvement profiles. The QI Core profiles are derived from and consistent with US Core. However, there are specific data elements defined in QI Core that are not explicitly profiled in US Core, meaning that implementing systems will likely not support these additional data elements. Although gap analysis of US Core and QI Core has been done and continues to inform recommendations from QI Core to USCDI and USCDI+, we provide a specific gap analysis of the profiles used for the CMS104 prototype quality measure as part of this risk assessment:
+Although industry adoption of FHIR in the United States is widespread, the adoption is based on the foundational information established by USCDI and specified as FHIR profiles in the US Core Implementation Guide. Effective quality measurement often requires additional information not yet characterized in US Core, but available with QI Core, the FHIR Quality Improvement profiles. The QI Core profiles are derived from and consistent with US Core. However, there are specific data elements defined in QI Core that are not explicitly profiled in US Core, meaning that implementing systems will not likely support these additional data elements. Although gap analysis of US Core and QI Core has been done and continues to inform recommendations from QI Core to USCDI and USCDI+, we provide a specific gap analysis of the profiles used for the CMS104 prototype quality measure as part of this risk assessment:
 
 [QICoreEncounter](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-encounter.html) vs [USCoreEncounter](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-encounter.html)
 
