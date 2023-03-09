@@ -16,14 +16,13 @@ These tests are performed as part of prototype development and testing to ensure
         1. Ineligible - data is missing and the validation result indicates it is
         2. Invalid - data is present but invalid for each data element and the validation result provides validation messages
         3. Valid - data is present for each data element
-    2. Test measure score is successful for
+    2. Test measure score is successful for 
         1. Ineligible
         2. Initial population
         3. Denominator
-        4. Denominator Exclusion
-        5. Numerator
-        6. Numerator Exclusion
-        7. Numerator Exception
+        4. Denominator Exception
+        5. Denominator Exclusion
+        6. Numerator
 2. Test CMS104
     1. Test data is present for each data element
         1. Ineligible - data is missing and the validation result indicates it is
@@ -33,10 +32,9 @@ These tests are performed as part of prototype development and testing to ensure
         1. Ineligible
         2. Initial population
         3. Denominator
-        4. Denominator Exclusion
-        5. Numerator
-        6. Numerator Exclusion
-        7. Numerator Exception
+        4. Denominator Exception
+        5. Denominator Exclusion
+        6. Numerator
 
 > NOTE: The content unit tests are all patient-specific, rather than population level. Population level testing is performed as part of integration tests.
 
@@ -118,8 +116,76 @@ These tests are performed at an implementing site to demonstrate calculation and
 These tests are performed as part of prototype development and testing and provide baseline performance characteristics in a known solution environment.
 
 1. Test Validation Measure Evaluation Performance
-    1. Unit Test - 1, 5, 10, 100 Patients
-    2. Integration Test - 1, 5, 10, 100 Patients
+    1. Unit Test - 1, 10, 50, 100, and 200 Patients
+    2. Integration Test - 1, 10, 50, 100, and 200 Patients
 2. Test CMS104 Measure Evaluation Performance
-    1. Unit Test - 1, 5, 10, 100 Patients
-    2. Integration Test - 1, 5, 10, 100 Patients
+    1. Unit Test - 1, 10, 50, 100, and 200 Patients
+    2. Integration Test - 1, 10, 50, 100, and 200 Patients
+
+#### CMS104 Measure Evaluation Performance
+
+The following is an analysis of the measure evaluation performance of the prototype using the CMS104 measure as the subject. For this analysis, the following three processes will be profiled: 
+
+ 1. Gathering the patient data
+ 2. Validating the patient data gathered in step 1
+ 3. Evaluating the measure referencing the data gathered in step 1
+
+##### Gathering Patient Data
+
+The first step of gathering the patient data includes an analysis of the data requirements for the measure. The data requirements identify the resources and data elements used to evaluate the measure logic. The prototype uses the data requirements to generate FHIR REST queries, which are then executed across the specified facilities registered with an organization.
+
+##### Validating Patient Data
+
+The data validation step operates on the gathered patient data to ensure that the data adheres to a specified set of profiles (in this case [QiCore version 4.1.1](https://hl7.org/fhir/us/qicore/index.html)). Inconsistencies with the gathered patient data and the specified profiles are documented within the patient data as [contained resources](http://hl7.org/fhir/references.html#contained). Any missing data requirements will also be documented within the returned patient data bundle (see the [$gather operation specification](http://cms.gov/fhir/mct/OperationDefinition/gather) for more information). 
+
+##### Evaluating the Measure
+
+The measure evaluation occurs on both a patient-level and population-level. The prototype is testing a [proportion measure](http://hl7.org/fhir/clinicalreasoning-quality-reporting.html#specifying-population-criteria). The result of the evaluation returns individual and population reports detailing population group membership, a measure score, and the resources that were used during evaluation.
+
+##### Methodology
+
+The prototype operates on a linear scale. Meaning each of the processes outlined above are evaluated sequentially for each patient. Therefore, as the population or resources within that population (i.e. patients and/or patient resources) increase, the time to evaluate will also increase. 
+
+The prototype was profiled using populations sizes of 1, 10, 50, 100, and 200 patients (test cases) in order to provide a reasonable representation of the linear scaling and represent several measure population groupings (i.e. simulate a real-world population). The patient data is randomly generated with adherence to certain requirements. The requirements include:
+ 
+ - Each measure population group (Ineligible, Initial population, Denominator, Denominator Exception, Denominator Exclusion, and Numerator) must be represented whenever possible.
+    - For the single patient population, a Numerator population group was profiled.
+ - The population should have ~60% success rate for the Numerator measure population group.
+ - The population should have ~80% success rate for the Initial population measure group.
+ - The population must use valid patient data for the measure.
+    - Some profile validation errors should appear for full coverage profiling, but those errors must not coincide with the data elements required to evaluate the measure.
+
+##### Metrics
+
+Each population set was randomly generated 100 times and profiled recording the average runtime for each process in the following table. 
+
+| Number of Test Cases | Combined | Measure Evaluation | Patient Data Queries | Validation |
+| -------------------- | -------- | ------------------ | -------------------- | ---------- |
+|1                     |01.113    |00.657              |00.401                |00.056      |
+|10                    |08.623    |05.088              |03.104                |00.431      |
+|50                    |43.477    |25.651              |15.652                |02.174      |
+|100                   |01:24.834 |50.052              |30.540                |04.242      |
+|200                   |02:44.587 |01:37.106           |59.251                |08.229      |
+{:.grid}
+
+![CMS104 Performance Graph](CMS104_Performance_Metrics.png)
+
+The following chart displays the runtime distribution for each of the profiled processes:
+
+<div>
+    <img src="Prototype_Process_Distribution.png"> 
+</div>
+
+##### Performance Enhancements
+
+Although the prototype could be implemented as-is and perform reasonably well for smaller populations, it is not currently recommended as an enterprise-level solution. In order to scale the prototype for enterprise use, there are several enhancements that could be implemented to improve the overall performance and user experience including, but not limited to:
+
+- Using parallel programming to carry out various processes simultaneously.
+    - Could vastly improve performance when gathering patient data across multiple facilities.
+    - Could enable evaluating multiple measures across multiple populations.
+- Using asynchronous programming to reduce/eliminate the limitations of sequential processing.
+    - Asynchronous programming is non-blocking, meaning the program does not have to wait for the process to finish before performing other tasks.
+    - Would be very impactful when processing large populations.
+    - Would allow the user to perform other tasks while the measure is being evaluated.
+- Using the [FHIR Bulk Data API](https://build.fhir.org/ig/HL7/bulk-data/index.html) to gather the patient data.
+    - Patient data retrieval would be vastly improved, especially for facilities with large datasets.
