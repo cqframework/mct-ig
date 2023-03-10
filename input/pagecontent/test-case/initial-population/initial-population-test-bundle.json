@@ -1,0 +1,208 @@
+{
+    "resourceType": "Bundle",
+    "type": "transaction",
+    "entry": [
+        {
+            "resource": {
+                "resourceType": "Patient",
+                "id": "in-initial-population-0",
+                "meta": {
+                    "profile": [
+                        "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+                        "extension": [
+                            {
+                                "url": "ombCategory",
+                                "valueCoding": {
+                                    "system": "urn:oid:2.16.840.1.113883.6.238",
+                                    "code": "1002-5",
+                                    "display": "American Indian or Alaska Native"
+                                }
+                            },
+                            {
+                                "url": "text",
+                                "valueString": "American Indian or Alaska Native"
+                            }
+                        ]
+                    },
+                    {
+                        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+                        "extension": [
+                            {
+                                "url": "ombCategory",
+                                "valueCoding": {
+                                    "system": "urn:oid:2.16.840.1.113883.6.238",
+                                    "code": "2186-5",
+                                    "display": "Non Hispanic or Latino"
+                                }
+                            },
+                            {
+                                "url": "text",
+                                "valueString": "Non Hispanic or Latino"
+                            }
+                        ]
+                    }
+                ],
+                "identifier": [
+                    {
+                        "system": "urn:oid:1.2.36.146.595.217.0.1",
+                        "value": "12345"
+                    }
+                ],
+                "name": [
+                    {
+                        "use": "official",
+                        "family": "Bailey",
+                        "given": [
+                            "Ronaldo"
+                        ]
+                    }
+                ],
+                "telecom": [
+                    {
+                        "system": "email",
+                        "value": "Ronaldo.Bailey@gmail.com",
+                        "use": "home"
+                    }
+                ],
+                "gender": "male",
+                "birthDate": "1958-11-11",
+                "deceasedBoolean": false,
+                "address": [
+                    {
+                        "line": [
+                            "10 Ninth Ramp"
+                        ],
+                        "city": "Glenarden",
+                        "state": "ID",
+                        "postalCode": "77490",
+                        "period": {
+                            "start": "2022-01-01T00:00:00.000-07:00",
+                            "end": "2022-03-31T00:00:00.000-06:00"
+                        }
+                    }
+                ],
+                "communication": [
+                    {
+                        "language": {
+                            "coding": [
+                                {
+                                    "system": "urn:ietf:bcp:47",
+                                    "code": "en-US"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Patient/in-initial-population-0"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Condition",
+                "id": "in-initial-population-0",
+                "meta": {
+                    "profile": [
+                        "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition"
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "code": "active"
+                        }
+                    ]
+                },
+                "verificationStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                            "code": "confirmed"
+                        }
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                                "code": "encounter-diagnosis"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                            "code": "I63.439"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/in-initial-population-0"
+                },
+                "encounter": {
+                    "reference": "Encounter/in-initial-population-0"
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Condition/in-initial-population-0"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "in-initial-population-0",
+                "meta": {
+                    "profile": [
+                        "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
+                    ]
+                },
+                "status": "finished",
+                "class": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                    "code": "IMP"
+                },
+                "type": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "183452005"
+                            }
+                        ]
+                    }
+                ],
+                "subject": {
+                    "reference": "Patient/in-initial-population-0"
+                },
+                "period": {
+                    "start": "2021-12-30T23:39:14.400-07:00",
+                    "end": "2022-02-21T23:39:14.400-07:00"
+                },
+                "diagnosis": [
+                    {
+                        "condition": {
+                            "reference": "Condition/in-initial-population-0"
+                        },
+                        "rank": 1
+                    }
+                ]
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Encounter/in-initial-population-0"
+            }
+        }
+    ]
+}

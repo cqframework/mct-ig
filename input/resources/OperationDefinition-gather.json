@@ -41,7 +41,7 @@
         {
             "name": "period",
             "use": "in",
-            "min": 0,
+            "min": 1,
             "max": "1",
             "documentation": "The measurement period. This should be defined as a fiscal quarter (3 month increments).",
             "type": "Period"
@@ -51,7 +51,7 @@
             "use": "out",
             "min": 0,
             "max": "*",
-            "documentation": "This operation returns a single [Parameters](https://www.hl7.org/fhir/parameters.html) resource with either [MeasureReport](https://www.hl7.org/fhir/measurereport.html) resources or an [OperationOutcome](https://www.hl7.org/fhir/operationoutcome.html) if a runtime error is encountered. The MeasureReport for each facility is returned in a `Parameters.parameter` element where the Location id is the `Parameters.parameter.name`.",
+            "documentation": "This operation returns a single [Parameters](https://www.hl7.org/fhir/parameters.html) resource. The population MeasureReport will be the first element returned in a `Parameters.parameter` element followed by the results for each patient.",
             "type": "MeasureReport"
         }
     ]
