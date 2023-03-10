@@ -475,20 +475,48 @@ Site Registration and Maintenance use cases involve configuration of the Measure
 
 ##### User Interfaces/Wireframes
 
-###### System Configuration
+This section details wireframes for the user interface. Source for these wireframes is available here: https://www.figma.com/file/j0DwYSJCugQ8y3cllcvE01/Yale-Rough-Draft-1?node-id=0%3A1&t=0ZevmZxaw0Y7cn67-0
 
-The system configuration user interface supports configuring the provider organization, CCN, and receiving system endpoint, and the facilities configured for an organization:
+> NOTE: Not all the functionality depicted in these wireframes was implemented as part of the initial prototype.
+
+###### Dashboard - Log In
+
+Users log in:
 
 <div>
-<img src="wireframe-system-configuration.png" alt="System Configuration"/>
+<img src="wireframe-01-dashboard-login.png" alt="Dashboard - Log In"/>
 </div>
 
-###### Site Management
+###### Dashboard - Signed In
 
-The site management user interface supports specifying the facility name and FHIR endpoint:
+Once signed in, a user could be presented with past activity in a dashboard view. This proposed interface is not currently implemented:
 
 <div>
-<img src="wireframe-site-management.png" alt="Site Management"/>
+<img src="wireframe-02-dashboard-signed-in.png" alt="Dashboard - Signed In"/>
+</div>
+
+###### Generate Report Step 1
+
+To generate a report, users need to specify various information. Some fields, such as facility, are dependent on the field that comes before:
+
+<div>
+<img src="wireframe-03-generate-report-form-01.png" alt="Generate Report - Form 01"/>
+</div>
+
+###### Generate Report Step 2
+
+For large patient groups, it would be preferable to have simple ways to narrow down your target population. List out of selected patients so the user can see the group they are building and deselect if necessary:
+
+<div>
+<img src="wireframe-04-generate-report-form-02.png" alt="Generate Report - Form 02"/>
+</div>
+
+###### Generate Report Step 3
+
+User must select at least 1 patient to generate a report. If only 1 patient is selected, an individual report is generated. If more than 1, it generates a summary measure report:
+
+<div>
+<img src="wireframe-05-generate-report-form-03.png" alt="Generate Report - Form 03"/>
 </div>
 
 ###### Validation
@@ -499,12 +527,62 @@ The validation user interface supports displaying the results of the measure gat
 <img src="wireframe-validation.png" alt="Validation"/>
 </div>
 
+###### Generated Measure Report
+
+The measure report page allows users to view the report information in a simple way. To review the content of the measure that generated the measure report, there is a measure details tab. This would include detailed information on things like: 
+
+* denominator criteria, exclusions 
+* relevant diagnosis codes 
+* clinical recommendation and rationale
+
+https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_001_MIPSCQM.pdf
+
+<div>
+<img src="wireframe-06-generate-report-generated.png" alt="Generated Report"/>
+</div>
+
 ###### Reporting Submission
 
 The reporting submission user interface supports displaying the results of the population level calculation, as well submitting the results to the receiving system:
 
 <div>
 <img src="wireframe-reporting-submission.png" alt="Reporting Submission"/>
+</div>
+
+###### Submitted Reports
+
+Post submission, users may need to view submitted reports:
+
+<div>
+<img src="wireframe-07-submitted-reports.png" alt="Submitted Reports"/>
+</div>
+
+###### System Configuration
+
+The system configuration user interface supports configuring the provider organization, CCN, and receiving system endpoint, and the facilities configured for an organization:
+
+<div>
+<img src="wireframe-08-admin-01.png" alt="System Configuration"/>
+</div>
+
+<div>
+<img src="wireframe-09-admin-panel-edit.png" alt="System Configuration - Edit Mode"/>
+</div>
+
+###### Site Management
+
+The site management user interface supports specifying the facility name and FHIR endpoint:
+
+<div>
+<img src="wireframe-10-admin-panel-add-facility.png" alt="Add Facility"/>
+</div>
+
+<div>
+<img src="wireframe-11-admin-panel-add-organization.png" alt="Add Organization"/>
+</div>
+
+<div>
+<img src="wireframe-12-admin-panel-organization-added.png" alt="Organization Added"/>
 </div>
 
 ##### Technical Requirements

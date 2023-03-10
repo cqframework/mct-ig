@@ -5,6 +5,14 @@ This page documents the test plan for the Measure Calculation Tool (MCT) prototy
 1. Functionality of the Measure Calculation Tool and validation, certification, and testing content
 2. Correctness of a provider implementation of the Measure Calculation Tool
 
+Test data was prepared by constructing random datasets based on the data requirements for the specific measure under test. Although this is a reasonable approach to functional testing, it is not necessarily representative of real-world test data. Additional testing should be performed using:
+
+1. Larger data sets
+2. More sophisticated data generation techniques, such as the Synthea tool
+3. Real-world data using deidentified data sets
+
+Whenever possible, automated testing approaches should be used to enable more streamlined testing of the measure calculation tool. For tests that are intended to demonstrate functionality of the prototype, this automation can be accomplished using continuous integration and delivery pipelines. For tests that are intended to demonstate validity and capability of an integration, this automation can be accomplished through integration testing tools such as Postman.
+
 ### Content Tests
 
 These tests are performed as part of prototype development and testing to ensure that the measure content for the Validation Measure and for CMS104 is correctly evaluating given known input data.
