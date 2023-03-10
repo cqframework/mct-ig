@@ -189,3 +189,26 @@ Although the prototype could be implemented as-is and perform reasonably well fo
     - Would allow the user to perform other tasks while the measure is being evaluated.
 - Using the [FHIR Bulk Data API](https://build.fhir.org/ig/HL7/bulk-data/index.html) to gather the patient data.
     - Patient data retrieval would be vastly improved, especially for facilities with large datasets.
+
+##### CMS104 Test Cases
+
+The following table outlines example test cases for each measure population group and the expected result the prototype should produce.
+
+| Population Group | Test Case | Expected Result | 
+| ---------------- | --------- | --------------- | 
+| Ineligible       | [Ineligible Test Bundle](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/ineligible/ineligible-test-bundle.json) | [Ineligible Result](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/ineligible/ineligible-expected-result.json) | 
+| Initial Population | [Initial Population Test Bundle](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/initial-population/initial-population-test-bundle.json) | [Initial Population Result](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/initial-population/initial-population-expected-result.json) | 
+| Denominator | [Denominator Test Bundle](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/denominator/denominator-test-bundle.json) | [Denominator Result](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/denominator/denominator-expected-result.json) | 
+| Denominator Exception | [Denominator Exception Test Bundle](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/denominator-exception/denominator-exception-test-bundle.json) | [Denominator Exception Result](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/denominator-exception/denominator-exception-expected-result.json) |
+| Denominator Exclusion | [Denominator Exclusion Test Bundle](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/denominator-exclusion/denominator-exclusion-test-bundle.json) | [Denominator Exclusion Result](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/denominator-exclusion/denominator-exclusion-expected-result.json) | 
+| Numerator | [Numerator Test Bundle](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/numerator/numerator-test-bundle.json) | [Numerator Result](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/numerator/numerator-expected-result.json) |
+{:.grid}
+
+The following table provides larger test data sets to provide facility-level testing. Two facilities are provided to facilitate both single-facility report testing and aggregate report testing
+
+| Facility | Test Bundle | Expected Result |
+| -------- | ----------- | --------------- |
+| Facility A | [Facility A Bundle](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/facility-bundles/facility-a-bundle.json) | [Facility A Result](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/facility-bundles/facility-a-expected-response.json) | 
+| Facility B | [Facility B Bundle](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/facility-bundles/facility-b-bundle.json) | [Facility B Result](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/facility-bundles/facility-b-expected-response.json) | 
+| Facility A & Facility B | | [Aggregate Result](https://github.com/alphora/mct-ig/blob/master/input/pagecontent/test-case/facility-bundles/aggregate-expected-response.json) | 
+{:.grid}
