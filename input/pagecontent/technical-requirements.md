@@ -69,7 +69,7 @@ This section documents the assumptions, constraints, and risks associated with t
 2. The prototype will have a User Interface similar to Hospital Quality Reporting webpage 
 3. The prototype can be hosted on any system
 4. The prototype will will connect to QI Core Compliant FHIR Server for mock reporting system 
-5. The prototype willill connect to server with Data Exchange for Quality Measures (DEQM) receiver capabilities as a mock receiving system 
+5. The prototype will connect to server with Data Exchange for Quality Measures (DEQM) receiver capabilities as a mock receiving system 
 6. The MCT will will use SMART on FHIR or OAuth for authentication and authorization (NOTE: This is not implemented in the current prototype)
 7. The prototype will use synthetic data 
 8. The prototype will contain internal bundles of knowledge repository (measure specification support) 
@@ -107,11 +107,12 @@ In addition, the Measure Calculation Tool project overall carries risks associat
 
 _Insufficient data available through FHIR APIs_
 
-Although industry adoption of FHIR in the United States is widespread, the adoption is based on the foundational information established by USCDI and specified as FHIR profiles in the US Core Implementation Guide. Effective quality measurement often requires additional information not yet characterized in US Core, but available with QI Core, the FHIR Quality Improvement profiles. The QI Core profiles are derived from and consistent with US Core. However, there are specific data elements defined in QI Core that are not explicitly profiled in US Core, meaning that implementing systems will not likely support these additional data elements. Although gap analysis of US Core and QI Core has been done and continues to inform recommendations from QI Core to USCDI and USCDI+, we provide a specific gap analysis of the profiles used for the CMS104 prototype quality measure as part of this risk assessment:
+Although industry adoption of FHIR in the United States (US) is widespread, the adoption is based on the foundational information established by US Core Data for Interoperability (USCDI) and specified as FHIR profiles in the US Core Implementation Guide (IG). Effective quality measurement often requires additional information not yet characterized in US Core, but available with the FHIR Quality Improvement profiles, Quality Improvement (QI) Core. The QI Core profiles are derived from and consistent with US Core. However, there are specific data elements defined in QI Core that are not explicitly profiled in US Core, meaning that systems implementing US Core, would not likely support these additional data elements. Although gap analysis of US Core and QI Core has been done and continues to inform recommendations from QI Core to USCDI and USCDI+, we provide a specific gap analysis of the profiles used for the CMS104 prototype quality measure as part of this risk assessment:
 
+CMS 104 uses the following profiles or data elements:
 [QICoreEncounter](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-encounter.html) vs [USCoreEncounter](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-encounter.html)
 
-The QICoreEncounter profile introduces support for several aspects of encounter representation that are not specified in USCore. In particular:
+The QICoreEncounter profile introduces support for several aspects of encounter representation that are not specified in US Core. In particular:
 
 * Description of the primary vs secondary procedure performed as part of an encounter (via the qicore-encounter-procedure extension)
 * Indication of whether a particular encounter diagnosis was present on admission (via the qicore-encounter-diagnosisPresentOnAdmission extension)
@@ -119,21 +120,21 @@ The QICoreEncounter profile introduces support for several aspects of encounter 
 
 [Condition](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-condition.html) vs [USCoreCondition](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-condition.html)
 
-* Onset and abatement information used to determine prevalence period for the condition (NOTE: This only applied to "problems" and "health concerns". "encounter diagnoses" are typically understood to apply at the time of the encounter, but other information about timing is not typically available
+* Onset and abatement information used to determine prevalence period for the condition (NOTE: This only applied to "Problems" and "Health Concerns." "Encounter Diagnoses" are typically understood to apply at the time of the encounter, but other information about timing is not typically available.
 
 [ServiceRequest](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-servicerequest.html) vs [USCoreServiceRequest](https://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-servicerequest.html)
 
-NOTE: The ServiceRequest profile was not available in USCore 3.1.1, so this analysis is performed on the latest published version, 5.0.1.
+NOTE: The ServiceRequest profile was not available in US Core 3.1.1, so this analysis is performed on the latest published version, 5.0.1.
 
-* Indication of whether a given procedure order is elective (using the modifier extension qicore-isElective)
+* Indication of whether a given procedure order is elective (using the modifier extension QI Core-isElective)
 
 [ServiceNotRequested](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-servicenotrequested.html) vs [USCoreServiceRequest](https://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-servicerequest.html)
 
-NOTE: The ServiceRequest profile was not available in USCore 3.1.1, so this analysis is performed on the latest published version, 5.0.1.
+NOTE: The ServiceRequest profile was not available in US Core 3.1.1, so this analysis is performed on the latest published version, 5.0.1.
 
-* Indication that a given procedure order should not be performed (using the ServiceRequest.doNotPerform element)
-* Rationale for the order not to perform (using the extension qicore-doNotPerformReason)
-* Specification of what should not be ordered in terms of a value set, rather than a specific code (using the extension qicore-notDoneValueSet)
+* Indication if certain conditions are present then an order for a given procedure should not be performed (using the ServiceRequest.doNotPerform element)
+* Gives a rationale for that order not being performed (using the extension qicore-doNotPerformReason)
+* Provides a Value Set to specifiy what should not be ordered, rather than a specific code (using the extension qicore-notDoneValueSet)
 
 [Procedure](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-procedure.html) vs [USCoreProcedure](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-procedure.html)
 
