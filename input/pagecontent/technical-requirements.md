@@ -110,6 +110,7 @@ _Insufficient data available through FHIR APIs_
 Although industry adoption of FHIR in the United States (US) is widespread, the adoption is based on the foundational information established by US Core Data for Interoperability (USCDI) and specified as FHIR profiles in the US Core Implementation Guide (IG). Effective quality measurement often requires additional information not yet characterized in US Core, but available with the FHIR Quality Improvement profiles, Quality Improvement (QI) Core. The QI Core profiles are derived from and consistent with US Core. However, there are specific data elements defined in QI Core that are not explicitly profiled in US Core, meaning that systems implementing US Core, would not likely support these additional data elements. Although gap analysis of US Core and QI Core has been done and continues to inform recommendations from QI Core to USCDI and USCDI+, we provide a specific gap analysis of the profiles used for the CMS104 prototype quality measure as part of this risk assessment:
 
 CMS 104 uses the following profiles or data elements:
+
 [QICoreEncounter](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-encounter.html) vs [USCoreEncounter](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-encounter.html)
 
 The QICoreEncounter profile introduces support for several aspects of encounter representation that are not specified in US Core. In particular:
