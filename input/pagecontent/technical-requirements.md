@@ -6,47 +6,47 @@ This Technical Requirements Document (TRD) documents both the high-level system 
 
 #### General Overview and Design Guidelines
 
-This section covers background for the Measure Calculation Tool, provides a brief overview of the technical solution, and identifies risks, constraints, and design guidelines for the solution.
+This section covers background for the Measure Calculation Tool (MCT), provides a brief overview of the technical solution, and identifies risks, constraints, and design guidelines for the solution.
 
 ##### Background
 
 _Situation_
 
-The Promoting Interoperability Program Eligible incentivizes eligible hospitals and providers to demonstrate meaningful use of certified health information technology (HIT) to improve quality, safety, efficiency, and equity of the American health care system. Hospitals participating in the inpatient hospital quality reporting program (IHQR) are encouraged to voluntarily submit 4, electronic clinical quality measures (eCQM) for 3 of 4 quarters.  
+The Promoting Interoperability Program incentivizes eligible hospitals and providers to demonstrate meaningful use of certified health information technology (HIT) to improve quality, safety, efficiency, and equity of the American health care system. Hospitals participating in the inpatient hospital quality reporting program (IHQR) are encouraged to voluntarily submit four, electronic clinical quality measures (eCQM) for three of four quarters.  
 
 _Problem_
 
-However, the process of electronically sharing population-level data is labor-intensive and cumbersome, hampered by a lack of standardization of data models and fields. In order to calculate eCQMs today, providers must map their EHR propriety data models to the Quality Data Model and upload their results as a Quality Reporting Document Architecture Category I formatted file onto the Hospital Quality Reporting portal, as well as participate in post submission audits. 
+However, the process of electronically sharing population-level data is labor-intensive and cumbersome, hampered by a lack of standardization of data models and fields. In order to calculate eCQMs today, providers must map their EHR propriety data models to the Quality Data Model (QDM) and upload their results as a Quality Reporting Document Architecture Category I formatted file onto the Hospital Quality Reporting portal, as well as participate in post submission audits. 
 
-In order to reduce the burden of data collection and improve interoperability, CMS aims to transition away from traditional electronic clinical quality measurement (eCQM) to Fast Healthcare Interoperability Resources (FHIR)– specified measures, that leverage certified health information technology or digital quality measurement (dQMs)  
+In order to reduce the burden of data collection and improve interoperability, CMS aims to transition away from traditional electronic clinical quality measurement  to Fast Healthcare Interoperability Resources (FHIR)– specified measures, that leverage certified health information technology or digital quality measurement (dQMs)  
 
 As per the 21st Century Cures Act Final Rule, developers of certified health information technology (HIT) must ensure their technology supports a variety of use cases, including the calculation of quality measure. **Technology certified by the Office of National Coordinator ONC must support “standardized API for patient and population services.”** Certified HIT will  
 
-1. support Fast Healthcare Interoperability Resources (FHIR) Release 4.0.2, 
-2. responds to request for data elements mandated in the USCD v1 
-3. enables access to patient-level data across a patient population.  
+1. Support FHIR Release 4.0.2, 
+2. Responds to request for data elements mandated in the USCD v1 
+3. Eables access to patient-level data across a patient population.  
 
 DQMs will allow eligible providers and hospitals to seamlessly exchange patient and population level data for the calculation and reporting of quality measure scores, using a Measure Calculation Tool (MCT). 
 
-An MCT is an open-source, end-to-end software system, designed to interface with eligible hospital and clinicians FHIR API, gather data requirements for measure calculation from a knowledge repository, request and validate data from a provider API, calculate measure score(s) using Clinical Quality Language, and produce electronic report(s). CMS has contracted Yale-CORE to orchestrate the development of an early MCT prototype and demonstrate its ability to calculate a measure score for single FHIR-specified measure.
+An MCT is an open-source, end-to-end software system, designed to interface with eligible hospital and clinicians FHIR application programming interface (API), gather data requirements for measure calculation from a knowledge repository, request and validate data from a provider API, calculate measure score(s) using Clinical Quality Language, and produce electronic report(s). Centers for Medicare and Medicaid Services (CMS) has contracted Yale Center for Outcomes Research & Evaluation (CORE) to orchestrate the development of an early MCT prototype and demonstrate its ability to calculate a measure score for single FHIR-specified measure.
 
 _Objective_
 
-To develop a prototype of the MCT engine that will be able to demonstrate key features of the enterprise level MCT platform. These features will be defined and enumerated as user stories, all features not selected for development and testing for prototype will remain in the backlog.  
+To develop a prototype of the MCT engine that will be able to demonstrate key features of the enterprise level MCT platform. These features will be defined and enumerated as user stories. All features not selected for development and testing for prototype will remain in the backlog.  
 
 _Stakeholders_
 
 The following comprises the internal and external stakeholders whose requirements are represented by this document: 
 
-* Anne Weinstein Program Lead
-* Tom Lantz Senior Program Technical Advisor  
-* Bridget Calvert Senior dQM Implementation Lead 
-* Joel Andress Senior dQM Program Lead  
-* Bill Lakenan  Interoperability Lead, Bellese Technologies   
-* Reid Kiser DQM Division Director  
-* Mark Canfield Division Deputy Director  
-* Michellene Roberts HQR Program Lead  
-* Mindy Riley Division Director  
+* Anne Weinstein, Program Lead
+* Tom Lantz, Senior Program Technical Advisor  
+* Bridget Calvert ,Senior dQM Implementation Lead 
+* Joel Andress, Senior dQM Program Lead  
+* Bill Lakenan,  Interoperability Lead, Bellese Technologies   
+* Reid Kiser, DQM Division Director  
+* Mark Canfield, Division Deputy Director  
+* Michellene Roberts, HQR Program Lead  
+* Mindy Riley, Division Director  
 * Andrew Fulks Principal Engineer, eSimplicity 
 
 ##### General Overview
@@ -55,7 +55,7 @@ The following comprises the internal and external stakeholders whose requirement
 <img src="MeasureCalculationTool.png" alt="Measure Calculation Tool Use Case Overview" width="600" height="469"/>
 </div>
 
-As depicted in the above diagram, the Measure Calculation Tool is a software system that facilitates gathering quality reporting data, performing measure validation and calculation, and submitting reporting data for a provider. This process makes use of FHIR standard APIs implemented by vendor systems at provider sites, reducing the overall burden of quality reporting by eliminating the currently required transformation from proprietary data models to the conceptual model used for specifying eCQMs (Quality Data Model). By using FHIR as a standard data model for the expression of quality measures, quality reporting data exchange, measure calculation, and reporting submission can be implemented in a single standard way, rather than requiring each vendor system to interpret and apply measure specifications.
+As depicted in the above diagram, the Measure Calculation Tool is a software system that facilitates gathering quality reporting data, performing data validation, measure calculation, and submission. This process makes use of FHIR standard APIs implemented by vendor systems at provider sites, reducing the overall burden of quality reporting by eliminating the need to transform proprietary data models to the QDM model. By using FHIR as a standard data model for the expression of quality measures, quality reporting data exchange, measure calculation, and reporting submission can be implemented in a single standard way, rather than requiring each vendor system to interpret and apply measure specifications.
 
 This document describes the architecture and technical requirements for the Measure Calculation Tool, as well as documenting the implementation of the current Measure Calculation Tool prototype using open source and freely available non-commercial reference implementation software. This process will demonstrate the technical feasibility of the approach while highlighting risks for and next steps to facilitating fully scalable production-level implementation.
 
@@ -65,25 +65,25 @@ This section documents the assumptions, constraints, and risks associated with t
 
 ###### Assumptions
 
-1. Calculate a single hospital-level-process measure 
-2. Have a User Interface similar to Hospital Quality Reporting webpage 
-3. MCT Host is platform agnostic 
-4. It will connect to QI Core Compliant FHIR Server for mock reporting system 
-5. It will connect to server with DEQM receiver capabilities as a mock receiving system 
-6. It will use smart on FHIR or OAuth for authentication and authorization (NOTE: This is not implemented in the current prototype)
+1. The prototype will calculate a single hospital-level-process measure 
+2. The prototype will have a User Interface similar to Hospital Quality Reporting webpage 
+3. The prototype can be hosted on any system
+4. The prototype will will connect to QI Core Compliant FHIR Server for mock reporting system 
+5. The prototype willill connect to server with Data Exchange for Quality Measures (DEQM) receiver capabilities as a mock receiving system 
+6. The MCT will will use SMART on FHIR or OAuth for authentication and authorization (NOTE: This is not implemented in the current prototype)
 7. The prototype will use synthetic data 
-8. It will contain internal bundles of knowledge repository (measure specification support) 
-9. It will contain internal bundles terminology service 
-10. It will consider strategies for supporting bulk FHIR, but the prototype will use an API-based approach
+8. The prototype will contain internal bundles of knowledge repository (measure specification support) 
+9. The prototype will contain internal bundles terminology service 
+10. Future prototypes will consider strategies for supporting bulk FHIR, but the prototype will use an API-based approach
 11. Hospitals with multiple locations operating under a single CCN will submit reports for all locations 
 12. Hospital users can select measures for reporting (see 1st assumption) 
-13. It will consider strategies for supporting aggregated patient data, but the prototype will use a snapshot approach 
-14. It will perform measure calculation directly on gathered data 
-15. It will consider strategies for storage versus exchange of data 
+13. Future prototypes will consider strategies for supporting aggregated patient data, but the prototype will use a snapshot approach 
+14. The prototype will perform measure calculation directly on data gatheredwithout need for patient matching, de-duplication, etc
+15. Future prototypes will consider strategies for storage versus exchange of data 
 
 ###### Constraints
 
-The following architectural and system constraints are identified for the Measure Calculation Tool:
+The following architectural and system constraints are identified for the MCT:
 
 1. The solution must be open source, making use of only non-commercial, freely available software and technologies
 2. The solution must use FHIR-based standards for all data exchange and measure specifications
