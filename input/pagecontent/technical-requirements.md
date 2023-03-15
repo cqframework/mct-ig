@@ -160,9 +160,9 @@ NOTE: The ServiceRequest profile was not available in US Core 3.1.1, so this ana
 
 _Inconsistent implementation of data available through FHIR APIs_
 
-Although USCore profiles provide conformance requirements for data made available through FHIR APIs, there is still implementer flexibility that can lead to issues with achieving semantic interoperability in general, and quality reporting in particular. Specifically related to CMS104:
+Although US Core profiles provide conformance requirements for data made available through FHIR APIs, there is still implementer flexibility that can lead to issues with achieving, unambigous accurate data exchange between systems. Specifically related to CMS104:
 
-* First, USCore defines search parameters for both `class` and `type` of an encounter, they are both specified as recommendations, rather than conformance requirements. The result is that not all implementations will make these search parameters available, making selection of appropriate encounters difficult.
+* First, US Core defines search parameters for both `class` and `type` of an encounter, they are both specified as recommendations, rather than conformance requirements. The result is that not all implementations will make these search parameters available, making selection of appropriate encounters difficult.
 * Second, although USCore specifies that `class` is required and provides an appropriate value set of codes ([ActEncounterCode](https://terminology.hl7.org/1.0.0//ValueSet-v3-ActEncounterCode.html)), the binding is _extensible_, meaning that implementations may choose alternative codes if there is no suitable code in the value set. The practical implication of this is that implementers may opt for local codes, rather than going through the effort of mapping those local codes to suitable codes in the value set. The impact is that the `class` element may not be reliable as a filtering mechanism for encounters such as 'Inpatient Encounters'
 
 _Insufficient data selectivity available through FHIR APIs_
@@ -171,7 +171,7 @@ Another consequence of missing search parameters is that more data than is stric
 
 _Lack of terminology support for data access through FHIR APIs_
 
-At the time of this writing, vendor FHIR APIs do not typically provide support for value set-based filtering. Meaning that instead of being able to say, for example, "retrieve all encounters with a type in the value set 'Inpatient Encounter Codes'", systems retrieving data may need to expand the value set and request encounters for any code, as in "retrieve all encounters with a type code in the list ('123', '234', '345', '456')". There are numerous challenges associated with this, including the need to segment queries for large value sets.
+As of spring of 2023, vendor FHIR APIs do not typically provide support for value-set-based filtering. Meaning that instead of being able to say, for example, "retrieve all encounters with a type in the value set 'Inpatient Encounter Codes'", systems retrieving data may need to expand the value set and request encounters for any code, as in "retrieve all encounters with a type code in the list ('123', '234', '345', '456')". There are numerous challenges associated with this, including the need to segment queries for large value sets.
 
 _Insufficient performance of data available through FHIR APIs_
 
@@ -179,7 +179,7 @@ In some cases, performance of retrieval through FHIR APIs may be an issue. For e
 
 _Insufficient performance of validation of FHIR data_
 
-For the prototype, the Measure Calculation Tool makes use of the open source Java reference implementation validator used by FHIR publishing tooling as well as several open source reference implementations. For complex validations, especially involving terminology, this component can take a significant amount of time. In particular, we see cases that take multiple seconds to validate the data for a single patient. The majority of this time appears to be due to direct terminology server usage by the validation component.
+For the prototype, the MCT makes use of the open-source Java reference implementation validator used by FHIR publishing tooling as well as several other open source reference implementations. For complex validations, especially involving terminology, this component can take a significant amount of time. In particular, we see cases that take multiple seconds to validate the data for a single patient. The majority of this time appears to be due to direct terminology server usage by the validation component.
 
 This risk could be mitigated by adding caching to the terminology capability of the validation component.
 
