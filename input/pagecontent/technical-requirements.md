@@ -222,9 +222,9 @@ This project also used a "Continuous Delivery" pipeline to support project devel
 
 The Reporting Client should provide a simple interface for quality improvement staff at provider organizations to gather the required data for a measure from any or all of the facilities for the organization, display any relevant validation or missing information messages along with the calculated measure score, and submit the data and score to a receiving system.
 
-The User Interface for this prototype will be a minimalist React-JS application that mimics the experience of submitting reporting data in the current hospital reporting system.
+The User Interface (UI) for this prototype will be a minimalist React-JS application that mimics the experience of submitting reporting data in the current hospital reporting system.
 
-The specific capabilities of the user interface are documented as part of the user stories in the technical requirements section of this document, but broadly the functionality must include:
+The specific capabilities of the UI are documented as part of the user stories in the technical requirements section of this document, but broadly the functionality must include:
 
 1. System administration capabilities to support configuration of organizations, facilities, data access endpoints, CCN information, and reporting submission endpoints. NOTE: The user interface for this aspect is out of scope for the initial prototype.
 2. Reporting submission capabilities allowing an end user to select:
@@ -245,7 +245,7 @@ This project will also use industry standard, open source, and widely available 
 * [JavaScript](https://en.wikipedia.org/wiki/ECMAScript)
 * [React](https://reactjs.org/)
 * [Java 11 (Adopt Open JDK and OpenJ9)](https://adoptopenjdk.net/?variant=openjdk11&jvmVariant=openj9)
-* [Github](http://github.com)
+* [GitHub](http://github.com)
 
 ###### Standards Compliance
 
@@ -266,29 +266,29 @@ The standards involved in the specification, distribution, and implementation of
 
 ##### Performance Engineering
 
-Performance requirements, such as the defined scalability or responsiveness expectations for specific workloads, are a contributing factor to system design. Preliminary considerations of system performance include total time to complete data gather for a single patient and for a facility, total time to calculate a measure for a single patient and for a population, and total time to submit data and calculated scores to a receiving system. During the development process, the team will continue to surface specific response time goals.
+Performance requirements, such as the defined scalability or responsiveness expectations for specific workloads, are a contributing factor to system design. Preliminary considerations of system performance include total time to gather data for a single patient and for a facility, the total time to calculate a measure for a single patient and for a population, and the total time to submit the data and the calculated scores to a receiving system. During the development process, the team continuously worked to surface specific response time goals.
 
 #### System Architecture
 
-This section documents the logical view of the system architecture, and the high-level organization and technological approach to the software, application, and information architecture of the Measure Calculation Tool.
+This section documents the logical view of the system architecture, and the high-level organization and technological approach to the software, application, and information architecture of the MCT.
 
 ##### Logical View
 
-The following diagram provides the context of the proposed measure calculation tool in the environment in which it is intended to function. The reporting user is shown interacting with the system through the Reporting Client, which interacts with the Measure Calcuation Tool to gather data, perform validation and measure calculation, and submit the resulting data and scores to the receiving system.
+The following diagram provides the context of the proposed MCT in the environment in which it is intended to function. The reporting user is shown interacting with the system through the Reporting Client, which interacts with the MCT to gather data, perform validation and measure calculation, and submit the resulting data and scores to the receiving system.
 
 ![MCT Context Diagram](context.png)
 
-As shown in the digram, a Reporting User uses the Reporting Client to interface with the Measure Calculation Tool to select reporting facilities, the measure to be calculated, and the measurement period to be reported. The user interface displays the results of the validation step, including whether the data meets the data requirements for the measure to be reported, as well as any validation information returned by the measure calculation tool and the calculated measure score. The user is given the opportunity to review validation results to determine whether additional corrective action needs to be taken by the provider sites, or if the data meet expectations and the measure calculation score is accepted, the user is able to transmit the results to the Receiving System.
+As shown in the digram, a Reporting User uses the Reporting Client to interface with the Measure Calculation Tool to select reporting facilities, the measure to be calculated, and the measurement period to be reported. The UI displays the results of the validation step, including whether the data meets the data requirements for the measure to be reported, as well as any validation information returned by the MCT and the calculated measure score. The Reporting User is given the opportunity to review validation results to determine whether additional corrective action needs to be taken by the provider sites, or if the data meet expectations and the measure calculation score is accepted, the Reporting User is able to transmit the results to the Receiving System.
 
 To complete the required gather, validation, and calculation, the Measure Calculation Tool interfaces with the Knowledge Repository, Terminology Service, Provider Site(s), and Receiving System.
 
-The Measure Calculation Tool makes use of the Knowledge Repository to retrieve measure specifications as well as data requirements for the specific measure or measures being calculated. This interface is described by the Measure Repository Service defined in the Quality Measure Implementation guide.
+The Measure Calculation Tool makes use of the Knowledge Repository to retrieve measure specifications as well as data requirements for the specific measure or measures being calculated. This interface is described by the Measure Repository Service defined in the Quality Measure Implementation Guide.
 
-The Terminology Service is used to provide appropriate expansions of value sets referenced by the measure specification. This interface is described by the Measure Terminology Service defined in the Quality Measure Implementation guide.
+The Terminology Service is used to provide appropriate expansions of value sets referenced by the measure specification. This interface is described by the Measure Terminology Service defined in the Quality Measure Implementation Guide.
 
 The Measure Calculation Tool accesses the Provider Site (or sites) via the FHIR Server exposed by each provider site. Consistent with current adoption, the provider site FHIR server is expected to conform to at least the 3.1.1 version of the US Core FHIR implementation guide. Ideally, provider sites would also conform to newer versions of US Core, as well as to the QI Core implementation guide.
 
-And finally, the Measure Calculation Tool interfaces with the Receiving System as described by the Receiving System capability statement defined in the Data Exchange for Quality Measures implementation guide.
+And finally, the Measure Calculation Tool interfaces with the Receiving System as described by the Receiving System capability statement defined in the Data Exchange for Quality Measures implementation Guide.
 
 > Note that for the purposes of this prototype, the capabilities provided by the Knowledge Repository and Terminology Service are modeled and implemented as interfaces within the Measure Calculation Tool, as the ecosystem for publishing quality measures via an API is not yet established and outside the scope of this prototype.
 
