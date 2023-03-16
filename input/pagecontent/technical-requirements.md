@@ -170,12 +170,11 @@ _Insufficient data selectivity available through FHIR APIs_
 Another consequence of missing search parameters is that more data than is strictly necessary may need to be retrieved because the filtering criteria may not match available search parameters. For example, if a system implements the Encounter.class search parameter, but not the Encounter.type search parameter, measure calculation would need to retrieve all encounters for a class and subsequently filter on type.
 
 _Lack of terminology support for data access through FHIR APIs_
-
-As of spring of 2023, vendor FHIR APIs do not typically provide support for value-set-based filtering. Meaning that instead of being able to say, for example, "retrieve all encounters with a type in the value set 'Inpatient Encounter Codes'", systems retrieving data may need to expand the value set and request encounters for any code, as in "retrieve all encounters with a type code in the list ('123', '234', '345', '456')". There are numerous challenges associated with this, including the need to segment queries for large value sets.
+ if a measure requires an initial population that includes encounters with a type specified in the 'Inpatient Encounter Codes' value set, retrieving the necessary data may require expanding the value set and requesting encounters for any code in a list, such as "retrieve all encounters with a type code in the list ('123', '234', '345', '456')". There are numerous challenges associated with this, including the need to segment large value sets into multiple queries.
 
 _Insufficient performance of data available through FHIR APIs_
 
-In some cases, performance of retrieval through FHIR APIs may be an issue. For example, a specific case likely to impact CMS104 calculation is the retrieval of past medication orders. In some FHIR APIs, this query can take a significant amount of time (i.e. on the order of 30 seconds to several minutes), resulting in reduced measure calculation performance overall.
+In some cases, performance of retrieval through FHIR APIs may be an issue. For example, a specific case likely to impact CMS104 calculation is the retrieval of past medication orders. In some FHIR APIs, this query can take a significant amount of time (i.e., on the order of 30 seconds to several minutes), resulting in reduced measure calculation performance overall.
 
 _Insufficient performance of validation of FHIR data_
 
@@ -187,7 +186,7 @@ This risk could be mitigated by adding caching to the terminology capability of 
 
 The Measure Calculation Tool is a standards-based implementation and uses industry standard software technologies and development approaches to ensure it can be used effectively by healthcare IT staff at hospitals and clinics throughout the United States. This includes:
 
-1. The software is developed using industry standard source control, namely Git via Github, following stable trunk methodology. All changes to the source code for all repositories are made through pull requests.
+1. The software is developed using industry standard source control, namely Git via GitHub, following stable trunk methodology. All changes to the source code for all repositories are made through pull requests.
 2. The software is developed using industry standard software technologies, namely Java for backend systems and JavaScript for frontend applications.
 3. The software makes use of container technology to aid adoption, implementation, and integration.
 4. The software repositories are configured with continuous integration build and deployment.
@@ -196,21 +195,21 @@ The Measure Calculation Tool is a standards-based implementation and uses indust
 
 The following design guidelines inform the Measure Calculation Tool and prototype design and implementation:
 
-* Use of standards: The solution will be designed to use HL7 FHIR-based standards wherever possible, specifically including US Core STU 3.1.1 and QI Core STU 4.1.1 to characterize all data exchange, and the Quality Measure IG STU 4.0.0 and Data Exchange for Quality Measures STU 4.0.0 to characterize all measure specification and terminology exchange.
+* Use of standards: The solution will be designed to use Health Level 7 (HL7) FHIR-based standards wherever possible, specifically including US Core Standard for Trial Use (STU) 3.1.1 and QI Core STU 4.1.1 to characterize all data exchange, and the Quality Measure IG STU 4.0.0 and Data Exchange for Quality Measures STU 4.0.0 to characterize all measure specification and terminology exchange.
 * Identify gaps: The solution will identify any gaps in capabilities or adoption that limit or potentially limit the complete implementation of FHIR-based quality reporting.
-* Propose alternatives: For identified gaps, the solution will propose alternative strategies as well as provide feedback to the standards development process to close the gaps.
-* Design for flexibility: The solution will have a modular design that enables functionality to be provided as isolated components that are focused on particular capabilities.
+* Propose alternatives: For identified gaps, the solution will propose alternative strategies and provide feedback to the standards development process to close the gaps.
+* Design for flexibility: The solution will have a modular design that enables functionality to be provided as isolated components that focus on particular capabilities.
 * Design for performance: The solution must focus on performance of the overall solution to ensure the feasibility of the approach. Where potential bottlenecks are identified, the solution will propose alternative strategies or approaches. The primary metric used to characterize system performance is the patient-measure, the time it takes to gather, validate, and evaluate a quality measure for a single patient. 
 
 #### 3.1.1 Safety Requirements
 
-The measure calculation tool must conform to the safety and privacy requirements of any site in which it is implemented. The system requires site-based implementation for operation and is designed in such a way that implementation will be executed fully within a site firewall. For any safety or privacy concerns related to clinical quality measure logic, please refer to the details of the specific measures being evaluated.
+The MCT must conform to the safety and privacy requirements of any site in which it is implemented. The system requires site-based implementation for operation and is designed in such a way that implementation will be executed fully within a site firewall. For any safety or privacy concerns related to clinical quality measure logic, please refer to the details of the specific measures being evaluated.
 
 ##### Development Methods and Contingencies
 
-Scrum is an Agile methodology that allows the project team to focus on delivering the highest business value in the shortest time. It allows the project team to rapidly and repeatedly inspect actual working software (every 2 weeks). The business sets the priorities, and teams self-organize to determine the best way to deliver the highest priority features. Every 2 weeks any stakeholder can see real working software and decide to release it as is or continue to enhance it for another sprint. This rapid and iterative approach has been quickly gaining acceptance within the informatics community (Kannan et al., 2019).
+Scrum is an Agile methodology that allows the project team to focus on delivering the highest business value in the shortest time. It allows the team to rapidly and repeatedly inspect actual working software (every 2 weeks). The business sets the priorities, and teams self-organize to determine the best way to deliver the highest priority features. Every 2 weeks any stakeholder can see real working software and decide to release it as is or continue to enhance it for another sprint. This rapid and iterative approach has been quickly gaining acceptance within the informatics community (Kannan et al., 2019).
 
-This project also used a "Continuous Delivery" pipeline to support project development as has been commonly employed by industry leaders like Amazon, Netflix, eBay, Comcast, and Uber for over 10 years. This approach consistently reduces:
+This project also used a "Continuous Delivery" pipeline to support project development, as has been commonly employed by industry leaders like Amazon, Netflix, eBay, Comcast, and Uber for over 10 years. This approach consistently reduces:
 
 * Environment dependency risks through the use of lightweight virtual machines (Containers)
 * Environment hosting risks by using automated and immutable servers
