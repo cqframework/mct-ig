@@ -278,7 +278,7 @@ The following diagram provides the context of the proposed MCT in the environmen
 
 ![MCT Context Diagram](context.png)
 
-As shown in the digram, a Reporting User uses the Reporting Client to interface with the Measure Calculation Tool to select reporting facilities, the measure to be calculated, and the measurement period to be reported. The UI displays the results of the validation step, including whether the data meets the data requirements for the measure to be reported, as well as any validation information returned by the MCT and the calculated measure score. The Reporting User is given the opportunity to review validation results to determine whether additional corrective action needs to be taken by the provider sites, or if the data meet expectations and the measure calculation score is accepted, the Reporting User is able to transmit the results to the Receiving System.
+As shown in the diagram, the Reporting Client allows a Reporting User to interface with the MCT to select reporting facilities, the measure to be calculated, and the measurement period to be reported. The UI displays the results of the validation step, including whether the data meets the data requirements for the measure to be reported, as well as any validation information returned by the MCT and the calculated measure score. The Reporting User is given the opportunity to review validation results to determine whether additional corrective action needs to be taken by the provider sites, or if the data meet expectations and the measure calculation score is accepted, the Reporting User is able to transmit the results to the Receiving System.
 
 To complete the required gather, validation, and calculation, the Measure Calculation Tool interfaces with the Knowledge Repository, Terminology Service, Provider Site(s), and Receiving System.
 
@@ -300,7 +300,7 @@ The following diagram illustrates the container level of the measure calculation
 <img src="container-mct.png" alt="MCT Container Diagram" height="650" width="923"/>
 </div>
 
-As shown in the diagram, the Measure Calculation Container provides the implementation of the measure calculation tool, as well as support for configuration information required to perform the calculation, including reporting provider information, available measures for calculation, as well as facility and receiving system endpoints.
+As shown in the diagram, the Measure Calculation Container provides the implementation of the MCT, as well as support for the configuration of information required to perform the calculation, including information about the reporting provider, available measures for calculation, as well as facility and receiving system endpoints.
 
 The Reporting Client makes use of these services to allow users to perform end-to-end measure calculation and reporting, and to facilitate data and calculated score validation.
 
@@ -352,7 +352,7 @@ In a production implementation, this component would be responsible for persisti
 
 The Measure Calculation Tool is implemented as a Sprint Boot Java application hosting a HAPI FHIR service with custom implementations of the operations required to support gathering quality measure data, validating data, calculating the measure, and submitting the resulting report and relevant data.
 
-The appication will use Maven as the build technology, including dependencies from the Sonatype repository. Most of the functionality required for the implementation is provided by the CQFramework component stack, detailed in the Components section below. The remainder of the service-side functionality is implemented as custom operations and exposed as a web service via FHIR operation syntax, as detailed in the Specification topic of this implementation guide.
+The appication uses Maven as the build technology, including dependencies from the Sonatype repository. Most of the functionality required for the implementation is provided by the CQFramework component stack, detailed in the Components section below. The remainder of the service-side functionality is implemented as custom operations and exposed as a web service via FHIR operation syntax, as detailed in the Specification topic of this implementation guide.
 
 The service is packaged as a Docker container which can then be used in continuous integration pipelines as part of testing, packaging, and delivery.
 
@@ -360,13 +360,13 @@ Note that many of the operations defined in the Specification topic are implemen
 
 ##### Application Architecture
 
-The Reporting Client is implemented as a ReactJS frontend application, launched via a standard browser, which then communicates with the Measure Calculation Tool as a web service. All communication from the Reporting Client is with the Measure Calculation Tool prototype, which then coordinates communication with other systems including the facility FHIR endpoints and the reporting submission endpoint.
+The Reporting Client is implemented as a ReactJS front-end application, launched via a standard browser, which then communicates with the Measure Calculation Tool as a web service. All communication from the Reporting Client is with the Measure Calculation Tool prototype, which then coordinates communication with other systems including the facility FHIR endpoints and the reporting submission endpoint.
 
 The application uses Yarn as the build technology.
 
 The application is packaged as a Docker container which can then be used in continuous integration pipelines as part of testing, packaging, and delivery.
 
-Note that many of the configuration functions of the Measure Calculation Tool are not exposed as user-interfaces in the Reporting Client, since the focus of the prototype is on implementing reporting submission.
+Note that many of the configuration functions of the Measure Calculation Tool are not exposed as UI in the Reporting Client, since the focus of the prototype is on implementing reporting submission.
 
 ##### Information Architecture
 
