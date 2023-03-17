@@ -427,7 +427,7 @@ Site Registration and Maintenance use cases involve configuration of the Measure
 | | |
 |---|---|
 |Actors:|Quality Manager<br/>Hospital (EHR FHIR Endpoint)<br/>Measure Calculation Tool<br/>Knowlege Repository<br/>Terminiology Service<br/>Reporting Client|
-|Description:|This use case describes the way a hospital will validate and certify that it can submit a FHIR specified hospital level quality measure for voluntary reporting periods for CY 2023. The user accesses the portal with their HARP account, selects a facility affiliate to be validated, and selects the Validate/Certify action|
+|Description:|This use case describes the way a hospital will validate and certify that it can submit a FHIR specified hospital level quality measure for voluntary reporting periods for CY 2023. The user accesses the portal with their HARP account, selects a facility to be validated, and selects the Validate/Certify action|
 |Preconditions:|The EHR FHIR Endpoint has been populated with the Validation Data Bundle<br/>All facility information is registered and available via Organization/Location resources (TBD: need to identify where this will come from)<br/>The measure content to be used for Valiation is available via the KR interface (can be mocked as a pre-packaged bundle)<br/>The terminology content is available via the TS interface (can be mocked as a pre-packaged bundle)|
 |Postconditions:|The MeasureReport calculation produces the expected results from the validation data<br/>A Validation MeasureReport is calculated submitted to the Receiving System|
 |Normal Course:|A user initiates the validation process via the Reporting Client, selecting the facility to be validated.<br/>For the Validation measure, the measure calculation tool gathers data requirements and terminology to determine FHIR queries to be executed<br/>For the validation facility, the measure calculation tool uses the facilities FHIR endpoint to evaluate the FHIR queries and gather all relevant data<br/>For the validation data, the measure calculation tool validates the data conforms to expected profiles<br/>For the validation data, the measure calculation tool evaluates the measure using the validated data as the data source<br/>The Reporting Client displays the result of the Measure Calculation to the user<br/>The user confirms the results and agrees to submit the Validation<br/>The Measure Calculation Tool posts the resulting MeasureReport to the Receiving System|
@@ -455,7 +455,7 @@ Site Registration and Maintenance use cases involve configuration of the Measure
 | | |
 |---|---|
 |Actors:|Quality Manager<br/>Hospital (EHR FHIR Endpoint)<br/>Measure Calculation Tool<br/>Knowledge Repository<br/>Terminology Service<br/>Receiving System<br/>Reporting Client|
-|Description:|This use case describes the way a hospital will submit a FHIR specified hospital level quality measure for all 3 out of the four voluntary reporting periods for CY 2023. The user accesses the portal with their HARP account, selects all facility affiliates, selects the program (IQR) and the measure (TBD) and checks the measure requirements, and agrees to begin (**PUSH**) the data|
+|Description:|This use case describes the way a hospital will submit a FHIR specified hospital level quality measure for three out of the four voluntary reporting periods for CY 2023. The user accesses the portal with their HARP account, selects all facility affiliates, selects the program (IQR) and the measure (TBD) and checks the measure requirements, and agrees to begin (**PUSH**) the data|
 |Preconditions:|The EHR FHIR Endpoint has been validated (with the Validation Use Case)<br/>All relevant patient data is available via the EHR FHIR Endpoint<br/>All facility information is registered and available via Organization/Location resources (TBD: need to identfy where this will come from)<br/>All attributed patient ids are available via a Group resource (TBD: need to identify the source for this as well)<br/>The measure content is available via the KR interface (can be mocked as a pre-packaged bundle)<br/>The terminology content is available via the TS interface (can be mocked as a pre-packaged bundle)|
 |Postconditions:|The relevant patient data from all sites is stored in the Receiving System<br/>The MeasureReport calculation procduces the expected results from the input data<br/>The MeasureReport is submitted to the Receiving System|
 |Normal Course:|A user initiates the process via the Reporting Client, selecting the facilities, measure, and reporting period.<br/>For each measure, the measure calculation tool gathers data requirements and terminology to determine FHIR queries to be executed<br/>For each facility, the measure calculation tool uses the facilities FHIR endpoint to evaluate the FHIR queries and gather all relevant data<br/>For all relevant data, the measure calculation tool validates the data conforms to expected profiles<br/>For all relevant data, the measure calculation tool submits that data to the Receving System<br/>The Measure Calculation Tool evaluates the measure using the Receiving System as the data source<br/>The Reporting Client displays the result of the Measure Calculation to the user<br/>The user confirms the results and agrees to submit<br/>The Measure Calculation Tool posts the resulting MeasureReport to the Receving System|
@@ -595,7 +595,7 @@ This section documents the technical requirements for the Measure Calculation To
 
 1. System Administration
     1. Provider implementer
-        1. As a Provider implementer, I need to be able to understand the measure calculation tool and how I can use it in my environment to support provider reporting
+        1. As a provider implementer, I need understand the MCT and how I can use it in my environment to support quality reporting
 2. Site/Facility Registration/Maintenance
     1. Provider quality improvement administrator
         1. As a provider quality improvement administrator, I need to be able to configure the CCN for the reporting provider organization
@@ -606,7 +606,7 @@ This section documents the technical requirements for the Measure Calculation To
 3. Validation/Certification
     1. Provider implementer
         1. As a Provider implementer, I need to be able to validate that the data needed for provider reporting is available and conformant from my sites
-        2. As a Provider implementer, I need to certify that the measure calculation tool can correctly produce expected results when running provider reporting for the test/certification data set.
+        2. As a Provider implementer, I need to certify that the MCT can correctly produce expected results when running quality reporting for the test/certification data set.
 4. Reporting Submission
     1. Provider quality improvement user
         1. As a provider quality improvement user, I need to be able to initiate the process of submitting reporting data.
@@ -619,7 +619,7 @@ This section documents the technical requirements for the Measure Calculation To
 
 #### Implementation
 
-This section describes implementation considerations for the Measure Calculation Tool, both for the prototype implementation, as well as enterprise considerations that must be addressed before the MCT could be fully supported for production use cases.
+This section describes implementation considerations for current protoype and considers issues that need to be addressed before a future implementation of an enterprise level solution.
 
 The following sequence diagram implements the reporting submission use case described above:
 
@@ -629,11 +629,11 @@ The following sequence diagram implements the reporting submission use case desc
 
 ##### Prototype
 
-The prototype implementation of the Measure Calculation Tool focuses on making use of existing open source FHIR and CQL-based measure calculation capabilities to support a streamlined, out-of-the-box experience for provider implementers reporting FHIR and CQL-based quality measures.
+The prototype implementation of the MCT focuses on making use of existing open source FHIR and CQL-based measure calculation capabilities to support a streamlined, out-of-the-box experience for provider implementers reporting FHIR and CQL-based quality measures.
 
 ###### CQL Components
 
-The measure calculation tool makes use of the following open source FHIR and CQL components:
+The MCT makes use of the following open source FHIR and CQL components:
 
 1. [CQL-to-ELM Translator](https://github.com/cqframework/clinical_quality_language): This component supports validation of CQL libraries as well as translation of CQL libraries to the equivalent Expression Logical Model (ELM) representation focused on machine implementation. The prototype will make use of at least the 2.6.0 release of the translator to ensure support for QICore versions 4.1.1 and above.
 
@@ -647,7 +647,7 @@ The measure calculation tool makes use of the following open source FHIR and CQL
 
 ###### Measure Calculation Tool
 
-The Measure Calculation Tool prototype is built as a [Spring Boot Application](https://spring.io/) that brings together all the required components and exposes a simple REST-based API to support use of the calculation features from any web client.
+The MCT prototype is built as a [Spring Boot Application](https://spring.io/) that brings together all the required components and exposes a simple REST-based API to support use of the calculation features from any web client.
 
 ###### Reporting Client
 
