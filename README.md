@@ -74,6 +74,11 @@ This implementation guide documents and supports the use of a prototype Measure 
 6. Changes
 
 ## Building the IG
+
+This repository is a FHIR Implementation Guide and uses the [FHIR Publisher](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation). To build the IG, first ensure the latest version of the publisher is downloaded using the `_updatePublisher`. Then, run the `_genOnce` script. This will produce the IG as a static website in the `output` folder.
+
+## Updating Measure Content
+
 In addition to the [FHIR Publisher](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation), this
 IG makes use of the Refresh IG command of [CQF Tooling](https://github.com/cqframework/cqf-tooling). This
 command performs several functions related to knowledge artifact content processing:
