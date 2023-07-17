@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="gather"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p>URL: [base]/$gather</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>patients</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/group.html">Group</a></td><td/><td><div><p>The patients for which the data is gathered. Defined in the <code>Group.member.entity</code> element.</p>
+</div></td></tr><tr><td>IN</td><td>facilities</td><td/><td>1..*</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#reference">reference</a>)</td><td/><td><div><p>The facilities that are gathering the data defined as references to <a href="https://www.hl7.org/fhir/location.html">Location</a> resource ids.</p>
+</div></td></tr><tr><td>IN</td><td>measure</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#reference">reference</a>)</td><td/><td><div><p>The <a href="https://www.hl7.org/fhir/measure.html">Measure</a> resource reference (id or url) used to determine the data requirements</p>
+</div></td></tr><tr><td>IN</td><td>period</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Period">Period</a></td><td/><td><div><p>The measurement period. This should be defined as a fiscal quarter (3 month increments).</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R4/measurereport.html">MeasureReport</a></td><td/><td><div><p>This operation returns a single <a href="https://www.hl7.org/fhir/parameters.html">Parameters</a> resource. The population MeasureReport will be the first element returned in a <code>Parameters.parameter</code> element followed by the results for each patient.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="http://cms.gov/fhir/mct/OperationDefinition/gather"/>
+  <version value="0.1.0"/>
+  <name value="MCT_Gather"/>
+  <title value="MCT $gather operation"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2023-03-21T15:20:25-06:00"/>
+  <publisher value="HL7 International - [Some] Work Group"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/[something]"/>
+    </telecom>
+  </contact>
+  <description value="This operation gathers data from all sites (facilities) configured for the given provider for the given measure and measurement period. A MeasureReport is returned that will have evaluatedResources that reference the resource data that was gathered. Additionally, the MeasureReport will have contained OperationOutcome resources that provide any messages that are the result of validating the data gathered."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <code value="gather"/>
+  <system value="true"/>
+  <type value="false"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="patients"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The patients for which the data is gathered. Defined in the `Group.member.entity` element."/>
+    <type value="Group"/>
+  </parameter>
+  <parameter>
+    <name value="facilities"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="*"/>
+    <documentation value="The facilities that are gathering the data defined as references to [Location](https://www.hl7.org/fhir/location.html) resource ids."/>
+    <type value="string"/>
+    <searchType value="reference"/>
+  </parameter>
+  <parameter>
+    <name value="measure"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The [Measure](https://www.hl7.org/fhir/measure.html) resource reference (id or url) used to determine the data requirements"/>
+    <type value="string"/>
+    <searchType value="reference"/>
+  </parameter>
+  <parameter>
+    <name value="period"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The measurement period. This should be defined as a fiscal quarter (3 month increments)."/>
+    <type value="Period"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="This operation returns a single [Parameters](https://www.hl7.org/fhir/parameters.html) resource. The population MeasureReport will be the first element returned in a `Parameters.parameter` element followed by the results for each patient."/>
+    <type value="MeasureReport"/>
+  </parameter>
+</OperationDefinition>

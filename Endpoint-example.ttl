@@ -1,0 +1,30 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://cms.gov/fhir/mct/Endpoint/example> a fhir:Endpoint ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Endpoint</b><a name=\"example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Endpoint &quot;example&quot; </p></div><p><b>status</b>: active</p><p><b>connectionType</b>: HL7 FHIR (Details: http://terminology.hl7.org/CodeSystem/endpoint-connection-type code hl7-fhir-rest = 'HL7 FHIR', stated as 'null')</p><p><b>payloadType</b>: Any <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-endpoint-payload-type.html\">Endpoint Payload Type</a>#any)</span></p><p><b>payloadMimeType</b>: application/fhir+json</p><p><b>address</b>: <a href=\"http://cms.gov/fhir/mct/receiving\">http://cms.gov/fhir/mct/receiving</a></p></div>"
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:connectionType [
+     fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/endpoint-connection-type"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "hl7-fhir-rest" ]
+  ] ; # 
+  fhir:payloadType ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/endpoint-payload-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "any" ]
+     ] )
+  ] ) ; # 
+  fhir:payloadMimeType ( [ fhir:v "application/fhir+json"] ) ; # 
+  fhir:address [ fhir:v "http://cms.gov/fhir/mct/receiving"^^xsd:anyURI] . # 
+
+# -------------------------------------------------------------------------------------
+

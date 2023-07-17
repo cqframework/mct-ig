@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>CMS.FHIR.MCT\ - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/cqf.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"10.7"}
+    h3,h4,h5,h6{--heading-prefix:"10.7"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://github.com/cqframework"><img height="50" alt="Visit the CQF github organization website" src="assets/images/cqf.png"/> </a>
+</div>
+<!-- TODO: Push this into the base template, but it requires a "trusted" template -->
+<script type="text/javascript" src="cql.js"> </script>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">CMS FHIR Prototype Measure Calculation Tool IG</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - CI Build
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="technical-requirements.html">Technical Requirements</a>
+      </li>
+      <li>
+        <a href="implementation-guide.html">Implementation Guide</a>
+      </li>
+      <li>
+        <a href="user-guide.html">User Guide</a>
+      </li>
+      <li>
+        <a href="test-plan.html">Test Plan</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a target="_blank" href="http://cql.hl7.org/index.html">CQL Specification</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/smart-app-launch/STU2/backend-services.html">SMART Backend Services (version 2.0.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/core/STU3.1.1">US Core (version 3.1.1)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/cqfmeasures/STU3">FHIR Quality Measures (version 3.0.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/davinci-deqm/STU3.1">FHIR Quality Reporting (version 3.1.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/uv/cpg">FHIR Clinical Guidelines</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="license.html">License</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b></b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">CMS FHIR Prototype Measure Calculation Tool IG - Local Development build (v0.1.0). See the <a href="http://cms.gov/fhir/mct/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="Library-MATGlobalCommonFunctionsQICore4.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Library-MATGlobalCommonFunctionsQICore4.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Library-MATGlobalCommonFunctionsQICore4.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+
+  <h2 id="root">Library: 
+
+  </h2>
+
+  <table class="colsd">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsQICore4<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsQICore4"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">0.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsQICore4|0.1.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Draft
+          
+            as of 2023-03-21
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">MATGlobalCommonFunctionsQICore4</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+<!--  <p>
+  Formats: <a href="Library-MATGlobalCommonFunctionsQICore4.xml.html">XML</a>, <a href="Library-MATGlobalCommonFunctionsQICore4.json.html">JSON</a>, <a href="Library-MATGlobalCommonFunctionsQICore4.ttl.html">Turtle</a>
+  </p>-->
+
+  
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">MATGlobalCommonFunctionsQICore4</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsQICore4">http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsQICore4</a></td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.1.0</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Name: </b></th>
+            <td style="padding-left: 4px;">MATGlobalCommonFunctionsQICore4</td>
+        </tr>
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">draft</td>
+        </tr>
+        
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2023-03-21 15:20:25-0600</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">HL7 International - [Some] Work Group</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">US</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <tr>
+          <td colspan="2">
+            <table>
+              <tr><th><a id="cql-content"><b>Content: </b></a> text/cql</th></tr>
+              <tr><td><pre><code class="language-cql">/*
+@update: BTR 2020-03-31 -&amp;gt;
+Incremented version to 5.0.000
+Updated FHIR version to 4.0.1
+Changed timezone keyword to timezoneoffset for use with CQL 1.4
+Removed Normalize Onset in favor of more general Normalize Interval
+Updated CodeSystems for ConditionVerificationStatusCodes and RoleCodes
+
+@update: BTR 2021-05-13 -&amp;gt;
+Added ActiveCondition Codes and Inactive Condition Codes value sets
+Added function documentation throughout
+Fixed EDVisit not using Last
+Updated prevalence period to use an inclusive boundary if the condition is active
+Added HasStart, HasEnd, Earliest, and Latest functions
+Removed ToDate and Age calculation functions
+
+@update: BTR 2021-06-25 -&amp;gt;
+Added GetBaseExtension overloads for Element
+
+@update: BTR 2022-05-24 -&amp;gt;
+Update for 2022 AU content
+Refactor to use CQF.FHIRCommon
+
+@update: BTR 2022-06-14 -&amp;gt;
+Update to use QICore
+Rename from MATGlobalCommonFunctionsFHIR4 to MATGlobalCommonFunctionsQICore4
+Added fluent functions
+Removed Normalize Interval
+*/
+library MATGlobalCommonFunctionsQICore4 version '7.0.000'
+
+using QICore version '4.1.1'
+
+include FHIRHelpers version '4.0.013' called FHIRHelpers
+include QICoreCommon version '1.0.000' called QICoreCommon
+
+valueset &amp;quot;Emergency Department Visit&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292'
+valueset &amp;quot;Encounter Inpatient&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307'
+valueset &amp;quot;Intensive Care Unit&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.206'
+valueset &amp;quot;Observation Services&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143'
+valueset &amp;quot;Outpatient Surgery Service&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.38'
+valueset &amp;quot;Present on Admission or Clinically Undetermined&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1147.197'
+
+parameter &amp;quot;Measurement Period&amp;quot; Interval&amp;lt;DateTime&amp;gt;
+  default Interval[@2022-01-01T00:00:00.0, @2023-01-01T00:00:00.0)
+
+context Patient
+
+define &amp;quot;Inpatient Encounter&amp;quot;:
+  [Encounter: &amp;quot;Encounter Inpatient&amp;quot;] EncounterInpatient
+		where EncounterInpatient.status = 'finished'
+	    and &amp;quot;LengthInDays&amp;quot;(EncounterInpatient.period) &amp;lt;= 120
+			and EncounterInpatient.period ends during day of &amp;quot;Measurement Period&amp;quot;
+
+/*
+@description: Returns an interval of date values extracted from the input interval of date-time values
+@comment: This function returns an interval constructed using the `date from` extractor on the start
+and end values of the input date-time interval. Note that using a precision specifier such as `day of`
+as part of a timing phrase is preferred to communicate intent to perform day-level comparison, as well
+as for general readability.
+*/
+define function &amp;quot;ToDateInterval&amp;quot;(period Interval&amp;lt;DateTime&amp;gt;):
+  Interval[date from start of period, date from end of period]
+
+/*
+Calculates the difference in calendar days between the start and end of the given interval.
+*/
+define function &amp;quot;LengthInDays&amp;quot;(Value Interval&amp;lt;DateTime&amp;gt; ):
+  difference in days between start of Value and end of Value
+
+/*
+Calculates the difference in calendar days between the start and end of the given interval.
+*/
+define fluent function lengthInDays(Value Interval&amp;lt;DateTime&amp;gt; ):
+  difference in days between start of Value and end of Value
+
+/*
+Returns the most recent emergency department visit, if any, that occurs 1 hour or less prior to the given encounter.
+*/
+define function &amp;quot;ED Visit&amp;quot;(TheEncounter Encounter ):
+  Last(
+    [Encounter: &amp;quot;Emergency Department Visit&amp;quot;] EDVisit
+      where EDVisit.status = 'finished'
+        and EDVisit.period ends 1 hour or less on or before start of TheEncounter.period
+      sort by end of period
+    )
+
+/*
+Returns the most recent emergency department visit, if any, that occurs 1 hour or less prior to the given encounter.
+*/
+define fluent function edVisit(TheEncounter Encounter ):
+  Last(
+    [Encounter: &amp;quot;Emergency Department Visit&amp;quot;] EDVisit
+      where EDVisit.status = 'finished'
+        and EDVisit.period ends 1 hour or less on or before start of TheEncounter.period
+      sort by end of period
+    )
+
+/*
+Hospitalization returns the total interval for admission to discharge for the given encounter, or for the admission of any immediately prior emergency department visit to the discharge of the given encounter.
+*/
+define function &amp;quot;Hospitalization&amp;quot;(TheEncounter Encounter ):
+  ( &amp;quot;ED Visit&amp;quot;(TheEncounter) ) X
+    return
+        if X is null then TheEncounter.period
+        else Interval[start of X.period, end of TheEncounter.period)
+
+/*
+Hospitalization returns the total interval for admission to discharge for the given encounter, or for the admission of any immediately prior emergency department visit to the discharge of the given encounter.
+*/
+define fluent function hospitalization(TheEncounter Encounter ):
+  ( &amp;quot;ED Visit&amp;quot;(TheEncounter) ) X
+    return
+        if X is null then TheEncounter.period
+        else Interval[start of X.period, end of TheEncounter.period]
+
+/*
+Returns list of all locations within an encounter, including locations for immediately prior ED visit.
+*/
+define function &amp;quot;Hospitalization Locations&amp;quot;(TheEncounter Encounter ):
+  ( &amp;quot;ED Visit&amp;quot;(TheEncounter) ) EDEncounter
+    return
+        if EDEncounter is null then TheEncounter.location
+        else flatten { EDEncounter.location, TheEncounter.location }
+
+/*
+Returns list of all locations within an encounter, including locations for immediately prior ED visit.
+*/
+define fluent function hospitalizationLocations(TheEncounter Encounter ):
+  ( &amp;quot;ED Visit&amp;quot;(TheEncounter) ) EDEncounter
+    return
+        if EDEncounter is null then TheEncounter.location
+        else flatten { EDEncounter.location, TheEncounter.location }
+
+/*
+Returns the length of stay in days (i.e. the number of days between admission and discharge) for the given encounter, or from the admission of any immediately prior emergency department visit to the discharge of the encounter
+*/
+define function &amp;quot;Hospitalization Length of Stay&amp;quot;(TheEncounter Encounter ):
+  LengthInDays(&amp;quot;Hospitalization&amp;quot;(TheEncounter))
+
+/*
+Returns the length of stay in days (i.e. the number of days between admission and discharge) for the given encounter, or from the admission of any immediately prior emergency department visit to the discharge of the encounter
+*/
+define fluent function hospitalizationLengthOfStay(TheEncounter Encounter ):
+  LengthInDays(&amp;quot;Hospitalization&amp;quot;(TheEncounter))
+
+/*
+Returns admission time for an encounter or for immediately prior emergency department visit.
+*/
+define function &amp;quot;Hospital Admission Time&amp;quot;(TheEncounter Encounter ):
+  start of &amp;quot;Hospitalization&amp;quot;(TheEncounter)
+
+/*
+Returns admission time for an encounter or for immediately prior emergency department visit.
+*/
+define fluent function hospitalAdmissionTime(TheEncounter Encounter ):
+  start of &amp;quot;Hospitalization&amp;quot;(TheEncounter)
+
+/*
+Hospital Discharge Time returns the discharge time for an encounter
+*/
+define function &amp;quot;Hospital Discharge Time&amp;quot;(TheEncounter Encounter ):
+  end of TheEncounter.period
+
+/*
+Hospital Discharge Time returns the discharge time for an encounter
+*/
+define fluent function hospitalDischargeTime(TheEncounter Encounter ):
+  end of TheEncounter.period
+
+/*
+Returns earliest arrival time for an encounter including any prior ED visit.
+*/
+define function &amp;quot;Hospital Arrival Time&amp;quot;(TheEncounter Encounter ):
+  start of First(
+  	    ( &amp;quot;Hospitalization Locations&amp;quot;(TheEncounter) ) HospitalLocation
+  			sort by start of period
+  	).period
+
+/*
+Returns earliest arrival time for an encounter including any prior ED visit.
+*/
+define fluent function hospitalArrivalTime(TheEncounter Encounter ):
+  start of First(
+  	    ( &amp;quot;Hospitalization Locations&amp;quot;(TheEncounter) ) HospitalLocation
+  			sort by start of period
+  	).period
+
+/*
+Returns the latest departure time for encounter including any prior ED visit. 
+*/
+define function &amp;quot;Hospital Departure Time&amp;quot;(TheEncounter Encounter):
+	end of Last(
+	    ( &amp;quot;Hospitalization Locations&amp;quot;(TheEncounter) ) HospitalLocation
+			sort by start of period
+	).period
+
+/*
+Returns the latest departure time for encounter including any prior ED visit. 
+*/
+define fluent function hospitalDepartureTime(TheEncounter Encounter):
+	end of Last(
+	    ( &amp;quot;Hospitalization Locations&amp;quot;(TheEncounter) ) HospitalLocation
+			sort by start of period
+	).period
+
+define function &amp;quot;Emergency Department Arrival Time&amp;quot;(TheEncounter Encounter):
+	start of (
+	    singleton from (
+	        ( &amp;quot;Hospitalization Locations&amp;quot;(TheEncounter) ) HospitalLocation
+				where GetLocation(HospitalLocation.location).type in &amp;quot;Emergency Department Visit&amp;quot;
+		)
+	).period
+
+define fluent function emergencyDepartmentArrivalTime(TheEncounter Encounter):
+	start of (
+	    singleton from (
+	        ( &amp;quot;Hospitalization Locations&amp;quot;(TheEncounter) ) HospitalLocation
+				where GetLocation(HospitalLocation.location).type in &amp;quot;Emergency Department Visit&amp;quot;
+		)
+	).period
+
+/*
+Hospitalization with Observation and Outpatient Surgery Service returns the total interval from the start of any immediately prior emergency department visit, outpatient surgery visit or observation visit to the discharge of the given encounter.
+*/
+define function &amp;quot;HospitalizationWithObservationAndOutpatientSurgeryService&amp;quot;(TheEncounter &amp;quot;Encounter&amp;quot; ):
+  TheEncounter Visit
+	  let ObsVisit: Last([Encounter: &amp;quot;Observation Services&amp;quot;] LastObs
+		  	where LastObs.status = 'finished'
+          and LastObs.period ends 1 hour or less on or before start of Visit.period
+			  sort by	end of period
+    	),
+    	VisitStart: Coalesce(start of ObsVisit.period, start of Visit.period),
+    	EDVisit: Last([Encounter: &amp;quot;Emergency Department Visit&amp;quot;] LastED
+			  where LastED.status = 'finished'
+          and LastED.period ends 1 hour or less on or before VisitStart
+			  sort by	end of period
+    	),
+    	VisitStartWithED: Coalesce(start of EDVisit.period, VisitStart),
+    	OutpatientSurgeryVisit: Last([Encounter: &amp;quot;Outpatient Surgery Service&amp;quot;] LastSurgeryOP
+			  where LastSurgeryOP.period ends 1 hour or less on or before VisitStartWithED
+			  sort by	end of period
+    	)
+  	return Interval[Coalesce(start of OutpatientSurgeryVisit.period, VisitStartWithED), end of Visit.period]
+
+/*
+Hospitalization with Observation and Outpatient Surgery Service returns the total interval from the start of any immediately prior emergency department visit, outpatient surgery visit or observation visit to the discharge of the given encounter.
+*/
+define fluent function hospitalizationWithObservationAndOutpatientSurgeryService(TheEncounter &amp;quot;Encounter&amp;quot; ):
+  TheEncounter Visit
+	  let ObsVisit: Last([Encounter: &amp;quot;Observation Services&amp;quot;] LastObs
+		  	where LastObs.status = 'finished'
+          and LastObs.period ends 1 hour or less on or before start of Visit.period
+			  sort by	end of period
+    	),
+    	VisitStart: Coalesce(start of ObsVisit.period, start of Visit.period),
+    	EDVisit: Last([Encounter: &amp;quot;Emergency Department Visit&amp;quot;] LastED
+			  where LastED.status = 'finished'
+          and LastED.period ends 1 hour or less on or before VisitStart
+			  sort by	end of period
+    	),
+    	VisitStartWithED: Coalesce(start of EDVisit.period, VisitStart),
+    	OutpatientSurgeryVisit: Last([Encounter: &amp;quot;Outpatient Surgery Service&amp;quot;] LastSurgeryOP
+			  where LastSurgeryOP.period ends 1 hour or less on or before VisitStartWithED
+			  sort by	end of period
+    	)
+  	return Interval[Coalesce(start of OutpatientSurgeryVisit.period, VisitStartWithED), end of Visit.period]
+
+/*
+Hospitalization with Observation returns the total interval from the start of any immediately prior emergency department visit through the observation visit to the discharge of the given encounter
+*/
+define function &amp;quot;HospitalizationWithObservation&amp;quot;(TheEncounter Encounter ):
+  TheEncounter Visit
+  		let ObsVisit: Last([Encounter: &amp;quot;Observation Services&amp;quot;] LastObs
+  				where LastObs.status = 'finished'
+            and LastObs.period ends 1 hour or less on or before start of Visit.period
+  				sort by end of period
+  			),
+  			VisitStart: Coalesce(start of ObsVisit.period, start of Visit.period),
+  			EDVisit: Last([Encounter: &amp;quot;Emergency Department Visit&amp;quot;] LastED
+  				where LastED.status = 'finished'
+            and LastED.period ends 1 hour or less on or before VisitStart
+  				sort by end of period
+  			)
+  		return Interval[Coalesce(start of EDVisit.period, VisitStart), end of Visit.period]
+
+/*
+Hospitalization with Observation returns the total interval from the start of any immediately prior emergency department visit through the observation visit to the discharge of the given encounter
+*/
+define fluent function hospitalizationWithObservation(TheEncounter Encounter ):
+  TheEncounter Visit
+  		let ObsVisit: Last([Encounter: &amp;quot;Observation Services&amp;quot;] LastObs
+  				where LastObs.status = 'finished'
+            and LastObs.period ends 1 hour or less on or before start of Visit.period
+  				sort by end of period
+  			),
+  			VisitStart: Coalesce(start of ObsVisit.period, start of Visit.period),
+  			EDVisit: Last([Encounter: &amp;quot;Emergency Department Visit&amp;quot;] LastED
+  				where LastED.status = 'finished'
+            and LastED.period ends 1 hour or less on or before VisitStart
+  				sort by end of period
+  			)
+  		return Interval[Coalesce(start of EDVisit.period, VisitStart), end of Visit.period]
+
+/*
+Hospitalization with Observation Length of Stay returns the length in days from the start of any immediately prior emergency department visit through the observation visit to the discharge of the given encounter
+*/
+define function &amp;quot;HospitalizationWithObservationLengthofStay&amp;quot;(TheEncounter &amp;quot;Encounter&amp;quot; ):
+  &amp;quot;LengthInDays&amp;quot;(&amp;quot;HospitalizationWithObservation&amp;quot;(TheEncounter))
+
+/*
+Hospitalization with Observation Length of Stay returns the length in days from the start of any immediately prior emergency department visit through the observation visit to the discharge of the given encounter
+*/
+define fluent function hospitalizationWithObservationLengthofStay(TheEncounter &amp;quot;Encounter&amp;quot; ):
+  &amp;quot;LengthInDays&amp;quot;(&amp;quot;HospitalizationWithObservation&amp;quot;(TheEncounter))
+
+/*
+First Inpatient Intensive Care Unit returns the first intensive care unit for the given encounter, without considering any immediately prior emergency department visit.
+*/
+define function &amp;quot;FirstInpatientIntensiveCareUnit&amp;quot;(Encounter Encounter ):
+  First((Encounter.location)HospitalLocation
+  			where GetLocation(HospitalLocation.location).type in &amp;quot;Intensive Care Unit&amp;quot;
+  				and HospitalLocation.period during Encounter.period
+  			sort by start of period
+  	)
+
+/*
+First Inpatient Intensive Care Unit returns the first intensive care unit for the given encounter, without considering any immediately prior emergency department visit.
+*/
+define fluent function firstInpatientIntensiveCareUnit(Encounter Encounter ):
+  First((Encounter.location)HospitalLocation
+  			where GetLocation(HospitalLocation.location).type in &amp;quot;Intensive Care Unit&amp;quot;
+  				and HospitalLocation.period during Encounter.period
+  			sort by start of period
+  	)
+
+/*
+Returns the Condition resources referenced by the diagnosis element of the Encounter
+*/
+define function &amp;quot;EncounterDiagnosis&amp;quot;(Encounter Encounter ):
+  Encounter.diagnosis D
+	return singleton from ([Condition] C where C.id = D.condition.reference.getId())
+
+/*
+Returns the Condition resources referenced by the diagnosis element of the Encounter
+*/
+define fluent function encounterDiagnosis(Encounter Encounter ):
+  Encounter.diagnosis D
+    return singleton from ([Condition] C where C.id = D.condition.reference.getId())
+
+/*
+Returns the Condition resource for the given reference
+@deprecated
+*/
+define function &amp;quot;GetCondition&amp;quot;(reference Reference):
+  singleton from ([Condition] C where C.id = reference.reference.getId())
+
+/*
+Returns the Condition resource for the given reference
+*/
+define fluent function getCondition(reference Reference):
+  singleton from ([Condition] C where C.id = reference.reference.getId())
+
+/*
+Returns the condition that is specified as the principal diagnosis for the encounter
+*/
+define function &amp;quot;PrincipalDiagnosis&amp;quot;(Encounter Encounter ):
+	singleton from ((Encounter.diagnosis D where D.rank = 1) PD
+      return singleton from ([Condition] C where C.id = PD.condition.reference.getId())
+	)
+
+/*
+Returns the condition that is specified as the principal diagnosis for the encounter
+*/
+define fluent function principalDiagnosis(Encounter Encounter ):
+	singleton from ((Encounter.diagnosis D where D.rank = 1) PD
+      return singleton from ([Condition] C where C.id = PD.condition.reference.getId())
+	)
+
+/*
+Returns the Location resource specified by the given reference
+*/
+define function &amp;quot;GetLocation&amp;quot;(reference Reference ):
+  singleton from (
+    [Location] L where L.id = reference.reference.getId()
+  )
+
+/*
+Returns the Location resource specified by the given reference
+*/
+define fluent function getLocation(reference Reference ):
+  singleton from (
+    [Location] L where L.id = reference.reference.getId()
+  )
+
+/*
+Returns the medication code for the given MedicationRequest
+*/
+define function &amp;quot;GetMedicationCode&amp;quot;(request MedicationRequest ):
+  if request.medication is Concept then
+  	  request.medication as Concept
+  	else
+  	  (singleton from ([Medication] M where M.id = (request.medication as Reference).reference.getId())).code
+
+/*
+Returns the medication code for the given MedicationRequest
+*/
+define fluent function getMedicationCode(request MedicationRequest ):
+  if request.medication is Concept then
+  	  request.medication as Concept
+  	else
+  	  (singleton from ([Medication] M where M.id = (request.medication as Reference).reference.getId())).code
+
+</code></pre></td></tr>
+            </table>
+          </td>
+        </tr>
+        
+        
+        
+    </table>
+</div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7.org/Special/committees/[something]">HL7 International - [Some] Work Group</a>.  Package cms.fhir.mct#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 21, 2023 15:20-0600">2023-03-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="http://cms.gov/fhir/mct/history.html">Version History</a> | <a style="color: #81BEF7" rel="license" href="license.html">License</a>
+<!--<a style="color: #81BEF7" href="todo.html">Search</a> | -->
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

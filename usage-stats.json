@@ -1,0 +1,42 @@
+{
+  "package": "cms.fhir.mct",
+  "version": "0.1.0",
+  "fhirVersion": "4.0.1",
+  "jurisdiction": "US",
+  "extensions": [],
+  "profiles": {},
+  "usage": {
+    "http://cms.gov/fhir/mct/StructureDefinition/mct-receivingSystemEndpoint": [
+      "Organization"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
+      "ImplementationGuide.definition.page",
+      "ImplementationGuide.definition.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
+      "ImplementationGuide.dependsOn"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode": [
+      "Measure.contained"
+    ],
+    "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements": [
+      "Measure"
+    ],
+    "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition": [
+      "Measure.contained"
+    ],
+    "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis": [
+      "Measure"
+    ],
+    "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem": [
+      "Library",
+      "Measure"
+    ]
+  }
+}

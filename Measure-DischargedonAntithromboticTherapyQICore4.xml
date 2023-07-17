@@ -1,0 +1,1117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Measure xmlns="http://hl7.org/fhir">
+  <id value="DischargedonAntithromboticTherapyQICore4"/>
+  <meta>
+    <versionId value="24"/>
+    <lastUpdated value="2021-08-24T13:12:30.000-06:00"/>
+    <source value="#q1Mp1RX4PUIGipJl"/>
+    <profile value="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm"/>
+    <profile value="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">DischargedonAntithromboticTherapyQICore4</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="http://ecqi.healthit.gov/ecqms/Measure/DischargedonAntithromboticTherapyQICore4">http://ecqi.healthit.gov/ecqms/Measure/DischargedonAntithromboticTherapyQICore4</a></td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.1.0</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Identifier: </b></th>
+            <td style="padding-left: 4px;">
+                
+                
+                <p style="margin-bottom: 5px;">
+                    <b>value: </b> <span>755216b2-5fa4-474d-bb29-ae8eaa209460</span>
+                </p>
+                
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row"><b>Identifier: </b></th>
+            <td style="padding-left: 4px;">
+                
+                
+                <p style="margin-bottom: 5px;">
+                    <b>value: </b> <span>1095FHIR</span>
+                </p>
+                
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Name: </b></th>
+            <td style="padding-left: 4px;">DischargedonAntithromboticTherapyQICore4</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">Discharged on Antithrombotic Therapy QICore</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">draft</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">false</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Scoring: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/CodeSystem/measure-scoring">http://terminology.hl7.org/CodeSystem/measure-scoring</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>proportion</span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>display: </b> <span>Proportion</span>
+                        </p>
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Improvement Notation: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/CodeSystem/measure-improvement-notation">http://terminology.hl7.org/CodeSystem/measure-improvement-notation</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>increase</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/CodeSystem/measure-type">http://terminology.hl7.org/CodeSystem/measure-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>process</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2022-07-05 20:34:35-0600</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">HL7 International - [Some] Work Group</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;"><div><p>Ischemic stroke patients prescribed or continuing to take antithrombotic therapy at hospital discharge</p>
+</div></td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Populations: </b></th>
+                <td style="padding-left: 4px;">
+                    <table class="grid-dict">
+                        <tr><th><b>Group</b></th><th><b>Population</b></th><th><b>Description</b></th></tr>
+                        
+                        <tr>
+                            <td></td>
+                            
+                                <tr>
+                                    <td/>
+                                    <td>Initial Population</td>
+                                    <td>
+                                        
+                                            Inpatient hospitalizations for patients age 18 and older, discharged from inpatient care (non-elective admissions) with a principal diagnosis of ischemic or hemorrhagic stroke and a length of stay less than or equal to 120 days that ends during the measurement period
+                                        
+                                    </td>
+                                 </tr>
+                            
+                                <tr>
+                                    <td/>
+                                    <td>Denominator</td>
+                                    <td>
+                                        
+                                            Inpatient hospitalizations for patients with a principal diagnosis of Ischemic stroke
+                                        
+                                    </td>
+                                 </tr>
+                            
+                                <tr>
+                                    <td/>
+                                    <td>Denominator Exclusion</td>
+                                    <td>
+                                        
+                                            Inpatient hospitalizations for patients admitted for elective carotid intervention. This exclusion is implicitly modeled by only including non-elective hospitalizations.
+Inpatient hospitalizations for patients discharged to another hospital
+Inpatient hospitalizations for patients who left against medical advice
+Inpatient hospitalizations for patients who expired
+Inpatient hospitalizations for patients discharged to home for hospice care
+Inpatient hospitalizations for patients discharged to a health care facility for hospice care
+Inpatient hospitalizations for patients with comfort measures documented
+                                        
+                                    </td>
+                                 </tr>
+                            
+                                <tr>
+                                    <td/>
+                                    <td>Denominator Exception</td>
+                                    <td>
+                                        
+                                            Inpatient hospitalizations for patients with a documented reason for not prescribing antithrombotic therapy at discharge.
+Inpatient hospitalizations for patients who receive Ticagrelor or Prasugrel as an antithrombotic therapy at discharge.
+                                        
+                                    </td>
+                                 </tr>
+                            
+                                <tr>
+                                    <td/>
+                                    <td>Numerator</td>
+                                    <td>
+                                        
+                                            Inpatient hospitalizations for patients prescribed or continuing to take antithrombotic therapy at hospital discharge
+                                        
+                                    </td>
+                                 </tr>
+                            
+                        </tr>
+                        
+                    </table>
+                </td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Supplemental Data: </b></th>
+                <td style="padding-left: 4px;">
+                    <table class="grid-dict">
+                        <tr><th><b>expression</b></th><th><b>system</b></th></tr>
+                        
+                        <tr>
+                            <td>SDE Sex</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Ethnicity</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Payer</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                    </table>
+                </td>
+            </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 25px;">US</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Purpose: </b></th>
+            <td style="padding-left: 4px;"><div><p>The effectiveness of antithrombotic agents in reducing stroke mortality, stroke-related morbidity and recurrence rates has been studied in several large clinical trials. While the use of these agents for patients with acute ischemic stroke and transient ischemic attacks continues to be the subject of study, substantial evidence is available from completed studies. Data at this time suggest that antithrombotic therapy should be prescribed at discharge following acute ischemic stroke to reduce stroke mortality and morbidity as long as no contraindications exist.
+For patients with a stroke due to a cardioembolic source (e.g. atrial fibrillation, mechanical heart valve), warfarin is recommended unless contraindicated. In recent years, novel oral anticoagulant agents (NOACs) have been developed and approved by the U.S. Food and Drug Administration (FDA) for stroke prevention, and may be considered as an alternative to warfarin for select patients. Anticoagulation therapy is not generally recommended for secondary stroke prevention in patients presumed to have a non-cardioembolic stroke.
+Anticoagulants at doses to prevent venous thromboembolism are insufficient antithrombotic therapy to prevent recurrent ischemic stroke or TIA.</p>
+</div></td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Copyright: </b></th>
+            <td style="padding-left: 25px;"><div><p>Measure specifications are in the Public Domain</p>
+<p>LOINC(R) copyright 2004-2020 Regenstrief Institute, Inc.
+This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2020 International Health Terminology Standards Development Organisation. All Rights Reserved.</p>
+</div></td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Disclaimer: </b></th>
+            <td style="padding-left: 25px;"><div><p>These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The measures and specifications are provided without warranty.</p>
+</div></td>
+        </tr>
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Effective Period: </b></th>
+            <td style="padding-left: 4px;">2022-01-01..2022-12-31</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Logic Definitions: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <table class="grid-dict">
+                            <tr>
+                                <th><b>Group</b></th><th><b>Scoring</b></th><th><b>Population Criteria</b></th><th><b>Expression</b></th>
+                            </tr>
+                            <tr>
+                                
+                                    <td>  </td>
+                                    <td>
+                                        
+                                        
+                                            <b>Measure scoring:</b>
+                                            
+                                                
+                                                    <p style="margin-bottom: 5px;">
+                                                        <span>proportion</span>
+                                                    </p>
+                                                
+                                                
+                                            
+                                        
+                                    </td>
+                                    
+                                        <tr>
+                                            <td/>
+                                            <td/>
+                                            <td>Initial Population</td>
+                                            <td>
+                                                
+                                                <pre><code class="language-cql">Initial Population</code></pre>
+                                                
+                                            </td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td/>
+                                            <td/>
+                                            <td>Denominator</td>
+                                            <td>
+                                                
+                                                <pre><code class="language-cql">Denominator</code></pre>
+                                                
+                                            </td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td/>
+                                            <td/>
+                                            <td>Denominator Exclusion</td>
+                                            <td>
+                                                
+                                                <pre><code class="language-cql">Denominator Exclusions</code></pre>
+                                                
+                                            </td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td/>
+                                            <td/>
+                                            <td>Denominator Exception</td>
+                                            <td>
+                                                
+                                                <pre><code class="language-cql">Denominator Exceptions</code></pre>
+                                                
+                                            </td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td/>
+                                            <td/>
+                                            <td>Numerator</td>
+                                            <td>
+                                                
+                                                <pre><code class="language-cql">Numerator</code></pre>
+                                                
+                                            </td>
+                                        </tr>
+                                    
+
+                            
+                            </tr>
+                        </table>
+                    
+                    
+                </td>
+            </tr>
+        
+    </table>
+</div>
+  </text>
+  <contained>
+    <Library>
+      <id value="effective-data-requirements"/>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode">
+        <valueCoding>
+          <system value="http://terminology.hl7.org/CodeSystem/medicationrequest-category"/>
+          <code value="community"/>
+          <display value="Community"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode">
+        <valueCoding>
+          <system value="http://terminology.hl7.org/CodeSystem/medicationrequest-category"/>
+          <code value="discharge"/>
+          <display value="Discharge"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="TJCOverallFHIR"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Non Elective Inpatient Encounter"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// Translator issue with 1.4.9-SNAPSHOT: https://github.com/cqframework/clinical_quality_language/issues/511&#xA;define &quot;Non Elective Inpatient Encounter&quot;:&#xA;  [&quot;Encounter&quot;: &quot;Non-Elective Inpatient Encounter&quot;] NonElectiveEncounter&#xA;                  &#x9;&#x9;where Global.&quot;LengthInDays&quot;(NonElectiveEncounter.period) &lt;= 120&#xA;                  &#x9;&#x9;&#x9;and NonElectiveEncounter.period ends during day of &quot;Measurement Period&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="0"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="TJCOverallFHIR"/>
+        </extension>
+        <extension url="name">
+          <valueString value="All Stroke Encounter"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;All Stroke Encounter&quot;:&#xA;  &quot;Non Elective Inpatient Encounter&quot; NonElectiveEncounter&#xA;                      where Global.PrincipalDiagnosis(NonElectiveEncounter).code in &quot;Hemorrhagic Stroke&quot;&#xA;                        or Global.PrincipalDiagnosis(NonElectiveEncounter).code in &quot;Ischemic Stroke&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="1"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="TJCOverallFHIR"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Encounter with Principal Diagnosis and Age"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Encounter with Principal Diagnosis and Age&quot;:&#xA;  &quot;All Stroke Encounter&quot; AllStrokeEncounter&#xA;                  &#x9;&#x9;with [&quot;Patient&quot;] BirthDate&#xA;                  &#x9;&#x9;&#x9;such that AgeInYearsAt(start of AllStrokeEncounter.period) &gt;= 18"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="2"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="TJCOverallFHIR"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Ischemic Stroke Encounter"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Ischemic Stroke Encounter&quot;:&#xA;  &quot;Encounter with Principal Diagnosis and Age&quot; EncounterWithAge&#xA;                  &#x9;&#x9;where Global.PrincipalDiagnosis(EncounterWithAge).code in &quot;Ischemic Stroke&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="3"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="DischargedonAntithromboticTherapyQICore4"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Antithrombotic Therapy at Discharge"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Antithrombotic Therapy at Discharge&quot;:&#xA;  [&quot;MedicationRequest&quot;: medication in &quot;Antithrombotic Therapy&quot;] Antithrombotic&#xA;    where Antithrombotic.doNotPerform is not true&#xA;      and exists ( Antithrombotic.category C&#xA;          where FHIRHelpers.ToConcept ( C ) ~ Global.&quot;Community&quot;&#xA;            or FHIRHelpers.ToConcept ( C ) ~ Global.&quot;Discharge&quot;&#xA;      )&#xA;      and Antithrombotic.status in { 'active', 'completed' }&#xA;      and Antithrombotic.intent = 'order'"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="4"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="DischargedonAntithromboticTherapyQICore4"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Numerator"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Numerator&quot;:&#xA;  TJC.&quot;Ischemic Stroke Encounter&quot; IschemicStrokeEncounter&#xA;      with &quot;Antithrombotic Therapy at Discharge&quot; DischargeAntithrombotic&#xA;        such that DischargeAntithrombotic.authoredOn during IschemicStrokeEncounter.period"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="5"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="DischargedonAntithromboticTherapyQICore4"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Denominator"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Denominator&quot;:&#xA;  TJC.&quot;Ischemic Stroke Encounter&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="6"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="DischargedonAntithromboticTherapyQICore4"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Initial Population"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Initial Population&quot;:&#xA;  TJC.&quot;Encounter with Principal Diagnosis and Age&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="7"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="TJCOverallFHIR"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Ischemic Stroke Encounters with Discharge Disposition"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Ischemic Stroke Encounters with Discharge Disposition&quot;:&#xA;  &quot;Ischemic Stroke Encounter&quot; IschemicStrokeEncounter&#xA;                  &#x9;&#x9;where IschemicStrokeEncounter.hospitalization.dischargeDisposition in &quot;Discharge To Acute Care Facility&quot;&#xA;                  &#x9;&#x9;&#x9;or IschemicStrokeEncounter.hospitalization.dischargeDisposition in &quot;Left Against Medical Advice&quot;&#xA;                  &#x9;&#x9;&#x9;or IschemicStrokeEncounter.hospitalization.dischargeDisposition in &quot;Patient Expired&quot;&#xA;                  &#x9;&#x9;&#x9;or IschemicStrokeEncounter.hospitalization.dischargeDisposition in &quot;Discharged to Home for Hospice Care&quot;&#xA;                  &#x9;&#x9;&#x9;or IschemicStrokeEncounter.hospitalization.dischargeDisposition in &quot;Discharged to Health Care Facility for Hospice Care&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="8"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="TJCOverallFHIR"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Intervention Comfort Measures"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Intervention Comfort Measures&quot;:&#xA;  ( [&quot;ServiceRequest&quot;: &quot;Comfort Measures&quot;] P&#xA;          where P.intent = 'order'&#xA;      )&#xA;        union ( [&quot;Procedure&quot;: &quot;Comfort Measures&quot;] InterventionPerformed&#xA;            where InterventionPerformed.status in { 'completed', 'in-progress' }&#xA;        )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="9"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="TJCOverallFHIR"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Encounter with Comfort Measures during Hospitalization"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Encounter with Comfort Measures during Hospitalization&quot;:&#xA;  &quot;Ischemic Stroke Encounter&quot; IschemicStrokeEncounter&#xA;        with &quot;Intervention Comfort Measures&quot; ComfortMeasure&#xA;          such that Coalesce((start of Global.&quot;Normalize Interval&quot;(ComfortMeasure.performed)), ComfortMeasure.authoredOn)during Global.&quot;HospitalizationWithObservation&quot; ( IschemicStrokeEncounter )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="10"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="DischargedonAntithromboticTherapyQICore4"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Denominator Exclusions"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Denominator Exclusions&quot;:&#xA;  TJC.&quot;Ischemic Stroke Encounters with Discharge Disposition&quot;&#xA;                &#x9;&#x9;union TJC.&quot;Encounter with Comfort Measures during Hospitalization&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="11"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="DischargedonAntithromboticTherapyQICore4"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Antithrombotic Not Given at Discharge"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Antithrombotic Not Given at Discharge&quot;:&#xA;  [&quot;MedicationRequest&quot;: medication in &quot;Antithrombotic Therapy&quot;] NoAntithromboticDischarge&#xA;    where NoAntithromboticDischarge.doNotPerform is true&#xA;      and ( NoAntithromboticDischarge.reasonCode in &quot;Medical Reason&quot;&#xA;          or NoAntithromboticDischarge.reasonCode in &quot;Patient Refusal&quot;&#xA;      )&#xA;      and exists ( NoAntithromboticDischarge.category C&#xA;          where FHIRHelpers.ToConcept ( C ) ~ Global.&quot;Community&quot;&#xA;            or FHIRHelpers.ToConcept ( C ) ~ Global.&quot;Discharge&quot;&#xA;      )&#xA;      and NoAntithromboticDischarge.status in { 'completed', 'cancelled' }&#xA;      and NoAntithromboticDischarge.intent = 'order'"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="12"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="DischargedonAntithromboticTherapyQICore4"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Encounter With No Antithrombotic At Discharge"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Encounter With No Antithrombotic At Discharge&quot;:&#xA;  TJC.&quot;Ischemic Stroke Encounter&quot; IschemicStrokeEncounter&#xA;                &#x9;with &quot;Antithrombotic Not Given at Discharge&quot; NoDischargeAntithrombotic&#xA;                &#x9;such that NoDischargeAntithrombotic.authoredOn during IschemicStrokeEncounter.period"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="13"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="DischargedonAntithromboticTherapyQICore4"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Pharmacological Contraindications for Antithrombotic Therapy at Discharge"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Pharmacological Contraindications for Antithrombotic Therapy at Discharge&quot;:&#xA;  [&quot;MedicationRequest&quot;: medication in &quot;Pharmacological Contraindications For Antithrombotic Therapy&quot;] Pharmacological&#xA;    where Pharmacological.doNotPerform is not true&#xA;      and exists ( Pharmacological.category C&#xA;          where FHIRHelpers.ToConcept ( C ) ~ Global.&quot;Community&quot;&#xA;            or FHIRHelpers.ToConcept ( C ) ~ Global.&quot;Discharge&quot;&#xA;      )&#xA;      and Pharmacological.status in { 'active', 'completed' }&#xA;      and Pharmacological.intent = 'order'"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="14"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="DischargedonAntithromboticTherapyQICore4"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Encounter With Pharmacological Contraindications for Antithrombotic Therapy at Discharge"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Encounter With Pharmacological Contraindications for Antithrombotic Therapy at Discharge&quot;:&#xA;  TJC.&quot;Ischemic Stroke Encounter&quot; IschemicStrokeEncounter&#xA;                    with &quot;Pharmacological Contraindications for Antithrombotic Therapy at Discharge&quot; DischargePharmacological&#xA;                      such that DischargePharmacological.authoredOn during IschemicStrokeEncounter.period"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="15"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="DischargedonAntithromboticTherapyQICore4"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Denominator Exceptions"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Denominator Exceptions&quot;:&#xA;  &quot;Encounter With No Antithrombotic At Discharge&quot;&#xA;                &#x9;&#x9;union &quot;Encounter With Pharmacological Contraindications for Antithrombotic Therapy at Discharge&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="16"/>
+        </extension>
+      </extension>
+      <status value="active"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+          <code value="module-definition"/>
+        </coding>
+      </type>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library TJC"/>
+        <resource value="http://ecqi.healthit.gov/ecqms/Library/TJCOverallFHIR|1.8.000"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Global"/>
+        <resource value="http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsFHIR4|6.1.000"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library FHIRHelpers"/>
+        <resource value="http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Code system MedicationRequestCategory"/>
+        <resource value="http://terminology.hl7.org/CodeSystem/medicationrequest-category"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Non-Elective Inpatient Encounter"/>
+        <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.424"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Hemorrhagic Stroke"/>
+        <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.212"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Ischemic Stroke"/>
+        <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.247"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Antithrombotic Therapy"/>
+        <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.201"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Discharge To Acute Care Facility"/>
+        <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.87"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Left Against Medical Advice"/>
+        <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.308"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Patient Expired"/>
+        <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.309"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Discharged to Home for Hospice Care"/>
+        <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.209"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Discharged to Health Care Facility for Hospice Care"/>
+        <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.207"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Comfort Measures"/>
+        <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/1.3.6.1.4.1.33895.1.3.0.45"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Observation Services"/>
+        <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Emergency Department Visit"/>
+        <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Medical Reason"/>
+        <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.473"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Patient Refusal"/>
+        <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Pharmacological Contraindications For Antithrombotic Therapy"/>
+        <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.52"/>
+      </relatedArtifact>
+      <parameter>
+        <name value="Measurement Period"/>
+        <use value="in"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="Period"/>
+      </parameter>
+      <parameter>
+        <name value="Numerator"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Encounter"/>
+      </parameter>
+      <parameter>
+        <name value="Denominator"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Encounter"/>
+      </parameter>
+      <parameter>
+        <name value="Initial Population"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Encounter"/>
+      </parameter>
+      <parameter>
+        <name value="Denominator Exclusions"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Encounter"/>
+      </parameter>
+      <parameter>
+        <name value="Denominator Exceptions"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Encounter"/>
+      </parameter>
+      <dataRequirement>
+        <type value="Encounter"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
+        <mustSupport value="type"/>
+        <mustSupport value="period"/>
+        <codeFilter>
+          <path value="type"/>
+          <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.424"/>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Encounter"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
+        <mustSupport value="type"/>
+        <mustSupport value="period"/>
+        <codeFilter>
+          <path value="type"/>
+          <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"/>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Encounter"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
+        <mustSupport value="type"/>
+        <mustSupport value="period"/>
+        <codeFilter>
+          <path value="type"/>
+          <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"/>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Condition"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Condition"/>
+        <mustSupport value="id"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Patient"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="MedicationRequest"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/MedicationRequest"/>
+        <mustSupport value="medication"/>
+        <mustSupport value="doNotPerform"/>
+        <mustSupport value="category"/>
+        <mustSupport value="status"/>
+        <mustSupport value="intent"/>
+        <mustSupport value="authoredOn"/>
+        <mustSupport value="reasonCode"/>
+        <codeFilter>
+          <path value="medication"/>
+          <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.201"/>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="MedicationRequest"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/MedicationRequest"/>
+        <mustSupport value="medication"/>
+        <mustSupport value="doNotPerform"/>
+        <mustSupport value="category"/>
+        <mustSupport value="status"/>
+        <mustSupport value="intent"/>
+        <mustSupport value="authoredOn"/>
+        <codeFilter>
+          <path value="medication"/>
+          <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.52"/>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="ServiceRequest"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/ServiceRequest"/>
+        <mustSupport value="code"/>
+        <mustSupport value="intent"/>
+        <codeFilter>
+          <path value="code"/>
+          <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/1.3.6.1.4.1.33895.1.3.0.45"/>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Procedure"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Procedure"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <codeFilter>
+          <path value="code"/>
+          <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/1.3.6.1.4.1.33895.1.3.0.45"/>
+        </codeFilter>
+      </dataRequirement>
+    </Library>
+  </contained>
+  <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis">
+    <valueCode value="Encounter"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem">
+    <valueReference>
+      <reference value="Device/cqf-tooling"/>
+    </valueReference>
+  </extension>
+  <extension id="effective-data-requirements" url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements">
+    <valueReference>
+      <reference value="#effective-data-requirements"/>
+    </valueReference>
+  </extension>
+  <url value="http://ecqi.healthit.gov/ecqms/Measure/DischargedonAntithromboticTherapyQICore4"/>
+  <identifier>
+    <use value="official"/>
+    <system value="http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/guid"/>
+    <value value="755216b2-5fa4-474d-bb29-ae8eaa209460"/>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <system value="http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/cms"/>
+    <value value="1095FHIR"/>
+  </identifier>
+  <version value="0.1.0"/>
+  <name value="DischargedonAntithromboticTherapyQICore4"/>
+  <title value="Discharged on Antithrombotic Therapy QICore"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2022-07-05T20:34:35-06:00"/>
+  <publisher value="HL7 International - [Some] Work Group"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/[something]"/>
+    </telecom>
+  </contact>
+  <description value="Ischemic stroke patients prescribed or continuing to take antithrombotic therapy at hospital discharge"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="The effectiveness of antithrombotic agents in reducing stroke mortality, stroke-related morbidity and recurrence rates has been studied in several large clinical trials. While the use of these agents for patients with acute ischemic stroke and transient ischemic attacks continues to be the subject of study, substantial evidence is available from completed studies. Data at this time suggest that antithrombotic therapy should be prescribed at discharge following acute ischemic stroke to reduce stroke mortality and morbidity as long as no contraindications exist.&#xA;For patients with a stroke due to a cardioembolic source (e.g. atrial fibrillation, mechanical heart valve), warfarin is recommended unless contraindicated. In recent years, novel oral anticoagulant agents (NOACs) have been developed and approved by the U.S. Food and Drug Administration (FDA) for stroke prevention, and may be considered as an alternative to warfarin for select patients. Anticoagulation therapy is not generally recommended for secondary stroke prevention in patients presumed to have a non-cardioembolic stroke.&#xA;Anticoagulants at doses to prevent venous thromboembolism are insufficient antithrombotic therapy to prevent recurrent ischemic stroke or TIA."/>
+  <copyright value="Measure specifications are in the Public Domain&#xA;&#xA;LOINC(R) copyright 2004-2020 Regenstrief Institute, Inc. &#xA;This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2020 International Health Terminology Standards Development Organisation. All Rights Reserved."/>
+  <effectivePeriod>
+    <start value="2022-01-01"/>
+    <end value="2022-12-31"/>
+  </effectivePeriod>
+  <library value="http://ecqi.healthit.gov/ecqms/Library/DischargedonAntithromboticTherapyQICore4"/>
+  <disclaimer value="These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The measures and specifications are provided without warranty."/>
+  <scoring>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"/>
+      <code value="proportion"/>
+      <display value="Proportion"/>
+    </coding>
+  </scoring>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/measure-type"/>
+      <code value="process"/>
+    </coding>
+  </type>
+  <rationale value="The effectiveness of antithrombotic agents in reducing stroke mortality, stroke-related morbidity and recurrence rates has been studied in several large clinical trials. While the use of these agents for patients with acute ischemic stroke and transient ischemic attacks continues to be the subject of study, substantial evidence is available from completed studies. Data at this time suggest that antithrombotic therapy should be prescribed at discharge following acute ischemic stroke to reduce stroke mortality and morbidity as long as no contraindications exist.&#xA;&#xA;For patients with a stroke due to a cardioembolic source (e.g. atrial fibrillation, mechanical heart valve), warfarin is recommended unless contraindicated. In recent years, novel oral anticoagulant agents (NOACs) have been developed and approved by the U.S. Food and Drug Administration (FDA) for stroke prevention, and may be considered as an alternative to warfarin for select patients. Anticoagulation therapy is not generally recommended for secondary stroke prevention in patients presumed to have a non-cardioembolic stroke.&#xA;Anticoagulants at doses to prevent venous thromboembolism are insufficient antithrombotic therapy to prevent recurrent ischemic stroke or TIA."/>
+  <clinicalRecommendationStatement value="Clinical trial results suggest that antithrombotic therapy should be prescribed at discharge following acute ischemic stroke to reduce stroke mortality and morbidity as long as no contraindications exist"/>
+  <improvementNotation>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/measure-improvement-notation"/>
+      <code value="increase"/>
+    </coding>
+  </improvementNotation>
+  <guidance value="The &quot;Non-elective Inpatient Encounter&quot; value set intends to capture all non-scheduled hospitalizations. This value set is a subset of the &quot;Inpatient encounter&quot; value set, excluding concepts that specifically refer to elective hospital admissions. Non-elective admissions include emergency, urgent and unplanned admissions.&#xA;&#xA;The &quot;Medication, Discharge&quot; datatype refers to the discharge medication list and is intended to express medications ordered for post-discharge use.&#xA;&#xA;This eCQM is an episode-based measure. An episode is defined as each inpatient hospitalization or encounter that ends during the measurement period.&#xA;&#xA;This FHIR-based measure has been derived from the QDM-based measure: CMS104v10"/>
+  <group>
+    <description value="Ischemic stroke patients prescribed or continuing to take antithrombotic therapy at hospital discharge"/>
+    <population id="3461E500-1396-4E0C-B6C7-5B5C7B024765">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="initial-population"/>
+          <display value="Initial Population"/>
+        </coding>
+      </code>
+      <description value="Inpatient hospitalizations for patients age 18 and older, discharged from inpatient care (non-elective admissions) with a principal diagnosis of ischemic or hemorrhagic stroke and a length of stay less than or equal to 120 days that ends during the measurement period"/>
+      <criteria>
+        <language value="text/cql-identifier"/>
+        <expression value="Initial Population"/>
+      </criteria>
+    </population>
+    <population id="D8C1DE16-6CC9-4B90-B1A9-E635665B36CA">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="denominator"/>
+          <display value="Denominator"/>
+        </coding>
+      </code>
+      <description value="Inpatient hospitalizations for patients with a principal diagnosis of Ischemic stroke"/>
+      <criteria>
+        <language value="text/cql-identifier"/>
+        <expression value="Denominator"/>
+      </criteria>
+    </population>
+    <population id="874052F5-D503-4C5C-A436-05900B0967E3">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="denominator-exclusion"/>
+          <display value="Denominator Exclusion"/>
+        </coding>
+      </code>
+      <description value="Inpatient hospitalizations for patients admitted for elective carotid intervention. This exclusion is implicitly modeled by only including non-elective hospitalizations.&#xA;Inpatient hospitalizations for patients discharged to another hospital&#xA;Inpatient hospitalizations for patients who left against medical advice&#xA;Inpatient hospitalizations for patients who expired&#xA;Inpatient hospitalizations for patients discharged to home for hospice care&#xA;Inpatient hospitalizations for patients discharged to a health care facility for hospice care&#xA;Inpatient hospitalizations for patients with comfort measures documented"/>
+      <criteria>
+        <language value="text/cql-identifier"/>
+        <expression value="Denominator Exclusions"/>
+      </criteria>
+    </population>
+    <population id="0BFADF64-121B-47BA-A02F-EE5F433B8C7D">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="denominator-exception"/>
+          <display value="Denominator Exception"/>
+        </coding>
+      </code>
+      <description value="Inpatient hospitalizations for patients with a documented reason for not prescribing antithrombotic therapy at discharge.&#xA;Inpatient hospitalizations for patients who receive Ticagrelor or Prasugrel as an antithrombotic therapy at discharge."/>
+      <criteria>
+        <language value="text/cql-identifier"/>
+        <expression value="Denominator Exceptions"/>
+      </criteria>
+    </population>
+    <population id="1AA9F20D-3A56-400C-A53E-0D8CE2BC6C83">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="numerator"/>
+          <display value="Numerator"/>
+        </coding>
+      </code>
+      <description value="Inpatient hospitalizations for patients prescribed or continuing to take antithrombotic therapy at hospital discharge"/>
+      <criteria>
+        <language value="text/cql-identifier"/>
+        <expression value="Numerator"/>
+      </criteria>
+    </population>
+  </group>
+  <supplementalData>
+    <code>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-supplemental-data-example"/>
+        <code value="gender"/>
+        <display value="Gender"/>
+      </coding>
+    </code>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+        <display value="Supplemental Data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Sex"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <code>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-supplemental-data-example"/>
+        <code value="ethnicity"/>
+        <display value="Ethnicity"/>
+      </coding>
+    </code>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+        <display value="Supplemental Data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Ethnicity"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <code>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-supplemental-data-example"/>
+        <code value="payer"/>
+        <display value="Payer"/>
+      </coding>
+    </code>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+        <display value="Supplemental Data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Payer"/>
+    </criteria>
+  </supplementalData>
+</Measure>

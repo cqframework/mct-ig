@@ -1,0 +1,1636 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>CMS.FHIR.MCT\Discharged on Antithrombotic Therapy QICore - XML Representation - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/cqf.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"10.3"}
+    h3,h4,h5,h6{--heading-prefix:"10.3"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://github.com/cqframework"><img height="50" alt="Visit the CQF github organization website" src="assets/images/cqf.png"/> </a>
+</div>
+<!-- TODO: Push this into the base template, but it requires a "trusted" template -->
+<script type="text/javascript" src="cql.js"> </script>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">CMS FHIR Prototype Measure Calculation Tool IG</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - CI Build
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="technical-requirements.html">Technical Requirements</a>
+      </li>
+      <li>
+        <a href="implementation-guide.html">Implementation Guide</a>
+      </li>
+      <li>
+        <a href="user-guide.html">User Guide</a>
+      </li>
+      <li>
+        <a href="test-plan.html">Test Plan</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a target="_blank" href="http://cql.hl7.org/index.html">CQL Specification</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/smart-app-launch/STU2/backend-services.html">SMART Backend Services (version 2.0.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/core/STU3.1.1">US Core (version 3.1.1)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/cqfmeasures/STU3">FHIR Quality Measures (version 3.0.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/davinci-deqm/STU3.1">FHIR Quality Reporting (version 3.1.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/uv/cpg">FHIR Clinical Guidelines</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="license.html">License</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Discharged on Antithrombotic Therapy QICore</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 7" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">CMS FHIR Prototype Measure Calculation Tool IG - Local Development build (v0.1.0). See the <a href="http://cms.gov/fhir/mct/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="Measure-DischargedonAntithromboticTherapyQICore4.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Measure-DischargedonAntithromboticTherapyQICore4.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Measure-DischargedonAntithromboticTherapyQICore4.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: Discharged on Antithrombotic Therapy QICore - XML Representation</h2>
+  <table class="colsd">
+    <tr>
+
+      <td colspan="2">
+        
+          Draft
+          
+            as of 2022-07-05
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="Measure-DischargedonAntithromboticTherapyQICore4.xml" no-download="true">Raw xml</a> | <a href="Measure-DischargedonAntithromboticTherapyQICore4.xml" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="xml" style="white-space: pre; overflow: hidden"><code>
+
+&lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure">Measure</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;DischargedonAntithromboticTherapyQICore4&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.meta">meta</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.versionId">versionId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;24&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.lastUpdated">lastUpdated</a> <a href="http://hl7.org/fhir/R4/datatypes.html#instant">value</a>=&quot;2021-08-24T13:12:30.000-06:00&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.source">source</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;#q1Mp1RX4PUIGipJl&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm&quot;/&gt;
+  &lt;/meta&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.language">language</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;en&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.text">text</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;extensions&quot;/&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;
+    &lt;table class=&quot;grid dict&quot;&gt;
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Id: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;DischargedonAntithromboticTherapyQICore4&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Url: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;&lt;a href=&quot;http://ecqi.healthit.gov/ecqms/Measure/DischargedonAntithromboticTherapyQICore4&quot;&gt;http://ecqi.healthit.gov/ecqms/Measure/DischargedonAntithromboticTherapyQICore4&lt;/a&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Version: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;0.1.0&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Identifier: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;
+                
+                
+                &lt;p style=&quot;margin-bottom: 5px;&quot;&gt;
+                    &lt;b&gt;value: &lt;/b&gt; &lt;span&gt;755216b2-5fa4-474d-bb29-ae8eaa209460&lt;/span&gt;
+                &lt;/p&gt;
+                
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Identifier: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;
+                
+                
+                &lt;p style=&quot;margin-bottom: 5px;&quot;&gt;
+                    &lt;b&gt;value: &lt;/b&gt; &lt;span&gt;1095FHIR&lt;/span&gt;
+                &lt;/p&gt;
+                
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Name: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;DischargedonAntithromboticTherapyQICore4&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Title: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;Discharged on Antithrombotic Therapy QICore&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Status: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;draft&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Experimental: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;false&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Scoring: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;
+                
+                    
+                        
+                        &lt;p style=&quot;margin-bottom: 5px;&quot;&gt;
+                            &lt;b&gt;system: &lt;/b&gt; &lt;span&gt;&lt;a href=&quot;http://terminology.hl7.org/CodeSystem/measure-scoring&quot;&gt;http://terminology.hl7.org/CodeSystem/measure-scoring&lt;/a&gt;&lt;/span&gt;
+                        &lt;/p&gt;
+                        
+                        
+                        &lt;p style=&quot;margin-bottom: 5px;&quot;&gt;
+                            &lt;b&gt;code: &lt;/b&gt; &lt;span&gt;proportion&lt;/span&gt;
+                        &lt;/p&gt;
+                        
+                        
+                        &lt;p style=&quot;margin-bottom: 5px;&quot;&gt;
+                            &lt;b&gt;display: &lt;/b&gt; &lt;span&gt;Proportion&lt;/span&gt;
+                        &lt;/p&gt;
+                        
+                    
+                
+                
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Improvement Notation: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;
+                
+                    
+                        
+                        &lt;p style=&quot;margin-bottom: 5px;&quot;&gt;
+                            &lt;b&gt;system: &lt;/b&gt; &lt;span&gt;&lt;a href=&quot;http://terminology.hl7.org/CodeSystem/measure-improvement-notation&quot;&gt;http://terminology.hl7.org/CodeSystem/measure-improvement-notation&lt;/a&gt;&lt;/span&gt;
+                        &lt;/p&gt;
+                        
+                        
+                        &lt;p style=&quot;margin-bottom: 5px;&quot;&gt;
+                            &lt;b&gt;code: &lt;/b&gt; &lt;span&gt;increase&lt;/span&gt;
+                        &lt;/p&gt;
+                        
+                        
+                    
+                
+                
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Type: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;
+                
+                    
+                        
+                        &lt;p style=&quot;margin-bottom: 5px;&quot;&gt;
+                            &lt;b&gt;system: &lt;/b&gt; &lt;span&gt;&lt;a href=&quot;http://terminology.hl7.org/CodeSystem/measure-type&quot;&gt;http://terminology.hl7.org/CodeSystem/measure-type&lt;/a&gt;&lt;/span&gt;
+                        &lt;/p&gt;
+                        
+                        
+                        &lt;p style=&quot;margin-bottom: 5px;&quot;&gt;
+                            &lt;b&gt;code: &lt;/b&gt; &lt;span&gt;process&lt;/span&gt;
+                        &lt;/p&gt;
+                        
+                        
+                    
+                
+                
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Date: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;2022-07-05 20:34:35-0600&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Publisher: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;HL7 International - [Some] Work Group&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Description: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;&lt;div&gt;&lt;p&gt;Ischemic stroke patients prescribed or continuing to take antithrombotic therapy at hospital discharge&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        
+        
+        
+        
+        
+            &lt;tr&gt;
+                &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Populations: &lt;/b&gt;&lt;/th&gt;
+                &lt;td style=&quot;padding-left: 4px;&quot;&gt;
+                    &lt;table class=&quot;grid-dict&quot;&gt;
+                        &lt;tr&gt;&lt;th&gt;&lt;b&gt;Group&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b&gt;Population&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/th&gt;&lt;/tr&gt;
+                        
+                        &lt;tr&gt;
+                            &lt;td&gt;&lt;/td&gt;
+                            
+                                &lt;tr&gt;
+                                    &lt;td/&gt;
+                                    &lt;td&gt;Initial Population&lt;/td&gt;
+                                    &lt;td&gt;
+                                        
+                                            Inpatient hospitalizations for patients age 18 and older, discharged from inpatient care (non-elective admissions) with a principal diagnosis of ischemic or hemorrhagic stroke and a length of stay less than or equal to 120 days that ends during the measurement period
+                                        
+                                    &lt;/td&gt;
+                                 &lt;/tr&gt;
+                            
+                                &lt;tr&gt;
+                                    &lt;td/&gt;
+                                    &lt;td&gt;Denominator&lt;/td&gt;
+                                    &lt;td&gt;
+                                        
+                                            Inpatient hospitalizations for patients with a principal diagnosis of Ischemic stroke
+                                        
+                                    &lt;/td&gt;
+                                 &lt;/tr&gt;
+                            
+                                &lt;tr&gt;
+                                    &lt;td/&gt;
+                                    &lt;td&gt;Denominator Exclusion&lt;/td&gt;
+                                    &lt;td&gt;
+                                        
+                                            Inpatient hospitalizations for patients admitted for elective carotid intervention. This exclusion is implicitly modeled by only including non-elective hospitalizations.
+Inpatient hospitalizations for patients discharged to another hospital
+Inpatient hospitalizations for patients who left against medical advice
+Inpatient hospitalizations for patients who expired
+Inpatient hospitalizations for patients discharged to home for hospice care
+Inpatient hospitalizations for patients discharged to a health care facility for hospice care
+Inpatient hospitalizations for patients with comfort measures documented
+                                        
+                                    &lt;/td&gt;
+                                 &lt;/tr&gt;
+                            
+                                &lt;tr&gt;
+                                    &lt;td/&gt;
+                                    &lt;td&gt;Denominator Exception&lt;/td&gt;
+                                    &lt;td&gt;
+                                        
+                                            Inpatient hospitalizations for patients with a documented reason for not prescribing antithrombotic therapy at discharge.
+Inpatient hospitalizations for patients who receive Ticagrelor or Prasugrel as an antithrombotic therapy at discharge.
+                                        
+                                    &lt;/td&gt;
+                                 &lt;/tr&gt;
+                            
+                                &lt;tr&gt;
+                                    &lt;td/&gt;
+                                    &lt;td&gt;Numerator&lt;/td&gt;
+                                    &lt;td&gt;
+                                        
+                                            Inpatient hospitalizations for patients prescribed or continuing to take antithrombotic therapy at hospital discharge
+                                        
+                                    &lt;/td&gt;
+                                 &lt;/tr&gt;
+                            
+                        &lt;/tr&gt;
+                        
+                    &lt;/table&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        
+        
+            &lt;tr&gt;
+                &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Supplemental Data: &lt;/b&gt;&lt;/th&gt;
+                &lt;td style=&quot;padding-left: 4px;&quot;&gt;
+                    &lt;table class=&quot;grid-dict&quot;&gt;
+                        &lt;tr&gt;&lt;th&gt;&lt;b&gt;expression&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b&gt;system&lt;/b&gt;&lt;/th&gt;&lt;/tr&gt;
+                        
+                        &lt;tr&gt;
+                            &lt;td&gt;SDE Sex&lt;/td&gt;
+                            &lt;td&gt;&lt;a href=&quot;http://terminology.hl7.org/CodeSystem/measure-data-usage&quot;&gt;http://terminology.hl7.org/CodeSystem/measure-data-usage&lt;/a&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                        
+                        &lt;tr&gt;
+                            &lt;td&gt;SDE Ethnicity&lt;/td&gt;
+                            &lt;td&gt;&lt;a href=&quot;http://terminology.hl7.org/CodeSystem/measure-data-usage&quot;&gt;http://terminology.hl7.org/CodeSystem/measure-data-usage&lt;/a&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                        
+                        &lt;tr&gt;
+                            &lt;td&gt;SDE Payer&lt;/td&gt;
+                            &lt;td&gt;&lt;a href=&quot;http://terminology.hl7.org/CodeSystem/measure-data-usage&quot;&gt;http://terminology.hl7.org/CodeSystem/measure-data-usage&lt;/a&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                        
+                    &lt;/table&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Jurisdiction: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 25px;&quot;&gt;US&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Purpose: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;&lt;div&gt;&lt;p&gt;The effectiveness of antithrombotic agents in reducing stroke mortality, stroke-related morbidity and recurrence rates has been studied in several large clinical trials. While the use of these agents for patients with acute ischemic stroke and transient ischemic attacks continues to be the subject of study, substantial evidence is available from completed studies. Data at this time suggest that antithrombotic therapy should be prescribed at discharge following acute ischemic stroke to reduce stroke mortality and morbidity as long as no contraindications exist.
+For patients with a stroke due to a cardioembolic source (e.g. atrial fibrillation, mechanical heart valve), warfarin is recommended unless contraindicated. In recent years, novel oral anticoagulant agents (NOACs) have been developed and approved by the U.S. Food and Drug Administration (FDA) for stroke prevention, and may be considered as an alternative to warfarin for select patients. Anticoagulation therapy is not generally recommended for secondary stroke prevention in patients presumed to have a non-cardioembolic stroke.
+Anticoagulants at doses to prevent venous thromboembolism are insufficient antithrombotic therapy to prevent recurrent ischemic stroke or TIA.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Copyright: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 25px;&quot;&gt;&lt;div&gt;&lt;p&gt;Measure specifications are in the Public Domain&lt;/p&gt;
+&lt;p&gt;LOINC(R) copyright 2004-2020 Regenstrief Institute, Inc.
+This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2020 International Health Terminology Standards Development Organisation. All Rights Reserved.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Disclaimer: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 25px;&quot;&gt;&lt;div&gt;&lt;p&gt;These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The measures and specifications are provided without warranty.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Effective Period: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;2022-01-01..2022-12-31&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        
+        
+        
+        
+            &lt;tr&gt;
+                &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Logic Definitions: &lt;/b&gt;&lt;/th&gt;
+                &lt;td style=&quot;padding-left: 4px;&quot;&gt;
+                    
+                        &lt;table class=&quot;grid-dict&quot;&gt;
+                            &lt;tr&gt;
+                                &lt;th&gt;&lt;b&gt;Group&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b&gt;Scoring&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b&gt;Population Criteria&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/th&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                
+                                    &lt;td&gt;  &lt;/td&gt;
+                                    &lt;td&gt;
+                                        
+                                        
+                                            &lt;b&gt;Measure scoring:&lt;/b&gt;
+                                            
+                                                
+                                                    &lt;p style=&quot;margin-bottom: 5px;&quot;&gt;
+                                                        &lt;span&gt;proportion&lt;/span&gt;
+                                                    &lt;/p&gt;
+                                                
+                                                
+                                            
+                                        
+                                    &lt;/td&gt;
+                                    
+                                        &lt;tr&gt;
+                                            &lt;td/&gt;
+                                            &lt;td/&gt;
+                                            &lt;td&gt;Initial Population&lt;/td&gt;
+                                            &lt;td&gt;
+                                                
+                                                &lt;pre&gt;&lt;code class=&quot;language-cql&quot;&gt;Initial Population&lt;/code&gt;&lt;/pre&gt;
+                                                
+                                            &lt;/td&gt;
+                                        &lt;/tr&gt;
+                                    
+                                        &lt;tr&gt;
+                                            &lt;td/&gt;
+                                            &lt;td/&gt;
+                                            &lt;td&gt;Denominator&lt;/td&gt;
+                                            &lt;td&gt;
+                                                
+                                                &lt;pre&gt;&lt;code class=&quot;language-cql&quot;&gt;Denominator&lt;/code&gt;&lt;/pre&gt;
+                                                
+                                            &lt;/td&gt;
+                                        &lt;/tr&gt;
+                                    
+                                        &lt;tr&gt;
+                                            &lt;td/&gt;
+                                            &lt;td/&gt;
+                                            &lt;td&gt;Denominator Exclusion&lt;/td&gt;
+                                            &lt;td&gt;
+                                                
+                                                &lt;pre&gt;&lt;code class=&quot;language-cql&quot;&gt;Denominator Exclusions&lt;/code&gt;&lt;/pre&gt;
+                                                
+                                            &lt;/td&gt;
+                                        &lt;/tr&gt;
+                                    
+                                        &lt;tr&gt;
+                                            &lt;td/&gt;
+                                            &lt;td/&gt;
+                                            &lt;td&gt;Denominator Exception&lt;/td&gt;
+                                            &lt;td&gt;
+                                                
+                                                &lt;pre&gt;&lt;code class=&quot;language-cql&quot;&gt;Denominator Exceptions&lt;/code&gt;&lt;/pre&gt;
+                                                
+                                            &lt;/td&gt;
+                                        &lt;/tr&gt;
+                                    
+                                        &lt;tr&gt;
+                                            &lt;td/&gt;
+                                            &lt;td/&gt;
+                                            &lt;td&gt;Numerator&lt;/td&gt;
+                                            &lt;td&gt;
+                                                
+                                                &lt;pre&gt;&lt;code class=&quot;language-cql&quot;&gt;Numerator&lt;/code&gt;&lt;/pre&gt;
+                                                
+                                            &lt;/td&gt;
+                                        &lt;/tr&gt;
+                                    
+
+                            
+                            &lt;/tr&gt;
+                        &lt;/table&gt;
+                    
+                    
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        
+    &lt;/table&gt;
+&lt;/div&gt;<a name="end-xhtml"></a>
+  &lt;/text&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/library.html#Library">contained</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/library.html#Library">Library</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;effective-data-requirements&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/medicationrequest-category&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;community&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Community&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/medicationrequest-category&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;discharge&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Discharge&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;TJCOverallFHIR&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Non Elective Inpatient Encounter&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;// Translator issue with 1.4.9-SNAPSHOT: https://github.com/cqframework/clinical_quality_language/issues/511
+define &amp;quot;Non Elective Inpatient Encounter&amp;quot;:
+  [&amp;quot;Encounter&amp;quot;: &amp;quot;Non-Elective Inpatient Encounter&amp;quot;] NonElectiveEncounter
+                  		where Global.&amp;quot;LengthInDays&amp;quot;(NonElectiveEncounter.period) &amp;lt;= 120
+                  			and NonElectiveEncounter.period ends during day of &amp;quot;Measurement Period&amp;quot;&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;0&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;TJCOverallFHIR&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;All Stroke Encounter&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;define &amp;quot;All Stroke Encounter&amp;quot;:
+  &amp;quot;Non Elective Inpatient Encounter&amp;quot; NonElectiveEncounter
+                      where Global.PrincipalDiagnosis(NonElectiveEncounter).code in &amp;quot;Hemorrhagic Stroke&amp;quot;
+                        or Global.PrincipalDiagnosis(NonElectiveEncounter).code in &amp;quot;Ischemic Stroke&amp;quot;&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;1&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;TJCOverallFHIR&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter with Principal Diagnosis and Age&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;define &amp;quot;Encounter with Principal Diagnosis and Age&amp;quot;:
+  &amp;quot;All Stroke Encounter&amp;quot; AllStrokeEncounter
+                  		with [&amp;quot;Patient&amp;quot;] BirthDate
+                  			such that AgeInYearsAt(start of AllStrokeEncounter.period) &amp;gt;= 18&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;2&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;TJCOverallFHIR&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Ischemic Stroke Encounter&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;define &amp;quot;Ischemic Stroke Encounter&amp;quot;:
+  &amp;quot;Encounter with Principal Diagnosis and Age&amp;quot; EncounterWithAge
+                  		where Global.PrincipalDiagnosis(EncounterWithAge).code in &amp;quot;Ischemic Stroke&amp;quot;&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;3&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;DischargedonAntithromboticTherapyQICore4&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Antithrombotic Therapy at Discharge&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;define &amp;quot;Antithrombotic Therapy at Discharge&amp;quot;:
+  [&amp;quot;MedicationRequest&amp;quot;: medication in &amp;quot;Antithrombotic Therapy&amp;quot;] Antithrombotic
+    where Antithrombotic.doNotPerform is not true
+      and exists ( Antithrombotic.category C
+          where FHIRHelpers.ToConcept ( C ) ~ Global.&amp;quot;Community&amp;quot;
+            or FHIRHelpers.ToConcept ( C ) ~ Global.&amp;quot;Discharge&amp;quot;
+      )
+      and Antithrombotic.status in { 'active', 'completed' }
+      and Antithrombotic.intent = 'order'&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;4&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;DischargedonAntithromboticTherapyQICore4&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Numerator&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;define &amp;quot;Numerator&amp;quot;:
+  TJC.&amp;quot;Ischemic Stroke Encounter&amp;quot; IschemicStrokeEncounter
+      with &amp;quot;Antithrombotic Therapy at Discharge&amp;quot; DischargeAntithrombotic
+        such that DischargeAntithrombotic.authoredOn during IschemicStrokeEncounter.period&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;5&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;DischargedonAntithromboticTherapyQICore4&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Denominator&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;define &amp;quot;Denominator&amp;quot;:
+  TJC.&amp;quot;Ischemic Stroke Encounter&amp;quot;&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;6&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;DischargedonAntithromboticTherapyQICore4&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Initial Population&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;define &amp;quot;Initial Population&amp;quot;:
+  TJC.&amp;quot;Encounter with Principal Diagnosis and Age&amp;quot;&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;7&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;TJCOverallFHIR&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Ischemic Stroke Encounters with Discharge Disposition&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;define &amp;quot;Ischemic Stroke Encounters with Discharge Disposition&amp;quot;:
+  &amp;quot;Ischemic Stroke Encounter&amp;quot; IschemicStrokeEncounter
+                  		where IschemicStrokeEncounter.hospitalization.dischargeDisposition in &amp;quot;Discharge To Acute Care Facility&amp;quot;
+                  			or IschemicStrokeEncounter.hospitalization.dischargeDisposition in &amp;quot;Left Against Medical Advice&amp;quot;
+                  			or IschemicStrokeEncounter.hospitalization.dischargeDisposition in &amp;quot;Patient Expired&amp;quot;
+                  			or IschemicStrokeEncounter.hospitalization.dischargeDisposition in &amp;quot;Discharged to Home for Hospice Care&amp;quot;
+                  			or IschemicStrokeEncounter.hospitalization.dischargeDisposition in &amp;quot;Discharged to Health Care Facility for Hospice Care&amp;quot;&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;8&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;TJCOverallFHIR&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Intervention Comfort Measures&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;define &amp;quot;Intervention Comfort Measures&amp;quot;:
+  ( [&amp;quot;ServiceRequest&amp;quot;: &amp;quot;Comfort Measures&amp;quot;] P
+          where P.intent = 'order'
+      )
+        union ( [&amp;quot;Procedure&amp;quot;: &amp;quot;Comfort Measures&amp;quot;] InterventionPerformed
+            where InterventionPerformed.status in { 'completed', 'in-progress' }
+        )&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;9&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;TJCOverallFHIR&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter with Comfort Measures during Hospitalization&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;define &amp;quot;Encounter with Comfort Measures during Hospitalization&amp;quot;:
+  &amp;quot;Ischemic Stroke Encounter&amp;quot; IschemicStrokeEncounter
+        with &amp;quot;Intervention Comfort Measures&amp;quot; ComfortMeasure
+          such that Coalesce((start of Global.&amp;quot;Normalize Interval&amp;quot;(ComfortMeasure.performed)), ComfortMeasure.authoredOn)during Global.&amp;quot;HospitalizationWithObservation&amp;quot; ( IschemicStrokeEncounter )&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;10&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;DischargedonAntithromboticTherapyQICore4&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Denominator Exclusions&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;define &amp;quot;Denominator Exclusions&amp;quot;:
+  TJC.&amp;quot;Ischemic Stroke Encounters with Discharge Disposition&amp;quot;
+                		union TJC.&amp;quot;Encounter with Comfort Measures during Hospitalization&amp;quot;&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;11&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;DischargedonAntithromboticTherapyQICore4&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Antithrombotic Not Given at Discharge&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;define &amp;quot;Antithrombotic Not Given at Discharge&amp;quot;:
+  [&amp;quot;MedicationRequest&amp;quot;: medication in &amp;quot;Antithrombotic Therapy&amp;quot;] NoAntithromboticDischarge
+    where NoAntithromboticDischarge.doNotPerform is true
+      and ( NoAntithromboticDischarge.reasonCode in &amp;quot;Medical Reason&amp;quot;
+          or NoAntithromboticDischarge.reasonCode in &amp;quot;Patient Refusal&amp;quot;
+      )
+      and exists ( NoAntithromboticDischarge.category C
+          where FHIRHelpers.ToConcept ( C ) ~ Global.&amp;quot;Community&amp;quot;
+            or FHIRHelpers.ToConcept ( C ) ~ Global.&amp;quot;Discharge&amp;quot;
+      )
+      and NoAntithromboticDischarge.status in { 'completed', 'cancelled' }
+      and NoAntithromboticDischarge.intent = 'order'&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;12&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;DischargedonAntithromboticTherapyQICore4&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter With No Antithrombotic At Discharge&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;define &amp;quot;Encounter With No Antithrombotic At Discharge&amp;quot;:
+  TJC.&amp;quot;Ischemic Stroke Encounter&amp;quot; IschemicStrokeEncounter
+                	with &amp;quot;Antithrombotic Not Given at Discharge&amp;quot; NoDischargeAntithrombotic
+                	such that NoDischargeAntithrombotic.authoredOn during IschemicStrokeEncounter.period&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;13&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;DischargedonAntithromboticTherapyQICore4&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Pharmacological Contraindications for Antithrombotic Therapy at Discharge&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;define &amp;quot;Pharmacological Contraindications for Antithrombotic Therapy at Discharge&amp;quot;:
+  [&amp;quot;MedicationRequest&amp;quot;: medication in &amp;quot;Pharmacological Contraindications For Antithrombotic Therapy&amp;quot;] Pharmacological
+    where Pharmacological.doNotPerform is not true
+      and exists ( Pharmacological.category C
+          where FHIRHelpers.ToConcept ( C ) ~ Global.&amp;quot;Community&amp;quot;
+            or FHIRHelpers.ToConcept ( C ) ~ Global.&amp;quot;Discharge&amp;quot;
+      )
+      and Pharmacological.status in { 'active', 'completed' }
+      and Pharmacological.intent = 'order'&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;14&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;DischargedonAntithromboticTherapyQICore4&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter With Pharmacological Contraindications for Antithrombotic Therapy at Discharge&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;define &amp;quot;Encounter With Pharmacological Contraindications for Antithrombotic Therapy at Discharge&amp;quot;:
+  TJC.&amp;quot;Ischemic Stroke Encounter&amp;quot; IschemicStrokeEncounter
+                    with &amp;quot;Pharmacological Contraindications for Antithrombotic Therapy at Discharge&amp;quot; DischargePharmacological
+                      such that DischargePharmacological.authoredOn during IschemicStrokeEncounter.period&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;15&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;libraryName&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;DischargedonAntithromboticTherapyQICore4&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Denominator Exceptions&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statement&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;define &amp;quot;Denominator Exceptions&amp;quot;:
+  &amp;quot;Encounter With No Antithrombotic At Discharge&amp;quot;
+                		union &amp;quot;Encounter With Pharmacological Contraindications for Antithrombotic Therapy at Discharge&amp;quot;&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;displaySequence&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;16&quot;/&gt;
+        &lt;/extension&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/library-type&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;module-definition&quot;/&gt;
+        &lt;/coding&gt;
+      &lt;/type&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Library TJC&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://ecqi.healthit.gov/ecqms/Library/TJCOverallFHIR|1.8.000&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Library Global&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsFHIR4|6.1.000&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Library FHIRHelpers&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Code system MedicationRequestCategory&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://terminology.hl7.org/CodeSystem/medicationrequest-category&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Value set Non-Elective Inpatient Encounter&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.424&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Value set Hemorrhagic Stroke&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.212&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Value set Ischemic Stroke&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.247&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Value set Antithrombotic Therapy&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.201&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Value set Discharge To Acute Care Facility&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.87&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Value set Left Against Medical Advice&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.308&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Value set Patient Expired&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.309&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Value set Discharged to Home for Hospice Care&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.209&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Value set Discharged to Health Care Facility for Hospice Care&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.207&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Value set Comfort Measures&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/1.3.6.1.4.1.33895.1.3.0.45&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Value set Observation Services&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Value set Emergency Department Visit&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Value set Medical Reason&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.473&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Value set Patient Refusal&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;depends-on&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Value set Pharmacological Contraindications For Antithrombotic Therapy&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.52&quot;/&gt;
+      &lt;/relatedArtifact&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.parameter">parameter</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Measurement Period&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;in&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;0&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Period&quot;/&gt;
+      &lt;/parameter&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.parameter">parameter</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Numerator&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;out&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;0&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;*&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Encounter&quot;/&gt;
+      &lt;/parameter&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.parameter">parameter</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Denominator&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;out&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;0&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;*&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Encounter&quot;/&gt;
+      &lt;/parameter&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.parameter">parameter</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Initial Population&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;out&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;0&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;*&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Encounter&quot;/&gt;
+      &lt;/parameter&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.parameter">parameter</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Denominator Exclusions&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;out&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;0&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;*&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Encounter&quot;/&gt;
+      &lt;/parameter&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.parameter">parameter</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Denominator Exceptions&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;out&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;0&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;*&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Encounter&quot;/&gt;
+      &lt;/parameter&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.dataRequirement">dataRequirement</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Encounter&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/StructureDefinition/Encounter&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;type&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;period&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter">codeFilter</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;type&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter.valueSet">valueSet</a>
+                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.424&quot;/&gt;
+        &lt;/codeFilter&gt;
+      &lt;/dataRequirement&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.dataRequirement">dataRequirement</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Encounter&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/StructureDefinition/Encounter&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;type&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;period&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter">codeFilter</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;type&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter.valueSet">valueSet</a>
+                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143&quot;/&gt;
+        &lt;/codeFilter&gt;
+      &lt;/dataRequirement&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.dataRequirement">dataRequirement</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Encounter&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/StructureDefinition/Encounter&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;type&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;period&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter">codeFilter</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;type&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter.valueSet">valueSet</a>
+                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292&quot;/&gt;
+        &lt;/codeFilter&gt;
+      &lt;/dataRequirement&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.dataRequirement">dataRequirement</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Condition&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/StructureDefinition/Condition&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;id&quot;/&gt;
+      &lt;/dataRequirement&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.dataRequirement">dataRequirement</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Patient&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/StructureDefinition/Patient&quot;/&gt;
+      &lt;/dataRequirement&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.dataRequirement">dataRequirement</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;MedicationRequest&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.profile">profile</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/StructureDefinition/MedicationRequest&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;medication&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;doNotPerform&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;category&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;status&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;intent&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;authoredOn&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;reasonCode&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter">codeFilter</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;medication&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter.valueSet">valueSet</a>
+                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.201&quot;/&gt;
+        &lt;/codeFilter&gt;
+      &lt;/dataRequirement&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.dataRequirement">dataRequirement</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;MedicationRequest&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.profile">profile</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/StructureDefinition/MedicationRequest&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;medication&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;doNotPerform&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;category&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;status&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;intent&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;authoredOn&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter">codeFilter</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;medication&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter.valueSet">valueSet</a>
+                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.52&quot;/&gt;
+        &lt;/codeFilter&gt;
+      &lt;/dataRequirement&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.dataRequirement">dataRequirement</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;ServiceRequest&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.profile">profile</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/StructureDefinition/ServiceRequest&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;code&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;intent&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter">codeFilter</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;code&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter.valueSet">valueSet</a>
+                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/1.3.6.1.4.1.33895.1.3.0.45&quot;/&gt;
+        &lt;/codeFilter&gt;
+      &lt;/dataRequirement&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.dataRequirement">dataRequirement</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Procedure&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/StructureDefinition/Procedure&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;code&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;status&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter">codeFilter</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;code&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement#DataRequirement.codeFilter.valueSet">valueSet</a>
+                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://cts.nlm.nih.gov/fhir/ValueSet/1.3.6.1.4.1.33895.1.3.0.45&quot;/&gt;
+        &lt;/codeFilter&gt;
+      &lt;/dataRequirement&gt;
+    &lt;/Library&gt;
+  &lt;/contained&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.extension">extension</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis&quot;&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Encounter&quot;/&gt;
+  &lt;/extension&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.extension">extension</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem&quot;&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueReference</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Device/cqf-tooling&quot;/&gt;
+    &lt;/valueReference&gt;
+  &lt;/extension&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.extension">extension</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements&quot; <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;effective-data-requirements&quot;&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueReference</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;#effective-data-requirements&quot;/&gt;
+    &lt;/valueReference&gt;
+  &lt;/extension&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.url">url</a>
+       <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://ecqi.healthit.gov/ecqms/Measure/DischargedonAntithromboticTherapyQICore4&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.identifier">identifier</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;official&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/guid&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;755216b2-5fa4-474d-bb29-ae8eaa209460&quot;/&gt;
+  &lt;/identifier&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.identifier">identifier</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;official&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/cms&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1095FHIR&quot;/&gt;
+  &lt;/identifier&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;0.1.0&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;DischargedonAntithromboticTherapyQICore4&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.title">title</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Discharged on Antithrombotic Therapy QICore&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;draft&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.experimental">experimental</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2022-07-05T20:34:35-06:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.publisher">publisher</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;HL7 International - [Some] Work Group&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.contact">contact</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;url&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://hl7.org/Special/committees/[something]&quot;/&gt;
+    &lt;/telecom&gt;
+  &lt;/contact&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.description">description</a>
+               <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Ischemic stroke patients prescribed or continuing to take antithrombotic therapy at hospital discharge&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.jurisdiction">jurisdiction</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:iso:std:iso:3166&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;US&quot;/&gt;
+    &lt;/coding&gt;
+  &lt;/jurisdiction&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.purpose">purpose</a>
+           <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;The effectiveness of antithrombotic agents in reducing stroke mortality, stroke-related morbidity and recurrence rates has been studied in several large clinical trials. While the use of these agents for patients with acute ischemic stroke and transient ischemic attacks continues to be the subject of study, substantial evidence is available from completed studies. Data at this time suggest that antithrombotic therapy should be prescribed at discharge following acute ischemic stroke to reduce stroke mortality and morbidity as long as no contraindications exist.
+For patients with a stroke due to a cardioembolic source (e.g. atrial fibrillation, mechanical heart valve), warfarin is recommended unless contraindicated. In recent years, novel oral anticoagulant agents (NOACs) have been developed and approved by the U.S. Food and Drug Administration (FDA) for stroke prevention, and may be considered as an alternative to warfarin for select patients. Anticoagulation therapy is not generally recommended for secondary stroke prevention in patients presumed to have a non-cardioembolic stroke.
+Anticoagulants at doses to prevent venous thromboembolism are insufficient antithrombotic therapy to prevent recurrent ischemic stroke or TIA.&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.copyright">copyright</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Measure specifications are in the Public Domain
+
+LOINC(R) copyright 2004-2020 Regenstrief Institute, Inc. 
+This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2020 International Health Terminology Standards Development Organisation. All Rights Reserved.&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.effectivePeriod">effectivePeriod</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2022-01-01&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.end">end</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2022-12-31&quot;/&gt;
+  &lt;/effectivePeriod&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.library">library</a>
+           <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://ecqi.healthit.gov/ecqms/Library/DischargedonAntithromboticTherapyQICore4&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.disclaimer">disclaimer</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The measures and specifications are provided without warranty.&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.scoring">scoring</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-scoring&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;proportion&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Proportion&quot;/&gt;
+    &lt;/coding&gt;
+  &lt;/scoring&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.type">type</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-type&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;process&quot;/&gt;
+    &lt;/coding&gt;
+  &lt;/type&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.rationale">rationale</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;The effectiveness of antithrombotic agents in reducing stroke mortality, stroke-related morbidity and recurrence rates has been studied in several large clinical trials. While the use of these agents for patients with acute ischemic stroke and transient ischemic attacks continues to be the subject of study, substantial evidence is available from completed studies. Data at this time suggest that antithrombotic therapy should be prescribed at discharge following acute ischemic stroke to reduce stroke mortality and morbidity as long as no contraindications exist.
+
+For patients with a stroke due to a cardioembolic source (e.g. atrial fibrillation, mechanical heart valve), warfarin is recommended unless contraindicated. In recent years, novel oral anticoagulant agents (NOACs) have been developed and approved by the U.S. Food and Drug Administration (FDA) for stroke prevention, and may be considered as an alternative to warfarin for select patients. Anticoagulation therapy is not generally recommended for secondary stroke prevention in patients presumed to have a non-cardioembolic stroke.
+Anticoagulants at doses to prevent venous thromboembolism are insufficient antithrombotic therapy to prevent recurrent ischemic stroke or TIA.&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.clinicalRecommendationStatement">clinicalRecommendationStatement</a>
+                                   <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Clinical trial results suggest that antithrombotic therapy should be prescribed at discharge following acute ischemic stroke to reduce stroke mortality and morbidity as long as no contraindications exist&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.improvementNotation">improvementNotation</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-improvement-notation&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;increase&quot;/&gt;
+    &lt;/coding&gt;
+  &lt;/improvementNotation&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.guidance">guidance</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;The &amp;quot;Non-elective Inpatient Encounter&amp;quot; value set intends to capture all non-scheduled hospitalizations. This value set is a subset of the &amp;quot;Inpatient encounter&amp;quot; value set, excluding concepts that specifically refer to elective hospital admissions. Non-elective admissions include emergency, urgent and unplanned admissions.
+
+The &amp;quot;Medication, Discharge&amp;quot; datatype refers to the discharge medication list and is intended to express medications ordered for post-discharge use.
+
+This eCQM is an episode-based measure. An episode is defined as each inpatient hospitalization or encounter that ends during the measurement period.
+
+This FHIR-based measure has been derived from the QDM-based measure: CMS104v10&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group">group</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.description">description</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Ischemic stroke patients prescribed or continuing to take antithrombotic therapy at hospital discharge&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population">population</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;3461E500-1396-4E0C-B6C7-5B5C7B024765&quot;&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.code">code</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-population&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;initial-population&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Initial Population&quot;/&gt;
+        &lt;/coding&gt;
+      &lt;/code&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.description">description</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Inpatient hospitalizations for patients age 18 and older, discharged from inpatient care (non-elective admissions) with a principal diagnosis of ischemic or hemorrhagic stroke and a length of stay less than or equal to 120 days that ends during the measurement period&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.criteria">criteria</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">language</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;text/cql-identifier&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">expression</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Initial Population&quot;/&gt;
+      &lt;/criteria&gt;
+    &lt;/population&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population">population</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;D8C1DE16-6CC9-4B90-B1A9-E635665B36CA&quot;&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.code">code</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-population&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;denominator&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Denominator&quot;/&gt;
+        &lt;/coding&gt;
+      &lt;/code&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.description">description</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Inpatient hospitalizations for patients with a principal diagnosis of Ischemic stroke&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.criteria">criteria</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">language</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;text/cql-identifier&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">expression</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Denominator&quot;/&gt;
+      &lt;/criteria&gt;
+    &lt;/population&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population">population</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;874052F5-D503-4C5C-A436-05900B0967E3&quot;&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.code">code</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-population&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;denominator-exclusion&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Denominator Exclusion&quot;/&gt;
+        &lt;/coding&gt;
+      &lt;/code&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.description">description</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Inpatient hospitalizations for patients admitted for elective carotid intervention. This exclusion is implicitly modeled by only including non-elective hospitalizations.
+Inpatient hospitalizations for patients discharged to another hospital
+Inpatient hospitalizations for patients who left against medical advice
+Inpatient hospitalizations for patients who expired
+Inpatient hospitalizations for patients discharged to home for hospice care
+Inpatient hospitalizations for patients discharged to a health care facility for hospice care
+Inpatient hospitalizations for patients with comfort measures documented&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.criteria">criteria</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">language</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;text/cql-identifier&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">expression</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Denominator Exclusions&quot;/&gt;
+      &lt;/criteria&gt;
+    &lt;/population&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population">population</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;0BFADF64-121B-47BA-A02F-EE5F433B8C7D&quot;&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.code">code</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-population&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;denominator-exception&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Denominator Exception&quot;/&gt;
+        &lt;/coding&gt;
+      &lt;/code&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.description">description</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Inpatient hospitalizations for patients with a documented reason for not prescribing antithrombotic therapy at discharge.
+Inpatient hospitalizations for patients who receive Ticagrelor or Prasugrel as an antithrombotic therapy at discharge.&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.criteria">criteria</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">language</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;text/cql-identifier&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">expression</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Denominator Exceptions&quot;/&gt;
+      &lt;/criteria&gt;
+    &lt;/population&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population">population</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;1AA9F20D-3A56-400C-A53E-0D8CE2BC6C83&quot;&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.code">code</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-population&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;numerator&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Numerator&quot;/&gt;
+        &lt;/coding&gt;
+      &lt;/code&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.description">description</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Inpatient hospitalizations for patients prescribed or continuing to take antithrombotic therapy at hospital discharge&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.criteria">criteria</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">language</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;text/cql-identifier&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">expression</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Numerator&quot;/&gt;
+      &lt;/criteria&gt;
+    &lt;/population&gt;
+  &lt;/group&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.supplementalData">supplementalData</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.supplementalData.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-supplemental-data-example&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;gender&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Gender&quot;/&gt;
+      &lt;/coding&gt;
+    &lt;/code&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.supplementalData.usage">usage</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-data-usage&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;supplemental-data&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Supplemental Data&quot;/&gt;
+      &lt;/coding&gt;
+    &lt;/usage&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.supplementalData.criteria">criteria</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">language</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;text/cql-identifier&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">expression</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;SDE Sex&quot;/&gt;
+    &lt;/criteria&gt;
+  &lt;/supplementalData&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.supplementalData">supplementalData</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.supplementalData.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-supplemental-data-example&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;ethnicity&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Ethnicity&quot;/&gt;
+      &lt;/coding&gt;
+    &lt;/code&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.supplementalData.usage">usage</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-data-usage&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;supplemental-data&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Supplemental Data&quot;/&gt;
+      &lt;/coding&gt;
+    &lt;/usage&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.supplementalData.criteria">criteria</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">language</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;text/cql-identifier&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">expression</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;SDE Ethnicity&quot;/&gt;
+    &lt;/criteria&gt;
+  &lt;/supplementalData&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.supplementalData">supplementalData</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.supplementalData.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-supplemental-data-example&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;payer&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Payer&quot;/&gt;
+      &lt;/coding&gt;
+    &lt;/code&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.supplementalData.usage">usage</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-data-usage&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;supplemental-data&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Supplemental Data&quot;/&gt;
+      &lt;/coding&gt;
+    &lt;/usage&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.supplementalData.criteria">criteria</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">language</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;text/cql-identifier&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">expression</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;SDE Payer&quot;/&gt;
+    &lt;/criteria&gt;
+  &lt;/supplementalData&gt;
+&lt;/Measure&gt;</code></pre>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7.org/Special/committees/[something]">HL7 International - [Some] Work Group</a>.  Package cms.fhir.mct#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 21, 2023 15:20-0600">2023-03-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="http://cms.gov/fhir/mct/history.html">Version History</a> | <a style="color: #81BEF7" rel="license" href="license.html">License</a>
+<!--<a style="color: #81BEF7" href="todo.html">Search</a> | -->
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

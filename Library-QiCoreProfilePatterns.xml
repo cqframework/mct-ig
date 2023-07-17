@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Library xmlns="http://hl7.org/fhir">
+  <id value="QiCoreProfilePatterns"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">QiCoreProfilePatterns</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="http://cms.gov/fhir/mct/Library/QiCoreProfilePatterns">http://cms.gov/fhir/mct/Library/QiCoreProfilePatterns</a></td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.1.0</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Name: </b></th>
+            <td style="padding-left: 4px;">QiCoreProfilePatterns</td>
+        </tr>
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">draft</td>
+        </tr>
+        
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2023-03-21 15:20:25-0600</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">HL7 International - [Some] Work Group</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">US</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <tr>
+          <td colspan="2">
+            <table>
+              <tr><th><a id="cql-content"><b>Content: </b></a> text/cql</th></tr>
+              <tr><td><pre><code class="language-cql">library QiCoreProfilePatterns version '1.0.0'
+
+using FHIR version '4.0.1'
+
+include FHIRHelpers version '4.0.1'
+include QICoreCommon version '1.0.0'
+
+context Patient
+
+// Profiles
+
+// QICoreAdverseEvent
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-adverseevent
+define AdverseEvent:
+  [AdverseEvent]
+
+// QICoreAllergyIntolerance
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-allergyintolerance
+define AllergyIntolerance:
+  [AllergyIntolerance]
+
+// QICoreBodyStructure
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-bodystructure
+define BodyStructure:
+  [BodyStructure]
+
+// QICoreCarePlan
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-careplan
+define CarePlan:
+  [CarePlan]
+
+// QICoreCareTeam
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-careteam
+define CareTeam:
+  [CareTeam]
+
+// QICoreClaim
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-claim
+define Claim:
+  [Claim]
+
+// QICoreCommunication
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communication
+define Communication:
+  [Communication] C
+    where C.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }
+
+// QICoreCommunicationNotDone
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationnotdone
+define CommunicationNotDone:
+  [Communication] C
+    where C.status = 'not-done'
+
+// QICoreCommunicationRequest
+// @profile: 	http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationrequest
+define CommunicationRequest:
+  [CommunicationRequest]
+
+// QICoreCondition
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition
+define Condition:
+  [Condition]
+
+// QICoreCoverage
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage
+define Coverage:
+  [Coverage]
+
+// QICoreDevice
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-device
+define Device:
+  [Device]
+
+// QICoreDeviceNotRequested
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-devicenotrequested
+define DeviceNotRequested:
+  [DeviceRequest] D
+    where D.status = 'completed'
+      and D.doNotPerform() is true
+
+// QICoreDeviceRequest
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-devicerequest
+define DeviceRequest:
+  [DeviceRequest] D
+    where D.status in { 'draft', 'active', 'on-hold', 'revoked', 'completed' }
+      and D.doNotPerform() is not true
+
+// QICoreDeviceUseStatement
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-deviceusestatement
+define DeviceUseStatement:
+  [DeviceUseStatement]
+
+// QICoreDiagnosticReportLab
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-diagnosticreport-lab
+define DiagnosticReportLab:
+  [DiagnosticReport] D
+    //where D.category ~ &amp;quot;http://terminology.hl7.org/CodeSystem/v2-0074#LAB&amp;quot;
+
+// QICoreDiagnosticReportNote
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-diagnosticreport-note
+define DiagnosticReportNote:
+  [DiagnosticReport] D
+
+// QICoreEncounter
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter
+define Encounter:
+  [Encounter]
+
+define EncounterPerformed:
+  Encounter E
+    where E.status = 'finished'
+
+// QICoreFamilyMemberHistory
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-familymemberhistory
+define FamilyMemberHistory:
+  [FamilyMemberHistory]
+
+// QICoreFlag
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-flag
+define Flag:
+  [Flag]
+
+// QICoreGoal
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-goal
+define Goal:
+  [Goal]
+
+// QICoreImagingStudy
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-imagingstudy
+define ImagingStudy:
+  [ImagingStudy]
+
+// QICoreImmunization
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunization
+define Immunization:
+  [Immunization] I
+    where I.status = 'completed'
+
+// QICoreImmunizationEvaluation
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationevaluation
+define ImmunizationEvaluation:
+  [ImmunizationEvaluation]
+
+// QICoreImmunizationNotDone
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationnotdone
+define ImmunizationNotDone:
+  [Immunization] I
+    where I.status = 'not-done'
+
+// QICoreImmunizationRecommendation
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationrec
+define ImmunizationRecommendation:
+  [ImmunizationRecommendation]
+
+// USCoreImplantableDevice
+// @profile: http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device
+define ImplantableDevice:
+  [Device]
+
+// QICoreLocation
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location
+define Location:
+  [Location]
+
+// QICoreMedication
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medication
+define Medication:
+  [Medication]
+
+// QICoreMedicationAdministration
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministration
+define MedicationAdministration:
+  [MedicationAdministration] M
+    where M.status in { 'in-progress', 'on-hold', 'completed' }
+
+// QICoreMedicationAdministrationNotDone
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-mednotadministered
+define MedicationAdministrationNotDone:
+  [MedicationAdministration] M
+    where M.status = 'not-done'
+
+// QICoreMedicationDispense
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationdispense
+define MedicationDispense:
+  [MedicationDispense] D
+    where D.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }
+
+// QICoreMedicationDispenseDeclined
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationdispensedeclined
+define MedicationDispenseDeclined:
+  [MedicationDispense] D
+    where D.status in { 'cancelled', 'declined' }
+
+// QICoreMedicationNotRequested
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-mednotrequested
+define MedicationNotRequested:
+  [MedicationRequest] R
+    where R.status = 'completed'
+      and R.doNotPerform is true
+
+// QICoreMedicationRequest
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest
+define MedicationRequest:
+  [MedicationRequest] R
+    where R.status in { 'active', 'on-hold', 'completed', 'draft' }
+      and R.doNotPerform is not true
+
+// QICoreMedicationStatement
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationstatement
+define MedicationStatement:
+  [MedicationStatement]
+
+// QICoreNutritionOrder
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-nutritionorder
+define NutritionOrder:
+  [NutritionOrder]
+
+// QICoreObservation
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation
+define Observation:
+  [Observation] O
+    where O.status in { 'registered', 'preliminary', 'final', 'amended', 'corrected' }
+
+// QICoreObservationCancelled
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observationcancelled
+define ObservationCancelled:
+  [Observation] O
+    where O.status = 'cancelled'
+
+// FHIR Vital Signs
+
+// Respiratory rate - 9279-1
+// @profile: http://hl7.org/fhir/StructureDefinition/resprate
+define RespiratoryRate:
+  [Observation: QICoreCommon.&amp;quot;Respiratory rate&amp;quot;] O
+
+// Heart rate - 8867-4
+// @profile: http://hl7.org/fhir/StructureDefinition/heartrate
+define HeartRate:
+  [Observation: QICoreCommon.&amp;quot;Heart rate&amp;quot;] O
+
+// Oxygen saturation - 2708-6
+// @profile: http://hl7.org/fhir/StructureDefinition/oxygensat
+define OxygenSaturation:
+  [Observation: QICoreCommon.&amp;quot;Oxygen saturation&amp;quot;] O
+
+// Body temperature - 8310-5
+// @profile: http://hl7.org/fhir/StructureDefinition/bodytemp
+define BodyTemperature:
+  [Observation: QICoreCommon.&amp;quot;Body temperature&amp;quot;] O
+
+// Body height - 8302-2
+// @profile: http://hl7.org/fhir/StructureDefinition/bodyheight
+define BodyHeight:
+  [Observation: QICoreCommon.&amp;quot;Body height&amp;quot;] O
+
+// Head circumference - 9843-4
+// @profile: http://hl7.org/fhir/StructureDefinition/headcircum
+define HeadCircumference:
+  [Observation: QICoreCommon.&amp;quot;Head circumference&amp;quot;] O
+
+// Body weight - 29463-7
+// @profile: http://hl7.org/fhir/StructureDefinition/bodyweight
+define BodyWeight:
+  [Observation: QICoreCommon.&amp;quot;Body weight&amp;quot;] O
+
+// Body mass index - 39156-5
+// @profile: http://hl7.org/fhir/StructureDefinition/bmi
+define BodyMassIndex:
+  [Observation: QICoreCommon.&amp;quot;Body mass index&amp;quot;] O
+
+// Blood pressure systolic and diastolic - 85354-9
+// Systolic blood pressure - 8480-6
+// Diastolic blood pressure - 8462-4
+// @profile: http://hl7.org/fhir/StructureDefinition/bp
+define BloodPressure:
+  [Observation: QICoreCommon.&amp;quot;Blood pressure&amp;quot;] O
+
+// USCore Smoking Status
+// @profile: http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus
+define SmokingStatus:
+  [Observation: QICoreCommon.&amp;quot;Smoking status&amp;quot;] O
+
+// USCore Laboratory Result
+// @profile: http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
+define LaboratoryResult:
+  [Observation: category ~ QICoreCommon.&amp;quot;Laboratory&amp;quot;] O
+
+// USCore Pediatric BMI for Age - 59576-9
+// @profile: http://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age
+define PediatricBMIForAge:
+  [Observation: QICoreCommon.&amp;quot;Pediatric BMI for age&amp;quot;]
+
+// USCore Pediatric Weight for Height - 77606-2
+// @profile: http://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height
+define PediatricWeightForHeight:
+  [Observation: QICoreCommon.&amp;quot;Pediatric weight for height&amp;quot;]
+
+// USCore Pulse Oximetry - 59408-5
+// @profile: http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry
+define PulseOximetry:
+  [Observation: QICoreCommon.&amp;quot;Pulse oximetry&amp;quot;]
+
+// QICoreOrganization
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization
+define Organization:
+  [Organization]
+
+// QICorePatient
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient
+define Patient:
+  [Patient]
+
+// QICorePractitioner
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner
+define Practitioner:
+  [Practitioner]
+
+// QICorePractitionerRole
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitionerrole
+define PractitionerRole:
+  [PractitionerRole]
+
+// QICoreProcedure
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure
+define Procedure:
+  [Procedure] P
+    where P.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }
+
+define ProcedurePerformed:
+  Procedure P
+    where P.status = 'completed'
+
+// QICoreProcedureNotDone
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurenotdone
+define ProcedureNotDone:
+  [Procedure] P
+    where P.status = 'not-done'
+
+// QICoreRelatedPerson
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-relatedperson
+define RelatedPerson:
+  [RelatedPerson]
+
+// QICoreServiceNotRequested
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicenotrequested
+define ServiceNotRequested:
+  [ServiceRequest] SR
+    where SR.status = 'completed'
+      and SR.doNotPerform is true
+
+// QICoreServiceRequest
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicerequest
+define ServiceRequest:
+  [ServiceRequest] SR
+    where SR.status in { 'draft', 'active', 'on-hold', 'completed' }
+      and SR.doNotPerform is not true
+
+// QICoreSpecimen
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-specimen
+define Specimen:
+  [Specimen]
+
+// QICoreSubstance
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-substance
+define Substance:
+  [Substance]
+
+// QICoreTask
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-task
+define Task:
+  [Task] T
+    where T.status in { 'draft', 'requested', 'received', 'accepted', 'ready', 'in-progress', 'on-hold', 'completed' }
+
+// QICoreTaskRejected
+// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-taskrejected
+// TODO: What about cancelled and failed?
+define TaskRejected:
+  [Task] T
+    where T.status = 'rejected'</code></pre></td></tr>
+            </table>
+          </td>
+        </tr>
+        
+        
+        
+    </table>
+</div>
+  </text>
+  <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem">
+    <valueReference>
+      <reference value="Device/cqf-tooling"/>
+    </valueReference>
+  </extension>
+  <url value="http://cms.gov/fhir/mct/Library/QiCoreProfilePatterns"/>
+  <version value="0.1.0"/>
+  <name value="QiCoreProfilePatterns"/>
+  <status value="draft"/>
+  <date value="2023-03-21T15:20:25-06:00"/>
+  <publisher value="HL7 International - [Some] Work Group"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/[something]"/>
+    </telecom>
+  </contact>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <content>
+    <contentType value="text/cql"/>
+    <data value="bGlicmFyeSBRaUNvcmVQcm9maWxlUGF0dGVybnMgdmVyc2lvbiAnMS4wLjAnDQoNCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnDQppbmNsdWRlIFFJQ29yZUNvbW1vbiB2ZXJzaW9uICcxLjAuMCcNCg0KY29udGV4dCBQYXRpZW50DQoNCi8vIFByb2ZpbGVzDQoNCi8vIFFJQ29yZUFkdmVyc2VFdmVudA0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLWFkdmVyc2VldmVudA0KZGVmaW5lIEFkdmVyc2VFdmVudDoNCiAgW0FkdmVyc2VFdmVudF0NCg0KLy8gUUlDb3JlQWxsZXJneUludG9sZXJhbmNlDQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9xaWNvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9xaWNvcmUtYWxsZXJneWludG9sZXJhbmNlDQpkZWZpbmUgQWxsZXJneUludG9sZXJhbmNlOg0KICBbQWxsZXJneUludG9sZXJhbmNlXQ0KDQovLyBRSUNvcmVCb2R5U3RydWN0dXJlDQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9xaWNvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9xaWNvcmUtYm9keXN0cnVjdHVyZQ0KZGVmaW5lIEJvZHlTdHJ1Y3R1cmU6DQogIFtCb2R5U3RydWN0dXJlXQ0KDQovLyBRSUNvcmVDYXJlUGxhbg0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLWNhcmVwbGFuDQpkZWZpbmUgQ2FyZVBsYW46DQogIFtDYXJlUGxhbl0NCg0KLy8gUUlDb3JlQ2FyZVRlYW0NCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1jYXJldGVhbQ0KZGVmaW5lIENhcmVUZWFtOg0KICBbQ2FyZVRlYW1dDQoNCi8vIFFJQ29yZUNsYWltDQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9xaWNvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9xaWNvcmUtY2xhaW0NCmRlZmluZSBDbGFpbToNCiAgW0NsYWltXQ0KDQovLyBRSUNvcmVDb21tdW5pY2F0aW9uDQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9xaWNvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9xaWNvcmUtY29tbXVuaWNhdGlvbg0KZGVmaW5lIENvbW11bmljYXRpb246DQogIFtDb21tdW5pY2F0aW9uXSBDDQogICAgd2hlcmUgQy5zdGF0dXMgaW4geyAncHJlcGFyYXRpb24nLCAnaW4tcHJvZ3Jlc3MnLCAnb24taG9sZCcsICdjb21wbGV0ZWQnIH0NCg0KLy8gUUlDb3JlQ29tbXVuaWNhdGlvbk5vdERvbmUNCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1jb21tdW5pY2F0aW9ubm90ZG9uZQ0KZGVmaW5lIENvbW11bmljYXRpb25Ob3REb25lOg0KICBbQ29tbXVuaWNhdGlvbl0gQw0KICAgIHdoZXJlIEMuc3RhdHVzID0gJ25vdC1kb25lJw0KDQovLyBRSUNvcmVDb21tdW5pY2F0aW9uUmVxdWVzdA0KLy8gQHByb2ZpbGU6IAlodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1jb21tdW5pY2F0aW9ucmVxdWVzdA0KZGVmaW5lIENvbW11bmljYXRpb25SZXF1ZXN0Og0KICBbQ29tbXVuaWNhdGlvblJlcXVlc3RdDQoNCi8vIFFJQ29yZUNvbmRpdGlvbg0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLWNvbmRpdGlvbg0KZGVmaW5lIENvbmRpdGlvbjoNCiAgW0NvbmRpdGlvbl0NCg0KLy8gUUlDb3JlQ292ZXJhZ2UNCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1jb3ZlcmFnZQ0KZGVmaW5lIENvdmVyYWdlOg0KICBbQ292ZXJhZ2VdDQoNCi8vIFFJQ29yZURldmljZQ0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLWRldmljZQ0KZGVmaW5lIERldmljZToNCiAgW0RldmljZV0NCg0KLy8gUUlDb3JlRGV2aWNlTm90UmVxdWVzdGVkDQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9xaWNvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9xaWNvcmUtZGV2aWNlbm90cmVxdWVzdGVkDQpkZWZpbmUgRGV2aWNlTm90UmVxdWVzdGVkOg0KICBbRGV2aWNlUmVxdWVzdF0gRA0KICAgIHdoZXJlIEQuc3RhdHVzID0gJ2NvbXBsZXRlZCcNCiAgICAgIGFuZCBELmRvTm90UGVyZm9ybSgpIGlzIHRydWUNCg0KLy8gUUlDb3JlRGV2aWNlUmVxdWVzdA0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLWRldmljZXJlcXVlc3QNCmRlZmluZSBEZXZpY2VSZXF1ZXN0Og0KICBbRGV2aWNlUmVxdWVzdF0gRA0KICAgIHdoZXJlIEQuc3RhdHVzIGluIHsgJ2RyYWZ0JywgJ2FjdGl2ZScsICdvbi1ob2xkJywgJ3Jldm9rZWQnLCAnY29tcGxldGVkJyB9DQogICAgICBhbmQgRC5kb05vdFBlcmZvcm0oKSBpcyBub3QgdHJ1ZQ0KDQovLyBRSUNvcmVEZXZpY2VVc2VTdGF0ZW1lbnQNCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1kZXZpY2V1c2VzdGF0ZW1lbnQNCmRlZmluZSBEZXZpY2VVc2VTdGF0ZW1lbnQ6DQogIFtEZXZpY2VVc2VTdGF0ZW1lbnRdDQoNCi8vIFFJQ29yZURpYWdub3N0aWNSZXBvcnRMYWINCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1kaWFnbm9zdGljcmVwb3J0LWxhYg0KZGVmaW5lIERpYWdub3N0aWNSZXBvcnRMYWI6DQogIFtEaWFnbm9zdGljUmVwb3J0XSBEDQogICAgLy93aGVyZSBELmNhdGVnb3J5IH4gImh0dHA6Ly90ZXJtaW5vbG9neS5obDcub3JnL0NvZGVTeXN0ZW0vdjItMDA3NCNMQUIiDQoNCi8vIFFJQ29yZURpYWdub3N0aWNSZXBvcnROb3RlDQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9xaWNvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9xaWNvcmUtZGlhZ25vc3RpY3JlcG9ydC1ub3RlDQpkZWZpbmUgRGlhZ25vc3RpY1JlcG9ydE5vdGU6DQogIFtEaWFnbm9zdGljUmVwb3J0XSBEDQoNCi8vIFFJQ29yZUVuY291bnRlcg0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLWVuY291bnRlcg0KZGVmaW5lIEVuY291bnRlcjoNCiAgW0VuY291bnRlcl0NCg0KZGVmaW5lIEVuY291bnRlclBlcmZvcm1lZDoNCiAgRW5jb3VudGVyIEUNCiAgICB3aGVyZSBFLnN0YXR1cyA9ICdmaW5pc2hlZCcNCg0KLy8gUUlDb3JlRmFtaWx5TWVtYmVySGlzdG9yeQ0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLWZhbWlseW1lbWJlcmhpc3RvcnkNCmRlZmluZSBGYW1pbHlNZW1iZXJIaXN0b3J5Og0KICBbRmFtaWx5TWVtYmVySGlzdG9yeV0NCg0KLy8gUUlDb3JlRmxhZw0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLWZsYWcNCmRlZmluZSBGbGFnOg0KICBbRmxhZ10NCg0KLy8gUUlDb3JlR29hbA0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLWdvYWwNCmRlZmluZSBHb2FsOg0KICBbR29hbF0NCg0KLy8gUUlDb3JlSW1hZ2luZ1N0dWR5DQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9xaWNvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9xaWNvcmUtaW1hZ2luZ3N0dWR5DQpkZWZpbmUgSW1hZ2luZ1N0dWR5Og0KICBbSW1hZ2luZ1N0dWR5XQ0KDQovLyBRSUNvcmVJbW11bml6YXRpb24NCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1pbW11bml6YXRpb24NCmRlZmluZSBJbW11bml6YXRpb246DQogIFtJbW11bml6YXRpb25dIEkNCiAgICB3aGVyZSBJLnN0YXR1cyA9ICdjb21wbGV0ZWQnDQoNCi8vIFFJQ29yZUltbXVuaXphdGlvbkV2YWx1YXRpb24NCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1pbW11bml6YXRpb25ldmFsdWF0aW9uDQpkZWZpbmUgSW1tdW5pemF0aW9uRXZhbHVhdGlvbjoNCiAgW0ltbXVuaXphdGlvbkV2YWx1YXRpb25dDQoNCi8vIFFJQ29yZUltbXVuaXphdGlvbk5vdERvbmUNCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1pbW11bml6YXRpb25ub3Rkb25lDQpkZWZpbmUgSW1tdW5pemF0aW9uTm90RG9uZToNCiAgW0ltbXVuaXphdGlvbl0gSQ0KICAgIHdoZXJlIEkuc3RhdHVzID0gJ25vdC1kb25lJw0KDQovLyBRSUNvcmVJbW11bml6YXRpb25SZWNvbW1lbmRhdGlvbg0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLWltbXVuaXphdGlvbnJlYw0KZGVmaW5lIEltbXVuaXphdGlvblJlY29tbWVuZGF0aW9uOg0KICBbSW1tdW5pemF0aW9uUmVjb21tZW5kYXRpb25dDQoNCi8vIFVTQ29yZUltcGxhbnRhYmxlRGV2aWNlDQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9jb3JlL1N0cnVjdHVyZURlZmluaXRpb24vdXMtY29yZS1pbXBsYW50YWJsZS1kZXZpY2UNCmRlZmluZSBJbXBsYW50YWJsZURldmljZToNCiAgW0RldmljZV0NCg0KLy8gUUlDb3JlTG9jYXRpb24NCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1sb2NhdGlvbg0KZGVmaW5lIExvY2F0aW9uOg0KICBbTG9jYXRpb25dDQoNCi8vIFFJQ29yZU1lZGljYXRpb24NCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1tZWRpY2F0aW9uDQpkZWZpbmUgTWVkaWNhdGlvbjoNCiAgW01lZGljYXRpb25dDQoNCi8vIFFJQ29yZU1lZGljYXRpb25BZG1pbmlzdHJhdGlvbg0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLW1lZGljYXRpb25hZG1pbmlzdHJhdGlvbg0KZGVmaW5lIE1lZGljYXRpb25BZG1pbmlzdHJhdGlvbjoNCiAgW01lZGljYXRpb25BZG1pbmlzdHJhdGlvbl0gTQ0KICAgIHdoZXJlIE0uc3RhdHVzIGluIHsgJ2luLXByb2dyZXNzJywgJ29uLWhvbGQnLCAnY29tcGxldGVkJyB9DQoNCi8vIFFJQ29yZU1lZGljYXRpb25BZG1pbmlzdHJhdGlvbk5vdERvbmUNCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1tZWRub3RhZG1pbmlzdGVyZWQNCmRlZmluZSBNZWRpY2F0aW9uQWRtaW5pc3RyYXRpb25Ob3REb25lOg0KICBbTWVkaWNhdGlvbkFkbWluaXN0cmF0aW9uXSBNDQogICAgd2hlcmUgTS5zdGF0dXMgPSAnbm90LWRvbmUnDQoNCi8vIFFJQ29yZU1lZGljYXRpb25EaXNwZW5zZQ0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLW1lZGljYXRpb25kaXNwZW5zZQ0KZGVmaW5lIE1lZGljYXRpb25EaXNwZW5zZToNCiAgW01lZGljYXRpb25EaXNwZW5zZV0gRA0KICAgIHdoZXJlIEQuc3RhdHVzIGluIHsgJ3ByZXBhcmF0aW9uJywgJ2luLXByb2dyZXNzJywgJ29uLWhvbGQnLCAnY29tcGxldGVkJyB9DQoNCi8vIFFJQ29yZU1lZGljYXRpb25EaXNwZW5zZURlY2xpbmVkDQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9xaWNvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9xaWNvcmUtbWVkaWNhdGlvbmRpc3BlbnNlZGVjbGluZWQNCmRlZmluZSBNZWRpY2F0aW9uRGlzcGVuc2VEZWNsaW5lZDoNCiAgW01lZGljYXRpb25EaXNwZW5zZV0gRA0KICAgIHdoZXJlIEQuc3RhdHVzIGluIHsgJ2NhbmNlbGxlZCcsICdkZWNsaW5lZCcgfQ0KDQovLyBRSUNvcmVNZWRpY2F0aW9uTm90UmVxdWVzdGVkDQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9xaWNvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9xaWNvcmUtbWVkbm90cmVxdWVzdGVkDQpkZWZpbmUgTWVkaWNhdGlvbk5vdFJlcXVlc3RlZDoNCiAgW01lZGljYXRpb25SZXF1ZXN0XSBSDQogICAgd2hlcmUgUi5zdGF0dXMgPSAnY29tcGxldGVkJw0KICAgICAgYW5kIFIuZG9Ob3RQZXJmb3JtIGlzIHRydWUNCg0KLy8gUUlDb3JlTWVkaWNhdGlvblJlcXVlc3QNCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1tZWRpY2F0aW9ucmVxdWVzdA0KZGVmaW5lIE1lZGljYXRpb25SZXF1ZXN0Og0KICBbTWVkaWNhdGlvblJlcXVlc3RdIFINCiAgICB3aGVyZSBSLnN0YXR1cyBpbiB7ICdhY3RpdmUnLCAnb24taG9sZCcsICdjb21wbGV0ZWQnLCAnZHJhZnQnIH0NCiAgICAgIGFuZCBSLmRvTm90UGVyZm9ybSBpcyBub3QgdHJ1ZQ0KDQovLyBRSUNvcmVNZWRpY2F0aW9uU3RhdGVtZW50DQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9xaWNvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9xaWNvcmUtbWVkaWNhdGlvbnN0YXRlbWVudA0KZGVmaW5lIE1lZGljYXRpb25TdGF0ZW1lbnQ6DQogIFtNZWRpY2F0aW9uU3RhdGVtZW50XQ0KDQovLyBRSUNvcmVOdXRyaXRpb25PcmRlcg0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLW51dHJpdGlvbm9yZGVyDQpkZWZpbmUgTnV0cml0aW9uT3JkZXI6DQogIFtOdXRyaXRpb25PcmRlcl0NCg0KLy8gUUlDb3JlT2JzZXJ2YXRpb24NCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1vYnNlcnZhdGlvbg0KZGVmaW5lIE9ic2VydmF0aW9uOg0KICBbT2JzZXJ2YXRpb25dIE8NCiAgICB3aGVyZSBPLnN0YXR1cyBpbiB7ICdyZWdpc3RlcmVkJywgJ3ByZWxpbWluYXJ5JywgJ2ZpbmFsJywgJ2FtZW5kZWQnLCAnY29ycmVjdGVkJyB9DQoNCi8vIFFJQ29yZU9ic2VydmF0aW9uQ2FuY2VsbGVkDQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9xaWNvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9xaWNvcmUtb2JzZXJ2YXRpb25jYW5jZWxsZWQNCmRlZmluZSBPYnNlcnZhdGlvbkNhbmNlbGxlZDoNCiAgW09ic2VydmF0aW9uXSBPDQogICAgd2hlcmUgTy5zdGF0dXMgPSAnY2FuY2VsbGVkJw0KDQovLyBGSElSIFZpdGFsIFNpZ25zDQoNCi8vIFJlc3BpcmF0b3J5IHJhdGUgLSA5Mjc5LTENCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL1N0cnVjdHVyZURlZmluaXRpb24vcmVzcHJhdGUNCmRlZmluZSBSZXNwaXJhdG9yeVJhdGU6DQogIFtPYnNlcnZhdGlvbjogUUlDb3JlQ29tbW9uLiJSZXNwaXJhdG9yeSByYXRlIl0gTw0KDQovLyBIZWFydCByYXRlIC0gODg2Ny00DQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci9TdHJ1Y3R1cmVEZWZpbml0aW9uL2hlYXJ0cmF0ZQ0KZGVmaW5lIEhlYXJ0UmF0ZToNCiAgW09ic2VydmF0aW9uOiBRSUNvcmVDb21tb24uIkhlYXJ0IHJhdGUiXSBPDQoNCi8vIE94eWdlbiBzYXR1cmF0aW9uIC0gMjcwOC02DQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci9TdHJ1Y3R1cmVEZWZpbml0aW9uL294eWdlbnNhdA0KZGVmaW5lIE94eWdlblNhdHVyYXRpb246DQogIFtPYnNlcnZhdGlvbjogUUlDb3JlQ29tbW9uLiJPeHlnZW4gc2F0dXJhdGlvbiJdIE8NCg0KLy8gQm9keSB0ZW1wZXJhdHVyZSAtIDgzMTAtNQ0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvU3RydWN0dXJlRGVmaW5pdGlvbi9ib2R5dGVtcA0KZGVmaW5lIEJvZHlUZW1wZXJhdHVyZToNCiAgW09ic2VydmF0aW9uOiBRSUNvcmVDb21tb24uIkJvZHkgdGVtcGVyYXR1cmUiXSBPDQoNCi8vIEJvZHkgaGVpZ2h0IC0gODMwMi0yDQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci9TdHJ1Y3R1cmVEZWZpbml0aW9uL2JvZHloZWlnaHQNCmRlZmluZSBCb2R5SGVpZ2h0Og0KICBbT2JzZXJ2YXRpb246IFFJQ29yZUNvbW1vbi4iQm9keSBoZWlnaHQiXSBPDQoNCi8vIEhlYWQgY2lyY3VtZmVyZW5jZSAtIDk4NDMtNA0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvU3RydWN0dXJlRGVmaW5pdGlvbi9oZWFkY2lyY3VtDQpkZWZpbmUgSGVhZENpcmN1bWZlcmVuY2U6DQogIFtPYnNlcnZhdGlvbjogUUlDb3JlQ29tbW9uLiJIZWFkIGNpcmN1bWZlcmVuY2UiXSBPDQoNCi8vIEJvZHkgd2VpZ2h0IC0gMjk0NjMtNw0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvU3RydWN0dXJlRGVmaW5pdGlvbi9ib2R5d2VpZ2h0DQpkZWZpbmUgQm9keVdlaWdodDoNCiAgW09ic2VydmF0aW9uOiBRSUNvcmVDb21tb24uIkJvZHkgd2VpZ2h0Il0gTw0KDQovLyBCb2R5IG1hc3MgaW5kZXggLSAzOTE1Ni01DQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci9TdHJ1Y3R1cmVEZWZpbml0aW9uL2JtaQ0KZGVmaW5lIEJvZHlNYXNzSW5kZXg6DQogIFtPYnNlcnZhdGlvbjogUUlDb3JlQ29tbW9uLiJCb2R5IG1hc3MgaW5kZXgiXSBPDQoNCi8vIEJsb29kIHByZXNzdXJlIHN5c3RvbGljIGFuZCBkaWFzdG9saWMgLSA4NTM1NC05DQovLyBTeXN0b2xpYyBibG9vZCBwcmVzc3VyZSAtIDg0ODAtNg0KLy8gRGlhc3RvbGljIGJsb29kIHByZXNzdXJlIC0gODQ2Mi00DQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci9TdHJ1Y3R1cmVEZWZpbml0aW9uL2JwDQpkZWZpbmUgQmxvb2RQcmVzc3VyZToNCiAgW09ic2VydmF0aW9uOiBRSUNvcmVDb21tb24uIkJsb29kIHByZXNzdXJlIl0gTw0KDQovLyBVU0NvcmUgU21va2luZyBTdGF0dXMNCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL2NvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi91cy1jb3JlLXNtb2tpbmdzdGF0dXMNCmRlZmluZSBTbW9raW5nU3RhdHVzOg0KICBbT2JzZXJ2YXRpb246IFFJQ29yZUNvbW1vbi4iU21va2luZyBzdGF0dXMiXSBPDQoNCi8vIFVTQ29yZSBMYWJvcmF0b3J5IFJlc3VsdA0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3VzLWNvcmUtb2JzZXJ2YXRpb24tbGFiDQpkZWZpbmUgTGFib3JhdG9yeVJlc3VsdDoNCiAgW09ic2VydmF0aW9uOiBjYXRlZ29yeSB+IFFJQ29yZUNvbW1vbi4iTGFib3JhdG9yeSJdIE8NCg0KLy8gVVNDb3JlIFBlZGlhdHJpYyBCTUkgZm9yIEFnZSAtIDU5NTc2LTkNCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL2NvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9wZWRpYXRyaWMtYm1pLWZvci1hZ2UNCmRlZmluZSBQZWRpYXRyaWNCTUlGb3JBZ2U6DQogIFtPYnNlcnZhdGlvbjogUUlDb3JlQ29tbW9uLiJQZWRpYXRyaWMgQk1JIGZvciBhZ2UiXQ0KDQovLyBVU0NvcmUgUGVkaWF0cmljIFdlaWdodCBmb3IgSGVpZ2h0IC0gNzc2MDYtMg0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3BlZGlhdHJpYy13ZWlnaHQtZm9yLWhlaWdodA0KZGVmaW5lIFBlZGlhdHJpY1dlaWdodEZvckhlaWdodDoNCiAgW09ic2VydmF0aW9uOiBRSUNvcmVDb21tb24uIlBlZGlhdHJpYyB3ZWlnaHQgZm9yIGhlaWdodCJdDQoNCi8vIFVTQ29yZSBQdWxzZSBPeGltZXRyeSAtIDU5NDA4LTUNCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL2NvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi91cy1jb3JlLXB1bHNlLW94aW1ldHJ5DQpkZWZpbmUgUHVsc2VPeGltZXRyeToNCiAgW09ic2VydmF0aW9uOiBRSUNvcmVDb21tb24uIlB1bHNlIG94aW1ldHJ5Il0NCg0KLy8gUUlDb3JlT3JnYW5pemF0aW9uDQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9xaWNvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9xaWNvcmUtb3JnYW5pemF0aW9uDQpkZWZpbmUgT3JnYW5pemF0aW9uOg0KICBbT3JnYW5pemF0aW9uXQ0KDQovLyBRSUNvcmVQYXRpZW50DQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9xaWNvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9xaWNvcmUtcGF0aWVudA0KZGVmaW5lIFBhdGllbnQ6DQogIFtQYXRpZW50XQ0KDQovLyBRSUNvcmVQcmFjdGl0aW9uZXINCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1wcmFjdGl0aW9uZXINCmRlZmluZSBQcmFjdGl0aW9uZXI6DQogIFtQcmFjdGl0aW9uZXJdDQoNCi8vIFFJQ29yZVByYWN0aXRpb25lclJvbGUNCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1wcmFjdGl0aW9uZXJyb2xlDQpkZWZpbmUgUHJhY3RpdGlvbmVyUm9sZToNCiAgW1ByYWN0aXRpb25lclJvbGVdDQoNCi8vIFFJQ29yZVByb2NlZHVyZQ0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLXByb2NlZHVyZQ0KZGVmaW5lIFByb2NlZHVyZToNCiAgW1Byb2NlZHVyZV0gUA0KICAgIHdoZXJlIFAuc3RhdHVzIGluIHsgJ3ByZXBhcmF0aW9uJywgJ2luLXByb2dyZXNzJywgJ29uLWhvbGQnLCAnY29tcGxldGVkJyB9DQoNCmRlZmluZSBQcm9jZWR1cmVQZXJmb3JtZWQ6DQogIFByb2NlZHVyZSBQDQogICAgd2hlcmUgUC5zdGF0dXMgPSAnY29tcGxldGVkJw0KDQovLyBRSUNvcmVQcm9jZWR1cmVOb3REb25lDQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9xaWNvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9xaWNvcmUtcHJvY2VkdXJlbm90ZG9uZQ0KZGVmaW5lIFByb2NlZHVyZU5vdERvbmU6DQogIFtQcm9jZWR1cmVdIFANCiAgICB3aGVyZSBQLnN0YXR1cyA9ICdub3QtZG9uZScNCg0KLy8gUUlDb3JlUmVsYXRlZFBlcnNvbg0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLXJlbGF0ZWRwZXJzb24NCmRlZmluZSBSZWxhdGVkUGVyc29uOg0KICBbUmVsYXRlZFBlcnNvbl0NCg0KLy8gUUlDb3JlU2VydmljZU5vdFJlcXVlc3RlZA0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLXNlcnZpY2Vub3RyZXF1ZXN0ZWQNCmRlZmluZSBTZXJ2aWNlTm90UmVxdWVzdGVkOg0KICBbU2VydmljZVJlcXVlc3RdIFNSDQogICAgd2hlcmUgU1Iuc3RhdHVzID0gJ2NvbXBsZXRlZCcNCiAgICAgIGFuZCBTUi5kb05vdFBlcmZvcm0gaXMgdHJ1ZQ0KDQovLyBRSUNvcmVTZXJ2aWNlUmVxdWVzdA0KLy8gQHByb2ZpbGU6IGh0dHA6Ly9obDcub3JnL2ZoaXIvdXMvcWljb3JlL1N0cnVjdHVyZURlZmluaXRpb24vcWljb3JlLXNlcnZpY2VyZXF1ZXN0DQpkZWZpbmUgU2VydmljZVJlcXVlc3Q6DQogIFtTZXJ2aWNlUmVxdWVzdF0gU1INCiAgICB3aGVyZSBTUi5zdGF0dXMgaW4geyAnZHJhZnQnLCAnYWN0aXZlJywgJ29uLWhvbGQnLCAnY29tcGxldGVkJyB9DQogICAgICBhbmQgU1IuZG9Ob3RQZXJmb3JtIGlzIG5vdCB0cnVlDQoNCi8vIFFJQ29yZVNwZWNpbWVuDQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9xaWNvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9xaWNvcmUtc3BlY2ltZW4NCmRlZmluZSBTcGVjaW1lbjoNCiAgW1NwZWNpbWVuXQ0KDQovLyBRSUNvcmVTdWJzdGFuY2UNCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS1zdWJzdGFuY2UNCmRlZmluZSBTdWJzdGFuY2U6DQogIFtTdWJzdGFuY2VdDQoNCi8vIFFJQ29yZVRhc2sNCi8vIEBwcm9maWxlOiBodHRwOi8vaGw3Lm9yZy9maGlyL3VzL3FpY29yZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL3FpY29yZS10YXNrDQpkZWZpbmUgVGFzazoNCiAgW1Rhc2tdIFQNCiAgICB3aGVyZSBULnN0YXR1cyBpbiB7ICdkcmFmdCcsICdyZXF1ZXN0ZWQnLCAncmVjZWl2ZWQnLCAnYWNjZXB0ZWQnLCAncmVhZHknLCAnaW4tcHJvZ3Jlc3MnLCAnb24taG9sZCcsICdjb21wbGV0ZWQnIH0NCg0KLy8gUUlDb3JlVGFza1JlamVjdGVkDQovLyBAcHJvZmlsZTogaHR0cDovL2hsNy5vcmcvZmhpci91cy9xaWNvcmUvU3RydWN0dXJlRGVmaW5pdGlvbi9xaWNvcmUtdGFza3JlamVjdGVkDQovLyBUT0RPOiBXaGF0IGFib3V0IGNhbmNlbGxlZCBhbmQgZmFpbGVkPw0KZGVmaW5lIFRhc2tSZWplY3RlZDoNCiAgW1Rhc2tdIFQNCiAgICB3aGVyZSBULnN0YXR1cyA9ICdyZWplY3RlZCc="/>
+  </content>
+</Library>

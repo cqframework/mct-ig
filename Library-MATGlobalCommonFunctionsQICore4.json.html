@@ -1,0 +1,372 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>CMS.FHIR.MCT\null - JSON Representation - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/cqf.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"10.7"}
+    h3,h4,h5,h6{--heading-prefix:"10.7"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://github.com/cqframework"><img height="50" alt="Visit the CQF github organization website" src="assets/images/cqf.png"/> </a>
+</div>
+<!-- TODO: Push this into the base template, but it requires a "trusted" template -->
+<script type="text/javascript" src="cql.js"> </script>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">CMS FHIR Prototype Measure Calculation Tool IG</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - CI Build
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="technical-requirements.html">Technical Requirements</a>
+      </li>
+      <li>
+        <a href="implementation-guide.html">Implementation Guide</a>
+      </li>
+      <li>
+        <a href="user-guide.html">User Guide</a>
+      </li>
+      <li>
+        <a href="test-plan.html">Test Plan</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a target="_blank" href="http://cql.hl7.org/index.html">CQL Specification</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/smart-app-launch/STU2/backend-services.html">SMART Backend Services (version 2.0.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/core/STU3.1.1">US Core (version 3.1.1)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/cqfmeasures/STU3">FHIR Quality Measures (version 3.0.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/davinci-deqm/STU3.1">FHIR Quality Reporting (version 3.1.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/uv/cpg">FHIR Clinical Guidelines</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="license.html">License</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b></b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 8" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">CMS FHIR Prototype Measure Calculation Tool IG - Local Development build (v0.1.0). See the <a href="http://cms.gov/fhir/mct/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="Library-MATGlobalCommonFunctionsQICore4.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="Library-MATGlobalCommonFunctionsQICore4.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li class="active">
+      <a href="#">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Library-MATGlobalCommonFunctionsQICore4.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: null - JSON Representation</h2>
+  <table class="colsd">
+    <tr>
+
+      <td colspan="2">
+        
+          Draft
+          
+            as of 2023-03-21
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="Library-MATGlobalCommonFunctionsQICore4.json" no-download="true">Raw json</a> | <a href="Library-MATGlobalCommonFunctionsQICore4.json" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="json" style="white-space: pre; overflow: hidden"><code>
+{
+  "<a href="http://hl7.org/fhir/R4/library.html#Library">resourceType</a>" : "Library",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.id">id</a>" : "MATGlobalCommonFunctionsQICore4",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "extensions",
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\r\n    &lt;table class=\&quot;grid dict\&quot;&gt;\r\n        \r\n        &lt;tr&gt;\r\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Id: &lt;/b&gt;&lt;/th&gt;\r\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;MATGlobalCommonFunctionsQICore4&lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        &lt;tr&gt;\r\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Url: &lt;/b&gt;&lt;/th&gt;\r\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;&lt;a href=\&quot;http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsQICore4\&quot;&gt;http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsQICore4&lt;/a&gt;&lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        &lt;tr&gt;\r\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Version: &lt;/b&gt;&lt;/th&gt;\r\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;0.1.0&lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        \r\n        &lt;tr&gt;\r\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Name: &lt;/b&gt;&lt;/th&gt;\r\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;MATGlobalCommonFunctionsQICore4&lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        \r\n        \r\n        &lt;tr&gt;\r\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Status: &lt;/b&gt;&lt;/th&gt;\r\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;draft&lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        &lt;tr&gt;\r\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Date: &lt;/b&gt;&lt;/th&gt;\r\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;2023-03-21 15:20:25-0600&lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        &lt;tr&gt;\r\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Publisher: &lt;/b&gt;&lt;/th&gt;\r\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;HL7 International - [Some] Work Group&lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        &lt;tr&gt;\r\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Jurisdiction: &lt;/b&gt;&lt;/th&gt;\r\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;US&lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        &lt;tr&gt;\r\n          &lt;td colspan=\&quot;2\&quot;&gt;\r\n            &lt;table&gt;\r\n              &lt;tr&gt;&lt;th&gt;&lt;a id=\&quot;cql-content\&quot;&gt;&lt;b&gt;Content: &lt;/b&gt;&lt;/a&gt; text/cql&lt;/th&gt;&lt;/tr&gt;\r\n              &lt;tr&gt;&lt;td&gt;&lt;pre&gt;&lt;code class=\&quot;language-cql\&quot;&gt;/*\r\n@update: BTR 2020-03-31 -&amp;amp;gt;\r\nIncremented version to 5.0.000\r\nUpdated FHIR version to 4.0.1\r\nChanged timezone keyword to timezoneoffset for use with CQL 1.4\r\nRemoved Normalize Onset in favor of more general Normalize Interval\r\nUpdated CodeSystems for ConditionVerificationStatusCodes and RoleCodes\r\n\r\n@update: BTR 2021-05-13 -&amp;amp;gt;\r\nAdded ActiveCondition Codes and Inactive Condition Codes value sets\r\nAdded function documentation throughout\r\nFixed EDVisit not using Last\r\nUpdated prevalence period to use an inclusive boundary if the condition is active\r\nAdded HasStart, HasEnd, Earliest, and Latest functions\r\nRemoved ToDate and Age calculation functions\r\n\r\n@update: BTR 2021-06-25 -&amp;amp;gt;\r\nAdded GetBaseExtension overloads for Element\r\n\r\n@update: BTR 2022-05-24 -&amp;amp;gt;\r\nUpdate for 2022 AU content\r\nRefactor to use CQF.FHIRCommon\r\n\r\n@update: BTR 2022-06-14 -&amp;amp;gt;\r\nUpdate to use QICore\r\nRename from MATGlobalCommonFunctionsFHIR4 to MATGlobalCommonFunctionsQICore4\r\nAdded fluent functions\r\nRemoved Normalize Interval\r\n*/\r\nlibrary MATGlobalCommonFunctionsQICore4 version '7.0.000'\r\n\r\nusing QICore version '4.1.1'\r\n\r\ninclude FHIRHelpers version '4.0.013' called FHIRHelpers\r\ninclude QICoreCommon version '1.0.000' called QICoreCommon\r\n\r\nvalueset &amp;amp;quot;Emergency Department Visit&amp;amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292'\r\nvalueset &amp;amp;quot;Encounter Inpatient&amp;amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307'\r\nvalueset &amp;amp;quot;Intensive Care Unit&amp;amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.206'\r\nvalueset &amp;amp;quot;Observation Services&amp;amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143'\r\nvalueset &amp;amp;quot;Outpatient Surgery Service&amp;amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.38'\r\nvalueset &amp;amp;quot;Present on Admission or Clinically Undetermined&amp;amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1147.197'\r\n\r\nparameter &amp;amp;quot;Measurement Period&amp;amp;quot; Interval&amp;amp;lt;DateTime&amp;amp;gt;\r\n  default Interval[@2022-01-01T00:00:00.0, @2023-01-01T00:00:00.0)\r\n\r\ncontext Patient\r\n\r\ndefine &amp;amp;quot;Inpatient Encounter&amp;amp;quot;:\r\n  [Encounter: &amp;amp;quot;Encounter Inpatient&amp;amp;quot;] EncounterInpatient\r\n\t\twhere EncounterInpatient.status = 'finished'\r\n\t    and &amp;amp;quot;LengthInDays&amp;amp;quot;(EncounterInpatient.period) &amp;amp;lt;= 120\r\n\t\t\tand EncounterInpatient.period ends during day of &amp;amp;quot;Measurement Period&amp;amp;quot;\r\n\r\n/*\r\n@description: Returns an interval of date values extracted from the input interval of date-time values\r\n@comment: This function returns an interval constructed using the `date from` extractor on the start\r\nand end values of the input date-time interval. Note that using a precision specifier such as `day of`\r\nas part of a timing phrase is preferred to communicate intent to perform day-level comparison, as well\r\nas for general readability.\r\n*/\r\ndefine function &amp;amp;quot;ToDateInterval&amp;amp;quot;(period Interval&amp;amp;lt;DateTime&amp;amp;gt;):\r\n  Interval[date from start of period, date from end of period]\r\n\r\n/*\r\nCalculates the difference in calendar days between the start and end of the given interval.\r\n*/\r\ndefine function &amp;amp;quot;LengthInDays&amp;amp;quot;(Value Interval&amp;amp;lt;DateTime&amp;amp;gt; ):\r\n  difference in days between start of Value and end of Value\r\n\r\n/*\r\nCalculates the difference in calendar days between the start and end of the given interval.\r\n*/\r\ndefine fluent function lengthInDays(Value Interval&amp;amp;lt;DateTime&amp;amp;gt; ):\r\n  difference in days between start of Value and end of Value\r\n\r\n/*\r\nReturns the most recent emergency department visit, if any, that occurs 1 hour or less prior to the given encounter.\r\n*/\r\ndefine function &amp;amp;quot;ED Visit&amp;amp;quot;(TheEncounter Encounter ):\r\n  Last(\r\n    [Encounter: &amp;amp;quot;Emergency Department Visit&amp;amp;quot;] EDVisit\r\n      where EDVisit.status = 'finished'\r\n        and EDVisit.period ends 1 hour or less on or before start of TheEncounter.period\r\n      sort by end of period\r\n    )\r\n\r\n/*\r\nReturns the most recent emergency department visit, if any, that occurs 1 hour or less prior to the given encounter.\r\n*/\r\ndefine fluent function edVisit(TheEncounter Encounter ):\r\n  Last(\r\n    [Encounter: &amp;amp;quot;Emergency Department Visit&amp;amp;quot;] EDVisit\r\n      where EDVisit.status = 'finished'\r\n        and EDVisit.period ends 1 hour or less on or before start of TheEncounter.period\r\n      sort by end of period\r\n    )\r\n\r\n/*\r\nHospitalization returns the total interval for admission to discharge for the given encounter, or for the admission of any immediately prior emergency department visit to the discharge of the given encounter.\r\n*/\r\ndefine function &amp;amp;quot;Hospitalization&amp;amp;quot;(TheEncounter Encounter ):\r\n  ( &amp;amp;quot;ED Visit&amp;amp;quot;(TheEncounter) ) X\r\n    return\r\n        if X is null then TheEncounter.period\r\n        else Interval[start of X.period, end of TheEncounter.period)\r\n\r\n/*\r\nHospitalization returns the total interval for admission to discharge for the given encounter, or for the admission of any immediately prior emergency department visit to the discharge of the given encounter.\r\n*/\r\ndefine fluent function hospitalization(TheEncounter Encounter ):\r\n  ( &amp;amp;quot;ED Visit&amp;amp;quot;(TheEncounter) ) X\r\n    return\r\n        if X is null then TheEncounter.period\r\n        else Interval[start of X.period, end of TheEncounter.period]\r\n\r\n/*\r\nReturns list of all locations within an encounter, including locations for immediately prior ED visit.\r\n*/\r\ndefine function &amp;amp;quot;Hospitalization Locations&amp;amp;quot;(TheEncounter Encounter ):\r\n  ( &amp;amp;quot;ED Visit&amp;amp;quot;(TheEncounter) ) EDEncounter\r\n    return\r\n        if EDEncounter is null then TheEncounter.location\r\n        else flatten { EDEncounter.location, TheEncounter.location }\r\n\r\n/*\r\nReturns list of all locations within an encounter, including locations for immediately prior ED visit.\r\n*/\r\ndefine fluent function hospitalizationLocations(TheEncounter Encounter ):\r\n  ( &amp;amp;quot;ED Visit&amp;amp;quot;(TheEncounter) ) EDEncounter\r\n    return\r\n        if EDEncounter is null then TheEncounter.location\r\n        else flatten { EDEncounter.location, TheEncounter.location }\r\n\r\n/*\r\nReturns the length of stay in days (i.e. the number of days between admission and discharge) for the given encounter, or from the admission of any immediately prior emergency department visit to the discharge of the encounter\r\n*/\r\ndefine function &amp;amp;quot;Hospitalization Length of Stay&amp;amp;quot;(TheEncounter Encounter ):\r\n  LengthInDays(&amp;amp;quot;Hospitalization&amp;amp;quot;(TheEncounter))\r\n\r\n/*\r\nReturns the length of stay in days (i.e. the number of days between admission and discharge) for the given encounter, or from the admission of any immediately prior emergency department visit to the discharge of the encounter\r\n*/\r\ndefine fluent function hospitalizationLengthOfStay(TheEncounter Encounter ):\r\n  LengthInDays(&amp;amp;quot;Hospitalization&amp;amp;quot;(TheEncounter))\r\n\r\n/*\r\nReturns admission time for an encounter or for immediately prior emergency department visit.\r\n*/\r\ndefine function &amp;amp;quot;Hospital Admission Time&amp;amp;quot;(TheEncounter Encounter ):\r\n  start of &amp;amp;quot;Hospitalization&amp;amp;quot;(TheEncounter)\r\n\r\n/*\r\nReturns admission time for an encounter or for immediately prior emergency department visit.\r\n*/\r\ndefine fluent function hospitalAdmissionTime(TheEncounter Encounter ):\r\n  start of &amp;amp;quot;Hospitalization&amp;amp;quot;(TheEncounter)\r\n\r\n/*\r\nHospital Discharge Time returns the discharge time for an encounter\r\n*/\r\ndefine function &amp;amp;quot;Hospital Discharge Time&amp;amp;quot;(TheEncounter Encounter ):\r\n  end of TheEncounter.period\r\n\r\n/*\r\nHospital Discharge Time returns the discharge time for an encounter\r\n*/\r\ndefine fluent function hospitalDischargeTime(TheEncounter Encounter ):\r\n  end of TheEncounter.period\r\n\r\n/*\r\nReturns earliest arrival time for an encounter including any prior ED visit.\r\n*/\r\ndefine function &amp;amp;quot;Hospital Arrival Time&amp;amp;quot;(TheEncounter Encounter ):\r\n  start of First(\r\n  \t    ( &amp;amp;quot;Hospitalization Locations&amp;amp;quot;(TheEncounter) ) HospitalLocation\r\n  \t\t\tsort by start of period\r\n  \t).period\r\n\r\n/*\r\nReturns earliest arrival time for an encounter including any prior ED visit.\r\n*/\r\ndefine fluent function hospitalArrivalTime(TheEncounter Encounter ):\r\n  start of First(\r\n  \t    ( &amp;amp;quot;Hospitalization Locations&amp;amp;quot;(TheEncounter) ) HospitalLocation\r\n  \t\t\tsort by start of period\r\n  \t).period\r\n\r\n/*\r\nReturns the latest departure time for encounter including any prior ED visit. \r\n*/\r\ndefine function &amp;amp;quot;Hospital Departure Time&amp;amp;quot;(TheEncounter Encounter):\r\n\tend of Last(\r\n\t    ( &amp;amp;quot;Hospitalization Locations&amp;amp;quot;(TheEncounter) ) HospitalLocation\r\n\t\t\tsort by start of period\r\n\t).period\r\n\r\n/*\r\nReturns the latest departure time for encounter including any prior ED visit. \r\n*/\r\ndefine fluent function hospitalDepartureTime(TheEncounter Encounter):\r\n\tend of Last(\r\n\t    ( &amp;amp;quot;Hospitalization Locations&amp;amp;quot;(TheEncounter) ) HospitalLocation\r\n\t\t\tsort by start of period\r\n\t).period\r\n\r\ndefine function &amp;amp;quot;Emergency Department Arrival Time&amp;amp;quot;(TheEncounter Encounter):\r\n\tstart of (\r\n\t    singleton from (\r\n\t        ( &amp;amp;quot;Hospitalization Locations&amp;amp;quot;(TheEncounter) ) HospitalLocation\r\n\t\t\t\twhere GetLocation(HospitalLocation.location).type in &amp;amp;quot;Emergency Department Visit&amp;amp;quot;\r\n\t\t)\r\n\t).period\r\n\r\ndefine fluent function emergencyDepartmentArrivalTime(TheEncounter Encounter):\r\n\tstart of (\r\n\t    singleton from (\r\n\t        ( &amp;amp;quot;Hospitalization Locations&amp;amp;quot;(TheEncounter) ) HospitalLocation\r\n\t\t\t\twhere GetLocation(HospitalLocation.location).type in &amp;amp;quot;Emergency Department Visit&amp;amp;quot;\r\n\t\t)\r\n\t).period\r\n\r\n/*\r\nHospitalization with Observation and Outpatient Surgery Service returns the total interval from the start of any immediately prior emergency department visit, outpatient surgery visit or observation visit to the discharge of the given encounter.\r\n*/\r\ndefine function &amp;amp;quot;HospitalizationWithObservationAndOutpatientSurgeryService&amp;amp;quot;(TheEncounter &amp;amp;quot;Encounter&amp;amp;quot; ):\r\n  TheEncounter Visit\r\n\t  let ObsVisit: Last([Encounter: &amp;amp;quot;Observation Services&amp;amp;quot;] LastObs\r\n\t\t  \twhere LastObs.status = 'finished'\r\n          and LastObs.period ends 1 hour or less on or before start of Visit.period\r\n\t\t\t  sort by\tend of period\r\n    \t),\r\n    \tVisitStart: Coalesce(start of ObsVisit.period, start of Visit.period),\r\n    \tEDVisit: Last([Encounter: &amp;amp;quot;Emergency Department Visit&amp;amp;quot;] LastED\r\n\t\t\t  where LastED.status = 'finished'\r\n          and LastED.period ends 1 hour or less on or before VisitStart\r\n\t\t\t  sort by\tend of period\r\n    \t),\r\n    \tVisitStartWithED: Coalesce(start of EDVisit.period, VisitStart),\r\n    \tOutpatientSurgeryVisit: Last([Encounter: &amp;amp;quot;Outpatient Surgery Service&amp;amp;quot;] LastSurgeryOP\r\n\t\t\t  where LastSurgeryOP.period ends 1 hour or less on or before VisitStartWithED\r\n\t\t\t  sort by\tend of period\r\n    \t)\r\n  \treturn Interval[Coalesce(start of OutpatientSurgeryVisit.period, VisitStartWithED), end of Visit.period]\r\n\r\n/*\r\nHospitalization with Observation and Outpatient Surgery Service returns the total interval from the start of any immediately prior emergency department visit, outpatient surgery visit or observation visit to the discharge of the given encounter.\r\n*/\r\ndefine fluent function hospitalizationWithObservationAndOutpatientSurgeryService(TheEncounter &amp;amp;quot;Encounter&amp;amp;quot; ):\r\n  TheEncounter Visit\r\n\t  let ObsVisit: Last([Encounter: &amp;amp;quot;Observation Services&amp;amp;quot;] LastObs\r\n\t\t  \twhere LastObs.status = 'finished'\r\n          and LastObs.period ends 1 hour or less on or before start of Visit.period\r\n\t\t\t  sort by\tend of period\r\n    \t),\r\n    \tVisitStart: Coalesce(start of ObsVisit.period, start of Visit.period),\r\n    \tEDVisit: Last([Encounter: &amp;amp;quot;Emergency Department Visit&amp;amp;quot;] LastED\r\n\t\t\t  where LastED.status = 'finished'\r\n          and LastED.period ends 1 hour or less on or before VisitStart\r\n\t\t\t  sort by\tend of period\r\n    \t),\r\n    \tVisitStartWithED: Coalesce(start of EDVisit.period, VisitStart),\r\n    \tOutpatientSurgeryVisit: Last([Encounter: &amp;amp;quot;Outpatient Surgery Service&amp;amp;quot;] LastSurgeryOP\r\n\t\t\t  where LastSurgeryOP.period ends 1 hour or less on or before VisitStartWithED\r\n\t\t\t  sort by\tend of period\r\n    \t)\r\n  \treturn Interval[Coalesce(start of OutpatientSurgeryVisit.period, VisitStartWithED), end of Visit.period]\r\n\r\n/*\r\nHospitalization with Observation returns the total interval from the start of any immediately prior emergency department visit through the observation visit to the discharge of the given encounter\r\n*/\r\ndefine function &amp;amp;quot;HospitalizationWithObservation&amp;amp;quot;(TheEncounter Encounter ):\r\n  TheEncounter Visit\r\n  \t\tlet ObsVisit: Last([Encounter: &amp;amp;quot;Observation Services&amp;amp;quot;] LastObs\r\n  \t\t\t\twhere LastObs.status = 'finished'\r\n            and LastObs.period ends 1 hour or less on or before start of Visit.period\r\n  \t\t\t\tsort by end of period\r\n  \t\t\t),\r\n  \t\t\tVisitStart: Coalesce(start of ObsVisit.period, start of Visit.period),\r\n  \t\t\tEDVisit: Last([Encounter: &amp;amp;quot;Emergency Department Visit&amp;amp;quot;] LastED\r\n  \t\t\t\twhere LastED.status = 'finished'\r\n            and LastED.period ends 1 hour or less on or before VisitStart\r\n  \t\t\t\tsort by end of period\r\n  \t\t\t)\r\n  \t\treturn Interval[Coalesce(start of EDVisit.period, VisitStart), end of Visit.period]\r\n\r\n/*\r\nHospitalization with Observation returns the total interval from the start of any immediately prior emergency department visit through the observation visit to the discharge of the given encounter\r\n*/\r\ndefine fluent function hospitalizationWithObservation(TheEncounter Encounter ):\r\n  TheEncounter Visit\r\n  \t\tlet ObsVisit: Last([Encounter: &amp;amp;quot;Observation Services&amp;amp;quot;] LastObs\r\n  \t\t\t\twhere LastObs.status = 'finished'\r\n            and LastObs.period ends 1 hour or less on or before start of Visit.period\r\n  \t\t\t\tsort by end of period\r\n  \t\t\t),\r\n  \t\t\tVisitStart: Coalesce(start of ObsVisit.period, start of Visit.period),\r\n  \t\t\tEDVisit: Last([Encounter: &amp;amp;quot;Emergency Department Visit&amp;amp;quot;] LastED\r\n  \t\t\t\twhere LastED.status = 'finished'\r\n            and LastED.period ends 1 hour or less on or before VisitStart\r\n  \t\t\t\tsort by end of period\r\n  \t\t\t)\r\n  \t\treturn Interval[Coalesce(start of EDVisit.period, VisitStart), end of Visit.period]\r\n\r\n/*\r\nHospitalization with Observation Length of Stay returns the length in days from the start of any immediately prior emergency department visit through the observation visit to the discharge of the given encounter\r\n*/\r\ndefine function &amp;amp;quot;HospitalizationWithObservationLengthofStay&amp;amp;quot;(TheEncounter &amp;amp;quot;Encounter&amp;amp;quot; ):\r\n  &amp;amp;quot;LengthInDays&amp;amp;quot;(&amp;amp;quot;HospitalizationWithObservation&amp;amp;quot;(TheEncounter))\r\n\r\n/*\r\nHospitalization with Observation Length of Stay returns the length in days from the start of any immediately prior emergency department visit through the observation visit to the discharge of the given encounter\r\n*/\r\ndefine fluent function hospitalizationWithObservationLengthofStay(TheEncounter &amp;amp;quot;Encounter&amp;amp;quot; ):\r\n  &amp;amp;quot;LengthInDays&amp;amp;quot;(&amp;amp;quot;HospitalizationWithObservation&amp;amp;quot;(TheEncounter))\r\n\r\n/*\r\nFirst Inpatient Intensive Care Unit returns the first intensive care unit for the given encounter, without considering any immediately prior emergency department visit.\r\n*/\r\ndefine function &amp;amp;quot;FirstInpatientIntensiveCareUnit&amp;amp;quot;(Encounter Encounter ):\r\n  First((Encounter.location)HospitalLocation\r\n  \t\t\twhere GetLocation(HospitalLocation.location).type in &amp;amp;quot;Intensive Care Unit&amp;amp;quot;\r\n  \t\t\t\tand HospitalLocation.period during Encounter.period\r\n  \t\t\tsort by start of period\r\n  \t)\r\n\r\n/*\r\nFirst Inpatient Intensive Care Unit returns the first intensive care unit for the given encounter, without considering any immediately prior emergency department visit.\r\n*/\r\ndefine fluent function firstInpatientIntensiveCareUnit(Encounter Encounter ):\r\n  First((Encounter.location)HospitalLocation\r\n  \t\t\twhere GetLocation(HospitalLocation.location).type in &amp;amp;quot;Intensive Care Unit&amp;amp;quot;\r\n  \t\t\t\tand HospitalLocation.period during Encounter.period\r\n  \t\t\tsort by start of period\r\n  \t)\r\n\r\n/*\r\nReturns the Condition resources referenced by the diagnosis element of the Encounter\r\n*/\r\ndefine function &amp;amp;quot;EncounterDiagnosis&amp;amp;quot;(Encounter Encounter ):\r\n  Encounter.diagnosis D\r\n\treturn singleton from ([Condition] C where C.id = D.condition.reference.getId())\r\n\r\n/*\r\nReturns the Condition resources referenced by the diagnosis element of the Encounter\r\n*/\r\ndefine fluent function encounterDiagnosis(Encounter Encounter ):\r\n  Encounter.diagnosis D\r\n    return singleton from ([Condition] C where C.id = D.condition.reference.getId())\r\n\r\n/*\r\nReturns the Condition resource for the given reference\r\n@deprecated\r\n*/\r\ndefine function &amp;amp;quot;GetCondition&amp;amp;quot;(reference Reference):\r\n  singleton from ([Condition] C where C.id = reference.reference.getId())\r\n\r\n/*\r\nReturns the Condition resource for the given reference\r\n*/\r\ndefine fluent function getCondition(reference Reference):\r\n  singleton from ([Condition] C where C.id = reference.reference.getId())\r\n\r\n/*\r\nReturns the condition that is specified as the principal diagnosis for the encounter\r\n*/\r\ndefine function &amp;amp;quot;PrincipalDiagnosis&amp;amp;quot;(Encounter Encounter ):\r\n\tsingleton from ((Encounter.diagnosis D where D.rank = 1) PD\r\n      return singleton from ([Condition] C where C.id = PD.condition.reference.getId())\r\n\t)\r\n\r\n/*\r\nReturns the condition that is specified as the principal diagnosis for the encounter\r\n*/\r\ndefine fluent function principalDiagnosis(Encounter Encounter ):\r\n\tsingleton from ((Encounter.diagnosis D where D.rank = 1) PD\r\n      return singleton from ([Condition] C where C.id = PD.condition.reference.getId())\r\n\t)\r\n\r\n/*\r\nReturns the Location resource specified by the given reference\r\n*/\r\ndefine function &amp;amp;quot;GetLocation&amp;amp;quot;(reference Reference ):\r\n  singleton from (\r\n    [Location] L where L.id = reference.reference.getId()\r\n  )\r\n\r\n/*\r\nReturns the Location resource specified by the given reference\r\n*/\r\ndefine fluent function getLocation(reference Reference ):\r\n  singleton from (\r\n    [Location] L where L.id = reference.reference.getId()\r\n  )\r\n\r\n/*\r\nReturns the medication code for the given MedicationRequest\r\n*/\r\ndefine function &amp;amp;quot;GetMedicationCode&amp;amp;quot;(request MedicationRequest ):\r\n  if request.medication is Concept then\r\n  \t  request.medication as Concept\r\n  \telse\r\n  \t  (singleton from ([Medication] M where M.id = (request.medication as Reference).reference.getId())).code\r\n\r\n/*\r\nReturns the medication code for the given MedicationRequest\r\n*/\r\ndefine fluent function getMedicationCode(request MedicationRequest ):\r\n  if request.medication is Concept then\r\n  \t  request.medication as Concept\r\n  \telse\r\n  \t  (singleton from ([Medication] M where M.id = (request.medication as Reference).reference.getId())).code\r\n\r\n&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;\r\n            &lt;/table&gt;\r\n          &lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        \r\n    &lt;/table&gt;\r\n&lt;/div&gt;"<a name="end-xhtml"></a>
+  },
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueReference</a>" : {
+        "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Device/cqf-tooling"
+      }
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.url">url</a>" : "http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsQICore4",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.version">version</a>" : "0.1.0",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.name">name</a>" : "MATGlobalCommonFunctionsQICore4",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.status">status</a>" : "draft",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.date">date</a>" : "2023-03-21T15:20:25-06:00",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.publisher">publisher</a>" : "HL7 International - [Some] Work Group",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.contact">contact</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "http://hl7.org/Special/committees/[something]"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.jurisdiction">jurisdiction</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "urn:iso:std:iso:3166",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "US"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.content">content</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.contentType">contentType</a>" : "text/cql",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.data">data</a>" : "LyoNCkB1cGRhdGU6IEJUUiAyMDIwLTAzLTMxIC0+DQpJbmNyZW1lbnRlZCB2ZXJzaW9uIHRvIDUuMC4wMDANClVwZGF0ZWQgRkhJUiB2ZXJzaW9uIHRvIDQuMC4xDQpDaGFuZ2VkIHRpbWV6b25lIGtleXdvcmQgdG8gdGltZXpvbmVvZmZzZXQgZm9yIHVzZSB3aXRoIENRTCAxLjQNClJlbW92ZWQgTm9ybWFsaXplIE9uc2V0IGluIGZhdm9yIG9mIG1vcmUgZ2VuZXJhbCBOb3JtYWxpemUgSW50ZXJ2YWwNClVwZGF0ZWQgQ29kZVN5c3RlbXMgZm9yIENvbmRpdGlvblZlcmlmaWNhdGlvblN0YXR1c0NvZGVzIGFuZCBSb2xlQ29kZXMNCg0KQHVwZGF0ZTogQlRSIDIwMjEtMDUtMTMgLT4NCkFkZGVkIEFjdGl2ZUNvbmRpdGlvbiBDb2RlcyBhbmQgSW5hY3RpdmUgQ29uZGl0aW9uIENvZGVzIHZhbHVlIHNldHMNCkFkZGVkIGZ1bmN0aW9uIGRvY3VtZW50YXRpb24gdGhyb3VnaG91dA0KRml4ZWQgRURWaXNpdCBub3QgdXNpbmcgTGFzdA0KVXBkYXRlZCBwcmV2YWxlbmNlIHBlcmlvZCB0byB1c2UgYW4gaW5jbHVzaXZlIGJvdW5kYXJ5IGlmIHRoZSBjb25kaXRpb24gaXMgYWN0aXZlDQpBZGRlZCBIYXNTdGFydCwgSGFzRW5kLCBFYXJsaWVzdCwgYW5kIExhdGVzdCBmdW5jdGlvbnMNClJlbW92ZWQgVG9EYXRlIGFuZCBBZ2UgY2FsY3VsYXRpb24gZnVuY3Rpb25zDQoNCkB1cGRhdGU6IEJUUiAyMDIxLTA2LTI1IC0+DQpBZGRlZCBHZXRCYXNlRXh0ZW5zaW9uIG92ZXJsb2FkcyBmb3IgRWxlbWVudA0KDQpAdXBkYXRlOiBCVFIgMjAyMi0wNS0yNCAtPg0KVXBkYXRlIGZvciAyMDIyIEFVIGNvbnRlbnQNClJlZmFjdG9yIHRvIHVzZSBDUUYuRkhJUkNvbW1vbg0KDQpAdXBkYXRlOiBCVFIgMjAyMi0wNi0xNCAtPg0KVXBkYXRlIHRvIHVzZSBRSUNvcmUNClJlbmFtZSBmcm9tIE1BVEdsb2JhbENvbW1vbkZ1bmN0aW9uc0ZISVI0IHRvIE1BVEdsb2JhbENvbW1vbkZ1bmN0aW9uc1FJQ29yZTQNCkFkZGVkIGZsdWVudCBmdW5jdGlvbnMNClJlbW92ZWQgTm9ybWFsaXplIEludGVydmFsDQoqLw0KbGlicmFyeSBNQVRHbG9iYWxDb21tb25GdW5jdGlvbnNRSUNvcmU0IHZlcnNpb24gJzcuMC4wMDAnDQoNCnVzaW5nIFFJQ29yZSB2ZXJzaW9uICc0LjEuMScNCg0KaW5jbHVkZSBGSElSSGVscGVycyB2ZXJzaW9uICc0LjAuMDEzJyBjYWxsZWQgRkhJUkhlbHBlcnMNCmluY2x1ZGUgUUlDb3JlQ29tbW9uIHZlcnNpb24gJzEuMC4wMDAnIGNhbGxlZCBRSUNvcmVDb21tb24NCg0KdmFsdWVzZXQgIkVtZXJnZW5jeSBEZXBhcnRtZW50IFZpc2l0IjogJ2h0dHA6Ly9jdHMubmxtLm5paC5nb3YvZmhpci9WYWx1ZVNldC8yLjE2Ljg0MC4xLjExMzg4My4zLjExNy4xLjcuMS4yOTInDQp2YWx1ZXNldCAiRW5jb3VudGVyIElucGF0aWVudCI6ICdodHRwOi8vY3RzLm5sbS5uaWguZ292L2ZoaXIvVmFsdWVTZXQvMi4xNi44NDAuMS4xMTM4ODMuMy42NjYuNS4zMDcnDQp2YWx1ZXNldCAiSW50ZW5zaXZlIENhcmUgVW5pdCI6ICdodHRwOi8vY3RzLm5sbS5uaWguZ292L2ZoaXIvVmFsdWVTZXQvMi4xNi44NDAuMS4xMTM3NjIuMS40LjEwMjkuMjA2Jw0KdmFsdWVzZXQgIk9ic2VydmF0aW9uIFNlcnZpY2VzIjogJ2h0dHA6Ly9jdHMubmxtLm5paC5nb3YvZmhpci9WYWx1ZVNldC8yLjE2Ljg0MC4xLjExMzc2Mi4xLjQuMTExMS4xNDMnDQp2YWx1ZXNldCAiT3V0cGF0aWVudCBTdXJnZXJ5IFNlcnZpY2UiOiAnaHR0cDovL2N0cy5ubG0ubmloLmdvdi9maGlyL1ZhbHVlU2V0LzIuMTYuODQwLjEuMTEzNzYyLjEuNC4xMTEwLjM4Jw0KdmFsdWVzZXQgIlByZXNlbnQgb24gQWRtaXNzaW9uIG9yIENsaW5pY2FsbHkgVW5kZXRlcm1pbmVkIjogJ2h0dHA6Ly9jdHMubmxtLm5paC5nb3YvZmhpci9WYWx1ZVNldC8yLjE2Ljg0MC4xLjExMzc2Mi4xLjQuMTE0Ny4xOTcnDQoNCnBhcmFtZXRlciAiTWVhc3VyZW1lbnQgUGVyaW9kIiBJbnRlcnZhbDxEYXRlVGltZT4NCiAgZGVmYXVsdCBJbnRlcnZhbFtAMjAyMi0wMS0wMVQwMDowMDowMC4wLCBAMjAyMy0wMS0wMVQwMDowMDowMC4wKQ0KDQpjb250ZXh0IFBhdGllbnQNCg0KZGVmaW5lICJJbnBhdGllbnQgRW5jb3VudGVyIjoNCiAgW0VuY291bnRlcjogIkVuY291bnRlciBJbnBhdGllbnQiXSBFbmNvdW50ZXJJbnBhdGllbnQNCgkJd2hlcmUgRW5jb3VudGVySW5wYXRpZW50LnN0YXR1cyA9ICdmaW5pc2hlZCcNCgkgICAgYW5kICJMZW5ndGhJbkRheXMiKEVuY291bnRlcklucGF0aWVudC5wZXJpb2QpIDw9IDEyMA0KCQkJYW5kIEVuY291bnRlcklucGF0aWVudC5wZXJpb2QgZW5kcyBkdXJpbmcgZGF5IG9mICJNZWFzdXJlbWVudCBQZXJpb2QiDQoNCi8qDQpAZGVzY3JpcHRpb246IFJldHVybnMgYW4gaW50ZXJ2YWwgb2YgZGF0ZSB2YWx1ZXMgZXh0cmFjdGVkIGZyb20gdGhlIGlucHV0IGludGVydmFsIG9mIGRhdGUtdGltZSB2YWx1ZXMNCkBjb21tZW50OiBUaGlzIGZ1bmN0aW9uIHJldHVybnMgYW4gaW50ZXJ2YWwgY29uc3RydWN0ZWQgdXNpbmcgdGhlIGBkYXRlIGZyb21gIGV4dHJhY3RvciBvbiB0aGUgc3RhcnQNCmFuZCBlbmQgdmFsdWVzIG9mIHRoZSBpbnB1dCBkYXRlLXRpbWUgaW50ZXJ2YWwuIE5vdGUgdGhhdCB1c2luZyBhIHByZWNpc2lvbiBzcGVjaWZpZXIgc3VjaCBhcyBgZGF5IG9mYA0KYXMgcGFydCBvZiBhIHRpbWluZyBwaHJhc2UgaXMgcHJlZmVycmVkIHRvIGNvbW11bmljYXRlIGludGVudCB0byBwZXJmb3JtIGRheS1sZXZlbCBjb21wYXJpc29uLCBhcyB3ZWxsDQphcyBmb3IgZ2VuZXJhbCByZWFkYWJpbGl0eS4NCiovDQpkZWZpbmUgZnVuY3Rpb24gIlRvRGF0ZUludGVydmFsIihwZXJpb2QgSW50ZXJ2YWw8RGF0ZVRpbWU+KToNCiAgSW50ZXJ2YWxbZGF0ZSBmcm9tIHN0YXJ0IG9mIHBlcmlvZCwgZGF0ZSBmcm9tIGVuZCBvZiBwZXJpb2RdDQoNCi8qDQpDYWxjdWxhdGVzIHRoZSBkaWZmZXJlbmNlIGluIGNhbGVuZGFyIGRheXMgYmV0d2VlbiB0aGUgc3RhcnQgYW5kIGVuZCBvZiB0aGUgZ2l2ZW4gaW50ZXJ2YWwuDQoqLw0KZGVmaW5lIGZ1bmN0aW9uICJMZW5ndGhJbkRheXMiKFZhbHVlIEludGVydmFsPERhdGVUaW1lPiApOg0KICBkaWZmZXJlbmNlIGluIGRheXMgYmV0d2VlbiBzdGFydCBvZiBWYWx1ZSBhbmQgZW5kIG9mIFZhbHVlDQoNCi8qDQpDYWxjdWxhdGVzIHRoZSBkaWZmZXJlbmNlIGluIGNhbGVuZGFyIGRheXMgYmV0d2VlbiB0aGUgc3RhcnQgYW5kIGVuZCBvZiB0aGUgZ2l2ZW4gaW50ZXJ2YWwuDQoqLw0KZGVmaW5lIGZsdWVudCBmdW5jdGlvbiBsZW5ndGhJbkRheXMoVmFsdWUgSW50ZXJ2YWw8RGF0ZVRpbWU+ICk6DQogIGRpZmZlcmVuY2UgaW4gZGF5cyBiZXR3ZWVuIHN0YXJ0IG9mIFZhbHVlIGFuZCBlbmQgb2YgVmFsdWUNCg0KLyoNClJldHVybnMgdGhlIG1vc3QgcmVjZW50IGVtZXJnZW5jeSBkZXBhcnRtZW50IHZpc2l0LCBpZiBhbnksIHRoYXQgb2NjdXJzIDEgaG91ciBvciBsZXNzIHByaW9yIHRvIHRoZSBnaXZlbiBlbmNvdW50ZXIuDQoqLw0KZGVmaW5lIGZ1bmN0aW9uICJFRCBWaXNpdCIoVGhlRW5jb3VudGVyIEVuY291bnRlciApOg0KICBMYXN0KA0KICAgIFtFbmNvdW50ZXI6ICJFbWVyZ2VuY3kgRGVwYXJ0bWVudCBWaXNpdCJdIEVEVmlzaXQNCiAgICAgIHdoZXJlIEVEVmlzaXQuc3RhdHVzID0gJ2ZpbmlzaGVkJw0KICAgICAgICBhbmQgRURWaXNpdC5wZXJpb2QgZW5kcyAxIGhvdXIgb3IgbGVzcyBvbiBvciBiZWZvcmUgc3RhcnQgb2YgVGhlRW5jb3VudGVyLnBlcmlvZA0KICAgICAgc29ydCBieSBlbmQgb2YgcGVyaW9kDQogICAgKQ0KDQovKg0KUmV0dXJucyB0aGUgbW9zdCByZWNlbnQgZW1lcmdlbmN5IGRlcGFydG1lbnQgdmlzaXQsIGlmIGFueSwgdGhhdCBvY2N1cnMgMSBob3VyIG9yIGxlc3MgcHJpb3IgdG8gdGhlIGdpdmVuIGVuY291bnRlci4NCiovDQpkZWZpbmUgZmx1ZW50IGZ1bmN0aW9uIGVkVmlzaXQoVGhlRW5jb3VudGVyIEVuY291bnRlciApOg0KICBMYXN0KA0KICAgIFtFbmNvdW50ZXI6ICJFbWVyZ2VuY3kgRGVwYXJ0bWVudCBWaXNpdCJdIEVEVmlzaXQNCiAgICAgIHdoZXJlIEVEVmlzaXQuc3RhdHVzID0gJ2ZpbmlzaGVkJw0KICAgICAgICBhbmQgRURWaXNpdC5wZXJpb2QgZW5kcyAxIGhvdXIgb3IgbGVzcyBvbiBvciBiZWZvcmUgc3RhcnQgb2YgVGhlRW5jb3VudGVyLnBlcmlvZA0KICAgICAgc29ydCBieSBlbmQgb2YgcGVyaW9kDQogICAgKQ0KDQovKg0KSG9zcGl0YWxpemF0aW9uIHJldHVybnMgdGhlIHRvdGFsIGludGVydmFsIGZvciBhZG1pc3Npb24gdG8gZGlzY2hhcmdlIGZvciB0aGUgZ2l2ZW4gZW5jb3VudGVyLCBvciBmb3IgdGhlIGFkbWlzc2lvbiBvZiBhbnkgaW1tZWRpYXRlbHkgcHJpb3IgZW1lcmdlbmN5IGRlcGFydG1lbnQgdmlzaXQgdG8gdGhlIGRpc2NoYXJnZSBvZiB0aGUgZ2l2ZW4gZW5jb3VudGVyLg0KKi8NCmRlZmluZSBmdW5jdGlvbiAiSG9zcGl0YWxpemF0aW9uIihUaGVFbmNvdW50ZXIgRW5jb3VudGVyICk6DQogICggIkVEIFZpc2l0IihUaGVFbmNvdW50ZXIpICkgWA0KICAgIHJldHVybg0KICAgICAgICBpZiBYIGlzIG51bGwgdGhlbiBUaGVFbmNvdW50ZXIucGVyaW9kDQogICAgICAgIGVsc2UgSW50ZXJ2YWxbc3RhcnQgb2YgWC5wZXJpb2QsIGVuZCBvZiBUaGVFbmNvdW50ZXIucGVyaW9kKQ0KDQovKg0KSG9zcGl0YWxpemF0aW9uIHJldHVybnMgdGhlIHRvdGFsIGludGVydmFsIGZvciBhZG1pc3Npb24gdG8gZGlzY2hhcmdlIGZvciB0aGUgZ2l2ZW4gZW5jb3VudGVyLCBvciBmb3IgdGhlIGFkbWlzc2lvbiBvZiBhbnkgaW1tZWRpYXRlbHkgcHJpb3IgZW1lcmdlbmN5IGRlcGFydG1lbnQgdmlzaXQgdG8gdGhlIGRpc2NoYXJnZSBvZiB0aGUgZ2l2ZW4gZW5jb3VudGVyLg0KKi8NCmRlZmluZSBmbHVlbnQgZnVuY3Rpb24gaG9zcGl0YWxpemF0aW9uKFRoZUVuY291bnRlciBFbmNvdW50ZXIgKToNCiAgKCAiRUQgVmlzaXQiKFRoZUVuY291bnRlcikgKSBYDQogICAgcmV0dXJuDQogICAgICAgIGlmIFggaXMgbnVsbCB0aGVuIFRoZUVuY291bnRlci5wZXJpb2QNCiAgICAgICAgZWxzZSBJbnRlcnZhbFtzdGFydCBvZiBYLnBlcmlvZCwgZW5kIG9mIFRoZUVuY291bnRlci5wZXJpb2RdDQoNCi8qDQpSZXR1cm5zIGxpc3Qgb2YgYWxsIGxvY2F0aW9ucyB3aXRoaW4gYW4gZW5jb3VudGVyLCBpbmNsdWRpbmcgbG9jYXRpb25zIGZvciBpbW1lZGlhdGVseSBwcmlvciBFRCB2aXNpdC4NCiovDQpkZWZpbmUgZnVuY3Rpb24gIkhvc3BpdGFsaXphdGlvbiBMb2NhdGlvbnMiKFRoZUVuY291bnRlciBFbmNvdW50ZXIgKToNCiAgKCAiRUQgVmlzaXQiKFRoZUVuY291bnRlcikgKSBFREVuY291bnRlcg0KICAgIHJldHVybg0KICAgICAgICBpZiBFREVuY291bnRlciBpcyBudWxsIHRoZW4gVGhlRW5jb3VudGVyLmxvY2F0aW9uDQogICAgICAgIGVsc2UgZmxhdHRlbiB7IEVERW5jb3VudGVyLmxvY2F0aW9uLCBUaGVFbmNvdW50ZXIubG9jYXRpb24gfQ0KDQovKg0KUmV0dXJucyBsaXN0IG9mIGFsbCBsb2NhdGlvbnMgd2l0aGluIGFuIGVuY291bnRlciwgaW5jbHVkaW5nIGxvY2F0aW9ucyBmb3IgaW1tZWRpYXRlbHkgcHJpb3IgRUQgdmlzaXQuDQoqLw0KZGVmaW5lIGZsdWVudCBmdW5jdGlvbiBob3NwaXRhbGl6YXRpb25Mb2NhdGlvbnMoVGhlRW5jb3VudGVyIEVuY291bnRlciApOg0KICAoICJFRCBWaXNpdCIoVGhlRW5jb3VudGVyKSApIEVERW5jb3VudGVyDQogICAgcmV0dXJuDQogICAgICAgIGlmIEVERW5jb3VudGVyIGlzIG51bGwgdGhlbiBUaGVFbmNvdW50ZXIubG9jYXRpb24NCiAgICAgICAgZWxzZSBmbGF0dGVuIHsgRURFbmNvdW50ZXIubG9jYXRpb24sIFRoZUVuY291bnRlci5sb2NhdGlvbiB9DQoNCi8qDQpSZXR1cm5zIHRoZSBsZW5ndGggb2Ygc3RheSBpbiBkYXlzIChpLmUuIHRoZSBudW1iZXIgb2YgZGF5cyBiZXR3ZWVuIGFkbWlzc2lvbiBhbmQgZGlzY2hhcmdlKSBmb3IgdGhlIGdpdmVuIGVuY291bnRlciwgb3IgZnJvbSB0aGUgYWRtaXNzaW9uIG9mIGFueSBpbW1lZGlhdGVseSBwcmlvciBlbWVyZ2VuY3kgZGVwYXJ0bWVudCB2aXNpdCB0byB0aGUgZGlzY2hhcmdlIG9mIHRoZSBlbmNvdW50ZXINCiovDQpkZWZpbmUgZnVuY3Rpb24gIkhvc3BpdGFsaXphdGlvbiBMZW5ndGggb2YgU3RheSIoVGhlRW5jb3VudGVyIEVuY291bnRlciApOg0KICBMZW5ndGhJbkRheXMoIkhvc3BpdGFsaXphdGlvbiIoVGhlRW5jb3VudGVyKSkNCg0KLyoNClJldHVybnMgdGhlIGxlbmd0aCBvZiBzdGF5IGluIGRheXMgKGkuZS4gdGhlIG51bWJlciBvZiBkYXlzIGJldHdlZW4gYWRtaXNzaW9uIGFuZCBkaXNjaGFyZ2UpIGZvciB0aGUgZ2l2ZW4gZW5jb3VudGVyLCBvciBmcm9tIHRoZSBhZG1pc3Npb24gb2YgYW55IGltbWVkaWF0ZWx5IHByaW9yIGVtZXJnZW5jeSBkZXBhcnRtZW50IHZpc2l0IHRvIHRoZSBkaXNjaGFyZ2Ugb2YgdGhlIGVuY291bnRlcg0KKi8NCmRlZmluZSBmbHVlbnQgZnVuY3Rpb24gaG9zcGl0YWxpemF0aW9uTGVuZ3RoT2ZTdGF5KFRoZUVuY291bnRlciBFbmNvdW50ZXIgKToNCiAgTGVuZ3RoSW5EYXlzKCJIb3NwaXRhbGl6YXRpb24iKFRoZUVuY291bnRlcikpDQoNCi8qDQpSZXR1cm5zIGFkbWlzc2lvbiB0aW1lIGZvciBhbiBlbmNvdW50ZXIgb3IgZm9yIGltbWVkaWF0ZWx5IHByaW9yIGVtZXJnZW5jeSBkZXBhcnRtZW50IHZpc2l0Lg0KKi8NCmRlZmluZSBmdW5jdGlvbiAiSG9zcGl0YWwgQWRtaXNzaW9uIFRpbWUiKFRoZUVuY291bnRlciBFbmNvdW50ZXIgKToNCiAgc3RhcnQgb2YgIkhvc3BpdGFsaXphdGlvbiIoVGhlRW5jb3VudGVyKQ0KDQovKg0KUmV0dXJucyBhZG1pc3Npb24gdGltZSBmb3IgYW4gZW5jb3VudGVyIG9yIGZvciBpbW1lZGlhdGVseSBwcmlvciBlbWVyZ2VuY3kgZGVwYXJ0bWVudCB2aXNpdC4NCiovDQpkZWZpbmUgZmx1ZW50IGZ1bmN0aW9uIGhvc3BpdGFsQWRtaXNzaW9uVGltZShUaGVFbmNvdW50ZXIgRW5jb3VudGVyICk6DQogIHN0YXJ0IG9mICJIb3NwaXRhbGl6YXRpb24iKFRoZUVuY291bnRlcikNCg0KLyoNCkhvc3BpdGFsIERpc2NoYXJnZSBUaW1lIHJldHVybnMgdGhlIGRpc2NoYXJnZSB0aW1lIGZvciBhbiBlbmNvdW50ZXINCiovDQpkZWZpbmUgZnVuY3Rpb24gIkhvc3BpdGFsIERpc2NoYXJnZSBUaW1lIihUaGVFbmNvdW50ZXIgRW5jb3VudGVyICk6DQogIGVuZCBvZiBUaGVFbmNvdW50ZXIucGVyaW9kDQoNCi8qDQpIb3NwaXRhbCBEaXNjaGFyZ2UgVGltZSByZXR1cm5zIHRoZSBkaXNjaGFyZ2UgdGltZSBmb3IgYW4gZW5jb3VudGVyDQoqLw0KZGVmaW5lIGZsdWVudCBmdW5jdGlvbiBob3NwaXRhbERpc2NoYXJnZVRpbWUoVGhlRW5jb3VudGVyIEVuY291bnRlciApOg0KICBlbmQgb2YgVGhlRW5jb3VudGVyLnBlcmlvZA0KDQovKg0KUmV0dXJucyBlYXJsaWVzdCBhcnJpdmFsIHRpbWUgZm9yIGFuIGVuY291bnRlciBpbmNsdWRpbmcgYW55IHByaW9yIEVEIHZpc2l0Lg0KKi8NCmRlZmluZSBmdW5jdGlvbiAiSG9zcGl0YWwgQXJyaXZhbCBUaW1lIihUaGVFbmNvdW50ZXIgRW5jb3VudGVyICk6DQogIHN0YXJ0IG9mIEZpcnN0KA0KICAJICAgICggIkhvc3BpdGFsaXphdGlvbiBMb2NhdGlvbnMiKFRoZUVuY291bnRlcikgKSBIb3NwaXRhbExvY2F0aW9uDQogIAkJCXNvcnQgYnkgc3RhcnQgb2YgcGVyaW9kDQogIAkpLnBlcmlvZA0KDQovKg0KUmV0dXJucyBlYXJsaWVzdCBhcnJpdmFsIHRpbWUgZm9yIGFuIGVuY291bnRlciBpbmNsdWRpbmcgYW55IHByaW9yIEVEIHZpc2l0Lg0KKi8NCmRlZmluZSBmbHVlbnQgZnVuY3Rpb24gaG9zcGl0YWxBcnJpdmFsVGltZShUaGVFbmNvdW50ZXIgRW5jb3VudGVyICk6DQogIHN0YXJ0IG9mIEZpcnN0KA0KICAJICAgICggIkhvc3BpdGFsaXphdGlvbiBMb2NhdGlvbnMiKFRoZUVuY291bnRlcikgKSBIb3NwaXRhbExvY2F0aW9uDQogIAkJCXNvcnQgYnkgc3RhcnQgb2YgcGVyaW9kDQogIAkpLnBlcmlvZA0KDQovKg0KUmV0dXJucyB0aGUgbGF0ZXN0IGRlcGFydHVyZSB0aW1lIGZvciBlbmNvdW50ZXIgaW5jbHVkaW5nIGFueSBwcmlvciBFRCB2aXNpdC4gDQoqLw0KZGVmaW5lIGZ1bmN0aW9uICJIb3NwaXRhbCBEZXBhcnR1cmUgVGltZSIoVGhlRW5jb3VudGVyIEVuY291bnRlcik6DQoJZW5kIG9mIExhc3QoDQoJICAgICggIkhvc3BpdGFsaXphdGlvbiBMb2NhdGlvbnMiKFRoZUVuY291bnRlcikgKSBIb3NwaXRhbExvY2F0aW9uDQoJCQlzb3J0IGJ5IHN0YXJ0IG9mIHBlcmlvZA0KCSkucGVyaW9kDQoNCi8qDQpSZXR1cm5zIHRoZSBsYXRlc3QgZGVwYXJ0dXJlIHRpbWUgZm9yIGVuY291bnRlciBpbmNsdWRpbmcgYW55IHByaW9yIEVEIHZpc2l0LiANCiovDQpkZWZpbmUgZmx1ZW50IGZ1bmN0aW9uIGhvc3BpdGFsRGVwYXJ0dXJlVGltZShUaGVFbmNvdW50ZXIgRW5jb3VudGVyKToNCgllbmQgb2YgTGFzdCgNCgkgICAgKCAiSG9zcGl0YWxpemF0aW9uIExvY2F0aW9ucyIoVGhlRW5jb3VudGVyKSApIEhvc3BpdGFsTG9jYXRpb24NCgkJCXNvcnQgYnkgc3RhcnQgb2YgcGVyaW9kDQoJKS5wZXJpb2QNCg0KZGVmaW5lIGZ1bmN0aW9uICJFbWVyZ2VuY3kgRGVwYXJ0bWVudCBBcnJpdmFsIFRpbWUiKFRoZUVuY291bnRlciBFbmNvdW50ZXIpOg0KCXN0YXJ0IG9mICgNCgkgICAgc2luZ2xldG9uIGZyb20gKA0KCSAgICAgICAgKCAiSG9zcGl0YWxpemF0aW9uIExvY2F0aW9ucyIoVGhlRW5jb3VudGVyKSApIEhvc3BpdGFsTG9jYXRpb24NCgkJCQl3aGVyZSBHZXRMb2NhdGlvbihIb3NwaXRhbExvY2F0aW9uLmxvY2F0aW9uKS50eXBlIGluICJFbWVyZ2VuY3kgRGVwYXJ0bWVudCBWaXNpdCINCgkJKQ0KCSkucGVyaW9kDQoNCmRlZmluZSBmbHVlbnQgZnVuY3Rpb24gZW1lcmdlbmN5RGVwYXJ0bWVudEFycml2YWxUaW1lKFRoZUVuY291bnRlciBFbmNvdW50ZXIpOg0KCXN0YXJ0IG9mICgNCgkgICAgc2luZ2xldG9uIGZyb20gKA0KCSAgICAgICAgKCAiSG9zcGl0YWxpemF0aW9uIExvY2F0aW9ucyIoVGhlRW5jb3VudGVyKSApIEhvc3BpdGFsTG9jYXRpb24NCgkJCQl3aGVyZSBHZXRMb2NhdGlvbihIb3NwaXRhbExvY2F0aW9uLmxvY2F0aW9uKS50eXBlIGluICJFbWVyZ2VuY3kgRGVwYXJ0bWVudCBWaXNpdCINCgkJKQ0KCSkucGVyaW9kDQoNCi8qDQpIb3NwaXRhbGl6YXRpb24gd2l0aCBPYnNlcnZhdGlvbiBhbmQgT3V0cGF0aWVudCBTdXJnZXJ5IFNlcnZpY2UgcmV0dXJucyB0aGUgdG90YWwgaW50ZXJ2YWwgZnJvbSB0aGUgc3RhcnQgb2YgYW55IGltbWVkaWF0ZWx5IHByaW9yIGVtZXJnZW5jeSBkZXBhcnRtZW50IHZpc2l0LCBvdXRwYXRpZW50IHN1cmdlcnkgdmlzaXQgb3Igb2JzZXJ2YXRpb24gdmlzaXQgdG8gdGhlIGRpc2NoYXJnZSBvZiB0aGUgZ2l2ZW4gZW5jb3VudGVyLg0KKi8NCmRlZmluZSBmdW5jdGlvbiAiSG9zcGl0YWxpemF0aW9uV2l0aE9ic2VydmF0aW9uQW5kT3V0cGF0aWVudFN1cmdlcnlTZXJ2aWNlIihUaGVFbmNvdW50ZXIgIkVuY291bnRlciIgKToNCiAgVGhlRW5jb3VudGVyIFZpc2l0DQoJICBsZXQgT2JzVmlzaXQ6IExhc3QoW0VuY291bnRlcjogIk9ic2VydmF0aW9uIFNlcnZpY2VzIl0gTGFzdE9icw0KCQkgIAl3aGVyZSBMYXN0T2JzLnN0YXR1cyA9ICdmaW5pc2hlZCcNCiAgICAgICAgICBhbmQgTGFzdE9icy5wZXJpb2QgZW5kcyAxIGhvdXIgb3IgbGVzcyBvbiBvciBiZWZvcmUgc3RhcnQgb2YgVmlzaXQucGVyaW9kDQoJCQkgIHNvcnQgYnkJZW5kIG9mIHBlcmlvZA0KICAgIAkpLA0KICAgIAlWaXNpdFN0YXJ0OiBDb2FsZXNjZShzdGFydCBvZiBPYnNWaXNpdC5wZXJpb2QsIHN0YXJ0IG9mIFZpc2l0LnBlcmlvZCksDQogICAgCUVEVmlzaXQ6IExhc3QoW0VuY291bnRlcjogIkVtZXJnZW5jeSBEZXBhcnRtZW50IFZpc2l0Il0gTGFzdEVEDQoJCQkgIHdoZXJlIExhc3RFRC5zdGF0dXMgPSAnZmluaXNoZWQnDQogICAgICAgICAgYW5kIExhc3RFRC5wZXJpb2QgZW5kcyAxIGhvdXIgb3IgbGVzcyBvbiBvciBiZWZvcmUgVmlzaXRTdGFydA0KCQkJICBzb3J0IGJ5CWVuZCBvZiBwZXJpb2QNCiAgICAJKSwNCiAgICAJVmlzaXRTdGFydFdpdGhFRDogQ29hbGVzY2Uoc3RhcnQgb2YgRURWaXNpdC5wZXJpb2QsIFZpc2l0U3RhcnQpLA0KICAgIAlPdXRwYXRpZW50U3VyZ2VyeVZpc2l0OiBMYXN0KFtFbmNvdW50ZXI6ICJPdXRwYXRpZW50IFN1cmdlcnkgU2VydmljZSJdIExhc3RTdXJnZXJ5T1ANCgkJCSAgd2hlcmUgTGFzdFN1cmdlcnlPUC5wZXJpb2QgZW5kcyAxIGhvdXIgb3IgbGVzcyBvbiBvciBiZWZvcmUgVmlzaXRTdGFydFdpdGhFRA0KCQkJICBzb3J0IGJ5CWVuZCBvZiBwZXJpb2QNCiAgICAJKQ0KICAJcmV0dXJuIEludGVydmFsW0NvYWxlc2NlKHN0YXJ0IG9mIE91dHBhdGllbnRTdXJnZXJ5VmlzaXQucGVyaW9kLCBWaXNpdFN0YXJ0V2l0aEVEKSwgZW5kIG9mIFZpc2l0LnBlcmlvZF0NCg0KLyoNCkhvc3BpdGFsaXphdGlvbiB3aXRoIE9ic2VydmF0aW9uIGFuZCBPdXRwYXRpZW50IFN1cmdlcnkgU2VydmljZSByZXR1cm5zIHRoZSB0b3RhbCBpbnRlcnZhbCBmcm9tIHRoZSBzdGFydCBvZiBhbnkgaW1tZWRpYXRlbHkgcHJpb3IgZW1lcmdlbmN5IGRlcGFydG1lbnQgdmlzaXQsIG91dHBhdGllbnQgc3VyZ2VyeSB2aXNpdCBvciBvYnNlcnZhdGlvbiB2aXNpdCB0byB0aGUgZGlzY2hhcmdlIG9mIHRoZSBnaXZlbiBlbmNvdW50ZXIuDQoqLw0KZGVmaW5lIGZsdWVudCBmdW5jdGlvbiBob3NwaXRhbGl6YXRpb25XaXRoT2JzZXJ2YXRpb25BbmRPdXRwYXRpZW50U3VyZ2VyeVNlcnZpY2UoVGhlRW5jb3VudGVyICJFbmNvdW50ZXIiICk6DQogIFRoZUVuY291bnRlciBWaXNpdA0KCSAgbGV0IE9ic1Zpc2l0OiBMYXN0KFtFbmNvdW50ZXI6ICJPYnNlcnZhdGlvbiBTZXJ2aWNlcyJdIExhc3RPYnMNCgkJICAJd2hlcmUgTGFzdE9icy5zdGF0dXMgPSAnZmluaXNoZWQnDQogICAgICAgICAgYW5kIExhc3RPYnMucGVyaW9kIGVuZHMgMSBob3VyIG9yIGxlc3Mgb24gb3IgYmVmb3JlIHN0YXJ0IG9mIFZpc2l0LnBlcmlvZA0KCQkJICBzb3J0IGJ5CWVuZCBvZiBwZXJpb2QNCiAgICAJKSwNCiAgICAJVmlzaXRTdGFydDogQ29hbGVzY2Uoc3RhcnQgb2YgT2JzVmlzaXQucGVyaW9kLCBzdGFydCBvZiBWaXNpdC5wZXJpb2QpLA0KICAgIAlFRFZpc2l0OiBMYXN0KFtFbmNvdW50ZXI6ICJFbWVyZ2VuY3kgRGVwYXJ0bWVudCBWaXNpdCJdIExhc3RFRA0KCQkJICB3aGVyZSBMYXN0RUQuc3RhdHVzID0gJ2ZpbmlzaGVkJw0KICAgICAgICAgIGFuZCBMYXN0RUQucGVyaW9kIGVuZHMgMSBob3VyIG9yIGxlc3Mgb24gb3IgYmVmb3JlIFZpc2l0U3RhcnQNCgkJCSAgc29ydCBieQllbmQgb2YgcGVyaW9kDQogICAgCSksDQogICAgCVZpc2l0U3RhcnRXaXRoRUQ6IENvYWxlc2NlKHN0YXJ0IG9mIEVEVmlzaXQucGVyaW9kLCBWaXNpdFN0YXJ0KSwNCiAgICAJT3V0cGF0aWVudFN1cmdlcnlWaXNpdDogTGFzdChbRW5jb3VudGVyOiAiT3V0cGF0aWVudCBTdXJnZXJ5IFNlcnZpY2UiXSBMYXN0U3VyZ2VyeU9QDQoJCQkgIHdoZXJlIExhc3RTdXJnZXJ5T1AucGVyaW9kIGVuZHMgMSBob3VyIG9yIGxlc3Mgb24gb3IgYmVmb3JlIFZpc2l0U3RhcnRXaXRoRUQNCgkJCSAgc29ydCBieQllbmQgb2YgcGVyaW9kDQogICAgCSkNCiAgCXJldHVybiBJbnRlcnZhbFtDb2FsZXNjZShzdGFydCBvZiBPdXRwYXRpZW50U3VyZ2VyeVZpc2l0LnBlcmlvZCwgVmlzaXRTdGFydFdpdGhFRCksIGVuZCBvZiBWaXNpdC5wZXJpb2RdDQoNCi8qDQpIb3NwaXRhbGl6YXRpb24gd2l0aCBPYnNlcnZhdGlvbiByZXR1cm5zIHRoZSB0b3RhbCBpbnRlcnZhbCBmcm9tIHRoZSBzdGFydCBvZiBhbnkgaW1tZWRpYXRlbHkgcHJpb3IgZW1lcmdlbmN5IGRlcGFydG1lbnQgdmlzaXQgdGhyb3VnaCB0aGUgb2JzZXJ2YXRpb24gdmlzaXQgdG8gdGhlIGRpc2NoYXJnZSBvZiB0aGUgZ2l2ZW4gZW5jb3VudGVyDQoqLw0KZGVmaW5lIGZ1bmN0aW9uICJIb3NwaXRhbGl6YXRpb25XaXRoT2JzZXJ2YXRpb24iKFRoZUVuY291bnRlciBFbmNvdW50ZXIgKToNCiAgVGhlRW5jb3VudGVyIFZpc2l0DQogIAkJbGV0IE9ic1Zpc2l0OiBMYXN0KFtFbmNvdW50ZXI6ICJPYnNlcnZhdGlvbiBTZXJ2aWNlcyJdIExhc3RPYnMNCiAgCQkJCXdoZXJlIExhc3RPYnMuc3RhdHVzID0gJ2ZpbmlzaGVkJw0KICAgICAgICAgICAgYW5kIExhc3RPYnMucGVyaW9kIGVuZHMgMSBob3VyIG9yIGxlc3Mgb24gb3IgYmVmb3JlIHN0YXJ0IG9mIFZpc2l0LnBlcmlvZA0KICAJCQkJc29ydCBieSBlbmQgb2YgcGVyaW9kDQogIAkJCSksDQogIAkJCVZpc2l0U3RhcnQ6IENvYWxlc2NlKHN0YXJ0IG9mIE9ic1Zpc2l0LnBlcmlvZCwgc3RhcnQgb2YgVmlzaXQucGVyaW9kKSwNCiAgCQkJRURWaXNpdDogTGFzdChbRW5jb3VudGVyOiAiRW1lcmdlbmN5IERlcGFydG1lbnQgVmlzaXQiXSBMYXN0RUQNCiAgCQkJCXdoZXJlIExhc3RFRC5zdGF0dXMgPSAnZmluaXNoZWQnDQogICAgICAgICAgICBhbmQgTGFzdEVELnBlcmlvZCBlbmRzIDEgaG91ciBvciBsZXNzIG9uIG9yIGJlZm9yZSBWaXNpdFN0YXJ0DQogIAkJCQlzb3J0IGJ5IGVuZCBvZiBwZXJpb2QNCiAgCQkJKQ0KICAJCXJldHVybiBJbnRlcnZhbFtDb2FsZXNjZShzdGFydCBvZiBFRFZpc2l0LnBlcmlvZCwgVmlzaXRTdGFydCksIGVuZCBvZiBWaXNpdC5wZXJpb2RdDQoNCi8qDQpIb3NwaXRhbGl6YXRpb24gd2l0aCBPYnNlcnZhdGlvbiByZXR1cm5zIHRoZSB0b3RhbCBpbnRlcnZhbCBmcm9tIHRoZSBzdGFydCBvZiBhbnkgaW1tZWRpYXRlbHkgcHJpb3IgZW1lcmdlbmN5IGRlcGFydG1lbnQgdmlzaXQgdGhyb3VnaCB0aGUgb2JzZXJ2YXRpb24gdmlzaXQgdG8gdGhlIGRpc2NoYXJnZSBvZiB0aGUgZ2l2ZW4gZW5jb3VudGVyDQoqLw0KZGVmaW5lIGZsdWVudCBmdW5jdGlvbiBob3NwaXRhbGl6YXRpb25XaXRoT2JzZXJ2YXRpb24oVGhlRW5jb3VudGVyIEVuY291bnRlciApOg0KICBUaGVFbmNvdW50ZXIgVmlzaXQNCiAgCQlsZXQgT2JzVmlzaXQ6IExhc3QoW0VuY291bnRlcjogIk9ic2VydmF0aW9uIFNlcnZpY2VzIl0gTGFzdE9icw0KICAJCQkJd2hlcmUgTGFzdE9icy5zdGF0dXMgPSAnZmluaXNoZWQnDQogICAgICAgICAgICBhbmQgTGFzdE9icy5wZXJpb2QgZW5kcyAxIGhvdXIgb3IgbGVzcyBvbiBvciBiZWZvcmUgc3RhcnQgb2YgVmlzaXQucGVyaW9kDQogIAkJCQlzb3J0IGJ5IGVuZCBvZiBwZXJpb2QNCiAgCQkJKSwNCiAgCQkJVmlzaXRTdGFydDogQ29hbGVzY2Uoc3RhcnQgb2YgT2JzVmlzaXQucGVyaW9kLCBzdGFydCBvZiBWaXNpdC5wZXJpb2QpLA0KICAJCQlFRFZpc2l0OiBMYXN0KFtFbmNvdW50ZXI6ICJFbWVyZ2VuY3kgRGVwYXJ0bWVudCBWaXNpdCJdIExhc3RFRA0KICAJCQkJd2hlcmUgTGFzdEVELnN0YXR1cyA9ICdmaW5pc2hlZCcNCiAgICAgICAgICAgIGFuZCBMYXN0RUQucGVyaW9kIGVuZHMgMSBob3VyIG9yIGxlc3Mgb24gb3IgYmVmb3JlIFZpc2l0U3RhcnQNCiAgCQkJCXNvcnQgYnkgZW5kIG9mIHBlcmlvZA0KICAJCQkpDQogIAkJcmV0dXJuIEludGVydmFsW0NvYWxlc2NlKHN0YXJ0IG9mIEVEVmlzaXQucGVyaW9kLCBWaXNpdFN0YXJ0KSwgZW5kIG9mIFZpc2l0LnBlcmlvZF0NCg0KLyoNCkhvc3BpdGFsaXphdGlvbiB3aXRoIE9ic2VydmF0aW9uIExlbmd0aCBvZiBTdGF5IHJldHVybnMgdGhlIGxlbmd0aCBpbiBkYXlzIGZyb20gdGhlIHN0YXJ0IG9mIGFueSBpbW1lZGlhdGVseSBwcmlvciBlbWVyZ2VuY3kgZGVwYXJ0bWVudCB2aXNpdCB0aHJvdWdoIHRoZSBvYnNlcnZhdGlvbiB2aXNpdCB0byB0aGUgZGlzY2hhcmdlIG9mIHRoZSBnaXZlbiBlbmNvdW50ZXINCiovDQpkZWZpbmUgZnVuY3Rpb24gIkhvc3BpdGFsaXphdGlvbldpdGhPYnNlcnZhdGlvbkxlbmd0aG9mU3RheSIoVGhlRW5jb3VudGVyICJFbmNvdW50ZXIiICk6DQogICJMZW5ndGhJbkRheXMiKCJIb3NwaXRhbGl6YXRpb25XaXRoT2JzZXJ2YXRpb24iKFRoZUVuY291bnRlcikpDQoNCi8qDQpIb3NwaXRhbGl6YXRpb24gd2l0aCBPYnNlcnZhdGlvbiBMZW5ndGggb2YgU3RheSByZXR1cm5zIHRoZSBsZW5ndGggaW4gZGF5cyBmcm9tIHRoZSBzdGFydCBvZiBhbnkgaW1tZWRpYXRlbHkgcHJpb3IgZW1lcmdlbmN5IGRlcGFydG1lbnQgdmlzaXQgdGhyb3VnaCB0aGUgb2JzZXJ2YXRpb24gdmlzaXQgdG8gdGhlIGRpc2NoYXJnZSBvZiB0aGUgZ2l2ZW4gZW5jb3VudGVyDQoqLw0KZGVmaW5lIGZsdWVudCBmdW5jdGlvbiBob3NwaXRhbGl6YXRpb25XaXRoT2JzZXJ2YXRpb25MZW5ndGhvZlN0YXkoVGhlRW5jb3VudGVyICJFbmNvdW50ZXIiICk6DQogICJMZW5ndGhJbkRheXMiKCJIb3NwaXRhbGl6YXRpb25XaXRoT2JzZXJ2YXRpb24iKFRoZUVuY291bnRlcikpDQoNCi8qDQpGaXJzdCBJbnBhdGllbnQgSW50ZW5zaXZlIENhcmUgVW5pdCByZXR1cm5zIHRoZSBmaXJzdCBpbnRlbnNpdmUgY2FyZSB1bml0IGZvciB0aGUgZ2l2ZW4gZW5jb3VudGVyLCB3aXRob3V0IGNvbnNpZGVyaW5nIGFueSBpbW1lZGlhdGVseSBwcmlvciBlbWVyZ2VuY3kgZGVwYXJ0bWVudCB2aXNpdC4NCiovDQpkZWZpbmUgZnVuY3Rpb24gIkZpcnN0SW5wYXRpZW50SW50ZW5zaXZlQ2FyZVVuaXQiKEVuY291bnRlciBFbmNvdW50ZXIgKToNCiAgRmlyc3QoKEVuY291bnRlci5sb2NhdGlvbilIb3NwaXRhbExvY2F0aW9uDQogIAkJCXdoZXJlIEdldExvY2F0aW9uKEhvc3BpdGFsTG9jYXRpb24ubG9jYXRpb24pLnR5cGUgaW4gIkludGVuc2l2ZSBDYXJlIFVuaXQiDQogIAkJCQlhbmQgSG9zcGl0YWxMb2NhdGlvbi5wZXJpb2QgZHVyaW5nIEVuY291bnRlci5wZXJpb2QNCiAgCQkJc29ydCBieSBzdGFydCBvZiBwZXJpb2QNCiAgCSkNCg0KLyoNCkZpcnN0IElucGF0aWVudCBJbnRlbnNpdmUgQ2FyZSBVbml0IHJldHVybnMgdGhlIGZpcnN0IGludGVuc2l2ZSBjYXJlIHVuaXQgZm9yIHRoZSBnaXZlbiBlbmNvdW50ZXIsIHdpdGhvdXQgY29uc2lkZXJpbmcgYW55IGltbWVkaWF0ZWx5IHByaW9yIGVtZXJnZW5jeSBkZXBhcnRtZW50IHZpc2l0Lg0KKi8NCmRlZmluZSBmbHVlbnQgZnVuY3Rpb24gZmlyc3RJbnBhdGllbnRJbnRlbnNpdmVDYXJlVW5pdChFbmNvdW50ZXIgRW5jb3VudGVyICk6DQogIEZpcnN0KChFbmNvdW50ZXIubG9jYXRpb24pSG9zcGl0YWxMb2NhdGlvbg0KICAJCQl3aGVyZSBHZXRMb2NhdGlvbihIb3NwaXRhbExvY2F0aW9uLmxvY2F0aW9uKS50eXBlIGluICJJbnRlbnNpdmUgQ2FyZSBVbml0Ig0KICAJCQkJYW5kIEhvc3BpdGFsTG9jYXRpb24ucGVyaW9kIGR1cmluZyBFbmNvdW50ZXIucGVyaW9kDQogIAkJCXNvcnQgYnkgc3RhcnQgb2YgcGVyaW9kDQogIAkpDQoNCi8qDQpSZXR1cm5zIHRoZSBDb25kaXRpb24gcmVzb3VyY2VzIHJlZmVyZW5jZWQgYnkgdGhlIGRpYWdub3NpcyBlbGVtZW50IG9mIHRoZSBFbmNvdW50ZXINCiovDQpkZWZpbmUgZnVuY3Rpb24gIkVuY291bnRlckRpYWdub3NpcyIoRW5jb3VudGVyIEVuY291bnRlciApOg0KICBFbmNvdW50ZXIuZGlhZ25vc2lzIEQNCglyZXR1cm4gc2luZ2xldG9uIGZyb20gKFtDb25kaXRpb25dIEMgd2hlcmUgQy5pZCA9IEQuY29uZGl0aW9uLnJlZmVyZW5jZS5nZXRJZCgpKQ0KDQovKg0KUmV0dXJucyB0aGUgQ29uZGl0aW9uIHJlc291cmNlcyByZWZlcmVuY2VkIGJ5IHRoZSBkaWFnbm9zaXMgZWxlbWVudCBvZiB0aGUgRW5jb3VudGVyDQoqLw0KZGVmaW5lIGZsdWVudCBmdW5jdGlvbiBlbmNvdW50ZXJEaWFnbm9zaXMoRW5jb3VudGVyIEVuY291bnRlciApOg0KICBFbmNvdW50ZXIuZGlhZ25vc2lzIEQNCiAgICByZXR1cm4gc2luZ2xldG9uIGZyb20gKFtDb25kaXRpb25dIEMgd2hlcmUgQy5pZCA9IEQuY29uZGl0aW9uLnJlZmVyZW5jZS5nZXRJZCgpKQ0KDQovKg0KUmV0dXJucyB0aGUgQ29uZGl0aW9uIHJlc291cmNlIGZvciB0aGUgZ2l2ZW4gcmVmZXJlbmNlDQpAZGVwcmVjYXRlZA0KKi8NCmRlZmluZSBmdW5jdGlvbiAiR2V0Q29uZGl0aW9uIihyZWZlcmVuY2UgUmVmZXJlbmNlKToNCiAgc2luZ2xldG9uIGZyb20gKFtDb25kaXRpb25dIEMgd2hlcmUgQy5pZCA9IHJlZmVyZW5jZS5yZWZlcmVuY2UuZ2V0SWQoKSkNCg0KLyoNClJldHVybnMgdGhlIENvbmRpdGlvbiByZXNvdXJjZSBmb3IgdGhlIGdpdmVuIHJlZmVyZW5jZQ0KKi8NCmRlZmluZSBmbHVlbnQgZnVuY3Rpb24gZ2V0Q29uZGl0aW9uKHJlZmVyZW5jZSBSZWZlcmVuY2UpOg0KICBzaW5nbGV0b24gZnJvbSAoW0NvbmRpdGlvbl0gQyB3aGVyZSBDLmlkID0gcmVmZXJlbmNlLnJlZmVyZW5jZS5nZXRJZCgpKQ0KDQovKg0KUmV0dXJucyB0aGUgY29uZGl0aW9uIHRoYXQgaXMgc3BlY2lmaWVkIGFzIHRoZSBwcmluY2lwYWwgZGlhZ25vc2lzIGZvciB0aGUgZW5jb3VudGVyDQoqLw0KZGVmaW5lIGZ1bmN0aW9uICJQcmluY2lwYWxEaWFnbm9zaXMiKEVuY291bnRlciBFbmNvdW50ZXIgKToNCglzaW5nbGV0b24gZnJvbSAoKEVuY291bnRlci5kaWFnbm9zaXMgRCB3aGVyZSBELnJhbmsgPSAxKSBQRA0KICAgICAgcmV0dXJuIHNpbmdsZXRvbiBmcm9tIChbQ29uZGl0aW9uXSBDIHdoZXJlIEMuaWQgPSBQRC5jb25kaXRpb24ucmVmZXJlbmNlLmdldElkKCkpDQoJKQ0KDQovKg0KUmV0dXJucyB0aGUgY29uZGl0aW9uIHRoYXQgaXMgc3BlY2lmaWVkIGFzIHRoZSBwcmluY2lwYWwgZGlhZ25vc2lzIGZvciB0aGUgZW5jb3VudGVyDQoqLw0KZGVmaW5lIGZsdWVudCBmdW5jdGlvbiBwcmluY2lwYWxEaWFnbm9zaXMoRW5jb3VudGVyIEVuY291bnRlciApOg0KCXNpbmdsZXRvbiBmcm9tICgoRW5jb3VudGVyLmRpYWdub3NpcyBEIHdoZXJlIEQucmFuayA9IDEpIFBEDQogICAgICByZXR1cm4gc2luZ2xldG9uIGZyb20gKFtDb25kaXRpb25dIEMgd2hlcmUgQy5pZCA9IFBELmNvbmRpdGlvbi5yZWZlcmVuY2UuZ2V0SWQoKSkNCgkpDQoNCi8qDQpSZXR1cm5zIHRoZSBMb2NhdGlvbiByZXNvdXJjZSBzcGVjaWZpZWQgYnkgdGhlIGdpdmVuIHJlZmVyZW5jZQ0KKi8NCmRlZmluZSBmdW5jdGlvbiAiR2V0TG9jYXRpb24iKHJlZmVyZW5jZSBSZWZlcmVuY2UgKToNCiAgc2luZ2xldG9uIGZyb20gKA0KICAgIFtMb2NhdGlvbl0gTCB3aGVyZSBMLmlkID0gcmVmZXJlbmNlLnJlZmVyZW5jZS5nZXRJZCgpDQogICkNCg0KLyoNClJldHVybnMgdGhlIExvY2F0aW9uIHJlc291cmNlIHNwZWNpZmllZCBieSB0aGUgZ2l2ZW4gcmVmZXJlbmNlDQoqLw0KZGVmaW5lIGZsdWVudCBmdW5jdGlvbiBnZXRMb2NhdGlvbihyZWZlcmVuY2UgUmVmZXJlbmNlICk6DQogIHNpbmdsZXRvbiBmcm9tICgNCiAgICBbTG9jYXRpb25dIEwgd2hlcmUgTC5pZCA9IHJlZmVyZW5jZS5yZWZlcmVuY2UuZ2V0SWQoKQ0KICApDQoNCi8qDQpSZXR1cm5zIHRoZSBtZWRpY2F0aW9uIGNvZGUgZm9yIHRoZSBnaXZlbiBNZWRpY2F0aW9uUmVxdWVzdA0KKi8NCmRlZmluZSBmdW5jdGlvbiAiR2V0TWVkaWNhdGlvbkNvZGUiKHJlcXVlc3QgTWVkaWNhdGlvblJlcXVlc3QgKToNCiAgaWYgcmVxdWVzdC5tZWRpY2F0aW9uIGlzIENvbmNlcHQgdGhlbg0KICAJICByZXF1ZXN0Lm1lZGljYXRpb24gYXMgQ29uY2VwdA0KICAJZWxzZQ0KICAJICAoc2luZ2xldG9uIGZyb20gKFtNZWRpY2F0aW9uXSBNIHdoZXJlIE0uaWQgPSAocmVxdWVzdC5tZWRpY2F0aW9uIGFzIFJlZmVyZW5jZSkucmVmZXJlbmNlLmdldElkKCkpKS5jb2RlDQoNCi8qDQpSZXR1cm5zIHRoZSBtZWRpY2F0aW9uIGNvZGUgZm9yIHRoZSBnaXZlbiBNZWRpY2F0aW9uUmVxdWVzdA0KKi8NCmRlZmluZSBmbHVlbnQgZnVuY3Rpb24gZ2V0TWVkaWNhdGlvbkNvZGUocmVxdWVzdCBNZWRpY2F0aW9uUmVxdWVzdCApOg0KICBpZiByZXF1ZXN0Lm1lZGljYXRpb24gaXMgQ29uY2VwdCB0aGVuDQogIAkgIHJlcXVlc3QubWVkaWNhdGlvbiBhcyBDb25jZXB0DQogIAllbHNlDQogIAkgIChzaW5nbGV0b24gZnJvbSAoW01lZGljYXRpb25dIE0gd2hlcmUgTS5pZCA9IChyZXF1ZXN0Lm1lZGljYXRpb24gYXMgUmVmZXJlbmNlKS5yZWZlcmVuY2UuZ2V0SWQoKSkpLmNvZGUNCg0K"
+    }
+  ]
+}</code></pre>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7.org/Special/committees/[something]">HL7 International - [Some] Work Group</a>.  Package cms.fhir.mct#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 21, 2023 15:20-0600">2023-03-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="http://cms.gov/fhir/mct/history.html">Version History</a> | <a style="color: #81BEF7" rel="license" href="license.html">License</a>
+<!--<a style="color: #81BEF7" href="todo.html">Search</a> | -->
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

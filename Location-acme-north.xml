@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Location xmlns="http://hl7.org/fhir">
+  <id value="acme-north"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Location</b><a name="acme-north"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Location &quot;acme-north&quot; </p><p style="margin-bottom: 0px">Profile: <a href="http://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-location.html">QICoreLocation</a></p></div><p><b>identifier</b>: id: ACME-NORTH (use: USUAL)</p><p><b>status</b>: active</p><p><b>name</b>: ACME North</p><p><b>mode</b>: instance</p><p><b>managingOrganization</b>: <a href="Organization-acme.html">Organization/acme</a> &quot;ACME Provider Organization&quot;</p><p><b>endpoint</b>: <a name="acme-north-endpoint"> </a></p><blockquote><p/><p><a name="acme-north-endpoint"> </a></p><p><b>status</b>: active</p><p><b>connectionType</b>: HL7 FHIR (Details: http://terminology.hl7.org/CodeSystem/endpoint-connection-type code hl7-fhir-rest = 'HL7 FHIR', stated as 'null')</p><p><b>payloadType</b>: Any <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-endpoint-payload-type.html">Endpoint Payload Type</a>#any)</span></p><p><b>payloadMimeType</b>: application/fhir+json</p><p><b>address</b>: <a href="http://acme.org/north/fhir">http://acme.org/north/fhir</a></p></blockquote><hr/><blockquote><p><b>Generated Narrative: Endpoint #acme-north-endpoint</b><a name="acme-north-endpoint"> </a></p><p><b>status</b>: active</p><p><b>connectionType</b>: HL7 FHIR (Details: http://terminology.hl7.org/CodeSystem/endpoint-connection-type code hl7-fhir-rest = 'HL7 FHIR', stated as 'null')</p><p><b>payloadType</b>: Any <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-endpoint-payload-type.html">Endpoint Payload Type</a>#any)</span></p><p><b>payloadMimeType</b>: application/fhir+json</p><p><b>address</b>: <a href="http://acme.org/north/fhir">http://acme.org/north/fhir</a></p></blockquote></div>
+  </text>
+  <contained>
+    <Endpoint>
+      <id value="acme-north-endpoint"/>
+      <status value="active"/>
+      <connectionType>
+        <system value="http://terminology.hl7.org/CodeSystem/endpoint-connection-type"/>
+        <code value="hl7-fhir-rest"/>
+      </connectionType>
+      <payloadType>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/endpoint-payload-type"/>
+          <code value="any"/>
+        </coding>
+      </payloadType>
+      <payloadMimeType value="application/fhir+json"/>
+      <address value="http://acme.org/north/fhir"/>
+    </Endpoint>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="http://acme.org/location-identifiers"/>
+    <value value="ACME-NORTH"/>
+  </identifier>
+  <status value="active"/>
+  <name value="ACME North"/>
+  <mode value="instance"/>
+  <managingOrganization>
+    <reference value="Organization/acme"/>
+  </managingOrganization>
+  <endpoint>
+    <reference value="#acme-north-endpoint"/>
+  </endpoint>
+</Location>

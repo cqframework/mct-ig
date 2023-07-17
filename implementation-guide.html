@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>CMS.FHIR.MCT\Implementation Guide - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/cqf.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"4"}
+    h3,h4,h5,h6{--heading-prefix:"4"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://github.com/cqframework"><img height="50" alt="Visit the CQF github organization website" src="assets/images/cqf.png"/> </a>
+</div>
+<!-- TODO: Push this into the base template, but it requires a "trusted" template -->
+<script type="text/javascript" src="cql.js"> </script>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">CMS FHIR Prototype Measure Calculation Tool IG</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - CI Build
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="technical-requirements.html">Technical Requirements</a>
+      </li>
+      <li>
+        <a href="implementation-guide.html">Implementation Guide</a>
+      </li>
+      <li>
+        <a href="user-guide.html">User Guide</a>
+      </li>
+      <li>
+        <a href="test-plan.html">Test Plan</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a target="_blank" href="http://cql.hl7.org/index.html">CQL Specification</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/smart-app-launch/STU2/backend-services.html">SMART Backend Services (version 2.0.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/core/STU3.1.1">US Core (version 3.1.1)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/cqfmeasures/STU3">FHIR Quality Measures (version 3.0.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/davinci-deqm/STU3.1">FHIR Quality Reporting (version 3.1.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/uv/cpg">FHIR Clinical Guidelines</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="license.html">License</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Implementation Guide</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">CMS FHIR Prototype Measure Calculation Tool IG - Local Development build (v0.1.0). See the <a href="http://cms.gov/fhir/mct/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Implementation Guide</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#starting-the-measure-calculation-tool-prototype" id="markdown-toc-starting-the-measure-calculation-tool-prototype">Starting the Measure Calculation Tool Prototype</a></li>
+  <li><a href="#cloud-deployment" id="markdown-toc-cloud-deployment">Cloud Deployment</a></li>
+  <li><a href="#tags" id="markdown-toc-tags">Tags</a></li>
+  <li><a href="#organization-configuration" id="markdown-toc-organization-configuration">Organization Configuration</a></li>
+  <li><a href="#configure-receiving-system-endpoint" id="markdown-toc-configure-receiving-system-endpoint">Configure Receiving System Endpoint</a></li>
+  <li><a href="#measure-specifications" id="markdown-toc-measure-specifications">Measure Specifications</a></li>
+  <li><a href="#test-cases" id="markdown-toc-test-cases">Test Cases</a></li>
+</ul>
+
+</div>
+<p>The Measure Calculation Tool facilitates quality reporting and submission by provider organizations using standards-based open source software. This guide is targeted at Provider Quality Improvement users responsible for reviewing, approving, and submitting quality reporting information.</p>
+
+<p>For an overview of what the Measure Calculation Tool is and how it facilitates quality reporting submission, see the <a href="index.html#use-case-overview">Use Case Overview</a>.</p>
+
+<p>For information on how to use the Reporting Client to submit quality reporting data, refer to the <a href="user-guide.html">User Guide</a>.</p>
+
+<p>This topic describes how to install, configure, and start the Measure Calculation Prototype in a provider implementation environment.</p>
+
+<h3 id="starting-the-measure-calculation-tool-prototype">Starting the Measure Calculation Tool Prototype</h3>
+
+<h4 id="prerequisites">Prerequisites</h4>
+
+<ul>
+  <li>NodeJs version 18 is required</li>
+  <li>Docker is required</li>
+</ul>
+
+<ol>
+  <li>git clone the mct repository</li>
+  <li>Run script <code class="highlighter-rouge">./setup_app_files</code> to prep data files</li>
+  <li>Standup services with <code class="highlighter-rouge">docker-compose up</code> and wait 1 minute before proceeding to next step</li>
+  <li>Load data with <code class="highlighter-rouge">./load-local-data.sh</code></li>
+  <li>go to <code class="highlighter-rouge">frontend</code> directory and run <code class="highlighter-rouge">yarn install &amp;&amp; yarn start</code></li>
+  <li>Wait until <code class="highlighter-rouge">http://localhost:8088</code> loads with <code class="highlighter-rouge">Whitelabel Error</code> message</li>
+  <li>Navigate to app at <code class="highlighter-rouge">http://localhost:3000</code></li>
+</ol>
+
+<h3 id="cloud-deployment">Cloud Deployment</h3>
+
+<p>The Measure Calculation Tool github repository also contains a kubernetes file that is used to establish a sandbox/demonstration environment, and to help facilitate a kubernetes deployment. <strong>NOTE</strong> These instructions for setup are meant to be run from the perspective of a new AWS region without other pre-exisiting services.</p>
+
+<h4 id="prerequisities">Prerequisities</h4>
+
+<ul>
+  <li>Terraform</li>
+  <li>Kubernetes</li>
+  <li><a href="https://v3-1-0.helm.sh/docs/intro/install/">Helm 3</a></li>
+  <li>AWS account with aws-cli setup locally</li>
+</ul>
+
+<h4 id="aws-eks-setup">AWS EKS Setup</h4>
+<ol>
+  <li>Go to directory <code class="highlighter-rouge">./infrastructure/terraform</code></li>
+  <li>Run command <code class="highlighter-rouge">terraform init</code> to install dependencies</li>
+  <li>After installtion run <code class="highlighter-rouge">terraform plan -out tfplan.out</code> and inspect new resources that will be created with terraform</li>
+  <li><code class="highlighter-rouge">terraform apply tfplan.out</code> will execute the plan and spin up all the necessary infrastructure for AWS Elastic Kuberentes Service</li>
+  <li>After installation add your eks context to your local docker by context with <code class="highlighter-rouge">aws eks update-kubeconfig --region &lt;region-code&gt; --name &lt;my-cluster&gt;</code></li>
+</ol>
+
+<h4 id="application-setup-on-eks">Application Setup on EKS</h4>
+<ol>
+  <li>Switch to your kubernetes cluster context</li>
+  <li>Go to directory <code class="highlighter-rouge">./infrastructure/kubernetes</code></li>
+  <li>Run command <code class="highlighter-rouge">helm install &lt;give installation name&gt; --namespace=mct --set tag=latest .</code> <strong>note</strong> tag can be set to whatever you like</li>
+  <li>View applications running in <code class="highlighter-rouge">mct</code> namespace. e.g. <code class="highlighter-rouge">kube get svc -n mct</code></li>
+</ol>
+
+<h3 id="tags">Tags</h3>
+
+<p>The Measure Calculation Tool uses FHIR <a href="https://hl7.org/fhir/R4/resource-definitions.html#Meta.tag">Tags</a> to support identifying the source location and relevant expression for submitted data.</p>
+
+<ul>
+  <li>Location Tag: System: http://cms.gov/fhir/mct/tags/Location (code is the id of the Location, display is the name of the Location)</li>
+  <li>Expression Tag: System: http://cms.gov/fhir/mct/tags/Expression (display is the identifier of the Expression)</li>
+</ul>
+
+<p>The Location Tag is used to identify the source Location for the resource. This tag is applied by the Measure Calculation Tool when gathering data from each facility, and then used subsequently to support display of the source facility for a resource.</p>
+
+<p>The Expression Tag is used to identify the relevant expression during which the resource was referenced as part of measure calculation (i.e. an <code class="highlighter-rouge">evaluatedResource</code>).</p>
+
+<h3 id="organization-configuration">Organization Configuration</h3>
+
+<p>Configuration of the MCT prototype can be performed by posting FHIR Organization, Endpoint, and Location resources to the running MCT prototype as described below:</p>
+
+<h4 id="configure-organization">Configure Organization</h4>
+
+<p>Configuring the Organization involves providing a FHIR Organization resource that conforms to the <a href="https://hl7.org/fhir/us/qicore/StructureDefinition-qicore-organization.html">QICore Organization</a> profile. For the purposes of the Measure Calculation Tool, the key information provided by the Organization resource is the CCN identifier for the provider organization.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">    </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:oid:2.16.840.1.113883.4.336"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"secondary"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME-CCN"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>See the <a href="Organization-acme.html">ACME Organization Example</a> for a complete example Organization resource.</p>
+
+<h4 id="configure-location">Configure Location</h4>
+
+<p>Configuring the Location(s) involves providing a FHIR Location resource that conforms to the <a href="https://hl7.org/fhir/us/qicore/StructureDefinition-qicore-location.html">QICore Location</a> profile. For the purposes of the Measure Calculation Tool, the key information provided by the Location resource is the FHIR endpoint for the provider location (facility). This information is provided using a contained Endpoint resource in the Location:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">    </span><span class="nl">"contained"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acme-north-endpoint"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Endpoint"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"connectionType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/endpoint-connection-type"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hl7-fhir-rest"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"payloadType"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/endpoint-payload-type"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any"</span><span class="w">
+            </span><span class="p">}]</span><span class="w"> 
+        </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"payloadMimeType"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"application/fhir+json"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://acme.org/north/fhir"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>See the <a href="Location-acme-north.html">ACME North Location Example</a> for a complete example Location resource including the contained Endpoint resource.</p>
+
+<h3 id="configure-receiving-system-endpoint">Configure Receiving System Endpoint</h3>
+
+<p>The receiving system endpoint is configured as a reference to en Endpoint resource specified using an extension on the Organization resource:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cms.gov/fhir/mct/StructureDefinition/mct-receivingSystemEndpoint"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Endpoint/example"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">}]</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="measure-specifications">Measure Specifications</h3>
+
+<p>Measure specifications available for calculation in the MCT prototype can be configured by posting a Quality Measure IG compliant Measure Specification as a FHIR Bundle to the running MCT prototype. Note that the bundle must include the Measure, any associated Libraries, and any required terminology as ValueSet resources.</p>
+
+<p>Measure specifications published with this prototype implementation guide:</p>
+
+<ul>
+  <li><a href="Measure-QiCoreProfileValidation.html">Validation Measure</a></li>
+  <li><a href="Measure-DischargedonAntithromboticTherapyQICore4.html">CMS104 Example</a></li>
+</ul>
+
+<p>The following list summarizes the required data elements for the CMS104 example measure:</p>
+
+<ol>
+  <li><a href="https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-encounter.html">Encounter</a>: <a href="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.424">Non-Elective Inpatient Encounter</a></li>
+  <li><a href="https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-condition.html">Condition</a>: Diagnosis per Encounter</li>
+  <li><a href="https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-servicerequest.html">ServiceRequest</a>: <a href="http://cts.nlm.nih.gov/fhir/ValueSet/1.3.6.1.4.1.33895.1.3.0.45">Comfort Measures</a></li>
+  <li><a href="https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-procedure.html">Procedure</a>: <a href="http://cts.nlm.nih.gov/fhir/ValueSet/1.3.6.1.4.1.33895.1.3.0.45">Comfort Measures</a></li>
+  <li><a href="https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-medicationrequest.html">MedicationRequest</a>: <a href="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.62">Antithrombotic Therapy</a></li>
+  <li><a href="https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-medicationrequest.html">MedicationRequest</a>: <a href="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.52">Pharmacological Contraindications For Antithrombotic Therapy</a></li>
+  <li><a href="https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-mednotrequested.html">MedicationNotRequested</a>: <a href="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.62">Antithrombotic Therapy</a></li>
+</ol>
+
+<h3 id="test-cases">Test Cases</h3>
+
+<p>Test data for the MCT prototype is available as bundles in the github repository. These bundles can be posted to the mock EHR (in this case a HAPI FHIR Server).</p>
+
+<p>In addition, the prototype includes a simple test data generator that can be used to create additional test cases, as described in the following sections.</p>
+
+<h4 id="test-data-generation">Test Data Generation</h4>
+
+<p>The test data generation for CMS104 is achieved by running the _generateTestData script found at the root of this project. 
+This script evaluates the CMS104TestDataGenerator CQL library to generate the necessary QiCore profiles, populates those 
+resources into a transaction Bundle, and writes the Bundle resource to the input/tests directory.</p>
+
+<h5 id="adding-a-new-test-case">Adding a New Test Case</h5>
+
+<p>To add a new test case simply add an expression to the CMS104TestDataGenerator.cql library using the specified builder functions 
+to generate the necessary resources. There are two simple examples currently in that library to get you started. Note that the 
+name of the expression will be used as the name for the sub-directory and filename for the output.</p>
+
+<h5 id="running-the-test-data-generation-script">Running the Test Data Generation Script</h5>
+
+<p>The _generateTestData script is executed from the command line with the command <code class="highlighter-rouge">sh _generateTestData.sh</code>. Currently only a 
+shell script has been authored. Including a Batch (.bat) script is on the road map to better support Windows users. In order 
+to run the shell script, your environment must support <code class="highlighter-rouge">sh</code> (UNIX command language interpreter), <code class="highlighter-rouge">curl</code> (command that enables 
+data exchange to or from a server), and <code class="highlighter-rouge">jq</code> (command line JSON processor) commands. These can be easily installed on Mac using 
+<a href="https://brew.sh">Homebrew</a> from the command line (e.g. <code class="highlighter-rouge">brew install curl</code> or <code class="highlighter-rouge">brew install jq</code>).</p>
+
+<h5 id="output">Output</h5>
+
+<p>After successfully running the _generateTestData script, the test data will be written to the input/tests directory of this 
+project. Each named expression in the CMS104TestDataGenerator library will generate a sub-directory within the input/tests 
+directory containing a JSON file with a <a href="http://hl7.org/fhir/http.html#transaction">transaction</a> bundle containing the test 
+data. The name of the CQL named expression will be used for both the sub-directory and JSON filename.</p>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7.org/Special/committees/[something]">HL7 International - [Some] Work Group</a>.  Package cms.fhir.mct#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 21, 2023 15:20-0600">2023-03-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="http://cms.gov/fhir/mct/history.html">Version History</a> | <a style="color: #81BEF7" rel="license" href="license.html">License</a>
+<!--<a style="color: #81BEF7" href="todo.html">Search</a> | -->
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Organization xmlns="http://hl7.org/fhir">
+  <id value="acme"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Organization</b><a name="acme"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Organization &quot;acme&quot; </p><p style="margin-bottom: 0px">Profile: <a href="http://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-organization.html">QICoreOrganization</a></p></div><p><b>identifier</b>: id: ACME-CCN (use: SECONDARY), id: ACME-NPI (use: SECONDARY), id: ACME-EIN (use: SECONDARY)</p><p><b>active</b>: true</p><p><b>name</b>: ACME Provider Organization</p><p><b>telecom</b>: <a href="https://acme.org">https://acme.org</a></p><p><b>address</b>: 123 Erewhon Dayton OH 45410 (WORK)</p></div>
+  </text>
+  <extension url="http://cms.gov/fhir/mct/StructureDefinition/mct-receivingSystemEndpoint"/>
+  <identifier>
+    <use value="secondary"/>
+    <system value="urn:oid:2.16.840.1.113883.4.336"/>
+    <value value="ACME-CCN"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="http://hl7.org/fhir/sid/us-npi"/>
+    <value value="ACME-NPI"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="urn:oid:2.16.840.1.113883.4.4"/>
+    <value value="ACME-EIN"/>
+  </identifier>
+  <active value="true"/>
+  <name value="ACME Provider Organization"/>
+  <telecom>
+    <system value="url"/>
+    <value value="https://acme.org"/>
+    <use value="work"/>
+  </telecom>
+  <address>
+    <use value="work"/>
+    <type value="both"/>
+    <line value="123 Erewhon"/>
+    <city value="Dayton"/>
+    <state value="OH"/>
+    <postalCode value="45410"/>
+  </address>
+</Organization>

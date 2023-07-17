@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Library xmlns="http://hl7.org/fhir">
+  <id value="QiCoreProfileValidation"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">QiCoreProfileValidation</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="http://cms.gov/fhir/mct/Library/QiCoreProfileValidation">http://cms.gov/fhir/mct/Library/QiCoreProfileValidation</a></td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.1.0</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Name: </b></th>
+            <td style="padding-left: 4px;">QiCoreProfileValidation</td>
+        </tr>
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">draft</td>
+        </tr>
+        
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2023-03-21 15:20:25-0600</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">HL7 International - [Some] Work Group</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">US</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <tr>
+          <td colspan="2">
+            <table>
+              <tr><th><a id="cql-content"><b>Content: </b></a> text/cql</th></tr>
+              <tr><td><pre><code class="language-cql">library QiCoreProfileValidation version '1.0.0'
+
+using FHIR version '4.0.1'
+
+include FHIRHelpers version '4.0.1'
+include QiCoreProfilePatterns version '1.0.0' called Profiles
+
+context Patient
+
+define &amp;quot;Initial Population&amp;quot;: true
+
+define &amp;quot;SDE AdverseEvent&amp;quot;:
+    Profiles.AdverseEvent
+
+define &amp;quot;SDE AllergyIntolerance&amp;quot;:
+    Profiles.AllergyIntolerance
+
+define &amp;quot;SDE BodyStructure&amp;quot;:
+    Profiles.BodyStructure
+
+define &amp;quot;SDE CarePlan&amp;quot;:
+    Profiles.CarePlan
+
+define &amp;quot;SDE CareTeam&amp;quot;:
+    Profiles.CareTeam
+
+define &amp;quot;SDE Claim&amp;quot;:
+    Profiles.Claim
+
+define &amp;quot;SDE Communication&amp;quot;:
+    Profiles.Communication
+
+define &amp;quot;SDE CommunicationNotDone&amp;quot;:
+    Profiles.CommunicationNotDone
+
+define &amp;quot;SDE CommunicationRequest&amp;quot;:
+    Profiles.CommunicationRequest
+
+define &amp;quot;SDE Condition&amp;quot;:
+    Profiles.Condition
+
+define &amp;quot;SDE Coverage&amp;quot;:
+    Profiles.Coverage
+
+define &amp;quot;SDE Device&amp;quot;:
+    Profiles.Device
+
+define &amp;quot;SDE DeviceNotRequested&amp;quot;:
+    Profiles.DeviceNotRequested
+
+define &amp;quot;SDE DeviceRequest&amp;quot;:
+    Profiles.DeviceRequest
+
+define &amp;quot;SDE DeviceUseStatement&amp;quot;:
+    Profiles.DeviceUseStatement
+
+define &amp;quot;SDE DiagnosticReportLab&amp;quot;:
+    Profiles.DiagnosticReportLab
+
+define &amp;quot;SDE DiagnosticReportNote&amp;quot;:
+    Profiles.DiagnosticReportNote
+
+define &amp;quot;SDE Encounter&amp;quot;:
+    Profiles.Encounter
+
+define &amp;quot;SDE EncounterPerformed&amp;quot;:
+    Profiles.EncounterPerformed
+
+define &amp;quot;SDE FamilyMemberHistory&amp;quot;:
+    Profiles.FamilyMemberHistory
+
+define &amp;quot;SDE Flag&amp;quot;:
+    Profiles.Flag
+
+define &amp;quot;SDE Goal&amp;quot;:
+    Profiles.Goal
+
+define &amp;quot;SDE ImagingStudy&amp;quot;:
+    Profiles.ImagingStudy
+
+define &amp;quot;SDE Immunization&amp;quot;:
+    Profiles.Immunization
+
+define &amp;quot;SDE ImmunizationEvaluation&amp;quot;:
+    Profiles.ImmunizationEvaluation
+
+define &amp;quot;SDE ImmunizationNotDone&amp;quot;:
+    Profiles.ImmunizationNotDone
+
+define &amp;quot;SDE ImmunizationRecommendation&amp;quot;:
+    Profiles.ImmunizationRecommendation
+
+define &amp;quot;SDE ImplantableDevice&amp;quot;:
+    Profiles.ImplantableDevice
+
+define &amp;quot;SDE Location&amp;quot;:
+    Profiles.Location
+
+define &amp;quot;SDE Medication&amp;quot;:
+    Profiles.Medication
+
+define &amp;quot;SDE MedicationAdministration&amp;quot;:
+    Profiles.MedicationAdministration
+
+define &amp;quot;SDE MedicationAdministrationNotDone&amp;quot;:
+    Profiles.MedicationAdministrationNotDone
+
+define &amp;quot;SDE MedicationDispense&amp;quot;:
+    Profiles.MedicationDispense
+
+define &amp;quot;SDE MedicationDispenseDeclined&amp;quot;:
+    Profiles.MedicationDispenseDeclined
+
+define &amp;quot;SDE MedicationNotRequested&amp;quot;:
+    Profiles.MedicationNotRequested
+
+define &amp;quot;SDE MedicationRequest&amp;quot;:
+    Profiles.MedicationRequest
+
+define &amp;quot;SDE MedicationStatement&amp;quot;:
+    Profiles.MedicationStatement
+
+define &amp;quot;SDE NutritionOrder&amp;quot;:
+    Profiles.NutritionOrder
+
+define &amp;quot;SDE Observation&amp;quot;:
+    Profiles.Observation
+
+define &amp;quot;SDE ObservationCancelled&amp;quot;:
+    Profiles.ObservationCancelled
+
+define &amp;quot;SDE Organization&amp;quot;:
+    Profiles.Organization
+
+define &amp;quot;SDE Patient&amp;quot;:
+    Profiles.Patient
+
+define &amp;quot;SDE Practitioner&amp;quot;:
+    Profiles.Practitioner
+
+define &amp;quot;SDE PractitionerRole&amp;quot;:
+    Profiles.PractitionerRole
+
+define &amp;quot;SDE Procedure&amp;quot;:
+    Profiles.Procedure
+
+define &amp;quot;SDE ProcedurePerformed&amp;quot;:
+    Profiles.ProcedurePerformed
+
+define &amp;quot;SDE ProcedureNotDone&amp;quot;:
+    Profiles.ProcedureNotDone
+
+define &amp;quot;SDE RelatedPerson&amp;quot;:
+    Profiles.RelatedPerson
+
+define &amp;quot;SDE ServiceNotRequested&amp;quot;:
+    Profiles.ServiceNotRequested
+
+define &amp;quot;SDE ServiceRequest&amp;quot;:
+    Profiles.ServiceRequest
+
+define &amp;quot;SDE Specimen&amp;quot;:
+    Profiles.Specimen
+
+define &amp;quot;SDE Substance&amp;quot;:
+    Profiles.Substance
+
+define &amp;quot;SDE Task&amp;quot;:
+    Profiles.Task
+
+define &amp;quot;SDE TaskRejected&amp;quot;:
+    Profiles.TaskRejected</code></pre></td></tr>
+            </table>
+          </td>
+        </tr>
+        
+        
+        
+    </table>
+</div>
+  </text>
+  <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem">
+    <valueReference>
+      <reference value="Device/cqf-tooling"/>
+    </valueReference>
+  </extension>
+  <url value="http://cms.gov/fhir/mct/Library/QiCoreProfileValidation"/>
+  <version value="0.1.0"/>
+  <name value="QiCoreProfileValidation"/>
+  <status value="draft"/>
+  <date value="2023-03-21T15:20:25-06:00"/>
+  <publisher value="HL7 International - [Some] Work Group"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/[something]"/>
+    </telecom>
+  </contact>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <content>
+    <contentType value="text/cql"/>
+    <data value="bGlicmFyeSBRaUNvcmVQcm9maWxlVmFsaWRhdGlvbiB2ZXJzaW9uICcxLjAuMCcNCg0KdXNpbmcgRkhJUiB2ZXJzaW9uICc0LjAuMScNCg0KaW5jbHVkZSBGSElSSGVscGVycyB2ZXJzaW9uICc0LjAuMScNCmluY2x1ZGUgUWlDb3JlUHJvZmlsZVBhdHRlcm5zIHZlcnNpb24gJzEuMC4wJyBjYWxsZWQgUHJvZmlsZXMNCg0KY29udGV4dCBQYXRpZW50DQoNCmRlZmluZSAiSW5pdGlhbCBQb3B1bGF0aW9uIjogdHJ1ZQ0KDQpkZWZpbmUgIlNERSBBZHZlcnNlRXZlbnQiOg0KICAgIFByb2ZpbGVzLkFkdmVyc2VFdmVudA0KDQpkZWZpbmUgIlNERSBBbGxlcmd5SW50b2xlcmFuY2UiOg0KICAgIFByb2ZpbGVzLkFsbGVyZ3lJbnRvbGVyYW5jZQ0KDQpkZWZpbmUgIlNERSBCb2R5U3RydWN0dXJlIjoNCiAgICBQcm9maWxlcy5Cb2R5U3RydWN0dXJlDQoNCmRlZmluZSAiU0RFIENhcmVQbGFuIjoNCiAgICBQcm9maWxlcy5DYXJlUGxhbg0KDQpkZWZpbmUgIlNERSBDYXJlVGVhbSI6DQogICAgUHJvZmlsZXMuQ2FyZVRlYW0NCg0KZGVmaW5lICJTREUgQ2xhaW0iOg0KICAgIFByb2ZpbGVzLkNsYWltDQoNCmRlZmluZSAiU0RFIENvbW11bmljYXRpb24iOg0KICAgIFByb2ZpbGVzLkNvbW11bmljYXRpb24NCg0KZGVmaW5lICJTREUgQ29tbXVuaWNhdGlvbk5vdERvbmUiOg0KICAgIFByb2ZpbGVzLkNvbW11bmljYXRpb25Ob3REb25lDQoNCmRlZmluZSAiU0RFIENvbW11bmljYXRpb25SZXF1ZXN0IjoNCiAgICBQcm9maWxlcy5Db21tdW5pY2F0aW9uUmVxdWVzdA0KDQpkZWZpbmUgIlNERSBDb25kaXRpb24iOg0KICAgIFByb2ZpbGVzLkNvbmRpdGlvbg0KDQpkZWZpbmUgIlNERSBDb3ZlcmFnZSI6DQogICAgUHJvZmlsZXMuQ292ZXJhZ2UNCg0KZGVmaW5lICJTREUgRGV2aWNlIjoNCiAgICBQcm9maWxlcy5EZXZpY2UNCg0KZGVmaW5lICJTREUgRGV2aWNlTm90UmVxdWVzdGVkIjoNCiAgICBQcm9maWxlcy5EZXZpY2VOb3RSZXF1ZXN0ZWQNCg0KZGVmaW5lICJTREUgRGV2aWNlUmVxdWVzdCI6DQogICAgUHJvZmlsZXMuRGV2aWNlUmVxdWVzdA0KDQpkZWZpbmUgIlNERSBEZXZpY2VVc2VTdGF0ZW1lbnQiOg0KICAgIFByb2ZpbGVzLkRldmljZVVzZVN0YXRlbWVudA0KDQpkZWZpbmUgIlNERSBEaWFnbm9zdGljUmVwb3J0TGFiIjoNCiAgICBQcm9maWxlcy5EaWFnbm9zdGljUmVwb3J0TGFiDQoNCmRlZmluZSAiU0RFIERpYWdub3N0aWNSZXBvcnROb3RlIjoNCiAgICBQcm9maWxlcy5EaWFnbm9zdGljUmVwb3J0Tm90ZQ0KDQpkZWZpbmUgIlNERSBFbmNvdW50ZXIiOg0KICAgIFByb2ZpbGVzLkVuY291bnRlcg0KDQpkZWZpbmUgIlNERSBFbmNvdW50ZXJQZXJmb3JtZWQiOg0KICAgIFByb2ZpbGVzLkVuY291bnRlclBlcmZvcm1lZA0KDQpkZWZpbmUgIlNERSBGYW1pbHlNZW1iZXJIaXN0b3J5IjoNCiAgICBQcm9maWxlcy5GYW1pbHlNZW1iZXJIaXN0b3J5DQoNCmRlZmluZSAiU0RFIEZsYWciOg0KICAgIFByb2ZpbGVzLkZsYWcNCg0KZGVmaW5lICJTREUgR29hbCI6DQogICAgUHJvZmlsZXMuR29hbA0KDQpkZWZpbmUgIlNERSBJbWFnaW5nU3R1ZHkiOg0KICAgIFByb2ZpbGVzLkltYWdpbmdTdHVkeQ0KDQpkZWZpbmUgIlNERSBJbW11bml6YXRpb24iOg0KICAgIFByb2ZpbGVzLkltbXVuaXphdGlvbg0KDQpkZWZpbmUgIlNERSBJbW11bml6YXRpb25FdmFsdWF0aW9uIjoNCiAgICBQcm9maWxlcy5JbW11bml6YXRpb25FdmFsdWF0aW9uDQoNCmRlZmluZSAiU0RFIEltbXVuaXphdGlvbk5vdERvbmUiOg0KICAgIFByb2ZpbGVzLkltbXVuaXphdGlvbk5vdERvbmUNCg0KZGVmaW5lICJTREUgSW1tdW5pemF0aW9uUmVjb21tZW5kYXRpb24iOg0KICAgIFByb2ZpbGVzLkltbXVuaXphdGlvblJlY29tbWVuZGF0aW9uDQoNCmRlZmluZSAiU0RFIEltcGxhbnRhYmxlRGV2aWNlIjoNCiAgICBQcm9maWxlcy5JbXBsYW50YWJsZURldmljZQ0KDQpkZWZpbmUgIlNERSBMb2NhdGlvbiI6DQogICAgUHJvZmlsZXMuTG9jYXRpb24NCg0KZGVmaW5lICJTREUgTWVkaWNhdGlvbiI6DQogICAgUHJvZmlsZXMuTWVkaWNhdGlvbg0KDQpkZWZpbmUgIlNERSBNZWRpY2F0aW9uQWRtaW5pc3RyYXRpb24iOg0KICAgIFByb2ZpbGVzLk1lZGljYXRpb25BZG1pbmlzdHJhdGlvbg0KDQpkZWZpbmUgIlNERSBNZWRpY2F0aW9uQWRtaW5pc3RyYXRpb25Ob3REb25lIjoNCiAgICBQcm9maWxlcy5NZWRpY2F0aW9uQWRtaW5pc3RyYXRpb25Ob3REb25lDQoNCmRlZmluZSAiU0RFIE1lZGljYXRpb25EaXNwZW5zZSI6DQogICAgUHJvZmlsZXMuTWVkaWNhdGlvbkRpc3BlbnNlDQoNCmRlZmluZSAiU0RFIE1lZGljYXRpb25EaXNwZW5zZURlY2xpbmVkIjoNCiAgICBQcm9maWxlcy5NZWRpY2F0aW9uRGlzcGVuc2VEZWNsaW5lZA0KDQpkZWZpbmUgIlNERSBNZWRpY2F0aW9uTm90UmVxdWVzdGVkIjoNCiAgICBQcm9maWxlcy5NZWRpY2F0aW9uTm90UmVxdWVzdGVkDQoNCmRlZmluZSAiU0RFIE1lZGljYXRpb25SZXF1ZXN0IjoNCiAgICBQcm9maWxlcy5NZWRpY2F0aW9uUmVxdWVzdA0KDQpkZWZpbmUgIlNERSBNZWRpY2F0aW9uU3RhdGVtZW50IjoNCiAgICBQcm9maWxlcy5NZWRpY2F0aW9uU3RhdGVtZW50DQoNCmRlZmluZSAiU0RFIE51dHJpdGlvbk9yZGVyIjoNCiAgICBQcm9maWxlcy5OdXRyaXRpb25PcmRlcg0KDQpkZWZpbmUgIlNERSBPYnNlcnZhdGlvbiI6DQogICAgUHJvZmlsZXMuT2JzZXJ2YXRpb24NCg0KZGVmaW5lICJTREUgT2JzZXJ2YXRpb25DYW5jZWxsZWQiOg0KICAgIFByb2ZpbGVzLk9ic2VydmF0aW9uQ2FuY2VsbGVkDQoNCmRlZmluZSAiU0RFIE9yZ2FuaXphdGlvbiI6DQogICAgUHJvZmlsZXMuT3JnYW5pemF0aW9uDQoNCmRlZmluZSAiU0RFIFBhdGllbnQiOg0KICAgIFByb2ZpbGVzLlBhdGllbnQNCg0KZGVmaW5lICJTREUgUHJhY3RpdGlvbmVyIjoNCiAgICBQcm9maWxlcy5QcmFjdGl0aW9uZXINCg0KZGVmaW5lICJTREUgUHJhY3RpdGlvbmVyUm9sZSI6DQogICAgUHJvZmlsZXMuUHJhY3RpdGlvbmVyUm9sZQ0KDQpkZWZpbmUgIlNERSBQcm9jZWR1cmUiOg0KICAgIFByb2ZpbGVzLlByb2NlZHVyZQ0KDQpkZWZpbmUgIlNERSBQcm9jZWR1cmVQZXJmb3JtZWQiOg0KICAgIFByb2ZpbGVzLlByb2NlZHVyZVBlcmZvcm1lZA0KDQpkZWZpbmUgIlNERSBQcm9jZWR1cmVOb3REb25lIjoNCiAgICBQcm9maWxlcy5Qcm9jZWR1cmVOb3REb25lDQoNCmRlZmluZSAiU0RFIFJlbGF0ZWRQZXJzb24iOg0KICAgIFByb2ZpbGVzLlJlbGF0ZWRQZXJzb24NCg0KZGVmaW5lICJTREUgU2VydmljZU5vdFJlcXVlc3RlZCI6DQogICAgUHJvZmlsZXMuU2VydmljZU5vdFJlcXVlc3RlZA0KDQpkZWZpbmUgIlNERSBTZXJ2aWNlUmVxdWVzdCI6DQogICAgUHJvZmlsZXMuU2VydmljZVJlcXVlc3QNCg0KZGVmaW5lICJTREUgU3BlY2ltZW4iOg0KICAgIFByb2ZpbGVzLlNwZWNpbWVuDQoNCmRlZmluZSAiU0RFIFN1YnN0YW5jZSI6DQogICAgUHJvZmlsZXMuU3Vic3RhbmNlDQoNCmRlZmluZSAiU0RFIFRhc2siOg0KICAgIFByb2ZpbGVzLlRhc2sNCg0KZGVmaW5lICJTREUgVGFza1JlamVjdGVkIjoNCiAgICBQcm9maWxlcy5UYXNrUmVqZWN0ZWQ="/>
+  </content>
+</Library>

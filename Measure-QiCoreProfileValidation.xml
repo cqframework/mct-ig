@@ -1,0 +1,3387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Measure xmlns="http://hl7.org/fhir">
+  <id value="QiCoreProfileValidation"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cohort-measure-cqfm"/>
+    <profile value="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">QiCoreProfileValidation</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="http://cms.gov/fhir/mct/Measure/QiCoreProfileValidation">http://cms.gov/fhir/mct/Measure/QiCoreProfileValidation</a></td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.1.0</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Name: </b></th>
+            <td style="padding-left: 4px;">QiCoreProfileValidation</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">QiCoreProfileValidation FHIR</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">active</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">true</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Scoring: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/CodeSystem/measure-scoring">http://terminology.hl7.org/CodeSystem/measure-scoring</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>cohort</span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>display: </b> <span>Cohort</span>
+                        </p>
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Improvement Notation: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/CodeSystem/measure-improvement-notation">http://terminology.hl7.org/CodeSystem/measure-improvement-notation</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>decrease</span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>display: </b> <span>Decreased score indicates improvement</span>
+                        </p>
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/CodeSystem/measure-type">http://terminology.hl7.org/CodeSystem/measure-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>process</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2022-12-12</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">HL7 International - [Some] Work Group</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;"><div><p>A cohort measure with supplemental data elements for all profiles in QICore</p>
+</div></td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Populations: </b></th>
+                <td style="padding-left: 4px;">
+                    <table class="grid-dict">
+                        <tr><th><b>Group</b></th><th><b>Population</b></th><th><b>Description</b></th></tr>
+                        
+                        <tr>
+                            <td></td>
+                            
+                                <tr>
+                                    <td/>
+                                    <td>Initial Population</td>
+                                    <td>
+                                        
+                                    </td>
+                                 </tr>
+                            
+                        </tr>
+                        
+                    </table>
+                </td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Supplemental Data: </b></th>
+                <td style="padding-left: 4px;">
+                    <table class="grid-dict">
+                        <tr><th><b>expression</b></th><th><b>system</b></th></tr>
+                        
+                        <tr>
+                            <td>SDE AdverseEvent</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE AllergyIntolerance</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE BodyStructure</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE CarePlan</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE CareTeam</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Claim</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Communication</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE CommunicationNotDone</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE CommunicationRequest</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Condition</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Coverage</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Device</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE DeviceNotRequested</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE DeviceRequest</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE DeviceUseStatement</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE DiagnosticReportLab</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE DiagnosticReportNote</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Encounter</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE EncounterPerformed</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE FamilyMemberHistory</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Flag</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Goal</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE ImagingStudy</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Immunization</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE ImmunizationEvaluation</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE ImmunizationNotDone</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE ImmunizationRecommendation</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE ImplantableDevice</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Location</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Medication</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE MedicationAdministration</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE MedicationAdministrationNotDone</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE MedicationDispense</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE MedicationDispenseDeclined</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE MedicationNotRequested</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE MedicationRequest</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE MedicationStatement</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE NutritionOrder</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Observation</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE ObservationCancelled</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Organization</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Patient</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Practitioner</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE PractitionerRole</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Procedure</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE ProcedurePerformed</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE ProcedureNotDone</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE RelatedPerson</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE ServiceNotRequested</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE ServiceRequest</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Specimen</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Substance</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE Task</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SDE TaskRejected</td>
+                            <td><a href="http://terminology.hl7.org/CodeSystem/measure-data-usage">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>
+                        </tr>
+                        
+                    </table>
+                </td>
+            </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 25px;">US</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Topic: </b></th>
+            <td style="padding-left: 25px;">57024-2</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Approval Date: </b></th>
+            <td style="padding-left: 4px;">2022-12-12</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Last Review Date: </b></th>
+            <td style="padding-left: 4px;">2022-12-12</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Effective Period: </b></th>
+            <td style="padding-left: 4px;">2021-01-01..2021-12-31</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Logic Definitions: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <table class="grid-dict">
+                            <tr>
+                                <th><b>Group</b></th><th><b>Scoring</b></th><th><b>Population Criteria</b></th><th><b>Expression</b></th>
+                            </tr>
+                            <tr>
+                                
+                                    <td>  </td>
+                                    <td>
+                                        
+                                        
+                                            <b>Measure scoring:</b>
+                                            
+                                                
+                                                    <p style="margin-bottom: 5px;">
+                                                        <span>cohort</span>
+                                                    </p>
+                                                
+                                                
+                                            
+                                        
+                                    </td>
+                                    
+                                        <tr>
+                                            <td/>
+                                            <td/>
+                                            <td>Initial Population</td>
+                                            <td>
+                                                
+                                                <pre><code class="language-cql">Initial Population</code></pre>
+                                                
+                                            </td>
+                                        </tr>
+                                    
+
+                            
+                            </tr>
+                        </table>
+                    
+                    
+                </td>
+            </tr>
+        
+    </table>
+</div>
+  </text>
+  <contained>
+    <Library>
+      <id value="effective-data-requirements"/>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Coverage"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreCoverage&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage&#xA;define Coverage:&#xA;  [Coverage]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="0"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Coverage"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Coverage&quot;:&#xA;    Profiles.Coverage"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="1"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Procedure"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreProcedure&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure&#xA;define Procedure:&#xA;  [Procedure] P&#xA;    where P.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="2"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Procedure"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Procedure&quot;:&#xA;    Profiles.Procedure"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="3"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Encounter"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreEncounter&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter&#xA;define Encounter:&#xA;  [Encounter]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="4"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="EncounterPerformed"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define EncounterPerformed:&#xA;  Encounter E&#xA;    where E.status = 'finished'"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="5"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE EncounterPerformed"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE EncounterPerformed&quot;:&#xA;    Profiles.EncounterPerformed"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="6"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Practitioner"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICorePractitioner&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner&#xA;define Practitioner:&#xA;  [Practitioner]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="7"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Practitioner"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Practitioner&quot;:&#xA;    Profiles.Practitioner"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="8"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ProcedureNotDone"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;define &quot;Flexible Sigmoidoscopy Performed&quot;:&#xA; [Procedure: &quot;Flexible Sigmoidoscopy&quot;] FlexibleSigmoidoscopy&#xA;&#x9; where FlexibleSigmoidoscopy.status = 'completed'&#xA;&#x9;&#x9; and Global.&quot;Normalize Interval&quot;(FlexibleSigmoidoscopy.performed) ends 5 years or less on or before end of &quot;Measurement Period&quot;&#xA;&#xA;define &quot;Flexible Sigmoidoscopy Performed&quot;:&#xA;  QICore.ProcedurePerformed FlexibleSigmoidoscopy&#xA;    where FlexibleSigmoidoscopy.code in &quot;Flexible Sigmoidoscopy&quot;&#xA;      and FlexibleSigmoidoscopy.performed.toInterval() ends 5 years or less on or before end of &quot;Measurement Period&quot;&#xA;*/&#xA;&#xA;// QICoreProcedureNotDone&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurenotdonedefine ProcedureNotDone:&#xA;  [Procedure] P&#xA;    where P.status = 'not-done'"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="9"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE ProcedureNotDone"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE ProcedureNotDone&quot;:&#xA;    Profiles.ProcedureNotDone"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="10"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ImagingStudy"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreImagingStudy&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-imagingstudy&#xA;define ImagingStudy:&#xA;  [ImagingStudy]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="11"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE ImagingStudy"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE ImagingStudy&quot;:&#xA;    Profiles.ImagingStudy"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="12"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Organization"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// FHIR Vital Signs&#xA;&#xA;// USCore Smoking Status&#xA;&#xA;// USCore Laboratory Result&#xA;&#xA;// USCore Pediatric BMI for Age&#xA;&#xA;// USCore Pediatric Weight for Height&#xA;&#xA;// USCore Pulse Oximetry&#xA;&#xA;// QICoreOrganization&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization&#xA;define Organization:&#xA;  [Organization]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="13"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Organization"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Organization&quot;:&#xA;    Profiles.Organization"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="14"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="AllergyIntolerance"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreAllergyIntolerance&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-allergyintolerance&#xA;define AllergyIntolerance:&#xA;  [AllergyIntolerance]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="15"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE AllergyIntolerance"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE AllergyIntolerance&quot;:&#xA;    Profiles.AllergyIntolerance"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="16"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Immunization"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreImmunization&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunization&#xA;define Immunization:&#xA;  [Immunization] I&#xA;    where I.status = 'completed'"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="17"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Immunization"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Immunization&quot;:&#xA;    Profiles.Immunization"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="18"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Patient"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICorePatient&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient&#xA;define Patient:&#xA;  [Patient]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="19"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Patient"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Patient&quot;:&#xA;    Profiles.Patient"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="20"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ServiceNotRequested"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreServiceNotRequested&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicenotrequested&#xA;define ServiceNotRequested:&#xA;  [ServiceRequest] SR&#xA;    where SR.status = 'completed'&#xA;      and SR.doNotPerform is true"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="21"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE ServiceNotRequested"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE ServiceNotRequested&quot;:&#xA;    Profiles.ServiceNotRequested"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="22"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="TaskRejected"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreTaskRejected&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-taskrejected&#xA;// TODO: What about cancelled and failed?&#xA;define TaskRejected:&#xA;  [Task] T&#xA;    where T.status = 'rejected'"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="23"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE TaskRejected"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE TaskRejected&quot;:&#xA;    Profiles.TaskRejected"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="24"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Claim"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreClaim&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-claim&#xA;define Claim:&#xA;  [Claim]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="25"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Claim"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Claim&quot;:&#xA;    Profiles.Claim"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="26"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="CommunicationRequest"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreCommunicationRequest&#xA;// @profile: &#x9;http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationrequest&#xA;define CommunicationRequest:&#xA;  [CommunicationRequest]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="27"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE CommunicationRequest"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE CommunicationRequest&quot;:&#xA;    Profiles.CommunicationRequest"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="28"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="DiagnosticReportNote"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="//where D.category ~ &quot;http://terminology.hl7.org/CodeSystem/v2-0074#LAB&quot;&#xA;&#xA;// QICoreDiagnosticReportNote&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-diagnosticreport-note&#xA;define DiagnosticReportNote:&#xA;  [DiagnosticReport] D"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="29"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE DiagnosticReportNote"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE DiagnosticReportNote&quot;:&#xA;    Profiles.DiagnosticReportNote"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="30"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="CarePlan"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreCarePlan&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-careplan&#xA;define CarePlan:&#xA;  [CarePlan]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="31"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE CarePlan"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE CarePlan&quot;:&#xA;    Profiles.CarePlan"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="32"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="MedicationAdministrationNotDone"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreMedicationAdministrationNotDone&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-mednotadministered&#xA;define MedicationAdministrationNotDone:&#xA;  [MedicationAdministration] M&#xA;    where M.status = 'not-done'"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="33"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE MedicationAdministrationNotDone"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE MedicationAdministrationNotDone&quot;:&#xA;    Profiles.MedicationAdministrationNotDone"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="34"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="PractitionerRole"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICorePractitionerRole&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitionerrole&#xA;define PractitionerRole:&#xA;  [PractitionerRole]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="35"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE PractitionerRole"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE PractitionerRole&quot;:&#xA;    Profiles.PractitionerRole"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="36"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="CareTeam"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreCareTeam&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-careteam&#xA;define CareTeam:&#xA;  [CareTeam]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="37"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE CareTeam"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE CareTeam&quot;:&#xA;    Profiles.CareTeam"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="38"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="RelatedPerson"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;define &quot;No VTE Prophylaxis Device Applied&quot;:&#xA;  [&quot;Procedure&quot;: &quot;Device Application&quot;] DeviceApplied&#xA;    let DeviceNotDoneTiming: Global.GetExtension(DeviceApplied, 'qicore-recorded').value&#xA;    where (DeviceApplied.usedCode in &quot;Intermittent pneumatic compression devices (IPC)&quot;&#xA;      or DeviceApplied.usedCode in &quot;Venous foot pumps (VFP)&quot;&#xA;      or DeviceApplied.usedCode in &quot;Graduated compression stockings (GCS)&quot;&#xA;    )&#xA;      and  DeviceApplied.status = 'not-done'&#xA;    return {id: DeviceApplied.id, requestStatusReason: DeviceApplied.statusReason, authoredOn: DeviceNotDoneTiming}&#xA;&#xA;define &quot;No VTE Prophylaxis Device Applied&quot;:&#xA;  QICore.ProcedureNotDone DeviceApplied&#xA;    where DeviceApplied.code in &quot;Device Application&quot;&#xA;      and (DeviceApplied.usedCode in &quot;Intermittent pneumatic compression devices (IPC)&quot;&#xA;        or DeviceApplied.usedCode in &quot;Venous foot pumps (VFP)&quot;&#xA;        or DeviceApplied.usedCode in &quot;Graduated compression stockings (GCS)&quot;)&#xA;    return {&#xA;      id: DeviceApplied.id,&#xA;      requestStatusReason: DeviceApplied.statusReason,&#xA;      authoredOn: DeviceApplied.recorded()&#xA;    }&#xA;&#xA;*/&#xA;&#xA;// QICoreRelatedPerson&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-relatedpersondefine RelatedPerson:&#xA;  [RelatedPerson]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="39"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE RelatedPerson"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE RelatedPerson&quot;:&#xA;    Profiles.RelatedPerson"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="40"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="MedicationRequest"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;define &quot;Antithrombotic Not Given at Discharge&quot;:&#xA;  [&quot;MedicationRequest&quot;: medication in &quot;Antithrombotic Therapy&quot;] NoAntithromboticDischarge&#xA;    where NoAntithromboticDischarge.doNotPerform is true&#xA;&#x9;&#x9;&#x9;and (NoAntithromboticDischarge.reasonCode in &quot;Medical Reason&quot;&#xA;&#x9;&#x9;&#x9;&#x9;or NoAntithromboticDischarge.reasonCode in &quot;Patient Refusal&quot;)&#xA;      and exists (NoAntithromboticDischarge.category C where FHIRHelpers.ToConcept(C) ~ FC.&quot;Community&quot; or FHIRHelpers.ToConcept(C) ~ FC.&quot;Discharge&quot;)&#xA;      and NoAntithromboticDischarge.status = 'completed'&#xA;      and NoAntithromboticDischarge.intent = 'order'&#xA;&#xA;define &quot;Antithrombotic Not Given at Discharge&quot;:&#xA;  QICore.MedicationNotRequested NoAntithromboticDischarge&#xA;    where NoAntithromboticDischarge.medication in &quot;Antithrombotic Therapy&quot;&#xA;      and (NoAntithromboticDischarge.reasonCode in &quot;Medical Reason&quot;&#xA;        or NoAntithromboticDischarge.reasonCode in &quot;Patient Refusal&quot;)&#xA;      and (NoAntithromboticDischarge.isCommunity() or NoAntithromboticDischarge.isDischarge())&#xA;      and NoAntithromboticDischarge.intent = 'order'&#xA;&#xA;define &quot;Antithrombotic Not Given at Discharge&quot;:&#xA;  [&quot;MedicationNotRequested&quot;: medication in &quot;Antithrombotic Therapy&quot;] NoAntithromboticDischarge&#xA;    where (NoAntithromboticDischarge.reasonCode in &quot;Medical Reason&quot;&#xA;        or NoAntithromboticDischarge.reasonCode in &quot;Patient Refusal&quot;)&#xA;      and (NoAntithromboticDischarge.isCommunity() or NoAntithromboticDischarge.isDischarge())&#xA;      and NoAntithromboticDischarge.intent = 'order'&#xA;*/&#xA;&#xA;// QICoreMedicationRequest&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequestdefine MedicationRequest:&#xA;  [MedicationRequest] R&#xA;    where R.status in { 'active', 'on-hold', 'completed', 'draft' }&#xA;      and R.doNotPerform is not true"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="41"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE MedicationRequest"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE MedicationRequest&quot;:&#xA;    Profiles.MedicationRequest"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="42"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="DiagnosticReportLab"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreDiagnosticReportLab&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-diagnosticreport-lab&#xA;define DiagnosticReportLab:&#xA;  [DiagnosticReport] D"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="43"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE DiagnosticReportLab"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE DiagnosticReportLab&quot;:&#xA;    Profiles.DiagnosticReportLab"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="44"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Communication"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreCommunication&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communication&#xA;define Communication:&#xA;  [Communication] C&#xA;    where C.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="45"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Communication"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Communication&quot;:&#xA;    Profiles.Communication"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="46"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="MedicationDispenseDeclined"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreMedicationDispenseDeclined&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationdispensedeclined&#xA;define MedicationDispenseDeclined:&#xA;  [MedicationDispense] D&#xA;    where D.status in { 'cancelled', 'declined' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="47"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE MedicationDispenseDeclined"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE MedicationDispenseDeclined&quot;:&#xA;    Profiles.MedicationDispenseDeclined"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="48"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ImmunizationRecommendation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreImmunizationRecommendation&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationrec&#xA;define ImmunizationRecommendation:&#xA;  [ImmunizationRecommendation]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="49"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE ImmunizationRecommendation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE ImmunizationRecommendation&quot;:&#xA;    Profiles.ImmunizationRecommendation"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="50"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ImplantableDevice"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// USCoreImplantableDevice&#xA;// @profile: http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device&#xA;define ImplantableDevice:&#xA;  [Device]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="51"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE ImplantableDevice"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE ImplantableDevice&quot;:&#xA;    Profiles.ImplantableDevice"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="52"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="MedicationStatement"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;define &quot;Antithrombotic Therapy at Discharge&quot;:&#xA;  [&quot;MedicationRequest&quot;: medication in &quot;Antithrombotic Therapy&quot;] Antithrombotic&#xA;    where exists (Antithrombotic.category C where FHIRHelpers.ToConcept(C) in { Global.&quot;Community&quot;, Global.&quot;Discharge&quot; })&#xA;      and Antithrombotic.status in { 'active', 'completed' }&#xA;      and Antithrombotic.intent.value = 'order'&#xA;&#xA;define &quot;Antithrombotic Therapy at Discharge&quot;:&#xA;  QICore.MedicationRequest Antithrombotic&#xA;    where Antithrombotic.medication in &quot;Antithrombotic Therapy&quot;&#xA;      and (Antithrombotic.isCommunity() or Antithrombotic.isDischarge())&#xA;      and Antithrombotic.status in { 'active', 'completed' }&#xA;      and Antithrombotic.intent = 'order'&#xA;&#xA;define &quot;Antithrombotic Therapy at Discharge&quot;:&#xA;  [MedicationRequest: medication in &quot;Antithrombotic Therapy&quot;] Antithrombotic&#xA;    where (Antithrombotic.isCommunity() or Antithrombotic.isDischarge())&#xA;      and Antithrombotic.status in { 'active', 'completed' }&#xA;      and Antithrombotic.intent = 'order'&#xA;*/&#xA;&#xA;// QICoreMedicationStatement&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationstatementdefine MedicationStatement:&#xA;  [MedicationStatement]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="53"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE MedicationStatement"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE MedicationStatement&quot;:&#xA;    Profiles.MedicationStatement"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="54"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Location"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreLocation&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location&#xA;define Location:&#xA;  [Location]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="55"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Location"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Location&quot;:&#xA;    Profiles.Location"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="56"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="MedicationNotRequested"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreMedicationNotRequested&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-mednotrequested&#xA;define MedicationNotRequested:&#xA;  [MedicationRequest] R&#xA;    where R.status = 'completed'&#xA;      and R.doNotPerform is true"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="57"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE MedicationNotRequested"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE MedicationNotRequested&quot;:&#xA;    Profiles.MedicationNotRequested"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="58"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="DeviceNotRequested"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreDeviceNotRequested&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-devicenotrequested&#xA;define DeviceNotRequested:&#xA;  [DeviceRequest] D&#xA;    where D.status = 'completed'&#xA;      and D.doNotPerform() is true"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="59"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE DeviceNotRequested"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE DeviceNotRequested&quot;:&#xA;    Profiles.DeviceNotRequested"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="60"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Encounter"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Encounter&quot;:&#xA;    Profiles.Encounter"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="61"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="CommunicationNotDone"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreCommunicationNotDone&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationnotdone&#xA;define CommunicationNotDone:&#xA;  [Communication] C&#xA;    where C.status = 'not-done'"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="62"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE CommunicationNotDone"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE CommunicationNotDone&quot;:&#xA;    Profiles.CommunicationNotDone"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="63"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Substance"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreSubstance&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-substance&#xA;define Substance:&#xA;  [Substance]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="64"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Substance"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Substance&quot;:&#xA;    Profiles.Substance"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="65"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="MedicationAdministration"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreMedicationAdministration&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministration&#xA;define MedicationAdministration:&#xA;  [MedicationAdministration] M&#xA;    where M.status in { 'in-progress', 'on-hold', 'completed' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="66"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE MedicationAdministration"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE MedicationAdministration&quot;:&#xA;    Profiles.MedicationAdministration"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="67"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreObservation&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation&#xA;define Observation:&#xA;  [Observation] O&#xA;    where O.status in { 'registered', 'preliminary', 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="68"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Observation&quot;:&#xA;    Profiles.Observation"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="69"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Device"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreDevice&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-device&#xA;define Device:&#xA;  [Device]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="70"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Device"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Device&quot;:&#xA;    Profiles.Device"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="71"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="NutritionOrder"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreNutritionOrder&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-nutritionorder&#xA;define NutritionOrder:&#xA;  [NutritionOrder]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="72"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE NutritionOrder"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE NutritionOrder&quot;:&#xA;    Profiles.NutritionOrder"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="73"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ObservationCancelled"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreObservationCancelled&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observationcancelled&#xA;define ObservationCancelled:&#xA;  [Observation] O&#xA;    where O.status = 'cancelled'"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="74"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE ObservationCancelled"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE ObservationCancelled&quot;:&#xA;    Profiles.ObservationCancelled"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="75"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Flag"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreFlag&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-flag&#xA;define Flag:&#xA;  [Flag]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="76"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Flag"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Flag&quot;:&#xA;    Profiles.Flag"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="77"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ProcedurePerformed"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define ProcedurePerformed:&#xA;  Procedure P&#xA;    where P.status = 'completed'"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="78"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE ProcedurePerformed"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE ProcedurePerformed&quot;:&#xA;    Profiles.ProcedurePerformed"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="79"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Initial Population"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Initial Population&quot;: true"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="80"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="DeviceRequest"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreDeviceRequest&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-devicerequest&#xA;define DeviceRequest:&#xA;  [DeviceRequest] D&#xA;    where D.status in { 'draft', 'active', 'on-hold', 'revoked', 'completed' }&#xA;      and D.doNotPerform() is not true"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="81"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE DeviceRequest"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE DeviceRequest&quot;:&#xA;    Profiles.DeviceRequest"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="82"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="BodyStructure"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreBodyStructure&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-bodystructure&#xA;define BodyStructure:&#xA;  [BodyStructure]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="83"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE BodyStructure"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE BodyStructure&quot;:&#xA;    Profiles.BodyStructure"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="84"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="FamilyMemberHistory"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreFamilyMemberHistory&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-familymemberhistory&#xA;define FamilyMemberHistory:&#xA;  [FamilyMemberHistory]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="85"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE FamilyMemberHistory"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE FamilyMemberHistory&quot;:&#xA;    Profiles.FamilyMemberHistory"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="86"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Medication"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreMedication&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medication&#xA;define Medication:&#xA;  [Medication]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="87"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Medication"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Medication&quot;:&#xA;    Profiles.Medication"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="88"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Specimen"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;define &quot;Intervention Comfort Measures&quot;:&#xA;  ([&quot;ServiceRequest&quot;: &quot;Comfort Measures&quot;] P&#xA;    where P.intent = 'order'&#xA;  )&#xA;    union ([&quot;Procedure&quot;: &quot;Comfort Measures&quot;] InterventionPerformed&#xA;      where InterventionPerformed.status in {'completed', 'in-progress'}&#xA;    )&#xA;&#xA;define &quot;Intervention Comfort Measures&quot;:&#xA;  (QICore.ServiceRequest SR&#xA;    where SR.code in &quot;Comfort Measures&quot;&#xA;      and SR.intent = 'order'&#xA;  )&#xA;    union (&#xA;      QICore.Procedure InterventionPerformed&#xA;        where InterventionPerformed.code in &quot;Comfort Measures&quot;&#xA;          and InterventionPerformed.status in { 'completed', 'in-progress' }&#xA;    )&#xA;*/&#xA;&#xA;// QICoreSpecimen&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-specimendefine Specimen:&#xA;  [Specimen]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="89"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Specimen"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Specimen&quot;:&#xA;    Profiles.Specimen"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="90"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="AdverseEvent"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// Profiles&#xA;&#xA;// QICoreAdverseEvent&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-adverseevent&#xA;define AdverseEvent:&#xA;  [AdverseEvent]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="91"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE AdverseEvent"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE AdverseEvent&quot;:&#xA;    Profiles.AdverseEvent"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="92"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Task"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreTask&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-task&#xA;define Task:&#xA;  [Task] T&#xA;    where T.status in { 'draft', 'requested', 'received', 'accepted', 'ready', 'in-progress', 'on-hold', 'completed' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="93"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Task"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Task&quot;:&#xA;    Profiles.Task"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="94"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ImmunizationNotDone"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreImmunizationNotDone&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationnotdone&#xA;define ImmunizationNotDone:&#xA;  [Immunization] I&#xA;    where I.status = 'not-done'"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="95"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE ImmunizationNotDone"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE ImmunizationNotDone&quot;:&#xA;    Profiles.ImmunizationNotDone"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="96"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="MedicationDispense"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreMedicationDispense&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationdispense&#xA;define MedicationDispense:&#xA;  [MedicationDispense] D&#xA;    where D.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="97"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE MedicationDispense"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE MedicationDispense&quot;:&#xA;    Profiles.MedicationDispense"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="98"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ImmunizationEvaluation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreImmunizationEvaluation&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationevaluation&#xA;define ImmunizationEvaluation:&#xA;  [ImmunizationEvaluation]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="99"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE ImmunizationEvaluation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE ImmunizationEvaluation&quot;:&#xA;    Profiles.ImmunizationEvaluation"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="100"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="DeviceUseStatement"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreDeviceUseStatement&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-deviceusestatement&#xA;define DeviceUseStatement:&#xA;  [DeviceUseStatement]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="101"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE DeviceUseStatement"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE DeviceUseStatement&quot;:&#xA;    Profiles.DeviceUseStatement"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="102"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Goal"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreGoal&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-goal&#xA;define Goal:&#xA;  [Goal]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="103"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Goal"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Goal&quot;:&#xA;    Profiles.Goal"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="104"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Condition"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// QICoreCondition&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition&#xA;define Condition:&#xA;  [Condition]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="105"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE Condition"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE Condition&quot;:&#xA;    Profiles.Condition"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="106"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfilePatterns"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ServiceRequest"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;define &quot;No VTE Prophylaxis Device Order&quot;:&#xA;  ([&quot;ServiceRequest&quot;: &quot;Venous foot pumps (VFP)&quot;]&#xA;    union [&quot;ServiceRequest&quot;: &quot;Intermittent pneumatic compression devices (IPC)&quot;]&#xA;    union [&quot;ServiceRequest&quot;: &quot;Graduated compression stockings (GCS)&quot;]&#xA;  ) DeviceOrder&#xA;    where DeviceOrder.status = 'completed'&#xA;      and DeviceOrder.doNotPerform is true&#xA;&#xA;define &quot;No VTE Prophylaxis Device Order&quot;:&#xA;  QICore.ServiceNotRequested DeviceOrder&#xA;    where DeviceOrder.code in &quot;Venous foot pumps (VFP)&quot;&#xA;      or DeviceOrder.code in &quot;Intermittent pneumatic compression devices (IPC)&quot;&#xA;      or DeviceOrder.code in &quot;Graduated compression stockings (GCS)&quot;&#xA;*/&#xA;&#xA;// QICoreServiceRequest&#xA;// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicerequestdefine ServiceRequest:&#xA;  [ServiceRequest] SR&#xA;    where SR.status in { 'draft', 'active', 'on-hold', 'completed' }&#xA;      and SR.doNotPerform is not true"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="107"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="QiCoreProfileValidation"/>
+        </extension>
+        <extension url="name">
+          <valueString value="SDE ServiceRequest"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;SDE ServiceRequest&quot;:&#xA;    Profiles.ServiceRequest"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="108"/>
+        </extension>
+      </extension>
+      <status value="active"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+          <code value="module-definition"/>
+        </coding>
+      </type>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Profiles"/>
+        <resource value="http://cms.gov/fhir/mct/Library/QiCoreProfilePatterns|1.0.0"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library FHIRHelpers"/>
+        <resource value="http://cms.gov/fhir/mct/Library/FHIRHelpers|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library QICoreCommon"/>
+        <resource value="http://cms.gov/fhir/mct/Library/QICoreCommon|1.0.0"/>
+      </relatedArtifact>
+      <parameter>
+        <name value="SDE Coverage"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Coverage"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Procedure"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Procedure"/>
+      </parameter>
+      <parameter>
+        <name value="SDE EncounterPerformed"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Encounter"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Practitioner"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Practitioner"/>
+      </parameter>
+      <parameter>
+        <name value="SDE ProcedureNotDone"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Procedure"/>
+      </parameter>
+      <parameter>
+        <name value="SDE ImagingStudy"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="ImagingStudy"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Organization"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Organization"/>
+      </parameter>
+      <parameter>
+        <name value="SDE AllergyIntolerance"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="AllergyIntolerance"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Immunization"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Immunization"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Patient"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Patient"/>
+      </parameter>
+      <parameter>
+        <name value="SDE ServiceNotRequested"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="ServiceRequest"/>
+      </parameter>
+      <parameter>
+        <name value="SDE TaskRejected"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Task"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Claim"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Claim"/>
+      </parameter>
+      <parameter>
+        <name value="SDE CommunicationRequest"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="CommunicationRequest"/>
+      </parameter>
+      <parameter>
+        <name value="SDE DiagnosticReportNote"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="DiagnosticReport"/>
+      </parameter>
+      <parameter>
+        <name value="SDE CarePlan"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="CarePlan"/>
+      </parameter>
+      <parameter>
+        <name value="SDE MedicationAdministrationNotDone"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="MedicationAdministration"/>
+      </parameter>
+      <parameter>
+        <name value="SDE PractitionerRole"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="PractitionerRole"/>
+      </parameter>
+      <parameter>
+        <name value="SDE CareTeam"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="CareTeam"/>
+      </parameter>
+      <parameter>
+        <name value="SDE RelatedPerson"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="RelatedPerson"/>
+      </parameter>
+      <parameter>
+        <name value="SDE MedicationRequest"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="MedicationRequest"/>
+      </parameter>
+      <parameter>
+        <name value="SDE DiagnosticReportLab"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="DiagnosticReport"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Communication"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Communication"/>
+      </parameter>
+      <parameter>
+        <name value="SDE MedicationDispenseDeclined"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="MedicationDispense"/>
+      </parameter>
+      <parameter>
+        <name value="SDE ImmunizationRecommendation"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="ImmunizationRecommendation"/>
+      </parameter>
+      <parameter>
+        <name value="SDE ImplantableDevice"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Device"/>
+      </parameter>
+      <parameter>
+        <name value="SDE MedicationStatement"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Location"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Location"/>
+      </parameter>
+      <parameter>
+        <name value="SDE MedicationNotRequested"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="MedicationRequest"/>
+      </parameter>
+      <parameter>
+        <name value="SDE DeviceNotRequested"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="DeviceRequest"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Encounter"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Encounter"/>
+      </parameter>
+      <parameter>
+        <name value="SDE CommunicationNotDone"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Communication"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Substance"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Substance"/>
+      </parameter>
+      <parameter>
+        <name value="SDE MedicationAdministration"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="MedicationAdministration"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Observation"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Observation"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Device"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Device"/>
+      </parameter>
+      <parameter>
+        <name value="SDE NutritionOrder"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="NutritionOrder"/>
+      </parameter>
+      <parameter>
+        <name value="SDE ObservationCancelled"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Observation"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Flag"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Flag"/>
+      </parameter>
+      <parameter>
+        <name value="SDE ProcedurePerformed"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Procedure"/>
+      </parameter>
+      <parameter>
+        <name value="Initial Population"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <parameter>
+        <name value="SDE DeviceRequest"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="DeviceRequest"/>
+      </parameter>
+      <parameter>
+        <name value="SDE BodyStructure"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="BodyStructure"/>
+      </parameter>
+      <parameter>
+        <name value="SDE FamilyMemberHistory"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="FamilyMemberHistory"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Medication"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Medication"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Specimen"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Specimen"/>
+      </parameter>
+      <parameter>
+        <name value="SDE AdverseEvent"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="AdverseEvent"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Task"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Task"/>
+      </parameter>
+      <parameter>
+        <name value="SDE ImmunizationNotDone"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Immunization"/>
+      </parameter>
+      <parameter>
+        <name value="SDE MedicationDispense"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="MedicationDispense"/>
+      </parameter>
+      <parameter>
+        <name value="SDE ImmunizationEvaluation"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="ImmunizationEvaluation"/>
+      </parameter>
+      <parameter>
+        <name value="SDE DeviceUseStatement"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Goal"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Goal"/>
+      </parameter>
+      <parameter>
+        <name value="SDE Condition"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Condition"/>
+      </parameter>
+      <parameter>
+        <name value="SDE ServiceRequest"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="ServiceRequest"/>
+      </parameter>
+      <dataRequirement>
+        <type value="Coverage"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Coverage"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Procedure"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Procedure"/>
+        <mustSupport value="status"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Encounter"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
+        <mustSupport value="status"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Practitioner"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="ImagingStudy"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/ImagingStudy"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Organization"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="AllergyIntolerance"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/AllergyIntolerance"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Immunization"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Immunization"/>
+        <mustSupport value="status"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Patient"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="ServiceRequest"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/ServiceRequest"/>
+        <mustSupport value="status"/>
+        <mustSupport value="doNotPerform"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Task"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Task"/>
+        <mustSupport value="status"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Claim"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Claim"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="CommunicationRequest"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/CommunicationRequest"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="DiagnosticReport"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/DiagnosticReport"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="CarePlan"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/CarePlan"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="MedicationAdministration"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/MedicationAdministration"/>
+        <mustSupport value="status"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="PractitionerRole"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="CareTeam"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/CareTeam"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="RelatedPerson"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="MedicationRequest"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/MedicationRequest"/>
+        <mustSupport value="status"/>
+        <mustSupport value="doNotPerform"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Communication"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Communication"/>
+        <mustSupport value="status"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="MedicationDispense"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/MedicationDispense"/>
+        <mustSupport value="status"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="ImmunizationRecommendation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Device"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Device"/>
+      </dataRequirement>
+      <dataRequirement>
+        <profile value="http://hl7.org/fhir/StructureDefinition/MedicationStatement"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Location"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Location"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="DeviceRequest"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/DeviceRequest"/>
+        <mustSupport value="status"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Substance"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Substance"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="status"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="NutritionOrder"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/NutritionOrder"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Flag"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Flag"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="BodyStructure"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/BodyStructure"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="FamilyMemberHistory"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/FamilyMemberHistory"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Medication"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Medication"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Specimen"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Specimen"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="AdverseEvent"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/AdverseEvent"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="ImmunizationEvaluation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/ImmunizationEvaluation"/>
+      </dataRequirement>
+      <dataRequirement>
+        <profile value="http://hl7.org/fhir/StructureDefinition/DeviceUseStatement"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Goal"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Goal"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Condition"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Condition"/>
+      </dataRequirement>
+    </Library>
+  </contained>
+  <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem">
+    <valueReference>
+      <reference value="Device/cqf-tooling"/>
+    </valueReference>
+  </extension>
+  <extension id="effective-data-requirements" url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements">
+    <valueReference>
+      <reference value="#effective-data-requirements"/>
+    </valueReference>
+  </extension>
+  <url value="http://cms.gov/fhir/mct/Measure/QiCoreProfileValidation"/>
+  <version value="0.1.0"/>
+  <name value="QiCoreProfileValidation"/>
+  <title value="QiCoreProfileValidation FHIR"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <date value="2022-12-12"/>
+  <publisher value="HL7 International - [Some] Work Group"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/[something]"/>
+    </telecom>
+  </contact>
+  <description value="A cohort measure with supplemental data elements for all profiles in QICore"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <approvalDate value="2022-12-12"/>
+  <lastReviewDate value="2022-12-12"/>
+  <effectivePeriod>
+    <start value="2021-01-01"/>
+    <end value="2021-12-31"/>
+  </effectivePeriod>
+  <topic>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="57024-2"/>
+      <display value="Health Quality Measure Document"/>
+    </coding>
+  </topic>
+  <library value="http://cms.gov/fhir/mct/Library/QiCoreProfileValidation"/>
+  <scoring>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"/>
+      <code value="cohort"/>
+      <display value="Cohort"/>
+    </coding>
+  </scoring>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/measure-type"/>
+      <code value="process"/>
+    </coding>
+  </type>
+  <improvementNotation>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/measure-improvement-notation"/>
+      <code value="decrease"/>
+      <display value="Decreased score indicates improvement"/>
+    </coding>
+  </improvementNotation>
+  <group>
+    <population>
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="initial-population"/>
+          <display value="Initial Population"/>
+        </coding>
+      </code>
+      <criteria>
+        <language value="text/cql-identifier"/>
+        <expression value="Initial Population"/>
+      </criteria>
+    </population>
+  </group>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE AdverseEvent"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE AllergyIntolerance"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE BodyStructure"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE CarePlan"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE CareTeam"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Claim"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Communication"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE CommunicationNotDone"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE CommunicationRequest"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Condition"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Coverage"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Device"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE DeviceNotRequested"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE DeviceRequest"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE DeviceUseStatement"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE DiagnosticReportLab"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE DiagnosticReportNote"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Encounter"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE EncounterPerformed"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE FamilyMemberHistory"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Flag"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Goal"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE ImagingStudy"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Immunization"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE ImmunizationEvaluation"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE ImmunizationNotDone"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE ImmunizationRecommendation"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE ImplantableDevice"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Location"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Medication"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE MedicationAdministration"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE MedicationAdministrationNotDone"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE MedicationDispense"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE MedicationDispenseDeclined"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE MedicationNotRequested"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE MedicationRequest"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE MedicationStatement"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE NutritionOrder"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Observation"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE ObservationCancelled"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Organization"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Patient"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Practitioner"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE PractitionerRole"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Procedure"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE ProcedurePerformed"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE ProcedureNotDone"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE RelatedPerson"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE ServiceNotRequested"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE ServiceRequest"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Specimen"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Substance"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE Task"/>
+    </criteria>
+  </supplementalData>
+  <supplementalData>
+    <usage>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"/>
+        <code value="supplemental-data"/>
+      </coding>
+    </usage>
+    <criteria>
+      <language value="text/cql-identifier"/>
+      <expression value="SDE TaskRejected"/>
+    </criteria>
+  </supplementalData>
+</Measure>

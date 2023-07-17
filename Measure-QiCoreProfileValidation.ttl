@@ -1,0 +1,2959 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://cms.gov/fhir/mct/Measure/QiCoreProfileValidation> a fhir:Measure ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "QiCoreProfileValidation"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cohort-measure-cqfm"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cohort-measure-cqfm>
+     ] [
+       fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n    <table class=\"grid dict\">\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">QiCoreProfileValidation</td>\n        </tr>\n        \n        \n        <tr>\n            <th scope=\"row\"><b>Url: </b></th>\n            <td style=\"padding-left: 4px;\"><a href=\"http://cms.gov/fhir/mct/Measure/QiCoreProfileValidation\">http://cms.gov/fhir/mct/Measure/QiCoreProfileValidation</a></td>\n        </tr>\n        \n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.1.0</td>\n        </tr>\n        \n        \n        \n        <tr>\n            <th scope=\"row\"><b>Name: </b></th>\n            <td style=\"padding-left: 4px;\">QiCoreProfileValidation</td>\n        </tr>\n        \n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">QiCoreProfileValidation FHIR</td>\n        </tr>\n        \n        \n        \n        <tr>\n            <th scope=\"row\"><b>Status: </b></th>\n            <td style=\"padding-left: 4px;\">active</td>\n        </tr>\n        \n        \n        <tr>\n            <th scope=\"row\"><b>Experimental: </b></th>\n            <td style=\"padding-left: 4px;\">true</td>\n        </tr>\n        \n        \n        <tr>\n            <th scope=\"row\"><b>Scoring: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/CodeSystem/measure-scoring\">http://terminology.hl7.org/CodeSystem/measure-scoring</a></span>\n                        </p>\n                        \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>code: </b> <span>cohort</span>\n                        </p>\n                        \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>display: </b> <span>Cohort</span>\n                        </p>\n                        \n                    \n                \n                \n            </td>\n        </tr>\n        \n        \n        <tr>\n            <th scope=\"row\"><b>Improvement Notation: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/CodeSystem/measure-improvement-notation\">http://terminology.hl7.org/CodeSystem/measure-improvement-notation</a></span>\n                        </p>\n                        \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>code: </b> <span>decrease</span>\n                        </p>\n                        \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>display: </b> <span>Decreased score indicates improvement</span>\n                        </p>\n                        \n                    \n                \n                \n            </td>\n        </tr>\n        \n        \n        <tr>\n            <th scope=\"row\"><b>Type: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/CodeSystem/measure-type\">http://terminology.hl7.org/CodeSystem/measure-type</a></span>\n                        </p>\n                        \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>code: </b> <span>process</span>\n                        </p>\n                        \n                        \n                    \n                \n                \n            </td>\n        </tr>\n        \n        \n        \n        <tr>\n            <th scope=\"row\"><b>Date: </b></th>\n            <td style=\"padding-left: 4px;\">2022-12-12</td>\n        </tr>\n        \n        \n        <tr>\n            <th scope=\"row\"><b>Publisher: </b></th>\n            <td style=\"padding-left: 4px;\">HL7 International - [Some] Work Group</td>\n        </tr>\n        \n        \n        <tr>\n            <th scope=\"row\"><b>Description: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>A cohort measure with supplemental data elements for all profiles in QICore</p>\n</div></td>\n        </tr>\n        \n        \n        \n        \n        \n        \n        \n            <tr>\n                <th scope=\"row\"><b>Populations: </b></th>\n                <td style=\"padding-left: 4px;\">\n                    <table class=\"grid-dict\">\n                        <tr><th><b>Group</b></th><th><b>Population</b></th><th><b>Description</b></th></tr>\n                        \n                        <tr>\n                            <td></td>\n                            \n                                <tr>\n                                    <td/>\n                                    <td>Initial Population</td>\n                                    <td>\n                                        \n                                    </td>\n                                 </tr>\n                            \n                        </tr>\n                        \n                    </table>\n                </td>\n            </tr>\n        \n        \n            <tr>\n                <th scope=\"row\"><b>Supplemental Data: </b></th>\n                <td style=\"padding-left: 4px;\">\n                    <table class=\"grid-dict\">\n                        <tr><th><b>expression</b></th><th><b>system</b></th></tr>\n                        \n                        <tr>\n                            <td>SDE AdverseEvent</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE AllergyIntolerance</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE BodyStructure</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE CarePlan</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE CareTeam</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Claim</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Communication</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE CommunicationNotDone</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE CommunicationRequest</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Condition</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Coverage</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Device</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE DeviceNotRequested</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE DeviceRequest</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE DeviceUseStatement</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE DiagnosticReportLab</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE DiagnosticReportNote</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Encounter</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE EncounterPerformed</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE FamilyMemberHistory</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Flag</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Goal</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE ImagingStudy</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Immunization</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE ImmunizationEvaluation</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE ImmunizationNotDone</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE ImmunizationRecommendation</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE ImplantableDevice</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Location</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Medication</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE MedicationAdministration</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE MedicationAdministrationNotDone</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE MedicationDispense</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE MedicationDispenseDeclined</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE MedicationNotRequested</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE MedicationRequest</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE MedicationStatement</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE NutritionOrder</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Observation</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE ObservationCancelled</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Organization</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Patient</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Practitioner</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE PractitionerRole</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Procedure</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE ProcedurePerformed</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE ProcedureNotDone</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE RelatedPerson</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE ServiceNotRequested</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE ServiceRequest</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Specimen</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Substance</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE Task</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                        <tr>\n                            <td>SDE TaskRejected</td>\n                            <td><a href=\"http://terminology.hl7.org/CodeSystem/measure-data-usage\">http://terminology.hl7.org/CodeSystem/measure-data-usage</a></td>\n                        </tr>\n                        \n                    </table>\n                </td>\n            </tr>\n        \n        \n        \n        <tr>\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\n            <td style=\"padding-left: 25px;\">US</td>\n        </tr>\n        \n        \n        <tr>\n            <th scope=\"row\"><b>Topic: </b></th>\n            <td style=\"padding-left: 25px;\">57024-2</td>\n        </tr>\n        \n        \n        \n        \n        \n        \n        <tr>\n            <th scope=\"row\"><b>Approval Date: </b></th>\n            <td style=\"padding-left: 4px;\">2022-12-12</td>\n        </tr>\n        \n        \n        <tr>\n            <th scope=\"row\"><b>Last Review Date: </b></th>\n            <td style=\"padding-left: 4px;\">2022-12-12</td>\n        </tr>\n        \n        \n        <tr>\n            <th scope=\"row\"><b>Effective Period: </b></th>\n            <td style=\"padding-left: 4px;\">2021-01-01..2021-12-31</td>\n        </tr>\n        \n        \n        \n        \n        \n        \n            <tr>\n                <th scope=\"row\"><b>Logic Definitions: </b></th>\n                <td style=\"padding-left: 4px;\">\n                    \n                        <table class=\"grid-dict\">\n                            <tr>\n                                <th><b>Group</b></th><th><b>Scoring</b></th><th><b>Population Criteria</b></th><th><b>Expression</b></th>\n                            </tr>\n                            <tr>\n                                \n                                    <td>  </td>\n                                    <td>\n                                        \n                                        \n                                            <b>Measure scoring:</b>\n                                            \n                                                \n                                                    <p style=\"margin-bottom: 5px;\">\n                                                        <span>cohort</span>\n                                                    </p>\n                                                \n                                                \n                                            \n                                        \n                                    </td>\n                                    \n                                        <tr>\n                                            <td/>\n                                            <td/>\n                                            <td>Initial Population</td>\n                                            <td>\n                                                \n                                                <pre><code class=\"language-cql\">Initial Population</code></pre>\n                                                \n                                            </td>\n                                        </tr>\n                                    \n\n                            \n                            </tr>\n                        </table>\n                    \n                    \n                </td>\n            </tr>\n        \n    </table>\n</div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Library ;
+     fhir:id [ fhir:v "effective-data-requirements" ] ;
+     fhir:extension ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Coverage" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreCoverage\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage\ndefine Coverage:\n  [Coverage]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "0"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Coverage" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Coverage\":\n    Profiles.Coverage" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "1"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Procedure" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreProcedure\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure\ndefine Procedure:\n  [Procedure] P\n    where P.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "2"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Procedure" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Procedure\":\n    Profiles.Procedure" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "3"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Encounter" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreEncounter\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter\ndefine Encounter:\n  [Encounter]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "4"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "EncounterPerformed" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define EncounterPerformed:\n  Encounter E\n    where E.status = 'finished'" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "5"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE EncounterPerformed" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE EncounterPerformed\":\n    Profiles.EncounterPerformed" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "6"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICorePractitioner\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner\ndefine Practitioner:\n  [Practitioner]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "7"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Practitioner" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Practitioner\":\n    Profiles.Practitioner" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "8"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ProcedureNotDone" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "/*\ndefine \"Flexible Sigmoidoscopy Performed\":\n [Procedure: \"Flexible Sigmoidoscopy\"] FlexibleSigmoidoscopy\n	 where FlexibleSigmoidoscopy.status = 'completed'\n		 and Global.\"Normalize Interval\"(FlexibleSigmoidoscopy.performed) ends 5 years or less on or before end of \"Measurement Period\"\n\ndefine \"Flexible Sigmoidoscopy Performed\":\n  QICore.ProcedurePerformed FlexibleSigmoidoscopy\n    where FlexibleSigmoidoscopy.code in \"Flexible Sigmoidoscopy\"\n      and FlexibleSigmoidoscopy.performed.toInterval() ends 5 years or less on or before end of \"Measurement Period\"\n*/\n\n// QICoreProcedureNotDone\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurenotdonedefine ProcedureNotDone:\n  [Procedure] P\n    where P.status = 'not-done'" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "9"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE ProcedureNotDone" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE ProcedureNotDone\":\n    Profiles.ProcedureNotDone" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "10"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ImagingStudy" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreImagingStudy\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-imagingstudy\ndefine ImagingStudy:\n  [ImagingStudy]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "11"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE ImagingStudy" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE ImagingStudy\":\n    Profiles.ImagingStudy" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "12"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Organization" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// FHIR Vital Signs\n\n// USCore Smoking Status\n\n// USCore Laboratory Result\n\n// USCore Pediatric BMI for Age\n\n// USCore Pediatric Weight for Height\n\n// USCore Pulse Oximetry\n\n// QICoreOrganization\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization\ndefine Organization:\n  [Organization]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "13"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Organization" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Organization\":\n    Profiles.Organization" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "14"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "AllergyIntolerance" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreAllergyIntolerance\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-allergyintolerance\ndefine AllergyIntolerance:\n  [AllergyIntolerance]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "15"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE AllergyIntolerance" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE AllergyIntolerance\":\n    Profiles.AllergyIntolerance" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "16"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Immunization" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreImmunization\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunization\ndefine Immunization:\n  [Immunization] I\n    where I.status = 'completed'" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "17"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Immunization" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Immunization\":\n    Profiles.Immunization" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "18"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICorePatient\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient\ndefine Patient:\n  [Patient]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "19"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Patient" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Patient\":\n    Profiles.Patient" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "20"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceNotRequested" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreServiceNotRequested\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicenotrequested\ndefine ServiceNotRequested:\n  [ServiceRequest] SR\n    where SR.status = 'completed'\n      and SR.doNotPerform is true" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "21"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE ServiceNotRequested" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE ServiceNotRequested\":\n    Profiles.ServiceNotRequested" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "22"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "TaskRejected" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreTaskRejected\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-taskrejected\n// TODO: What about cancelled and failed?\ndefine TaskRejected:\n  [Task] T\n    where T.status = 'rejected'" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "23"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE TaskRejected" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE TaskRejected\":\n    Profiles.TaskRejected" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "24"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Claim" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreClaim\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-claim\ndefine Claim:\n  [Claim]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "25"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Claim" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Claim\":\n    Profiles.Claim" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "26"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CommunicationRequest" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreCommunicationRequest\n// @profile: 	http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationrequest\ndefine CommunicationRequest:\n  [CommunicationRequest]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "27"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE CommunicationRequest" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE CommunicationRequest\":\n    Profiles.CommunicationRequest" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "28"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReportNote" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "//where D.category ~ \"http://terminology.hl7.org/CodeSystem/v2-0074#LAB\"\n\n// QICoreDiagnosticReportNote\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-diagnosticreport-note\ndefine DiagnosticReportNote:\n  [DiagnosticReport] D" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "29"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE DiagnosticReportNote" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE DiagnosticReportNote\":\n    Profiles.DiagnosticReportNote" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "30"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CarePlan" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreCarePlan\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-careplan\ndefine CarePlan:\n  [CarePlan]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "31"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE CarePlan" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE CarePlan\":\n    Profiles.CarePlan" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "32"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationAdministrationNotDone" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreMedicationAdministrationNotDone\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-mednotadministered\ndefine MedicationAdministrationNotDone:\n  [MedicationAdministration] M\n    where M.status = 'not-done'" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "33"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE MedicationAdministrationNotDone" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE MedicationAdministrationNotDone\":\n    Profiles.MedicationAdministrationNotDone" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "34"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICorePractitionerRole\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitionerrole\ndefine PractitionerRole:\n  [PractitionerRole]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "35"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE PractitionerRole" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE PractitionerRole\":\n    Profiles.PractitionerRole" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "36"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CareTeam" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreCareTeam\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-careteam\ndefine CareTeam:\n  [CareTeam]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "37"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE CareTeam" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE CareTeam\":\n    Profiles.CareTeam" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "38"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "RelatedPerson" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "/*\ndefine \"No VTE Prophylaxis Device Applied\":\n  [\"Procedure\": \"Device Application\"] DeviceApplied\n    let DeviceNotDoneTiming: Global.GetExtension(DeviceApplied, 'qicore-recorded').value\n    where (DeviceApplied.usedCode in \"Intermittent pneumatic compression devices (IPC)\"\n      or DeviceApplied.usedCode in \"Venous foot pumps (VFP)\"\n      or DeviceApplied.usedCode in \"Graduated compression stockings (GCS)\"\n    )\n      and  DeviceApplied.status = 'not-done'\n    return {id: DeviceApplied.id, requestStatusReason: DeviceApplied.statusReason, authoredOn: DeviceNotDoneTiming}\n\ndefine \"No VTE Prophylaxis Device Applied\":\n  QICore.ProcedureNotDone DeviceApplied\n    where DeviceApplied.code in \"Device Application\"\n      and (DeviceApplied.usedCode in \"Intermittent pneumatic compression devices (IPC)\"\n        or DeviceApplied.usedCode in \"Venous foot pumps (VFP)\"\n        or DeviceApplied.usedCode in \"Graduated compression stockings (GCS)\")\n    return {\n      id: DeviceApplied.id,\n      requestStatusReason: DeviceApplied.statusReason,\n      authoredOn: DeviceApplied.recorded()\n    }\n\n*/\n\n// QICoreRelatedPerson\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-relatedpersondefine RelatedPerson:\n  [RelatedPerson]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "39"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE RelatedPerson" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE RelatedPerson\":\n    Profiles.RelatedPerson" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "40"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "/*\ndefine \"Antithrombotic Not Given at Discharge\":\n  [\"MedicationRequest\": medication in \"Antithrombotic Therapy\"] NoAntithromboticDischarge\n    where NoAntithromboticDischarge.doNotPerform is true\n			and (NoAntithromboticDischarge.reasonCode in \"Medical Reason\"\n				or NoAntithromboticDischarge.reasonCode in \"Patient Refusal\")\n      and exists (NoAntithromboticDischarge.category C where FHIRHelpers.ToConcept(C) ~ FC.\"Community\" or FHIRHelpers.ToConcept(C) ~ FC.\"Discharge\")\n      and NoAntithromboticDischarge.status = 'completed'\n      and NoAntithromboticDischarge.intent = 'order'\n\ndefine \"Antithrombotic Not Given at Discharge\":\n  QICore.MedicationNotRequested NoAntithromboticDischarge\n    where NoAntithromboticDischarge.medication in \"Antithrombotic Therapy\"\n      and (NoAntithromboticDischarge.reasonCode in \"Medical Reason\"\n        or NoAntithromboticDischarge.reasonCode in \"Patient Refusal\")\n      and (NoAntithromboticDischarge.isCommunity() or NoAntithromboticDischarge.isDischarge())\n      and NoAntithromboticDischarge.intent = 'order'\n\ndefine \"Antithrombotic Not Given at Discharge\":\n  [\"MedicationNotRequested\": medication in \"Antithrombotic Therapy\"] NoAntithromboticDischarge\n    where (NoAntithromboticDischarge.reasonCode in \"Medical Reason\"\n        or NoAntithromboticDischarge.reasonCode in \"Patient Refusal\")\n      and (NoAntithromboticDischarge.isCommunity() or NoAntithromboticDischarge.isDischarge())\n      and NoAntithromboticDischarge.intent = 'order'\n*/\n\n// QICoreMedicationRequest\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequestdefine MedicationRequest:\n  [MedicationRequest] R\n    where R.status in { 'active', 'on-hold', 'completed', 'draft' }\n      and R.doNotPerform is not true" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "41"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE MedicationRequest" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE MedicationRequest\":\n    Profiles.MedicationRequest" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "42"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReportLab" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreDiagnosticReportLab\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-diagnosticreport-lab\ndefine DiagnosticReportLab:\n  [DiagnosticReport] D" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "43"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE DiagnosticReportLab" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE DiagnosticReportLab\":\n    Profiles.DiagnosticReportLab" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "44"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Communication" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreCommunication\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communication\ndefine Communication:\n  [Communication] C\n    where C.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "45"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Communication" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Communication\":\n    Profiles.Communication" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "46"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationDispenseDeclined" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreMedicationDispenseDeclined\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationdispensedeclined\ndefine MedicationDispenseDeclined:\n  [MedicationDispense] D\n    where D.status in { 'cancelled', 'declined' }" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "47"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE MedicationDispenseDeclined" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE MedicationDispenseDeclined\":\n    Profiles.MedicationDispenseDeclined" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "48"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ImmunizationRecommendation" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreImmunizationRecommendation\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationrec\ndefine ImmunizationRecommendation:\n  [ImmunizationRecommendation]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "49"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE ImmunizationRecommendation" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE ImmunizationRecommendation\":\n    Profiles.ImmunizationRecommendation" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "50"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ImplantableDevice" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// USCoreImplantableDevice\n// @profile: http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device\ndefine ImplantableDevice:\n  [Device]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "51"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE ImplantableDevice" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE ImplantableDevice\":\n    Profiles.ImplantableDevice" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "52"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationStatement" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "/*\ndefine \"Antithrombotic Therapy at Discharge\":\n  [\"MedicationRequest\": medication in \"Antithrombotic Therapy\"] Antithrombotic\n    where exists (Antithrombotic.category C where FHIRHelpers.ToConcept(C) in { Global.\"Community\", Global.\"Discharge\" })\n      and Antithrombotic.status in { 'active', 'completed' }\n      and Antithrombotic.intent.value = 'order'\n\ndefine \"Antithrombotic Therapy at Discharge\":\n  QICore.MedicationRequest Antithrombotic\n    where Antithrombotic.medication in \"Antithrombotic Therapy\"\n      and (Antithrombotic.isCommunity() or Antithrombotic.isDischarge())\n      and Antithrombotic.status in { 'active', 'completed' }\n      and Antithrombotic.intent = 'order'\n\ndefine \"Antithrombotic Therapy at Discharge\":\n  [MedicationRequest: medication in \"Antithrombotic Therapy\"] Antithrombotic\n    where (Antithrombotic.isCommunity() or Antithrombotic.isDischarge())\n      and Antithrombotic.status in { 'active', 'completed' }\n      and Antithrombotic.intent = 'order'\n*/\n\n// QICoreMedicationStatement\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationstatementdefine MedicationStatement:\n  [MedicationStatement]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "53"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE MedicationStatement" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE MedicationStatement\":\n    Profiles.MedicationStatement" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "54"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Location" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreLocation\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location\ndefine Location:\n  [Location]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "55"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Location" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Location\":\n    Profiles.Location" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "56"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationNotRequested" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreMedicationNotRequested\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-mednotrequested\ndefine MedicationNotRequested:\n  [MedicationRequest] R\n    where R.status = 'completed'\n      and R.doNotPerform is true" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "57"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE MedicationNotRequested" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE MedicationNotRequested\":\n    Profiles.MedicationNotRequested" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "58"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DeviceNotRequested" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreDeviceNotRequested\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-devicenotrequested\ndefine DeviceNotRequested:\n  [DeviceRequest] D\n    where D.status = 'completed'\n      and D.doNotPerform() is true" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "59"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE DeviceNotRequested" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE DeviceNotRequested\":\n    Profiles.DeviceNotRequested" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "60"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Encounter" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Encounter\":\n    Profiles.Encounter" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "61"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CommunicationNotDone" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreCommunicationNotDone\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationnotdone\ndefine CommunicationNotDone:\n  [Communication] C\n    where C.status = 'not-done'" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "62"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE CommunicationNotDone" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE CommunicationNotDone\":\n    Profiles.CommunicationNotDone" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "63"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Substance" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreSubstance\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-substance\ndefine Substance:\n  [Substance]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "64"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Substance" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Substance\":\n    Profiles.Substance" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "65"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationAdministration" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreMedicationAdministration\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministration\ndefine MedicationAdministration:\n  [MedicationAdministration] M\n    where M.status in { 'in-progress', 'on-hold', 'completed' }" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "66"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE MedicationAdministration" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE MedicationAdministration\":\n    Profiles.MedicationAdministration" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "67"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Observation" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreObservation\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation\ndefine Observation:\n  [Observation] O\n    where O.status in { 'registered', 'preliminary', 'final', 'amended', 'corrected' }" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "68"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Observation" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Observation\":\n    Profiles.Observation" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "69"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Device" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreDevice\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-device\ndefine Device:\n  [Device]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "70"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Device" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Device\":\n    Profiles.Device" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "71"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "NutritionOrder" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreNutritionOrder\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-nutritionorder\ndefine NutritionOrder:\n  [NutritionOrder]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "72"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE NutritionOrder" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE NutritionOrder\":\n    Profiles.NutritionOrder" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "73"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ObservationCancelled" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreObservationCancelled\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observationcancelled\ndefine ObservationCancelled:\n  [Observation] O\n    where O.status = 'cancelled'" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "74"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE ObservationCancelled" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE ObservationCancelled\":\n    Profiles.ObservationCancelled" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "75"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Flag" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreFlag\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-flag\ndefine Flag:\n  [Flag]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "76"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Flag" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Flag\":\n    Profiles.Flag" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "77"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ProcedurePerformed" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define ProcedurePerformed:\n  Procedure P\n    where P.status = 'completed'" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "78"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE ProcedurePerformed" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE ProcedurePerformed\":\n    Profiles.ProcedurePerformed" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "79"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Initial Population" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"Initial Population\": true" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "80"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DeviceRequest" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreDeviceRequest\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-devicerequest\ndefine DeviceRequest:\n  [DeviceRequest] D\n    where D.status in { 'draft', 'active', 'on-hold', 'revoked', 'completed' }\n      and D.doNotPerform() is not true" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "81"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE DeviceRequest" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE DeviceRequest\":\n    Profiles.DeviceRequest" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "82"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "BodyStructure" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreBodyStructure\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-bodystructure\ndefine BodyStructure:\n  [BodyStructure]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "83"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE BodyStructure" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE BodyStructure\":\n    Profiles.BodyStructure" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "84"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "FamilyMemberHistory" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreFamilyMemberHistory\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-familymemberhistory\ndefine FamilyMemberHistory:\n  [FamilyMemberHistory]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "85"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE FamilyMemberHistory" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE FamilyMemberHistory\":\n    Profiles.FamilyMemberHistory" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "86"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Medication" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreMedication\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medication\ndefine Medication:\n  [Medication]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "87"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Medication" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Medication\":\n    Profiles.Medication" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "88"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Specimen" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "/*\ndefine \"Intervention Comfort Measures\":\n  ([\"ServiceRequest\": \"Comfort Measures\"] P\n    where P.intent = 'order'\n  )\n    union ([\"Procedure\": \"Comfort Measures\"] InterventionPerformed\n      where InterventionPerformed.status in {'completed', 'in-progress'}\n    )\n\ndefine \"Intervention Comfort Measures\":\n  (QICore.ServiceRequest SR\n    where SR.code in \"Comfort Measures\"\n      and SR.intent = 'order'\n  )\n    union (\n      QICore.Procedure InterventionPerformed\n        where InterventionPerformed.code in \"Comfort Measures\"\n          and InterventionPerformed.status in { 'completed', 'in-progress' }\n    )\n*/\n\n// QICoreSpecimen\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-specimendefine Specimen:\n  [Specimen]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "89"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Specimen" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Specimen\":\n    Profiles.Specimen" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "90"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "AdverseEvent" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// Profiles\n\n// QICoreAdverseEvent\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-adverseevent\ndefine AdverseEvent:\n  [AdverseEvent]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "91"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE AdverseEvent" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE AdverseEvent\":\n    Profiles.AdverseEvent" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "92"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Task" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreTask\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-task\ndefine Task:\n  [Task] T\n    where T.status in { 'draft', 'requested', 'received', 'accepted', 'ready', 'in-progress', 'on-hold', 'completed' }" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "93"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Task" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Task\":\n    Profiles.Task" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "94"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ImmunizationNotDone" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreImmunizationNotDone\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationnotdone\ndefine ImmunizationNotDone:\n  [Immunization] I\n    where I.status = 'not-done'" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "95"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE ImmunizationNotDone" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE ImmunizationNotDone\":\n    Profiles.ImmunizationNotDone" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "96"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationDispense" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreMedicationDispense\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationdispense\ndefine MedicationDispense:\n  [MedicationDispense] D\n    where D.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "97"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE MedicationDispense" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE MedicationDispense\":\n    Profiles.MedicationDispense" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "98"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ImmunizationEvaluation" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreImmunizationEvaluation\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationevaluation\ndefine ImmunizationEvaluation:\n  [ImmunizationEvaluation]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "99"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE ImmunizationEvaluation" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE ImmunizationEvaluation\":\n    Profiles.ImmunizationEvaluation" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "100"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DeviceUseStatement" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreDeviceUseStatement\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-deviceusestatement\ndefine DeviceUseStatement:\n  [DeviceUseStatement]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "101"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE DeviceUseStatement" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE DeviceUseStatement\":\n    Profiles.DeviceUseStatement" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "102"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Goal" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreGoal\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-goal\ndefine Goal:\n  [Goal]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "103"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Goal" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Goal\":\n    Profiles.Goal" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "104"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "// QICoreCondition\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition\ndefine Condition:\n  [Condition]" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "105"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE Condition" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE Condition\":\n    Profiles.Condition" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "106"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfilePatterns" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "/*\ndefine \"No VTE Prophylaxis Device Order\":\n  ([\"ServiceRequest\": \"Venous foot pumps (VFP)\"]\n    union [\"ServiceRequest\": \"Intermittent pneumatic compression devices (IPC)\"]\n    union [\"ServiceRequest\": \"Graduated compression stockings (GCS)\"]\n  ) DeviceOrder\n    where DeviceOrder.status = 'completed'\n      and DeviceOrder.doNotPerform is true\n\ndefine \"No VTE Prophylaxis Device Order\":\n  QICore.ServiceNotRequested DeviceOrder\n    where DeviceOrder.code in \"Venous foot pumps (VFP)\"\n      or DeviceOrder.code in \"Intermittent pneumatic compression devices (IPC)\"\n      or DeviceOrder.code in \"Graduated compression stockings (GCS)\"\n*/\n\n// QICoreServiceRequest\n// @profile: http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicerequestdefine ServiceRequest:\n  [ServiceRequest] SR\n    where SR.status in { 'draft', 'active', 'on-hold', 'completed' }\n      and SR.doNotPerform is not true" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "107"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "QiCoreProfileValidation" ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SDE ServiceRequest" ]
+       ] [
+         fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "define \"SDE ServiceRequest\":\n    Profiles.ServiceRequest" ]
+       ] [
+         fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "108"^^xsd:integer ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition"^^xsd:anyURI ]
+     ] ) ;
+     fhir:status [ fhir:v "active" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/library-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "module-definition" ]
+       ] )
+     ] ;
+     fhir:relatedArtifact ( [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library Profiles" ] ;
+       fhir:resource [
+         fhir:v "http://cms.gov/fhir/mct/Library/QiCoreProfilePatterns|1.0.0"^^xsd:anyURI ;
+         fhir:link <http://cms.gov/fhir/mct/Library/QiCoreProfilePatterns|1.0.0>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library FHIRHelpers" ] ;
+       fhir:resource [
+         fhir:v "http://cms.gov/fhir/mct/Library/FHIRHelpers|4.0.1"^^xsd:anyURI ;
+         fhir:link <http://cms.gov/fhir/mct/Library/FHIRHelpers|4.0.1>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library QICoreCommon" ] ;
+       fhir:resource [
+         fhir:v "http://cms.gov/fhir/mct/Library/QICoreCommon|1.0.0"^^xsd:anyURI ;
+         fhir:link <http://cms.gov/fhir/mct/Library/QICoreCommon|1.0.0>
+       ]
+     ] ) ;
+     fhir:parameter ( [
+       fhir:name [ fhir:v "SDE Coverage" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Coverage" ]
+     ] [
+       fhir:name [ fhir:v "SDE Procedure" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Procedure" ]
+     ] [
+       fhir:name [ fhir:v "SDE EncounterPerformed" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Encounter" ]
+     ] [
+       fhir:name [ fhir:v "SDE Practitioner" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Practitioner" ]
+     ] [
+       fhir:name [ fhir:v "SDE ProcedureNotDone" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Procedure" ]
+     ] [
+       fhir:name [ fhir:v "SDE ImagingStudy" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "ImagingStudy" ]
+     ] [
+       fhir:name [ fhir:v "SDE Organization" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Organization" ]
+     ] [
+       fhir:name [ fhir:v "SDE AllergyIntolerance" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "AllergyIntolerance" ]
+     ] [
+       fhir:name [ fhir:v "SDE Immunization" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Immunization" ]
+     ] [
+       fhir:name [ fhir:v "SDE Patient" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Patient" ]
+     ] [
+       fhir:name [ fhir:v "SDE ServiceNotRequested" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "ServiceRequest" ]
+     ] [
+       fhir:name [ fhir:v "SDE TaskRejected" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Task" ]
+     ] [
+       fhir:name [ fhir:v "SDE Claim" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Claim" ]
+     ] [
+       fhir:name [ fhir:v "SDE CommunicationRequest" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "CommunicationRequest" ]
+     ] [
+       fhir:name [ fhir:v "SDE DiagnosticReportNote" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "DiagnosticReport" ]
+     ] [
+       fhir:name [ fhir:v "SDE CarePlan" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "CarePlan" ]
+     ] [
+       fhir:name [ fhir:v "SDE MedicationAdministrationNotDone" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "MedicationAdministration" ]
+     ] [
+       fhir:name [ fhir:v "SDE PractitionerRole" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "PractitionerRole" ]
+     ] [
+       fhir:name [ fhir:v "SDE CareTeam" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "CareTeam" ]
+     ] [
+       fhir:name [ fhir:v "SDE RelatedPerson" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "RelatedPerson" ]
+     ] [
+       fhir:name [ fhir:v "SDE MedicationRequest" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "MedicationRequest" ]
+     ] [
+       fhir:name [ fhir:v "SDE DiagnosticReportLab" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "DiagnosticReport" ]
+     ] [
+       fhir:name [ fhir:v "SDE Communication" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Communication" ]
+     ] [
+       fhir:name [ fhir:v "SDE MedicationDispenseDeclined" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "MedicationDispense" ]
+     ] [
+       fhir:name [ fhir:v "SDE ImmunizationRecommendation" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "ImmunizationRecommendation" ]
+     ] [
+       fhir:name [ fhir:v "SDE ImplantableDevice" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Device" ]
+     ] [
+       fhir:name [ fhir:v "SDE MedicationStatement" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ]
+     ] [
+       fhir:name [ fhir:v "SDE Location" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Location" ]
+     ] [
+       fhir:name [ fhir:v "SDE MedicationNotRequested" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "MedicationRequest" ]
+     ] [
+       fhir:name [ fhir:v "SDE DeviceNotRequested" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "DeviceRequest" ]
+     ] [
+       fhir:name [ fhir:v "SDE Encounter" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Encounter" ]
+     ] [
+       fhir:name [ fhir:v "SDE CommunicationNotDone" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Communication" ]
+     ] [
+       fhir:name [ fhir:v "SDE Substance" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Substance" ]
+     ] [
+       fhir:name [ fhir:v "SDE MedicationAdministration" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "MedicationAdministration" ]
+     ] [
+       fhir:name [ fhir:v "SDE Observation" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Observation" ]
+     ] [
+       fhir:name [ fhir:v "SDE Device" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Device" ]
+     ] [
+       fhir:name [ fhir:v "SDE NutritionOrder" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "NutritionOrder" ]
+     ] [
+       fhir:name [ fhir:v "SDE ObservationCancelled" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Observation" ]
+     ] [
+       fhir:name [ fhir:v "SDE Flag" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Flag" ]
+     ] [
+       fhir:name [ fhir:v "SDE ProcedurePerformed" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Procedure" ]
+     ] [
+       fhir:name [ fhir:v "Initial Population" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "SDE DeviceRequest" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "DeviceRequest" ]
+     ] [
+       fhir:name [ fhir:v "SDE BodyStructure" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "BodyStructure" ]
+     ] [
+       fhir:name [ fhir:v "SDE FamilyMemberHistory" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "FamilyMemberHistory" ]
+     ] [
+       fhir:name [ fhir:v "SDE Medication" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Medication" ]
+     ] [
+       fhir:name [ fhir:v "SDE Specimen" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Specimen" ]
+     ] [
+       fhir:name [ fhir:v "SDE AdverseEvent" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "AdverseEvent" ]
+     ] [
+       fhir:name [ fhir:v "SDE Task" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Task" ]
+     ] [
+       fhir:name [ fhir:v "SDE ImmunizationNotDone" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Immunization" ]
+     ] [
+       fhir:name [ fhir:v "SDE MedicationDispense" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "MedicationDispense" ]
+     ] [
+       fhir:name [ fhir:v "SDE ImmunizationEvaluation" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "ImmunizationEvaluation" ]
+     ] [
+       fhir:name [ fhir:v "SDE DeviceUseStatement" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ]
+     ] [
+       fhir:name [ fhir:v "SDE Goal" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Goal" ]
+     ] [
+       fhir:name [ fhir:v "SDE Condition" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "Condition" ]
+     ] [
+       fhir:name [ fhir:v "SDE ServiceRequest" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v "0"^^xsd:integer ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type [ fhir:v "ServiceRequest" ]
+     ] ) ;
+     fhir:dataRequirement ( [
+       fhir:type [ fhir:v "Coverage" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Coverage"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Coverage>
+       ] )
+     ] [
+       fhir:type [ fhir:v "Procedure" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Procedure"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Procedure>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "status" ] )
+     ] [
+       fhir:type [ fhir:v "Encounter" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Encounter"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Encounter>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "status" ] )
+     ] [
+       fhir:type [ fhir:v "Practitioner" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Practitioner"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Practitioner>
+       ] )
+     ] [
+       fhir:type [ fhir:v "ImagingStudy" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/ImagingStudy"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/ImagingStudy>
+       ] )
+     ] [
+       fhir:type [ fhir:v "Organization" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Organization"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Organization>
+       ] )
+     ] [
+       fhir:type [ fhir:v "AllergyIntolerance" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/AllergyIntolerance"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/AllergyIntolerance>
+       ] )
+     ] [
+       fhir:type [ fhir:v "Immunization" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Immunization"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Immunization>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "status" ] )
+     ] [
+       fhir:type [ fhir:v "Patient" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Patient"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Patient>
+       ] )
+     ] [
+       fhir:type [ fhir:v "ServiceRequest" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/ServiceRequest"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/ServiceRequest>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "status" ] [ fhir:v "doNotPerform" ] )
+     ] [
+       fhir:type [ fhir:v "Task" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Task"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Task>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "status" ] )
+     ] [
+       fhir:type [ fhir:v "Claim" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Claim"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Claim>
+       ] )
+     ] [
+       fhir:type [ fhir:v "CommunicationRequest" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/CommunicationRequest"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/CommunicationRequest>
+       ] )
+     ] [
+       fhir:type [ fhir:v "DiagnosticReport" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/DiagnosticReport"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/DiagnosticReport>
+       ] )
+     ] [
+       fhir:type [ fhir:v "CarePlan" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/CarePlan"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/CarePlan>
+       ] )
+     ] [
+       fhir:type [ fhir:v "MedicationAdministration" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/MedicationAdministration"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/MedicationAdministration>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "status" ] )
+     ] [
+       fhir:type [ fhir:v "PractitionerRole" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/PractitionerRole"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/PractitionerRole>
+       ] )
+     ] [
+       fhir:type [ fhir:v "CareTeam" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/CareTeam"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/CareTeam>
+       ] )
+     ] [
+       fhir:type [ fhir:v "RelatedPerson" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/RelatedPerson"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/RelatedPerson>
+       ] )
+     ] [
+       fhir:type [ fhir:v "MedicationRequest" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/MedicationRequest"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/MedicationRequest>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "status" ] [ fhir:v "doNotPerform" ] )
+     ] [
+       fhir:type [ fhir:v "Communication" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Communication"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Communication>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "status" ] )
+     ] [
+       fhir:type [ fhir:v "MedicationDispense" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/MedicationDispense"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/MedicationDispense>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "status" ] )
+     ] [
+       fhir:type [ fhir:v "ImmunizationRecommendation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation>
+       ] )
+     ] [
+       fhir:type [ fhir:v "Device" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Device"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Device>
+       ] )
+     ] [
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/MedicationStatement"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/MedicationStatement>
+       ] )
+     ] [
+       fhir:type [ fhir:v "Location" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Location"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Location>
+       ] )
+     ] [
+       fhir:type [ fhir:v "DeviceRequest" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/DeviceRequest"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/DeviceRequest>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "status" ] )
+     ] [
+       fhir:type [ fhir:v "Substance" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Substance"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Substance>
+       ] )
+     ] [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "status" ] )
+     ] [
+       fhir:type [ fhir:v "NutritionOrder" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/NutritionOrder"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/NutritionOrder>
+       ] )
+     ] [
+       fhir:type [ fhir:v "Flag" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Flag"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Flag>
+       ] )
+     ] [
+       fhir:type [ fhir:v "BodyStructure" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/BodyStructure"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/BodyStructure>
+       ] )
+     ] [
+       fhir:type [ fhir:v "FamilyMemberHistory" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/FamilyMemberHistory"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/FamilyMemberHistory>
+       ] )
+     ] [
+       fhir:type [ fhir:v "Medication" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Medication"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Medication>
+       ] )
+     ] [
+       fhir:type [ fhir:v "Specimen" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Specimen"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Specimen>
+       ] )
+     ] [
+       fhir:type [ fhir:v "AdverseEvent" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/AdverseEvent"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/AdverseEvent>
+       ] )
+     ] [
+       fhir:type [ fhir:v "ImmunizationEvaluation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/ImmunizationEvaluation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/ImmunizationEvaluation>
+       ] )
+     ] [
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/DeviceUseStatement"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/DeviceUseStatement>
+       ] )
+     ] [
+       fhir:type [ fhir:v "Goal" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Goal"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Goal>
+       ] )
+     ] [
+       fhir:type [ fhir:v "Condition" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Condition"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Condition>
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:link <http://cms.gov/fhir/mct/Device/cqf-tooling> ;
+       fhir:reference [ fhir:v "Device/cqf-tooling" ]
+     ]
+  ] [
+     fhir:id [ fhir:v "effective-data-requirements" ] ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:reference [ fhir:v "#effective-data-requirements" ]
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://cms.gov/fhir/mct/Measure/QiCoreProfileValidation"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "QiCoreProfileValidation"] ; # 
+  fhir:title [ fhir:v "QiCoreProfileValidation FHIR"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2022-12-12"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "HL7 International - [Some] Work Group"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://hl7.org/Special/committees/[something]" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "A cohort measure with supplemental data elements for all profiles in QICore"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ]
+     ] )
+  ] ) ; # 
+  fhir:approvalDate [ fhir:v "2022-12-12"^^xsd:date] ; # 
+  fhir:lastReviewDate [ fhir:v "2022-12-12"^^xsd:date] ; # 
+  fhir:effectivePeriod [
+     fhir:start [ fhir:v "2021-01-01"^^xsd:date ] ;
+     fhir:end [ fhir:v "2021-12-31"^^xsd:date ]
+  ] ; # 
+  fhir:topic ( [
+     fhir:coding ( [
+       a loinc:57024-2 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "57024-2" ] ;
+       fhir:display [ fhir:v "Health Quality Measure Document" ]
+     ] )
+  ] ) ; # 
+  fhir:library ( [
+     fhir:v "http://cms.gov/fhir/mct/Library/QiCoreProfileValidation"^^xsd:anyURI ;
+     fhir:link <http://cms.gov/fhir/mct/Library/QiCoreProfileValidation>
+  ] ) ; # 
+  fhir:scoring [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-scoring"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "cohort" ] ;
+       fhir:display [ fhir:v "Cohort" ]
+     ] )
+  ] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "process" ]
+     ] )
+  ] ) ; # 
+  fhir:improvementNotation [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "decrease" ] ;
+       fhir:display [ fhir:v "Decreased score indicates improvement" ]
+     ] )
+  ] ; # 
+  fhir:group ( [
+     fhir:population ( [
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-population"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "initial-population" ] ;
+           fhir:display [ fhir:v "Initial Population" ]
+         ] )
+       ] ;
+       fhir:criteria [
+         fhir:language [ fhir:v "text/cql-identifier" ] ;
+         fhir:expression [ fhir:v "Initial Population" ]
+       ]
+     ] )
+  ] ) ; # 
+  fhir:supplementalData ( [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE AdverseEvent" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE AllergyIntolerance" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE BodyStructure" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE CarePlan" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE CareTeam" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Claim" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Communication" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE CommunicationNotDone" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE CommunicationRequest" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Condition" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Coverage" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Device" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE DeviceNotRequested" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE DeviceRequest" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE DeviceUseStatement" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE DiagnosticReportLab" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE DiagnosticReportNote" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Encounter" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE EncounterPerformed" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE FamilyMemberHistory" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Flag" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Goal" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE ImagingStudy" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Immunization" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE ImmunizationEvaluation" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE ImmunizationNotDone" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE ImmunizationRecommendation" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE ImplantableDevice" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Location" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Medication" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE MedicationAdministration" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE MedicationAdministrationNotDone" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE MedicationDispense" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE MedicationDispenseDeclined" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE MedicationNotRequested" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE MedicationRequest" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE MedicationStatement" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE NutritionOrder" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Observation" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE ObservationCancelled" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Organization" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Patient" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Practitioner" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE PractitionerRole" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Procedure" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE ProcedurePerformed" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE ProcedureNotDone" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE RelatedPerson" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE ServiceNotRequested" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE ServiceRequest" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Specimen" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Substance" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE Task" ]
+     ]
+  ] [
+     fhir:usage ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/measure-data-usage"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "supplemental-data" ]
+       ] )
+     ] ) ;
+     fhir:criteria [
+       fhir:language [ fhir:v "text/cql-identifier" ] ;
+       fhir:expression [ fhir:v "SDE TaskRejected" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,372 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>CMS.FHIR.MCT\null - JSON Representation - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/cqf.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"10.8"}
+    h3,h4,h5,h6{--heading-prefix:"10.8"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://github.com/cqframework"><img height="50" alt="Visit the CQF github organization website" src="assets/images/cqf.png"/> </a>
+</div>
+<!-- TODO: Push this into the base template, but it requires a "trusted" template -->
+<script type="text/javascript" src="cql.js"> </script>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">CMS FHIR Prototype Measure Calculation Tool IG</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - CI Build
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="technical-requirements.html">Technical Requirements</a>
+      </li>
+      <li>
+        <a href="implementation-guide.html">Implementation Guide</a>
+      </li>
+      <li>
+        <a href="user-guide.html">User Guide</a>
+      </li>
+      <li>
+        <a href="test-plan.html">Test Plan</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a target="_blank" href="http://cql.hl7.org/index.html">CQL Specification</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/smart-app-launch/STU2/backend-services.html">SMART Backend Services (version 2.0.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/core/STU3.1.1">US Core (version 3.1.1)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/cqfmeasures/STU3">FHIR Quality Measures (version 3.0.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/davinci-deqm/STU3.1">FHIR Quality Reporting (version 3.1.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/uv/cpg">FHIR Clinical Guidelines</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="license.html">License</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b></b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 8" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">CMS FHIR Prototype Measure Calculation Tool IG - Local Development build (v0.1.0). See the <a href="http://cms.gov/fhir/mct/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="Library-QICoreCommon.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="Library-QICoreCommon.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li class="active">
+      <a href="#">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Library-QICoreCommon.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: null - JSON Representation</h2>
+  <table class="colsd">
+    <tr>
+
+      <td colspan="2">
+        
+          Draft
+          
+            as of 2023-03-21
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="Library-QICoreCommon.json" no-download="true">Raw json</a> | <a href="Library-QICoreCommon.json" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="json" style="white-space: pre; overflow: hidden"><code>
+{
+  "<a href="http://hl7.org/fhir/R4/library.html#Library">resourceType</a>" : "Library",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.id">id</a>" : "QICoreCommon",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "extensions",
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\r\n    &lt;table class=\&quot;grid dict\&quot;&gt;\r\n        \r\n        &lt;tr&gt;\r\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Id: &lt;/b&gt;&lt;/th&gt;\r\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;QICoreCommon&lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        &lt;tr&gt;\r\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Url: &lt;/b&gt;&lt;/th&gt;\r\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;&lt;a href=\&quot;http://cms.gov/fhir/mct/Library/QICoreCommon\&quot;&gt;http://cms.gov/fhir/mct/Library/QICoreCommon&lt;/a&gt;&lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        &lt;tr&gt;\r\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Version: &lt;/b&gt;&lt;/th&gt;\r\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;0.1.0&lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        \r\n        &lt;tr&gt;\r\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Name: &lt;/b&gt;&lt;/th&gt;\r\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;QICoreCommon&lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        \r\n        \r\n        &lt;tr&gt;\r\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Status: &lt;/b&gt;&lt;/th&gt;\r\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;draft&lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        &lt;tr&gt;\r\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Date: &lt;/b&gt;&lt;/th&gt;\r\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;2023-03-21 15:20:25-0600&lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        &lt;tr&gt;\r\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Publisher: &lt;/b&gt;&lt;/th&gt;\r\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;HL7 International - [Some] Work Group&lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        &lt;tr&gt;\r\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Jurisdiction: &lt;/b&gt;&lt;/th&gt;\r\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;US&lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        &lt;tr&gt;\r\n          &lt;td colspan=\&quot;2\&quot;&gt;\r\n            &lt;table&gt;\r\n              &lt;tr&gt;&lt;th&gt;&lt;a id=\&quot;cql-content\&quot;&gt;&lt;b&gt;Content: &lt;/b&gt;&lt;/a&gt; text/cql&lt;/th&gt;&lt;/tr&gt;\r\n              &lt;tr&gt;&lt;td&gt;&lt;pre&gt;&lt;code class=\&quot;language-cql\&quot;&gt;/*\r\n@author: Stan Rankins\r\n@description: Common terminologies and functions used in QI-Core-based CQL artifacts\r\n@update: Fashioned after FHIRCommon Version 4.0.012 for use in ecqm-content-qicore-2022 repos\r\n*/\r\nlibrary QICoreCommon version '1.0.000'\r\n\r\nusing QICore version '4.1.1'\r\n\r\ninclude FHIRHelpers version '4.0.013'\r\n\r\ncodesystem &amp;amp;quot;LOINC&amp;amp;quot;: 'http://loinc.org'\r\ncodesystem &amp;amp;quot;SNOMEDCT&amp;amp;quot;: 'http://snomed.info/sct'\r\ncodesystem &amp;amp;quot;ICD10CM&amp;amp;quot;: 'http://hl7.org/fhir/sid/icd-10-cm'\r\ncodesystem &amp;amp;quot;RoleCode&amp;amp;quot;: 'http://terminology.hl7.org/CodeSystem/v3-RoleCode'\r\ncodesystem &amp;amp;quot;Diagnosis Role&amp;amp;quot;: 'http://terminology.hl7.org/CodeSystem/diagnosis-role'\r\ncodesystem &amp;amp;quot;RequestIntent&amp;amp;quot;: 'http://terminology.hl7.org/CodeSystem/request-intent'\r\ncodesystem &amp;amp;quot;MedicationRequestCategory&amp;amp;quot;: 'http://terminology.hl7.org/CodeSystem/medicationrequest-category'\r\ncodesystem &amp;amp;quot;ConditionClinicalStatusCodes&amp;amp;quot;: 'http://terminology.hl7.org/CodeSystem/condition-clinical'\r\ncodesystem &amp;amp;quot;ConditionVerificationStatusCodes&amp;amp;quot;: 'http://terminology.hl7.org/CodeSystem/condition-ver-status'\r\ncodesystem &amp;amp;quot;AllergyIntoleranceClinicalStatusCodes&amp;amp;quot;: 'http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical'\r\ncodesystem &amp;amp;quot;AllergyIntoleranceVerificationStatusCodes&amp;amp;quot;: 'http://terminology.hl7.org/CodeSystem/allergyintolerance-verification'\r\ncodesystem &amp;amp;quot;ConditionCategoryCodes&amp;amp;quot;: 'http://terminology.hl7.org/CodeSystem/condition-category'\r\ncodesystem &amp;amp;quot;ObservationCategoryCodes&amp;amp;quot;: 'http://terminology.hl7.org/CodeSystem/observation-category'\r\n\r\nvalueset &amp;amp;quot;Active Condition&amp;amp;quot;: 'http://fhir.org/guides/cqf/common/ValueSet/active-condition'\r\nvalueset &amp;amp;quot;Inactive Condition&amp;amp;quot;: 'http://fhir.org/guides/cqf/common/ValueSet/inactive-condition'\r\n\r\ncode &amp;amp;quot;Birthdate&amp;amp;quot;: '21112-8' from &amp;amp;quot;LOINC&amp;amp;quot; display 'Birth date'\r\ncode &amp;amp;quot;Dead&amp;amp;quot;: '419099009' from &amp;amp;quot;SNOMEDCT&amp;amp;quot; display 'Dead'\r\ncode &amp;amp;quot;ER&amp;amp;quot;: 'ER' from &amp;amp;quot;RoleCode&amp;amp;quot; display 'Emergency room'\r\ncode &amp;amp;quot;ICU&amp;amp;quot;: 'ICU' from &amp;amp;quot;RoleCode&amp;amp;quot; display 'Intensive care unit'\r\ncode &amp;amp;quot;Billing&amp;amp;quot;: 'billing' from &amp;amp;quot;Diagnosis Role&amp;amp;quot; display 'Billing'\r\n\r\n// Condition Clinical Status Codes - Consider value sets for these\r\ncode &amp;amp;quot;active&amp;amp;quot;: 'active' from &amp;amp;quot;ConditionClinicalStatusCodes&amp;amp;quot;\r\ncode &amp;amp;quot;recurrence&amp;amp;quot;: 'recurrence' from &amp;amp;quot;ConditionClinicalStatusCodes&amp;amp;quot;\r\ncode &amp;amp;quot;relapse&amp;amp;quot;: 'relapse' from &amp;amp;quot;ConditionClinicalStatusCodes&amp;amp;quot;\r\ncode &amp;amp;quot;inactive&amp;amp;quot;: 'inactive' from &amp;amp;quot;ConditionClinicalStatusCodes&amp;amp;quot;\r\ncode &amp;amp;quot;remission&amp;amp;quot;: 'remission' from &amp;amp;quot;ConditionClinicalStatusCodes&amp;amp;quot;\r\ncode &amp;amp;quot;resolved&amp;amp;quot;: 'resolved' from &amp;amp;quot;ConditionClinicalStatusCodes&amp;amp;quot;\r\n\r\n// Condition Verification Status Codes - Consider value sets for these\r\ncode &amp;amp;quot;unconfirmed&amp;amp;quot;: 'unconfirmed' from ConditionVerificationStatusCodes\r\ncode &amp;amp;quot;provisional&amp;amp;quot;: 'provisional' from ConditionVerificationStatusCodes\r\ncode &amp;amp;quot;differential&amp;amp;quot;: 'differential' from ConditionVerificationStatusCodes\r\ncode &amp;amp;quot;confirmed&amp;amp;quot;: 'confirmed' from ConditionVerificationStatusCodes\r\ncode &amp;amp;quot;refuted&amp;amp;quot;: 'refuted' from ConditionVerificationStatusCodes\r\ncode &amp;amp;quot;entered-in-error&amp;amp;quot;: 'entered-in-error' from ConditionVerificationStatusCodes\r\n\r\ncode &amp;amp;quot;allergy-active&amp;amp;quot;: 'active' from &amp;amp;quot;AllergyIntoleranceClinicalStatusCodes&amp;amp;quot;\r\ncode &amp;amp;quot;allergy-inactive&amp;amp;quot;: 'inactive' from &amp;amp;quot;AllergyIntoleranceClinicalStatusCodes&amp;amp;quot;\r\ncode &amp;amp;quot;allergy-resolved&amp;amp;quot;: 'resolved' from &amp;amp;quot;AllergyIntoleranceClinicalStatusCodes&amp;amp;quot;\r\n\r\n// Allergy/Intolerance Verification Status Codes - Consider value sets for these\r\ncode &amp;amp;quot;allergy-unconfirmed&amp;amp;quot;: 'unconfirmed' from AllergyIntoleranceVerificationStatusCodes\r\ncode &amp;amp;quot;allergy-confirmed&amp;amp;quot;: 'confirmed' from AllergyIntoleranceVerificationStatusCodes\r\ncode &amp;amp;quot;allergy-refuted&amp;amp;quot;: 'refuted' from AllergyIntoleranceVerificationStatusCodes\r\n\r\n// MedicationRequest Category Codes\r\ncode &amp;amp;quot;Community&amp;amp;quot;: 'community' from &amp;amp;quot;MedicationRequestCategory&amp;amp;quot; display 'Community'\r\ncode &amp;amp;quot;Discharge&amp;amp;quot;: 'discharge' from &amp;amp;quot;MedicationRequestCategory&amp;amp;quot; display 'Discharge'\r\n\r\n// Diagnosis Role Codes\r\ncode &amp;amp;quot;AD&amp;amp;quot;: 'AD' from &amp;amp;quot;Diagnosis Role&amp;amp;quot; display 'Admission diagnosis'\r\ncode &amp;amp;quot;DD&amp;amp;quot;: 'DD' from &amp;amp;quot;Diagnosis Role&amp;amp;quot; display 'Discharge diagnosis'\r\ncode &amp;amp;quot;CC&amp;amp;quot;: 'CC' from &amp;amp;quot;Diagnosis Role&amp;amp;quot; display 'Chief complaint'\r\ncode &amp;amp;quot;CM&amp;amp;quot;: 'CM' from &amp;amp;quot;Diagnosis Role&amp;amp;quot; display 'Comorbidity diagnosis'\r\ncode &amp;amp;quot;pre-op&amp;amp;quot;: 'pre-op' from &amp;amp;quot;Diagnosis Role&amp;amp;quot; display 'pre-op diagnosis'\r\ncode &amp;amp;quot;post-op&amp;amp;quot;: 'post-op' from &amp;amp;quot;Diagnosis Role&amp;amp;quot; display 'post-op diagnosis'\r\ncode &amp;amp;quot;billing&amp;amp;quot;: 'billing' from &amp;amp;quot;Diagnosis Role&amp;amp;quot; display 'billing diagnosis'\r\n\r\n// Observation Category Codes\r\ncode &amp;amp;quot;social-history&amp;amp;quot;: 'social-history' from &amp;amp;quot;ObservationCategoryCodes&amp;amp;quot; display 'Social History'\r\ncode &amp;amp;quot;vital-signs&amp;amp;quot;: 'vital-signs' from &amp;amp;quot;ObservationCategoryCodes&amp;amp;quot; display 'Vital Signs'\r\ncode &amp;amp;quot;imaging&amp;amp;quot;: 'imaging' from &amp;amp;quot;ObservationCategoryCodes&amp;amp;quot; display 'Imaging'\r\ncode &amp;amp;quot;laboratory&amp;amp;quot;: 'laboratory' from &amp;amp;quot;ObservationCategoryCodes&amp;amp;quot; display 'Laboratory'\r\ncode &amp;amp;quot;procedure&amp;amp;quot;: 'procedure' from &amp;amp;quot;ObservationCategoryCodes&amp;amp;quot; display 'Procedure'\r\ncode &amp;amp;quot;survey&amp;amp;quot;: 'survey' from &amp;amp;quot;ObservationCategoryCodes&amp;amp;quot; display 'Survey'\r\ncode &amp;amp;quot;exam&amp;amp;quot;: 'exam' from &amp;amp;quot;ObservationCategoryCodes&amp;amp;quot; display 'Exam'\r\ncode &amp;amp;quot;therapy&amp;amp;quot;: 'therapy' from &amp;amp;quot;ObservationCategoryCodes&amp;amp;quot; display 'Therapy'\r\ncode &amp;amp;quot;activity&amp;amp;quot;: 'activity' from &amp;amp;quot;ObservationCategoryCodes&amp;amp;quot; display 'Activity'\r\n\r\n// Condition Category Codes\r\ncode &amp;amp;quot;problem-list-item&amp;amp;quot;: 'problem-list-item' from &amp;amp;quot;ConditionCategoryCodes&amp;amp;quot; display 'Problem List Item'\r\ncode &amp;amp;quot;encounter-diagnosis&amp;amp;quot;: 'encounter-diagnosis' from &amp;amp;quot;ConditionCategoryCodes&amp;amp;quot; display 'Encounter Diagnosis'\r\n\r\ncontext Patient\r\n\r\n/*\r\n@description: Normalizes a value that is a choice of timing-valued types to an equivalent interval\r\n@comment: Normalizes a choice type of DateTime, Quanitty, Interval&amp;amp;lt;DateTime&amp;amp;gt;, or Interval&amp;amp;lt;Quantity&amp;amp;gt; types\r\nto an equivalent interval. This selection of choice types is a superset of the majority of choice types that are used as possible\r\nrepresentations for timing-valued elements in QICore, allowing this function to be used across any resource.\r\n\r\nThe input can be provided as a DateTime, Quantity, Interval&amp;amp;lt;DateTime&amp;amp;gt; or Interval&amp;amp;lt;Quantity&amp;amp;gt;.\r\nThe intent of this function is to provide a clear and concise mechanism to treat single\r\nelements that have multiple possible representations as intervals so that logic doesn't have to account\r\nfor the variability. More complex calculations (such as medication request period or dispense period\r\ncalculation) need specific guidance and consideration. That guidance may make use of this function, but\r\nthe focus of this function is on single element calculations where the semantics are unambiguous.\r\nIf the input is a DateTime, the result a DateTime Interval beginning and ending on that DateTime.\r\nIf the input is a Quantity, the quantity is expected to be a calendar-duration interpreted as an Age, \r\nand the result is a DateTime Interval beginning on the Date the patient turned that age and ending immediately before one year later.\r\nIf the input is a DateTime Interval, the result is the input.\r\nIf the input is a Quantity Interval, the quantities are expected to be calendar-durations interpreted as an Age, and the result\r\nis a DateTime Interval beginning on the date the patient turned the age given as the start of the quantity interval, and ending \r\nimmediately before one year later than the date the patient turned the age given as the end of the quantity interval.\r\nAny other input will reslt in a null DateTime Interval\r\n*/\r\ndefine function ToInterval(choice Choice&amp;amp;lt;DateTime, Quantity, Interval&amp;amp;lt;DateTime&amp;amp;gt;, Interval&amp;amp;lt;Quantity&amp;amp;gt;&amp;amp;gt;):\r\n  case\r\n\t  when choice is DateTime then\r\n    \tInterval[choice as DateTime, choice as DateTime]\r\n\t\twhen choice is Interval&amp;amp;lt;DateTime&amp;amp;gt; then\r\n  \t\tchoice as Interval&amp;amp;lt;DateTime&amp;amp;gt;\r\n\t\twhen choice is Quantity then\r\n\t\t  Interval[Patient.birthDate + (choice as Quantity),\r\n\t\t\t  Patient.birthDate + (choice as Quantity) + 1 year)\r\n\t\twhen choice is Interval&amp;amp;lt;Quantity&amp;amp;gt; then\r\n\t\t  Interval[Patient.birthDate + (choice.low as Quantity),\r\n\t\t\t  Patient.birthDate + (choice.high as Quantity) + 1 year)\r\n\t\telse\r\n\t\t\tnull as Interval&amp;amp;lt;DateTime&amp;amp;gt;\r\n\tend\r\n\r\n/*\r\n@description: Normalizes a value that is a choice of timing-valued types to an equivalent interval\r\n@comment: Normalizes a choice type of DateTime, Quanitty, Interval&amp;amp;lt;DateTime&amp;amp;gt;, or Interval&amp;amp;lt;Quantity&amp;amp;gt; types\r\nto an equivalent interval. This selection of choice types is a superset of the majority of choice types that are used as possible\r\nrepresentations for timing-valued elements in QICore, allowing this function to be used across any resource.\r\n\r\nThe input can be provided as a DateTime, Quantity, Interval&amp;amp;lt;DateTime&amp;amp;gt; or Interval&amp;amp;lt;Quantity&amp;amp;gt;.\r\nThe intent of this function is to provide a clear and concise mechanism to treat single\r\nelements that have multiple possible representations as intervals so that logic doesn't have to account\r\nfor the variability. More complex calculations (such as medication request period or dispense period\r\ncalculation) need specific guidance and consideration. That guidance may make use of this function, but\r\nthe focus of this function is on single element calculations where the semantics are unambiguous.\r\nIf the input is a DateTime, the result a DateTime Interval beginning and ending on that DateTime.\r\nIf the input is a Quantity, the quantity is expected to be a calendar-duration interpreted as an Age, \r\nand the result is a DateTime Interval beginning on the Date the patient turned that age and ending immediately before one year later.\r\nIf the input is a DateTime Interval, the result is the input.\r\nIf the input is a Quantity Interval, the quantities are expected to be calendar-durations interpreted as an Age, and the result\r\nis a DateTime Interval beginning on the date the patient turned the age given as the start of the quantity interval, and ending \r\nimmediately before one year later than the date the patient turned the age given as the end of the quantity interval.\r\nAny other input will reslt in a null DateTime Interval\r\n*/\r\ndefine fluent function toInterval(choice Choice&amp;amp;lt;DateTime, Quantity, Interval&amp;amp;lt;DateTime&amp;amp;gt;, Interval&amp;amp;lt;Quantity&amp;amp;gt;&amp;amp;gt;):\r\n  case\r\n\t  when choice is DateTime then\r\n    \tInterval[choice as DateTime, choice as DateTime]\r\n\t\twhen choice is Interval&amp;amp;lt;DateTime&amp;amp;gt; then\r\n  \t\tchoice as Interval&amp;amp;lt;DateTime&amp;amp;gt;\r\n\t\twhen choice is Quantity then\r\n\t\t  Interval[Patient.birthDate + (choice as Quantity),\r\n\t\t\t  Patient.birthDate + (choice as Quantity) + 1 year)\r\n\t\twhen choice is Interval&amp;amp;lt;Quantity&amp;amp;gt; then\r\n\t\t  Interval[Patient.birthDate + (choice.low as Quantity),\r\n\t\t\t  Patient.birthDate + (choice.high as Quantity) + 1 year)\r\n\t\telse\r\n\t\t\tnull as Interval&amp;amp;lt;DateTime&amp;amp;gt;\r\n\tend\r\n\r\n/*\r\n@description: Returns an interval representing the normalized abatement of a given Condition.\r\n@comment: If the abatement element of the Condition is represented as a DateTime, the result\r\nis an interval beginning and ending on that DateTime.\r\nIf the abatement is represented as a Quantity, the quantity is expected to be a calendar-duration and is interpreted as the age of the patient. The\r\nresult is an interval from the date the patient turned that age to immediately before one year later.\r\nIf the abatement is represented as a Quantity Interval, the quantities are expected to be calendar-durations and are interpreted as an age range during\r\nwhich the abatement occurred. The result is an interval from the date the patient turned the starting age of the quantity interval, and ending immediately\r\nbefore one year later than the date the patient turned the ending age of the quantity interval.\r\n*/\r\ndefine function ToAbatementInterval(condition Condition):\r\n\tif condition.abatement is DateTime then\r\n\t  Interval[condition.abatement as DateTime, condition.abatement as DateTime]\r\n\telse if condition.abatement is Quantity then\r\n\t\tInterval[Patient.birthDate + (condition.abatement as Quantity),\r\n\t\t\tPatient.birthDate + (condition.abatement as Quantity) + 1 year)\r\n\telse if condition.abatement is Interval&amp;amp;lt;Quantity&amp;amp;gt; then\r\n\t  Interval[Patient.birthDate + (condition.abatement.low as Quantity),\r\n\t\t  Patient.birthDate + (condition.abatement.high as Quantity) + 1 year)\r\n\telse if condition.abatement is Interval&amp;amp;lt;DateTime&amp;amp;gt; then\r\n\t  Interval[condition.abatement.low, condition.abatement.high)\r\n\telse null as Interval&amp;amp;lt;DateTime&amp;amp;gt;\r\n\r\n/*\r\n@description: Returns an interval representing the normalized abatement of a given Condition.\r\n@comment: If the abatement element of the Condition is represented as a DateTime, the result\r\nis an interval beginning and ending on that DateTime.\r\nIf the abatement is represented as a Quantity, the quantity is expected to be a calendar-duration and is interpreted as the age of the patient. The\r\nresult is an interval from the date the patient turned that age to immediately before one year later.\r\nIf the abatement is represented as a Quantity Interval, the quantities are expected to be calendar-durations and are interpreted as an age range during\r\nwhich the abatement occurred. The result is an interval from the date the patient turned the starting age of the quantity interval, and ending immediately\r\nbefore one year later than the date the patient turned the ending age of the quantity interval.\r\n*/\r\ndefine fluent function toAbatementInterval(condition Condition):\r\n\tif condition.abatement is DateTime then\r\n\t  Interval[condition.abatement as DateTime, condition.abatement as DateTime]\r\n\telse if condition.abatement is Quantity then\r\n\t\tInterval[Patient.birthDate + (condition.abatement as Quantity),\r\n\t\t\tPatient.birthDate + (condition.abatement as Quantity) + 1 year)\r\n\telse if condition.abatement is Interval&amp;amp;lt;Quantity&amp;amp;gt; then\r\n\t  Interval[Patient.birthDate + (condition.abatement.low as Quantity),\r\n\t\t  Patient.birthDate + (condition.abatement.high as Quantity) + 1 year)\r\n\telse if condition.abatement is Interval&amp;amp;lt;DateTime&amp;amp;gt; then\r\n\t  Interval[condition.abatement.low, condition.abatement.high)\r\n\telse null as Interval&amp;amp;lt;DateTime&amp;amp;gt;\r\n\r\n/*\r\n@description: Returns an interval representing the normalized prevalence period of a given Condition.\r\n@comment: Uses the ToInterval and ToAbatementInterval functions to determine the widest potential interval from\r\nonset to abatement as specified in the given Condition. If the condition is active, the resulting interval will have\r\na closed ending boundary. If the condition is not active, the resulting interval will have an open ending boundary.\r\n*/\r\ndefine function ToPrevalenceInterval(condition Condition):\r\nif condition.clinicalStatus ~ &amp;amp;quot;active&amp;amp;quot;\r\n  or condition.clinicalStatus ~ &amp;amp;quot;recurrence&amp;amp;quot;\r\n  or condition.clinicalStatus ~ &amp;amp;quot;relapse&amp;amp;quot; then\r\n  Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition)]\r\nelse\r\n  Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition))\r\n\r\n/*\r\n@description: Returns an interval representing the normalized prevalence period of a given Condition.\r\n@comment: Uses the ToInterval and ToAbatementInterval functions to determine the widest potential interval from\r\nonset to abatement as specified in the given Condition. If the condition is active, the resulting interval will have\r\na closed ending boundary. If the condition is not active, the resulting interval will have an open ending boundary.\r\n*/\r\ndefine fluent function toPrevalenceInterval(condition Condition):\r\nif condition.clinicalStatus ~ &amp;amp;quot;active&amp;amp;quot;\r\n  or condition.clinicalStatus ~ &amp;amp;quot;recurrence&amp;amp;quot;\r\n  or condition.clinicalStatus ~ &amp;amp;quot;relapse&amp;amp;quot; then\r\n  Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition)]\r\nelse\r\n  Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition))\r\n\r\n/*\r\n@description: Returns the tail of the given uri (i.e. everything after the last slash in the URI).\r\n@comment: This function can be used to determine the logical id of a given resource. It can be used in\r\na single-server environment to trace references. However, this function does not attempt to resolve\r\nor distinguish the base of the given url, and so cannot be used safely in multi-server environments.\r\n*/\r\ndefine function GetId(uri String ):\r\n  Last(Split(uri, '/'))\r\n\r\n/*\r\n@description: Returns the tail of the given uri (i.e. everything after the last slash in the URI).\r\n@comment: This function can be used to determine the logical id of a given resource. It can be used in\r\na single-server environment to trace references. However, this function does not attempt to resolve\r\nor distinguish the base of the given url, and so cannot be used safely in multi-server environments.\r\n*/\r\ndefine fluent function getId(uri String):\r\n  Last(Split(uri, '/'))\r\n\r\n/*\r\n@description: Given an interval, return true if the interval has a starting boundary specified \r\n(i.e. the start of the interval is not null and not the minimum DateTime value)\r\n*/\r\ndefine function &amp;amp;quot;HasStart&amp;amp;quot;(period Interval&amp;amp;lt;DateTime&amp;amp;gt; ):\r\n  not ( start of period is null\r\n      or start of period = minimum DateTime\r\n  )\r\n\r\n/*\r\n@description: Given an interval, return true if the interval has a starting boundary specified \r\n(i.e. the start of the interval is not null and not the minimum DateTime value)\r\n*/\r\ndefine fluent function hasStart(period Interval&amp;amp;lt;DateTime&amp;amp;gt; ):\r\n  not ( start of period is null\r\n      or start of period = minimum DateTime\r\n  )\r\n\r\n/*\r\n@description: Given an interval, returns true if the interval has an ending boundary specified \r\n(i.e. the end of the interval is not null and not the maximum DateTime value)\r\n*/\r\ndefine function &amp;amp;quot;HasEnd&amp;amp;quot;(period Interval&amp;amp;lt;DateTime&amp;amp;gt; ):\r\n  not (\r\n    end of period is null\r\n      or end of period = maximum DateTime\r\n  )\r\n\r\n/*\r\n@description: Given an interval, returns true if the interval has an ending boundary specified \r\n(i.e. the end of the interval is not null and not the maximum DateTime value)\r\n*/\r\ndefine fluent function hasEnd(period Interval&amp;amp;lt;DateTime&amp;amp;gt; ):\r\n  not (\r\n    end of period is null\r\n      or end of period = maximum DateTime\r\n  )\r\n\r\n/*\r\n@description: Given an interval, returns the ending point if the interval has an ending boundary specified, \r\notherwise, returns the starting point\r\n*/\r\ndefine function &amp;amp;quot;Latest&amp;amp;quot;(choice Choice&amp;amp;lt;DateTime, Quantity, Interval&amp;amp;lt;DateTime&amp;amp;gt;, Interval&amp;amp;lt;Quantity&amp;amp;gt;&amp;amp;gt; ):\r\n  (choice.toInterval()) period\r\n    return\r\n      if (HasEnd(period)) then end of period\r\n      else start of period\r\n\r\n/*\r\n@description: Given an interval, returns the ending point if the interval has an ending boundary specified, \r\notherwise, returns the starting point\r\n*/\r\ndefine fluent function latest(choice Choice&amp;amp;lt;DateTime, Quantity, Interval&amp;amp;lt;DateTime&amp;amp;gt;, Interval&amp;amp;lt;Quantity&amp;amp;gt;&amp;amp;gt; ):\r\n  (choice.toInterval()) period\r\n    return\r\n      if (HasEnd(period)) then end of period\r\n      else start of period\r\n\r\n/*\r\n@description: Given an interval, return the starting point if the interval has a starting boundary specified, \r\notherwise, return the ending point\r\n*/\r\ndefine function &amp;amp;quot;Earliest&amp;amp;quot;(choice Choice&amp;amp;lt;DateTime, Quantity, Interval&amp;amp;lt;DateTime&amp;amp;gt;, Interval&amp;amp;lt;Quantity&amp;amp;gt;&amp;amp;gt; ):\r\n  (choice.toInterval()) period\r\n    return\r\n      if (HasStart(period)) then start of period\r\n      else end of period\r\n\r\n/*\r\n@description: Given an interval, return the starting point if the interval has a starting boundary specified, \r\notherwise, return the ending point\r\n*/\r\ndefine fluent function earliest(choice Choice&amp;amp;lt;DateTime, Quantity, Interval&amp;amp;lt;DateTime&amp;amp;gt;, Interval&amp;amp;lt;Quantity&amp;amp;gt;&amp;amp;gt; ):\r\n  (choice.toInterval()) period\r\n    return\r\n      if (HasStart(period)) then start of period\r\n      else end of period\r\n\r\n/*\r\n@description: Creates a list of integers from 1 to how many days are in the interval. Note, this wont create an index for\r\nthe final day if it is less than 24 hours. This also includes the first 24 hour period.\r\n*/\r\ndefine function &amp;amp;quot;Interval To Day Numbers&amp;amp;quot;(Period Interval&amp;amp;lt;DateTime&amp;amp;gt;):\r\n  ( expand { Interval[1, duration in days between start of Period and end of Period]} ) DayNumber\r\n    return end of DayNumber\r\n\r\n/*\r\n@description: Creates a list of integers from 1 to how many days are in the interval. Note, this wont create an index for\r\nthe final day if it is less than 24 hours. This also includes the first 24 hour period.\r\n*/\r\ndefine fluent function toDayNumbers(Period Interval&amp;amp;lt;DateTime&amp;amp;gt;):\r\n  ( expand { Interval[1, duration in days between start of Period and end of Period]} ) DayNumber\r\n    return end of DayNumber\r\n\r\n/*\r\n@description: Creates a list of 24 hour long intervals in an interval paired with the index (1 indexed) to which 24 hour interval it is.\r\nNote that the result will include intervals that are closed at the beginning and open at the end\r\n*/\r\ndefine function &amp;amp;quot;Days In Period&amp;amp;quot;(Period Interval&amp;amp;lt;DateTime&amp;amp;gt;):\r\n  ( &amp;amp;quot;Interval To Day Numbers&amp;amp;quot;(Period)) DayIndex\r\n    let startPeriod: start of Period + (24 hours * (DayIndex - 1)),\r\n    endPeriod: if (hours between startPeriod and end of Period &amp;amp;lt; 24) then startPeriod\r\n      else start of Period + (24 hours * DayIndex)\r\n    return Tuple {\r\n      dayIndex: DayIndex,\r\n      dayPeriod: Interval[startPeriod, endPeriod)\r\n    }\r\n\r\n/*\r\n@description: Creates a list of 24 hour long intervals in an interval paired with the index (1 indexed) to which 24 hour interval it is.\r\nNote that the result will include intervals that are closed at the beginning and open at the end\r\n*/\r\ndefine fluent function daysInPeriod(Period Interval&amp;amp;lt;DateTime&amp;amp;gt;):\r\n  ( &amp;amp;quot;Interval To Day Numbers&amp;amp;quot;(Period)) DayIndex\r\n    let startPeriod: start of Period + (24 hours * (DayIndex - 1)),\r\n    endPeriod: if (hours between startPeriod and end of Period &amp;amp;lt; 24) then startPeriod\r\n      else start of Period + (24 hours * DayIndex)\r\n    return Tuple {\r\n      dayIndex: DayIndex,\r\n      dayPeriod: Interval[startPeriod, endPeriod)\r\n    }&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;\r\n            &lt;/table&gt;\r\n          &lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        \r\n        \r\n        \r\n    &lt;/table&gt;\r\n&lt;/div&gt;"<a name="end-xhtml"></a>
+  },
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueReference</a>" : {
+        "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Device/cqf-tooling"
+      }
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.url">url</a>" : "http://cms.gov/fhir/mct/Library/QICoreCommon",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.version">version</a>" : "0.1.0",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.name">name</a>" : "QICoreCommon",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.status">status</a>" : "draft",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.date">date</a>" : "2023-03-21T15:20:25-06:00",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.publisher">publisher</a>" : "HL7 International - [Some] Work Group",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.contact">contact</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "http://hl7.org/Special/committees/[something]"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.jurisdiction">jurisdiction</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "urn:iso:std:iso:3166",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "US"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.content">content</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.contentType">contentType</a>" : "text/cql",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.data">data</a>" : "LyoNCkBhdXRob3I6IFN0YW4gUmFua2lucw0KQGRlc2NyaXB0aW9uOiBDb21tb24gdGVybWlub2xvZ2llcyBhbmQgZnVuY3Rpb25zIHVzZWQgaW4gUUktQ29yZS1iYXNlZCBDUUwgYXJ0aWZhY3RzDQpAdXBkYXRlOiBGYXNoaW9uZWQgYWZ0ZXIgRkhJUkNvbW1vbiBWZXJzaW9uIDQuMC4wMTIgZm9yIHVzZSBpbiBlY3FtLWNvbnRlbnQtcWljb3JlLTIwMjIgcmVwb3MNCiovDQpsaWJyYXJ5IFFJQ29yZUNvbW1vbiB2ZXJzaW9uICcxLjAuMDAwJw0KDQp1c2luZyBRSUNvcmUgdmVyc2lvbiAnNC4xLjEnDQoNCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjAxMycNCg0KY29kZXN5c3RlbSAiTE9JTkMiOiAnaHR0cDovL2xvaW5jLm9yZycNCmNvZGVzeXN0ZW0gIlNOT01FRENUIjogJ2h0dHA6Ly9zbm9tZWQuaW5mby9zY3QnDQpjb2Rlc3lzdGVtICJJQ0QxMENNIjogJ2h0dHA6Ly9obDcub3JnL2ZoaXIvc2lkL2ljZC0xMC1jbScNCmNvZGVzeXN0ZW0gIlJvbGVDb2RlIjogJ2h0dHA6Ly90ZXJtaW5vbG9neS5obDcub3JnL0NvZGVTeXN0ZW0vdjMtUm9sZUNvZGUnDQpjb2Rlc3lzdGVtICJEaWFnbm9zaXMgUm9sZSI6ICdodHRwOi8vdGVybWlub2xvZ3kuaGw3Lm9yZy9Db2RlU3lzdGVtL2RpYWdub3Npcy1yb2xlJw0KY29kZXN5c3RlbSAiUmVxdWVzdEludGVudCI6ICdodHRwOi8vdGVybWlub2xvZ3kuaGw3Lm9yZy9Db2RlU3lzdGVtL3JlcXVlc3QtaW50ZW50Jw0KY29kZXN5c3RlbSAiTWVkaWNhdGlvblJlcXVlc3RDYXRlZ29yeSI6ICdodHRwOi8vdGVybWlub2xvZ3kuaGw3Lm9yZy9Db2RlU3lzdGVtL21lZGljYXRpb25yZXF1ZXN0LWNhdGVnb3J5Jw0KY29kZXN5c3RlbSAiQ29uZGl0aW9uQ2xpbmljYWxTdGF0dXNDb2RlcyI6ICdodHRwOi8vdGVybWlub2xvZ3kuaGw3Lm9yZy9Db2RlU3lzdGVtL2NvbmRpdGlvbi1jbGluaWNhbCcNCmNvZGVzeXN0ZW0gIkNvbmRpdGlvblZlcmlmaWNhdGlvblN0YXR1c0NvZGVzIjogJ2h0dHA6Ly90ZXJtaW5vbG9neS5obDcub3JnL0NvZGVTeXN0ZW0vY29uZGl0aW9uLXZlci1zdGF0dXMnDQpjb2Rlc3lzdGVtICJBbGxlcmd5SW50b2xlcmFuY2VDbGluaWNhbFN0YXR1c0NvZGVzIjogJ2h0dHA6Ly90ZXJtaW5vbG9neS5obDcub3JnL0NvZGVTeXN0ZW0vYWxsZXJneWludG9sZXJhbmNlLWNsaW5pY2FsJw0KY29kZXN5c3RlbSAiQWxsZXJneUludG9sZXJhbmNlVmVyaWZpY2F0aW9uU3RhdHVzQ29kZXMiOiAnaHR0cDovL3Rlcm1pbm9sb2d5LmhsNy5vcmcvQ29kZVN5c3RlbS9hbGxlcmd5aW50b2xlcmFuY2UtdmVyaWZpY2F0aW9uJw0KY29kZXN5c3RlbSAiQ29uZGl0aW9uQ2F0ZWdvcnlDb2RlcyI6ICdodHRwOi8vdGVybWlub2xvZ3kuaGw3Lm9yZy9Db2RlU3lzdGVtL2NvbmRpdGlvbi1jYXRlZ29yeScNCmNvZGVzeXN0ZW0gIk9ic2VydmF0aW9uQ2F0ZWdvcnlDb2RlcyI6ICdodHRwOi8vdGVybWlub2xvZ3kuaGw3Lm9yZy9Db2RlU3lzdGVtL29ic2VydmF0aW9uLWNhdGVnb3J5Jw0KDQp2YWx1ZXNldCAiQWN0aXZlIENvbmRpdGlvbiI6ICdodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2NxZi9jb21tb24vVmFsdWVTZXQvYWN0aXZlLWNvbmRpdGlvbicNCnZhbHVlc2V0ICJJbmFjdGl2ZSBDb25kaXRpb24iOiAnaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9jcWYvY29tbW9uL1ZhbHVlU2V0L2luYWN0aXZlLWNvbmRpdGlvbicNCg0KY29kZSAiQmlydGhkYXRlIjogJzIxMTEyLTgnIGZyb20gIkxPSU5DIiBkaXNwbGF5ICdCaXJ0aCBkYXRlJw0KY29kZSAiRGVhZCI6ICc0MTkwOTkwMDknIGZyb20gIlNOT01FRENUIiBkaXNwbGF5ICdEZWFkJw0KY29kZSAiRVIiOiAnRVInIGZyb20gIlJvbGVDb2RlIiBkaXNwbGF5ICdFbWVyZ2VuY3kgcm9vbScNCmNvZGUgIklDVSI6ICdJQ1UnIGZyb20gIlJvbGVDb2RlIiBkaXNwbGF5ICdJbnRlbnNpdmUgY2FyZSB1bml0Jw0KY29kZSAiQmlsbGluZyI6ICdiaWxsaW5nJyBmcm9tICJEaWFnbm9zaXMgUm9sZSIgZGlzcGxheSAnQmlsbGluZycNCg0KLy8gQ29uZGl0aW9uIENsaW5pY2FsIFN0YXR1cyBDb2RlcyAtIENvbnNpZGVyIHZhbHVlIHNldHMgZm9yIHRoZXNlDQpjb2RlICJhY3RpdmUiOiAnYWN0aXZlJyBmcm9tICJDb25kaXRpb25DbGluaWNhbFN0YXR1c0NvZGVzIg0KY29kZSAicmVjdXJyZW5jZSI6ICdyZWN1cnJlbmNlJyBmcm9tICJDb25kaXRpb25DbGluaWNhbFN0YXR1c0NvZGVzIg0KY29kZSAicmVsYXBzZSI6ICdyZWxhcHNlJyBmcm9tICJDb25kaXRpb25DbGluaWNhbFN0YXR1c0NvZGVzIg0KY29kZSAiaW5hY3RpdmUiOiAnaW5hY3RpdmUnIGZyb20gIkNvbmRpdGlvbkNsaW5pY2FsU3RhdHVzQ29kZXMiDQpjb2RlICJyZW1pc3Npb24iOiAncmVtaXNzaW9uJyBmcm9tICJDb25kaXRpb25DbGluaWNhbFN0YXR1c0NvZGVzIg0KY29kZSAicmVzb2x2ZWQiOiAncmVzb2x2ZWQnIGZyb20gIkNvbmRpdGlvbkNsaW5pY2FsU3RhdHVzQ29kZXMiDQoNCi8vIENvbmRpdGlvbiBWZXJpZmljYXRpb24gU3RhdHVzIENvZGVzIC0gQ29uc2lkZXIgdmFsdWUgc2V0cyBmb3IgdGhlc2UNCmNvZGUgInVuY29uZmlybWVkIjogJ3VuY29uZmlybWVkJyBmcm9tIENvbmRpdGlvblZlcmlmaWNhdGlvblN0YXR1c0NvZGVzDQpjb2RlICJwcm92aXNpb25hbCI6ICdwcm92aXNpb25hbCcgZnJvbSBDb25kaXRpb25WZXJpZmljYXRpb25TdGF0dXNDb2Rlcw0KY29kZSAiZGlmZmVyZW50aWFsIjogJ2RpZmZlcmVudGlhbCcgZnJvbSBDb25kaXRpb25WZXJpZmljYXRpb25TdGF0dXNDb2Rlcw0KY29kZSAiY29uZmlybWVkIjogJ2NvbmZpcm1lZCcgZnJvbSBDb25kaXRpb25WZXJpZmljYXRpb25TdGF0dXNDb2Rlcw0KY29kZSAicmVmdXRlZCI6ICdyZWZ1dGVkJyBmcm9tIENvbmRpdGlvblZlcmlmaWNhdGlvblN0YXR1c0NvZGVzDQpjb2RlICJlbnRlcmVkLWluLWVycm9yIjogJ2VudGVyZWQtaW4tZXJyb3InIGZyb20gQ29uZGl0aW9uVmVyaWZpY2F0aW9uU3RhdHVzQ29kZXMNCg0KY29kZSAiYWxsZXJneS1hY3RpdmUiOiAnYWN0aXZlJyBmcm9tICJBbGxlcmd5SW50b2xlcmFuY2VDbGluaWNhbFN0YXR1c0NvZGVzIg0KY29kZSAiYWxsZXJneS1pbmFjdGl2ZSI6ICdpbmFjdGl2ZScgZnJvbSAiQWxsZXJneUludG9sZXJhbmNlQ2xpbmljYWxTdGF0dXNDb2RlcyINCmNvZGUgImFsbGVyZ3ktcmVzb2x2ZWQiOiAncmVzb2x2ZWQnIGZyb20gIkFsbGVyZ3lJbnRvbGVyYW5jZUNsaW5pY2FsU3RhdHVzQ29kZXMiDQoNCi8vIEFsbGVyZ3kvSW50b2xlcmFuY2UgVmVyaWZpY2F0aW9uIFN0YXR1cyBDb2RlcyAtIENvbnNpZGVyIHZhbHVlIHNldHMgZm9yIHRoZXNlDQpjb2RlICJhbGxlcmd5LXVuY29uZmlybWVkIjogJ3VuY29uZmlybWVkJyBmcm9tIEFsbGVyZ3lJbnRvbGVyYW5jZVZlcmlmaWNhdGlvblN0YXR1c0NvZGVzDQpjb2RlICJhbGxlcmd5LWNvbmZpcm1lZCI6ICdjb25maXJtZWQnIGZyb20gQWxsZXJneUludG9sZXJhbmNlVmVyaWZpY2F0aW9uU3RhdHVzQ29kZXMNCmNvZGUgImFsbGVyZ3ktcmVmdXRlZCI6ICdyZWZ1dGVkJyBmcm9tIEFsbGVyZ3lJbnRvbGVyYW5jZVZlcmlmaWNhdGlvblN0YXR1c0NvZGVzDQoNCi8vIE1lZGljYXRpb25SZXF1ZXN0IENhdGVnb3J5IENvZGVzDQpjb2RlICJDb21tdW5pdHkiOiAnY29tbXVuaXR5JyBmcm9tICJNZWRpY2F0aW9uUmVxdWVzdENhdGVnb3J5IiBkaXNwbGF5ICdDb21tdW5pdHknDQpjb2RlICJEaXNjaGFyZ2UiOiAnZGlzY2hhcmdlJyBmcm9tICJNZWRpY2F0aW9uUmVxdWVzdENhdGVnb3J5IiBkaXNwbGF5ICdEaXNjaGFyZ2UnDQoNCi8vIERpYWdub3NpcyBSb2xlIENvZGVzDQpjb2RlICJBRCI6ICdBRCcgZnJvbSAiRGlhZ25vc2lzIFJvbGUiIGRpc3BsYXkgJ0FkbWlzc2lvbiBkaWFnbm9zaXMnDQpjb2RlICJERCI6ICdERCcgZnJvbSAiRGlhZ25vc2lzIFJvbGUiIGRpc3BsYXkgJ0Rpc2NoYXJnZSBkaWFnbm9zaXMnDQpjb2RlICJDQyI6ICdDQycgZnJvbSAiRGlhZ25vc2lzIFJvbGUiIGRpc3BsYXkgJ0NoaWVmIGNvbXBsYWludCcNCmNvZGUgIkNNIjogJ0NNJyBmcm9tICJEaWFnbm9zaXMgUm9sZSIgZGlzcGxheSAnQ29tb3JiaWRpdHkgZGlhZ25vc2lzJw0KY29kZSAicHJlLW9wIjogJ3ByZS1vcCcgZnJvbSAiRGlhZ25vc2lzIFJvbGUiIGRpc3BsYXkgJ3ByZS1vcCBkaWFnbm9zaXMnDQpjb2RlICJwb3N0LW9wIjogJ3Bvc3Qtb3AnIGZyb20gIkRpYWdub3NpcyBSb2xlIiBkaXNwbGF5ICdwb3N0LW9wIGRpYWdub3NpcycNCmNvZGUgImJpbGxpbmciOiAnYmlsbGluZycgZnJvbSAiRGlhZ25vc2lzIFJvbGUiIGRpc3BsYXkgJ2JpbGxpbmcgZGlhZ25vc2lzJw0KDQovLyBPYnNlcnZhdGlvbiBDYXRlZ29yeSBDb2Rlcw0KY29kZSAic29jaWFsLWhpc3RvcnkiOiAnc29jaWFsLWhpc3RvcnknIGZyb20gIk9ic2VydmF0aW9uQ2F0ZWdvcnlDb2RlcyIgZGlzcGxheSAnU29jaWFsIEhpc3RvcnknDQpjb2RlICJ2aXRhbC1zaWducyI6ICd2aXRhbC1zaWducycgZnJvbSAiT2JzZXJ2YXRpb25DYXRlZ29yeUNvZGVzIiBkaXNwbGF5ICdWaXRhbCBTaWducycNCmNvZGUgImltYWdpbmciOiAnaW1hZ2luZycgZnJvbSAiT2JzZXJ2YXRpb25DYXRlZ29yeUNvZGVzIiBkaXNwbGF5ICdJbWFnaW5nJw0KY29kZSAibGFib3JhdG9yeSI6ICdsYWJvcmF0b3J5JyBmcm9tICJPYnNlcnZhdGlvbkNhdGVnb3J5Q29kZXMiIGRpc3BsYXkgJ0xhYm9yYXRvcnknDQpjb2RlICJwcm9jZWR1cmUiOiAncHJvY2VkdXJlJyBmcm9tICJPYnNlcnZhdGlvbkNhdGVnb3J5Q29kZXMiIGRpc3BsYXkgJ1Byb2NlZHVyZScNCmNvZGUgInN1cnZleSI6ICdzdXJ2ZXknIGZyb20gIk9ic2VydmF0aW9uQ2F0ZWdvcnlDb2RlcyIgZGlzcGxheSAnU3VydmV5Jw0KY29kZSAiZXhhbSI6ICdleGFtJyBmcm9tICJPYnNlcnZhdGlvbkNhdGVnb3J5Q29kZXMiIGRpc3BsYXkgJ0V4YW0nDQpjb2RlICJ0aGVyYXB5IjogJ3RoZXJhcHknIGZyb20gIk9ic2VydmF0aW9uQ2F0ZWdvcnlDb2RlcyIgZGlzcGxheSAnVGhlcmFweScNCmNvZGUgImFjdGl2aXR5IjogJ2FjdGl2aXR5JyBmcm9tICJPYnNlcnZhdGlvbkNhdGVnb3J5Q29kZXMiIGRpc3BsYXkgJ0FjdGl2aXR5Jw0KDQovLyBDb25kaXRpb24gQ2F0ZWdvcnkgQ29kZXMNCmNvZGUgInByb2JsZW0tbGlzdC1pdGVtIjogJ3Byb2JsZW0tbGlzdC1pdGVtJyBmcm9tICJDb25kaXRpb25DYXRlZ29yeUNvZGVzIiBkaXNwbGF5ICdQcm9ibGVtIExpc3QgSXRlbScNCmNvZGUgImVuY291bnRlci1kaWFnbm9zaXMiOiAnZW5jb3VudGVyLWRpYWdub3NpcycgZnJvbSAiQ29uZGl0aW9uQ2F0ZWdvcnlDb2RlcyIgZGlzcGxheSAnRW5jb3VudGVyIERpYWdub3NpcycNCg0KY29udGV4dCBQYXRpZW50DQoNCi8qDQpAZGVzY3JpcHRpb246IE5vcm1hbGl6ZXMgYSB2YWx1ZSB0aGF0IGlzIGEgY2hvaWNlIG9mIHRpbWluZy12YWx1ZWQgdHlwZXMgdG8gYW4gZXF1aXZhbGVudCBpbnRlcnZhbA0KQGNvbW1lbnQ6IE5vcm1hbGl6ZXMgYSBjaG9pY2UgdHlwZSBvZiBEYXRlVGltZSwgUXVhbml0dHksIEludGVydmFsPERhdGVUaW1lPiwgb3IgSW50ZXJ2YWw8UXVhbnRpdHk+IHR5cGVzDQp0byBhbiBlcXVpdmFsZW50IGludGVydmFsLiBUaGlzIHNlbGVjdGlvbiBvZiBjaG9pY2UgdHlwZXMgaXMgYSBzdXBlcnNldCBvZiB0aGUgbWFqb3JpdHkgb2YgY2hvaWNlIHR5cGVzIHRoYXQgYXJlIHVzZWQgYXMgcG9zc2libGUNCnJlcHJlc2VudGF0aW9ucyBmb3IgdGltaW5nLXZhbHVlZCBlbGVtZW50cyBpbiBRSUNvcmUsIGFsbG93aW5nIHRoaXMgZnVuY3Rpb24gdG8gYmUgdXNlZCBhY3Jvc3MgYW55IHJlc291cmNlLg0KDQpUaGUgaW5wdXQgY2FuIGJlIHByb3ZpZGVkIGFzIGEgRGF0ZVRpbWUsIFF1YW50aXR5LCBJbnRlcnZhbDxEYXRlVGltZT4gb3IgSW50ZXJ2YWw8UXVhbnRpdHk+Lg0KVGhlIGludGVudCBvZiB0aGlzIGZ1bmN0aW9uIGlzIHRvIHByb3ZpZGUgYSBjbGVhciBhbmQgY29uY2lzZSBtZWNoYW5pc20gdG8gdHJlYXQgc2luZ2xlDQplbGVtZW50cyB0aGF0IGhhdmUgbXVsdGlwbGUgcG9zc2libGUgcmVwcmVzZW50YXRpb25zIGFzIGludGVydmFscyBzbyB0aGF0IGxvZ2ljIGRvZXNuJ3QgaGF2ZSB0byBhY2NvdW50DQpmb3IgdGhlIHZhcmlhYmlsaXR5LiBNb3JlIGNvbXBsZXggY2FsY3VsYXRpb25zIChzdWNoIGFzIG1lZGljYXRpb24gcmVxdWVzdCBwZXJpb2Qgb3IgZGlzcGVuc2UgcGVyaW9kDQpjYWxjdWxhdGlvbikgbmVlZCBzcGVjaWZpYyBndWlkYW5jZSBhbmQgY29uc2lkZXJhdGlvbi4gVGhhdCBndWlkYW5jZSBtYXkgbWFrZSB1c2Ugb2YgdGhpcyBmdW5jdGlvbiwgYnV0DQp0aGUgZm9jdXMgb2YgdGhpcyBmdW5jdGlvbiBpcyBvbiBzaW5nbGUgZWxlbWVudCBjYWxjdWxhdGlvbnMgd2hlcmUgdGhlIHNlbWFudGljcyBhcmUgdW5hbWJpZ3VvdXMuDQpJZiB0aGUgaW5wdXQgaXMgYSBEYXRlVGltZSwgdGhlIHJlc3VsdCBhIERhdGVUaW1lIEludGVydmFsIGJlZ2lubmluZyBhbmQgZW5kaW5nIG9uIHRoYXQgRGF0ZVRpbWUuDQpJZiB0aGUgaW5wdXQgaXMgYSBRdWFudGl0eSwgdGhlIHF1YW50aXR5IGlzIGV4cGVjdGVkIHRvIGJlIGEgY2FsZW5kYXItZHVyYXRpb24gaW50ZXJwcmV0ZWQgYXMgYW4gQWdlLCANCmFuZCB0aGUgcmVzdWx0IGlzIGEgRGF0ZVRpbWUgSW50ZXJ2YWwgYmVnaW5uaW5nIG9uIHRoZSBEYXRlIHRoZSBwYXRpZW50IHR1cm5lZCB0aGF0IGFnZSBhbmQgZW5kaW5nIGltbWVkaWF0ZWx5IGJlZm9yZSBvbmUgeWVhciBsYXRlci4NCklmIHRoZSBpbnB1dCBpcyBhIERhdGVUaW1lIEludGVydmFsLCB0aGUgcmVzdWx0IGlzIHRoZSBpbnB1dC4NCklmIHRoZSBpbnB1dCBpcyBhIFF1YW50aXR5IEludGVydmFsLCB0aGUgcXVhbnRpdGllcyBhcmUgZXhwZWN0ZWQgdG8gYmUgY2FsZW5kYXItZHVyYXRpb25zIGludGVycHJldGVkIGFzIGFuIEFnZSwgYW5kIHRoZSByZXN1bHQNCmlzIGEgRGF0ZVRpbWUgSW50ZXJ2YWwgYmVnaW5uaW5nIG9uIHRoZSBkYXRlIHRoZSBwYXRpZW50IHR1cm5lZCB0aGUgYWdlIGdpdmVuIGFzIHRoZSBzdGFydCBvZiB0aGUgcXVhbnRpdHkgaW50ZXJ2YWwsIGFuZCBlbmRpbmcgDQppbW1lZGlhdGVseSBiZWZvcmUgb25lIHllYXIgbGF0ZXIgdGhhbiB0aGUgZGF0ZSB0aGUgcGF0aWVudCB0dXJuZWQgdGhlIGFnZSBnaXZlbiBhcyB0aGUgZW5kIG9mIHRoZSBxdWFudGl0eSBpbnRlcnZhbC4NCkFueSBvdGhlciBpbnB1dCB3aWxsIHJlc2x0IGluIGEgbnVsbCBEYXRlVGltZSBJbnRlcnZhbA0KKi8NCmRlZmluZSBmdW5jdGlvbiBUb0ludGVydmFsKGNob2ljZSBDaG9pY2U8RGF0ZVRpbWUsIFF1YW50aXR5LCBJbnRlcnZhbDxEYXRlVGltZT4sIEludGVydmFsPFF1YW50aXR5Pj4pOg0KICBjYXNlDQoJICB3aGVuIGNob2ljZSBpcyBEYXRlVGltZSB0aGVuDQogICAgCUludGVydmFsW2Nob2ljZSBhcyBEYXRlVGltZSwgY2hvaWNlIGFzIERhdGVUaW1lXQ0KCQl3aGVuIGNob2ljZSBpcyBJbnRlcnZhbDxEYXRlVGltZT4gdGhlbg0KICAJCWNob2ljZSBhcyBJbnRlcnZhbDxEYXRlVGltZT4NCgkJd2hlbiBjaG9pY2UgaXMgUXVhbnRpdHkgdGhlbg0KCQkgIEludGVydmFsW1BhdGllbnQuYmlydGhEYXRlICsgKGNob2ljZSBhcyBRdWFudGl0eSksDQoJCQkgIFBhdGllbnQuYmlydGhEYXRlICsgKGNob2ljZSBhcyBRdWFudGl0eSkgKyAxIHllYXIpDQoJCXdoZW4gY2hvaWNlIGlzIEludGVydmFsPFF1YW50aXR5PiB0aGVuDQoJCSAgSW50ZXJ2YWxbUGF0aWVudC5iaXJ0aERhdGUgKyAoY2hvaWNlLmxvdyBhcyBRdWFudGl0eSksDQoJCQkgIFBhdGllbnQuYmlydGhEYXRlICsgKGNob2ljZS5oaWdoIGFzIFF1YW50aXR5KSArIDEgeWVhcikNCgkJZWxzZQ0KCQkJbnVsbCBhcyBJbnRlcnZhbDxEYXRlVGltZT4NCgllbmQNCg0KLyoNCkBkZXNjcmlwdGlvbjogTm9ybWFsaXplcyBhIHZhbHVlIHRoYXQgaXMgYSBjaG9pY2Ugb2YgdGltaW5nLXZhbHVlZCB0eXBlcyB0byBhbiBlcXVpdmFsZW50IGludGVydmFsDQpAY29tbWVudDogTm9ybWFsaXplcyBhIGNob2ljZSB0eXBlIG9mIERhdGVUaW1lLCBRdWFuaXR0eSwgSW50ZXJ2YWw8RGF0ZVRpbWU+LCBvciBJbnRlcnZhbDxRdWFudGl0eT4gdHlwZXMNCnRvIGFuIGVxdWl2YWxlbnQgaW50ZXJ2YWwuIFRoaXMgc2VsZWN0aW9uIG9mIGNob2ljZSB0eXBlcyBpcyBhIHN1cGVyc2V0IG9mIHRoZSBtYWpvcml0eSBvZiBjaG9pY2UgdHlwZXMgdGhhdCBhcmUgdXNlZCBhcyBwb3NzaWJsZQ0KcmVwcmVzZW50YXRpb25zIGZvciB0aW1pbmctdmFsdWVkIGVsZW1lbnRzIGluIFFJQ29yZSwgYWxsb3dpbmcgdGhpcyBmdW5jdGlvbiB0byBiZSB1c2VkIGFjcm9zcyBhbnkgcmVzb3VyY2UuDQoNClRoZSBpbnB1dCBjYW4gYmUgcHJvdmlkZWQgYXMgYSBEYXRlVGltZSwgUXVhbnRpdHksIEludGVydmFsPERhdGVUaW1lPiBvciBJbnRlcnZhbDxRdWFudGl0eT4uDQpUaGUgaW50ZW50IG9mIHRoaXMgZnVuY3Rpb24gaXMgdG8gcHJvdmlkZSBhIGNsZWFyIGFuZCBjb25jaXNlIG1lY2hhbmlzbSB0byB0cmVhdCBzaW5nbGUNCmVsZW1lbnRzIHRoYXQgaGF2ZSBtdWx0aXBsZSBwb3NzaWJsZSByZXByZXNlbnRhdGlvbnMgYXMgaW50ZXJ2YWxzIHNvIHRoYXQgbG9naWMgZG9lc24ndCBoYXZlIHRvIGFjY291bnQNCmZvciB0aGUgdmFyaWFiaWxpdHkuIE1vcmUgY29tcGxleCBjYWxjdWxhdGlvbnMgKHN1Y2ggYXMgbWVkaWNhdGlvbiByZXF1ZXN0IHBlcmlvZCBvciBkaXNwZW5zZSBwZXJpb2QNCmNhbGN1bGF0aW9uKSBuZWVkIHNwZWNpZmljIGd1aWRhbmNlIGFuZCBjb25zaWRlcmF0aW9uLiBUaGF0IGd1aWRhbmNlIG1heSBtYWtlIHVzZSBvZiB0aGlzIGZ1bmN0aW9uLCBidXQNCnRoZSBmb2N1cyBvZiB0aGlzIGZ1bmN0aW9uIGlzIG9uIHNpbmdsZSBlbGVtZW50IGNhbGN1bGF0aW9ucyB3aGVyZSB0aGUgc2VtYW50aWNzIGFyZSB1bmFtYmlndW91cy4NCklmIHRoZSBpbnB1dCBpcyBhIERhdGVUaW1lLCB0aGUgcmVzdWx0IGEgRGF0ZVRpbWUgSW50ZXJ2YWwgYmVnaW5uaW5nIGFuZCBlbmRpbmcgb24gdGhhdCBEYXRlVGltZS4NCklmIHRoZSBpbnB1dCBpcyBhIFF1YW50aXR5LCB0aGUgcXVhbnRpdHkgaXMgZXhwZWN0ZWQgdG8gYmUgYSBjYWxlbmRhci1kdXJhdGlvbiBpbnRlcnByZXRlZCBhcyBhbiBBZ2UsIA0KYW5kIHRoZSByZXN1bHQgaXMgYSBEYXRlVGltZSBJbnRlcnZhbCBiZWdpbm5pbmcgb24gdGhlIERhdGUgdGhlIHBhdGllbnQgdHVybmVkIHRoYXQgYWdlIGFuZCBlbmRpbmcgaW1tZWRpYXRlbHkgYmVmb3JlIG9uZSB5ZWFyIGxhdGVyLg0KSWYgdGhlIGlucHV0IGlzIGEgRGF0ZVRpbWUgSW50ZXJ2YWwsIHRoZSByZXN1bHQgaXMgdGhlIGlucHV0Lg0KSWYgdGhlIGlucHV0IGlzIGEgUXVhbnRpdHkgSW50ZXJ2YWwsIHRoZSBxdWFudGl0aWVzIGFyZSBleHBlY3RlZCB0byBiZSBjYWxlbmRhci1kdXJhdGlvbnMgaW50ZXJwcmV0ZWQgYXMgYW4gQWdlLCBhbmQgdGhlIHJlc3VsdA0KaXMgYSBEYXRlVGltZSBJbnRlcnZhbCBiZWdpbm5pbmcgb24gdGhlIGRhdGUgdGhlIHBhdGllbnQgdHVybmVkIHRoZSBhZ2UgZ2l2ZW4gYXMgdGhlIHN0YXJ0IG9mIHRoZSBxdWFudGl0eSBpbnRlcnZhbCwgYW5kIGVuZGluZyANCmltbWVkaWF0ZWx5IGJlZm9yZSBvbmUgeWVhciBsYXRlciB0aGFuIHRoZSBkYXRlIHRoZSBwYXRpZW50IHR1cm5lZCB0aGUgYWdlIGdpdmVuIGFzIHRoZSBlbmQgb2YgdGhlIHF1YW50aXR5IGludGVydmFsLg0KQW55IG90aGVyIGlucHV0IHdpbGwgcmVzbHQgaW4gYSBudWxsIERhdGVUaW1lIEludGVydmFsDQoqLw0KZGVmaW5lIGZsdWVudCBmdW5jdGlvbiB0b0ludGVydmFsKGNob2ljZSBDaG9pY2U8RGF0ZVRpbWUsIFF1YW50aXR5LCBJbnRlcnZhbDxEYXRlVGltZT4sIEludGVydmFsPFF1YW50aXR5Pj4pOg0KICBjYXNlDQoJICB3aGVuIGNob2ljZSBpcyBEYXRlVGltZSB0aGVuDQogICAgCUludGVydmFsW2Nob2ljZSBhcyBEYXRlVGltZSwgY2hvaWNlIGFzIERhdGVUaW1lXQ0KCQl3aGVuIGNob2ljZSBpcyBJbnRlcnZhbDxEYXRlVGltZT4gdGhlbg0KICAJCWNob2ljZSBhcyBJbnRlcnZhbDxEYXRlVGltZT4NCgkJd2hlbiBjaG9pY2UgaXMgUXVhbnRpdHkgdGhlbg0KCQkgIEludGVydmFsW1BhdGllbnQuYmlydGhEYXRlICsgKGNob2ljZSBhcyBRdWFudGl0eSksDQoJCQkgIFBhdGllbnQuYmlydGhEYXRlICsgKGNob2ljZSBhcyBRdWFudGl0eSkgKyAxIHllYXIpDQoJCXdoZW4gY2hvaWNlIGlzIEludGVydmFsPFF1YW50aXR5PiB0aGVuDQoJCSAgSW50ZXJ2YWxbUGF0aWVudC5iaXJ0aERhdGUgKyAoY2hvaWNlLmxvdyBhcyBRdWFudGl0eSksDQoJCQkgIFBhdGllbnQuYmlydGhEYXRlICsgKGNob2ljZS5oaWdoIGFzIFF1YW50aXR5KSArIDEgeWVhcikNCgkJZWxzZQ0KCQkJbnVsbCBhcyBJbnRlcnZhbDxEYXRlVGltZT4NCgllbmQNCg0KLyoNCkBkZXNjcmlwdGlvbjogUmV0dXJucyBhbiBpbnRlcnZhbCByZXByZXNlbnRpbmcgdGhlIG5vcm1hbGl6ZWQgYWJhdGVtZW50IG9mIGEgZ2l2ZW4gQ29uZGl0aW9uLg0KQGNvbW1lbnQ6IElmIHRoZSBhYmF0ZW1lbnQgZWxlbWVudCBvZiB0aGUgQ29uZGl0aW9uIGlzIHJlcHJlc2VudGVkIGFzIGEgRGF0ZVRpbWUsIHRoZSByZXN1bHQNCmlzIGFuIGludGVydmFsIGJlZ2lubmluZyBhbmQgZW5kaW5nIG9uIHRoYXQgRGF0ZVRpbWUuDQpJZiB0aGUgYWJhdGVtZW50IGlzIHJlcHJlc2VudGVkIGFzIGEgUXVhbnRpdHksIHRoZSBxdWFudGl0eSBpcyBleHBlY3RlZCB0byBiZSBhIGNhbGVuZGFyLWR1cmF0aW9uIGFuZCBpcyBpbnRlcnByZXRlZCBhcyB0aGUgYWdlIG9mIHRoZSBwYXRpZW50LiBUaGUNCnJlc3VsdCBpcyBhbiBpbnRlcnZhbCBmcm9tIHRoZSBkYXRlIHRoZSBwYXRpZW50IHR1cm5lZCB0aGF0IGFnZSB0byBpbW1lZGlhdGVseSBiZWZvcmUgb25lIHllYXIgbGF0ZXIuDQpJZiB0aGUgYWJhdGVtZW50IGlzIHJlcHJlc2VudGVkIGFzIGEgUXVhbnRpdHkgSW50ZXJ2YWwsIHRoZSBxdWFudGl0aWVzIGFyZSBleHBlY3RlZCB0byBiZSBjYWxlbmRhci1kdXJhdGlvbnMgYW5kIGFyZSBpbnRlcnByZXRlZCBhcyBhbiBhZ2UgcmFuZ2UgZHVyaW5nDQp3aGljaCB0aGUgYWJhdGVtZW50IG9jY3VycmVkLiBUaGUgcmVzdWx0IGlzIGFuIGludGVydmFsIGZyb20gdGhlIGRhdGUgdGhlIHBhdGllbnQgdHVybmVkIHRoZSBzdGFydGluZyBhZ2Ugb2YgdGhlIHF1YW50aXR5IGludGVydmFsLCBhbmQgZW5kaW5nIGltbWVkaWF0ZWx5DQpiZWZvcmUgb25lIHllYXIgbGF0ZXIgdGhhbiB0aGUgZGF0ZSB0aGUgcGF0aWVudCB0dXJuZWQgdGhlIGVuZGluZyBhZ2Ugb2YgdGhlIHF1YW50aXR5IGludGVydmFsLg0KKi8NCmRlZmluZSBmdW5jdGlvbiBUb0FiYXRlbWVudEludGVydmFsKGNvbmRpdGlvbiBDb25kaXRpb24pOg0KCWlmIGNvbmRpdGlvbi5hYmF0ZW1lbnQgaXMgRGF0ZVRpbWUgdGhlbg0KCSAgSW50ZXJ2YWxbY29uZGl0aW9uLmFiYXRlbWVudCBhcyBEYXRlVGltZSwgY29uZGl0aW9uLmFiYXRlbWVudCBhcyBEYXRlVGltZV0NCgllbHNlIGlmIGNvbmRpdGlvbi5hYmF0ZW1lbnQgaXMgUXVhbnRpdHkgdGhlbg0KCQlJbnRlcnZhbFtQYXRpZW50LmJpcnRoRGF0ZSArIChjb25kaXRpb24uYWJhdGVtZW50IGFzIFF1YW50aXR5KSwNCgkJCVBhdGllbnQuYmlydGhEYXRlICsgKGNvbmRpdGlvbi5hYmF0ZW1lbnQgYXMgUXVhbnRpdHkpICsgMSB5ZWFyKQ0KCWVsc2UgaWYgY29uZGl0aW9uLmFiYXRlbWVudCBpcyBJbnRlcnZhbDxRdWFudGl0eT4gdGhlbg0KCSAgSW50ZXJ2YWxbUGF0aWVudC5iaXJ0aERhdGUgKyAoY29uZGl0aW9uLmFiYXRlbWVudC5sb3cgYXMgUXVhbnRpdHkpLA0KCQkgIFBhdGllbnQuYmlydGhEYXRlICsgKGNvbmRpdGlvbi5hYmF0ZW1lbnQuaGlnaCBhcyBRdWFudGl0eSkgKyAxIHllYXIpDQoJZWxzZSBpZiBjb25kaXRpb24uYWJhdGVtZW50IGlzIEludGVydmFsPERhdGVUaW1lPiB0aGVuDQoJICBJbnRlcnZhbFtjb25kaXRpb24uYWJhdGVtZW50LmxvdywgY29uZGl0aW9uLmFiYXRlbWVudC5oaWdoKQ0KCWVsc2UgbnVsbCBhcyBJbnRlcnZhbDxEYXRlVGltZT4NCg0KLyoNCkBkZXNjcmlwdGlvbjogUmV0dXJucyBhbiBpbnRlcnZhbCByZXByZXNlbnRpbmcgdGhlIG5vcm1hbGl6ZWQgYWJhdGVtZW50IG9mIGEgZ2l2ZW4gQ29uZGl0aW9uLg0KQGNvbW1lbnQ6IElmIHRoZSBhYmF0ZW1lbnQgZWxlbWVudCBvZiB0aGUgQ29uZGl0aW9uIGlzIHJlcHJlc2VudGVkIGFzIGEgRGF0ZVRpbWUsIHRoZSByZXN1bHQNCmlzIGFuIGludGVydmFsIGJlZ2lubmluZyBhbmQgZW5kaW5nIG9uIHRoYXQgRGF0ZVRpbWUuDQpJZiB0aGUgYWJhdGVtZW50IGlzIHJlcHJlc2VudGVkIGFzIGEgUXVhbnRpdHksIHRoZSBxdWFudGl0eSBpcyBleHBlY3RlZCB0byBiZSBhIGNhbGVuZGFyLWR1cmF0aW9uIGFuZCBpcyBpbnRlcnByZXRlZCBhcyB0aGUgYWdlIG9mIHRoZSBwYXRpZW50LiBUaGUNCnJlc3VsdCBpcyBhbiBpbnRlcnZhbCBmcm9tIHRoZSBkYXRlIHRoZSBwYXRpZW50IHR1cm5lZCB0aGF0IGFnZSB0byBpbW1lZGlhdGVseSBiZWZvcmUgb25lIHllYXIgbGF0ZXIuDQpJZiB0aGUgYWJhdGVtZW50IGlzIHJlcHJlc2VudGVkIGFzIGEgUXVhbnRpdHkgSW50ZXJ2YWwsIHRoZSBxdWFudGl0aWVzIGFyZSBleHBlY3RlZCB0byBiZSBjYWxlbmRhci1kdXJhdGlvbnMgYW5kIGFyZSBpbnRlcnByZXRlZCBhcyBhbiBhZ2UgcmFuZ2UgZHVyaW5nDQp3aGljaCB0aGUgYWJhdGVtZW50IG9jY3VycmVkLiBUaGUgcmVzdWx0IGlzIGFuIGludGVydmFsIGZyb20gdGhlIGRhdGUgdGhlIHBhdGllbnQgdHVybmVkIHRoZSBzdGFydGluZyBhZ2Ugb2YgdGhlIHF1YW50aXR5IGludGVydmFsLCBhbmQgZW5kaW5nIGltbWVkaWF0ZWx5DQpiZWZvcmUgb25lIHllYXIgbGF0ZXIgdGhhbiB0aGUgZGF0ZSB0aGUgcGF0aWVudCB0dXJuZWQgdGhlIGVuZGluZyBhZ2Ugb2YgdGhlIHF1YW50aXR5IGludGVydmFsLg0KKi8NCmRlZmluZSBmbHVlbnQgZnVuY3Rpb24gdG9BYmF0ZW1lbnRJbnRlcnZhbChjb25kaXRpb24gQ29uZGl0aW9uKToNCglpZiBjb25kaXRpb24uYWJhdGVtZW50IGlzIERhdGVUaW1lIHRoZW4NCgkgIEludGVydmFsW2NvbmRpdGlvbi5hYmF0ZW1lbnQgYXMgRGF0ZVRpbWUsIGNvbmRpdGlvbi5hYmF0ZW1lbnQgYXMgRGF0ZVRpbWVdDQoJZWxzZSBpZiBjb25kaXRpb24uYWJhdGVtZW50IGlzIFF1YW50aXR5IHRoZW4NCgkJSW50ZXJ2YWxbUGF0aWVudC5iaXJ0aERhdGUgKyAoY29uZGl0aW9uLmFiYXRlbWVudCBhcyBRdWFudGl0eSksDQoJCQlQYXRpZW50LmJpcnRoRGF0ZSArIChjb25kaXRpb24uYWJhdGVtZW50IGFzIFF1YW50aXR5KSArIDEgeWVhcikNCgllbHNlIGlmIGNvbmRpdGlvbi5hYmF0ZW1lbnQgaXMgSW50ZXJ2YWw8UXVhbnRpdHk+IHRoZW4NCgkgIEludGVydmFsW1BhdGllbnQuYmlydGhEYXRlICsgKGNvbmRpdGlvbi5hYmF0ZW1lbnQubG93IGFzIFF1YW50aXR5KSwNCgkJICBQYXRpZW50LmJpcnRoRGF0ZSArIChjb25kaXRpb24uYWJhdGVtZW50LmhpZ2ggYXMgUXVhbnRpdHkpICsgMSB5ZWFyKQ0KCWVsc2UgaWYgY29uZGl0aW9uLmFiYXRlbWVudCBpcyBJbnRlcnZhbDxEYXRlVGltZT4gdGhlbg0KCSAgSW50ZXJ2YWxbY29uZGl0aW9uLmFiYXRlbWVudC5sb3csIGNvbmRpdGlvbi5hYmF0ZW1lbnQuaGlnaCkNCgllbHNlIG51bGwgYXMgSW50ZXJ2YWw8RGF0ZVRpbWU+DQoNCi8qDQpAZGVzY3JpcHRpb246IFJldHVybnMgYW4gaW50ZXJ2YWwgcmVwcmVzZW50aW5nIHRoZSBub3JtYWxpemVkIHByZXZhbGVuY2UgcGVyaW9kIG9mIGEgZ2l2ZW4gQ29uZGl0aW9uLg0KQGNvbW1lbnQ6IFVzZXMgdGhlIFRvSW50ZXJ2YWwgYW5kIFRvQWJhdGVtZW50SW50ZXJ2YWwgZnVuY3Rpb25zIHRvIGRldGVybWluZSB0aGUgd2lkZXN0IHBvdGVudGlhbCBpbnRlcnZhbCBmcm9tDQpvbnNldCB0byBhYmF0ZW1lbnQgYXMgc3BlY2lmaWVkIGluIHRoZSBnaXZlbiBDb25kaXRpb24uIElmIHRoZSBjb25kaXRpb24gaXMgYWN0aXZlLCB0aGUgcmVzdWx0aW5nIGludGVydmFsIHdpbGwgaGF2ZQ0KYSBjbG9zZWQgZW5kaW5nIGJvdW5kYXJ5LiBJZiB0aGUgY29uZGl0aW9uIGlzIG5vdCBhY3RpdmUsIHRoZSByZXN1bHRpbmcgaW50ZXJ2YWwgd2lsbCBoYXZlIGFuIG9wZW4gZW5kaW5nIGJvdW5kYXJ5Lg0KKi8NCmRlZmluZSBmdW5jdGlvbiBUb1ByZXZhbGVuY2VJbnRlcnZhbChjb25kaXRpb24gQ29uZGl0aW9uKToNCmlmIGNvbmRpdGlvbi5jbGluaWNhbFN0YXR1cyB+ICJhY3RpdmUiDQogIG9yIGNvbmRpdGlvbi5jbGluaWNhbFN0YXR1cyB+ICJyZWN1cnJlbmNlIg0KICBvciBjb25kaXRpb24uY2xpbmljYWxTdGF0dXMgfiAicmVsYXBzZSIgdGhlbg0KICBJbnRlcnZhbFtzdGFydCBvZiBUb0ludGVydmFsKGNvbmRpdGlvbi5vbnNldCksIGVuZCBvZiBUb0FiYXRlbWVudEludGVydmFsKGNvbmRpdGlvbildDQplbHNlDQogIEludGVydmFsW3N0YXJ0IG9mIFRvSW50ZXJ2YWwoY29uZGl0aW9uLm9uc2V0KSwgZW5kIG9mIFRvQWJhdGVtZW50SW50ZXJ2YWwoY29uZGl0aW9uKSkNCg0KLyoNCkBkZXNjcmlwdGlvbjogUmV0dXJucyBhbiBpbnRlcnZhbCByZXByZXNlbnRpbmcgdGhlIG5vcm1hbGl6ZWQgcHJldmFsZW5jZSBwZXJpb2Qgb2YgYSBnaXZlbiBDb25kaXRpb24uDQpAY29tbWVudDogVXNlcyB0aGUgVG9JbnRlcnZhbCBhbmQgVG9BYmF0ZW1lbnRJbnRlcnZhbCBmdW5jdGlvbnMgdG8gZGV0ZXJtaW5lIHRoZSB3aWRlc3QgcG90ZW50aWFsIGludGVydmFsIGZyb20NCm9uc2V0IHRvIGFiYXRlbWVudCBhcyBzcGVjaWZpZWQgaW4gdGhlIGdpdmVuIENvbmRpdGlvbi4gSWYgdGhlIGNvbmRpdGlvbiBpcyBhY3RpdmUsIHRoZSByZXN1bHRpbmcgaW50ZXJ2YWwgd2lsbCBoYXZlDQphIGNsb3NlZCBlbmRpbmcgYm91bmRhcnkuIElmIHRoZSBjb25kaXRpb24gaXMgbm90IGFjdGl2ZSwgdGhlIHJlc3VsdGluZyBpbnRlcnZhbCB3aWxsIGhhdmUgYW4gb3BlbiBlbmRpbmcgYm91bmRhcnkuDQoqLw0KZGVmaW5lIGZsdWVudCBmdW5jdGlvbiB0b1ByZXZhbGVuY2VJbnRlcnZhbChjb25kaXRpb24gQ29uZGl0aW9uKToNCmlmIGNvbmRpdGlvbi5jbGluaWNhbFN0YXR1cyB+ICJhY3RpdmUiDQogIG9yIGNvbmRpdGlvbi5jbGluaWNhbFN0YXR1cyB+ICJyZWN1cnJlbmNlIg0KICBvciBjb25kaXRpb24uY2xpbmljYWxTdGF0dXMgfiAicmVsYXBzZSIgdGhlbg0KICBJbnRlcnZhbFtzdGFydCBvZiBUb0ludGVydmFsKGNvbmRpdGlvbi5vbnNldCksIGVuZCBvZiBUb0FiYXRlbWVudEludGVydmFsKGNvbmRpdGlvbildDQplbHNlDQogIEludGVydmFsW3N0YXJ0IG9mIFRvSW50ZXJ2YWwoY29uZGl0aW9uLm9uc2V0KSwgZW5kIG9mIFRvQWJhdGVtZW50SW50ZXJ2YWwoY29uZGl0aW9uKSkNCg0KLyoNCkBkZXNjcmlwdGlvbjogUmV0dXJucyB0aGUgdGFpbCBvZiB0aGUgZ2l2ZW4gdXJpIChpLmUuIGV2ZXJ5dGhpbmcgYWZ0ZXIgdGhlIGxhc3Qgc2xhc2ggaW4gdGhlIFVSSSkuDQpAY29tbWVudDogVGhpcyBmdW5jdGlvbiBjYW4gYmUgdXNlZCB0byBkZXRlcm1pbmUgdGhlIGxvZ2ljYWwgaWQgb2YgYSBnaXZlbiByZXNvdXJjZS4gSXQgY2FuIGJlIHVzZWQgaW4NCmEgc2luZ2xlLXNlcnZlciBlbnZpcm9ubWVudCB0byB0cmFjZSByZWZlcmVuY2VzLiBIb3dldmVyLCB0aGlzIGZ1bmN0aW9uIGRvZXMgbm90IGF0dGVtcHQgdG8gcmVzb2x2ZQ0Kb3IgZGlzdGluZ3Vpc2ggdGhlIGJhc2Ugb2YgdGhlIGdpdmVuIHVybCwgYW5kIHNvIGNhbm5vdCBiZSB1c2VkIHNhZmVseSBpbiBtdWx0aS1zZXJ2ZXIgZW52aXJvbm1lbnRzLg0KKi8NCmRlZmluZSBmdW5jdGlvbiBHZXRJZCh1cmkgU3RyaW5nICk6DQogIExhc3QoU3BsaXQodXJpLCAnLycpKQ0KDQovKg0KQGRlc2NyaXB0aW9uOiBSZXR1cm5zIHRoZSB0YWlsIG9mIHRoZSBnaXZlbiB1cmkgKGkuZS4gZXZlcnl0aGluZyBhZnRlciB0aGUgbGFzdCBzbGFzaCBpbiB0aGUgVVJJKS4NCkBjb21tZW50OiBUaGlzIGZ1bmN0aW9uIGNhbiBiZSB1c2VkIHRvIGRldGVybWluZSB0aGUgbG9naWNhbCBpZCBvZiBhIGdpdmVuIHJlc291cmNlLiBJdCBjYW4gYmUgdXNlZCBpbg0KYSBzaW5nbGUtc2VydmVyIGVudmlyb25tZW50IHRvIHRyYWNlIHJlZmVyZW5jZXMuIEhvd2V2ZXIsIHRoaXMgZnVuY3Rpb24gZG9lcyBub3QgYXR0ZW1wdCB0byByZXNvbHZlDQpvciBkaXN0aW5ndWlzaCB0aGUgYmFzZSBvZiB0aGUgZ2l2ZW4gdXJsLCBhbmQgc28gY2Fubm90IGJlIHVzZWQgc2FmZWx5IGluIG11bHRpLXNlcnZlciBlbnZpcm9ubWVudHMuDQoqLw0KZGVmaW5lIGZsdWVudCBmdW5jdGlvbiBnZXRJZCh1cmkgU3RyaW5nKToNCiAgTGFzdChTcGxpdCh1cmksICcvJykpDQoNCi8qDQpAZGVzY3JpcHRpb246IEdpdmVuIGFuIGludGVydmFsLCByZXR1cm4gdHJ1ZSBpZiB0aGUgaW50ZXJ2YWwgaGFzIGEgc3RhcnRpbmcgYm91bmRhcnkgc3BlY2lmaWVkIA0KKGkuZS4gdGhlIHN0YXJ0IG9mIHRoZSBpbnRlcnZhbCBpcyBub3QgbnVsbCBhbmQgbm90IHRoZSBtaW5pbXVtIERhdGVUaW1lIHZhbHVlKQ0KKi8NCmRlZmluZSBmdW5jdGlvbiAiSGFzU3RhcnQiKHBlcmlvZCBJbnRlcnZhbDxEYXRlVGltZT4gKToNCiAgbm90ICggc3RhcnQgb2YgcGVyaW9kIGlzIG51bGwNCiAgICAgIG9yIHN0YXJ0IG9mIHBlcmlvZCA9IG1pbmltdW0gRGF0ZVRpbWUNCiAgKQ0KDQovKg0KQGRlc2NyaXB0aW9uOiBHaXZlbiBhbiBpbnRlcnZhbCwgcmV0dXJuIHRydWUgaWYgdGhlIGludGVydmFsIGhhcyBhIHN0YXJ0aW5nIGJvdW5kYXJ5IHNwZWNpZmllZCANCihpLmUuIHRoZSBzdGFydCBvZiB0aGUgaW50ZXJ2YWwgaXMgbm90IG51bGwgYW5kIG5vdCB0aGUgbWluaW11bSBEYXRlVGltZSB2YWx1ZSkNCiovDQpkZWZpbmUgZmx1ZW50IGZ1bmN0aW9uIGhhc1N0YXJ0KHBlcmlvZCBJbnRlcnZhbDxEYXRlVGltZT4gKToNCiAgbm90ICggc3RhcnQgb2YgcGVyaW9kIGlzIG51bGwNCiAgICAgIG9yIHN0YXJ0IG9mIHBlcmlvZCA9IG1pbmltdW0gRGF0ZVRpbWUNCiAgKQ0KDQovKg0KQGRlc2NyaXB0aW9uOiBHaXZlbiBhbiBpbnRlcnZhbCwgcmV0dXJucyB0cnVlIGlmIHRoZSBpbnRlcnZhbCBoYXMgYW4gZW5kaW5nIGJvdW5kYXJ5IHNwZWNpZmllZCANCihpLmUuIHRoZSBlbmQgb2YgdGhlIGludGVydmFsIGlzIG5vdCBudWxsIGFuZCBub3QgdGhlIG1heGltdW0gRGF0ZVRpbWUgdmFsdWUpDQoqLw0KZGVmaW5lIGZ1bmN0aW9uICJIYXNFbmQiKHBlcmlvZCBJbnRlcnZhbDxEYXRlVGltZT4gKToNCiAgbm90ICgNCiAgICBlbmQgb2YgcGVyaW9kIGlzIG51bGwNCiAgICAgIG9yIGVuZCBvZiBwZXJpb2QgPSBtYXhpbXVtIERhdGVUaW1lDQogICkNCg0KLyoNCkBkZXNjcmlwdGlvbjogR2l2ZW4gYW4gaW50ZXJ2YWwsIHJldHVybnMgdHJ1ZSBpZiB0aGUgaW50ZXJ2YWwgaGFzIGFuIGVuZGluZyBib3VuZGFyeSBzcGVjaWZpZWQgDQooaS5lLiB0aGUgZW5kIG9mIHRoZSBpbnRlcnZhbCBpcyBub3QgbnVsbCBhbmQgbm90IHRoZSBtYXhpbXVtIERhdGVUaW1lIHZhbHVlKQ0KKi8NCmRlZmluZSBmbHVlbnQgZnVuY3Rpb24gaGFzRW5kKHBlcmlvZCBJbnRlcnZhbDxEYXRlVGltZT4gKToNCiAgbm90ICgNCiAgICBlbmQgb2YgcGVyaW9kIGlzIG51bGwNCiAgICAgIG9yIGVuZCBvZiBwZXJpb2QgPSBtYXhpbXVtIERhdGVUaW1lDQogICkNCg0KLyoNCkBkZXNjcmlwdGlvbjogR2l2ZW4gYW4gaW50ZXJ2YWwsIHJldHVybnMgdGhlIGVuZGluZyBwb2ludCBpZiB0aGUgaW50ZXJ2YWwgaGFzIGFuIGVuZGluZyBib3VuZGFyeSBzcGVjaWZpZWQsIA0Kb3RoZXJ3aXNlLCByZXR1cm5zIHRoZSBzdGFydGluZyBwb2ludA0KKi8NCmRlZmluZSBmdW5jdGlvbiAiTGF0ZXN0IihjaG9pY2UgQ2hvaWNlPERhdGVUaW1lLCBRdWFudGl0eSwgSW50ZXJ2YWw8RGF0ZVRpbWU+LCBJbnRlcnZhbDxRdWFudGl0eT4+ICk6DQogIChjaG9pY2UudG9JbnRlcnZhbCgpKSBwZXJpb2QNCiAgICByZXR1cm4NCiAgICAgIGlmIChIYXNFbmQocGVyaW9kKSkgdGhlbiBlbmQgb2YgcGVyaW9kDQogICAgICBlbHNlIHN0YXJ0IG9mIHBlcmlvZA0KDQovKg0KQGRlc2NyaXB0aW9uOiBHaXZlbiBhbiBpbnRlcnZhbCwgcmV0dXJucyB0aGUgZW5kaW5nIHBvaW50IGlmIHRoZSBpbnRlcnZhbCBoYXMgYW4gZW5kaW5nIGJvdW5kYXJ5IHNwZWNpZmllZCwgDQpvdGhlcndpc2UsIHJldHVybnMgdGhlIHN0YXJ0aW5nIHBvaW50DQoqLw0KZGVmaW5lIGZsdWVudCBmdW5jdGlvbiBsYXRlc3QoY2hvaWNlIENob2ljZTxEYXRlVGltZSwgUXVhbnRpdHksIEludGVydmFsPERhdGVUaW1lPiwgSW50ZXJ2YWw8UXVhbnRpdHk+PiApOg0KICAoY2hvaWNlLnRvSW50ZXJ2YWwoKSkgcGVyaW9kDQogICAgcmV0dXJuDQogICAgICBpZiAoSGFzRW5kKHBlcmlvZCkpIHRoZW4gZW5kIG9mIHBlcmlvZA0KICAgICAgZWxzZSBzdGFydCBvZiBwZXJpb2QNCg0KLyoNCkBkZXNjcmlwdGlvbjogR2l2ZW4gYW4gaW50ZXJ2YWwsIHJldHVybiB0aGUgc3RhcnRpbmcgcG9pbnQgaWYgdGhlIGludGVydmFsIGhhcyBhIHN0YXJ0aW5nIGJvdW5kYXJ5IHNwZWNpZmllZCwgDQpvdGhlcndpc2UsIHJldHVybiB0aGUgZW5kaW5nIHBvaW50DQoqLw0KZGVmaW5lIGZ1bmN0aW9uICJFYXJsaWVzdCIoY2hvaWNlIENob2ljZTxEYXRlVGltZSwgUXVhbnRpdHksIEludGVydmFsPERhdGVUaW1lPiwgSW50ZXJ2YWw8UXVhbnRpdHk+PiApOg0KICAoY2hvaWNlLnRvSW50ZXJ2YWwoKSkgcGVyaW9kDQogICAgcmV0dXJuDQogICAgICBpZiAoSGFzU3RhcnQocGVyaW9kKSkgdGhlbiBzdGFydCBvZiBwZXJpb2QNCiAgICAgIGVsc2UgZW5kIG9mIHBlcmlvZA0KDQovKg0KQGRlc2NyaXB0aW9uOiBHaXZlbiBhbiBpbnRlcnZhbCwgcmV0dXJuIHRoZSBzdGFydGluZyBwb2ludCBpZiB0aGUgaW50ZXJ2YWwgaGFzIGEgc3RhcnRpbmcgYm91bmRhcnkgc3BlY2lmaWVkLCANCm90aGVyd2lzZSwgcmV0dXJuIHRoZSBlbmRpbmcgcG9pbnQNCiovDQpkZWZpbmUgZmx1ZW50IGZ1bmN0aW9uIGVhcmxpZXN0KGNob2ljZSBDaG9pY2U8RGF0ZVRpbWUsIFF1YW50aXR5LCBJbnRlcnZhbDxEYXRlVGltZT4sIEludGVydmFsPFF1YW50aXR5Pj4gKToNCiAgKGNob2ljZS50b0ludGVydmFsKCkpIHBlcmlvZA0KICAgIHJldHVybg0KICAgICAgaWYgKEhhc1N0YXJ0KHBlcmlvZCkpIHRoZW4gc3RhcnQgb2YgcGVyaW9kDQogICAgICBlbHNlIGVuZCBvZiBwZXJpb2QNCg0KLyoNCkBkZXNjcmlwdGlvbjogQ3JlYXRlcyBhIGxpc3Qgb2YgaW50ZWdlcnMgZnJvbSAxIHRvIGhvdyBtYW55IGRheXMgYXJlIGluIHRoZSBpbnRlcnZhbC4gTm90ZSwgdGhpcyB3b250IGNyZWF0ZSBhbiBpbmRleCBmb3INCnRoZSBmaW5hbCBkYXkgaWYgaXQgaXMgbGVzcyB0aGFuIDI0IGhvdXJzLiBUaGlzIGFsc28gaW5jbHVkZXMgdGhlIGZpcnN0IDI0IGhvdXIgcGVyaW9kLg0KKi8NCmRlZmluZSBmdW5jdGlvbiAiSW50ZXJ2YWwgVG8gRGF5IE51bWJlcnMiKFBlcmlvZCBJbnRlcnZhbDxEYXRlVGltZT4pOg0KICAoIGV4cGFuZCB7IEludGVydmFsWzEsIGR1cmF0aW9uIGluIGRheXMgYmV0d2VlbiBzdGFydCBvZiBQZXJpb2QgYW5kIGVuZCBvZiBQZXJpb2RdfSApIERheU51bWJlcg0KICAgIHJldHVybiBlbmQgb2YgRGF5TnVtYmVyDQoNCi8qDQpAZGVzY3JpcHRpb246IENyZWF0ZXMgYSBsaXN0IG9mIGludGVnZXJzIGZyb20gMSB0byBob3cgbWFueSBkYXlzIGFyZSBpbiB0aGUgaW50ZXJ2YWwuIE5vdGUsIHRoaXMgd29udCBjcmVhdGUgYW4gaW5kZXggZm9yDQp0aGUgZmluYWwgZGF5IGlmIGl0IGlzIGxlc3MgdGhhbiAyNCBob3Vycy4gVGhpcyBhbHNvIGluY2x1ZGVzIHRoZSBmaXJzdCAyNCBob3VyIHBlcmlvZC4NCiovDQpkZWZpbmUgZmx1ZW50IGZ1bmN0aW9uIHRvRGF5TnVtYmVycyhQZXJpb2QgSW50ZXJ2YWw8RGF0ZVRpbWU+KToNCiAgKCBleHBhbmQgeyBJbnRlcnZhbFsxLCBkdXJhdGlvbiBpbiBkYXlzIGJldHdlZW4gc3RhcnQgb2YgUGVyaW9kIGFuZCBlbmQgb2YgUGVyaW9kXX0gKSBEYXlOdW1iZXINCiAgICByZXR1cm4gZW5kIG9mIERheU51bWJlcg0KDQovKg0KQGRlc2NyaXB0aW9uOiBDcmVhdGVzIGEgbGlzdCBvZiAyNCBob3VyIGxvbmcgaW50ZXJ2YWxzIGluIGFuIGludGVydmFsIHBhaXJlZCB3aXRoIHRoZSBpbmRleCAoMSBpbmRleGVkKSB0byB3aGljaCAyNCBob3VyIGludGVydmFsIGl0IGlzLg0KTm90ZSB0aGF0IHRoZSByZXN1bHQgd2lsbCBpbmNsdWRlIGludGVydmFscyB0aGF0IGFyZSBjbG9zZWQgYXQgdGhlIGJlZ2lubmluZyBhbmQgb3BlbiBhdCB0aGUgZW5kDQoqLw0KZGVmaW5lIGZ1bmN0aW9uICJEYXlzIEluIFBlcmlvZCIoUGVyaW9kIEludGVydmFsPERhdGVUaW1lPik6DQogICggIkludGVydmFsIFRvIERheSBOdW1iZXJzIihQZXJpb2QpKSBEYXlJbmRleA0KICAgIGxldCBzdGFydFBlcmlvZDogc3RhcnQgb2YgUGVyaW9kICsgKDI0IGhvdXJzICogKERheUluZGV4IC0gMSkpLA0KICAgIGVuZFBlcmlvZDogaWYgKGhvdXJzIGJldHdlZW4gc3RhcnRQZXJpb2QgYW5kIGVuZCBvZiBQZXJpb2QgPCAyNCkgdGhlbiBzdGFydFBlcmlvZA0KICAgICAgZWxzZSBzdGFydCBvZiBQZXJpb2QgKyAoMjQgaG91cnMgKiBEYXlJbmRleCkNCiAgICByZXR1cm4gVHVwbGUgew0KICAgICAgZGF5SW5kZXg6IERheUluZGV4LA0KICAgICAgZGF5UGVyaW9kOiBJbnRlcnZhbFtzdGFydFBlcmlvZCwgZW5kUGVyaW9kKQ0KICAgIH0NCg0KLyoNCkBkZXNjcmlwdGlvbjogQ3JlYXRlcyBhIGxpc3Qgb2YgMjQgaG91ciBsb25nIGludGVydmFscyBpbiBhbiBpbnRlcnZhbCBwYWlyZWQgd2l0aCB0aGUgaW5kZXggKDEgaW5kZXhlZCkgdG8gd2hpY2ggMjQgaG91ciBpbnRlcnZhbCBpdCBpcy4NCk5vdGUgdGhhdCB0aGUgcmVzdWx0IHdpbGwgaW5jbHVkZSBpbnRlcnZhbHMgdGhhdCBhcmUgY2xvc2VkIGF0IHRoZSBiZWdpbm5pbmcgYW5kIG9wZW4gYXQgdGhlIGVuZA0KKi8NCmRlZmluZSBmbHVlbnQgZnVuY3Rpb24gZGF5c0luUGVyaW9kKFBlcmlvZCBJbnRlcnZhbDxEYXRlVGltZT4pOg0KICAoICJJbnRlcnZhbCBUbyBEYXkgTnVtYmVycyIoUGVyaW9kKSkgRGF5SW5kZXgNCiAgICBsZXQgc3RhcnRQZXJpb2Q6IHN0YXJ0IG9mIFBlcmlvZCArICgyNCBob3VycyAqIChEYXlJbmRleCAtIDEpKSwNCiAgICBlbmRQZXJpb2Q6IGlmIChob3VycyBiZXR3ZWVuIHN0YXJ0UGVyaW9kIGFuZCBlbmQgb2YgUGVyaW9kIDwgMjQpIHRoZW4gc3RhcnRQZXJpb2QNCiAgICAgIGVsc2Ugc3RhcnQgb2YgUGVyaW9kICsgKDI0IGhvdXJzICogRGF5SW5kZXgpDQogICAgcmV0dXJuIFR1cGxlIHsNCiAgICAgIGRheUluZGV4OiBEYXlJbmRleCwNCiAgICAgIGRheVBlcmlvZDogSW50ZXJ2YWxbc3RhcnRQZXJpb2QsIGVuZFBlcmlvZCkNCiAgICB9"
+    }
+  ]
+}</code></pre>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7.org/Special/committees/[something]">HL7 International - [Some] Work Group</a>.  Package cms.fhir.mct#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 21, 2023 15:20-0600">2023-03-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="http://cms.gov/fhir/mct/history.html">Version History</a> | <a style="color: #81BEF7" rel="license" href="license.html">License</a>
+<!--<a style="color: #81BEF7" href="todo.html">Search</a> | -->
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

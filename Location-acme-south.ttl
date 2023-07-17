@@ -1,0 +1,55 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://cms.gov/fhir/mct/Location/acme-south> a fhir:Location ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "acme-south"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Location</b><a name=\"acme-south\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Location &quot;acme-south&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-location.html\">QICoreLocation</a></p></div><p><b>identifier</b>: id: ACME-SOUTH (use: USUAL)</p><p><b>status</b>: active</p><p><b>name</b>: ACME South</p><p><b>mode</b>: instance</p><p><b>managingOrganization</b>: <a href=\"Organization-acme.html\">Organization/acme</a> &quot;ACME Provider Organization&quot;</p><p><b>endpoint</b>: <a name=\"acme-south-endpoint\"> </a></p><blockquote><p/><p><a name=\"acme-south-endpoint\"> </a></p><p><b>status</b>: active</p><p><b>connectionType</b>: HL7 FHIR (Details: http://terminology.hl7.org/CodeSystem/endpoint-connection-type code hl7-fhir-rest = 'HL7 FHIR', stated as 'null')</p><p><b>payloadType</b>: Any <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-endpoint-payload-type.html\">Endpoint Payload Type</a>#any)</span></p><p><b>payloadMimeType</b>: application/fhir+json</p><p><b>address</b>: <a href=\"http://acme.org/south/fhir\">http://acme.org/south/fhir</a></p></blockquote><hr/><blockquote><p><b>Generated Narrative: Endpoint #acme-south-endpoint</b><a name=\"acme-south-endpoint\"> </a></p><p><b>status</b>: active</p><p><b>connectionType</b>: HL7 FHIR (Details: http://terminology.hl7.org/CodeSystem/endpoint-connection-type code hl7-fhir-rest = 'HL7 FHIR', stated as 'null')</p><p><b>payloadType</b>: Any <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-endpoint-payload-type.html\">Endpoint Payload Type</a>#any)</span></p><p><b>payloadMimeType</b>: application/fhir+json</p><p><b>address</b>: <a href=\"http://acme.org/south/fhir\">http://acme.org/south/fhir</a></p></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Endpoint ;
+     fhir:id [ fhir:v "acme-south-endpoint" ] ;
+     fhir:status [ fhir:v "active" ] ;
+     fhir:connectionType [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/endpoint-connection-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "hl7-fhir-rest" ]
+     ] ;
+     fhir:payloadType ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/endpoint-payload-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "any" ]
+       ] )
+     ] ) ;
+     fhir:payloadMimeType ( [ fhir:v "application/fhir+json" ] ) ;
+     fhir:address [ fhir:v "http://acme.org/south/fhir"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "http://acme.org/location-identifiers"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ACME-SOUTH" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:name [ fhir:v "ACME South"] ; # 
+  fhir:mode [ fhir:v "instance"] ; # 
+  fhir:managingOrganization [
+     fhir:link <http://cms.gov/fhir/mct/Organization/acme> ;
+     fhir:reference [ fhir:v "Organization/acme" ]
+  ] ; # 
+  fhir:endpoint ( [
+     fhir:reference [ fhir:v "#acme-south-endpoint" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,1327 @@
+{
+   "library" : {
+      "annotation" : [ {
+         "translatorVersion" : "2.1.0",
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "type" : "CqlToElmInfo"
+      }, {
+         "type" : "Annotation",
+         "t" : [ {
+            "name" : "update",
+            "value" : "BTR 2020-03-31 ->\nIncremented version to 2.0.0"
+         }, {
+            "name" : "update",
+            "value" : "BTR 2022-05-26 ->\nUpdated FHIR version to 4.0.1\nUpdated FHIRHelpers version to 4.0.002\nUpdated for AU 2022 Content"
+         } ],
+         "s" : {
+            "r" : "64",
+            "s" : [ {
+               "value" : [ "/*\n@update: BTR 2020-03-31 ->\nIncremented version to 2.0.0\n\n@update: BTR 2022-05-26 ->\nUpdated FHIR version to 4.0.1\nUpdated FHIRHelpers version to 4.0.002\nUpdated for AU 2022 Content\n*/\n","library SupplementalDataElementsQICore4 version '3.0.000'" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "SupplementalDataElementsQICore4",
+         "system" : "http://cms.gov/fhir/mct",
+         "version" : "3.0.000"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "1",
+            "locator" : "13:1-13:28",
+            "localIdentifier" : "QICore",
+            "uri" : "http://hl7.org/fhir",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "1",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "QICore" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.1.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "2",
+            "locator" : "15:1-15:56",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://cms.gov/fhir/mct/FHIRHelpers",
+            "version" : "4.0.013",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "2",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.013'"," called ","FHIRHelpers" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "valueSets" : {
+         "def" : [ {
+            "localId" : "3",
+            "locator" : "17:1-17:87",
+            "name" : "Ethnicity",
+            "id" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.837",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "3",
+                  "s" : [ {
+                     "value" : [ "","valueset ","\"Ethnicity\"",": ","'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.837'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "4",
+            "locator" : "18:1-18:97",
+            "name" : "ONC Administrative Sex",
+            "id" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "4",
+                  "s" : [ {
+                     "value" : [ "","valueset ","\"ONC Administrative Sex\"",": ","'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "5",
+            "locator" : "19:1-19:84",
+            "name" : "Payer",
+            "id" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "5",
+                  "s" : [ {
+                     "value" : [ "","valueset ","\"Payer\"",": ","'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "6",
+            "locator" : "20:1-20:82",
+            "name" : "Race",
+            "id" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.836",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "6",
+                  "s" : [ {
+                     "value" : [ "","valueset ","\"Race\"",": ","'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.836'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "contexts" : {
+         "def" : [ {
+            "locator" : "22:1-22:15",
+            "name" : "Patient"
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "locator" : "22:1-22:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "type" : "SingletonFrom",
+               "operand" : {
+                  "locator" : "22:1-22:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient",
+                  "type" : "Retrieve"
+               }
+            }
+         }, {
+            "localId" : "20",
+            "locator" : "24:1-29:5",
+            "name" : "SDE Ethnicity",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "20",
+                  "s" : [ {
+                     "value" : [ "","define ","\"SDE Ethnicity\"",":\n  " ]
+                  }, {
+                     "r" : "19",
+                     "s" : [ {
+                        "s" : [ {
+                           "r" : "8",
+                           "s" : [ {
+                              "r" : "7",
+                              "s" : [ {
+                                 "s" : [ {
+                                    "value" : [ "Patient",".","ethnicity" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","E" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    " ]
+                     }, {
+                        "r" : "18",
+                        "s" : [ {
+                           "value" : [ "return " ]
+                        }, {
+                           "r" : "17",
+                           "s" : [ {
+                              "value" : [ "Concept"," {\n      " ]
+                           }, {
+                              "s" : [ {
+                                 "value" : [ "codes",": " ]
+                              }, {
+                                 "r" : "14",
+                                 "s" : [ {
+                                    "r" : "11",
+                                    "s" : [ {
+                                       "value" : [ "{ " ]
+                                    }, {
+                                       "r" : "10",
+                                       "s" : [ {
+                                          "r" : "9",
+                                          "s" : [ {
+                                             "value" : [ "E" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "10",
+                                          "s" : [ {
+                                             "value" : [ "ombCategory" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " }" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " union " ]
+                                 }, {
+                                    "r" : "13",
+                                    "s" : [ {
+                                       "r" : "12",
+                                       "s" : [ {
+                                          "value" : [ "E" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "13",
+                                       "s" : [ {
+                                          "value" : [ "detailed" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ ",\n      " ]
+                           }, {
+                              "s" : [ {
+                                 "value" : [ "display",": " ]
+                              }, {
+                                 "r" : "16",
+                                 "s" : [ {
+                                    "r" : "15",
+                                    "s" : [ {
+                                       "value" : [ "E" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "16",
+                                    "s" : [ {
+                                       "value" : [ "text" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    }" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "19",
+               "locator" : "25:3-29:5",
+               "type" : "Query",
+               "source" : [ {
+                  "localId" : "8",
+                  "locator" : "25:3-25:21",
+                  "alias" : "E",
+                  "expression" : {
+                     "localId" : "7",
+                     "locator" : "25:3-25:19",
+                     "type" : "SingletonFrom",
+                     "operand" : {
+                        "type" : "Query",
+                        "source" : [ {
+                           "alias" : "$this",
+                           "expression" : {
+                              "path" : "extension",
+                              "type" : "Property",
+                              "source" : {
+                                 "name" : "Patient",
+                                 "type" : "ExpressionRef"
+                              }
+                           }
+                        } ],
+                        "where" : {
+                           "type" : "Equal",
+                           "operand" : [ {
+                              "name" : "ToString",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "operand" : [ {
+                                 "path" : "url",
+                                 "scope" : "$this",
+                                 "type" : "Property"
+                              } ]
+                           }, {
+                              "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                              "value" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+                              "type" : "Literal"
+                           } ]
+                        }
+                     }
+                  }
+               } ],
+               "relationship" : [ ],
+               "return" : {
+                  "localId" : "18",
+                  "locator" : "26:5-29:5",
+                  "expression" : {
+                     "localId" : "17",
+                     "locator" : "26:12-29:5",
+                     "classType" : "{urn:hl7-org:elm-types:r1}Concept",
+                     "type" : "Instance",
+                     "element" : [ {
+                        "name" : "codes",
+                        "value" : {
+                           "localId" : "14",
+                           "locator" : "27:14-27:47",
+                           "type" : "Union",
+                           "operand" : [ {
+                              "localId" : "11",
+                              "locator" : "27:14-27:30",
+                              "type" : "List",
+                              "element" : [ {
+                                 "localId" : "10",
+                                 "locator" : "27:16-27:28",
+                                 "name" : "ToCode",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "operand" : [ {
+                                    "type" : "SingletonFrom",
+                                    "operand" : {
+                                       "type" : "Query",
+                                       "source" : [ {
+                                          "alias" : "$this",
+                                          "expression" : {
+                                             "path" : "extension",
+                                             "type" : "Property",
+                                             "source" : {
+                                                "name" : "E",
+                                                "type" : "AliasRef"
+                                             }
+                                          }
+                                       } ],
+                                       "where" : {
+                                          "type" : "Equal",
+                                          "operand" : [ {
+                                             "name" : "ToString",
+                                             "libraryName" : "FHIRHelpers",
+                                             "type" : "FunctionRef",
+                                             "operand" : [ {
+                                                "path" : "url",
+                                                "scope" : "$this",
+                                                "type" : "Property"
+                                             } ]
+                                          }, {
+                                             "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                                             "value" : "ombCategory",
+                                             "type" : "Literal"
+                                          } ]
+                                       },
+                                       "return" : {
+                                          "distinct" : false,
+                                          "expression" : {
+                                             "path" : "value",
+                                             "type" : "Property",
+                                             "source" : {
+                                                "name" : "$this",
+                                                "type" : "AliasRef"
+                                             }
+                                          }
+                                       }
+                                    }
+                                 } ]
+                              } ]
+                           }, {
+                              "localId" : "13",
+                              "locator" : "27:38-27:47",
+                              "type" : "Query",
+                              "source" : [ {
+                                 "alias" : "$this",
+                                 "expression" : {
+                                    "type" : "Query",
+                                    "source" : [ {
+                                       "alias" : "$this",
+                                       "expression" : {
+                                          "path" : "extension",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "name" : "E",
+                                             "type" : "AliasRef"
+                                          }
+                                       }
+                                    } ],
+                                    "where" : {
+                                       "type" : "Equal",
+                                       "operand" : [ {
+                                          "name" : "ToString",
+                                          "libraryName" : "FHIRHelpers",
+                                          "type" : "FunctionRef",
+                                          "operand" : [ {
+                                             "path" : "url",
+                                             "scope" : "$this",
+                                             "type" : "Property"
+                                          } ]
+                                       }, {
+                                          "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                                          "value" : "detailed",
+                                          "type" : "Literal"
+                                       } ]
+                                    },
+                                    "return" : {
+                                       "distinct" : false,
+                                       "expression" : {
+                                          "path" : "value",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "name" : "$this",
+                                             "type" : "AliasRef"
+                                          }
+                                       }
+                                    }
+                                 }
+                              } ],
+                              "return" : {
+                                 "distinct" : false,
+                                 "expression" : {
+                                    "name" : "ToCode",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "operand" : [ {
+                                       "name" : "$this",
+                                       "type" : "AliasRef"
+                                    } ]
+                                 }
+                              }
+                           } ]
+                        }
+                     }, {
+                        "name" : "display",
+                        "value" : {
+                           "localId" : "16",
+                           "locator" : "28:16-28:21",
+                           "type" : "SingletonFrom",
+                           "operand" : {
+                              "type" : "Query",
+                              "source" : [ {
+                                 "alias" : "$this",
+                                 "expression" : {
+                                    "path" : "extension",
+                                    "type" : "Property",
+                                    "source" : {
+                                       "name" : "E",
+                                       "type" : "AliasRef"
+                                    }
+                                 }
+                              } ],
+                              "where" : {
+                                 "type" : "Equal",
+                                 "operand" : [ {
+                                    "name" : "ToString",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "operand" : [ {
+                                       "path" : "url",
+                                       "scope" : "$this",
+                                       "type" : "Property"
+                                    } ]
+                                 }, {
+                                    "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                                    "value" : "text",
+                                    "type" : "Literal"
+                                 } ]
+                              },
+                              "return" : {
+                                 "distinct" : false,
+                                 "expression" : {
+                                    "path" : "value.value",
+                                    "type" : "Property",
+                                    "source" : {
+                                       "name" : "$this",
+                                       "type" : "AliasRef"
+                                    }
+                                 }
+                              }
+                           }
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "30",
+            "locator" : "31:1-36:5",
+            "name" : "SDE Payer",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "30",
+                  "s" : [ {
+                     "value" : [ "","define ","\"SDE Payer\"",":\n  " ]
+                  }, {
+                     "r" : "29",
+                     "s" : [ {
+                        "s" : [ {
+                           "r" : "22",
+                           "s" : [ {
+                              "r" : "21",
+                              "s" : [ {
+                                 "r" : "21",
+                                 "s" : [ {
+                                    "value" : [ "[","Coverage",": " ]
+                                 }, {
+                                    "s" : [ {
+                                       "value" : [ "type" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","in"," " ]
+                                 }, {
+                                    "s" : [ {
+                                       "value" : [ "\"Payer\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "]" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","Payer" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    " ]
+                     }, {
+                        "r" : "28",
+                        "s" : [ {
+                           "value" : [ "return " ]
+                        }, {
+                           "r" : "27",
+                           "s" : [ {
+                              "value" : [ "{\n      " ]
+                           }, {
+                              "s" : [ {
+                                 "value" : [ "code",": " ]
+                              }, {
+                                 "r" : "24",
+                                 "s" : [ {
+                                    "r" : "23",
+                                    "s" : [ {
+                                       "value" : [ "Payer" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "24",
+                                    "s" : [ {
+                                       "value" : [ "type" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ ",\n      " ]
+                           }, {
+                              "s" : [ {
+                                 "value" : [ "period",": " ]
+                              }, {
+                                 "r" : "26",
+                                 "s" : [ {
+                                    "r" : "25",
+                                    "s" : [ {
+                                       "value" : [ "Payer" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "26",
+                                    "s" : [ {
+                                       "value" : [ "period" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    }" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "29",
+               "locator" : "32:3-36:5",
+               "type" : "Query",
+               "source" : [ {
+                  "localId" : "22",
+                  "locator" : "32:3-32:35",
+                  "alias" : "Payer",
+                  "expression" : {
+                     "localId" : "21",
+                     "locator" : "32:3-32:29",
+                     "dataType" : "{http://hl7.org/fhir}Coverage",
+                     "templateId" : "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage",
+                     "codeProperty" : "type",
+                     "codeComparator" : "in",
+                     "type" : "Retrieve",
+                     "codes" : {
+                        "locator" : "32:22-32:28",
+                        "name" : "Payer",
+                        "preserve" : true,
+                        "type" : "ValueSetRef"
+                     }
+                  }
+               } ],
+               "relationship" : [ ],
+               "return" : {
+                  "localId" : "28",
+                  "locator" : "33:5-36:5",
+                  "expression" : {
+                     "localId" : "27",
+                     "locator" : "33:12-36:5",
+                     "type" : "Tuple",
+                     "element" : [ {
+                        "name" : "code",
+                        "value" : {
+                           "localId" : "24",
+                           "locator" : "34:13-34:22",
+                           "name" : "ToConcept",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "path" : "type",
+                              "scope" : "Payer",
+                              "type" : "Property"
+                           } ]
+                        }
+                     }, {
+                        "name" : "period",
+                        "value" : {
+                           "localId" : "26",
+                           "locator" : "35:15-35:26",
+                           "name" : "ToInterval",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "path" : "period",
+                              "scope" : "Payer",
+                              "type" : "Property"
+                           } ]
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "43",
+            "locator" : "38:1-43:5",
+            "name" : "SDE Race",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "43",
+                  "s" : [ {
+                     "value" : [ "","define ","\"SDE Race\"",":\n  " ]
+                  }, {
+                     "r" : "42",
+                     "s" : [ {
+                        "s" : [ {
+                           "r" : "32",
+                           "s" : [ {
+                              "r" : "31",
+                              "s" : [ {
+                                 "s" : [ {
+                                    "value" : [ "Patient",".","race" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","R" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    " ]
+                     }, {
+                        "r" : "41",
+                        "s" : [ {
+                           "value" : [ "return " ]
+                        }, {
+                           "r" : "40",
+                           "s" : [ {
+                              "value" : [ "Concept"," {\n      " ]
+                           }, {
+                              "s" : [ {
+                                 "value" : [ "codes",": " ]
+                              }, {
+                                 "r" : "37",
+                                 "s" : [ {
+                                    "r" : "34",
+                                    "s" : [ {
+                                       "r" : "33",
+                                       "s" : [ {
+                                          "value" : [ "R" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "34",
+                                       "s" : [ {
+                                          "value" : [ "ombCategory" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " union " ]
+                                 }, {
+                                    "r" : "36",
+                                    "s" : [ {
+                                       "r" : "35",
+                                       "s" : [ {
+                                          "value" : [ "R" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "36",
+                                       "s" : [ {
+                                          "value" : [ "detailed" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ ",\n      " ]
+                           }, {
+                              "s" : [ {
+                                 "value" : [ "display",": " ]
+                              }, {
+                                 "r" : "39",
+                                 "s" : [ {
+                                    "r" : "38",
+                                    "s" : [ {
+                                       "value" : [ "R" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "39",
+                                    "s" : [ {
+                                       "value" : [ "text" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    }" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "42",
+               "locator" : "39:3-43:5",
+               "type" : "Query",
+               "source" : [ {
+                  "localId" : "32",
+                  "locator" : "39:3-39:16",
+                  "alias" : "R",
+                  "expression" : {
+                     "localId" : "31",
+                     "locator" : "39:3-39:14",
+                     "type" : "SingletonFrom",
+                     "operand" : {
+                        "type" : "Query",
+                        "source" : [ {
+                           "alias" : "$this",
+                           "expression" : {
+                              "path" : "extension",
+                              "type" : "Property",
+                              "source" : {
+                                 "name" : "Patient",
+                                 "type" : "ExpressionRef"
+                              }
+                           }
+                        } ],
+                        "where" : {
+                           "type" : "Equal",
+                           "operand" : [ {
+                              "name" : "ToString",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "operand" : [ {
+                                 "path" : "url",
+                                 "scope" : "$this",
+                                 "type" : "Property"
+                              } ]
+                           }, {
+                              "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                              "value" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+                              "type" : "Literal"
+                           } ]
+                        }
+                     }
+                  }
+               } ],
+               "relationship" : [ ],
+               "return" : {
+                  "localId" : "41",
+                  "locator" : "40:5-43:5",
+                  "expression" : {
+                     "localId" : "40",
+                     "locator" : "40:12-43:5",
+                     "classType" : "{urn:hl7-org:elm-types:r1}Concept",
+                     "type" : "Instance",
+                     "element" : [ {
+                        "name" : "codes",
+                        "value" : {
+                           "localId" : "37",
+                           "locator" : "41:14-41:43",
+                           "type" : "Union",
+                           "operand" : [ {
+                              "localId" : "34",
+                              "locator" : "41:14-41:26",
+                              "type" : "Query",
+                              "source" : [ {
+                                 "alias" : "$this",
+                                 "expression" : {
+                                    "type" : "Query",
+                                    "source" : [ {
+                                       "alias" : "$this",
+                                       "expression" : {
+                                          "path" : "extension",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "name" : "R",
+                                             "type" : "AliasRef"
+                                          }
+                                       }
+                                    } ],
+                                    "where" : {
+                                       "type" : "Equal",
+                                       "operand" : [ {
+                                          "name" : "ToString",
+                                          "libraryName" : "FHIRHelpers",
+                                          "type" : "FunctionRef",
+                                          "operand" : [ {
+                                             "path" : "url",
+                                             "scope" : "$this",
+                                             "type" : "Property"
+                                          } ]
+                                       }, {
+                                          "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                                          "value" : "ombCategory",
+                                          "type" : "Literal"
+                                       } ]
+                                    },
+                                    "return" : {
+                                       "distinct" : false,
+                                       "expression" : {
+                                          "path" : "value",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "name" : "$this",
+                                             "type" : "AliasRef"
+                                          }
+                                       }
+                                    }
+                                 }
+                              } ],
+                              "return" : {
+                                 "distinct" : false,
+                                 "expression" : {
+                                    "name" : "ToCode",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "operand" : [ {
+                                       "name" : "$this",
+                                       "type" : "AliasRef"
+                                    } ]
+                                 }
+                              }
+                           }, {
+                              "localId" : "36",
+                              "locator" : "41:34-41:43",
+                              "type" : "Query",
+                              "source" : [ {
+                                 "alias" : "$this",
+                                 "expression" : {
+                                    "type" : "Query",
+                                    "source" : [ {
+                                       "alias" : "$this",
+                                       "expression" : {
+                                          "path" : "extension",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "name" : "R",
+                                             "type" : "AliasRef"
+                                          }
+                                       }
+                                    } ],
+                                    "where" : {
+                                       "type" : "Equal",
+                                       "operand" : [ {
+                                          "name" : "ToString",
+                                          "libraryName" : "FHIRHelpers",
+                                          "type" : "FunctionRef",
+                                          "operand" : [ {
+                                             "path" : "url",
+                                             "scope" : "$this",
+                                             "type" : "Property"
+                                          } ]
+                                       }, {
+                                          "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                                          "value" : "detailed",
+                                          "type" : "Literal"
+                                       } ]
+                                    },
+                                    "return" : {
+                                       "distinct" : false,
+                                       "expression" : {
+                                          "path" : "value",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "name" : "$this",
+                                             "type" : "AliasRef"
+                                          }
+                                       }
+                                    }
+                                 }
+                              } ],
+                              "return" : {
+                                 "distinct" : false,
+                                 "expression" : {
+                                    "name" : "ToCode",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "operand" : [ {
+                                       "name" : "$this",
+                                       "type" : "AliasRef"
+                                    } ]
+                                 }
+                              }
+                           } ]
+                        }
+                     }, {
+                        "name" : "display",
+                        "value" : {
+                           "localId" : "39",
+                           "locator" : "42:16-42:21",
+                           "type" : "SingletonFrom",
+                           "operand" : {
+                              "type" : "Query",
+                              "source" : [ {
+                                 "alias" : "$this",
+                                 "expression" : {
+                                    "path" : "extension",
+                                    "type" : "Property",
+                                    "source" : {
+                                       "name" : "R",
+                                       "type" : "AliasRef"
+                                    }
+                                 }
+                              } ],
+                              "where" : {
+                                 "type" : "Equal",
+                                 "operand" : [ {
+                                    "name" : "ToString",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "operand" : [ {
+                                       "path" : "url",
+                                       "scope" : "$this",
+                                       "type" : "Property"
+                                    } ]
+                                 }, {
+                                    "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                                    "value" : "text",
+                                    "type" : "Literal"
+                                 } ]
+                              },
+                              "return" : {
+                                 "distinct" : false,
+                                 "expression" : {
+                                    "path" : "value.value",
+                                    "type" : "Property",
+                                    "source" : {
+                                       "name" : "$this",
+                                       "type" : "AliasRef"
+                                    }
+                                 }
+                              }
+                           }
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "64",
+            "locator" : "45:1-50:7",
+            "name" : "SDE Sex",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "64",
+                  "s" : [ {
+                     "value" : [ "","define ","\"SDE Sex\"",":\n  " ]
+                  }, {
+                     "r" : "63",
+                     "s" : [ {
+                        "value" : [ "case\n      " ]
+                     }, {
+                        "r" : "52",
+                        "s" : [ {
+                           "value" : [ "when " ]
+                        }, {
+                           "r" : "47",
+                           "s" : [ {
+                              "r" : "45",
+                              "s" : [ {
+                                 "r" : "44",
+                                 "s" : [ {
+                                    "value" : [ "Patient" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "45",
+                                 "s" : [ {
+                                    "value" : [ "gender" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","="," " ]
+                           }, {
+                              "r" : "46",
+                              "s" : [ {
+                                 "value" : [ "'male'" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " then " ]
+                        }, {
+                           "r" : "51",
+                           "s" : [ {
+                              "value" : [ "Code"," { " ]
+                           }, {
+                              "s" : [ {
+                                 "value" : [ "code",": " ]
+                              }, {
+                                 "r" : "48",
+                                 "s" : [ {
+                                    "value" : [ "'M'" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ ", " ]
+                           }, {
+                              "s" : [ {
+                                 "value" : [ "system",": " ]
+                              }, {
+                                 "r" : "49",
+                                 "s" : [ {
+                                    "value" : [ "'http://hl7.org/fhir/v3/AdministrativeGender'" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ ", " ]
+                           }, {
+                              "s" : [ {
+                                 "value" : [ "display",": " ]
+                              }, {
+                                 "r" : "50",
+                                 "s" : [ {
+                                    "value" : [ "'Male'" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " }" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n      " ]
+                     }, {
+                        "r" : "61",
+                        "s" : [ {
+                           "value" : [ "when " ]
+                        }, {
+                           "r" : "56",
+                           "s" : [ {
+                              "r" : "54",
+                              "s" : [ {
+                                 "r" : "53",
+                                 "s" : [ {
+                                    "value" : [ "Patient" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "54",
+                                 "s" : [ {
+                                    "value" : [ "gender" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","="," " ]
+                           }, {
+                              "r" : "55",
+                              "s" : [ {
+                                 "value" : [ "'female'" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " then " ]
+                        }, {
+                           "r" : "60",
+                           "s" : [ {
+                              "value" : [ "Code"," { " ]
+                           }, {
+                              "s" : [ {
+                                 "value" : [ "code",": " ]
+                              }, {
+                                 "r" : "57",
+                                 "s" : [ {
+                                    "value" : [ "'F'" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ ", " ]
+                           }, {
+                              "s" : [ {
+                                 "value" : [ "system",": " ]
+                              }, {
+                                 "r" : "58",
+                                 "s" : [ {
+                                    "value" : [ "'http://hl7.org/fhir/v3/AdministrativeGender'" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ ", " ]
+                           }, {
+                              "s" : [ {
+                                 "value" : [ "display",": " ]
+                              }, {
+                                 "r" : "59",
+                                 "s" : [ {
+                                    "value" : [ "'Female'" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " }" ]
+                           } ]
+                        } ]
+                     }, {
+                        "r" : "62",
+                        "value" : [ "\n      else ","null","\n    end" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "63",
+               "locator" : "46:3-50:7",
+               "type" : "Case",
+               "caseItem" : [ {
+                  "localId" : "52",
+                  "locator" : "47:7-47:130",
+                  "when" : {
+                     "localId" : "47",
+                     "locator" : "47:12-47:34",
+                     "type" : "Equal",
+                     "operand" : [ {
+                        "localId" : "45",
+                        "locator" : "47:12-47:25",
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "path" : "gender",
+                           "type" : "Property",
+                           "source" : {
+                              "localId" : "44",
+                              "locator" : "47:12-47:18",
+                              "name" : "Patient",
+                              "type" : "ExpressionRef"
+                           }
+                        }
+                     }, {
+                        "localId" : "46",
+                        "locator" : "47:29-47:34",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "male",
+                        "type" : "Literal"
+                     } ]
+                  },
+                  "then" : {
+                     "localId" : "51",
+                     "locator" : "47:41-47:130",
+                     "classType" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "Instance",
+                     "element" : [ {
+                        "name" : "code",
+                        "value" : {
+                           "localId" : "48",
+                           "locator" : "47:54-47:56",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "M",
+                           "type" : "Literal"
+                        }
+                     }, {
+                        "name" : "system",
+                        "value" : {
+                           "localId" : "49",
+                           "locator" : "47:67-47:111",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "http://hl7.org/fhir/v3/AdministrativeGender",
+                           "type" : "Literal"
+                        }
+                     }, {
+                        "name" : "display",
+                        "value" : {
+                           "localId" : "50",
+                           "locator" : "47:123-47:128",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "Male",
+                           "type" : "Literal"
+                        }
+                     } ]
+                  }
+               }, {
+                  "localId" : "61",
+                  "locator" : "48:7-48:134",
+                  "when" : {
+                     "localId" : "56",
+                     "locator" : "48:12-48:36",
+                     "type" : "Equal",
+                     "operand" : [ {
+                        "localId" : "54",
+                        "locator" : "48:12-48:25",
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "path" : "gender",
+                           "type" : "Property",
+                           "source" : {
+                              "localId" : "53",
+                              "locator" : "48:12-48:18",
+                              "name" : "Patient",
+                              "type" : "ExpressionRef"
+                           }
+                        }
+                     }, {
+                        "localId" : "55",
+                        "locator" : "48:29-48:36",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "female",
+                        "type" : "Literal"
+                     } ]
+                  },
+                  "then" : {
+                     "localId" : "60",
+                     "locator" : "48:43-48:134",
+                     "classType" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "Instance",
+                     "element" : [ {
+                        "name" : "code",
+                        "value" : {
+                           "localId" : "57",
+                           "locator" : "48:56-48:58",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "F",
+                           "type" : "Literal"
+                        }
+                     }, {
+                        "name" : "system",
+                        "value" : {
+                           "localId" : "58",
+                           "locator" : "48:69-48:113",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "http://hl7.org/fhir/v3/AdministrativeGender",
+                           "type" : "Literal"
+                        }
+                     }, {
+                        "name" : "display",
+                        "value" : {
+                           "localId" : "59",
+                           "locator" : "48:125-48:132",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "Female",
+                           "type" : "Literal"
+                        }
+                     } ]
+                  }
+               } ],
+               "else" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "As",
+                  "operand" : {
+                     "localId" : "62",
+                     "locator" : "49:12-49:15",
+                     "type" : "Null"
+                  }
+               }
+            }
+         } ]
+      }
+   }
+}

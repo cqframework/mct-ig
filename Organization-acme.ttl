@@ -1,0 +1,54 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://cms.gov/fhir/mct/Organization/acme> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "acme"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Organization</b><a name=\"acme\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;acme&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-organization.html\">QICoreOrganization</a></p></div><p><b>identifier</b>: id: ACME-CCN (use: SECONDARY), id: ACME-NPI (use: SECONDARY), id: ACME-EIN (use: SECONDARY)</p><p><b>active</b>: true</p><p><b>name</b>: ACME Provider Organization</p><p><b>telecom</b>: <a href=\"https://acme.org\">https://acme.org</a></p><p><b>address</b>: 123 Erewhon Dayton OH 45410 (WORK)</p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://cms.gov/fhir/mct/StructureDefinition/mct-receivingSystemEndpoint"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "secondary" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.336"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ACME-CCN" ]
+  ] [
+     fhir:use [ fhir:v "secondary" ] ;
+     fhir:system [ fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ACME-NPI" ]
+  ] [
+     fhir:use [ fhir:v "secondary" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.4"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ACME-EIN" ]
+  ] ) ; # 
+  fhir:active [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:name [ fhir:v "ACME Provider Organization"] ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "url" ] ;
+     fhir:value [ fhir:v "https://acme.org" ] ;
+     fhir:use [ fhir:v "work" ]
+  ] ) ; # 
+  fhir:address ( [
+     fhir:use [ fhir:v "work" ] ;
+     fhir:type [ fhir:v "both" ] ;
+     fhir:line ( [ fhir:v "123 Erewhon" ] ) ;
+     fhir:city [ fhir:v "Dayton" ] ;
+     fhir:state [ fhir:v "OH" ] ;
+     fhir:postalCode [ fhir:v "45410" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

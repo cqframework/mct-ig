@@ -1,0 +1,44 @@
+{
+  "resourceType" : "Organization",
+  "id" : "acme",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Organization</b><a name=\"acme\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;acme&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-organization.html\">QICoreOrganization</a></p></div><p><b>identifier</b>: id:\u00a0ACME-CCN\u00a0(use:\u00a0SECONDARY), id:\u00a0ACME-NPI\u00a0(use:\u00a0SECONDARY), id:\u00a0ACME-EIN\u00a0(use:\u00a0SECONDARY)</p><p><b>active</b>: true</p><p><b>name</b>: ACME Provider Organization</p><p><b>telecom</b>: <a href=\"https://acme.org\">https://acme.org</a></p><p><b>address</b>: 123 Erewhon Dayton OH 45410 (WORK)</p></div>"
+  },
+  "extension" : [{
+    "url" : "http://cms.gov/fhir/mct/StructureDefinition/mct-receivingSystemEndpoint"
+  }],
+  "identifier" : [{
+    "use" : "secondary",
+    "system" : "urn:oid:2.16.840.1.113883.4.336",
+    "value" : "ACME-CCN"
+  },
+  {
+    "use" : "secondary",
+    "system" : "http://hl7.org/fhir/sid/us-npi",
+    "value" : "ACME-NPI"
+  },
+  {
+    "use" : "secondary",
+    "system" : "urn:oid:2.16.840.1.113883.4.4",
+    "value" : "ACME-EIN"
+  }],
+  "active" : true,
+  "name" : "ACME Provider Organization",
+  "telecom" : [{
+    "system" : "url",
+    "value" : "https://acme.org",
+    "use" : "work"
+  }],
+  "address" : [{
+    "use" : "work",
+    "type" : "both",
+    "line" : ["123 Erewhon"],
+    "city" : "Dayton",
+    "state" : "OH",
+    "postalCode" : "45410"
+  }]
+}

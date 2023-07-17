@@ -1,0 +1,79 @@
+[
+  {
+    "id" : "cms.fhir.mct",
+    "type" : "ImplementationGuide",
+    "url" : "http://cms.gov/fhir/mct/ImplementationGuide/cms.fhir.mct",
+    "version" : "0.1.0",
+    "name" : "CMSFHIRMCT"
+  },
+  {
+    "id" : "QICoreCommon",
+    "type" : "Library",
+    "url" : "http://cms.gov/fhir/mct/Library/QICoreCommon",
+    "version" : "0.1.0",
+    "name" : "QICoreCommon"
+  },
+  {
+    "id" : "QiCoreProfilePatterns",
+    "type" : "Library",
+    "url" : "http://cms.gov/fhir/mct/Library/QiCoreProfilePatterns",
+    "version" : "0.1.0",
+    "name" : "QiCoreProfilePatterns"
+  },
+  {
+    "id" : "QiCoreProfileValidation",
+    "type" : "Library",
+    "url" : "http://cms.gov/fhir/mct/Library/QiCoreProfileValidation",
+    "version" : "0.1.0",
+    "name" : "QiCoreProfileValidation"
+  },
+  {
+    "id" : "QiCoreProfileValidation",
+    "type" : "Measure",
+    "url" : "http://cms.gov/fhir/mct/Measure/QiCoreProfileValidation",
+    "version" : "0.1.0",
+    "name" : "QiCoreProfileValidation"
+  },
+  {
+    "id" : "gather",
+    "type" : "OperationDefinition",
+    "url" : "http://cms.gov/fhir/mct/OperationDefinition/gather",
+    "version" : "0.1.0",
+    "name" : "MCT_Gather"
+  },
+  {
+    "id" : "DischargedonAntithromboticTherapyQICore4",
+    "type" : "Library",
+    "url" : "http://ecqi.healthit.gov/ecqms/Library/DischargedonAntithromboticTherapyQICore4",
+    "version" : "0.1.0",
+    "name" : "DischargedonAntithromboticTherapyQICore4"
+  },
+  {
+    "id" : "MATGlobalCommonFunctionsQICore4",
+    "type" : "Library",
+    "url" : "http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsQICore4",
+    "version" : "0.1.0",
+    "name" : "MATGlobalCommonFunctionsQICore4"
+  },
+  {
+    "id" : "SupplementalDataElementsQICore4",
+    "type" : "Library",
+    "url" : "http://ecqi.healthit.gov/ecqms/Library/SupplementalDataElementsQICore4",
+    "version" : "0.1.0",
+    "name" : "SupplementalDataElementsQICore4"
+  },
+  {
+    "id" : "DischargedonAntithromboticTherapyQICore4",
+    "type" : "Measure",
+    "url" : "http://ecqi.healthit.gov/ecqms/Measure/DischargedonAntithromboticTherapyQICore4",
+    "version" : "0.1.0",
+    "name" : "DischargedonAntithromboticTherapyQICore4"
+  },
+  {
+    "id" : "FHIRHelpers",
+    "type" : "Library",
+    "url" : "http://hl7.org/fhir/Library/FHIRHelpers",
+    "version" : "0.1.0",
+    "name" : "FHIRHelpers"
+  }
+]

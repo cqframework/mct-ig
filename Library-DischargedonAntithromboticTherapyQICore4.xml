@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Library xmlns="http://hl7.org/fhir">
+  <id value="DischargedonAntithromboticTherapyQICore4"/>
+  <meta>
+    <versionId value="24"/>
+    <lastUpdated value="2021-08-24T13:12:30.000-06:00"/>
+    <source value="#M4MHZMhmMYNUtjQP"/>
+    <profile value="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-library-cqfm"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">DischargedonAntithromboticTherapyQICore4</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="http://ecqi.healthit.gov/ecqms/Library/DischargedonAntithromboticTherapyQICore4">http://ecqi.healthit.gov/ecqms/Library/DischargedonAntithromboticTherapyQICore4</a></td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.1.0</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Name: </b></th>
+            <td style="padding-left: 4px;">DischargedonAntithromboticTherapyQICore4</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">Discharged on Antithrombotic Therapy QICore</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">active</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">false</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/CodeSystem/library-type">http://terminology.hl7.org/CodeSystem/library-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>logic-library</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2021-08-24 19:12:29+0000</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">HL7 International - [Some] Work Group</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;">Discharged on Antithrombotic Therapy QICore</td>
+        </tr>
+        
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">US</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <tr>
+          <td colspan="2">
+            <table>
+              <tr><th><a id="cql-content"><b>Content: </b></a> text/cql</th></tr>
+              <tr><td><pre><code class="language-cql">library DischargedonAntithromboticTherapyQICore4 version '0.0.010'
+
+/* based upon FHIR library DischargedonAntithromboticTherapyFHIR4 version '0.4.000'
+PJM - updated to QICore, shared libraries, valuesets, default Interval to 2022
+Definition names with 'DISPLAY' are used to display pertinent data
+*/
+
+using QICore version '4.1.1'
+
+include FHIRHelpers version '4.0.013' called FHIRHelpers
+include MATGlobalCommonFunctionsQICore4 version '7.0.000' called Global
+include QICoreCommon version '1.0.000' called QICoreCommon
+include SupplementalDataElementsQICore4 version '3.0.000' called SDE
+//include TJCOverallQICore4 version '6.0.000' called TJC
+
+valueset &amp;quot;Antithrombotic Therapy&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.62' 
+valueset &amp;quot;Medical Reason&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.473' 
+valueset &amp;quot;Patient Refusal&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93' 
+valueset &amp;quot;Pharmacological Contraindications For Antithrombotic Therapy&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.52'
+
+//from TJCOverall
+valueset &amp;quot;Comfort Measures&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/1.3.6.1.4.1.33895.1.3.0.45'
+valueset &amp;quot;Discharge To Acute Care Facility&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.87'
+valueset &amp;quot;Discharged to Health Care Facility for Hospice Care&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.207'
+valueset &amp;quot;Discharged to Home for Hospice Care&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.209'
+valueset &amp;quot;Emergency Department Visit&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292'
+valueset &amp;quot;Encounter Inpatient&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307'
+valueset &amp;quot;Hemorrhagic Stroke&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.212'
+valueset &amp;quot;Ischemic Stroke&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.247'
+valueset &amp;quot;Left Against Medical Advice&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.308'
+valueset &amp;quot;Non-Elective Inpatient Encounter&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.424'
+valueset &amp;quot;Observation Services&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143'
+valueset &amp;quot;Patient Expired&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.309'
+valueset &amp;quot;Ticagrelor Therapy&amp;quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.39'
+
+parameter &amp;quot;Measurement Period&amp;quot; Interval&amp;lt;DateTime&amp;gt;
+  default Interval[@2022-01-01T00:00:00.0, @2023-01-01T00:00:00.0)
+
+context Patient
+
+define &amp;quot;Initial Population&amp;quot;:
+  &amp;quot;Encounter with Principal Diagnosis and Age&amp;quot; 
+//ORIG TJC.&amp;quot;Encounter with Principal Diagnosis and Age&amp;quot;   
+
+// PJM - fix for AgeInYearsAt issue
+//FIX current problem with AgeInYearsAt required a modified approach - refer to https://github.com/cqframework/ecqm-content-qicore-2022/issues/6
+define &amp;quot;Encounter with Principal Diagnosis and Age&amp;quot;:
+  &amp;quot;All Stroke Encounter&amp;quot; AllStrokeEncounter
+    where CalculateAgeInYearsAt ( Patient.birthDate, date from start of AllStrokeEncounter.period ) &amp;gt;= 18
+//ORIG    where AgeInYearsAt(date from(start of AllStrokeEncounter.period))&amp;gt;= 18
+
+//TJCOverall
+define &amp;quot;Non Elective Inpatient Encounter&amp;quot;:
+  [&amp;quot;Encounter&amp;quot;: &amp;quot;Non-Elective Inpatient Encounter&amp;quot;] NonElectiveEncounter
+		where Global.&amp;quot;LengthInDays&amp;quot;(NonElectiveEncounter.period) &amp;lt;= 120
+			and NonElectiveEncounter.period ends during day of &amp;quot;Measurement Period&amp;quot;
+
+//TJCOverall
+define &amp;quot;All Stroke Encounter&amp;quot;:
+  &amp;quot;Non Elective Inpatient Encounter&amp;quot; NonElectiveEncounter
+    let EncPrincipalDx: Global.&amp;quot;PrincipalDiagnosis&amp;quot;(NonElectiveEncounter)
+    where NonElectiveEncounter.status ~ 'finished'
+      and EncPrincipalDx.verificationStatus ~ QICoreCommon.&amp;quot;confirmed&amp;quot;
+      and (EncPrincipalDx.code in &amp;quot;Hemorrhagic Stroke&amp;quot;
+        or EncPrincipalDx.code in &amp;quot;Ischemic Stroke&amp;quot;
+      )
+
+define &amp;quot;Denominator&amp;quot;:
+  &amp;quot;Ischemic Stroke Encounter&amp;quot;
+
+//TJCOverall
+define &amp;quot;Ischemic Stroke Encounter&amp;quot;:
+  &amp;quot;Encounter with Principal Diagnosis and Age&amp;quot; EncounterWithAge
+    let EncPrincipalDx: Global.&amp;quot;PrincipalDiagnosis&amp;quot;(EncounterWithAge)
+     where EncounterWithAge.status = 'finished'
+       and EncPrincipalDx.code in &amp;quot;Ischemic Stroke&amp;quot;
+
+//TJCOverall
+//See if can work old way after Bryn gets Coalesce to work
+define &amp;quot;Denominator Exclusions&amp;quot;:
+  &amp;quot;Ischemic Stroke Encounters with Discharge Disposition&amp;quot;
+    union &amp;quot;Encounter with Comfort Measure Procedure during Hospitalization&amp;quot;
+    union &amp;quot;Encounter with Comfort Measure ServiceRequest during Hospitalization&amp;quot;
+/*Original before QICore
+define &amp;quot;Denominator Exclusions&amp;quot;:
+  TJC.&amp;quot;Ischemic Stroke Encounters with Discharge Disposition&amp;quot;
+    union TJC.&amp;quot;Encounter with Comfort Measures during Hospitalization&amp;quot;
+*/
+
+//TJCOverall
+define &amp;quot;Ischemic Stroke Encounters with Discharge Disposition&amp;quot;:
+  &amp;quot;Ischemic Stroke Encounter&amp;quot; IschemicStrokeEncounter
+    let EncDischDisp: IschemicStrokeEncounter.hospitalization.dischargeDisposition
+        where EncDischDisp in &amp;quot;Discharge To Acute Care Facility&amp;quot;
+           or EncDischDisp in &amp;quot;Left Against Medical Advice&amp;quot;
+           or EncDischDisp in &amp;quot;Patient Expired&amp;quot;
+           or EncDischDisp in &amp;quot;Discharged to Home for Hospice Care&amp;quot;
+           or EncDischDisp in &amp;quot;Discharged to Health Care Facility for Hospice Care&amp;quot;
+
+define &amp;quot;DISPLAY Comfort Measures during Hospitalization&amp;quot;:
+  &amp;quot;Ischemic Stroke Encounter&amp;quot; IschemicStrokeEncounter
+    let ComfortMeasure: &amp;quot;Intervention Comfort Measures&amp;quot; ComfortMeasure
+       where Coalesce(ComfortMeasure.performed, ComfortMeasure.authoredOn) during Global.&amp;quot;HospitalizationWithObservation&amp;quot;(IschemicStrokeEncounter)
+     return Tuple {
+       comfMeasPerformed: ComfortMeasure.performed,
+       comfmeasPerfToInt: QICoreCommon.&amp;quot;ToInterval&amp;quot;(ComfortMeasure.performed),
+       comfMeasAuthoredOn: ComfortMeasure.authoredOn,
+       comfMeasCoalesce: Coalesce((start of QICoreCommon.&amp;quot;ToInterval&amp;quot;(ComfortMeasure.performed)), ComfortMeasure.authoredOn),
+       hospitalization: Global.&amp;quot;HospitalizationWithObservation&amp;quot; ( IschemicStrokeEncounter )
+     } 
+
+
+//TJCOverall - needs Coalesce fix
+define &amp;quot;Encounter with Comfort Measures during Hospitalization&amp;quot;:
+  &amp;quot;Ischemic Stroke Encounter&amp;quot; IschemicStrokeEncounter
+    with &amp;quot;Intervention Comfort Measures&amp;quot; ComfortMeasure
+     such that Coalesce((start of QICoreCommon.&amp;quot;ToInterval&amp;quot;(ComfortMeasure.performed)), ComfortMeasure.authoredOn) during Global.&amp;quot;HospitalizationWithObservation&amp;quot; ( IschemicStrokeEncounter )
+/*Original before QICore...Note: This is not used, could not get coalesce to work...instead split (see below)
+define &amp;quot;Encounter with Comfort Measures during Hospitalization&amp;quot;:
+  &amp;quot;Ischemic Stroke Encounter&amp;quot; IschemicStrokeEncounter
+          with &amp;quot;Intervention Comfort Measures&amp;quot; ComfortMeasure
+              such that Coalesce((start of Global.&amp;quot;Normalize Interval&amp;quot;(ComfortMeasure.performed)), ComfortMeasure.authoredOn)during Global.&amp;quot;HospitalizationWithObservation&amp;quot; ( IschemicStrokeEncounter )
+*/
+
+//Note: Below does not have 'as dateTime' after performed because it errored, and tried many variations
+define &amp;quot;Encounter with Comfort Measure Procedure during Hospitalization&amp;quot;:
+  &amp;quot;Ischemic Stroke Encounter&amp;quot; IschemicStrokeEncounter
+    with &amp;quot;Intervention Comfort Measures Procedure&amp;quot; ComfortMeasure
+     such that start of QICoreCommon.&amp;quot;ToInterval&amp;quot;(ComfortMeasure.performed) during Global.&amp;quot;HospitalizationWithObservation&amp;quot; ( IschemicStrokeEncounter )
+
+define &amp;quot;Encounter with Comfort Measure ServiceRequest during Hospitalization&amp;quot;:
+  &amp;quot;Ischemic Stroke Encounter&amp;quot; IschemicStrokeEncounter
+    with &amp;quot;Intervention Comfort Measures ServiceRequest&amp;quot; ComfortMeasure
+     such that ComfortMeasure.authoredOn during Global.&amp;quot;HospitalizationWithObservation&amp;quot; ( IschemicStrokeEncounter )
+
+//TJCOverall
+//Note: Below is not used because could not get coalesce to work in &amp;quot;Encounter with Comfort Measures during Hospitalization&amp;quot;
+define &amp;quot;Intervention Comfort Measures&amp;quot;:
+  ( [&amp;quot;ServiceRequest&amp;quot;: &amp;quot;Comfort Measures&amp;quot;] P
+      where P.intent = 'order'
+       and P.status in { 'active', 'on-hold', 'completed'}
+  )
+    union ( [&amp;quot;Procedure&amp;quot;: &amp;quot;Comfort Measures&amp;quot;] InterventionPerformed
+        where InterventionPerformed.status in { 'completed', 'in-progress' }
+    )
+
+//Instead split ServiceRequest and Procedure into two different definitions
+define &amp;quot;Intervention Comfort Measures ServiceRequest&amp;quot;:
+  ( [&amp;quot;ServiceRequest&amp;quot;: &amp;quot;Comfort Measures&amp;quot;] P
+      where P.intent = 'order'
+       and P.status in { 'active', 'on-hold', 'completed'}
+  )
+
+define &amp;quot;Intervention Comfort Measures Procedure&amp;quot;:
+  ( [&amp;quot;Procedure&amp;quot;: &amp;quot;Comfort Measures&amp;quot;] InterventionPerformed
+        where InterventionPerformed.status in { 'completed', 'in-progress' }
+  )
+
+define &amp;quot;Numerator&amp;quot;:
+  &amp;quot;Ischemic Stroke Encounter&amp;quot; IschemicStrokeEncounter
+    with &amp;quot;Antithrombotic Therapy at Discharge&amp;quot; DischargeAntithrombotic
+      such that DischargeAntithrombotic.authoredOn during IschemicStrokeEncounter.period
+
+//Note: QICore manual says to constrain status to 'active' and category to 'Community' and does not mention intent.
+//      ask Yanyan if should follow that or what is below.
+define &amp;quot;Antithrombotic Therapy at Discharge&amp;quot;:
+  [&amp;quot;MedicationRequest&amp;quot;: medication in &amp;quot;Antithrombotic Therapy&amp;quot;] Antithrombotic
+      where Antithrombotic.doNotPerform is not true
+        and Antithrombotic.status in { 'active', 'completed' } 
+        and Antithrombotic.intent = 'order'
+        and exists (Antithrombotic.category C 
+          where C ~ QICoreCommon.&amp;quot;Discharge&amp;quot; or C ~ QICoreCommon.&amp;quot;Community&amp;quot;
+        )
+
+define &amp;quot;Denominator Exceptions&amp;quot;:
+  &amp;quot;Encounter with No Antithrombotic At Discharge&amp;quot;
+  union &amp;quot;Encounter with Pharmacological Contraindications for Antithrombotic Therapy at Discharge&amp;quot;
+
+define &amp;quot;Reason for Not Giving Antithrombotic at Discharge&amp;quot;:
+  [&amp;quot;MedicationRequest&amp;quot;: &amp;quot;Antithrombotic Therapy&amp;quot;] NoAntithromboticDischarge
+      where NoAntithromboticDischarge.doNotPerform is true
+        and ( NoAntithromboticDischarge.reasonCode in &amp;quot;Medical Reason&amp;quot;
+                or NoAntithromboticDischarge.reasonCode in &amp;quot;Patient Refusal&amp;quot;
+            )
+        and NoAntithromboticDischarge.status in { 'completed', 'cancelled' }
+        and NoAntithromboticDischarge.intent = 'order'
+        and exists (NoAntithromboticDischarge.category C where 
+                   C ~ QICoreCommon.Discharge or C ~ QICoreCommon.Community)
+//  [&amp;quot;MedicationRequest&amp;quot;: medication in &amp;quot;Antithrombotic Therapy&amp;quot;] NoAntithromboticDischarge
+
+define &amp;quot;zDISPLAY Medication Request&amp;quot;:
+  [&amp;quot;MedicationRequest&amp;quot;: medication in &amp;quot;Antithrombotic Therapy&amp;quot;] NoAntithromboticDischarge
+  return Tuple {
+    doNotPerform: NoAntithromboticDischarge.doNotPerform,
+    medication: NoAntithromboticDischarge.medication,
+    reasonCode: NoAntithromboticDischarge.reasonCode,
+    reasonInMed: ( NoAntithromboticDischarge.reasonCode in &amp;quot;Medical Reason&amp;quot;),
+    reasonInPatRef: (NoAntithromboticDischarge.reasonCode in &amp;quot;Patient Refusal&amp;quot;),
+    category: NoAntithromboticDischarge.category,
+    dischargeStatus: NoAntithromboticDischarge.status,
+    intent: NoAntithromboticDischarge.intent
+  }
+
+define &amp;quot;Encounter with No Antithrombotic At Discharge&amp;quot;:
+  &amp;quot;Ischemic Stroke Encounter&amp;quot; IschemicStrokeEncounter
+  	with &amp;quot;Reason for Not Giving Antithrombotic at Discharge&amp;quot; NoDischargeAntithrombotic
+  	such that NoDischargeAntithrombotic.authoredOn during IschemicStrokeEncounter.period
+
+define &amp;quot;Encounter with Pharmacological Contraindications for Antithrombotic Therapy at Discharge&amp;quot;:
+  &amp;quot;Ischemic Stroke Encounter&amp;quot; IschemicStrokeEncounter
+      with &amp;quot;Pharmacological Contraindications for Antithrombotic Therapy at Discharge&amp;quot; DischargePharmacological
+        such that DischargePharmacological.authoredOn during IschemicStrokeEncounter.period
+
+define &amp;quot;Pharmacological Contraindications for Antithrombotic Therapy at Discharge&amp;quot;:
+  [&amp;quot;MedicationRequest&amp;quot;: medication in &amp;quot;Pharmacological Contraindications For Antithrombotic Therapy&amp;quot;] Pharmacological
+      where Pharmacological.doNotPerform is not true
+        and exists (Pharmacological.category C where 
+                   C ~ QICoreCommon.Discharge or C ~ QICoreCommon.Community)
+        and Pharmacological.status in { 'active', 'completed' }
+        and Pharmacological.intent = 'order'
+
+define &amp;quot;SDE Ethnicity&amp;quot;:
+  SDE.&amp;quot;SDE Ethnicity&amp;quot;
+
+define &amp;quot;SDE Payer&amp;quot;:
+  SDE.&amp;quot;SDE Payer&amp;quot;
+
+define &amp;quot;SDE Race&amp;quot;:
+  SDE.&amp;quot;SDE Race&amp;quot;
+
+define &amp;quot;SDE Sex&amp;quot;:
+  SDE.&amp;quot;SDE Sex&amp;quot;</code></pre></td></tr>
+            </table>
+          </td>
+        </tr>
+        
+        
+        
+    </table>
+</div>
+  </text>
+  <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem">
+    <valueReference>
+      <reference value="Device/cqf-tooling"/>
+    </valueReference>
+  </extension>
+  <url value="http://ecqi.healthit.gov/ecqms/Library/DischargedonAntithromboticTherapyQICore4"/>
+  <version value="0.1.0"/>
+  <name value="DischargedonAntithromboticTherapyQICore4"/>
+  <title value="Discharged on Antithrombotic Therapy QICore"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+      <code value="logic-library"/>
+    </coding>
+  </type>
+  <date value="2021-08-24T19:12:29+00:00"/>
+  <publisher value="HL7 International - [Some] Work Group"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/[something]"/>
+    </telecom>
+  </contact>
+  <description value="Discharged on Antithrombotic Therapy QICore"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <content>
+    <contentType value="text/cql"/>
+    <data value="bGlicmFyeSBEaXNjaGFyZ2Vkb25BbnRpdGhyb21ib3RpY1RoZXJhcHlRSUNvcmU0IHZlcnNpb24gJzAuMC4wMTAnCgovKiBiYXNlZCB1cG9uIEZISVIgbGlicmFyeSBEaXNjaGFyZ2Vkb25BbnRpdGhyb21ib3RpY1RoZXJhcHlGSElSNCB2ZXJzaW9uICcwLjQuMDAwJwpQSk0gLSB1cGRhdGVkIHRvIFFJQ29yZSwgc2hhcmVkIGxpYnJhcmllcywgdmFsdWVzZXRzLCBkZWZhdWx0IEludGVydmFsIHRvIDIwMjIKRGVmaW5pdGlvbiBuYW1lcyB3aXRoICdESVNQTEFZJyBhcmUgdXNlZCB0byBkaXNwbGF5IHBlcnRpbmVudCBkYXRhCiovCgp1c2luZyBRSUNvcmUgdmVyc2lvbiAnNC4xLjEnCgppbmNsdWRlIEZISVJIZWxwZXJzIHZlcnNpb24gJzQuMC4wMTMnIGNhbGxlZCBGSElSSGVscGVycwppbmNsdWRlIE1BVEdsb2JhbENvbW1vbkZ1bmN0aW9uc1FJQ29yZTQgdmVyc2lvbiAnNy4wLjAwMCcgY2FsbGVkIEdsb2JhbAppbmNsdWRlIFFJQ29yZUNvbW1vbiB2ZXJzaW9uICcxLjAuMDAwJyBjYWxsZWQgUUlDb3JlQ29tbW9uCmluY2x1ZGUgU3VwcGxlbWVudGFsRGF0YUVsZW1lbnRzUUlDb3JlNCB2ZXJzaW9uICczLjAuMDAwJyBjYWxsZWQgU0RFCi8vaW5jbHVkZSBUSkNPdmVyYWxsUUlDb3JlNCB2ZXJzaW9uICc2LjAuMDAwJyBjYWxsZWQgVEpDCgp2YWx1ZXNldCAiQW50aXRocm9tYm90aWMgVGhlcmFweSI6ICdodHRwOi8vY3RzLm5sbS5uaWguZ292L2ZoaXIvVmFsdWVTZXQvMi4xNi44NDAuMS4xMTM3NjIuMS40LjExMTAuNjInIAp2YWx1ZXNldCAiTWVkaWNhbCBSZWFzb24iOiAnaHR0cDovL2N0cy5ubG0ubmloLmdvdi9maGlyL1ZhbHVlU2V0LzIuMTYuODQwLjEuMTEzODgzLjMuMTE3LjEuNy4xLjQ3MycgCnZhbHVlc2V0ICJQYXRpZW50IFJlZnVzYWwiOiAnaHR0cDovL2N0cy5ubG0ubmloLmdvdi9maGlyL1ZhbHVlU2V0LzIuMTYuODQwLjEuMTEzODgzLjMuMTE3LjEuNy4xLjkzJyAKdmFsdWVzZXQgIlBoYXJtYWNvbG9naWNhbCBDb250cmFpbmRpY2F0aW9ucyBGb3IgQW50aXRocm9tYm90aWMgVGhlcmFweSI6ICdodHRwOi8vY3RzLm5sbS5uaWguZ292L2ZoaXIvVmFsdWVTZXQvMi4xNi44NDAuMS4xMTM3NjIuMS40LjExMTAuNTInCgovL2Zyb20gVEpDT3ZlcmFsbAp2YWx1ZXNldCAiQ29tZm9ydCBNZWFzdXJlcyI6ICdodHRwOi8vY3RzLm5sbS5uaWguZ292L2ZoaXIvVmFsdWVTZXQvMS4zLjYuMS40LjEuMzM4OTUuMS4zLjAuNDUnCnZhbHVlc2V0ICJEaXNjaGFyZ2UgVG8gQWN1dGUgQ2FyZSBGYWNpbGl0eSI6ICdodHRwOi8vY3RzLm5sbS5uaWguZ292L2ZoaXIvVmFsdWVTZXQvMi4xNi44NDAuMS4xMTM4ODMuMy4xMTcuMS43LjEuODcnCnZhbHVlc2V0ICJEaXNjaGFyZ2VkIHRvIEhlYWx0aCBDYXJlIEZhY2lsaXR5IGZvciBIb3NwaWNlIENhcmUiOiAnaHR0cDovL2N0cy5ubG0ubmloLmdvdi9maGlyL1ZhbHVlU2V0LzIuMTYuODQwLjEuMTEzODgzLjMuMTE3LjEuNy4xLjIwNycKdmFsdWVzZXQgIkRpc2NoYXJnZWQgdG8gSG9tZSBmb3IgSG9zcGljZSBDYXJlIjogJ2h0dHA6Ly9jdHMubmxtLm5paC5nb3YvZmhpci9WYWx1ZVNldC8yLjE2Ljg0MC4xLjExMzg4My4zLjExNy4xLjcuMS4yMDknCnZhbHVlc2V0ICJFbWVyZ2VuY3kgRGVwYXJ0bWVudCBWaXNpdCI6ICdodHRwOi8vY3RzLm5sbS5uaWguZ292L2ZoaXIvVmFsdWVTZXQvMi4xNi44NDAuMS4xMTM4ODMuMy4xMTcuMS43LjEuMjkyJwp2YWx1ZXNldCAiRW5jb3VudGVyIElucGF0aWVudCI6ICdodHRwOi8vY3RzLm5sbS5uaWguZ292L2ZoaXIvVmFsdWVTZXQvMi4xNi44NDAuMS4xMTM4ODMuMy42NjYuNS4zMDcnCnZhbHVlc2V0ICJIZW1vcnJoYWdpYyBTdHJva2UiOiAnaHR0cDovL2N0cy5ubG0ubmloLmdvdi9maGlyL1ZhbHVlU2V0LzIuMTYuODQwLjEuMTEzODgzLjMuMTE3LjEuNy4xLjIxMicKdmFsdWVzZXQgIklzY2hlbWljIFN0cm9rZSI6ICdodHRwOi8vY3RzLm5sbS5uaWguZ292L2ZoaXIvVmFsdWVTZXQvMi4xNi44NDAuMS4xMTM4ODMuMy4xMTcuMS43LjEuMjQ3Jwp2YWx1ZXNldCAiTGVmdCBBZ2FpbnN0IE1lZGljYWwgQWR2aWNlIjogJ2h0dHA6Ly9jdHMubmxtLm5paC5nb3YvZmhpci9WYWx1ZVNldC8yLjE2Ljg0MC4xLjExMzg4My4zLjExNy4xLjcuMS4zMDgnCnZhbHVlc2V0ICJOb24tRWxlY3RpdmUgSW5wYXRpZW50IEVuY291bnRlciI6ICdodHRwOi8vY3RzLm5sbS5uaWguZ292L2ZoaXIvVmFsdWVTZXQvMi4xNi44NDAuMS4xMTM4ODMuMy4xMTcuMS43LjEuNDI0Jwp2YWx1ZXNldCAiT2JzZXJ2YXRpb24gU2VydmljZXMiOiAnaHR0cDovL2N0cy5ubG0ubmloLmdvdi9maGlyL1ZhbHVlU2V0LzIuMTYuODQwLjEuMTEzNzYyLjEuNC4xMTExLjE0MycKdmFsdWVzZXQgIlBhdGllbnQgRXhwaXJlZCI6ICdodHRwOi8vY3RzLm5sbS5uaWguZ292L2ZoaXIvVmFsdWVTZXQvMi4xNi44NDAuMS4xMTM4ODMuMy4xMTcuMS43LjEuMzA5Jwp2YWx1ZXNldCAiVGljYWdyZWxvciBUaGVyYXB5IjogJ2h0dHA6Ly9jdHMubmxtLm5paC5nb3YvZmhpci9WYWx1ZVNldC8yLjE2Ljg0MC4xLjExMzc2Mi4xLjQuMTExMC4zOScKCnBhcmFtZXRlciAiTWVhc3VyZW1lbnQgUGVyaW9kIiBJbnRlcnZhbDxEYXRlVGltZT4KICBkZWZhdWx0IEludGVydmFsW0AyMDIyLTAxLTAxVDAwOjAwOjAwLjAsIEAyMDIzLTAxLTAxVDAwOjAwOjAwLjApCgpjb250ZXh0IFBhdGllbnQKCmRlZmluZSAiSW5pdGlhbCBQb3B1bGF0aW9uIjoKICAiRW5jb3VudGVyIHdpdGggUHJpbmNpcGFsIERpYWdub3NpcyBhbmQgQWdlIiAKLy9PUklHIFRKQy4iRW5jb3VudGVyIHdpdGggUHJpbmNpcGFsIERpYWdub3NpcyBhbmQgQWdlIiAgIAoKLy8gUEpNIC0gZml4IGZvciBBZ2VJblllYXJzQXQgaXNzdWUKLy9GSVggY3VycmVudCBwcm9ibGVtIHdpdGggQWdlSW5ZZWFyc0F0IHJlcXVpcmVkIGEgbW9kaWZpZWQgYXBwcm9hY2ggLSByZWZlciB0byBodHRwczovL2dpdGh1Yi5jb20vY3FmcmFtZXdvcmsvZWNxbS1jb250ZW50LXFpY29yZS0yMDIyL2lzc3Vlcy82CmRlZmluZSAiRW5jb3VudGVyIHdpdGggUHJpbmNpcGFsIERpYWdub3NpcyBhbmQgQWdlIjoKICAiQWxsIFN0cm9rZSBFbmNvdW50ZXIiIEFsbFN0cm9rZUVuY291bnRlcgogICAgd2hlcmUgQ2FsY3VsYXRlQWdlSW5ZZWFyc0F0ICggUGF0aWVudC5iaXJ0aERhdGUsIGRhdGUgZnJvbSBzdGFydCBvZiBBbGxTdHJva2VFbmNvdW50ZXIucGVyaW9kICkgPj0gMTgKLy9PUklHICAgIHdoZXJlIEFnZUluWWVhcnNBdChkYXRlIGZyb20oc3RhcnQgb2YgQWxsU3Ryb2tlRW5jb3VudGVyLnBlcmlvZCkpPj0gMTgKCi8vVEpDT3ZlcmFsbApkZWZpbmUgIk5vbiBFbGVjdGl2ZSBJbnBhdGllbnQgRW5jb3VudGVyIjoKICBbIkVuY291bnRlciI6ICJOb24tRWxlY3RpdmUgSW5wYXRpZW50IEVuY291bnRlciJdIE5vbkVsZWN0aXZlRW5jb3VudGVyCgkJd2hlcmUgR2xvYmFsLiJMZW5ndGhJbkRheXMiKE5vbkVsZWN0aXZlRW5jb3VudGVyLnBlcmlvZCkgPD0gMTIwCgkJCWFuZCBOb25FbGVjdGl2ZUVuY291bnRlci5wZXJpb2QgZW5kcyBkdXJpbmcgZGF5IG9mICJNZWFzdXJlbWVudCBQZXJpb2QiCgovL1RKQ092ZXJhbGwKZGVmaW5lICJBbGwgU3Ryb2tlIEVuY291bnRlciI6CiAgIk5vbiBFbGVjdGl2ZSBJbnBhdGllbnQgRW5jb3VudGVyIiBOb25FbGVjdGl2ZUVuY291bnRlcgogICAgbGV0IEVuY1ByaW5jaXBhbER4OiBHbG9iYWwuIlByaW5jaXBhbERpYWdub3NpcyIoTm9uRWxlY3RpdmVFbmNvdW50ZXIpCiAgICB3aGVyZSBOb25FbGVjdGl2ZUVuY291bnRlci5zdGF0dXMgfiAnZmluaXNoZWQnCiAgICAgIGFuZCBFbmNQcmluY2lwYWxEeC52ZXJpZmljYXRpb25TdGF0dXMgfiBRSUNvcmVDb21tb24uImNvbmZpcm1lZCIKICAgICAgYW5kIChFbmNQcmluY2lwYWxEeC5jb2RlIGluICJIZW1vcnJoYWdpYyBTdHJva2UiCiAgICAgICAgb3IgRW5jUHJpbmNpcGFsRHguY29kZSBpbiAiSXNjaGVtaWMgU3Ryb2tlIgogICAgICApCgpkZWZpbmUgIkRlbm9taW5hdG9yIjoKICAiSXNjaGVtaWMgU3Ryb2tlIEVuY291bnRlciIKCi8vVEpDT3ZlcmFsbApkZWZpbmUgIklzY2hlbWljIFN0cm9rZSBFbmNvdW50ZXIiOgogICJFbmNvdW50ZXIgd2l0aCBQcmluY2lwYWwgRGlhZ25vc2lzIGFuZCBBZ2UiIEVuY291bnRlcldpdGhBZ2UKICAgIGxldCBFbmNQcmluY2lwYWxEeDogR2xvYmFsLiJQcmluY2lwYWxEaWFnbm9zaXMiKEVuY291bnRlcldpdGhBZ2UpCiAgICAgd2hlcmUgRW5jb3VudGVyV2l0aEFnZS5zdGF0dXMgPSAnZmluaXNoZWQnCiAgICAgICBhbmQgRW5jUHJpbmNpcGFsRHguY29kZSBpbiAiSXNjaGVtaWMgU3Ryb2tlIgoKLy9USkNPdmVyYWxsCi8vU2VlIGlmIGNhbiB3b3JrIG9sZCB3YXkgYWZ0ZXIgQnJ5biBnZXRzIENvYWxlc2NlIHRvIHdvcmsKZGVmaW5lICJEZW5vbWluYXRvciBFeGNsdXNpb25zIjoKICAiSXNjaGVtaWMgU3Ryb2tlIEVuY291bnRlcnMgd2l0aCBEaXNjaGFyZ2UgRGlzcG9zaXRpb24iCiAgICB1bmlvbiAiRW5jb3VudGVyIHdpdGggQ29tZm9ydCBNZWFzdXJlIFByb2NlZHVyZSBkdXJpbmcgSG9zcGl0YWxpemF0aW9uIgogICAgdW5pb24gIkVuY291bnRlciB3aXRoIENvbWZvcnQgTWVhc3VyZSBTZXJ2aWNlUmVxdWVzdCBkdXJpbmcgSG9zcGl0YWxpemF0aW9uIgovKk9yaWdpbmFsIGJlZm9yZSBRSUNvcmUKZGVmaW5lICJEZW5vbWluYXRvciBFeGNsdXNpb25zIjoKICBUSkMuIklzY2hlbWljIFN0cm9rZSBFbmNvdW50ZXJzIHdpdGggRGlzY2hhcmdlIERpc3Bvc2l0aW9uIgogICAgdW5pb24gVEpDLiJFbmNvdW50ZXIgd2l0aCBDb21mb3J0IE1lYXN1cmVzIGR1cmluZyBIb3NwaXRhbGl6YXRpb24iCiovCgovL1RKQ092ZXJhbGwKZGVmaW5lICJJc2NoZW1pYyBTdHJva2UgRW5jb3VudGVycyB3aXRoIERpc2NoYXJnZSBEaXNwb3NpdGlvbiI6CiAgIklzY2hlbWljIFN0cm9rZSBFbmNvdW50ZXIiIElzY2hlbWljU3Ryb2tlRW5jb3VudGVyCiAgICBsZXQgRW5jRGlzY2hEaXNwOiBJc2NoZW1pY1N0cm9rZUVuY291bnRlci5ob3NwaXRhbGl6YXRpb24uZGlzY2hhcmdlRGlzcG9zaXRpb24KICAgICAgICB3aGVyZSBFbmNEaXNjaERpc3AgaW4gIkRpc2NoYXJnZSBUbyBBY3V0ZSBDYXJlIEZhY2lsaXR5IgogICAgICAgICAgIG9yIEVuY0Rpc2NoRGlzcCBpbiAiTGVmdCBBZ2FpbnN0IE1lZGljYWwgQWR2aWNlIgogICAgICAgICAgIG9yIEVuY0Rpc2NoRGlzcCBpbiAiUGF0aWVudCBFeHBpcmVkIgogICAgICAgICAgIG9yIEVuY0Rpc2NoRGlzcCBpbiAiRGlzY2hhcmdlZCB0byBIb21lIGZvciBIb3NwaWNlIENhcmUiCiAgICAgICAgICAgb3IgRW5jRGlzY2hEaXNwIGluICJEaXNjaGFyZ2VkIHRvIEhlYWx0aCBDYXJlIEZhY2lsaXR5IGZvciBIb3NwaWNlIENhcmUiCgpkZWZpbmUgIkRJU1BMQVkgQ29tZm9ydCBNZWFzdXJlcyBkdXJpbmcgSG9zcGl0YWxpemF0aW9uIjoKICAiSXNjaGVtaWMgU3Ryb2tlIEVuY291bnRlciIgSXNjaGVtaWNTdHJva2VFbmNvdW50ZXIKICAgIGxldCBDb21mb3J0TWVhc3VyZTogIkludGVydmVudGlvbiBDb21mb3J0IE1lYXN1cmVzIiBDb21mb3J0TWVhc3VyZQogICAgICAgd2hlcmUgQ29hbGVzY2UoQ29tZm9ydE1lYXN1cmUucGVyZm9ybWVkLCBDb21mb3J0TWVhc3VyZS5hdXRob3JlZE9uKSBkdXJpbmcgR2xvYmFsLiJIb3NwaXRhbGl6YXRpb25XaXRoT2JzZXJ2YXRpb24iKElzY2hlbWljU3Ryb2tlRW5jb3VudGVyKQogICAgIHJldHVybiBUdXBsZSB7CiAgICAgICBjb21mTWVhc1BlcmZvcm1lZDogQ29tZm9ydE1lYXN1cmUucGVyZm9ybWVkLAogICAgICAgY29tZm1lYXNQZXJmVG9JbnQ6IFFJQ29yZUNvbW1vbi4iVG9JbnRlcnZhbCIoQ29tZm9ydE1lYXN1cmUucGVyZm9ybWVkKSwKICAgICAgIGNvbWZNZWFzQXV0aG9yZWRPbjogQ29tZm9ydE1lYXN1cmUuYXV0aG9yZWRPbiwKICAgICAgIGNvbWZNZWFzQ29hbGVzY2U6IENvYWxlc2NlKChzdGFydCBvZiBRSUNvcmVDb21tb24uIlRvSW50ZXJ2YWwiKENvbWZvcnRNZWFzdXJlLnBlcmZvcm1lZCkpLCBDb21mb3J0TWVhc3VyZS5hdXRob3JlZE9uKSwKICAgICAgIGhvc3BpdGFsaXphdGlvbjogR2xvYmFsLiJIb3NwaXRhbGl6YXRpb25XaXRoT2JzZXJ2YXRpb24iICggSXNjaGVtaWNTdHJva2VFbmNvdW50ZXIgKQogICAgIH0gCgoKLy9USkNPdmVyYWxsIC0gbmVlZHMgQ29hbGVzY2UgZml4CmRlZmluZSAiRW5jb3VudGVyIHdpdGggQ29tZm9ydCBNZWFzdXJlcyBkdXJpbmcgSG9zcGl0YWxpemF0aW9uIjoKICAiSXNjaGVtaWMgU3Ryb2tlIEVuY291bnRlciIgSXNjaGVtaWNTdHJva2VFbmNvdW50ZXIKICAgIHdpdGggIkludGVydmVudGlvbiBDb21mb3J0IE1lYXN1cmVzIiBDb21mb3J0TWVhc3VyZQogICAgIHN1Y2ggdGhhdCBDb2FsZXNjZSgoc3RhcnQgb2YgUUlDb3JlQ29tbW9uLiJUb0ludGVydmFsIihDb21mb3J0TWVhc3VyZS5wZXJmb3JtZWQpKSwgQ29tZm9ydE1lYXN1cmUuYXV0aG9yZWRPbikgZHVyaW5nIEdsb2JhbC4iSG9zcGl0YWxpemF0aW9uV2l0aE9ic2VydmF0aW9uIiAoIElzY2hlbWljU3Ryb2tlRW5jb3VudGVyICkKLypPcmlnaW5hbCBiZWZvcmUgUUlDb3JlLi4uTm90ZTogVGhpcyBpcyBub3QgdXNlZCwgY291bGQgbm90IGdldCBjb2FsZXNjZSB0byB3b3JrLi4uaW5zdGVhZCBzcGxpdCAoc2VlIGJlbG93KQpkZWZpbmUgIkVuY291bnRlciB3aXRoIENvbWZvcnQgTWVhc3VyZXMgZHVyaW5nIEhvc3BpdGFsaXphdGlvbiI6CiAgIklzY2hlbWljIFN0cm9rZSBFbmNvdW50ZXIiIElzY2hlbWljU3Ryb2tlRW5jb3VudGVyCiAgICAgICAgICB3aXRoICJJbnRlcnZlbnRpb24gQ29tZm9ydCBNZWFzdXJlcyIgQ29tZm9ydE1lYXN1cmUKICAgICAgICAgICAgICBzdWNoIHRoYXQgQ29hbGVzY2UoKHN0YXJ0IG9mIEdsb2JhbC4iTm9ybWFsaXplIEludGVydmFsIihDb21mb3J0TWVhc3VyZS5wZXJmb3JtZWQpKSwgQ29tZm9ydE1lYXN1cmUuYXV0aG9yZWRPbilkdXJpbmcgR2xvYmFsLiJIb3NwaXRhbGl6YXRpb25XaXRoT2JzZXJ2YXRpb24iICggSXNjaGVtaWNTdHJva2VFbmNvdW50ZXIgKQoqLwoKLy9Ob3RlOiBCZWxvdyBkb2VzIG5vdCBoYXZlICdhcyBkYXRlVGltZScgYWZ0ZXIgcGVyZm9ybWVkIGJlY2F1c2UgaXQgZXJyb3JlZCwgYW5kIHRyaWVkIG1hbnkgdmFyaWF0aW9ucwpkZWZpbmUgIkVuY291bnRlciB3aXRoIENvbWZvcnQgTWVhc3VyZSBQcm9jZWR1cmUgZHVyaW5nIEhvc3BpdGFsaXphdGlvbiI6CiAgIklzY2hlbWljIFN0cm9rZSBFbmNvdW50ZXIiIElzY2hlbWljU3Ryb2tlRW5jb3VudGVyCiAgICB3aXRoICJJbnRlcnZlbnRpb24gQ29tZm9ydCBNZWFzdXJlcyBQcm9jZWR1cmUiIENvbWZvcnRNZWFzdXJlCiAgICAgc3VjaCB0aGF0IHN0YXJ0IG9mIFFJQ29yZUNvbW1vbi4iVG9JbnRlcnZhbCIoQ29tZm9ydE1lYXN1cmUucGVyZm9ybWVkKSBkdXJpbmcgR2xvYmFsLiJIb3NwaXRhbGl6YXRpb25XaXRoT2JzZXJ2YXRpb24iICggSXNjaGVtaWNTdHJva2VFbmNvdW50ZXIgKQoKZGVmaW5lICJFbmNvdW50ZXIgd2l0aCBDb21mb3J0IE1lYXN1cmUgU2VydmljZVJlcXVlc3QgZHVyaW5nIEhvc3BpdGFsaXphdGlvbiI6CiAgIklzY2hlbWljIFN0cm9rZSBFbmNvdW50ZXIiIElzY2hlbWljU3Ryb2tlRW5jb3VudGVyCiAgICB3aXRoICJJbnRlcnZlbnRpb24gQ29tZm9ydCBNZWFzdXJlcyBTZXJ2aWNlUmVxdWVzdCIgQ29tZm9ydE1lYXN1cmUKICAgICBzdWNoIHRoYXQgQ29tZm9ydE1lYXN1cmUuYXV0aG9yZWRPbiBkdXJpbmcgR2xvYmFsLiJIb3NwaXRhbGl6YXRpb25XaXRoT2JzZXJ2YXRpb24iICggSXNjaGVtaWNTdHJva2VFbmNvdW50ZXIgKQoKLy9USkNPdmVyYWxsCi8vTm90ZTogQmVsb3cgaXMgbm90IHVzZWQgYmVjYXVzZSBjb3VsZCBub3QgZ2V0IGNvYWxlc2NlIHRvIHdvcmsgaW4gIkVuY291bnRlciB3aXRoIENvbWZvcnQgTWVhc3VyZXMgZHVyaW5nIEhvc3BpdGFsaXphdGlvbiIKZGVmaW5lICJJbnRlcnZlbnRpb24gQ29tZm9ydCBNZWFzdXJlcyI6CiAgKCBbIlNlcnZpY2VSZXF1ZXN0IjogIkNvbWZvcnQgTWVhc3VyZXMiXSBQCiAgICAgIHdoZXJlIFAuaW50ZW50ID0gJ29yZGVyJwogICAgICAgYW5kIFAuc3RhdHVzIGluIHsgJ2FjdGl2ZScsICdvbi1ob2xkJywgJ2NvbXBsZXRlZCd9CiAgKQogICAgdW5pb24gKCBbIlByb2NlZHVyZSI6ICJDb21mb3J0IE1lYXN1cmVzIl0gSW50ZXJ2ZW50aW9uUGVyZm9ybWVkCiAgICAgICAgd2hlcmUgSW50ZXJ2ZW50aW9uUGVyZm9ybWVkLnN0YXR1cyBpbiB7ICdjb21wbGV0ZWQnLCAnaW4tcHJvZ3Jlc3MnIH0KICAgICkKCi8vSW5zdGVhZCBzcGxpdCBTZXJ2aWNlUmVxdWVzdCBhbmQgUHJvY2VkdXJlIGludG8gdHdvIGRpZmZlcmVudCBkZWZpbml0aW9ucwpkZWZpbmUgIkludGVydmVudGlvbiBDb21mb3J0IE1lYXN1cmVzIFNlcnZpY2VSZXF1ZXN0IjoKICAoIFsiU2VydmljZVJlcXVlc3QiOiAiQ29tZm9ydCBNZWFzdXJlcyJdIFAKICAgICAgd2hlcmUgUC5pbnRlbnQgPSAnb3JkZXInCiAgICAgICBhbmQgUC5zdGF0dXMgaW4geyAnYWN0aXZlJywgJ29uLWhvbGQnLCAnY29tcGxldGVkJ30KICApCgpkZWZpbmUgIkludGVydmVudGlvbiBDb21mb3J0IE1lYXN1cmVzIFByb2NlZHVyZSI6CiAgKCBbIlByb2NlZHVyZSI6ICJDb21mb3J0IE1lYXN1cmVzIl0gSW50ZXJ2ZW50aW9uUGVyZm9ybWVkCiAgICAgICAgd2hlcmUgSW50ZXJ2ZW50aW9uUGVyZm9ybWVkLnN0YXR1cyBpbiB7ICdjb21wbGV0ZWQnLCAnaW4tcHJvZ3Jlc3MnIH0KICApCgpkZWZpbmUgIk51bWVyYXRvciI6CiAgIklzY2hlbWljIFN0cm9rZSBFbmNvdW50ZXIiIElzY2hlbWljU3Ryb2tlRW5jb3VudGVyCiAgICB3aXRoICJBbnRpdGhyb21ib3RpYyBUaGVyYXB5IGF0IERpc2NoYXJnZSIgRGlzY2hhcmdlQW50aXRocm9tYm90aWMKICAgICAgc3VjaCB0aGF0IERpc2NoYXJnZUFudGl0aHJvbWJvdGljLmF1dGhvcmVkT24gZHVyaW5nIElzY2hlbWljU3Ryb2tlRW5jb3VudGVyLnBlcmlvZAoKLy9Ob3RlOiBRSUNvcmUgbWFudWFsIHNheXMgdG8gY29uc3RyYWluIHN0YXR1cyB0byAnYWN0aXZlJyBhbmQgY2F0ZWdvcnkgdG8gJ0NvbW11bml0eScgYW5kIGRvZXMgbm90IG1lbnRpb24gaW50ZW50LgovLyAgICAgIGFzayBZYW55YW4gaWYgc2hvdWxkIGZvbGxvdyB0aGF0IG9yIHdoYXQgaXMgYmVsb3cuCmRlZmluZSAiQW50aXRocm9tYm90aWMgVGhlcmFweSBhdCBEaXNjaGFyZ2UiOgogIFsiTWVkaWNhdGlvblJlcXVlc3QiOiBtZWRpY2F0aW9uIGluICJBbnRpdGhyb21ib3RpYyBUaGVyYXB5Il0gQW50aXRocm9tYm90aWMKICAgICAgd2hlcmUgQW50aXRocm9tYm90aWMuZG9Ob3RQZXJmb3JtIGlzIG5vdCB0cnVlCiAgICAgICAgYW5kIEFudGl0aHJvbWJvdGljLnN0YXR1cyBpbiB7ICdhY3RpdmUnLCAnY29tcGxldGVkJyB9IAogICAgICAgIGFuZCBBbnRpdGhyb21ib3RpYy5pbnRlbnQgPSAnb3JkZXInCiAgICAgICAgYW5kIGV4aXN0cyAoQW50aXRocm9tYm90aWMuY2F0ZWdvcnkgQyAKICAgICAgICAgIHdoZXJlIEMgfiBRSUNvcmVDb21tb24uIkRpc2NoYXJnZSIgb3IgQyB+IFFJQ29yZUNvbW1vbi4iQ29tbXVuaXR5IgogICAgICAgICkKCmRlZmluZSAiRGVub21pbmF0b3IgRXhjZXB0aW9ucyI6CiAgIkVuY291bnRlciB3aXRoIE5vIEFudGl0aHJvbWJvdGljIEF0IERpc2NoYXJnZSIKICB1bmlvbiAiRW5jb3VudGVyIHdpdGggUGhhcm1hY29sb2dpY2FsIENvbnRyYWluZGljYXRpb25zIGZvciBBbnRpdGhyb21ib3RpYyBUaGVyYXB5IGF0IERpc2NoYXJnZSIKCmRlZmluZSAiUmVhc29uIGZvciBOb3QgR2l2aW5nIEFudGl0aHJvbWJvdGljIGF0IERpc2NoYXJnZSI6CiAgWyJNZWRpY2F0aW9uUmVxdWVzdCI6ICJBbnRpdGhyb21ib3RpYyBUaGVyYXB5Il0gTm9BbnRpdGhyb21ib3RpY0Rpc2NoYXJnZQogICAgICB3aGVyZSBOb0FudGl0aHJvbWJvdGljRGlzY2hhcmdlLmRvTm90UGVyZm9ybSBpcyB0cnVlCiAgICAgICAgYW5kICggTm9BbnRpdGhyb21ib3RpY0Rpc2NoYXJnZS5yZWFzb25Db2RlIGluICJNZWRpY2FsIFJlYXNvbiIKICAgICAgICAgICAgICAgIG9yIE5vQW50aXRocm9tYm90aWNEaXNjaGFyZ2UucmVhc29uQ29kZSBpbiAiUGF0aWVudCBSZWZ1c2FsIgogICAgICAgICAgICApCiAgICAgICAgYW5kIE5vQW50aXRocm9tYm90aWNEaXNjaGFyZ2Uuc3RhdHVzIGluIHsgJ2NvbXBsZXRlZCcsICdjYW5jZWxsZWQnIH0KICAgICAgICBhbmQgTm9BbnRpdGhyb21ib3RpY0Rpc2NoYXJnZS5pbnRlbnQgPSAnb3JkZXInCiAgICAgICAgYW5kIGV4aXN0cyAoTm9BbnRpdGhyb21ib3RpY0Rpc2NoYXJnZS5jYXRlZ29yeSBDIHdoZXJlIAogICAgICAgICAgICAgICAgICAgQyB+IFFJQ29yZUNvbW1vbi5EaXNjaGFyZ2Ugb3IgQyB+IFFJQ29yZUNvbW1vbi5Db21tdW5pdHkpCi8vICBbIk1lZGljYXRpb25SZXF1ZXN0IjogbWVkaWNhdGlvbiBpbiAiQW50aXRocm9tYm90aWMgVGhlcmFweSJdIE5vQW50aXRocm9tYm90aWNEaXNjaGFyZ2UKCmRlZmluZSAiekRJU1BMQVkgTWVkaWNhdGlvbiBSZXF1ZXN0IjoKICBbIk1lZGljYXRpb25SZXF1ZXN0IjogbWVkaWNhdGlvbiBpbiAiQW50aXRocm9tYm90aWMgVGhlcmFweSJdIE5vQW50aXRocm9tYm90aWNEaXNjaGFyZ2UKICByZXR1cm4gVHVwbGUgewogICAgZG9Ob3RQZXJmb3JtOiBOb0FudGl0aHJvbWJvdGljRGlzY2hhcmdlLmRvTm90UGVyZm9ybSwKICAgIG1lZGljYXRpb246IE5vQW50aXRocm9tYm90aWNEaXNjaGFyZ2UubWVkaWNhdGlvbiwKICAgIHJlYXNvbkNvZGU6IE5vQW50aXRocm9tYm90aWNEaXNjaGFyZ2UucmVhc29uQ29kZSwKICAgIHJlYXNvbkluTWVkOiAoIE5vQW50aXRocm9tYm90aWNEaXNjaGFyZ2UucmVhc29uQ29kZSBpbiAiTWVkaWNhbCBSZWFzb24iKSwKICAgIHJlYXNvbkluUGF0UmVmOiAoTm9BbnRpdGhyb21ib3RpY0Rpc2NoYXJnZS5yZWFzb25Db2RlIGluICJQYXRpZW50IFJlZnVzYWwiKSwKICAgIGNhdGVnb3J5OiBOb0FudGl0aHJvbWJvdGljRGlzY2hhcmdlLmNhdGVnb3J5LAogICAgZGlzY2hhcmdlU3RhdHVzOiBOb0FudGl0aHJvbWJvdGljRGlzY2hhcmdlLnN0YXR1cywKICAgIGludGVudDogTm9BbnRpdGhyb21ib3RpY0Rpc2NoYXJnZS5pbnRlbnQKICB9CgpkZWZpbmUgIkVuY291bnRlciB3aXRoIE5vIEFudGl0aHJvbWJvdGljIEF0IERpc2NoYXJnZSI6CiAgIklzY2hlbWljIFN0cm9rZSBFbmNvdW50ZXIiIElzY2hlbWljU3Ryb2tlRW5jb3VudGVyCiAgCXdpdGggIlJlYXNvbiBmb3IgTm90IEdpdmluZyBBbnRpdGhyb21ib3RpYyBhdCBEaXNjaGFyZ2UiIE5vRGlzY2hhcmdlQW50aXRocm9tYm90aWMKICAJc3VjaCB0aGF0IE5vRGlzY2hhcmdlQW50aXRocm9tYm90aWMuYXV0aG9yZWRPbiBkdXJpbmcgSXNjaGVtaWNTdHJva2VFbmNvdW50ZXIucGVyaW9kCgpkZWZpbmUgIkVuY291bnRlciB3aXRoIFBoYXJtYWNvbG9naWNhbCBDb250cmFpbmRpY2F0aW9ucyBmb3IgQW50aXRocm9tYm90aWMgVGhlcmFweSBhdCBEaXNjaGFyZ2UiOgogICJJc2NoZW1pYyBTdHJva2UgRW5jb3VudGVyIiBJc2NoZW1pY1N0cm9rZUVuY291bnRlcgogICAgICB3aXRoICJQaGFybWFjb2xvZ2ljYWwgQ29udHJhaW5kaWNhdGlvbnMgZm9yIEFudGl0aHJvbWJvdGljIFRoZXJhcHkgYXQgRGlzY2hhcmdlIiBEaXNjaGFyZ2VQaGFybWFjb2xvZ2ljYWwKICAgICAgICBzdWNoIHRoYXQgRGlzY2hhcmdlUGhhcm1hY29sb2dpY2FsLmF1dGhvcmVkT24gZHVyaW5nIElzY2hlbWljU3Ryb2tlRW5jb3VudGVyLnBlcmlvZAoKZGVmaW5lICJQaGFybWFjb2xvZ2ljYWwgQ29udHJhaW5kaWNhdGlvbnMgZm9yIEFudGl0aHJvbWJvdGljIFRoZXJhcHkgYXQgRGlzY2hhcmdlIjoKICBbIk1lZGljYXRpb25SZXF1ZXN0IjogbWVkaWNhdGlvbiBpbiAiUGhhcm1hY29sb2dpY2FsIENvbnRyYWluZGljYXRpb25zIEZvciBBbnRpdGhyb21ib3RpYyBUaGVyYXB5Il0gUGhhcm1hY29sb2dpY2FsCiAgICAgIHdoZXJlIFBoYXJtYWNvbG9naWNhbC5kb05vdFBlcmZvcm0gaXMgbm90IHRydWUKICAgICAgICBhbmQgZXhpc3RzIChQaGFybWFjb2xvZ2ljYWwuY2F0ZWdvcnkgQyB3aGVyZSAKICAgICAgICAgICAgICAgICAgIEMgfiBRSUNvcmVDb21tb24uRGlzY2hhcmdlIG9yIEMgfiBRSUNvcmVDb21tb24uQ29tbXVuaXR5KQogICAgICAgIGFuZCBQaGFybWFjb2xvZ2ljYWwuc3RhdHVzIGluIHsgJ2FjdGl2ZScsICdjb21wbGV0ZWQnIH0KICAgICAgICBhbmQgUGhhcm1hY29sb2dpY2FsLmludGVudCA9ICdvcmRlcicKCmRlZmluZSAiU0RFIEV0aG5pY2l0eSI6CiAgU0RFLiJTREUgRXRobmljaXR5IgoKZGVmaW5lICJTREUgUGF5ZXIiOgogIFNERS4iU0RFIFBheWVyIgoKZGVmaW5lICJTREUgUmFjZSI6CiAgU0RFLiJTREUgUmFjZSIKCmRlZmluZSAiU0RFIFNleCI6CiAgU0RFLiJTREUgU2V4Ig=="/>
+  </content>
+</Library>

@@ -1,0 +1,967 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>CMS.FHIR.MCT\null - XML Representation - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/cqf.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"10.6"}
+    h3,h4,h5,h6{--heading-prefix:"10.6"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://github.com/cqframework"><img height="50" alt="Visit the CQF github organization website" src="assets/images/cqf.png"/> </a>
+</div>
+<!-- TODO: Push this into the base template, but it requires a "trusted" template -->
+<script type="text/javascript" src="cql.js"> </script>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">CMS FHIR Prototype Measure Calculation Tool IG</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - CI Build
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="technical-requirements.html">Technical Requirements</a>
+      </li>
+      <li>
+        <a href="implementation-guide.html">Implementation Guide</a>
+      </li>
+      <li>
+        <a href="user-guide.html">User Guide</a>
+      </li>
+      <li>
+        <a href="test-plan.html">Test Plan</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a target="_blank" href="http://cql.hl7.org/index.html">CQL Specification</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/smart-app-launch/STU2/backend-services.html">SMART Backend Services (version 2.0.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/core/STU3.1.1">US Core (version 3.1.1)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/cqfmeasures/STU3">FHIR Quality Measures (version 3.0.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/us/davinci-deqm/STU3.1">FHIR Quality Reporting (version 3.1.0)</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/uv/cpg">FHIR Clinical Guidelines</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="license.html">License</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b></b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 7" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">CMS FHIR Prototype Measure Calculation Tool IG - Local Development build (v0.1.0). See the <a href="http://cms.gov/fhir/mct/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="Library-FHIRHelpers.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Library-FHIRHelpers.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Library-FHIRHelpers.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: null - XML Representation</h2>
+  <table class="colsd">
+    <tr>
+
+      <td colspan="2">
+        
+          Draft
+          
+            as of 2023-03-21
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="Library-FHIRHelpers.xml" no-download="true">Raw xml</a> | <a href="Library-FHIRHelpers.xml" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="xml" style="white-space: pre; overflow: hidden"><code>
+
+&lt;<a href="http://hl7.org/fhir/R4/library.html#Library">Library</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;FHIRHelpers&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.text">text</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;extensions&quot;/&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+    &lt;table class=&quot;grid dict&quot;&gt;
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Id: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;FHIRHelpers&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Url: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/Library/FHIRHelpers&quot;&gt;http://hl7.org/fhir/Library/FHIRHelpers&lt;/a&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Version: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;0.1.0&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Name: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;FHIRHelpers&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Status: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;draft&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Date: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;2023-03-21 15:20:25-0600&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Publisher: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;HL7 International - [Some] Work Group&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        
+        
+        
+        
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;b&gt;Jurisdiction: &lt;/b&gt;&lt;/th&gt;
+            &lt;td style=&quot;padding-left: 4px;&quot;&gt;US&lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        &lt;tr&gt;
+          &lt;td colspan=&quot;2&quot;&gt;
+            &lt;table&gt;
+              &lt;tr&gt;&lt;th&gt;&lt;a id=&quot;cql-content&quot;&gt;&lt;b&gt;Content: &lt;/b&gt;&lt;/a&gt; text/cql&lt;/th&gt;&lt;/tr&gt;
+              &lt;tr&gt;&lt;td&gt;&lt;pre&gt;&lt;code class=&quot;language-cql&quot;&gt;/*
+@author: Bryn Rhodes
+@description: This library defines functions to convert between FHIR
+ data types and CQL system-defined types, as well as functions to support
+ FHIRPath implementation. For more information, the FHIRHelpers wiki page:
+ https://github.com/cqframework/clinical_quality_language/wiki/FHIRHelpers
+@allowFluent: true
+
+@update: Refresh based on AU 2022 content; version 4.0.012 for use in the ecqm-content-qicore-2022 repository
+@update: Added ToValueSet function; version 4.0.013 for use in the ecqm-content-qicore-2022 repository
+*/
+library FHIRHelpers version '4.0.013'
+
+using FHIR version '4.0.1'
+
+define function ToInterval(period FHIR.Period):
+    if period is null then
+        null
+    else
+        if period.&amp;amp;quot;start&amp;amp;quot; is null then
+            Interval(period.&amp;amp;quot;start&amp;amp;quot;.value, period.&amp;amp;quot;end&amp;amp;quot;.value]
+        else
+            Interval[period.&amp;amp;quot;start&amp;amp;quot;.value, period.&amp;amp;quot;end&amp;amp;quot;.value]
+
+define function ToCalendarUnit(unit System.String):
+    case unit
+        when 'ms' then 'millisecond'
+        when 's' then 'second'
+        when 'min' then 'minute'
+        when 'h' then 'hour'
+        when 'd' then 'day'
+        when 'wk' then 'week'
+        when 'mo' then 'month'
+        when 'a' then 'year'
+        else unit
+    end
+
+define function ToQuantity(quantity FHIR.Quantity):
+    case
+        when quantity is null then null
+        when quantity.value is null then null
+        when quantity.comparator is not null then
+            Message(null, true, 'FHIRHelpers.ToQuantity.ComparatorQuantityNotSupported', 'Error', 'FHIR Quantity value has a comparator and cannot be converted to a System.Quantity value.')
+        when quantity.system is null or quantity.system.value = 'http://unitsofmeasure.org'
+              or quantity.system.value = 'http://hl7.org/fhirpath/CodeSystem/calendar-units' then
+            System.Quantity { value: quantity.value.value, unit: ToCalendarUnit(Coalesce(quantity.code.value, quantity.unit.value, '1')) }
+        else
+            Message(null, true, 'FHIRHelpers.ToQuantity.InvalidFHIRQuantity', 'Error', 'Invalid FHIR Quantity code: ' &amp;amp;amp; quantity.unit.value &amp;amp;amp; ' (' &amp;amp;amp; quantity.system.value &amp;amp;amp; '|' &amp;amp;amp; quantity.code.value &amp;amp;amp; ')')
+    end
+
+define function ToQuantityIgnoringComparator(quantity FHIR.Quantity):
+    case
+        when quantity is null then null
+        when quantity.value is null then null
+        when quantity.system is null or quantity.system.value = 'http://unitsofmeasure.org'
+              or quantity.system.value = 'http://hl7.org/fhirpath/CodeSystem/calendar-units' then
+            System.Quantity { value: quantity.value.value, unit: ToCalendarUnit(Coalesce(quantity.code.value, quantity.unit.value, '1')) }
+        else
+            Message(null, true, 'FHIRHelpers.ToQuantity.InvalidFHIRQuantity', 'Error', 'Invalid FHIR Quantity code: ' &amp;amp;amp; quantity.unit.value &amp;amp;amp; ' (' &amp;amp;amp; quantity.system.value &amp;amp;amp; '|' &amp;amp;amp; quantity.code.value &amp;amp;amp; ')')
+    end
+
+define function ToInterval(quantity FHIR.Quantity):
+    if quantity is null then null else
+        case quantity.comparator.value
+            when '&amp;amp;lt;' then
+                Interval[
+                    null,
+                    ToQuantityIgnoringComparator(quantity)
+                )
+            when '&amp;amp;lt;=' then
+                Interval[
+                    null,
+                    ToQuantityIgnoringComparator(quantity)
+                ]
+            when '&amp;amp;gt;=' then
+                Interval[
+                    ToQuantityIgnoringComparator(quantity),
+                    null
+                ]
+            when '&amp;amp;gt;' then
+                Interval(
+                    ToQuantityIgnoringComparator(quantity),
+                    null
+                ]
+            else
+                Interval[ToQuantity(quantity), ToQuantity(quantity)]
+        end
+
+define function ToRatio(ratio FHIR.Ratio):
+    if ratio is null then
+        null
+    else
+        System.Ratio { numerator: ToQuantity(ratio.numerator), denominator: ToQuantity(ratio.denominator) }
+
+define function ToInterval(range FHIR.Range):
+    if range is null then
+        null
+    else
+        Interval[ToQuantity(range.low), ToQuantity(range.high)]
+
+define function ToCode(coding FHIR.Coding):
+    if coding is null then
+        null
+    else
+        System.Code {
+          code: coding.code.value,
+          system: coding.system.value,
+          version: coding.version.value,
+          display: coding.display.value
+        }
+
+define function ToConcept(concept FHIR.CodeableConcept):
+    if concept is null then
+        null
+    else
+        System.Concept {
+            codes: concept.coding C return ToCode(C),
+            display: concept.text.value
+        }
+
+define function ToValueSet(uri String):
+    if uri is null then
+        null
+    else
+        System.ValueSet {
+            id: uri
+        }
+
+define function reference(reference String):
+    if reference is null then
+        null
+    else
+        Reference { reference: string { value: reference } }
+
+define function ToValue(value Choice&amp;amp;lt;base64Binary,
+        boolean,
+        canonical,
+        code,
+        date,
+        dateTime,
+        decimal,
+        id,
+        instant,
+        integer,
+        markdown,
+        oid,
+        positiveInt,
+        string,
+        time,
+        unsignedInt,
+        uri,
+        url,
+        uuid,
+        Address,
+        Age,
+        Annotation,
+        Attachment,
+        CodeableConcept,
+        Coding,
+        ContactPoint,
+        Count,
+        Distance,
+        Duration,
+        HumanName,
+        Identifier,
+        Money,
+        Period,
+        Quantity,
+        Range,
+        Ratio,
+        Reference,
+        SampledData,
+        Signature,
+        Timing,
+        ContactDetail,
+        Contributor,
+        DataRequirement,
+        Expression,
+        ParameterDefinition,
+        RelatedArtifact,
+        TriggerDefinition,
+        UsageContext,
+        Dosage,
+        Meta&amp;amp;gt;):
+    case
+      when value is base64Binary then (value as base64Binary).value
+      when value is boolean then (value as boolean).value
+      when value is canonical then (value as canonical).value
+      when value is code then (value as code).value
+      when value is date then (value as date).value
+      when value is dateTime then (value as dateTime).value
+      when value is decimal then (value as decimal).value
+      when value is id then (value as id).value
+      when value is instant then (value as instant).value
+      when value is integer then (value as integer).value
+      when value is markdown then (value as markdown).value
+      when value is oid then (value as oid).value
+      when value is positiveInt then (value as positiveInt).value
+      when value is string then (value as string).value
+      when value is time then (value as time).value
+      when value is unsignedInt then (value as unsignedInt).value
+      when value is uri then (value as uri).value
+      when value is url then (value as url).value
+      when value is uuid then (value as uuid).value
+      when value is Age then ToQuantity(value as Age)
+      when value is CodeableConcept then ToConcept(value as CodeableConcept)
+      when value is Coding then ToCode(value as Coding)
+      when value is Count then ToQuantity(value as Count)
+      when value is Distance then ToQuantity(value as Distance)
+      when value is Duration then ToQuantity(value as Duration)
+      when value is Quantity then ToQuantity(value as Quantity)
+      when value is Range then ToInterval(value as Range)
+      when value is Period then ToInterval(value as Period)
+      when value is Ratio then ToRatio(value as Ratio)
+      else value as Choice&amp;amp;lt;Address,
+        Annotation,
+        Attachment,
+        ContactPoint,
+        HumanName,
+        Identifier,
+        Money,
+        Reference,
+        SampledData,
+        Signature,
+        Timing,
+        ContactDetail,
+        Contributor,
+        DataRequirement,
+        Expression,
+        ParameterDefinition,
+        RelatedArtifact,
+        TriggerDefinition,
+        UsageContext,
+        Dosage,
+        Meta&amp;amp;gt;
+    end
+
+define function resolve(reference String) returns Resource: external
+define function resolve(reference Reference) returns Resource: external
+define function reference(resource Resource) returns Reference: external
+define function extension(element Element, url String) returns List&amp;amp;lt;Extension&amp;amp;gt;: external
+define function extension(resource DomainResource, url String) returns List&amp;amp;lt;Extension&amp;amp;gt;: external
+define function modifierExtension(element BackboneElement, url String) returns List&amp;amp;lt;Extension&amp;amp;gt;: external
+define function modifierExtension(resource DomainResource, url String) returns List&amp;amp;lt;Extension&amp;amp;gt;: external
+define function hasValue(element Element) returns Boolean: external
+define function getValue(element Element) returns Any: external
+define function ofType(identifier String) returns List&amp;amp;lt;Any&amp;amp;gt;: external
+define function is(identifier String) returns Boolean: external
+define function as(identifier String) returns Any: external
+define function elementDefinition(element Element) returns ElementDefinition: external
+define function slice(element Element, url String, name String) returns List&amp;amp;lt;Element&amp;amp;gt;: external
+define function checkModifiers(resource Resource) returns Resource: external
+define function checkModifiers(resource Resource, modifier String) returns Resource: external
+define function checkModifiers(element Element) returns Element: external
+define function checkModifiers(element Element, modifier String) returns Element: external
+define function conformsTo(resource Resource, structure String) returns Boolean: external
+define function memberOf(code code, valueSet String) returns Boolean: external
+define function memberOf(coding Coding, valueSet String) returns Boolean: external
+define function memberOf(concept CodeableConcept, valueSet String) returns Boolean: external
+define function subsumes(coding Coding, subsumedCoding Coding) returns Boolean: external
+define function subsumes(concept CodeableConcept, subsumedConcept CodeableConcept) returns Boolean: external
+define function subsumedBy(coding Coding, subsumingCoding Coding) returns Boolean: external
+define function subsumedBy(concept CodeableConcept, subsumingConcept CodeableConcept) returns Boolean: external
+define function htmlChecks(element Element) returns Boolean: external
+
+define function ToString(value AccountStatus): value.value
+define function ToString(value ActionCardinalityBehavior): value.value
+define function ToString(value ActionConditionKind): value.value
+define function ToString(value ActionGroupingBehavior): value.value
+define function ToString(value ActionParticipantType): value.value
+define function ToString(value ActionPrecheckBehavior): value.value
+define function ToString(value ActionRelationshipType): value.value
+define function ToString(value ActionRequiredBehavior): value.value
+define function ToString(value ActionSelectionBehavior): value.value
+define function ToString(value ActivityDefinitionKind): value.value
+define function ToString(value ActivityParticipantType): value.value
+define function ToString(value AddressType): value.value
+define function ToString(value AddressUse): value.value
+define function ToString(value AdministrativeGender): value.value
+define function ToString(value AdverseEventActuality): value.value
+define function ToString(value AggregationMode): value.value
+define function ToString(value AllergyIntoleranceCategory): value.value
+define function ToString(value AllergyIntoleranceCriticality): value.value
+define function ToString(value AllergyIntoleranceSeverity): value.value
+define function ToString(value AllergyIntoleranceType): value.value
+define function ToString(value AppointmentStatus): value.value
+define function ToString(value AssertionDirectionType): value.value
+define function ToString(value AssertionOperatorType): value.value
+define function ToString(value AssertionResponseTypes): value.value
+define function ToString(value AuditEventAction): value.value
+define function ToString(value AuditEventAgentNetworkType): value.value
+define function ToString(value AuditEventOutcome): value.value
+define function ToString(value BindingStrength): value.value
+define function ToString(value BiologicallyDerivedProductCategory): value.value
+define function ToString(value BiologicallyDerivedProductStatus): value.value
+define function ToString(value BiologicallyDerivedProductStorageScale): value.value
+define function ToString(value BundleType): value.value
+define function ToString(value CapabilityStatementKind): value.value
+define function ToString(value CarePlanActivityKind): value.value
+define function ToString(value CarePlanActivityStatus): value.value
+define function ToString(value CarePlanIntent): value.value
+define function ToString(value CarePlanStatus): value.value
+define function ToString(value CareTeamStatus): value.value
+define function ToString(value CatalogEntryRelationType): value.value
+define function ToString(value ChargeItemDefinitionPriceComponentType): value.value
+define function ToString(value ChargeItemStatus): value.value
+define function ToString(value ClaimResponseStatus): value.value
+define function ToString(value ClaimStatus): value.value
+define function ToString(value ClinicalImpressionStatus): value.value
+define function ToString(value CodeSearchSupport): value.value
+define function ToString(value CodeSystemContentMode): value.value
+define function ToString(value CodeSystemHierarchyMeaning): value.value
+define function ToString(value CommunicationPriority): value.value
+define function ToString(value CommunicationRequestStatus): value.value
+define function ToString(value CommunicationStatus): value.value
+define function ToString(value CompartmentCode): value.value
+define function ToString(value CompartmentType): value.value
+define function ToString(value CompositionAttestationMode): value.value
+define function ToString(value CompositionStatus): value.value
+define function ToString(value ConceptMapEquivalence): value.value
+define function ToString(value ConceptMapGroupUnmappedMode): value.value
+define function ToString(value ConditionalDeleteStatus): value.value
+define function ToString(value ConditionalReadStatus): value.value
+define function ToString(value ConsentDataMeaning): value.value
+define function ToString(value ConsentProvisionType): value.value
+define function ToString(value ConsentState): value.value
+define function ToString(value ConstraintSeverity): value.value
+define function ToString(value ContactPointSystem): value.value
+define function ToString(value ContactPointUse): value.value
+define function ToString(value ContractPublicationStatus): value.value
+define function ToString(value ContractStatus): value.value
+define function ToString(value ContributorType): value.value
+define function ToString(value CoverageStatus): value.value
+define function ToString(value CurrencyCode): value.value
+define function ToString(value DayOfWeek): value.value
+define function ToString(value DaysOfWeek): value.value
+define function ToString(value DetectedIssueSeverity): value.value
+define function ToString(value DetectedIssueStatus): value.value
+define function ToString(value DeviceMetricCalibrationState): value.value
+define function ToString(value DeviceMetricCalibrationType): value.value
+define function ToString(value DeviceMetricCategory): value.value
+define function ToString(value DeviceMetricColor): value.value
+define function ToString(value DeviceMetricOperationalStatus): value.value
+define function ToString(value DeviceNameType): value.value
+define function ToString(value DeviceRequestStatus): value.value
+define function ToString(value DeviceUseStatementStatus): value.value
+define function ToString(value DiagnosticReportStatus): value.value
+define function ToString(value DiscriminatorType): value.value
+define function ToString(value DocumentConfidentiality): value.value
+define function ToString(value DocumentMode): value.value
+define function ToString(value DocumentReferenceStatus): value.value
+define function ToString(value DocumentRelationshipType): value.value
+define function ToString(value EligibilityRequestPurpose): value.value
+define function ToString(value EligibilityRequestStatus): value.value
+define function ToString(value EligibilityResponsePurpose): value.value
+define function ToString(value EligibilityResponseStatus): value.value
+define function ToString(value EnableWhenBehavior): value.value
+define function ToString(value EncounterLocationStatus): value.value
+define function ToString(value EncounterStatus): value.value
+define function ToString(value EndpointStatus): value.value
+define function ToString(value EnrollmentRequestStatus): value.value
+define function ToString(value EnrollmentResponseStatus): value.value
+define function ToString(value EpisodeOfCareStatus): value.value
+define function ToString(value EventCapabilityMode): value.value
+define function ToString(value EventTiming): value.value
+define function ToString(value EvidenceVariableType): value.value
+define function ToString(value ExampleScenarioActorType): value.value
+define function ToString(value ExplanationOfBenefitStatus): value.value
+define function ToString(value ExposureState): value.value
+define function ToString(value ExtensionContextType): value.value
+define function ToString(value FHIRAllTypes): value.value
+define function ToString(value FHIRDefinedType): value.value
+define function ToString(value FHIRDeviceStatus): value.value
+define function ToString(value FHIRResourceType): value.value
+define function ToString(value FHIRSubstanceStatus): value.value
+define function ToString(value FHIRVersion): value.value
+define function ToString(value FamilyHistoryStatus): value.value
+define function ToString(value FilterOperator): value.value
+define function ToString(value FlagStatus): value.value
+define function ToString(value GoalLifecycleStatus): value.value
+define function ToString(value GraphCompartmentRule): value.value
+define function ToString(value GraphCompartmentUse): value.value
+define function ToString(value GroupMeasure): value.value
+define function ToString(value GroupType): value.value
+define function ToString(value GuidanceResponseStatus): value.value
+define function ToString(value GuidePageGeneration): value.value
+define function ToString(value GuideParameterCode): value.value
+define function ToString(value HTTPVerb): value.value
+define function ToString(value IdentifierUse): value.value
+define function ToString(value IdentityAssuranceLevel): value.value
+define function ToString(value ImagingStudyStatus): value.value
+define function ToString(value ImmunizationEvaluationStatus): value.value
+define function ToString(value ImmunizationStatus): value.value
+define function ToString(value InvoicePriceComponentType): value.value
+define function ToString(value InvoiceStatus): value.value
+define function ToString(value IssueSeverity): value.value
+define function ToString(value IssueType): value.value
+define function ToString(value LinkType): value.value
+define function ToString(value LinkageType): value.value
+define function ToString(value ListMode): value.value
+define function ToString(value ListStatus): value.value
+define function ToString(value LocationMode): value.value
+define function ToString(value LocationStatus): value.value
+define function ToString(value MeasureReportStatus): value.value
+define function ToString(value MeasureReportType): value.value
+define function ToString(value MediaStatus): value.value
+define function ToString(value MedicationAdministrationStatus): value.value
+define function ToString(value MedicationDispenseStatus): value.value
+define function ToString(value MedicationKnowledgeStatus): value.value
+define function ToString(value MedicationRequestIntent): value.value
+define function ToString(value MedicationRequestPriority): value.value
+define function ToString(value MedicationRequestStatus): value.value
+define function ToString(value MedicationStatementStatus): value.value
+define function ToString(value MedicationStatus): value.value
+define function ToString(value MessageSignificanceCategory): value.value
+define function ToString(value Messageheader_Response_Request): value.value
+define function ToString(value MimeType): value.value
+define function ToString(value NameUse): value.value
+define function ToString(value NamingSystemIdentifierType): value.value
+define function ToString(value NamingSystemType): value.value
+define function ToString(value NarrativeStatus): value.value
+define function ToString(value NoteType): value.value
+define function ToString(value NutritiionOrderIntent): value.value
+define function ToString(value NutritionOrderStatus): value.value
+define function ToString(value ObservationDataType): value.value
+define function ToString(value ObservationRangeCategory): value.value
+define function ToString(value ObservationStatus): value.value
+define function ToString(value OperationKind): value.value
+define function ToString(value OperationParameterUse): value.value
+define function ToString(value OrientationType): value.value
+define function ToString(value ParameterUse): value.value
+define function ToString(value ParticipantRequired): value.value
+define function ToString(value ParticipantStatus): value.value
+define function ToString(value ParticipationStatus): value.value
+define function ToString(value PaymentNoticeStatus): value.value
+define function ToString(value PaymentReconciliationStatus): value.value
+define function ToString(value ProcedureStatus): value.value
+define function ToString(value PropertyRepresentation): value.value
+define function ToString(value PropertyType): value.value
+define function ToString(value ProvenanceEntityRole): value.value
+define function ToString(value PublicationStatus): value.value
+define function ToString(value QualityType): value.value
+define function ToString(value QuantityComparator): value.value
+define function ToString(value QuestionnaireItemOperator): value.value
+define function ToString(value QuestionnaireItemType): value.value
+define function ToString(value QuestionnaireResponseStatus): value.value
+define function ToString(value ReferenceHandlingPolicy): value.value
+define function ToString(value ReferenceVersionRules): value.value
+define function ToString(value ReferredDocumentStatus): value.value
+define function ToString(value RelatedArtifactType): value.value
+define function ToString(value RemittanceOutcome): value.value
+define function ToString(value RepositoryType): value.value
+define function ToString(value RequestIntent): value.value
+define function ToString(value RequestPriority): value.value
+define function ToString(value RequestStatus): value.value
+define function ToString(value ResearchElementType): value.value
+define function ToString(value ResearchStudyStatus): value.value
+define function ToString(value ResearchSubjectStatus): value.value
+define function ToString(value ResourceType): value.value
+define function ToString(value ResourceVersionPolicy): value.value
+define function ToString(value ResponseType): value.value
+define function ToString(value RestfulCapabilityMode): value.value
+define function ToString(value RiskAssessmentStatus): value.value
+define function ToString(value SPDXLicense): value.value
+define function ToString(value SearchComparator): value.value
+define function ToString(value SearchEntryMode): value.value
+define function ToString(value SearchModifierCode): value.value
+define function ToString(value SearchParamType): value.value
+define function ToString(value SectionMode): value.value
+define function ToString(value SequenceType): value.value
+define function ToString(value ServiceRequestIntent): value.value
+define function ToString(value ServiceRequestPriority): value.value
+define function ToString(value ServiceRequestStatus): value.value
+define function ToString(value SlicingRules): value.value
+define function ToString(value SlotStatus): value.value
+define function ToString(value SortDirection): value.value
+define function ToString(value SpecimenContainedPreference): value.value
+define function ToString(value SpecimenStatus): value.value
+define function ToString(value Status): value.value
+define function ToString(value StrandType): value.value
+define function ToString(value StructureDefinitionKind): value.value
+define function ToString(value StructureMapContextType): value.value
+define function ToString(value StructureMapGroupTypeMode): value.value
+define function ToString(value StructureMapInputMode): value.value
+define function ToString(value StructureMapModelMode): value.value
+define function ToString(value StructureMapSourceListMode): value.value
+define function ToString(value StructureMapTargetListMode): value.value
+define function ToString(value StructureMapTransform): value.value
+define function ToString(value SubscriptionChannelType): value.value
+define function ToString(value SubscriptionStatus): value.value
+define function ToString(value SupplyDeliveryStatus): value.value
+define function ToString(value SupplyRequestStatus): value.value
+define function ToString(value SystemRestfulInteraction): value.value
+define function ToString(value TaskIntent): value.value
+define function ToString(value TaskPriority): value.value
+define function ToString(value TaskStatus): value.value
+define function ToString(value TestReportActionResult): value.value
+define function ToString(value TestReportParticipantType): value.value
+define function ToString(value TestReportResult): value.value
+define function ToString(value TestReportStatus): value.value
+define function ToString(value TestScriptRequestMethodCode): value.value
+define function ToString(value TriggerType): value.value
+define function ToString(value TypeDerivationRule): value.value
+define function ToString(value TypeRestfulInteraction): value.value
+define function ToString(value UDIEntryType): value.value
+define function ToString(value UnitsOfTime): value.value
+define function ToString(value Use): value.value
+define function ToString(value VariableType): value.value
+define function ToString(value VisionBase): value.value
+define function ToString(value VisionEyes): value.value
+define function ToString(value VisionStatus): value.value
+define function ToString(value XPathUsageType): value.value
+define function ToString(value base64Binary): value.value
+define function ToBoolean(value boolean): value.value
+define function ToDate(value date): value.value
+define function ToDateTime(value dateTime): value.value
+define function ToDecimal(value decimal): value.value
+define function ToDateTime(value instant): value.value
+define function ToInteger(value integer): value.value
+define function ToString(value string): value.value
+define function ToTime(value time): value.value
+define function ToString(value uri): value.value
+define function ToString(value xhtml): value.value
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;
+            &lt;/table&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        
+        
+        
+    &lt;/table&gt;
+&lt;/div&gt;<a name="end-xhtml"></a>
+  &lt;/text&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem&quot;&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueReference</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Device/cqf-tooling&quot;/&gt;
+    &lt;/valueReference&gt;
+  &lt;/extension&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.url">url</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/Library/FHIRHelpers&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;0.1.0&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;FHIRHelpers&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;draft&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2023-03-21T15:20:25-06:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.publisher">publisher</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;HL7 International - [Some] Work Group&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.contact">contact</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;url&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://hl7.org/Special/committees/[something]&quot;/&gt;
+    &lt;/telecom&gt;
+  &lt;/contact&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.jurisdiction">jurisdiction</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:iso:std:iso:3166&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;US&quot;/&gt;
+    &lt;/coding&gt;
+  &lt;/jurisdiction&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/library.html#Library.content">content</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.contentType">contentType</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;text/cql&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.data">data</a>
+          <a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">value</a>=&quot;LyoNCkBhdXRob3I6IEJyeW4gUmhvZGVzDQpAZGVzY3JpcHRpb246IFRoaXMgbGlicmFyeSBkZWZpbmVzIGZ1bmN0aW9ucyB0byBjb252ZXJ0IGJldHdlZW4gRkhJUg0KIGRhdGEgdHlwZXMgYW5kIENRTCBzeXN0ZW0tZGVmaW5lZCB0eXBlcywgYXMgd2VsbCBhcyBmdW5jdGlvbnMgdG8gc3VwcG9ydA0KIEZISVJQYXRoIGltcGxlbWVudGF0aW9uLiBGb3IgbW9yZSBpbmZvcm1hdGlvbiwgdGhlIEZISVJIZWxwZXJzIHdpa2kgcGFnZToNCiBodHRwczovL2dpdGh1Yi5jb20vY3FmcmFtZXdvcmsvY2xpbmljYWxfcXVhbGl0eV9sYW5ndWFnZS93aWtpL0ZISVJIZWxwZXJzDQpAYWxsb3dGbHVlbnQ6IHRydWUNCg0KQHVwZGF0ZTogUmVmcmVzaCBiYXNlZCBvbiBBVSAyMDIyIGNvbnRlbnQ7IHZlcnNpb24gNC4wLjAxMiBmb3IgdXNlIGluIHRoZSBlY3FtLWNvbnRlbnQtcWljb3JlLTIwMjIgcmVwb3NpdG9yeQ0KQHVwZGF0ZTogQWRkZWQgVG9WYWx1ZVNldCBmdW5jdGlvbjsgdmVyc2lvbiA0LjAuMDEzIGZvciB1c2UgaW4gdGhlIGVjcW0tY29udGVudC1xaWNvcmUtMjAyMiByZXBvc2l0b3J5DQoqLw0KbGlicmFyeSBGSElSSGVscGVycyB2ZXJzaW9uICc0LjAuMDEzJw0KDQp1c2luZyBGSElSIHZlcnNpb24gJzQuMC4xJw0KDQpkZWZpbmUgZnVuY3Rpb24gVG9JbnRlcnZhbChwZXJpb2QgRkhJUi5QZXJpb2QpOg0KICAgIGlmIHBlcmlvZCBpcyBudWxsIHRoZW4NCiAgICAgICAgbnVsbA0KICAgIGVsc2UNCiAgICAgICAgaWYgcGVyaW9kLiJzdGFydCIgaXMgbnVsbCB0aGVuDQogICAgICAgICAgICBJbnRlcnZhbChwZXJpb2QuInN0YXJ0Ii52YWx1ZSwgcGVyaW9kLiJlbmQiLnZhbHVlXQ0KICAgICAgICBlbHNlDQogICAgICAgICAgICBJbnRlcnZhbFtwZXJpb2QuInN0YXJ0Ii52YWx1ZSwgcGVyaW9kLiJlbmQiLnZhbHVlXQ0KDQpkZWZpbmUgZnVuY3Rpb24gVG9DYWxlbmRhclVuaXQodW5pdCBTeXN0ZW0uU3RyaW5nKToNCiAgICBjYXNlIHVuaXQNCiAgICAgICAgd2hlbiAnbXMnIHRoZW4gJ21pbGxpc2Vjb25kJw0KICAgICAgICB3aGVuICdzJyB0aGVuICdzZWNvbmQnDQogICAgICAgIHdoZW4gJ21pbicgdGhlbiAnbWludXRlJw0KICAgICAgICB3aGVuICdoJyB0aGVuICdob3VyJw0KICAgICAgICB3aGVuICdkJyB0aGVuICdkYXknDQogICAgICAgIHdoZW4gJ3drJyB0aGVuICd3ZWVrJw0KICAgICAgICB3aGVuICdtbycgdGhlbiAnbW9udGgnDQogICAgICAgIHdoZW4gJ2EnIHRoZW4gJ3llYXInDQogICAgICAgIGVsc2UgdW5pdA0KICAgIGVuZA0KDQpkZWZpbmUgZnVuY3Rpb24gVG9RdWFudGl0eShxdWFudGl0eSBGSElSLlF1YW50aXR5KToNCiAgICBjYXNlDQogICAgICAgIHdoZW4gcXVhbnRpdHkgaXMgbnVsbCB0aGVuIG51bGwNCiAgICAgICAgd2hlbiBxdWFudGl0eS52YWx1ZSBpcyBudWxsIHRoZW4gbnVsbA0KICAgICAgICB3aGVuIHF1YW50aXR5LmNvbXBhcmF0b3IgaXMgbm90IG51bGwgdGhlbg0KICAgICAgICAgICAgTWVzc2FnZShudWxsLCB0cnVlLCAnRkhJUkhlbHBlcnMuVG9RdWFudGl0eS5Db21wYXJhdG9yUXVhbnRpdHlOb3RTdXBwb3J0ZWQnLCAnRXJyb3InLCAnRkhJUiBRdWFudGl0eSB2YWx1ZSBoYXMgYSBjb21wYXJhdG9yIGFuZCBjYW5ub3QgYmUgY29udmVydGVkIHRvIGEgU3lzdGVtLlF1YW50aXR5IHZhbHVlLicpDQogICAgICAgIHdoZW4gcXVhbnRpdHkuc3lzdGVtIGlzIG51bGwgb3IgcXVhbnRpdHkuc3lzdGVtLnZhbHVlID0gJ2h0dHA6Ly91bml0c29mbWVhc3VyZS5vcmcnDQogICAgICAgICAgICAgIG9yIHF1YW50aXR5LnN5c3RlbS52YWx1ZSA9ICdodHRwOi8vaGw3Lm9yZy9maGlycGF0aC9Db2RlU3lzdGVtL2NhbGVuZGFyLXVuaXRzJyB0aGVuDQogICAgICAgICAgICBTeXN0ZW0uUXVhbnRpdHkgeyB2YWx1ZTogcXVhbnRpdHkudmFsdWUudmFsdWUsIHVuaXQ6IFRvQ2FsZW5kYXJVbml0KENvYWxlc2NlKHF1YW50aXR5LmNvZGUudmFsdWUsIHF1YW50aXR5LnVuaXQudmFsdWUsICcxJykpIH0NCiAgICAgICAgZWxzZQ0KICAgICAgICAgICAgTWVzc2FnZShudWxsLCB0cnVlLCAnRkhJUkhlbHBlcnMuVG9RdWFudGl0eS5JbnZhbGlkRkhJUlF1YW50aXR5JywgJ0Vycm9yJywgJ0ludmFsaWQgRkhJUiBRdWFudGl0eSBjb2RlOiAnICYgcXVhbnRpdHkudW5pdC52YWx1ZSAmICcgKCcgJiBxdWFudGl0eS5zeXN0ZW0udmFsdWUgJiAnfCcgJiBxdWFudGl0eS5jb2RlLnZhbHVlICYgJyknKQ0KICAgIGVuZA0KDQpkZWZpbmUgZnVuY3Rpb24gVG9RdWFudGl0eUlnbm9yaW5nQ29tcGFyYXRvcihxdWFudGl0eSBGSElSLlF1YW50aXR5KToNCiAgICBjYXNlDQogICAgICAgIHdoZW4gcXVhbnRpdHkgaXMgbnVsbCB0aGVuIG51bGwNCiAgICAgICAgd2hlbiBxdWFudGl0eS52YWx1ZSBpcyBudWxsIHRoZW4gbnVsbA0KICAgICAgICB3aGVuIHF1YW50aXR5LnN5c3RlbSBpcyBudWxsIG9yIHF1YW50aXR5LnN5c3RlbS52YWx1ZSA9ICdodHRwOi8vdW5pdHNvZm1lYXN1cmUub3JnJw0KICAgICAgICAgICAgICBvciBxdWFudGl0eS5zeXN0ZW0udmFsdWUgPSAnaHR0cDovL2hsNy5vcmcvZmhpcnBhdGgvQ29kZVN5c3RlbS9jYWxlbmRhci11bml0cycgdGhlbg0KICAgICAgICAgICAgU3lzdGVtLlF1YW50aXR5IHsgdmFsdWU6IHF1YW50aXR5LnZhbHVlLnZhbHVlLCB1bml0OiBUb0NhbGVuZGFyVW5pdChDb2FsZXNjZShxdWFudGl0eS5jb2RlLnZhbHVlLCBxdWFudGl0eS51bml0LnZhbHVlLCAnMScpKSB9DQogICAgICAgIGVsc2UNCiAgICAgICAgICAgIE1lc3NhZ2UobnVsbCwgdHJ1ZSwgJ0ZISVJIZWxwZXJzLlRvUXVhbnRpdHkuSW52YWxpZEZISVJRdWFudGl0eScsICdFcnJvcicsICdJbnZhbGlkIEZISVIgUXVhbnRpdHkgY29kZTogJyAmIHF1YW50aXR5LnVuaXQudmFsdWUgJiAnICgnICYgcXVhbnRpdHkuc3lzdGVtLnZhbHVlICYgJ3wnICYgcXVhbnRpdHkuY29kZS52YWx1ZSAmICcpJykNCiAgICBlbmQNCg0KZGVmaW5lIGZ1bmN0aW9uIFRvSW50ZXJ2YWwocXVhbnRpdHkgRkhJUi5RdWFudGl0eSk6DQogICAgaWYgcXVhbnRpdHkgaXMgbnVsbCB0aGVuIG51bGwgZWxzZQ0KICAgICAgICBjYXNlIHF1YW50aXR5LmNvbXBhcmF0b3IudmFsdWUNCiAgICAgICAgICAgIHdoZW4gJzwnIHRoZW4NCiAgICAgICAgICAgICAgICBJbnRlcnZhbFsNCiAgICAgICAgICAgICAgICAgICAgbnVsbCwNCiAgICAgICAgICAgICAgICAgICAgVG9RdWFudGl0eUlnbm9yaW5nQ29tcGFyYXRvcihxdWFudGl0eSkNCiAgICAgICAgICAgICAgICApDQogICAgICAgICAgICB3aGVuICc8PScgdGhlbg0KICAgICAgICAgICAgICAgIEludGVydmFsWw0KICAgICAgICAgICAgICAgICAgICBudWxsLA0KICAgICAgICAgICAgICAgICAgICBUb1F1YW50aXR5SWdub3JpbmdDb21wYXJhdG9yKHF1YW50aXR5KQ0KICAgICAgICAgICAgICAgIF0NCiAgICAgICAgICAgIHdoZW4gJz49JyB0aGVuDQogICAgICAgICAgICAgICAgSW50ZXJ2YWxbDQogICAgICAgICAgICAgICAgICAgIFRvUXVhbnRpdHlJZ25vcmluZ0NvbXBhcmF0b3IocXVhbnRpdHkpLA0KICAgICAgICAgICAgICAgICAgICBudWxsDQogICAgICAgICAgICAgICAgXQ0KICAgICAgICAgICAgd2hlbiAnPicgdGhlbg0KICAgICAgICAgICAgICAgIEludGVydmFsKA0KICAgICAgICAgICAgICAgICAgICBUb1F1YW50aXR5SWdub3JpbmdDb21wYXJhdG9yKHF1YW50aXR5KSwNCiAgICAgICAgICAgICAgICAgICAgbnVsbA0KICAgICAgICAgICAgICAgIF0NCiAgICAgICAgICAgIGVsc2UNCiAgICAgICAgICAgICAgICBJbnRlcnZhbFtUb1F1YW50aXR5KHF1YW50aXR5KSwgVG9RdWFudGl0eShxdWFudGl0eSldDQogICAgICAgIGVuZA0KDQpkZWZpbmUgZnVuY3Rpb24gVG9SYXRpbyhyYXRpbyBGSElSLlJhdGlvKToNCiAgICBpZiByYXRpbyBpcyBudWxsIHRoZW4NCiAgICAgICAgbnVsbA0KICAgIGVsc2UNCiAgICAgICAgU3lzdGVtLlJhdGlvIHsgbnVtZXJhdG9yOiBUb1F1YW50aXR5KHJhdGlvLm51bWVyYXRvciksIGRlbm9taW5hdG9yOiBUb1F1YW50aXR5KHJhdGlvLmRlbm9taW5hdG9yKSB9DQoNCmRlZmluZSBmdW5jdGlvbiBUb0ludGVydmFsKHJhbmdlIEZISVIuUmFuZ2UpOg0KICAgIGlmIHJhbmdlIGlzIG51bGwgdGhlbg0KICAgICAgICBudWxsDQogICAgZWxzZQ0KICAgICAgICBJbnRlcnZhbFtUb1F1YW50aXR5KHJhbmdlLmxvdyksIFRvUXVhbnRpdHkocmFuZ2UuaGlnaCldDQoNCmRlZmluZSBmdW5jdGlvbiBUb0NvZGUoY29kaW5nIEZISVIuQ29kaW5nKToNCiAgICBpZiBjb2RpbmcgaXMgbnVsbCB0aGVuDQogICAgICAgIG51bGwNCiAgICBlbHNlDQogICAgICAgIFN5c3RlbS5Db2RlIHsNCiAgICAgICAgICBjb2RlOiBjb2RpbmcuY29kZS52YWx1ZSwNCiAgICAgICAgICBzeXN0ZW06IGNvZGluZy5zeXN0ZW0udmFsdWUsDQogICAgICAgICAgdmVyc2lvbjogY29kaW5nLnZlcnNpb24udmFsdWUsDQogICAgICAgICAgZGlzcGxheTogY29kaW5nLmRpc3BsYXkudmFsdWUNCiAgICAgICAgfQ0KDQpkZWZpbmUgZnVuY3Rpb24gVG9Db25jZXB0KGNvbmNlcHQgRkhJUi5Db2RlYWJsZUNvbmNlcHQpOg0KICAgIGlmIGNvbmNlcHQgaXMgbnVsbCB0aGVuDQogICAgICAgIG51bGwNCiAgICBlbHNlDQogICAgICAgIFN5c3RlbS5Db25jZXB0IHsNCiAgICAgICAgICAgIGNvZGVzOiBjb25jZXB0LmNvZGluZyBDIHJldHVybiBUb0NvZGUoQyksDQogICAgICAgICAgICBkaXNwbGF5OiBjb25jZXB0LnRleHQudmFsdWUNCiAgICAgICAgfQ0KDQpkZWZpbmUgZnVuY3Rpb24gVG9WYWx1ZVNldCh1cmkgU3RyaW5nKToNCiAgICBpZiB1cmkgaXMgbnVsbCB0aGVuDQogICAgICAgIG51bGwNCiAgICBlbHNlDQogICAgICAgIFN5c3RlbS5WYWx1ZVNldCB7DQogICAgICAgICAgICBpZDogdXJpDQogICAgICAgIH0NCg0KZGVmaW5lIGZ1bmN0aW9uIHJlZmVyZW5jZShyZWZlcmVuY2UgU3RyaW5nKToNCiAgICBpZiByZWZlcmVuY2UgaXMgbnVsbCB0aGVuDQogICAgICAgIG51bGwNCiAgICBlbHNlDQogICAgICAgIFJlZmVyZW5jZSB7IHJlZmVyZW5jZTogc3RyaW5nIHsgdmFsdWU6IHJlZmVyZW5jZSB9IH0NCg0KZGVmaW5lIGZ1bmN0aW9uIFRvVmFsdWUodmFsdWUgQ2hvaWNlPGJhc2U2NEJpbmFyeSwNCiAgICAgICAgYm9vbGVhbiwNCiAgICAgICAgY2Fub25pY2FsLA0KICAgICAgICBjb2RlLA0KICAgICAgICBkYXRlLA0KICAgICAgICBkYXRlVGltZSwNCiAgICAgICAgZGVjaW1hbCwNCiAgICAgICAgaWQsDQogICAgICAgIGluc3RhbnQsDQogICAgICAgIGludGVnZXIsDQogICAgICAgIG1hcmtkb3duLA0KICAgICAgICBvaWQsDQogICAgICAgIHBvc2l0aXZlSW50LA0KICAgICAgICBzdHJpbmcsDQogICAgICAgIHRpbWUsDQogICAgICAgIHVuc2lnbmVkSW50LA0KICAgICAgICB1cmksDQogICAgICAgIHVybCwNCiAgICAgICAgdXVpZCwNCiAgICAgICAgQWRkcmVzcywNCiAgICAgICAgQWdlLA0KICAgICAgICBBbm5vdGF0aW9uLA0KICAgICAgICBBdHRhY2htZW50LA0KICAgICAgICBDb2RlYWJsZUNvbmNlcHQsDQogICAgICAgIENvZGluZywNCiAgICAgICAgQ29udGFjdFBvaW50LA0KICAgICAgICBDb3VudCwNCiAgICAgICAgRGlzdGFuY2UsDQogICAgICAgIER1cmF0aW9uLA0KICAgICAgICBIdW1hbk5hbWUsDQogICAgICAgIElkZW50aWZpZXIsDQogICAgICAgIE1vbmV5LA0KICAgICAgICBQZXJpb2QsDQogICAgICAgIFF1YW50aXR5LA0KICAgICAgICBSYW5nZSwNCiAgICAgICAgUmF0aW8sDQogICAgICAgIFJlZmVyZW5jZSwNCiAgICAgICAgU2FtcGxlZERhdGEsDQogICAgICAgIFNpZ25hdHVyZSwNCiAgICAgICAgVGltaW5nLA0KICAgICAgICBDb250YWN0RGV0YWlsLA0KICAgICAgICBDb250cmlidXRvciwNCiAgICAgICAgRGF0YVJlcXVpcmVtZW50LA0KICAgICAgICBFeHByZXNzaW9uLA0KICAgICAgICBQYXJhbWV0ZXJEZWZpbml0aW9uLA0KICAgICAgICBSZWxhdGVkQXJ0aWZhY3QsDQogICAgICAgIFRyaWdnZXJEZWZpbml0aW9uLA0KICAgICAgICBVc2FnZUNvbnRleHQsDQogICAgICAgIERvc2FnZSwNCiAgICAgICAgTWV0YT4pOg0KICAgIGNhc2UNCiAgICAgIHdoZW4gdmFsdWUgaXMgYmFzZTY0QmluYXJ5IHRoZW4gKHZhbHVlIGFzIGJhc2U2NEJpbmFyeSkudmFsdWUNCiAgICAgIHdoZW4gdmFsdWUgaXMgYm9vbGVhbiB0aGVuICh2YWx1ZSBhcyBib29sZWFuKS52YWx1ZQ0KICAgICAgd2hlbiB2YWx1ZSBpcyBjYW5vbmljYWwgdGhlbiAodmFsdWUgYXMgY2Fub25pY2FsKS52YWx1ZQ0KICAgICAgd2hlbiB2YWx1ZSBpcyBjb2RlIHRoZW4gKHZhbHVlIGFzIGNvZGUpLnZhbHVlDQogICAgICB3aGVuIHZhbHVlIGlzIGRhdGUgdGhlbiAodmFsdWUgYXMgZGF0ZSkudmFsdWUNCiAgICAgIHdoZW4gdmFsdWUgaXMgZGF0ZVRpbWUgdGhlbiAodmFsdWUgYXMgZGF0ZVRpbWUpLnZhbHVlDQogICAgICB3aGVuIHZhbHVlIGlzIGRlY2ltYWwgdGhlbiAodmFsdWUgYXMgZGVjaW1hbCkudmFsdWUNCiAgICAgIHdoZW4gdmFsdWUgaXMgaWQgdGhlbiAodmFsdWUgYXMgaWQpLnZhbHVlDQogICAgICB3aGVuIHZhbHVlIGlzIGluc3RhbnQgdGhlbiAodmFsdWUgYXMgaW5zdGFudCkudmFsdWUNCiAgICAgIHdoZW4gdmFsdWUgaXMgaW50ZWdlciB0aGVuICh2YWx1ZSBhcyBpbnRlZ2VyKS52YWx1ZQ0KICAgICAgd2hlbiB2YWx1ZSBpcyBtYXJrZG93biB0aGVuICh2YWx1ZSBhcyBtYXJrZG93bikudmFsdWUNCiAgICAgIHdoZW4gdmFsdWUgaXMgb2lkIHRoZW4gKHZhbHVlIGFzIG9pZCkudmFsdWUNCiAgICAgIHdoZW4gdmFsdWUgaXMgcG9zaXRpdmVJbnQgdGhlbiAodmFsdWUgYXMgcG9zaXRpdmVJbnQpLnZhbHVlDQogICAgICB3aGVuIHZhbHVlIGlzIHN0cmluZyB0aGVuICh2YWx1ZSBhcyBzdHJpbmcpLnZhbHVlDQogICAgICB3aGVuIHZhbHVlIGlzIHRpbWUgdGhlbiAodmFsdWUgYXMgdGltZSkudmFsdWUNCiAgICAgIHdoZW4gdmFsdWUgaXMgdW5zaWduZWRJbnQgdGhlbiAodmFsdWUgYXMgdW5zaWduZWRJbnQpLnZhbHVlDQogICAgICB3aGVuIHZhbHVlIGlzIHVyaSB0aGVuICh2YWx1ZSBhcyB1cmkpLnZhbHVlDQogICAgICB3aGVuIHZhbHVlIGlzIHVybCB0aGVuICh2YWx1ZSBhcyB1cmwpLnZhbHVlDQogICAgICB3aGVuIHZhbHVlIGlzIHV1aWQgdGhlbiAodmFsdWUgYXMgdXVpZCkudmFsdWUNCiAgICAgIHdoZW4gdmFsdWUgaXMgQWdlIHRoZW4gVG9RdWFudGl0eSh2YWx1ZSBhcyBBZ2UpDQogICAgICB3aGVuIHZhbHVlIGlzIENvZGVhYmxlQ29uY2VwdCB0aGVuIFRvQ29uY2VwdCh2YWx1ZSBhcyBDb2RlYWJsZUNvbmNlcHQpDQogICAgICB3aGVuIHZhbHVlIGlzIENvZGluZyB0aGVuIFRvQ29kZSh2YWx1ZSBhcyBDb2RpbmcpDQogICAgICB3aGVuIHZhbHVlIGlzIENvdW50IHRoZW4gVG9RdWFudGl0eSh2YWx1ZSBhcyBDb3VudCkNCiAgICAgIHdoZW4gdmFsdWUgaXMgRGlzdGFuY2UgdGhlbiBUb1F1YW50aXR5KHZhbHVlIGFzIERpc3RhbmNlKQ0KICAgICAgd2hlbiB2YWx1ZSBpcyBEdXJhdGlvbiB0aGVuIFRvUXVhbnRpdHkodmFsdWUgYXMgRHVyYXRpb24pDQogICAgICB3aGVuIHZhbHVlIGlzIFF1YW50aXR5IHRoZW4gVG9RdWFudGl0eSh2YWx1ZSBhcyBRdWFudGl0eSkNCiAgICAgIHdoZW4gdmFsdWUgaXMgUmFuZ2UgdGhlbiBUb0ludGVydmFsKHZhbHVlIGFzIFJhbmdlKQ0KICAgICAgd2hlbiB2YWx1ZSBpcyBQZXJpb2QgdGhlbiBUb0ludGVydmFsKHZhbHVlIGFzIFBlcmlvZCkNCiAgICAgIHdoZW4gdmFsdWUgaXMgUmF0aW8gdGhlbiBUb1JhdGlvKHZhbHVlIGFzIFJhdGlvKQ0KICAgICAgZWxzZSB2YWx1ZSBhcyBDaG9pY2U8QWRkcmVzcywNCiAgICAgICAgQW5ub3RhdGlvbiwNCiAgICAgICAgQXR0YWNobWVudCwNCiAgICAgICAgQ29udGFjdFBvaW50LA0KICAgICAgICBIdW1hbk5hbWUsDQogICAgICAgIElkZW50aWZpZXIsDQogICAgICAgIE1vbmV5LA0KICAgICAgICBSZWZlcmVuY2UsDQogICAgICAgIFNhbXBsZWREYXRhLA0KICAgICAgICBTaWduYXR1cmUsDQogICAgICAgIFRpbWluZywNCiAgICAgICAgQ29udGFjdERldGFpbCwNCiAgICAgICAgQ29udHJpYnV0b3IsDQogICAgICAgIERhdGFSZXF1aXJlbWVudCwNCiAgICAgICAgRXhwcmVzc2lvbiwNCiAgICAgICAgUGFyYW1ldGVyRGVmaW5pdGlvbiwNCiAgICAgICAgUmVsYXRlZEFydGlmYWN0LA0KICAgICAgICBUcmlnZ2VyRGVmaW5pdGlvbiwNCiAgICAgICAgVXNhZ2VDb250ZXh0LA0KICAgICAgICBEb3NhZ2UsDQogICAgICAgIE1ldGE+DQogICAgZW5kDQoNCmRlZmluZSBmdW5jdGlvbiByZXNvbHZlKHJlZmVyZW5jZSBTdHJpbmcpIHJldHVybnMgUmVzb3VyY2U6IGV4dGVybmFsDQpkZWZpbmUgZnVuY3Rpb24gcmVzb2x2ZShyZWZlcmVuY2UgUmVmZXJlbmNlKSByZXR1cm5zIFJlc291cmNlOiBleHRlcm5hbA0KZGVmaW5lIGZ1bmN0aW9uIHJlZmVyZW5jZShyZXNvdXJjZSBSZXNvdXJjZSkgcmV0dXJucyBSZWZlcmVuY2U6IGV4dGVybmFsDQpkZWZpbmUgZnVuY3Rpb24gZXh0ZW5zaW9uKGVsZW1lbnQgRWxlbWVudCwgdXJsIFN0cmluZykgcmV0dXJucyBMaXN0PEV4dGVuc2lvbj46IGV4dGVybmFsDQpkZWZpbmUgZnVuY3Rpb24gZXh0ZW5zaW9uKHJlc291cmNlIERvbWFpblJlc291cmNlLCB1cmwgU3RyaW5nKSByZXR1cm5zIExpc3Q8RXh0ZW5zaW9uPjogZXh0ZXJuYWwNCmRlZmluZSBmdW5jdGlvbiBtb2RpZmllckV4dGVuc2lvbihlbGVtZW50IEJhY2tib25lRWxlbWVudCwgdXJsIFN0cmluZykgcmV0dXJucyBMaXN0PEV4dGVuc2lvbj46IGV4dGVybmFsDQpkZWZpbmUgZnVuY3Rpb24gbW9kaWZpZXJFeHRlbnNpb24ocmVzb3VyY2UgRG9tYWluUmVzb3VyY2UsIHVybCBTdHJpbmcpIHJldHVybnMgTGlzdDxFeHRlbnNpb24+OiBleHRlcm5hbA0KZGVmaW5lIGZ1bmN0aW9uIGhhc1ZhbHVlKGVsZW1lbnQgRWxlbWVudCkgcmV0dXJucyBCb29sZWFuOiBleHRlcm5hbA0KZGVmaW5lIGZ1bmN0aW9uIGdldFZhbHVlKGVsZW1lbnQgRWxlbWVudCkgcmV0dXJucyBBbnk6IGV4dGVybmFsDQpkZWZpbmUgZnVuY3Rpb24gb2ZUeXBlKGlkZW50aWZpZXIgU3RyaW5nKSByZXR1cm5zIExpc3Q8QW55PjogZXh0ZXJuYWwNCmRlZmluZSBmdW5jdGlvbiBpcyhpZGVudGlmaWVyIFN0cmluZykgcmV0dXJucyBCb29sZWFuOiBleHRlcm5hbA0KZGVmaW5lIGZ1bmN0aW9uIGFzKGlkZW50aWZpZXIgU3RyaW5nKSByZXR1cm5zIEFueTogZXh0ZXJuYWwNCmRlZmluZSBmdW5jdGlvbiBlbGVtZW50RGVmaW5pdGlvbihlbGVtZW50IEVsZW1lbnQpIHJldHVybnMgRWxlbWVudERlZmluaXRpb246IGV4dGVybmFsDQpkZWZpbmUgZnVuY3Rpb24gc2xpY2UoZWxlbWVudCBFbGVtZW50LCB1cmwgU3RyaW5nLCBuYW1lIFN0cmluZykgcmV0dXJucyBMaXN0PEVsZW1lbnQ+OiBleHRlcm5hbA0KZGVmaW5lIGZ1bmN0aW9uIGNoZWNrTW9kaWZpZXJzKHJlc291cmNlIFJlc291cmNlKSByZXR1cm5zIFJlc291cmNlOiBleHRlcm5hbA0KZGVmaW5lIGZ1bmN0aW9uIGNoZWNrTW9kaWZpZXJzKHJlc291cmNlIFJlc291cmNlLCBtb2RpZmllciBTdHJpbmcpIHJldHVybnMgUmVzb3VyY2U6IGV4dGVybmFsDQpkZWZpbmUgZnVuY3Rpb24gY2hlY2tNb2RpZmllcnMoZWxlbWVudCBFbGVtZW50KSByZXR1cm5zIEVsZW1lbnQ6IGV4dGVybmFsDQpkZWZpbmUgZnVuY3Rpb24gY2hlY2tNb2RpZmllcnMoZWxlbWVudCBFbGVtZW50LCBtb2RpZmllciBTdHJpbmcpIHJldHVybnMgRWxlbWVudDogZXh0ZXJuYWwNCmRlZmluZSBmdW5jdGlvbiBjb25mb3Jtc1RvKHJlc291cmNlIFJlc291cmNlLCBzdHJ1Y3R1cmUgU3RyaW5nKSByZXR1cm5zIEJvb2xlYW46IGV4dGVybmFsDQpkZWZpbmUgZnVuY3Rpb24gbWVtYmVyT2YoY29kZSBjb2RlLCB2YWx1ZVNldCBTdHJpbmcpIHJldHVybnMgQm9vbGVhbjogZXh0ZXJuYWwNCmRlZmluZSBmdW5jdGlvbiBtZW1iZXJPZihjb2RpbmcgQ29kaW5nLCB2YWx1ZVNldCBTdHJpbmcpIHJldHVybnMgQm9vbGVhbjogZXh0ZXJuYWwNCmRlZmluZSBmdW5jdGlvbiBtZW1iZXJPZihjb25jZXB0IENvZGVhYmxlQ29uY2VwdCwgdmFsdWVTZXQgU3RyaW5nKSByZXR1cm5zIEJvb2xlYW46IGV4dGVybmFsDQpkZWZpbmUgZnVuY3Rpb24gc3Vic3VtZXMoY29kaW5nIENvZGluZywgc3Vic3VtZWRDb2RpbmcgQ29kaW5nKSByZXR1cm5zIEJvb2xlYW46IGV4dGVybmFsDQpkZWZpbmUgZnVuY3Rpb24gc3Vic3VtZXMoY29uY2VwdCBDb2RlYWJsZUNvbmNlcHQsIHN1YnN1bWVkQ29uY2VwdCBDb2RlYWJsZUNvbmNlcHQpIHJldHVybnMgQm9vbGVhbjogZXh0ZXJuYWwNCmRlZmluZSBmdW5jdGlvbiBzdWJzdW1lZEJ5KGNvZGluZyBDb2RpbmcsIHN1YnN1bWluZ0NvZGluZyBDb2RpbmcpIHJldHVybnMgQm9vbGVhbjogZXh0ZXJuYWwNCmRlZmluZSBmdW5jdGlvbiBzdWJzdW1lZEJ5KGNvbmNlcHQgQ29kZWFibGVDb25jZXB0LCBzdWJzdW1pbmdDb25jZXB0IENvZGVhYmxlQ29uY2VwdCkgcmV0dXJucyBCb29sZWFuOiBleHRlcm5hbA0KZGVmaW5lIGZ1bmN0aW9uIGh0bWxDaGVja3MoZWxlbWVudCBFbGVtZW50KSByZXR1cm5zIEJvb2xlYW46IGV4dGVybmFsDQoNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBBY2NvdW50U3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBBY3Rpb25DYXJkaW5hbGl0eUJlaGF2aW9yKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBBY3Rpb25Db25kaXRpb25LaW5kKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBBY3Rpb25Hcm91cGluZ0JlaGF2aW9yKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBBY3Rpb25QYXJ0aWNpcGFudFR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEFjdGlvblByZWNoZWNrQmVoYXZpb3IpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEFjdGlvblJlbGF0aW9uc2hpcFR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEFjdGlvblJlcXVpcmVkQmVoYXZpb3IpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEFjdGlvblNlbGVjdGlvbkJlaGF2aW9yKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBBY3Rpdml0eURlZmluaXRpb25LaW5kKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBBY3Rpdml0eVBhcnRpY2lwYW50VHlwZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQWRkcmVzc1R5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEFkZHJlc3NVc2UpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEFkbWluaXN0cmF0aXZlR2VuZGVyKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBBZHZlcnNlRXZlbnRBY3R1YWxpdHkpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEFnZ3JlZ2F0aW9uTW9kZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQWxsZXJneUludG9sZXJhbmNlQ2F0ZWdvcnkpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEFsbGVyZ3lJbnRvbGVyYW5jZUNyaXRpY2FsaXR5KTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBBbGxlcmd5SW50b2xlcmFuY2VTZXZlcml0eSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQWxsZXJneUludG9sZXJhbmNlVHlwZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQXBwb2ludG1lbnRTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEFzc2VydGlvbkRpcmVjdGlvblR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEFzc2VydGlvbk9wZXJhdG9yVHlwZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQXNzZXJ0aW9uUmVzcG9uc2VUeXBlcyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQXVkaXRFdmVudEFjdGlvbik6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQXVkaXRFdmVudEFnZW50TmV0d29ya1R5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEF1ZGl0RXZlbnRPdXRjb21lKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBCaW5kaW5nU3RyZW5ndGgpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEJpb2xvZ2ljYWxseURlcml2ZWRQcm9kdWN0Q2F0ZWdvcnkpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEJpb2xvZ2ljYWxseURlcml2ZWRQcm9kdWN0U3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBCaW9sb2dpY2FsbHlEZXJpdmVkUHJvZHVjdFN0b3JhZ2VTY2FsZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQnVuZGxlVHlwZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQ2FwYWJpbGl0eVN0YXRlbWVudEtpbmQpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIENhcmVQbGFuQWN0aXZpdHlLaW5kKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBDYXJlUGxhbkFjdGl2aXR5U3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBDYXJlUGxhbkludGVudCk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQ2FyZVBsYW5TdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIENhcmVUZWFtU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBDYXRhbG9nRW50cnlSZWxhdGlvblR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIENoYXJnZUl0ZW1EZWZpbml0aW9uUHJpY2VDb21wb25lbnRUeXBlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBDaGFyZ2VJdGVtU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBDbGFpbVJlc3BvbnNlU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBDbGFpbVN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQ2xpbmljYWxJbXByZXNzaW9uU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBDb2RlU2VhcmNoU3VwcG9ydCk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQ29kZVN5c3RlbUNvbnRlbnRNb2RlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBDb2RlU3lzdGVtSGllcmFyY2h5TWVhbmluZyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQ29tbXVuaWNhdGlvblByaW9yaXR5KTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBDb21tdW5pY2F0aW9uUmVxdWVzdFN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQ29tbXVuaWNhdGlvblN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQ29tcGFydG1lbnRDb2RlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBDb21wYXJ0bWVudFR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIENvbXBvc2l0aW9uQXR0ZXN0YXRpb25Nb2RlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBDb21wb3NpdGlvblN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQ29uY2VwdE1hcEVxdWl2YWxlbmNlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBDb25jZXB0TWFwR3JvdXBVbm1hcHBlZE1vZGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIENvbmRpdGlvbmFsRGVsZXRlU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBDb25kaXRpb25hbFJlYWRTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIENvbnNlbnREYXRhTWVhbmluZyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQ29uc2VudFByb3Zpc2lvblR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIENvbnNlbnRTdGF0ZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQ29uc3RyYWludFNldmVyaXR5KTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBDb250YWN0UG9pbnRTeXN0ZW0pOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIENvbnRhY3RQb2ludFVzZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQ29udHJhY3RQdWJsaWNhdGlvblN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQ29udHJhY3RTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIENvbnRyaWJ1dG9yVHlwZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgQ292ZXJhZ2VTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEN1cnJlbmN5Q29kZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRGF5T2ZXZWVrKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBEYXlzT2ZXZWVrKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBEZXRlY3RlZElzc3VlU2V2ZXJpdHkpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIERldGVjdGVkSXNzdWVTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIERldmljZU1ldHJpY0NhbGlicmF0aW9uU3RhdGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIERldmljZU1ldHJpY0NhbGlicmF0aW9uVHlwZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRGV2aWNlTWV0cmljQ2F0ZWdvcnkpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIERldmljZU1ldHJpY0NvbG9yKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBEZXZpY2VNZXRyaWNPcGVyYXRpb25hbFN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRGV2aWNlTmFtZVR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIERldmljZVJlcXVlc3RTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIERldmljZVVzZVN0YXRlbWVudFN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRGlhZ25vc3RpY1JlcG9ydFN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRGlzY3JpbWluYXRvclR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIERvY3VtZW50Q29uZmlkZW50aWFsaXR5KTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBEb2N1bWVudE1vZGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIERvY3VtZW50UmVmZXJlbmNlU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBEb2N1bWVudFJlbGF0aW9uc2hpcFR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEVsaWdpYmlsaXR5UmVxdWVzdFB1cnBvc2UpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEVsaWdpYmlsaXR5UmVxdWVzdFN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRWxpZ2liaWxpdHlSZXNwb25zZVB1cnBvc2UpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEVsaWdpYmlsaXR5UmVzcG9uc2VTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEVuYWJsZVdoZW5CZWhhdmlvcik6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRW5jb3VudGVyTG9jYXRpb25TdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEVuY291bnRlclN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRW5kcG9pbnRTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEVucm9sbG1lbnRSZXF1ZXN0U3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBFbnJvbGxtZW50UmVzcG9uc2VTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEVwaXNvZGVPZkNhcmVTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEV2ZW50Q2FwYWJpbGl0eU1vZGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEV2ZW50VGltaW5nKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBFdmlkZW5jZVZhcmlhYmxlVHlwZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRXhhbXBsZVNjZW5hcmlvQWN0b3JUeXBlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBFeHBsYW5hdGlvbk9mQmVuZWZpdFN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRXhwb3N1cmVTdGF0ZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRXh0ZW5zaW9uQ29udGV4dFR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZISVJBbGxUeXBlcyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRkhJUkRlZmluZWRUeXBlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSRGV2aWNlU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSUmVzb3VyY2VUeXBlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSU3Vic3RhbmNlU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBGSElSVmVyc2lvbik6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRmFtaWx5SGlzdG9yeVN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgRmlsdGVyT3BlcmF0b3IpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEZsYWdTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEdvYWxMaWZlY3ljbGVTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEdyYXBoQ29tcGFydG1lbnRSdWxlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBHcmFwaENvbXBhcnRtZW50VXNlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBHcm91cE1lYXN1cmUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEdyb3VwVHlwZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgR3VpZGFuY2VSZXNwb25zZVN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgR3VpZGVQYWdlR2VuZXJhdGlvbik6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgR3VpZGVQYXJhbWV0ZXJDb2RlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBIVFRQVmVyYik6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgSWRlbnRpZmllclVzZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgSWRlbnRpdHlBc3N1cmFuY2VMZXZlbCk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgSW1hZ2luZ1N0dWR5U3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBJbW11bml6YXRpb25FdmFsdWF0aW9uU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBJbW11bml6YXRpb25TdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEludm9pY2VQcmljZUNvbXBvbmVudFR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIEludm9pY2VTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIElzc3VlU2V2ZXJpdHkpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIElzc3VlVHlwZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgTGlua1R5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIExpbmthZ2VUeXBlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBMaXN0TW9kZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgTGlzdFN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgTG9jYXRpb25Nb2RlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBMb2NhdGlvblN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgTWVhc3VyZVJlcG9ydFN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgTWVhc3VyZVJlcG9ydFR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIE1lZGlhU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBNZWRpY2F0aW9uQWRtaW5pc3RyYXRpb25TdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIE1lZGljYXRpb25EaXNwZW5zZVN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgTWVkaWNhdGlvbktub3dsZWRnZVN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgTWVkaWNhdGlvblJlcXVlc3RJbnRlbnQpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIE1lZGljYXRpb25SZXF1ZXN0UHJpb3JpdHkpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIE1lZGljYXRpb25SZXF1ZXN0U3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBNZWRpY2F0aW9uU3RhdGVtZW50U3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBNZWRpY2F0aW9uU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBNZXNzYWdlU2lnbmlmaWNhbmNlQ2F0ZWdvcnkpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIE1lc3NhZ2VoZWFkZXJfUmVzcG9uc2VfUmVxdWVzdCk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgTWltZVR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIE5hbWVVc2UpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIE5hbWluZ1N5c3RlbUlkZW50aWZpZXJUeXBlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBOYW1pbmdTeXN0ZW1UeXBlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBOYXJyYXRpdmVTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIE5vdGVUeXBlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBOdXRyaXRpaW9uT3JkZXJJbnRlbnQpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIE51dHJpdGlvbk9yZGVyU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBPYnNlcnZhdGlvbkRhdGFUeXBlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBPYnNlcnZhdGlvblJhbmdlQ2F0ZWdvcnkpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIE9ic2VydmF0aW9uU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBPcGVyYXRpb25LaW5kKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBPcGVyYXRpb25QYXJhbWV0ZXJVc2UpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIE9yaWVudGF0aW9uVHlwZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgUGFyYW1ldGVyVXNlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBQYXJ0aWNpcGFudFJlcXVpcmVkKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBQYXJ0aWNpcGFudFN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgUGFydGljaXBhdGlvblN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgUGF5bWVudE5vdGljZVN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgUGF5bWVudFJlY29uY2lsaWF0aW9uU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBQcm9jZWR1cmVTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFByb3BlcnR5UmVwcmVzZW50YXRpb24pOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFByb3BlcnR5VHlwZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgUHJvdmVuYW5jZUVudGl0eVJvbGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFB1YmxpY2F0aW9uU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBRdWFsaXR5VHlwZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgUXVhbnRpdHlDb21wYXJhdG9yKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBRdWVzdGlvbm5haXJlSXRlbU9wZXJhdG9yKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBRdWVzdGlvbm5haXJlSXRlbVR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFF1ZXN0aW9ubmFpcmVSZXNwb25zZVN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgUmVmZXJlbmNlSGFuZGxpbmdQb2xpY3kpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFJlZmVyZW5jZVZlcnNpb25SdWxlcyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgUmVmZXJyZWREb2N1bWVudFN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgUmVsYXRlZEFydGlmYWN0VHlwZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgUmVtaXR0YW5jZU91dGNvbWUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFJlcG9zaXRvcnlUeXBlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBSZXF1ZXN0SW50ZW50KTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBSZXF1ZXN0UHJpb3JpdHkpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFJlcXVlc3RTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFJlc2VhcmNoRWxlbWVudFR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFJlc2VhcmNoU3R1ZHlTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFJlc2VhcmNoU3ViamVjdFN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgUmVzb3VyY2VUeXBlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBSZXNvdXJjZVZlcnNpb25Qb2xpY3kpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFJlc3BvbnNlVHlwZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgUmVzdGZ1bENhcGFiaWxpdHlNb2RlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBSaXNrQXNzZXNzbWVudFN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgU1BEWExpY2Vuc2UpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFNlYXJjaENvbXBhcmF0b3IpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFNlYXJjaEVudHJ5TW9kZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgU2VhcmNoTW9kaWZpZXJDb2RlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBTZWFyY2hQYXJhbVR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFNlY3Rpb25Nb2RlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBTZXF1ZW5jZVR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFNlcnZpY2VSZXF1ZXN0SW50ZW50KTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBTZXJ2aWNlUmVxdWVzdFByaW9yaXR5KTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBTZXJ2aWNlUmVxdWVzdFN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgU2xpY2luZ1J1bGVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBTbG90U3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBTb3J0RGlyZWN0aW9uKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBTcGVjaW1lbkNvbnRhaW5lZFByZWZlcmVuY2UpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFNwZWNpbWVuU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFN0cmFuZFR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFN0cnVjdHVyZURlZmluaXRpb25LaW5kKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBTdHJ1Y3R1cmVNYXBDb250ZXh0VHlwZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgU3RydWN0dXJlTWFwR3JvdXBUeXBlTW9kZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgU3RydWN0dXJlTWFwSW5wdXRNb2RlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBTdHJ1Y3R1cmVNYXBNb2RlbE1vZGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFN0cnVjdHVyZU1hcFNvdXJjZUxpc3RNb2RlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBTdHJ1Y3R1cmVNYXBUYXJnZXRMaXN0TW9kZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgU3RydWN0dXJlTWFwVHJhbnNmb3JtKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBTdWJzY3JpcHRpb25DaGFubmVsVHlwZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgU3Vic2NyaXB0aW9uU3RhdHVzKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBTdXBwbHlEZWxpdmVyeVN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgU3VwcGx5UmVxdWVzdFN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgU3lzdGVtUmVzdGZ1bEludGVyYWN0aW9uKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBUYXNrSW50ZW50KTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBUYXNrUHJpb3JpdHkpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFRhc2tTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFRlc3RSZXBvcnRBY3Rpb25SZXN1bHQpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFRlc3RSZXBvcnRQYXJ0aWNpcGFudFR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFRlc3RSZXBvcnRSZXN1bHQpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFRlc3RSZXBvcnRTdGF0dXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFRlc3RTY3JpcHRSZXF1ZXN0TWV0aG9kQ29kZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgVHJpZ2dlclR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFR5cGVEZXJpdmF0aW9uUnVsZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgVHlwZVJlc3RmdWxJbnRlcmFjdGlvbik6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgVURJRW50cnlUeXBlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBVbml0c09mVGltZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgVXNlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSBWYXJpYWJsZVR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFZpc2lvbkJhc2UpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFZpc2lvbkV5ZXMpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIFZpc2lvblN0YXR1cyk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgWFBhdGhVc2FnZVR5cGUpOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvU3RyaW5nKHZhbHVlIGJhc2U2NEJpbmFyeSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9Cb29sZWFuKHZhbHVlIGJvb2xlYW4pOiB2YWx1ZS52YWx1ZQ0KZGVmaW5lIGZ1bmN0aW9uIFRvRGF0ZSh2YWx1ZSBkYXRlKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb0RhdGVUaW1lKHZhbHVlIGRhdGVUaW1lKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb0RlY2ltYWwodmFsdWUgZGVjaW1hbCk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9EYXRlVGltZSh2YWx1ZSBpbnN0YW50KTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb0ludGVnZXIodmFsdWUgaW50ZWdlcik6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgc3RyaW5nKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1RpbWUodmFsdWUgdGltZSk6IHZhbHVlLnZhbHVlDQpkZWZpbmUgZnVuY3Rpb24gVG9TdHJpbmcodmFsdWUgdXJpKTogdmFsdWUudmFsdWUNCmRlZmluZSBmdW5jdGlvbiBUb1N0cmluZyh2YWx1ZSB4aHRtbCk6IHZhbHVlLnZhbHVlDQo=&quot;/&gt;
+  &lt;/content&gt;
+&lt;/Library&gt;</code></pre>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7.org/Special/committees/[something]">HL7 International - [Some] Work Group</a>.  Package cms.fhir.mct#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 21, 2023 15:20-0600">2023-03-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="http://cms.gov/fhir/mct/history.html">Version History</a> | <a style="color: #81BEF7" rel="license" href="license.html">License</a>
+<!--<a style="color: #81BEF7" href="todo.html">Search</a> | -->
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
