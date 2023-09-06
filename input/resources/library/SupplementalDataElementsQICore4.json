@@ -7,9 +7,18 @@
       "reference": "Device/cqf-tooling"
     }
   } ],
-  "url": "http://ecqi.healthit.gov/ecqms/Library/SupplementalDataElementsQICore4",
+  "url": "http://cms.gov/fhir/mct/Library/SupplementalDataElementsQICore4",
   "version": "3.0.000",
   "name": "SupplementalDataElementsQICore4",
+  "title": "Supplemental Data Elements QICore4",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/library-type",
+        "code": "logic-library"
+      }
+    ]
+  },
   "relatedArtifact": [ {
     "type": "depends-on",
     "display": "QICore model information",
