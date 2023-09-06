@@ -6,7 +6,7 @@
     },
     "extension": [{
         "url": "http://cms.gov/fhir/mct/StructureDefinition/mct-receivingSystemEndpoint",
-        "reference": {
+        "valueReference": {
           "reference": "Endpoint/example"
         }
     }],

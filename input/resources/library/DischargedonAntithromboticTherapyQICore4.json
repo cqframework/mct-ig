@@ -14,7 +14,7 @@
       "reference": "Device/cqf-tooling"
     }
   } ],
-  "url": "http://ecqi.healthit.gov/ecqms/Library/DischargedonAntithromboticTherapyQICore4",
+  "url": "http://cms.gov/fhir/mct/Library/DischargedonAntithromboticTherapyQICore4",
   "version": "0.0.010",
   "name": "DischargedonAntithromboticTherapyQICore4",
   "title": "Discharged on Antithrombotic Therapy QICore",

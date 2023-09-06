@@ -102,7 +102,7 @@ See the [ACME North Location Example](Location-acme-north.html) for a complete e
 
 ### Configure Receiving System Endpoint
 
-The receiving system endpoint is configured as a reference to en Endpoint resource specified using an extension on the Organization resource:
+The receiving system endpoint is configured as a reference to an Endpoint resource specified using an extension on the Organization resource:
 
 ```json
    "extension": [{

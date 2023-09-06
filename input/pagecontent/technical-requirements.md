@@ -142,7 +142,7 @@ NOTE: The ServiceRequest profile was not available in US Core 3.1.1, so this ana
 * Reason for a given procedure (using the Procedure.reasonCode element)
 * Coded indication of items used during a procedure (using the Procedure.usedCode element, important for characterizing device procedures)
 
-[ProcedureNotDone](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-procedure.html) vs [USCoreProcedure](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-procedurenotdone.html)
+[ProcedureNotDone](https://hl7.org/fhir/us/qicore/STU4.1.1/StructureDefinition-qicore-procedurenotdone.html) vs [USCoreProcedure](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-procedure.html)
 
 * Rationale for a procedure not being performed (using the Procedure.statusReason element)
 * Specification of what was not performed in terms of a value set, rather than a specific code (using the extension qicore-notDoneValueSet)

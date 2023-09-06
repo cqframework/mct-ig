@@ -57,37 +57,7 @@
     <version value="4.1.1"/>
   </dependsOn>
   <definition>
-    <!-- You don't need to define any groupings.  The IGPublisher will define them for you.  You only need to do so if your IG is 'special' and it's
-      inappropriate to use the defaults.  Feel free to provide feedback about the defaults... -->
-
-    <resource>
-      <reference>
-        <reference value="Library/QiCoreProfileValidation" />
-      </reference>
-      <name value="QiCore Profile Validation library example" />
-      <description value="A library with supplemental data elements for all profiles in QICore" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Measure/QiCoreProfileValidation" />
-      </reference>
-      <name value="QiCore Profile Validation measure example" />
-      <description value="A cohort measure with supplemental data elements for all profiles in QICore" />
-    </resource>
-    <!--resource>
-      <reference>
-        <reference value="Library/DischargedonAntithromboticTherapyQICore4" />
-      </reference>
-      <name value="Discharged on Antithrombotic Therapy QICore library example" />
-      <description value="Discharged on Antithrombotic Therapy QICore Library" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Measure/DischargedonAntithromboticTherapyQICore4" />
-      </reference>
-      <name value="Discharged on Antithrombotic Therapy QICore" />
-      <description value="Ischemic stroke patients prescribed or continuing to take antithrombotic therapy at hospital discharge" />
-    </resource>
+    <!-- Device -->
     <resource>
       <reference>
         <reference value="Device/cqf-tooling" />
@@ -96,7 +66,58 @@
       <name value="CQFToolingDevice" />
       <description value="A Device that represents a CQF Tooling version." />
       <exampleBoolean value="false" />
-    </resource-->
+    </resource>
+    <!-- Examples -->
+    <resource>
+      <reference>
+        <reference value="Endpoint/example" />
+        <display value="Example Enpoint" />
+      </reference>
+      <name value="ExampleEndpoint" />
+      <description value="An example endpoint for a receiving system." />
+      <exampleBoolean value="true" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Location/acme-north" />
+        <display value="ACME North Example Location" />
+      </reference>
+      <name value="ACMENorthExampleLocation" />
+      <description
+        value="An example location for ACME organization with contained Endpoint resource." />
+      <exampleBoolean value="true" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Location/acme-south" />
+        <display value="ACME South Example Location" />
+      </reference>
+      <name value="ACMESouthExampleLocation" />
+      <description
+        value="An example location for ACME organization with contained Endpoint resource." />
+      <exampleBoolean value="true" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Organization/acme" />
+        <display value="Example Organization" />
+      </reference>
+      <name value="ExampleOrganization" />
+      <description
+        value="An example Organization resource." />
+      <exampleBoolean value="true" />
+    </resource>
+    <!-- Extensions -->
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/mct-receivingSystemEndpoint" />
+        <display value="Receiving System Endpoint Extension" />
+      </reference>
+      <name value="ReceivingSystemEndpointExtension" />
+      <description
+        value="Specifies the receiving system endpoint as a reference to an Endpoint resource" />
+      <exampleBoolean value="false" />
+    </resource>
 
     <page>
       <!-- The root will always be toc.html - the template will force it if you don't do it -->
@@ -190,7 +211,7 @@
       <code value="path-resource" />
       <value value="input/resources/measure" />
     </parameter>
-<!-- Uncomment one or more of these if you want to limit which syntaxes are supported or want to disable the display of mappings
+    <!-- Uncomment one or more of these if you want to limit which syntaxes are supported or want to disable the display of mappings
     <parameter>
       <code value="excludexml"/>
       <value value="true"/>

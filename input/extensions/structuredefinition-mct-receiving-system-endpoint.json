@@ -1,0 +1,55 @@
+{
+    "resourceType": "StructureDefinition",
+    "id": "mct-receivingSystemEndpoint",
+    "url": "http://cms.gov/fhir/mct/StructureDefinition/mct-receivingSystemEndpoint",
+    "version": "4.0.1",
+    "name": "ReceivingSystemEndpointExtension",
+    "title": "Receiving System Endpoint Extension",
+    "status": "draft",
+    "date": "2023-09-06",
+    "description": "Specifies the receiving system endpointas a reference to an Endpoint resource",
+    "fhirVersion": "4.0.1",
+    "kind": "complex-type",
+    "abstract": false,
+    "context": [
+        {
+            "type": "element",
+            "expression": "Organization"
+        }
+    ],
+    "type": "Extension",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+    "derivation": "constraint",
+    "differential": {
+        "element": [
+            {
+                "id": "Extension",
+                "path": "Extension",
+                "short": "Data Date Roller Arguments",
+                "definition": "The DateLastUpdated and Frequency arguments for the data date roller.",
+                "min": 0,
+                "max": "1"
+            },
+            {
+                "id": "Extension.extension",
+                "path": "Extension.extension",
+                "max": "0"
+            },
+            {
+                "id": "Extension.url",
+                "path": "Extension.url",
+                "fixedUri": "http://cms.gov/fhir/mct/StructureDefinition/mct-receivingSystemEndpoint"
+            },
+            {
+                "id": "Extension.value[x]",
+                "path": "Extension.value[x]",
+                "min": 1,
+                "type": [
+                    {
+                        "code": "Reference"
+                    }
+                ]
+            }
+        ]
+    }
+}
