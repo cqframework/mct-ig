@@ -12,8 +12,6 @@ output
 /bundles
 
 # Ignore test bundles, etc. generated via _refresh #
-/input/tests/*
-/input/resources/device/*
 /bundles/*
 
 # Windows generated files #
