@@ -165,3 +165,4 @@ NOTE: The `external` vocabulary directories here are intended to support evaluat
 
 ## Artifact Narratives
 This ig uses [FHIR Liquid](https://confluence.hl7.org/display/FHIR/FHIR+Liquid+Profile) templates for knowledge artifacts. Ultimately, these templates should be part of the CQF Content IG Template, but until then, they are typically copied in to this IG from the [Sample Content IG](https://github.com/cqframework/sample-content-ig).
+
